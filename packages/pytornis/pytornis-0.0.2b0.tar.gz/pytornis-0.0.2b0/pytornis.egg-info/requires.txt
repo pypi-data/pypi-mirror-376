@@ -1,0 +1,9 @@
+numpy
+ffmpeg-python
+
+[cuda]
+pycuda
+
+[dev]
+pytest
+mypy
