@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+src/excepting/__init__.py
+src/excepting/__main__.py
+src/excepting.egg-info/PKG-INFO
+src/excepting.egg-info/SOURCES.txt
+src/excepting.egg-info/dependency_links.txt
+src/excepting.egg-info/top_level.txt
+src/excepting/core/__init__.py
+src/excepting/tests/__init__.py
+src/excepting/tests/test_1984.py
