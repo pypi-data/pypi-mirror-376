@@ -1,0 +1,1030 @@
+Metadata-Version: 2.4
+Name: giserpy
+Version: 2025.9.10
+Summary: 主要模块包括： Messenger - 信使消息事件订阅与发布类； MapGisProject - MapGis工程文件（MPJ）读取类； MapGisColorLib - MapGis色库（青品黄黑-红绿蓝）读取类； MapGisFile - MapGis点线面文件读取类； Projection - 几何要素坐标投影变换类； MapGrid - 国际标准比例尺图幅分幅网格与编号类；Geometry - 地学几何要素加载、编码、转换与序列化类
+Home-page: http://www.xacgs.cn
+Author: Geosite Development Team of CGS
+Keywords: MapGIS,Projection,MapGrid,Geometry
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-python
+Dynamic: summary
+
+<table style="width: 100%;">
+  <tr style="border-style: none;">
+    <td style="border-style: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100" height="100" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 19600 19600" xmlns:xlink="http://www.w3.org/1999/xlink">
+             <g id="Geosite-LOGO">
+                  <metadata id="Geosite-Layer"/>
+                  <path style="fill:#ED7D31" d="M1770.61 10830.77l226.44 -335.57c94.94,-150.78 137.62,-194.51 371.61,-550.29 70.7,-107.5 248.72,-373.01 322.49,-481.06l366.62 -520.71 468.91 -640.09 356.54 -466.09 312.91 -399.23 -4166.71 21.58c0,1391.17 687.5,2622.09 1741.19,3371.46z"/>
+                  <path style="fill:#2E75B6" d="M9572.92 15726.5l-258.69 173.13 -364.4 219.48 -343.12 206.3 -462.61 251.75 -434.24 236 -368.16 169.92 -330.4 160.48 -292.64 132.16 -330.4 141.6 -265.56 84.96 -278.2 59 -246.96 41.16 -260.68 27.44 -328.5 24.66 -288.9 -10.94 -308.7 -48.02 -226.38 -68.6 -185.22 -82.32 -205.8 -116.62 -178.36 -150.92 -123.48 -123.48 -123.48 -178.36 -96.04 -171.5 -96.43 -228.79 -73.05 -264.76 -38.74 -242.88 -14.12 -294.98 4.84 -256.23 13.29 -226.79 27.1 -208.17 26.19 -191.34 54.88 -253.82 75.46 -253.82 156.22 -430.33 108.91 -267.72 102.89 -220.45 96.06 -214.7 91.58 -225.08 157.78 -384.16 157.78 -370.44 167.38 -354.43 172.16 -367.88 233.49 -435.19 273.04 -495.77 339.41 -582.83 285.91 -448.11 342.07 -542.03 292.56 -450.72 250.62 -379.59 309.88 -444.35 294.19 -386.57 267.55 -338.18 251.4 -292.57 284.14 -313.7 327.64 -345.79 285.24 -311.85 288.12 -281.26 274.4 -260.68 265.89 -250.48 332.57 -287.01 275.18 -242.88 299.42 -255.49 288.98 -239.36 323.67 -249 292.87 -238.8 404.74 -294.98 404.74 -267.54 336.14 -212.66 276.81 -174.28 283.29 -164.64 295.76 -156.11 303.48 -173.54 312.75 -163.9 322.03 -144.06 308.31 -134.42 271.13 -110.13 353.14 -139.24 305.42 -94 301.84 -75.46 322.42 -61.74 329.28 -48.02 311.11 -13.72 285.71 -6.86 260.68 13.72 233.24 41.16 242.13 66.56 210.63 84.36 164.64 89.18 178.36 130.34 144.06 150.92 121.75 186.58 84.05 170.14 61.74 178.36 61.74 246.96 20.58 144.06 6.86 240.1 -6.86 233.24 -15.53 229.27 -44.5 304 -67.42 277.76 -70.75 239.68 -86.78 244.17 -90.29 244 -84.49 206.57 -77.84 181.7 -82 192.93 -134.17 280.11 337.13 -580.17 -149.54 348.77 304.47 -539.32 -104.65 283.96 338.81 -645.79 -179.11 441.03 302.28 -548.21 184.52 -433.48 85.93 -263.93 72.23 -256.38 68.3 -290.61 40.47 -283.39 27.07 -303.91 5.86 -283.65 -17.48 -252.47 -48.02 -267.54 -63.38 -203.48 -87.54 -201.26 -109.76 -192.08 -144.45 -165.38 -177.97 -148.1 -192.08 -130.35 -176.93 -84.04 -226.73 -82.32 -223.49 -54.88 -216.63 -35.38 -260.68 -28.52 -270.07 -20.84 -263.29 -6.84 -261.94 4.45 -293.8 13.35 -242.99 26.7 -221.54 23 -247.35 34.84 -279.95 54.04 -251.47 58.33 -278.06 67.86 -253.83 64.89 -229.57 66.19 -288.12 82.32 -239.32 82.32 -234.02 89.18 -259.51 100.49 -248.13 98.45 -278.84 118.66 -263.1 121.44 -261.15 125.15 -219.05 108.09 -246.96 123.48 -253.82 130.34 -267.54 137.2 -240.1 144.06 -260.68 144.06 -240.1 144.06 -276.04 161.86 -231.6 153.7 -288.12 185.22 -322.42 226.38 -260.29 185.22 -226.77 164.64 -244.29 181.49 -248.58 216.39 -218.15 184.85 -165.81 145.54 -186.47 170.39 -214.3 184.48 -176.72 165.38 -246.96 219.52 -267.54 240.1 -253.82 233.24 -262.32 247.89 -222.06 210.07 -276.03 271.83 -259.88 289.99 -207.64 238.57 -229.19 249.74 -238.08 268.65 -226.46 251.97 -205.95 230.36 -261.69 334.01 -230.83 290.16 -219.52 285.71 -230.35 304.78 -215.94 299.27 -193.33 284.59 -194.84 287.01 -211.32 326.52 -170.38 257.51 -243.78 375.14 -218.2 352.09 -222.86 397.49 -224.74 401.17 -221.92 435.06 -193.9 409.74 -168.09 425.78 -168.9 403.91 -145.85 370.9 -145.31 404.37 -89.57 349.12 -81.93 330.02 -78.04 342.55 -59.16 302.29 -54.88 288.12 -41.16 267.54 -41.16 301.84c0,0 -27.44,212.66 -27.44,246.96 0,34.3 -13.72,329.28 -13.72,329.28l0 150.92 13.72 253.82 34.3 288.12 47.63 203.39 79.61 228.13 99.14 227.04 123.48 253.82 132.88 195.84 140.4 165.3 156.46 142.64 187.66 134.2 197.62 109.1 213.98 76.12 226.38 68.6 212.66 54.88 226.38 41.16 267.54 27.44 256.49 8.52 210.85 -0.33 207.28 -24.35 235.36 -30.29 245.19 -45.36 304.31 -56.79 278.32 -73.06 290.41 -92.23 291.72 -104.94 307.45 -116.25 301.4 -123.02 295.42 -123.94 309.95 -128.3 301.06 -157.41 313.8 -181.51 318.02 -191.62 327.72 -216.97 267.04 -184.89 327.76 -236.21 352.27 -246.59 350.74 -229.84 380.51 -261.53 374.8 -289.15 216.76 -200.52 190.07 -196.29 202.46 -247.52 184.36 -255.63 202.41 -306.43 -382.24 273.74 -316.99 214.53z"/>
+                  <polygon style="fill:#ED7D31" points="4803.48,11389.56 5279.67,11395.5 5682.28,11386.86 6292.41,11386.86 6650.94,11386.86 6912.91,11394.73 7083.95,11407.08 7264.2,11433.57 7427.29,11482.2 7585.78,11543.44 7757.4,11628.41 7915.32,11727.18 8047.32,11814.89 8198.97,11925.97 8332.02,12039.37 8454.29,12153.85 8544.23,12254.88 8635.62,12365.15 8699.96,12478.75 8761.87,12597.88 8808.41,12701.47 8849.34,12818.63 8878.25,12942.95 8902.59,13065.77 8920.47,13188.91 8931.6,13319.67 8938.04,13474.93 8946.79,13720.45 8946.79,14148.17 8946.79,14947 8953.08,16003.72 8940.5,16450.31 9682.72,16437.73 10299.14,16450.31 10884.11,16437.73 13683.16,16444.02 13683.16,11405.73 16714.88,11387.21 16777.53,11382.04 16836.9,11375.21 16913.68,11360.69 16980.31,11340.25 17040.07,11321.92 17167.05,11272.07 17262.54,11226.49 17358.39,11178.17 17472.5,11119.9 17597.16,11053.24 17700.82,10990.52 17822.47,10914.53 17932.34,10826.58 18045.36,10730.4 18159.07,10634.9 18280.04,10512.39 18402.72,10360.69 18520.17,10204.34 18714.36,9920.5 18878.7,9631.95 19019.92,9344.54 19142.4,9046.63 19237.89,8791.32 19319,8524.91 19438.51,8103.48 19513.99,7759.66 19570.58,7455.61 15601.61,7443.03 11626.33,7449.32 7261.07,7449.32 7034.08,7760.45 6823.12,8065.5 6625.77,8351.33 6414.44,8672.23 6223.79,8971.13 6047.13,9238.39 5857.72,9529.56 5651.58,9866.92 5448.87,10214.2 5221.27,10605.83 5016.63,10987.51 "/>
+             </g>
+        </svg>
+    </td>
+    <td style="border-style: none;width: 100%;">
+        <table style="width: 100%;">
+            <tr style="border-style: none;">
+                <td style="width: 100%;border-style: none; color: #47709e; font-weight: bold; font-size: 36px;">
+                    GiserPy <sup style="padding: 2px 8px; text-shadow: none; color: #fff; vertical-align: super; -ms-border-radius: 57px; border-radius: 57px; background: #ED7D31; font-size: 12px; font-weight: normal;">2025.9.10</sup>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-style: none;color: #47709e;font-size: 14px;">
+                    The fundamental package for GIS data processing with Python
+                </td>
+            </tr>
+        </table>        
+    </td>
+  </tr>
+</table>
+
+***
+
+GiserPy 软件包提供的模块如下：
+* Geometry - 地学几何要素加载、编码、转换与序列化类
+* Projection - 几何要素坐标投影变换类（支持高斯-克吕格、球体墨卡托、阿尔勃斯、兰伯特投影正反算）
+* MapGrid - 国际标准比例尺图幅分幅网格与编号类
+* MapGisProject - MapGis工程文件（MPJ）读取类
+* MapGisColorLib - MapGis色库（青品黄黑-红绿蓝）读取类
+* MapGisFile - MapGis点线面文件读取类
+* Messenger - 信使消息事件订阅与发布类（通常用于实时进度异步跟踪场景）
+
+
+
+## Installation  
+> Install GiserPy project with pip
+> 
+> ### Windows
+> ```bash
+>   python -m pip install --upgrade giserpy 
+> ```
+> ### Linux
+> ```bash
+>   python3 -m pip install --upgrade giserpy
+> ```
+> ### MacOS
+> ```bash
+>   python3 -m pip install --upgrade giserpy
+> ```
+
+## Usage/Examples
+
+```python
+>>> import giserpy as giser  # import geosite.giserpy as giser
+>>> # 第一步：依据授权码进行模块注册
+>>> giser.GiserBase().register('需联系研发团队并申请授权码')
+>>> # 第二步：实例化工程文件对象
+>>> mpj = giser.MapGisProject('d:\\J46E001002.MPJ')
+>>> # 第三步：获取工程文件描述字典以及文件描述列表
+>>> print(mpj.Description)
+>>> print(mpj.Files)
+```
+
+## API Reference
+
+### Get help on module GiserPy
+
+```python
+>>> help(giserpy)
+```
+
+* ### class Messenger(builtins.object)
+  信使消息事件订阅与发布类（通常用于实时进度异步跟踪场景）
+
+> - 用法
+> ```python
+> >>> # 第一步：在循环体外部创建一个消息总线实例
+> >>> msg = giser.Messenger()
+> >>> # 第二步：在循环体外部定义一个消息侦听句柄（插槽）函数，其参数<data>将由【publish】函数传递
+> >>> def messageSlot(data):
+> >>>     print('Received message:', data)
+> >>> # 第三步：在循环体外部订阅一条消息，比如：'progress' 消息并设置侦听句柄函数 messageSlot。注：仅当订阅（侦听）的消息名称与发布的消息名称一致时方可执行侦听句柄函数
+> >>> msg.subscribe('progress', messageSlot)
+> >>> # 第四步：在循环体内部发布若干条消息，比如：'progress' 消息并携带内容：'Hello, World!'。注：如果发布的消息名称无订阅者，便不执行任何操作
+> >>> msg.publish('progress', 'Hello, World!')
+> ```
+> 
+***Messenger()***
+
+  初始化函数，自动创建消息订阅者字典，其中，【键名】为消息名称或类别，【键值】为消息插槽函数列表（也就是说，一条消息可指定若干个侦听函数）
+
+***Messenger.subscribe***
+> ```python
+> def subscribe(
+>        self,
+>        key: str,
+>        slot: Callable
+> ) -> None
+> ```
+> 订阅特定消息键名及待回调的消息插槽函数。如果消息键名未曾订阅便创建与之绑定的空白列表，如果消息插槽函数尚不存在就将其追加到绑定函数列表中。如果键名和槽函数均已存在，将不执行任何操作
+>
+> | Parameter | Type     | Description|
+> |:----------|:---------|:---------------|
+> | key       | str      | 必选项，消息键名|
+> | slot      | Callable | 必选项，消息插槽（回调）函数|
+> 
+> 失败时抛出异常  
+
+***Messenger.unsubscribe***
+> ```python
+> def unsubscribe(
+>         self, key: Union[str, None] = None, slot: Union[Callable, None] = None
+> ) -> None
+> ```
+> 取消订阅的特定消息键名及回调的消息插槽函数。如果键名为空，就清空整个消息订阅者字典；如果槽函数为空，就删除与键名绑定的列表
+>
+> | Parameter | Type                   | Description|
+> |:----------|:-----------------------|:---------------|
+> | key       | Union[str, None]       | 可选项，消息键名|
+> | slot      | Union[Callable, None]  | 可选项，消息插槽（回调）函数|
+> 
+> 失败时抛出异常
+
+***Messenger.publish***
+> ```python
+> def publish(
+>        self, key: str = None, value: Any = None
+> ) -> None
+> ```
+> 向消息订阅者发布特定的消息（依据指定的键名遍历调用绑定列表中的所有插槽函数）。注：本函数以静默方式广播消息并遍历执行绑定的插槽函数，即使键名不存在或者消息插槽函数调用失败也不抛出异常
+>
+> | Parameter | Type | Description                                  |
+> |:----------|:-----|:---------------------------------------------|
+> | key       | str  | 消息键名                                         |
+> | value     | Any  | 消息内容，可为字符串、列表、字典、元组等类型。注：此类型应与侦听函数所需的参数类型一致  |
+> 
+> 无返回值，以静默方式广播消息并不抛出异常
+
+*****
+* ### class MapGisColorLib(GiserBase)
+  MapGis色库（青品黄黑-红绿蓝）读取类
+*****
+
+***MapGisColorLib(mapGisColorLib: str = None)***
+
+  初始化构造函数。如果未指定色库文件名，便优先尝试读取当前文件夹内的【MapGIS/Slib/Pcolor.lib】，然后尝试读取模块嵌入的默认色库文件，如果前述的色库文件不存在或不符合文件基本要求，实例成员【PcolorLibFile】将置为None，实例成员【count】将置为0
+>
+> | Parameter       | Type | Description         |
+> |:----------------|:-----|:--------------------|
+> | mapGisColorLib  | str  | 色库文件名，省略时取默认值：None |
+> 
+***MapGisColorLib.CMYK***
+> ```python
+> def CMYK(
+>        self, index: int = 1, defaultColor: tuple = (0, 0, 0, 100)
+> ) -> tuple | None
+> ```
+> 依据颜色号从系统库中提取（青品黄黑）颜色值，每个颜色值百分比值域为[0,100]  
+>
+> | Parameter     | Type   | Description                                           |
+> |:--------------|:-------|:------------------------------------------------------|
+> | index         | int    | MapGIS色库颜色号（从1开始计数），注：如果色号越界，取默认颜色参数[defaultColor]设置值 |
+> | defaultColor  | tuple  | 默认颜色，省略时取默认值：(0, 0, 0, 100)                           | 
+> 
+> 返回（青,品,黄,黑）四元组 
+>
+
+***MapGisColorLib.RGB***
+> ```python
+> def RGB(
+>        self, index: int = 1, defaultColor: tuple = (0, 0, 0)
+> ) -> tuple | None
+> ```
+> 依据颜色号从系统库中提取（红绿蓝）颜色值，每个颜色值的值域为[0,255]
+>
+> | Parameter     | Type   | Description                                           |
+> |:--------------|:-------|:------------------------------------------------------|
+> | index         | int    | MapGIS色库颜色号（从1开始计数），注：如果色号越界，取默认颜色参数[defaultColor]设置值 |
+> | defaultColor  | tuple  | 默认颜色，省略时取默认值：(0, 0, 0)                                | 
+> 
+> 返回（红，绿，蓝）三元组
+>
+> - 示例
+> ```python
+> >>> # 第一步：实例化对象
+> >>> colorLib = giser.MapGisColorLib()
+> >>> # 第二步：获取颜色库中全部色值
+> >>> for i in range(colorLib.count):
+> >>>     # MapGIS色库颜色号是从1开始计数的，因此需要：i + 1
+> >>>     index = i + 1
+> >>>     R, G, B = colorLib.RGB(index)
+> >>>     print(f'\033[38;2;{R};{G};{B}m' + '█' + '\033[0m', end='\n' if index % 30 == 0 else '')
+> ```
+
+***MapGisColorLib.HEX***
+> ```python
+> def HEX(
+>        self, index: int = 1, defaultColor: str = '#000000'
+> ) -> str | None
+> ```
+> 依据颜色号从系统库中提取符合HTML格式的十六进制红绿蓝颜色字符串 
+>
+> | Parameter     | Type | Description                                           |
+> |:--------------|:-----|:------------------------------------------------------|
+> | index         | int  | MapGIS色库颜色号（从1开始计数），注：如果色号越界，取默认颜色参数[defaultColor]设置值 |
+> | defaultColor  | str  | 默认颜色，省略时取默认值：'#000000'                                | 
+> 
+> 返回十六进制红绿蓝字符串（形如：#DEDF06）
+>
+
+*****
+* ### class MapGisProject(GiserBase)
+  MapGis工程文件（MPJ）读取类
+*****
+
+***MapGisProject(file: str, encoding: str = 'GB2312')***
+
+  初始化构造函数。依据[file]参数初始化实例公有属性成员（description、files），其中，files成员中的'type'属性目前提供了['Point', 'LineString', 'Polygon', 'Unknown']四种分类；'statusCode'属性为文件状态码，分别为： 0=关闭态、1=打开态、2=编辑态、3=当前编辑态
+>
+> | Parameter | Type | Description            |
+> |:----------|:-----|:-----------------------|
+> | file      | str  | 文件名（MapGIS工程文件名称）      |
+> | encoding  | str  | 语系编码，省略时取默认值：'GB2312'  |
+> 
+> - 示例
+> ```python
+> >>> # 第一步：实例化对象
+> >>> mpj = giser.MapGisProject('.\\Data\\J46E001002.MPJ')
+> >>> # 第二步：获取工程描述字典以及文件描述列表
+> >>> print(mpj.Description)
+> >>> # {'identification': 'WMAP`D2:', 'typeCode': 9, 'files': 3, 'title': '', 'environment': '', 'layoutWidth': 34.0633385378964, 'layoutHeight': 21.9611292941757, 'layoutRotate': 0.0, 'layoutXoffset': -79.92002328, 'layoutYoffset': -26.92153596, 'layoutXscale': 1.0, 'layoutYscale': 1.0, 'xMin': 84.92002328, 'yMin': 31.92153596, 'xMax': 108.98336181789637, 'yMax': 44.48234101514034, 'sourceFile': 'D:\\Data\\J46E001002.MPJ'}
+> >>> print(mpj.Files) 
+> >>> # [{'type': 'Polygon', 'statusCode': 1, 'file': '.\\WP.WP', 'description': '', 'xmin': 99.62185619, 'ymin': 36.5514238, 'xmax': 100.75856675, 'ymax': 37.23177728, 'userType': 0, 'groupCode': 0, 'netWorkData': '', 'scaleMin': 0.0, 'scaleMax': 0.0, 'labelFlag': 0, 'labelFields': '', 'labelHeight': 0.0, 'labelColor': 0, 'labelFont': 0, 'legendType': 0}, {'type': 'LineString', 'statusCode': 1, 'file': '.\\WL.WL', 'description': '', 'xmin': 84.92002328, 'ymin': 31.92153596, 'xmax': 85.67607585, 'ymax': 32.39622771, 'userType': 0, 'groupCode': 0, 'netWorkData': '', 'scaleMin': 0.0, 'scaleMax': 0.0, 'labelFlag': 0, 'labelFields': '', 'labelHeight': 0.0, 'labelColor': 0, 'labelFont': 0, 'legendType': 0}, {'type': 'Point', 'statusCode': 1, 'file': '.\\WT.WT', 'description': '', 'xmin': 87.48651733249426, 'ymin': 34.16569747775793, 'xmax': 108.98336181789637, 'ymax': 44.48234101514034, 'userType': 0, 'groupCode': 0, 'netWorkData': '', 'scaleMin': 0.0, 'scaleMax': 0.0, 'labelFlag': 0, 'labelFields': '', 'labelHeight': 0.0, 'labelColor': 0, 'labelFont': 0, 'legendType': 0}]
+> ```
+
+*****
+* ### class MapGisFile(GiserBase)
+  MapGis点线面文件读取类
+*****
+
+***MapGisFile(mapGisFile: str, mapGisColorLib: str = None, encoding: str = 'GB2312')***
+
+  初始化构造函数。依据指定的点线面图形文件初始化实例公有属性成员（TimeStamp、BBox、EPSG、Parameters、FileType、RecordCount、FeatureCount、FieldStruct）。失败时抛出异常。其中，FileType为图形文件类型（Point/LineString/Polygon）三者之一；EPSG为投影编号（0=自由坐标系；4326=地理坐标系；9802=兰伯特等角割圆锥；9822=阿尔勃斯等积割圆锥；9804=墨卡托正轴等角圆柱；4214=高斯-克吕格[北京坐标系]；4610=高斯-克吕格[西安坐标系]；其他=自定义坐标系）；RecordCount为点线面记录总数（含已删除的记录）；FeatureCount为点线面要素有效个数（不含已删除的要素）
+>
+> | Parameter      | Type | Description                                                                    |
+> |:---------------|:-----|:-------------------------------------------------------------------------------|
+> | mapGisFile     | str  | MapGIS点线面图形文件名（wt、wl、wp），省略时取默认值：None                                          |
+> | mapGisColorLib | str  | MapGIS颜色库文件名（含路径），省略时取默认值：None。如果未指定色库文件名，便尝试读取当前文件夹内的【MapGis/Slib/Pcolor.lib】 |
+> | encoding       | str  | 语系编码，省略时取默认值：'GB2312'                                                          |
+> 
+
+***MapGisFile.describeProperty***
+> ```python
+> def describeProperty(
+>        self
+> ) -> Union[list, None]
+> ```
+> 获取 MapGIS 点线面图形文件的属性字段结构列表。注1：属性字段结构字典中字段列表的每个字段至少包括：name（字段名称）、type（字段类型）、length（字段长度），浮点类型额外包括：decimal（小数位）；注2：返回结果取自实例属性[FieldStruct]中的[fields]内容
+> 
+> 返回由属性字段结构字典构成的列表，无效时返回None，失败时抛出异常
+>
+> - 示例
+> ```python
+> >>> # 创建实例：
+> >>> mapgis = giser.MapGisFile('.\\Data\\WP.WP')
+> >>> print(mapgis.describeProperty())
+> >>> # [{'name': 'ID', 'type': 'long', 'typeCode': 3, 'size': 4, 'length': 8}, {'name': '面积', 'type': 'double', 'typeCode': 5, 'size': 8, 'length': 15, 'decimal': 6}, {'name': '周长', 'type': 'double', 'typeCode': 5, 'size': 8, 'length': 15, 'decimal': 6}, {'name': 'OBJECTID', 'type': 'long', 'typeCode': 3, 'size': 4, 'length': 20}, {'name': 'GB', 'type': 'long', 'typeCode': 3, 'size': 4, 'length': 20}, {'name': 'HYDC', 'type': 'string', 'typeCode': 0, 'size': 255, 'length': 254}, {'name': 'NAME', 'type': 'string', 'typeCode': 0, 'size': 255, 'length': 254}, {'name': 'PERIOD', 'type': 'string', 'typeCode': 0, 'size': 255, 'length': 254}, {'name': 'VOL', 'type': 'string', 'typeCode': 0, 'size': 255, 'length': 254}, {'name': 'SHAPE_LENG', 'type': 'double', 'typeCode': 5, 'size': 8, 'length': 20, 'decimal': 15}, {'name': 'SHAPE_AREA', 'type': 'double', 'typeCode': 5, 'size': 8, 'length': 20, 'decimal': 15}]
+> ```
+
+***MapGisFile.getCapabilities***
+> ```python
+> def getCapabilities(
+>        self
+> ) -> Union[dict, None]
+> ```
+> 获取 MapGIS 点线面图形文件的基本信息字典
+>
+> 返回图形文件的基本信息字典对象，无效时返回None，失败时抛出异常
+>
+> - 示例
+> ```python
+> >>> # 创建实例：
+> >>> mapgis = giser.MapGisFile('.\\Data\\WP.WP')
+> >>> print(mapgis.getCapabilities())
+> >>> # {'type': 'FeatureCollection', 'fileType': 'Polygon', 'timeStamp': '2024-08-01T13:30:37+0800', 'name': 'WP', 'bbox': [99.62185619, 36.5514238, 100.75856675, 37.23177728], 'crs': {'type': 'name', 'properties': {'name': 'EPSG:0', 'parameters': {'projectionTypeCode': 0, 'fileTypeCode': 2, 'ellipsoidCode': 0, 'unitsCode': 0, 'central_meridian': 0.0, 'latitude_of_origin': 0.0, 'standard_parallel_1': 0.0, 'standard_parallel_2': 0.0, 'false_easting': 0.0, 'false_northing': 0.0, 'ellipsoidElevation': 0.0, 'projectionElevation': 0.0}, 'crs': None}}, 'properties': {'fieldCount': 11, 'featureCount': 1}}
+> ```
+
+***MapGisFile.getFeature***
+> ```python
+> def getFeature(
+>        self
+> ) -> Iterator
+> ```
+> 迭代获取 MapGIS 点线面图形文件内可枚举的有效要素对象。注：推荐采用实例属性[RecordCount]获取可枚举的要素总数（含已删除的要素），采用实例属性[FeatureCount]获取有效要素个数（不含已删除的要素）
+>
+> 依次返回可枚举的单个有效要素对象，失败时抛出异常
+>
+> - 示例
+> ```python
+> >>> # 创建实例：
+> >>> mapgis = giser.MapGisFile('.\\Data\\WP.WP')
+> >>> for feature in mapgis.getFeature():
+> >>>     print(feature)
+> >>>     # 返回的每个要素字典的属性包括：type、id、geometry、style、properties、timeStamp
+> >>>     # {'type': 'Feature', 'id': 0, 'geometry': {'type': 'Polygon', 'coordinates': [[[100.00147174, 37.2198217], [100.00278156, 37.21862992],..., [100.00147174, 37.2198217]], [[100.12517688, 36.86915038], ..., [100.12517688, 36.86915038]]]}, 'style': {'fillColor': '#000000', 'fillPattern': 0, 'patternHeight': 0.0, 'patternWidth': 0.0, 'lineWidth': 0, 'patternColor': '#000000', 'layer': 0, 'transparent': 1}, 'properties': {'ID': {'type': 'long', 'length': 8, 'value': 0}, '面积': {'type': 'double', 'length': 15, 'decimal': 6, 'value': 0.424104}, '周长': {'type': 'double', 'length': 15, 'decimal': 6, 'value': 4.185338}, 'OBJECTID': {'type': 'long', 'length': 20, 'value': 12643}, 'GB': {'type': 'long', 'length': 20, 'value': 230101}, 'HYDC': {'type': 'string', 'length': 254, 'value': 'KK00561L'}, 'NAME': {'type': 'string', 'length': 254, 'value': '青海湖(库库诺尔)'}, 'PERIOD': {'type': 'string', 'length': 254, 'value': ''}, 'VOL': {'type': 'string', 'length': 254, 'value': ''}, 'SHAPE_LENG': {'type': 'double', 'length': 20, 'decimal': 15, 'value': 4.185338020324707}, 'SHAPE_AREA': {'type': 'double', 'length': 20, 'decimal': 15, 'value': 0.4241042137146}}, 'timeStamp': '2024-08-01T13:30:37+0800'}
+> ```
+
+***MapGisFile.saveAsGeoJson***
+> ```python
+> def saveAsGeoJson(
+>        self, fileName: str
+> ) -> None
+> ```
+> 将 MapGIS 要素导出为GeoJson文本文件，支持超大文件存储。注：执行过程中将持续广播'progress'消息并携带进度对象{'index': 当前索引位, 'count': 总数量}
+>
+> | Parameter | Type | Description     |
+> |:----------|:-----|:----------------|
+> | fileName  | str  | 欲存盘的GeoJson文件名  |
+> 
+> 失败时抛出异常（如：文件无法创建、文件不具有写权限、磁盘已满等）
+>
+> - 示例
+> ```python
+> >>> # 创建实例：
+> >>> mapgis = giser.MapGisFile('.\\Data\\WP.WP') 
+> >>> # 可选：定义一个消息事件句柄（槽函数），以便接收并响应进度消息
+> >>> def messageSlot(data):
+> >>>     print('Progress Message:', data)
+> >>> # 可选：订阅进度消息
+> >>> mapgis.subscribe('progress', messageSlot)
+> >>> # 导出至磁盘文件
+> >>> mapgis.saveAsGeoJson('WP.json')
+> ```
+
+*****
+* ### class Projection(GiserBase)
+  几何要素坐标投影变换类，支持高斯-克吕格、球体墨卡托、阿尔勃斯、兰伯特投影正反算
+*****
+
+***Projection.angle***
+> ```python
+> @staticmethod
+> def angle(
+>        deg: Union[float, str] = None, dms: Union[float, str] = None, digit: Union[int, str] = None
+> ) -> Union[float, str]
+> ```
+> 十进制角度与六十进制度分秒转换函数，优先识别十进制角度（deg），其次识别六十进制度分秒（dms）
+>
+> | Parameter | Type              | Description                                                            |
+> |:----------|:------------------|:-----------------------------------------------------------------------|
+> | deg       | Union[float, str] | 十进制角度，定义域为：[-360 ～ +360]。如果同时指定了[deg]和[dms]参数，[deg]参数将优先识别并忽略[dms]参数   |
+> | dms       | Union[float, str] | 六十进制度分秒，度的定义域为：[-360 ～ +360]，格式为：十进制度、度分分秒秒、x度xx分xx秒、x°x′x.x″          | 
+> | digit     | Union[int, str]   | 秒值的小数位（0：按四舍五入取整；大于0：按四舍五入取指定位数；忽略时取默认值：双精度最长有效位）                      | 
+> 
+> 返回转换结果（deg -> dms 返回字符串； dms -> deg 返回浮点数值）。失败时抛出异常
+> 
+> 示例：
+>> ```python
+>> Projection.angle(deg=123.456789) 
+>> # 123°27′24.440400000002″
+>> Projection.angle(dms='123°27′24.4404″')
+>> # 123.456789
+>> Projection.angle(dms='123度27分24.4404秒')
+>> # 123.456789
+>> Projection.angle(dms='27分24.4404秒')
+>> # 0.456789
+>> Projection.angle(dms='1232724.4404')
+>> # 123.456789
+>> ```
+>
+***Projection.geodesics***
+> ```python
+> @classmethod
+> def geodesics(
+>        cls,
+>        point1: Union[list, tuple],
+>        point2: Union[list, tuple],
+>        crs: int = 1984
+> ) -> Union[float, None]
+> ```
+> 依据文森蒂（Vincenty）算法计算指定椭球体表面上两点之间的测地线长度（米制） 
+>
+> | Parameter | Type        | Description                                                                |
+> |:----------|:------------|:---------------------------------------------------------------------------|
+> | point1    | list, tuple | 第一个点坐标，十进制经纬度格式，经度定义域为：[-180 ～ +180]，纬度定义域为：[-90 ～ +90]                    |
+> | point2    | list, tuple | 第二个点坐标，十进制经纬度格式，经度定义域为：[-180 ～ +180]，纬度定义域为：[-90 ～ +90]                    |
+> | crs       | int         | 坐标参照系年代（1954=北京坐标系；1980=西安坐标系；1984=WGS84坐标系；2000=CGCS2000坐标系，省略取默认值：1984）  |
+> 
+> 返回两点间的测地线长度。无效时返回None，失败时抛出异常
+> 
+> 示例：
+>> ```python
+>> geodesics((0.0, 0.0), (0.0, 0.0))
+>> # 0.0
+>> geodesics((0.0, 0.0), (179.7, 0.5))
+>> # None
+>> geodesics((108.9423662424, 34.2610116842), (116.3913112879, 39.9055966108))  # 西安 北京
+>> # 910985.9111078943
+>> ```
+> 
+***Projection.zone***
+> ```python
+> @classmethod
+> def zone(
+>        cls,
+>        longitude: float,
+>        zoneCode: int = 6
+> ) -> int
+> ```
+> 由指定经度计算六度带或者三度带带号（如果指定的经度恰好位于两个投影带的中间，便取右侧带号）  
+>
+> | Parameter      | Type  | Description                 |
+> |:---------------|:------|:----------------------------|
+> | longitude      | float | 经度(十进制度)，定义域为：[-180 ～ +180] |
+> | zoneCode       | int   | 6或3，省略或无效时取默认值：6            |
+> 
+> 返回六度或三度带带号。失败时抛出异常
+> 
+***Projection.centralMeridian***
+> ```python
+> @classmethod
+> def centralMeridian(
+>        cls,
+>        longitude: float = None,
+>        zone: int = None,
+>        zoneCode: int = 6
+> ) -> float
+> ```
+> 由指定的经度或者投影带带号计算所处6度或3度投影带中央子午线（经度）。如果同时指定了[longitude]和[zone]参数，将优先依据[longitude]参数计算中央子午线；如果两参数均未指定，便返回None  
+>
+> | Parameter      | Type  | Description                 |
+> |:---------------|:------|:----------------------------|
+> | longitude      | float | 经度(十进制度)，定义域为：[-180 ～ +180] |
+> | zone           | int   | 三度带带号（1～120）或者六度带带号（1～60）   |
+> | zoneCode       | int   | 6或3，省略或无效时取默认值：6            |
+> 
+> 返回中央子午线（十进制度，值域为：[-180 ～ +180]）。失败时抛出异常
+
+***Projection.albers***
+> ```python
+> @classmethod
+> def albers(
+>        cls,
+>        longitude: float = None,
+>        latitude: float = None,
+>        centralMeridian: float = 0,
+>        originLatitude: float = 0,
+>        parallel1: float = 20,
+>        parallel2: float = 50,
+>        x: float = None,
+>        y: float = None,
+>        crs: int = 2000
+> ) -> tuple
+> ```
+> 阿尔伯斯球体双标准纬线等积割圆锥投影（Albers Equal Area Projection）正反算函数，优先识别地理经纬度坐标（longitude、latitude）执行正算，其次识别直角坐标（x、y）并执行反算  
+>
+> | Parameter       | Type  | Description                                                                |
+> |:----------------|:------|:---------------------------------------------------------------------------|
+> | longitude       | float | 十进制经度，定义域为：[-180 ～ +180]                                                   |
+> | latitude        | float | 十进制纬度，定义域为：[-90 ～ +90]                                                     |
+> | centralMeridian | float | 中央子午线经度（十进制度格式，默认值：0），定义域为：[-180 ～ +180]                                   |
+> | originLatitude  | float | 底点纬度（十进制度）；默认值：0，定义域为：[-90 ～ +90]                                          |
+> | parallel1       | float | 第一标准纬线（十进制度）；默认值：20，定义域为：[-90 ～ +90]                                       |
+> | parallel2       | float | 第二标准纬线（十进制度）；默认值：50，定义域为：[-90 ～ +90]                                       |
+> | x               | float | 米制横坐标                                                                      |
+> | y               | float | 米制纵坐标                                                                      |
+> | crs             | int   | 坐标参照系年代（1954=北京坐标系；1980=西安坐标系；1984=WGS84坐标系；2000=CGCS2000坐标系，省略取默认值：2000）  |
+> 
+> 返回正反算结果元组（横坐标，纵坐标），失败时抛出异常
+>
+***Projection.gaussKruger***
+> ```python
+> @classmethod
+> def gaussKruger(
+>        cls,
+>        centralMeridian: float = None,
+>        x: float = None,
+>        y: float = None,
+>        longitude: float = None,
+>        latitude: float = None,
+>        crs: int = 2000
+> ) -> tuple
+> ```
+> 高斯克吕格投影正反算函数，优先识别直角坐标（x、y）执行反算，其次识别地理经纬度坐标（longitude、latitude）并执行正算  
+>
+> | Parameter       | Type  | Description                                                                |
+> |:----------------|:------|:---------------------------------------------------------------------------|
+> | centralMeridian | float | 中央子午线经度（十进制度格式，省略或空白取默认值：按六度分带自动识别）。注意：比例尺小于1万时通常采用六度分带，大于等于1万时采用三度分带      |
+> | x               | float | 纵坐标（米制）指向坐标北，与真北方向相差子午收敛角                                                  |
+> | y               | float | 横坐标（米制，可含带号）通用值或自然值                                                        |
+> | longitude       | float | 经度（十进制度格式），定义域为：[-180 ～ +180]                                              |
+> | latitude        | float | 纬度（十进制度格式），定义域为：[-90 ～ +90]                                                |
+> | crs             | int   | 坐标参照系年代（1954=北京坐标系；1980=西安坐标系；1984=WGS84坐标系；2000=CGCS2000坐标系，省略取默认值：2000）  |
+> 
+> 返回正反算结果元组（横坐标，纵坐标）。正算时返回米制纵坐标和横坐标的（含带号）通用值；反算时返回十进制经纬度。失败时抛出异常
+> 
+***Projection.lambert***
+> ```python
+> @classmethod
+> def lambert(
+>        cls,
+>        longitude: float = None,
+>        latitude: float = None,
+>        centralMeridian: float = 0,
+>        originLatitude: float = 0,
+>        parallel1: float = 20,
+>        parallel2: float = 50,
+>        x: float = None,
+>        y: float = None,
+>        crs: int = 2000
+> ) -> tuple
+> ```
+> 兰伯特双标准纬线等角割圆锥投影（Lambert Conformal Projection）正反算函数，优先识别地理经纬度坐标（longitude、latitude）执行正算，其次识别直角坐标（x、y）并执行反算  
+>
+> | Parameter       | Type  | Description                                                               |
+> |:----------------|:------|:--------------------------------------------------------------------------|
+> | longitude       | float | 十进制经度，定义域为：[-180 ～ +180]                                                  |
+> | latitude        | float | 十进制纬度，定义域为：[-90 ～ +90]                                                    |
+> | centralMeridian | float | 中央子午线经度（十进制度格式，默认值：0），定义域为：[-180 ～ +180]                                  |
+> | originLatitude  | float | 底点纬度（十进制度）；默认值：0，定义域为：[-90 ～ +90]                                         |
+> | parallel1       | float | 第一标准纬线（十进制度）；默认值：20，定义域为：[-90 ～ +90]                                      |
+> | parallel2       | float | 第二标准纬线（十进制度）；默认值：50，定义域为：[-90 ～ +90]                                      |
+> | x               | float | 米制横坐标                                                                     |
+> | y               | float | 米制纵坐标                                                                     |
+> | crs             | int   | 坐标参照系年代（1954=北京坐标系；1980=西安坐标系；1984=WGS84坐标系；2000=CGCS2000坐标系，省略取默认值：2000） |
+> 
+> 返回正反算结果元组（横坐标，纵坐标）。失败时抛出异常
+> 
+***Projection.webMercator***
+> ```python
+> @classmethod
+> def webMercator(
+>        cls,
+>        longitude: float = None,
+>        latitude: float = None,
+>        x: float = None,
+>        y: float = None
+> ) -> tuple
+> ```
+> 球体墨卡托投影（WGS84坐标系）正反算函数，优先识别地理经纬度坐标（longitude、latitude）执行正算，其次识别直角坐标（x、y）并执行反算    
+>
+> | Parameter       | Type  | Description              |
+> |:----------------|:------|:-------------------------|
+> | longitude       | float | 十进制经度，定义域为：[-180 ～ +180] |
+> | latitude        | float | 十进制纬度，定义域为：[-90 ～ +90]   |
+> | x               | float | 米制横坐标                    |
+> | y               | float | 米制纵坐标                    |
+> 
+> 返回正反算结果元组（横坐标，纵坐标）。失败时抛出异常
+>
+*****
+* ### class MapGrid(GiserBase)
+  国际标准比例尺图幅分幅网格与编号类
+
+  支持比例尺：1∶1000000、1∶500000、1∶250000、1∶200000（非国际标准）、1∶100000、1∶50000、1∶25000、1∶10000、1∶5000、1∶2000、1∶1000、1∶500
+
+  算法依据《中华人民共和国国家标准 GB/T 13989-2012 国家基本比例尺地形图分幅和编号》（2012-06-29发布 2012-10-01实施）
+*****
+
+***MapGrid.map***
+> ```python
+> @classmethod
+> def map(
+>        cls,
+>        longitude: float,
+>        latitude: float,
+>        scale: int = 1000000
+> ) -> dict
+> ```
+> 由十进制经纬度位置和比例尺分母计算所在比例尺的图幅新旧编号（南半球冠以S前缀，北半球省略N前缀）与边框范围。注：如果指定位置恰好位于图幅边缘，将返回右上角图幅结果信息  
+>
+> | Parameter | Type  | Description                     |
+> |:----------|:------|:--------------------------------|
+> | longitude | float | 十进制经度，定义域为：[-180 ～ +180]        |
+> | latitude  | float | 十进制纬度，定义域为：[-90 ～ +90]          | 
+> | scale     | int   | 比例尺分母，定义域为：[1000000（默认） ～ 500]  |
+> 
+> 返回所在比例尺的图幅新旧编号与边框范围构成的字典对象，运行失败时抛出异常  
+>   
+> 示例（位置：114°33′45″,39°22′30″）：
+>> ```python
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=1000000)  
+>> # {'new': 'J50', 'old': 'J-50', 'boundary': {'north': 40, 'south': 36, 'west': 114, 'east': 120}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=500000)  
+>> # {'new': 'J50B001001', 'old': 'J-50-A', 'boundary': {'north': 40.0, 'south': 38.0, 'west': 114.0, 'east': 117.0}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=250000)  
+>> # {'new': 'J50C001001', 'old': 'J-50-[1]', 'boundary': {'north': 40.0, 'south': 39.0, 'west': 114.0, 'east': 115.5}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=200000)   
+>> # {'new': 'J-50-(01)', 'old': 'J-50-(01)', 'boundary': {'north': 40.0, 'south': 39.333333333333336, 'west': 114.0, 'east': 115.0}}   
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=100000)  
+>> # {'new': 'J50D002002', 'old': 'J-50-14', 'boundary': {'north': 39.66666666666667, 'south': 39.333333333333336, 'west': 114.5, 'east': 115.0}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=50000)  
+>> # {'new': 'J50E004003', 'old': 'J-50-14-C', 'boundary': {'north': 39.5, 'south': 39.333333333333336, 'west': 114.5, 'east': 114.75}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=25000)  
+>> # {'new': 'J50F008005', 'old': 'J-50-14-C-3', 'boundary': {'north': 39.41666666666667, 'south': 39.333333333333336, 'west': 114.5, 'east': 114.625}}  
+>> giser.MapGrid.map(long010', 'itude=114.5625, latitude=39.375, scale=10000)
+>> # {'new': 'J50G015old': 'J-50-14-(50)', 'boundary': {'north': 39.416666666666664, 'south': 39.375, 'west': 114.5625, 'east': 114.625}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=5000)
+>> # {'new': 'J50H030019', 'old': 'J-50-14-(50)-c', 'boundary': {'north': 39.395833333333336, 'south': 39.375, 'west': 114.5625, 'east': 114.59375}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=2000)  
+>> # {'new': 'J50I090055', 'old': 'J-50-14-(50)-c-7', 'boundary': {'north': 39.38194444444444, 'south': 39.375, 'west': 114.5625, 'east': 114.57291666666667}}  
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=1000)
+>> # {'new': 'J50J01800109', 'old': 'J-50-14-(50)-c-7-3', 'boundary': {'north': 39.37847222222222, 'south': 39.375, 'west': 114.5625, 'east': 114.56770833333333}}   
+>> giser.MapGrid.map(longitude=114.5625, latitude=39.375, scale=500)
+>> # {'new': 'J50K03600217', 'old': 'J-50-14-(50)-c-7-3-3', 'boundary': {'north': 39.376736111111114, 'south': 39.375, 'west': 114.5625, 'east': 114.56510416666667}}
+>> ```
+
+***MapGrid.parse***
+> ```python
+> @classmethod
+> def parse(
+>        cls,
+>        code: str
+> ) -> dict
+> ```
+> 由国家基本比例尺地形图分幅（新旧）编号解析图幅边界范围和比例尺信息  
+>
+> | Parameter | Type  | Description            |
+> |:----------|:------|:-----------------------|
+> | code      | str   | 国家基本比例尺地形图分幅编号（忽略大小写）  |
+> 
+> 返回图幅边界范围、比例尺构成的字典对象，运行失败时抛出异常  
+> 
+> 示例：
+>> ```python
+>> giser.MapGrid.parse('J50' 或者 'J-50')    
+>> # {'scale': 1000000, 'boundary': {'north': 40, 'south': 36, 'west': 114, 'east': 120}}  
+>> giser.MapGrid.parse('J50B001001' 或者 'J-50-A')  
+>> # {'scale': 500000, 'boundary': {'north': 40.0, 'south': 38.0, 'west': 114.0, 'east': 117.0}}  
+>> giser.MapGrid.parse('J50C001001' 或者 'J-50-[1]')  
+>> # {'scale': 250000, 'boundary': {'north': 40.0, 'south': 39.0, 'west': 114.0, 'east': 115.5}}  
+>> giser.MapGrid.parse('J-50-(01)')   
+>> # {'scale': 200000, 'boundary': {'north': 40.0, 'south': 39.333333333333336, 'west': 114.0, 'east': 115.0}}    
+>> giser.MapGrid.parse('J50D002002' 或者 'J-50-14')   
+>> # {'scale': 100000, 'boundary': {'north': 39.66666666666667, 'south': 39.333333333333336, 'west': 114.5, 'east': 115.0}}  
+>> giser.MapGrid.parse('J50E004003' 或者 'J-50-14-C')
+>> # {'scale': 50000, 'boundary': {'north': 39.5, 'south': 39.333333333333336, 'west': 114.5, 'east': 114.75}}  
+>> giser.MapGrid.parse('J50F008005' 或者 'J-50-14-C-3')
+>> # {'scale': 25000, 'boundary': {'north': 39.41666666666667, 'south': 39.333333333333336, 'west': 114.5, 'east': 114.625}}   
+>> giser.MapGrid.parse('J50G015010' 或者 'J-50-14-(50)')
+>> # {'scale': 10000, 'boundary': {'north': 39.416666666666664, 'south': 39.375, 'west': 114.5625, 'east': 114.625}}  
+>> giser.MapGrid.parse('J50H030019' 或者 'J-50-14-(50)-c')
+>> # {'scale': 5000, 'boundary': {'north': 39.395833333333336, 'south': 39.375, 'west': 114.5625, 'east': 114.59375}}  
+>> giser.MapGrid.parse('J50I090055' 或者 'J-50-14-(50)-c-7')
+>> # {'scale': 2000, 'boundary': {'north': 39.38194444444444, 'south': 39.375, 'west': 114.5625, 'east': 114.57291666666667}}  
+>> giser.MapGrid.parse('J50J01800109' 或者 'J-50-14-(50)-c-7-3')
+>> # {'scale': 1000, 'boundary': {'north': 39.37847222222222, 'south': 39.375, 'west': 114.5625, 'east': 114.56770833333333}}  
+>> giser.MapGrid.parse('J50K03600217' 或者 'J-50-14-(50)-c-7-3-3')
+>> # {'scale': 500, 'boundary': {'north': 39.376736111111114, 'south': 39.375, 'west': 114.5625, 'east': 114.56510416666667}}
+>> ```
+
+***MapGrid.grid***
+> ```python
+> @staticmethod
+> def grid(
+>        north: float,
+>        south: float,
+>        west: float,
+>        east: float,
+>        zoom: int = 0,
+>        summary: bool = False
+> ) -> Iterator
+> ```
+> 依据视图窗口边框范围和缩放级获取国家基本比例尺地形图分幅经纬网格线（适宜于GIS图形视窗呈现），视窗边界参数将充当经纬网线段的裁剪框  
+>
+> | Parameter | Type  | Description                                                                                                                                                               |
+> |:----------|:------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+> | north     | float | 视窗北边界坐标（十进制纬度），定义域为：[-90 ～ +90]                                                                                                                                           |
+> | south     | float | 视窗南边界坐标（十进制纬度），定义域为：[-90 ～ +90]                                                                                                                                           |
+> | west      | float | 视窗西边界坐标（十进制经度），定义域为：[-180 ～ +180]                                                                                                                                         |
+> | east      | float | 视窗东边界坐标（十进制经度），定义域为：[-180 ～ +180]                                                                                                                                         |
+> | zoom      | int   | 缩放级，默认：0。注：缩放级对应的比例尺为：小于等于5级=1∶1000000；6级=1∶500000；7级=1∶250000；8级=1∶200000；9级=1∶100000；10级=1∶50000；11级=1∶25000；12级=1∶10000；13级=1∶5000；14级=1∶2000；15级=1∶1000；大于等于16级=1∶500 |
+> | summary   | bool  | 是否仅返回概要信息，默认：False                                                                                                                                                        |
+> 
+> 如果summary取默认值False，将返回线段类型标识与经纬网和比例尺分母联合构成的枚举型字典迭代器（Iterator）；如果summary设为True，将返回经纬线个数与经纬线步长和比例尺分母联合构成的枚举型字典迭代器（Iterator）。失败时抛出异常  
+>  
+> 获取经纬网信息示例：
+>> ```python
+>> [print(line) for line in giser.MapGrid.grid(40, 20, 80, 100, 0)]  
+>> # 运行结果：
+>> # {'remarks': 'longitude', 'type': 'LineString', 'coordinates': [[84.0, 20.0], [84.0, 40.0]], 'scale': 1000000}
+>> # ......
+>> # {'remarks': 'latitude', 'type': 'LineString', 'coordinates': [[80, 20.0], [100, 20.0]], 'scale': 1000000}
+>> # ......
+>> ```
+>
+*****
+* ### class Geometry(GiserBase)
+地学几何要素加载、编码、转换与序列化类，几何要素主体采用{Python-dict}类型存储并符合{GeoJson-geometry}格式要求。
+
+支持的几何文本格式如下：
+
+    ● GeoJSON             A format for encoding a variety of geographic data structures. RFC 7946 was published in August 2016 and is the new standard specification of the GeoJSON format.
+
+    ● WKT                 ISO 19162:2015(E) - Well-known Text (WKT) offers a compact machine- and human-readable representation of geometric objects.
+
+支持的几何类型如下：
+
+    ● Point               A geometry type that represents a single coordinate with x,y and possibly z,m values.
+    ● LineString          A geometry type composed of one or more line segments.
+    ● Polygon             A geometry type representing an area that is enclosed by a linear ring.
+    ● MultiPoint          A collection of one or more Points.
+    ● MultiLineString     A collection of one or more LineStrings.
+    ● MultiPolygon        A collection of one or more Polygons.
+    ● GeometryCollection  A collection of one or more geometries that may contain more than one type of geometry.
+*****
+>
+***Geometry.loads***
+> ```python
+> @classmethod
+> def loads(
+>         cls,
+>         coordinates: str | list | dict,
+>         code: int | None = -1
+> ) -> dict
+> ```
+> 加载符合【自由/简约文本、WKT、GeoJson】文本格式的几何坐标串或符合【GeoJson-geometry】格式的列表对象以及符合【GeoJson-geometry】格式的字典类型对象。
+>
+> 注1：针对线和面要素，将自动剔除相邻重复点，面要素的线环将自动封闭。
+> 
+> 注2：针对顶点坐标，要求至少是二维，且前两个维度应为浮点数值，为提升普适度，不对浮点型[x y]的定义域进行约束。
+> 
+> 注3：如果GeoJson以文本方式输入，其中的对象名必须采用双引号封闭。 
+>
+> | Parameter   | Type          | Description                                                                                                                     |
+> |:------------|:--------------|:--------------------------------------------------------------------------------------------------------------------------------|
+> | coordinates | str list dict | 几何坐标参数（不多于4维[x y z m]且要求前2维[x y]为浮点型）。其中，GeoJson格式需具有[方括号]标识，WKT格式需具有(圆括号)标识，自由格式仅识别【单点/单线/单面】几何类型                              |
+> | code        | int None      | 几何类型代码：-1=自识别（默认值）、0=单点/多点、1=单线/多线、2=单面或母子面/多面。注：此参数通常仅当输入的坐标为简约格式且期望格式为[多点/多线]时需指定为[0/1]，或者当输入的坐标为自由格式时也应指定为[0/1/2]，以便消除二义性问题  |
+> 
+> 返回符合【GeoJson-geometry】格式的字典类型对象，字典中的【type】成员为几何类型名称，【coordinates】成员为符合GeoJson格式的浮点型几何坐标数组。失败时抛出异常
+> 
+> - coordinates 参数格式说明  
+>  - 自由文本格式（仅支持2维）  
+>     - Point：code参数可为[0]或者[-1]  
+>              'x y'  
+>              'x,y'  
+>     - LineString：code参数可为[1]或者[-1]，若code指定为0，便视为多点[MultiPoint]  
+>              'x y,x y,...'  
+>              'x,y x,y ...'  
+>     - Polygon：code参数必须指定为[2]方可视为单面[Polygon]，若code指定为0，便视为多点[MultiPoint]，若code指定为1，便视为单线[LineString]  
+>              'x y,x y,x y,x y,...'  
+>              'x,y x,y x,y x,y ...'  
+>  - GeoJson  
+>    - Point：  
+>         [x,y,z,m]  # 简约格式  
+>         {"type":"Point","coordinates":[x,y,z,m]}  
+>    - MultiPoint：  
+>         [[x,y,z,m],[x,y,z,m],...]  # 简约格式  
+>         {"type":"MultiPoint","coordinates":[[x,y,z,m],[x,y,z,m],...]}  
+>    - LineString：  
+>         [[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...]  # 简约格式  
+>         {"type":"LineString","coordinates":[[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...]}  
+>    - MultiLineString：  
+>         [[[x,y,z,m],[x,y,z,m],[x,y,z,m]],[[x,y,z,m],[x,y,z,m],[x,y,z,m],...],...]  # 简约格式  
+>         {"type":"MultiLineString","coordinates":[[[x,y,z,m],[x,y,z,m],[x,y,z,m]],[[x,y,z,m],[x,y,z,m],[x,y,z,m],...],...]}  
+>    - Polygon（单面或母子面）：    
+>         [[[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...],...]  # 简约格式  
+>         {"type":"Polygon","coordinates":[[[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...],...]}  
+>    - MultiPolygon：  
+>         [[[[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...],...],...]  # 简约格式  
+>         {"type":"MultiPolygon","coordinates":[[[[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...],...],...]}  
+>    - GeometryCollection：  
+>         {'type': 'GeometryCollection', 'geometries': [{"type":"Point","coordinates":[x,y,z,m]}, {"type":"LineString","coordinates":[[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...]}, {"type":"Polygon","coordinates":[[[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],[x,y,z,m],...],...]}]}  
+>   - WKT（Well-Known Text 采用文本字符串存储）    
+>     - Point：  
+>         (x y z m)  # 简约格式  
+>         POINT(x y z m)  
+>     - MultiPoint：  
+>         (x y z m,x y z m,...)  # 简约格式  
+>         MULTIPOINT(x y z m,x y z m,...)  
+>     - LineString：  
+>         (x y z m,x y z m,...)  # 简约格式  
+>         LINESTRING(x y z m,x y z m,...)  
+>     - MultiLineString：  
+>         ((x y z m,x y z m,...),...)  # 简约格式  
+>         MULTILINESTRING((x y z m,x y z m,...),...)  
+>     - Polygon（单面或母子面）：  
+>         ((x y z m,x y z m,...),...)  # 简约格式  
+>         POLYGON((x y z m,x y z m,...),...)  
+>     - MultiPolygon：  
+>         (((x y z m,x y z m,...),...),...)  
+>         MULTIPOLYGON(((x y z m,x y z m,...),...),...)  
+>     - GEOMETRYCOLLECTION（不支持简约格式）：  
+>         GEOMETRYCOLLECTION(POINT(x y z m), LINESTRING(x y z m,x y z m,...), POLYGON((x y z m,x y z m,...),...))
+>
+> - 自由文本格式示例
+> ```python
+> # Point
+> >>> giser.Geometry.loads('120,38', -1 or 0)   
+> >>> giser.Geometry.loads('120 38', -1 or 0)   
+> # {'type': 'Point', 'coordinates': [120, 38]}
+> ``` 
+> ```python
+> # MultiPoint
+> >>> giser.Geometry.loads('120 38,122 39,99 28,120 38', 0)   
+> >>> giser.Geometry.loads('120,38 122,39 99,28 120,38', 0)  
+> # {'type': 'MultiPoint', 'coordinates': [[120, 38], [122, 39], [99, 28], [120, 38]]}  
+> ``` 
+> ```python
+> # LineString
+> >>> giser.Geometry.loads('120 38,122 39,99 28,120 38', -1 or 1)   
+> >>> giser.Geometry.loads('120,38 122,39 99,28 120,38', -1 or 1)  
+> # {'type': 'LineString', 'coordinates': [[120, 38], [122, 39], [99, 28], [120, 38]]}  
+> ```  
+> ```python
+> # Polygon
+> >>> giser.Geometry.loads('120 38,122 39,99 28,120 38', 2)    
+> >>> giser.Geometry.loads('120,38 122,39 99,28 120,38', 2)   
+> # {'type': 'Polygon', 'coordinates': [[[120, 38], [122, 39], [99, 28], [120, 38]]]}    
+> ```     
+>   
+> - GeoJSON 格式示例  
+> ```python
+> # Point
+> >>> giser.Geometry.loads([-115.81, 37.24],-1 or 0)     
+> >>> giser.Geometry.loads('[-115.81, 37.24]',-1 or 0)    
+> >>> giser.Geometry.loads('{"type": "Point", "coordinates": [-115.81, 37.24]}', -1 or 0)  
+> >>> giser.Geometry.loads({"type": "Point", "coordinates": [-115.81, 37.24]},-1 or 0)  
+> # {'type': 'Point', 'coordinates': [-115.81, 37.24]}   
+> ```
+> ```python
+> # MultiPoint / LineString  
+> >>> giser.Geometry.loads([[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]], 0)     
+> >>> giser.Geometry.loads('[[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]]', 0)   
+> >>> giser.Geometry.loads('{"type":"MultiPoint","coordinates":[[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]]}',-1 or 0)  
+> >>> giser.Geometry.loads({"type":"MultiPoint","coordinates":[[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]]},-1 or 0)  
+> # {'coordinates': [[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]], 'type': 'MultiPoint'}    
+> >>> giser.Geometry.loads([[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]], -1 or 1)    
+> >>> giser.Geometry.loads('[[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]]', -1 or 1)  
+> # {'coordinates': [[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]], 'type': 'LineString'}  
+> ```
+> ```python
+> # LineString   
+> >>> giser.Geometry.loads([[8.919, 44.4074], [8.923, 44.4075]], -1 or 1)  
+> >>> giser.Geometry.loads('[[8.919, 44.4074], [8.923, 44.4075]]', -1 or 1)  
+> >>> giser.Geometry.loads('{"type":"LineString","coordinates": [[8.919, 44.4074], [8.923, 44.4075]]}', -1 or 1)  
+> >>> giser.Geometry.loads({"type":"LineString","coordinates": [[8.919, 44.4074], [8.923, 44.4075]]}, -1 or 1)  
+> # {'coordinates': [[8.919, 44.4074], [8.923, 44.4075]], 'type': 'LineString'}    
+> ```     
+> ```python
+> # MultiLineString / Polygon    
+> >>> giser.Geometry.loads([[[3.75, 9.25], [-130.95, 1.52]], [[23.15, -34.25], [-1.35, -4.65], [3.45, 77.95]]], 1)   
+> >>> giser.Geometry.loads('[[[3.75, 9.25], [-130.95, 1.52]], [[23.15, -34.25], [-1.35, -4.65], [3.45, 77.95]]]', 1)   
+> >>> giser.Geometry.loads('{"type":"MultiLineString","coordinates":[[[3.75, 9.25], [-130.95, 1.52]], [[23.15, -34.25], [-1.35, -4.65], [3.45, 77.95]]]}', -1 or 1)  
+> >>> giser.Geometry.loads({"type":"MultiLineString","coordinates":[[[3.75, 9.25], [-130.95, 1.52]], [[23.15, -34.25], [-1.35, -4.65], [3.45, 77.95]]]}, -1 or 1)  
+> # {'type': 'MultiLineString', 'coordinates': [[[3.75, 9.25], [-130.95, 1.52]], [[23.15, -34.25], [-1.35, -4.65], [3.45, 77.95]]]}   
+> ```         
+> ```python
+> # no hole within polygon  
+> >>> giser.Geometry.loads([[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]], -1 or 2)  
+> >>> giser.Geometry.loads('[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]', -1 or 2)  
+> >>> giser.Geometry.loads('{"type":"Polygon","coordinates":[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]}', -1 or 2)  
+> >>> giser.Geometry.loads({"type":"Polygon","coordinates":[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]}, -1 or 2)  
+> # {'type': 'Polygon', 'coordinates': [[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]}  
+> ```          
+> ```python
+> # hole within polygon   
+> >>> giser.Geometry.loads('{"type":"Polygon","coordinates":[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]], [[-5.21, 23.51], [15.21, -10.81], [-20.51, 1.51], [-5.21, 23.51]]]}', -1 or 2)  
+> >>> giser.Geometry.loads({"type":"Polygon","coordinates":[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]], [[-5.21, 23.51], [15.21, -10.81], [-20.51, 1.51], [-5.21, 23.51]]]}, -1 or 2)  
+> >>> giser.Geometry.loads('[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]], [[-5.21, 23.51], [15.21, -10.81], [-20.51, 1.51], [-5.21, 23.51]]]', -1 or 2)  
+> >>> giser.Geometry.loads([[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]], [[-5.21, 23.51], [15.21, -10.81], [-20.51, 1.51], [-5.21, 23.51]]], -1 or 2)          
+> # {'type': 'Polygon', 'coordinates': [[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]], [[-5.21, 23.51], [15.21, -10.81], [-20.51, 1.51], [-5.21, 23.51]]]}  
+> ```        
+> ```python
+> # MultiPolygon   
+> >>> giser.Geometry.loads('{"type":"MultiPolygon","coordinates":[[[[3.78, 9.28], [-130.91, 1.52], [35.12, 72.234], [3.78, 9.28]]], [[[23.18, -34.29], [-1.31, -4.61], [3.41, 77.91], [23.18, -34.29]]]]}', -1 or 2)  
+> >>> giser.Geometry.loads({"type":"MultiPolygon","coordinates":[[[[3.78, 9.28], [-130.91, 1.52], [35.12, 72.234], [3.78, 9.28]]], [[[23.18, -34.29], [-1.31, -4.61], [3.41, 77.91], [23.18, -34.29]]]]}, -1 or 2)  
+> >>> giser.Geometry.loads('[[[[3.78, 9.28], [-130.91, 1.52], [35.12, 72.234], [3.78, 9.28]]], [[[23.18, -34.29], [-1.31, -4.61], [3.41, 77.91], [23.18, -34.29]]]]', -1 or 2)  
+> >>> giser.Geometry.loads([[[[3.78, 9.28], [-130.91, 1.52], [35.12, 72.234], [3.78, 9.28]]], [[[23.18, -34.29], [-1.31, -4.61], [3.41, 77.91], [23.18, -34.29]]]], -1 or 2)           
+> # {'type': 'MultiPolygon', 'coordinates': [[[[3.78, 9.28], [-130.91, 1.52], [35.12, 72.234], [3.78, 9.28]]], [[[23.18, -34.29], [-1.31, -4.61], [3.41, 77.91], [23.18, -34.29]]]]}  
+> ```        
+> ```python
+> # GeometryCollection（不支持简约格式且可忽略识别码）    
+> >>> giser.Geometry.loads({"type": "GeometryCollection","geometries":[{"type": "Point", "coordinates": [-115.81, 37.24]},{"type":"LineString","coordinates": [[8.919, 44.4074], [8.923, 44.4075]]},{"type":"Polygon","coordinates":[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]}]})  
+> >>> giser.Geometry.loads('{"type": "GeometryCollection","geometries":[{"type": "Point", "coordinates": [-115.81, 37.24]},{"type":"LineString","coordinates": [[8.919, 44.4074], [8.923, 44.4075]]},{"type":"Polygon","coordinates":[[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]}]}')      
+> # {'type': 'GeometryCollection', 'geometries': [{'type': 'Point', 'coordinates': [-115.81, 37.24]}, {'type': 'LineString', 'coordinates': [[8.919, 44.4074], [8.923, 44.4075]]}, {'type': 'Polygon', 'coordinates': [[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]}]}   
+> ```           
+>      
+> - WKT 格式示例  
+> ```python
+> # Point  
+> >>> giser.Geometry.loads('POINT(-115.81 37.24)', -1 or 0)   
+> >>> giser.Geometry.loads('(-115.81 37.24)', -1 or 0)   
+> # {'type': 'Point', 'coordinates': [-115.81, 37.24]}   
+> ``` 
+> ```python
+> # MultiPoint / LineString     
+> >>> giser.Geometry.loads('MULTIPOINT(-155.52 19.61,-156.22  20.74,-157.97  21.46)', -1 or 0)  
+> >>> giser.Geometry.loads('(-155.52 19.61,-156.22  20.74,-157.97  21.46)', 0)  
+> # {'type': 'MultiPoint', 'coordinates': [[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]]}   
+> >>> giser.Geometry.loads('(-155.52 19.61,-156.22  20.74,-157.97  21.46)', -1)   
+> # {'type': 'LineString', 'coordinates': [[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]]}  
+> ``` 
+> ```python
+> # LineString   
+> >>> giser.Geometry.loads('LINESTRING(8.919 44.4074,8.923 44.4075)', -1 or 1)    
+> >>> giser.Geometry.loads('(8.919 44.4074,8.923 44.4075)', -1 or 1)   
+> # {'type': 'LineString', 'coordinates': [[8.919, 44.4074], [8.923, 44.4075]]}   
+> ```  
+> ```python
+> # MultiLineString / Polygon  
+> >>> giser.Geometry.loads('MULTILINESTRING((3.75 9.25,-130.95 1.52),(23.15 -34.25,-1.35 -4.65,3.45 77.95))', -1 or 1)  
+> >>> giser.Geometry.loads('((3.75 9.25,-130.95 1.52),(23.15 -34.25,-1.35 -4.65,3.45 77.95))', 1)  
+> # {'type': 'MultiLineString', 'coordinates': [[[3.75, 9.25], [-130.95, 1.52]], [[23.15, -34.25], [-1.35, -4.65], [3.45, 77.95]]]}  
+> >>> giser.Geometry.loads('((3.75 9.25,-130.95 1.52),(23.15 -34.25,-1.35 -4.65,3.45 77.95))', -1)  
+> # {'type': 'Polygon', 'coordinates': [[[3.75, 9.25], [-130.95, 1.52]], [[23.15, -34.25], [-1.35, -4.65], [3.45, 77.95]]]}  
+> ```
+> ```python
+> # no hole within polygon  
+> >>> giser.Geometry.loads('POLYGON((2.38 57.322,-120.43 19.15,23.194 -20.28,2.38 57.322))', -1 or 2)  
+> >>> giser.Geometry.loads('((2.38 57.322,-120.43 19.15,23.194 -20.28,2.38 57.322))', -1 or 2)  
+> # {'type': 'Polygon', 'coordinates': [[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38, 57.322]]]}  
+> ```      
+> ```python
+> # hole within polygon   
+> >>> giser.Geometry.loads('POLYGON((2.38 57.322,-120.43 19.15,23.194 -20.28,2.38 57.322),(-5.21 23.51,15.21 -10.81,-20.51 1.51,-5.21 23.51))', -1 or 2)  
+> >>> giser.Geometry.loads('((2.38 57.322,-120.43 19.15,23.194 -20.28,2.38 57.322),(-5.21 23.51,15.21 -10.81,-20.51 1.51,-5.21 23.51))', -1 or 2)  
+> # {'type': 'Polygon', 'coordinates': [[[2.38, 57.322], [-120.43, 19.15], [23.194, -20.28], [2.38], [57.322]], [[-5.21, 23.51], [15.21, -10.81], [-20.51, 1.51], [-5.21, 23.51]]]}  
+> ```       
+> ```python
+> # MultiPolygon  
+> >>> giser.Geometry.loads('MULTIPOLYGON(((3.78 9.28,-130.91 1.52,35.12 72.234,3.78 9.28)),((23.18 -34.29,-1.31 -4.61,3.41 77.91,23.18 -34.29)))', -1 or 2)  
+> >>> giser.Geometry.loads('(((3.78 9.28,-130.91 1.52,35.12 72.234,3.78 9.28)),((23.18 -34.29,-1.31 -4.61,3.41 77.91,23.18 -34.29)))', -1 or 2)  
+> # {'type': 'MultiPolygon', 'coordinates': [[[[3.78, 9.28], [-130.91, 1.52], [35.12, 72.234], [3.78, 9.28]]], [[[23.18, -34.29], [-1.31, -4.61], [3.41, 77.91], [23.18, -34.29]]]]}  
+> ```  
+> ```python
+> # GeometryCollection（不支持简约格式且应将识别码取默认值[-1]）    
+> >>> giser.Geometry.loads('GEOMETRYCOLLECTION (POINT (-115.81 37.24),LINESTRING (8.919 44.4074,8.923 44.4075),POLYGON ((2.38 57.322,-120.43 19.15,23.194 -20.28,2.38 57.322)))',-1)  
+> # {'type': 'GeometryCollection', 'geometries': [{'type': 'Point', 'coordinates': [-115.81, 37.24]}, {'type': 'LineString', 'coordinates': [[8.919, 44.4074], [8.923, 44.4075]]}]} 
+> ```
+>
+***Geometry.dumps***
+> ```python
+> @classmethod
+> def dumps(
+>        cls,
+>        geometry: dict | list | str
+> ) -> str  
+> ```
+> 将【GeoJson-geometry】几何字典对象序列化转储为GeoJson格式的字符串  
+>
+> | Parameter | Type          | Description|
+> |:----------|:--------------|:-----------|
+> | geometry  | dict list str | 几何字典参数中的【type】成员为几何类型名称，【coordinates】成员为符合GeoJson格式的几何坐标数组|
+> 
+> 返回符合指定格式要求的字符串。失败时抛出异常 
+> 
+***Geometry.toWkt***
+> ```python
+> @classmethod
+> def toWkt(
+>         cls,
+>         geometry: dict | list | str
+> ) -> str 
+> ```
+> 将【GeoJson-geometry】几何字典对象转换为OGC-WKT(Well-known Text）格式字符串  
+>  
+> | Parameter | Type                   | Description                                                 |
+> |:----------|:-----------------------|:------------------------------------------------------------|
+> | geometry  | dict list str          | 几何字典参数中的【type】成员为几何类型名称，【coordinates】成员为符合GeoJson格式的几何坐标数组  |
+> 
+> 返回WKT格式字符串。失败时抛出异常 
+> 
+***Geometry.swapXY***
+> ```python
+> @classmethod
+> def swapXY(
+>         cls,
+>         geometry: dict | list | str
+> ) -> dict  
+> ```
+> 交换指定几何体的顶点坐标[x,y,z,m]中的[x,y]顺序（[x,y,z,m] to [y,x,z,m]）   
+>  
+> | Parameter | Type                   | Description                                                 |
+> |:----------|:-----------------------|:------------------------------------------------------------|
+> | geometry  | dict list str          | 几何字典参数中的【type】成员为几何类型名称，【coordinates】成员为符合GeoJson格式的几何坐标数组  |
+> 
+> 返回【GeoJson-geometry】格式的字典类型对象。失败时抛出异常
+> 
+***Geometry.getXY***
+> ```python
+> @classmethod
+> def getXY(
+>         cls,
+>         geometry: dict | list | str,
+>         endpoint: bool = True  
+> ) -> list
+> ```
+> 提取指定几何体的顶点（或端点）坐标并返回可哈希的坐标元组列表
+>
+> | Parameter | Type          | Description                                                                                                  |
+> |:----------|:--------------|:-------------------------------------------------------------------------------------------------------------|
+> | geometry  | dict list str | GeoJSON几何字符串或字典对象以及列表对象，几何字典参数中的【type】成员为几何类型名称，【coordinates】成员为符合GeoJson格式的几何坐标数组  |
+> | endpoint | bool          | 是否仅提取端点？省略时取默认值：True。注：此选项仅针对线要素和面要素有效 |
+> 
+> 返回坐标元组列表。失败时抛出异常
+
+## Contributing  
+Contributions are always welcome!  
+
+## Authors  
+(C) 2019-2025 Geosite Development Team of CGS (R)
+
+## Support  
+For support, log in http://www.xacgs.cn or join our Community Discussion Channel.  
