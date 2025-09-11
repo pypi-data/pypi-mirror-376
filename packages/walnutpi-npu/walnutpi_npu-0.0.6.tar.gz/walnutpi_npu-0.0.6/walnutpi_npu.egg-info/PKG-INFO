@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: walnutpi_npu
+Version: 0.0.6
+Summary: A module to control npu on T-527
+Author-email: sc-bin <3335447573@qq.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/sc-bin/
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# walnutpi.npu
+walnutpi上的npu库
