@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/gkmaths.egg-info/PKG-INFO
+src/gkmaths.egg-info/SOURCES.txt
+src/gkmaths.egg-info/dependency_links.txt
+src/gkmaths.egg-info/top_level.txt
+src/mymath/__init__.py
+src/mymath/operations.py
