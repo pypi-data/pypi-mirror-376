@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: tacomaker
+Version: 0.1.0
+Summary: A Python package for creating and editing TACO datasets
+Home-page: https://github.com/tacofoundation/tacomaker/
+Author: Cesar Aybar
+Author-email: cesar.aybar@uv.es
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: polars (>=1.25.2)
+Requires-Dist: pyarrow (>=18.1.0)
+Requires-Dist: pydantic (>=2.10.3)
+Requires-Dist: tacotiff (>=0.0.5)
+Project-URL: Documentation, https://tacofoundation.github.io/tacomaker/
+Project-URL: Repository, https://github.com/tacofoundation/tacomaker/
+Description-Content-Type: text/markdown
+
+# tacomaker
+A Python package for creating and editing TACO datasets
+
