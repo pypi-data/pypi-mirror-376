@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+geostatslib/geostatslib.egg-info/PKG-INFO
+geostatslib/geostatslib.egg-info/SOURCES.txt
+geostatslib/geostatslib.egg-info/dependency_links.txt
+geostatslib/geostatslib.egg-info/requires.txt
+geostatslib/geostatslib.egg-info/top_level.txt

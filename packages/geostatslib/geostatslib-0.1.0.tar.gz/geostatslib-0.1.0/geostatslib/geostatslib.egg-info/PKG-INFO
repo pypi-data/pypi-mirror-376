@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: geostatslib
+Version: 0.1.0
+Summary: A lightweight geostatistics library
+Home-page: https://github.com/han1399013493/Geostatslib
+Author: MZ Han
+Author-email: MZ Han <hanmz1106@gmail.com>
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/han1399013493/Geostatslib
+Project-URL: Documentation, https://github.com/han1399013493/Geostatslib/blob/main/README.md
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+
+# geostatslib
+## 一个地质统计学相关工具库

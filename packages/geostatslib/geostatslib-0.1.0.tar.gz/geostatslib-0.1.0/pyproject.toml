@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+python_requires = ">=3.6"
+
+[project]
+name = "geostatslib"                  # 包名
+version = "0.1.0"                     # 版本号
+description = "A lightweight geostatistics library"
+readme = "README.md"                  # README 文件
+license = {text = "Apache-2.0"}              # 开源协议
+authors = [
+  {name = "MZ Han", email = "hanmz1106@gmail.com"}
+]
+dependencies = [
+  "pandas",
+  "numpy"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/han1399013493/Geostatslib"
+Documentation = "https://github.com/han1399013493/Geostatslib/blob/main/README.md"
+
+[tool.setuptools.packages.find]
+where = ["geostatslib"]
+
