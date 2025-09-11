@@ -1,0 +1,12 @@
+venvmngr/__init__.py,sha256=Dqs8c3zgbPJ5XZfRlIt385uRgKLbuveFlp5fCF9UjK4,1178
+venvmngr/__main__.py,sha256=_uXaURNCBXC17_b7PKdT2l9-_hOuieXzn2SIq9gB2gI,3256
+venvmngr/_base.py,sha256=yceqOttQR7LGFUvH-9tLICbeauR3ZCnhxkfsChCcNXI,8577
+venvmngr/_pypi.py,sha256=IoK3r5qpfKeFsafZ4XJgpWEIBa_-66PoMZhXS6b6ri4,7369
+venvmngr/_uv.py,sha256=rjLNeD582157jOuMrpoSq5eTYqRzJQovdcALu3DiBRo,9532
+venvmngr/_venv.py,sha256=PpwRM9AHF25GpvdlekddEftKlA-fjtJLzvdrgYMXIy4,10307
+venvmngr/utils.py,sha256=gtiDSFmMfS1rp2Ao2y_S6WPLlIRGKcSDzUOHJr04X4w,3735
+venvmngr-0.1.15.dist-info/METADATA,sha256=PpAbmYJwomO-wM4Eq1Bs5KJVSbWoaWRHULK-du6htqk,10239
+venvmngr-0.1.15.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+venvmngr-0.1.15.dist-info/entry_points.txt,sha256=GZEYaTeQ9QpLNixL_rDTds81JmUnJ0cuBC2ZvFMGnRQ,52
+venvmngr-0.1.15.dist-info/licenses/LICENCE,sha256=ICjNTkx3h0UOyOVXj-ficOCyyjV4PkyGdvN944oZ4PA,1071
+venvmngr-0.1.15.dist-info/RECORD,,
