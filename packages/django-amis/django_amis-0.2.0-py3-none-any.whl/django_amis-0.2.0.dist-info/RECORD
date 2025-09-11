@@ -1,0 +1,15 @@
+amis_rest/__init__.py,sha256=ewAGdaqKBav2j8zA__ooO2NE0V7HPteT-MNj6woTCO0,52
+amis_rest/admin.py,sha256=suMo4x8I3JBxAFBVIdE-5qnqZ6JAZV0FESABHOSc-vg,63
+amis_rest/apps.py,sha256=9EL1sgTW3ZSIDODT8ef5iJFvVuziPGRCq0TDi02orag,149
+amis_rest/exceptions.py,sha256=3bW7a0qDn0xo76brgDS1z2pTnswwJFdLPZb3_9_Zk6k,404
+amis_rest/models.py,sha256=Vjc0p2XbAPgE6HyTF6vll98A4eDhA5AvaQqsc4kQ9AQ,57
+amis_rest/pagination.py,sha256=rHlsXS6pFpdKRuepu1Pk5UIuORdgbxc6bmg5o4nXYnk,368
+amis_rest/responses.py,sha256=Br_Qcc5PJQvi1L2BoDR9RNS6U_QYaV5YDFWmScvBuYE,308
+amis_rest/tests.py,sha256=mrbGGRNg5jwbTJtWWa7zSKdDyeB4vmgZCRc2nk6VY-g,60
+amis_rest/utils.py,sha256=ri8iynNV30twUUtHi4yFV-EroKgMTPAKr0rOZKA18cQ,860
+amis_rest/views.py,sha256=SPnRVPTUOfbWMkJIGQIIFQoIWbPFCr-rPcEfWQi8IJI,17512
+django_amis-0.2.0.dist-info/licenses/LICENSE,sha256=z_mHPzvHGSeUaSlqh2spS0SXPZuHoTYN9NxwYnwgbA8,1066
+django_amis-0.2.0.dist-info/METADATA,sha256=olUPSK5yyU07rKHzkbOKjl7auA34ZhtJLJzYBn0cjAw,2539
+django_amis-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_amis-0.2.0.dist-info/top_level.txt,sha256=bI4sToClGa_VcZd82nxNLg5__Oq2mqpGyT_E0PFqqz4,10
+django_amis-0.2.0.dist-info/RECORD,,
