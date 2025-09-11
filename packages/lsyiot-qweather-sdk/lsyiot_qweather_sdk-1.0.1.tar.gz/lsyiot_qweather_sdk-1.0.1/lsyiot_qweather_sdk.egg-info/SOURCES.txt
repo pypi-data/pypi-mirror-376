@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+lsyiot_qweather_sdk/__init__.py
+lsyiot_qweather_sdk/api.py
+lsyiot_qweather_sdk/exceptions.py
+lsyiot_qweather_sdk.egg-info/PKG-INFO
+lsyiot_qweather_sdk.egg-info/SOURCES.txt
+lsyiot_qweather_sdk.egg-info/dependency_links.txt
+lsyiot_qweather_sdk.egg-info/requires.txt
+lsyiot_qweather_sdk.egg-info/top_level.txt
