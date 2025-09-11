@@ -1,0 +1,9 @@
+google_nano_banana_mcp_server-1.0.0.dist-info/licenses/LICENSE,sha256=mFkiplBf1huQ8zslZsRKrX1ARC_mFjAhEYIHxiuHBg8,1100
+nano_banana_mcp/__init__.py,sha256=Y8QQPVS1ZAYQpWdIkQTn56NvuCFdlglqF4Xx3LqJ0q0,95
+nano_banana_mcp/__main__.py,sha256=Jk9lN1w98qFne_HocL_PCq3EVEz_XDlEDz9pAB-g2VE,235
+nano_banana_mcp/server.py,sha256=rN2vmS5PBhTXRIqOs_t9Bov2KJdQnk_GJvRJCzu7ygo,12858
+google_nano_banana_mcp_server-1.0.0.dist-info/METADATA,sha256=DABQKXUJJUMLORr1aVCZ2Kgm8JrsOqLegKRdxflCFuU,6332
+google_nano_banana_mcp_server-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+google_nano_banana_mcp_server-1.0.0.dist-info/entry_points.txt,sha256=JJBwOQ5RfptPFuSdSMtdE7xvZZZOjQWufjwJJznLnFI,66
+google_nano_banana_mcp_server-1.0.0.dist-info/top_level.txt,sha256=8FyvoysqbGOnVwH2dwRKHuG5f5uwR3ha6YRz-s9xdKM,16
+google_nano_banana_mcp_server-1.0.0.dist-info/RECORD,,
