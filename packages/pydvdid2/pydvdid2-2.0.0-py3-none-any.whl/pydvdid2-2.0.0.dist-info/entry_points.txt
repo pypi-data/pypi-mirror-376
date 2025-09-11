@@ -1,0 +1,2 @@
+[console_scripts]
+pydvdid2 = pydvdid2:main

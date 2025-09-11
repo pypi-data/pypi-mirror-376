@@ -1,0 +1,14 @@
+pydvdid2/__init__.py,sha256=CAjn1WFhmj2RwV8w_2t_4pMB2kyy8NaOGHwp2mlXqcY,555
+pydvdid2/crc64calculator.py,sha256=Ot7QG2x14ZzWWIflrDLWhl3WwmSGaBCI3_zLpA5xW3o,1514
+pydvdid2/crc64result.py,sha256=0b9vmRX7zkwip_6XzGnXh-umH733OVxMdJ90PQGwZRM,1014
+pydvdid2/exceptions.py,sha256=H2kZBKCwHQIL19Jvr7rnf2B50UCAKKzbCHPjlooVJac,1835
+pydvdid2/functions.py,sha256=Zx9TcJpPqLGUy4bIdBEt2YyDTD1oj9wI6mU62fD-hnk,5113
+pydvdid2/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pydvdid2/test_crcresult64.py,sha256=k9MW4o3nxjkdrvT-KscmsS9hjew44-G2i8vUmKxJAZA,916
+pydvdid2/test_integration.py,sha256=RpY3is6d0dCixM4cFbCoj3rZuG69NspP9t0qWk9Mjcs,426
+pydvdid2-2.0.0.dist-info/licenses/LICENSE,sha256=y16Ofl9KOYjhBjwULGDcLfdWBfTEZRXnduOspt-XbhQ,11325
+pydvdid2-2.0.0.dist-info/METADATA,sha256=GBuAKGnaK-UFVXENxJcV1Y0swJ-KgUmGLujOAKAtwF8,5525
+pydvdid2-2.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pydvdid2-2.0.0.dist-info/entry_points.txt,sha256=e4ECvC-53Swk0VvqWVOrjj5htiYu2rwkQbDOA-80CdY,43
+pydvdid2-2.0.0.dist-info/top_level.txt,sha256=4RnEyt704MZ_yeyjfvftNFsNK99rUO9B3JrcIIu2o9s,9
+pydvdid2-2.0.0.dist-info/RECORD,,
