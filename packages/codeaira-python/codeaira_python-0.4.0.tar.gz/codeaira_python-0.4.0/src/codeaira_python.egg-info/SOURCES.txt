@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/codeaira/__init__.py
+src/codeaira/client.py
+src/codeaira/config.py
+src/codeaira/exceptions.py
+src/codeaira/models.py
+src/codeaira/utils.py
+src/codeaira_python.egg-info/PKG-INFO
+src/codeaira_python.egg-info/SOURCES.txt
+src/codeaira_python.egg-info/dependency_links.txt
+src/codeaira_python.egg-info/requires.txt
+src/codeaira_python.egg-info/top_level.txt
+tests/test_codeaira.py
