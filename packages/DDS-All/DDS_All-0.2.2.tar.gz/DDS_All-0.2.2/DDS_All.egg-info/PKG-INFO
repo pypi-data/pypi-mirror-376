@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: DDS-All
+Version: 0.2.2
+Summary: 为解决不同版本Python的兼容性问题，提供多版本的预编译二进制文件
+Home-page: UNKNOWN
+Author: JackyJia
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.9, <=3.13
+
+UNKNOWN
+
