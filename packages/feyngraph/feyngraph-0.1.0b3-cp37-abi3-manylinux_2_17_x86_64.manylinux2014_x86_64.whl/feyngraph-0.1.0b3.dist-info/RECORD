@@ -1,0 +1,17 @@
+feyngraph-0.1.0b3.data/data/share/FeynGraph/feyngraph.m,sha256=Bl4rw8UQQmd0TA2unq7SQVP8MVFQfiuDpgraTIb763g,1698
+feyngraph-0.1.0b3.data/data/share/FeynGraph/feyngraph.tikzdefs,sha256=GCoKWmxpXsYm9J6O9GuFK03AP7iylBQ-A-TgjLRijRU,206
+feyngraph-0.1.0b3.data/data/share/FeynGraph/feyngraph.tikzstyles,sha256=w6U8kfSIHa2yxQ0N3VmF5UCQSw9Ov1_5D_56X_dyooQ,626
+feyngraph-0.1.0b3.data/data/share/FeynGraph/templates/empty.jinja,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+feyngraph-0.1.0b3.data/data/share/FeynGraph/templates/json.jinja,sha256=B-CTbDE-zjCYUg7ndFI_Ac9pJHxzah1-yIhaeN0tNFE,1123
+feyngraph-0.1.0b3.data/scripts/feyngraph,sha256=KnleIHLO5_eFtFZUJXF7X-D7p_DI_tyYcCi2xhvU0CA,10532
+feyngraph-0.1.0b3.dist-info/METADATA,sha256=CxQtPgUjHfEK0WfzhE1aUPa4_d5Bv781EEQG3_6H5F8,3153
+feyngraph-0.1.0b3.dist-info/WHEEL,sha256=1TqJ9S7avBCZsFw1lPheZ_7VZ43EAEnL648URTydeLM,127
+feyngraph-0.1.0b3.dist-info/licenses/LICENSE,sha256=Pz2eACSxkhsGfW9_iN60pgy-enjnbGTj8df8O3ebnQQ,16726
+feyngraph/__init__.py,sha256=CnRxP0GBx_LJjUV8QC76KiMxIvzNEAwGTkQfUdC8j9M,61
+feyngraph/feyngraph.abi3.so,sha256=rnzicCUrRlf0C0fw9vKyajmA6Cp7Z0QG0up-CE8NXGw,1797008
+feyngraph/feyngraph.pyi,sha256=uk3RDQbeveC-Qq6GvmtkGwrcTnmJRkIqC0pwy5fBoMA,15677
+feyngraph/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+feyngraph/topology.py,sha256=-tItJxN3f46Y9FDdPfTmtIXMA-fBxY4HKAHFztlWKoQ,103
+feyngraph/topology.pyi,sha256=0pAXUpUB_Sw035pDuyYXkj17YdUhSxjAR34zPRCkcmQ,6421
+feyngraph/wolfram.py,sha256=UDaAn659pbo_eTx4ffIwpZ1aVAqoq_cPzAZGWulPUE0,474
+feyngraph-0.1.0b3.dist-info/RECORD,,
