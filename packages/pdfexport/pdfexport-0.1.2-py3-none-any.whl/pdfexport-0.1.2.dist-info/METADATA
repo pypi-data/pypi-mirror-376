@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: pdfexport
+Version: 0.1.2
+Summary: Add your description here
+Requires-Python: >=3.12
+Requires-Dist: fastmcp>=0.2.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pypdf>=4.0.0
+Requires-Dist: pywin32>=306; sys_platform == 'win32'
+Description-Content-Type: text/markdown
+
+# 직접실행 테스트
+uv run pdf-export
+uv run mcp dev dev_server.py
+
+# 배포
+pyproject.toml 버전 증가
+uv build
+uv publish dist\pdfexport-0.1.0-py3-none-any.whl
+> 인증
+  username : __token__
+  password(token) : pypi-AgEIcHlwaS5vcmcCJGMxOWJjN2E2LTExY2QtNGEwOC04YTVlLTQ1ZmMxYWZiMWMxZQACKlszLCJhOWE4YWNlMC0yYzY5LTQyMWQtOGE1Zi1lMTgzNWI3MTMyNjciXQAABiD052sDzMi7eSfnMgFt2BWyivD8CyPM73GZnbYQCOtTzQ
+
+# 배포버전 사용
+pip install pdfexport
+uvx --from pdfexport pdf-export
+uvx --from pdfexport pdf-export-server
+
