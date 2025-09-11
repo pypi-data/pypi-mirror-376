@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: chappyner
+Version: 0.0.1
+Summary: Chappyner
+Author-email: Fabio Pitari <f.pitari@cineca.it>, Lucia Rodriguez Muñoz <l.rodriguezmunoz@cineca.it>, Antonio Memmolo <a.memmolo@cineca.it>
+Maintainer-email: Fabio Pitari <f.pitari@cineca.it>, Lucia Rodriguez Muñoz <l.rodriguezmunoz@cineca.it>, Antonio Memmolo <a.memmolo@cineca.it>
+Requires-Dist: PyYAML
