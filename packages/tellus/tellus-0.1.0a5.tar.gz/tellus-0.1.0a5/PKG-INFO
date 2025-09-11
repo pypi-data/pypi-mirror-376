@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: tellus
+Version: 0.1.0a5
+Author-email: Paul Gierz <pgierz@awi.de>
+Requires-Python: >=3.11
+Provides-Extra: api
+Requires-Dist: fastapi>=0.104.0; extra == 'api'
+Requires-Dist: pydantic>=2.5.0; extra == 'api'
+Requires-Dist: uvicorn[standard]>=0.24.0; extra == 'api'
