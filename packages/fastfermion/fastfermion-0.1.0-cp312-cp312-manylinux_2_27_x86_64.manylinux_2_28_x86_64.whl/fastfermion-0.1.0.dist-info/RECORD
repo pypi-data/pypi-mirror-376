@@ -1,0 +1,11 @@
+fastfermion/__init__.py,sha256=yd_XGNtBa0cJd5mdGYi2NImI74Kh3t0tjLc4JOK5u0Y,5574
+fastfermion/_cirq.py,sha256=bBdBBBJdraY9TC2Mm4-yL8xk7CJY60IiXt6IqSDmBOY,2608
+fastfermion/_of.py,sha256=Q-gAEyT0WoNROjPeTTeXtYx1aafJc-NSOi1Sek80rgU,2319
+fastfermion/_parse.py,sha256=85RWHuxOFr-hSK_Ob60vj6tEiT-9StrQuTHiRvuQRtM,4636
+fastfermion/ffcore.cpython-312-x86_64-linux-gnu.so,sha256=ZmksW-AVenun3CEypmTiBIWwLvP-BZpP7XcRTYOSs_s,1550048
+fastfermion-0.1.0.dist-info/METADATA,sha256=7f5DjlvRnYEGXzuJl0WymnQeDe2kh5ac_sDU_GQHutM,1352
+fastfermion-0.1.0.dist-info/WHEEL,sha256=1crAxrAH5rUbvWUY1UR0ly3o7KnT1jo0_98V8RY5-FM,152
+fastfermion-0.1.0.dist-info/top_level.txt,sha256=kjwmZYUyrzP_krvKvbRdNT8yURAOTCLdAVCkMPL4vNI,12
+fastfermion-0.1.0.dist-info/RECORD,,
+fastfermion-0.1.0.dist-info/licenses/LICENSE,sha256=WyiuLpIEgUqJp-J_P6pXCl1ak9xYR5EdNBuI1nDVGJc,338
+fastfermion-0.1.0.dist-info/licenses/LICENSE-THIRDPARTY,sha256=BfQ3Z8MVbkRG3NjIS_0xgBmXJKaR3lzkrrv0-hzPDCM,3237
