@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: tacocompression
+Version: 0.9.0
+Summary: Implementation of TACO: A Lightweight Tree-Based Approximate Compression Method for Time Series
+Author-email: André Bauer <abauer7@illinoistech.edu>, Michael Stenger <michael.stenger@uni-wuerzburg.de>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/ms2017/taco-compression
+Project-URL: Issues, https://github.com/ms2017/taco-compression/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# taco-compression
+This is the official implementation of the TACO compression algorithm for time series [1]. 
+
+# Usage
+There are two usage modes, one as a command line tool operating on files, the other as callables from within python.
+
+## Command Line
+```shell
+python -m taco-compress "time_series"
+```
+
+```shell
+python -m taco-compress "data/time_series_1.csv"
+```
+
+## As a Callable
+```python
+import taco-compress
+
+taco-compress.
+```
+
+[1] Bauer, André. TACO: A Lightweight Tree-Based Approximate Compression Method for Time Series. In: Proceedings of the 
+    14th International Conference on Data Science, Technology and Applications (DATA 2025), pages 182-190. 2025.
