@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+my_awesome_package_jhs.egg-info/PKG-INFO
+my_awesome_package_jhs.egg-info/SOURCES.txt
+my_awesome_package_jhs.egg-info/dependency_links.txt
+my_awesome_package_jhs.egg-info/requires.txt
+my_awesome_package_jhs.egg-info/top_level.txt
+test_project_name/__init__.py
+test_project_name/simple_math.py
