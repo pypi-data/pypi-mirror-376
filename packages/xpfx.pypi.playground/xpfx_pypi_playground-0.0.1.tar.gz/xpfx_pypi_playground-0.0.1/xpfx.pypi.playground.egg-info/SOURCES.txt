@@ -1,0 +1,7 @@
+README.md
+etraxx.py
+pyproject.toml
+xpfx.pypi.playground.egg-info/PKG-INFO
+xpfx.pypi.playground.egg-info/SOURCES.txt
+xpfx.pypi.playground.egg-info/dependency_links.txt
+xpfx.pypi.playground.egg-info/top_level.txt
