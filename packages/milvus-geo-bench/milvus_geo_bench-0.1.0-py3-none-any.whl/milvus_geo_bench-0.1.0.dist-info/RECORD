@@ -1,0 +1,12 @@
+milvus_geo_bench/__init__.py,sha256=n13wnKFrkdQv29zRlwSYuWQMTReJdOVcObJCwf7GjlM,318
+milvus_geo_bench/benchmark.py,sha256=gB4yCyppgJBO8idg--tdH2gA_OBCsxixuAwjJdHCdmc,14392
+milvus_geo_bench/cli.py,sha256=9ulOpI0DMjjnQK5K2byWTpgYze9o2uGnJTsBONUPYaQ,14444
+milvus_geo_bench/dataset.py,sha256=LJr45SeW1-FZVzEB1AVvmZP5V-NkG2biCG_SnotM2_c,29392
+milvus_geo_bench/evaluator.py,sha256=8i0oMbGdHfc1-uM88J_4AMPa1Rgp15v9-UTRoZ332J8,20566
+milvus_geo_bench/grid_manager.py,sha256=Yz0gTPhk2b_e747siFnJ0Y5HPIIRY8P9n4fsfyoqVn0,7202
+milvus_geo_bench/milvus_client.py,sha256=naH9Yx-cSZSJ2PXQK5KToZWL3CnMPLH3dqTKLADh9cw,14602
+milvus_geo_bench/utils.py,sha256=e7G-6aU6yF2QJePRZVdE_MWeFgKOpL-y8k02fKHprxA,6503
+milvus_geo_bench-0.1.0.dist-info/METADATA,sha256=d8mxbFmxw1IMgagGXpQFrqRnUkiTuuqEgFdqLcvlXcc,10282
+milvus_geo_bench-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+milvus_geo_bench-0.1.0.dist-info/entry_points.txt,sha256=3L1UHNw4Se-h3nccJhA-JXHCArL8mWNd-BDWOeTvnI4,63
+milvus_geo_bench-0.1.0.dist-info/RECORD,,

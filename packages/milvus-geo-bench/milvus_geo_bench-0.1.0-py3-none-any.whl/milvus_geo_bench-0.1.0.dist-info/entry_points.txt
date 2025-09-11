@@ -1,0 +1,2 @@
+[console_scripts]
+milvus-geo-bench = milvus_geo_bench.cli:main
