@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: sphinx-pcap
+Version: 0.2.1
+Summary: Sphinx support for displaying pcap files
+Home-page: https://github.com/jinjamator/sphinx_pcap
+Author: Wilhelm Putz, CANCOM Austria AG
+Author-email: jinjamator@aci.guru
+License: UNKNOWN
+Keywords: sphinx extension pcap tshark tcpdump
+Platform: any
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Framework :: Sphinx :: Extension
+Classifier: Natural Language :: English
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: docutils
+Requires-Dist: sphinx
+
+=================
+Sphinx PCAP
+=================
+
+A Sphinx plugin that allows the inclusion of pcap files.
+
+Prerequisites
+=============
+
+Working installation of thshark (wireshark cli)
+
+Installation
+============
+
+The Sphinx CSV filter plugin is available as a pip package.
+
+To install, run::
+
+.. code-block:: bash
+
+    $ pip install sphinx_pcap
+
+To update, run::
+
+.. code-block:: bash
+
+    $ pip install -U sphinx_pcap
+
+Set Up
+======
+
+To include the extension, add this line to ``config.py`` in
+your Sphinx project::
+
+    extensions = ['sphinx_pcap']
+
+If you're using other extensions, edit the existing list, or add this::
+
+    extensions.append('sphinx_pcap')
+
+Use
+===
+
+This plugin adds the include_pcap directive.
+
+
+
