@@ -1,0 +1,2 @@
+[console_scripts]
+contextq = contextq.awq_profiles:main

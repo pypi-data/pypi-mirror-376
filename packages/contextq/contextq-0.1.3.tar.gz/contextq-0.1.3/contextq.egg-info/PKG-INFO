@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: contextq
+Version: 0.1.3
+Summary: ContextQ: Context Based adjustments for LLMs with attention and quantization
+Author: Ayan Jhunjhunwala
+Author-email: ayanqwerty@gmail.com
+Requires-Dist: torch
+Requires-Dist: transformers>=4.51
+Requires-Dist: datasets
+Requires-Dist: accelerate
+Requires-Dist: autoawq
+Requires-Dist: autoawq-kernels
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary
