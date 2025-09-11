@@ -1,0 +1,10 @@
+mcp_mysql_server/__init__.py,sha256=TmaM90NWEUbPWhlJjALQz5bOAyVTnncQ352xLmgJoWQ,191
+mcp_mysql_server/server.py,sha256=jnEg_iktVmoyHq3uHSZkYmQQyZ2jamIfAfyQgL7e9ew,11653
+tests/__init__.py,sha256=swjgXd_rnKK_yQzTInBZco5xIEulutt8LmEdnVSx948,28
+tests/test_server.py,sha256=1b_4MlJc-ZlYvXpcOetLcz9uSLb3mOytm7w0OAE0XnA,2840
+mcp_mysql_bailian_licai_202509111610_66e8a1-2.0.0.dist-info/LICENSE,sha256=FhVlmyIyz2k98E2Wj-OawhMUGa6u4ezijnHVs1nOWhI,1092
+mcp_mysql_bailian_licai_202509111610_66e8a1-2.0.0.dist-info/METADATA,sha256=n85Wg35cbkDz2P4hCF--Ml5nY3eyobiZ9BzKFbJbxc8,3232
+mcp_mysql_bailian_licai_202509111610_66e8a1-2.0.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+mcp_mysql_bailian_licai_202509111610_66e8a1-2.0.0.dist-info/entry_points.txt,sha256=Sg28Ap4xiSHs_D2cQqYd_LQ__xgUWCXz36djEZLvgiE,94
+mcp_mysql_bailian_licai_202509111610_66e8a1-2.0.0.dist-info/top_level.txt,sha256=Qbw1zt3ZhXL-ec8eiLF2Rh1lVkPGIhcglJ3P8KUqFPU,23
+mcp_mysql_bailian_licai_202509111610_66e8a1-2.0.0.dist-info/RECORD,,
