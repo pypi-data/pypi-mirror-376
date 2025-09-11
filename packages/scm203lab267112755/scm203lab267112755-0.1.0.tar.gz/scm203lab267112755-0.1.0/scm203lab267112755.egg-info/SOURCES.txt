@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+scm203lab267112755/__init__.py
+scm203lab267112755/lab2mod167112755.py
+scm203lab267112755/lab2mod267112755.py
+scm203lab267112755.egg-info/PKG-INFO
+scm203lab267112755.egg-info/SOURCES.txt
+scm203lab267112755.egg-info/dependency_links.txt
+scm203lab267112755.egg-info/top_level.txt
