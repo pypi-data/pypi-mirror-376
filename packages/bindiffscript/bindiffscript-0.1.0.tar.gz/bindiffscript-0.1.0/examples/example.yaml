@@ -1,0 +1,9 @@
+#!/usr/bin/env bindiffscript
+
+width: 12
+files:
+    - path: ${here}/short_text-1.txt
+      padding:
+      - [10, 4]
+      - [28, 2]
+    - path: ${here}/short_text-2.txt

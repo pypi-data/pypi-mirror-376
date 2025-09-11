@@ -1,0 +1,67 @@
+# bindiffscript
+
+Fancy diff tool for reverse engineering binary files using a scripted approach.
+
+
+## Install and use
+
+You can either install `bindiffscript` via `pipx`
+
+```bash
+# have pipx installed first
+pipx install bindiffscript
+bindiffscript ...
+```
+
+.. simply run it via `uvx` provided by the `uv` package
+```bash
+# have uv installed first
+uvx bindiffscript ...
+```
+
+.. or checkout the project and run it via `uv run`
+```bash
+# have git and uv installed first
+git clone https://github.com/frans-fuerst/bindiffscript.git
+cd bindiffscript
+uv run bindiffscript ...
+```
+
+With all approaches you get an entry point `bindiffscript` with the
+following syntax:
+```bash
+bindiffscript [<opts>..] <FILE>*
+```
+
+Since `<FILE>` can be a YAML file containing options and files to diff, you
+can set a shebang to `bindiffscript` and make it executable:
+
+```
+#!/usr/bin/env bindiffscript
+files:
+    - path: path/to/file1.txt
+    - path: path/to/file2.txt
+```
+
+.. which is the same as running `bindiffscript example.yaml`.
+
+See the `examples` folder for syntax and inspiration!
+
+
+## Wishlist
+
+- [x] Readme
+- [x] Make width configurable via `width` attribute or command line option
+- [ ] Configure cell format
+- [ ] Update on change
+- [ ] Bash completion
+- [ ] Show multiple files
+- [ ] Highlight special/magic content
+- [ ] Show hex/text side by side
+- [ ] Scroll
+- [ ] Show padding differently
+- [ ] Auto-generate padding
+- [ ] Padding: set to fixed position
+- [ ] Padding: insert arbitrary data
+- [ ] Padding: length from macro
+- [ ] Annotations
