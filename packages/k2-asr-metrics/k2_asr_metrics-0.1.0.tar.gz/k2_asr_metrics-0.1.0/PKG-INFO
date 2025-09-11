@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: k2_asr_metrics
+Version: 0.1.0
+Summary: Custom ASR evaluation metrics (token accuracy, sentence accuracy, precision, recall, F1, char accuracy, edit distance)
+Author: Krishna Kumar Singh
+Requires-Python: >=3.10
+Requires-Dist: scikit-learn
+Requires-Dist: editdistance
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
