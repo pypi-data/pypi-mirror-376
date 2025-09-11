@@ -1,0 +1,7 @@
+plover>=5.0.0.dev2
+PySide6-Addons>=6.9.0
+odfpy
+pyparsing>3.0.7
+spylls
+dulwich
+obsws-python>1.6.0
