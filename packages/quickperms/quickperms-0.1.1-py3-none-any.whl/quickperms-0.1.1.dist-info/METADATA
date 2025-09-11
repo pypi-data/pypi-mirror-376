@@ -1,0 +1,10 @@
+Metadata-Version: 2.3
+Name: quickperms
+Version: 0.1.1
+Summary: Quick Permission System Inspired by LuckPerms
+Author: BinHawk
+Author-email: BinHawk <BinHawk@giles.pro>
+Requires-Dist: valkey>=6.1.1
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
