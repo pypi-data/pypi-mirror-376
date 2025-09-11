@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "nano-banana-image": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "nano-banana-mcp-server",
+        "nano-banana-mcp"
+      ],
+      "env": {
+        "GEMINI_API_KEY": "your_gemini_api_key_here",
+        "OUTPUT_IMAGE_PATH": "./generated_images"
+      }
+    }
+  }
+}

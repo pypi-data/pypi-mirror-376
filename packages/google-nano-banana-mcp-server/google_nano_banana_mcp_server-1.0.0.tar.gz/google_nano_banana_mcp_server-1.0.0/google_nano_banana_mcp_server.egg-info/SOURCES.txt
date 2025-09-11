@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+mcp-config.json
+pyproject.toml
+requirements.txt
+setup.py
+google_nano_banana_mcp_server.egg-info/PKG-INFO
+google_nano_banana_mcp_server.egg-info/SOURCES.txt
+google_nano_banana_mcp_server.egg-info/dependency_links.txt
+google_nano_banana_mcp_server.egg-info/entry_points.txt
+google_nano_banana_mcp_server.egg-info/requires.txt
+google_nano_banana_mcp_server.egg-info/top_level.txt
+nano_banana_mcp/__init__.py
+nano_banana_mcp/__main__.py
+nano_banana_mcp/server.py
