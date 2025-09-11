@@ -1,0 +1,101 @@
+Metadata-Version: 2.1
+Name: mcp-mysql-bailian-uvx-202509111625-d0a865
+Version: 2.1.0
+Summary: 阿里云百炼MCP服务器 - MySQL业务查询服务 (UVX兼容版)
+Home-page: https://github.com/your-username/mcp-mysql-server
+Author: licai-czg
+Author-email: your-email@example.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/your-username/mcp-mysql-server/issues
+Project-URL: Source, https://github.com/your-username/mcp-mysql-server
+Keywords: mcp mysql bailian alibaba cloud server uvx
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastmcp>=0.1.0
+Requires-Dist: pymysql>=1.0.0
+Requires-Dist: uvicorn>=0.20.0
+Requires-Dist: pydantic>=2.0.0
+
+# mcp-mysql-bailian-uvx-202509111625-d0a865
+
+阿里云百炼MCP服务器 - MySQL业务查询服务 (UVX兼容版)
+
+## 特性
+
+- 🚀 完全兼容 uvx 调用
+- 🔧 支持阿里云百炼平台
+- 🗄️ MySQL跨数据库查询
+- 📊 中文字段名返回
+
+## 安装
+
+```bash
+pip install mcp-mysql-bailian-uvx-202509111625-d0a865
+```
+
+## UVX使用 (推荐)
+
+```bash
+uvx mcp-mysql-bailian-uvx-202509111625-d0a865 --transport http --host 0.0.0.0 --port 8001
+```
+
+## 直接使用
+
+```bash
+mcp-mysql-bailian-uvx-202509111625-d0a865
+```
+
+## 阿里云百炼配置
+
+```json
+{
+  "mcpServers": {
+    "licai_mysql_mcp": {
+      "type": "http",
+      "command": "uvx",
+      "args": [
+        "mcp-mysql-bailian-uvx-202509111625-d0a865",
+        "--transport", "http",
+        "--host", "0.0.0.0",
+        "--port", "8001"
+      ],
+      "env": {
+        "MYSQL_HOST": "your-host",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "your-user",
+        "MYSQL_PASSWORD": "your-password",
+        "MYSQL_DATABASES": "db1,db2"
+      }
+    }
+  }
+}
+```
+
+## 业务工具
+
+- get_user_info - 用户信息
+- get_user_courses - 用户课程
+- get_user_cases - 案例分析
+- get_user_orders - 订单信息
+- get_user_invoices - 发票信息
+- get_user_study_plans - 学习计划
+- get_course_study_plans - 课程计划
+- health_check - 健康检查
+
+## 许可证
+
+MIT License
+
+

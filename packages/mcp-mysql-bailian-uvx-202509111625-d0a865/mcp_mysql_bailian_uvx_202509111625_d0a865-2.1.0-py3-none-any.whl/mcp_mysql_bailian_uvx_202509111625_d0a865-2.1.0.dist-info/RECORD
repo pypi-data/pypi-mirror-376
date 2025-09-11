@@ -1,0 +1,11 @@
+mcp_mysql_server/__init__.py,sha256=UxFTuyx7JZvm1YI2nVtirC3BDyy162fJXjD0IAFDSL0,221
+mcp_mysql_server/__main__.py,sha256=sq9OeJ1cSChOwUis85CA7liRGsZdoC_unkQzfFBuRJ8,754
+mcp_mysql_server/server.py,sha256=VAPP_EcRLNnQg34foeeV_eEM_3hvWIJ-eORGrOJsIXo,11798
+tests/__init__.py,sha256=swjgXd_rnKK_yQzTInBZco5xIEulutt8LmEdnVSx948,28
+tests/test_server.py,sha256=1b_4MlJc-ZlYvXpcOetLcz9uSLb3mOytm7w0OAE0XnA,2840
+mcp_mysql_bailian_uvx_202509111625_d0a865-2.1.0.dist-info/LICENSE,sha256=FhVlmyIyz2k98E2Wj-OawhMUGa6u4ezijnHVs1nOWhI,1092
+mcp_mysql_bailian_uvx_202509111625_d0a865-2.1.0.dist-info/METADATA,sha256=y1COKDYb2ouH6ER2GYFBl_Gr8EW7FrlNegPo-4DGk3k,2675
+mcp_mysql_bailian_uvx_202509111625_d0a865-2.1.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+mcp_mysql_bailian_uvx_202509111625_d0a865-2.1.0.dist-info/entry_points.txt,sha256=iWITdBuCffsaswy9jJYNJXQL9PP8FYw5dVKXQyG_Y9k,94
+mcp_mysql_bailian_uvx_202509111625_d0a865-2.1.0.dist-info/top_level.txt,sha256=Qbw1zt3ZhXL-ec8eiLF2Rh1lVkPGIhcglJ3P8KUqFPU,23
+mcp_mysql_bailian_uvx_202509111625_d0a865-2.1.0.dist-info/RECORD,,
