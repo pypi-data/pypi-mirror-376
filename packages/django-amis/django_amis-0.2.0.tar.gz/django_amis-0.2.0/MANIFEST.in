@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+recursive-include amis_rest/templates *
+recursive-include amis_rest/static *
+prune amis_rest/migrations
