@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kafkatop"
+readme = "README.md"
+version = "1.16"
+description = "A real-time monitoring tool for Apache Kafka that displays consumer lag and event rates"
+authors = [
+    {name = "Spiros Ioannou"},
+]
+license = "MIT"
+keywords = ["kafka", "monitoring", "consumer", "lag", "real-time"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Monitoring",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+urls = {Homepage = "https://github.com/sivann/kafkatop", Repository = "https://github.com/sivann/kafkatop"}
+requires-python = ">=3.9"
+dependencies = [
+    "confluent-kafka",
+    "humanize",
+    "rich",
+    "readchar",
+    "markdown-it-py==3.0.0; python_version == '3.9'",
+    "markdown-it-py; python_version >= '3.10'",
+]
+
+# For building pex and github runner
+[project.optional-dependencies]
+dev = [
+    "wheel",
+    "twine",
+    "build",
+    "pytest",
+    "coverage",
+]
+
+# This is the direct equivalent of 'scripts' needed for pex (-c).
+#[project.scripts]
+#kafkatop = "kafkatop.py"
+
+[tool.setuptools]
+py-modules = ["kafkatop"]
+
+
+[project.scripts]
+kafkatop = "kafkatop:main"
+
+
+#[tool.setuptools.package-data]
+#"" = ["README.md", "images/*"]
