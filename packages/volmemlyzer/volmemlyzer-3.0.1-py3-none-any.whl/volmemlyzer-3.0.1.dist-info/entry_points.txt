@@ -1,0 +1,2 @@
+[console_scripts]
+volmemlyzer = volmemlyzer.cli:main
