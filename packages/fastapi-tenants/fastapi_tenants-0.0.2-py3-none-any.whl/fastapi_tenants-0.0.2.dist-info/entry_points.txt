@@ -1,0 +1,2 @@
+[console_scripts]
+fastapi-tenants = fastapi_tenants.__main__:main
