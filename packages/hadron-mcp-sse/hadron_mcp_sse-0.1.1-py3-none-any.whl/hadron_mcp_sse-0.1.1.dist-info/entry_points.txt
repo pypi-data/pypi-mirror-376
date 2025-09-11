@@ -1,0 +1,2 @@
+[console_scripts]
+hadron-mcp-sse = mcp_sse:main
