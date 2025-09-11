@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+schibsted_data_mcp/__init__.py
+schibsted_data_mcp.egg-info/PKG-INFO
+schibsted_data_mcp.egg-info/SOURCES.txt
+schibsted_data_mcp.egg-info/dependency_links.txt
+schibsted_data_mcp.egg-info/top_level.txt
