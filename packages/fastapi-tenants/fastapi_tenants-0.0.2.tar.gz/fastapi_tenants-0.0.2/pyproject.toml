@@ -1,0 +1,148 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fastapi-tenants"
+version = "0.0.2"
+description = "A multi-tenancy solution for FastAPI (database-per-tenant, schema-per-tenant, and row-level-tenants strategies). COMMING SOON!!!"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+  { name = "Kapil Dagur", email = "kapildagur1306@gmail.com" }
+]
+maintainers = [
+  { name = "Kapil Dagur", email = "kapildagur1306@gmail.com" }
+]
+keywords = ["fastapi", "multi-tenancy", "tenants", "sqlalchemy", "async", "saas"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries",
+]
+
+# Core runtime dependencies (minimal)
+dependencies = [
+    "fastapi>=0.116.1",
+    "pyjwt>=2.10.1",
+    "sqlalchemy>=2.0.43",
+]
+
+# Optional functionality via extras (users can pip install fastapi-tenants[postgres])
+[project.optional-dependencies]
+postgres = [
+    # asyncpg is the usual async postgres driver
+    "asyncpg>=0.27.0",
+    # adds an "asyncio" backend for SQLAlchemy (SQLAlchemy 2+ has async support)
+]
+alembic = [
+    "alembic>=1.10.0",
+]
+auth = [
+    "pyjwt[crypto]>=2.10.1",
+]
+dev = [
+    "black>=25.1.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.19",
+    "mypy>=1.17.1",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.2",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.12.12",
+    "coverage>=7.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/KapilDagur/fastapi-tenants"
+Repository = "https://github.com/KapilDagur/fastapi-tenants"
+Documentation = "https://github.com/KapilDagur/fastapi-tenants#readme"
+Changelog = "https://github.com/KapilDagur/fastapi-tenants/blob/main/CHANGELOG.md"
+
+# optional console entry-points (useful for CLI helpers/management commands)
+[project.scripts]
+fastapi-tenants = "fastapi_tenants.__main__:main"
+
+# sdist contents via hatch (already present); include package and docs
+[tool.hatch.build.targets.sdist]
+include = [
+  "fastapi_tenants",
+  "README.md",
+  "LICENSE",
+  "pyproject.toml",
+  "docs",
+  "examples",
+]
+exclude = [
+  "tests",
+  ".venv",
+  "tmp",
+  ".gitignore",
+  ".git",
+  "uv.lock",
+  ".python-version",
+]
+
+# Formatting and linting config
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+fix = true
+extend-ignore = ["E203"]  # adjust to your style if needed
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+# mypy config: keep strict, but allow missing imports for optional extras
+[tool.mypy]
+python_version = "3.12"
+disallow_untyped_defs = true
+check_untyped_defs = true
+ignore_missing_imports = true
+strict_optional = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --disable-warnings"
+testpaths = [
+    "tests",
+]
+
+[dependency-groups]
+# keeps the dev group for hatch or other tools (backwards compat)
+dev = [
+    "black>=25.1.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.19",
+    "mypy>=1.17.1",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.12.12",
+    "uvicorn>=0.35.0",
+]
+
+# Optional: metadata for release CI (Hatch can use it)
+[tool.hatch.version]
+path = "fastapi_tenants/version.py"
+
+# Optional: wheel metadata (Hatch)
+[tool.hatch.build.targets.wheel]
+include = [
+  "fastapi_tenants",
+  "README.md",
+  "LICENSE",
+]
