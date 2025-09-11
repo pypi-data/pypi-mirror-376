@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "twine"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ipgs"
+version = "1.2.4"
+description = "Interactive ANIMATED progress bar for Jupyter notebook projects"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{ name="Abolfazl Mohammadpour", email="Mohampouraz@gmail.com" }]
+license = { text = "MIT" }
+
+
+keywords = ["progressbar", "jupyter", "notebook", "animated", "ipython"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Framework :: Jupyter"
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/ipgs/"
+Repository = "https://github.com/mohampouraz/iutils/"
+Documentation = "https://github.com/mohampouraz/iutils/#readme"
+BugTracker = "https://github.com/mohampouraz/iutils/issues"
