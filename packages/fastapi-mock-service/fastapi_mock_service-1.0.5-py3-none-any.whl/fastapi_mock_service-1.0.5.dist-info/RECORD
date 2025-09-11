@@ -1,0 +1,10 @@
+fastapi_mock_service/__init__.py,sha256=0AWXCvXpvc8fjg4Jj-HqvEUwtSyhB-C-AdDYqWUIvjg,889
+fastapi_mock_service/cli.py,sha256=KcR1qG24mKpl5pvQypdITkvmYiZTtVjsAdje-smH5Fw,10904
+fastapi_mock_service/mock_service.py,sha256=FtW-OZhNI3FQWKueLuUg0pHV3DXoc7Q6q_jRVt4Ysfk,30771
+fastapi_mock_service/templates/dashboard.html,sha256=zZfFdv0frAuh7oUcPoNLm2SZV3SHFbH5bLcHOF_3rJI,51570
+fastapi_mock_service-1.0.5.dist-info/licenses/LICENSE,sha256=45M8jcsukmeEFAM6drZRYa5E-8CvKtEz-F-tc2_AnHI,1070
+fastapi_mock_service-1.0.5.dist-info/METADATA,sha256=FJxAem5s7M1TR5ieMhuEWWNoy6FyAjYOj6sI3Op6UVY,10476
+fastapi_mock_service-1.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastapi_mock_service-1.0.5.dist-info/entry_points.txt,sha256=EurQNm1BtzjzLWatsJb-gIsTU4UWqUeS1yccqiBNOMo,63
+fastapi_mock_service-1.0.5.dist-info/top_level.txt,sha256=QW7zMdHfA2QNQtooegSnvrZWoZ0dV4d0Tm29X1w-2dg,21
+fastapi_mock_service-1.0.5.dist-info/RECORD,,
