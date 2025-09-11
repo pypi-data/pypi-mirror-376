@@ -1,0 +1,8 @@
+funimage/__init__.py,sha256=RNXkMJb9MqiycUfBc14ZmML81CQ2E27VH_GrcTJSvuI,746
+funimage/convert.py,sha256=b013HyZQtPBYoFT-l7bO1GIH6OSOcbJ4ltghyAzPUsA,8196
+funimage/capture/__init__.py,sha256=7JWGAanXrPKJ8prDQhFctgHSLugb20xlHjIBmm7gHvE,71
+funimage/capture/_queue.py,sha256=Z-glpVw_dx-pMuYYp4hfUb5L8B6dolxrtR0byyX-Glw,1442
+funimage-1.0.19.dist-info/METADATA,sha256=aLXjr55X8AJXbgNQXzG-qiaW1fKE4e-nLA7qN041xwM,9563
+funimage-1.0.19.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+funimage-1.0.19.dist-info/top_level.txt,sha256=cZOryHj2GrFZyPT4a5pSoBjmHhFOoIBhXQ8dZQkHy8A,9
+funimage-1.0.19.dist-info/RECORD,,
