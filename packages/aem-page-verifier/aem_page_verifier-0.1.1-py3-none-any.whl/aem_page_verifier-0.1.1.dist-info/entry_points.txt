@@ -1,0 +1,2 @@
+[console_scripts]
+aem-verify = aem_page_verifier.verifier:main
