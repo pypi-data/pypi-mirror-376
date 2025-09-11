@@ -1,0 +1,7 @@
+[project]
+name = "xpfx.pypi.playground"
+version = "0.0.2"
+description = "Just a simple Playground File for playing around :-D"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
