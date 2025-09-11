@@ -1,0 +1,11 @@
+fastfermion/__init__.py,sha256=xytVHqvTosjt-Le8YAGpkBpk1izTrTZc6bT3GI2zH5s,5795
+fastfermion/_cirq.py,sha256=Zaiu1D--pGvMU2R2_hMy1zUEQVmyzCwTf9ilWWWr58A,2673
+fastfermion/_of.py,sha256=Hl7UDq2aWUFUJHqlp4xw47O8fa521UmFITPJgq7bGWw,2378
+fastfermion/_parse.py,sha256=RWl0HxhVDV11R2ddJgN3OxUSPtEXtj5d0JfEuBHaUNQ,4767
+fastfermion/ffcore.cp312-win_amd64.pyd,sha256=ncDbgMZgVrpCWXeMvV9xjB_ZsZHuLXy30YPb11pghJs,717312
+fastfermion-0.1.0.dist-info/licenses/LICENSE,sha256=aViRMa_azOrVSdwx7n_D5jNC49Il7elqOvuoVCMz1Gs,346
+fastfermion-0.1.0.dist-info/licenses/LICENSE-THIRDPARTY,sha256=p9Z7p48O-ErJtfdvi3vQmJ7O5jBpB-BfeHkFCPmvrvQ,3296
+fastfermion-0.1.0.dist-info/METADATA,sha256=NbXFMBytqu1pdtmT7o3RE85e2errr3T343RSUnleZ04,1390
+fastfermion-0.1.0.dist-info/WHEEL,sha256=8UP9x9puWI0P1V_d7K2oMTBqfeLNm21CTzZ_Ptr0NXU,101
+fastfermion-0.1.0.dist-info/top_level.txt,sha256=kjwmZYUyrzP_krvKvbRdNT8yURAOTCLdAVCkMPL4vNI,12
+fastfermion-0.1.0.dist-info/RECORD,,
