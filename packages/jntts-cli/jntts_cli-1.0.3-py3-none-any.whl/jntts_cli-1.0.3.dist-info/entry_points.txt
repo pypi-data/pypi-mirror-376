@@ -1,0 +1,2 @@
+[console_scripts]
+jntts-cli = jntts.main:main
