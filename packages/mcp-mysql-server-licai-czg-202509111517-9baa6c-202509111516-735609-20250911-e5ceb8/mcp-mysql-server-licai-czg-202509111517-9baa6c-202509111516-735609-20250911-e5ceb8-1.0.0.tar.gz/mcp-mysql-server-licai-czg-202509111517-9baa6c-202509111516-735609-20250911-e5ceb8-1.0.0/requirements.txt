@@ -1,0 +1,7 @@
+# MCP服务器依赖
+mcp>=1.0.0
+pymysql>=1.1.0
+cryptography>=41.0.0
+
+# 可选：如果需要连接池
+PyMySQL[rsa]>=1.1.0
