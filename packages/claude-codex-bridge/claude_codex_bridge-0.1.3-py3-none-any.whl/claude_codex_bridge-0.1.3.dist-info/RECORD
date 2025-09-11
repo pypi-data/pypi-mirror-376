@@ -1,0 +1,9 @@
+claude_codex_bridge/__init__.py,sha256=Rq09iyKYNFn_fDMuwelnShmnEw1P05fE_HXk1h2IJ4I,223
+claude_codex_bridge/__main__.py,sha256=O2A5I94t06hkUCtNe9zJG43jaz4oKn6tCLe3ydHNsqo,2129
+claude_codex_bridge/bridge_server.py,sha256=QoeG6zHq7mIHQQls3ks8_Mf1N09oNRNtNvnhPpPwa1Y,45592
+claude_codex_bridge/engine.py,sha256=g6D_D8oQe9CUviCqvelv5WXCtt2zvrxKdZQ2jO8v45Q,2730
+claude_codex_bridge-0.1.3.dist-info/METADATA,sha256=aX4yI84_vtok3xfWUTzKKIAq3R3AXMYSsI6DpOnUFwo,8808
+claude_codex_bridge-0.1.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+claude_codex_bridge-0.1.3.dist-info/entry_points.txt,sha256=Zyj4rG8Q9bp4dI43sZI_0tgv98wFjJgDGJjIshm2Js4,74
+claude_codex_bridge-0.1.3.dist-info/licenses/LICENSE,sha256=IJjMXgshnDJfC4PBpK8EOkOLGYLFjxFZ90c3cT43t-4,1064
+claude_codex_bridge-0.1.3.dist-info/RECORD,,
