@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: pdfexport
+Version: 0.1.1
+Summary: Add your description here
+Requires-Python: >=3.12
+Requires-Dist: fastmcp>=0.2.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pypdf>=4.0.0
+Requires-Dist: pywin32>=306; sys_platform == 'win32'
+Description-Content-Type: text/markdown
+
+# 직접실행 테스트
+uv run pdf-export
+uv run mcp dev dev_server.py
+
+# 배포버전 사용
+pip install pdfexport
+uvx --from pdfexport pdf-export
+uvx --from pdfexport pdf-export-server
+
