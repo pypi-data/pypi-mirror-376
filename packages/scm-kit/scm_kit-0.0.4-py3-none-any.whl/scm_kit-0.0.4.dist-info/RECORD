@@ -1,0 +1,9 @@
+scm_kit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scm_kit/common.py,sha256=Xlntwu5wZQfgI7p_Wa-CnykHYV_sxi-uFgOx9BRvFCM,1458
+scm_kit/format.py,sha256=Aix6-2USQy0tujRn2zqxYSoFG1yeWZdKisMGOw8afT0,517
+scm_kit/lint.py,sha256=ZiR-gH0eQxZzIyHrdncIVgjPWFSqP1Nlyr43Mo5HuzQ,922
+scm_kit-0.0.4.dist-info/METADATA,sha256=A7qjS4Egf7jxsqZbMbeSjoRcEL4KorN2Bs-RezSpGR4,115
+scm_kit-0.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scm_kit-0.0.4.dist-info/entry_points.txt,sha256=iPcG240RwRt_0MhgzHHkSwBMzlLQWviV48ObMXB9bqA,80
+scm_kit-0.0.4.dist-info/top_level.txt,sha256=zZTkyHdPS7KAqmTDvib3dorQMxuvKnt2a43W5U7JIz0,8
+scm_kit-0.0.4.dist-info/RECORD,,
