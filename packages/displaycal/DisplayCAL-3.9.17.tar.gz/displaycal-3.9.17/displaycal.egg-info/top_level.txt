@@ -1,0 +1,10 @@
+DisplayCAL
+dist
+docs
+man
+misc
+screenshots
+scripts
+tests
+theme
+util
