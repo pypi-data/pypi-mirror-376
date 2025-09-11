@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: hplog
+Version: 0.14.0
+Summary: Add your description here
+Project-URL: Homepage, https://github.com/Arian-Ott/hplog
+Project-URL: Issues, https://github.com/Arian-Ott/hplog/issues
+Author-email: Arian Ott <arian.ott@ieee.org>
+Requires-Python: >=3.13
+Requires-Dist: dask>=2025.7.0
+Requires-Dist: motor>=3.7.1
+Requires-Dist: pandas>=2.3.2
+Requires-Dist: pyarrow>=21.0.0
+Requires-Dist: pydantic>=2.11.7
+Requires-Dist: pymongo>=4.14.1
+Requires-Dist: python-dotenv>=1.1.1
+Provides-Extra: dev
+Requires-Dist: pytest-asyncio>=1.1.0; extra == 'dev'
+Requires-Dist: pytest-cov>=7.0.0; extra == 'dev'
+Requires-Dist: pytest-xdist>=3.8.0; extra == 'dev'
+Requires-Dist: pytest>=8.4.2; extra == 'dev'
+Requires-Dist: ruff>=0.12.12; extra == 'dev'
+Provides-Extra: sql
+Requires-Dist: sqlmodel>=0.0.24; extra == 'sql'
+Description-Content-Type: text/markdown
+
+# HPLOG
+
+## About HPLOG
+
+HPLOG (short for High Performance Logging) enables the user to log their pydantic models in a mongo DB.
+
+> Info
+> This project is a small library which is designed for exactly what it says. It is used for logging Pydantic models. In case you have questions about the library or anything else, feel free to contact me
+
