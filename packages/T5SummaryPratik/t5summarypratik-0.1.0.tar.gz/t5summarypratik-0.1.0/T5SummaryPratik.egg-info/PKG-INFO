@@ -1,0 +1,106 @@
+Metadata-Version: 2.4
+Name: T5SummaryPratik
+Version: 0.1.0
+Summary: A complete text summarization pipeline using T5 with evaluation metrics
+Home-page: https://github.com/yourusername/T5SummaryPratik
+Author: Pratik
+Author-email: your.email@example.com
+Project-URL: Bug Reports, https://github.com/yourusername/T5SummaryPratik/issues
+Project-URL: Source, https://github.com/yourusername/T5SummaryPratik
+Keywords: text summarization,t5,nlp,machine learning
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Text Processing :: General
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: transformers
+Requires-Dist: torch
+Requires-Dist: evaluate
+Requires-Dist: textstat
+Requires-Dist: nltk
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# T5SummaryPratik
+
+A powerful text summarization library using T5 transformer model with built-in evaluation metrics.
+
+## Installation
+
+```bash
+pip install T5SummaryPratik
+```
+
+## Features
+
+- Text summarization using T5 transformer model
+- Multiple evaluation metrics:
+  - ROUGE scores
+  - Readability metrics
+  - Text statistics
+- Easy to use API
+- Customizable parameters
+
+## Quick Start
+
+```python
+from T5SummaryPratik import T5Summarizer
+
+# Initialize the summarizer
+summarizer = T5Summarizer()
+
+# Example text
+text = """
+Your long text here that needs to be summarized.
+This can be multiple paragraphs long.
+"""
+
+# Generate summary
+summary = summarizer.summarize(text)
+print(summary)
+
+# Get summary with evaluation metrics
+summary_with_metrics = summarizer.summarize_with_metrics(text)
+print(f"Summary: {summary_with_metrics['summary']}")
+print(f"ROUGE scores: {summary_with_metrics['metrics']['rouge']}")
+print(f"Readability score: {summary_with_metrics['metrics']['readability']}")
+```
+
+## Advanced Usage
+
+See [example_usage.py](example_usage.py) for more advanced usage examples.
+
+## Requirements
+
+- Python >= 3.8
+- PyTorch
+- Transformers
+- NLTK
+- Evaluate
+- Textstat
+
+## License
+
+MIT License
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
