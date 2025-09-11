@@ -1,0 +1,2 @@
+[console_scripts]
+google-trends-mcp-server = google_trends_mcp.server:main
