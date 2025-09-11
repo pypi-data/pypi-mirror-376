@@ -1,0 +1,14 @@
+fastrs/__init__.py,sha256=x63PTvRPBq4MX0_v4eXMrF1fWVeo_JNXk5PKkZZ-nRQ,434
+fastrs/_config/color_schemes.json,sha256=9Ao_4FZveWU6pCY62i2q0SDkx9ZsL0jNvGtwJGaf8vI,756
+fastrs/_config/fasttext_defaults.json,sha256=zPmxBQrOBow8lz5LDBxSdxiCiESNaiUsJk2ljooNXAY,893
+fastrs/_config/plot_config.json,sha256=OXODNpL6VUdGzoGlApx2vhv5MpD-DggZUW9V6hvVCAQ,234
+fastrs/_config/reduction_defaults.json,sha256=EnWaQqJ2Cr9AsHl0-Kj2WzMtuJrkMiyGmg_3P1Sx61Y,232
+fastrs/core/exceptions.py,sha256=0HGefzINM-mcSWAQr0MUYR7J73-BT1hIyg7HZlmEWow,652
+fastrs/core/object.py,sha256=Jm7DHV-oNgYFO_W12BZ4RGWisoUqaS9t9FZuV-QEoHM,28723
+fastrs/core/preprocessor.py,sha256=-lLUKZ_aPCmPWrigmLNd3a_dFKKFe6BYR8ikgM_gLYw,3894
+fastrs/core/util.py,sha256=Ny_xTYUat1zsI-HitneZILtt73vzqXZXNiogttD0Pc8,7250
+fastrs/core/visualizer.py,sha256=ujiEKyZxl0yblM9VEVgbaCUi9YEceSxRyghy73nP3V0,15413
+simars-0.1.0.dist-info/METADATA,sha256=UhURM-zsQGOM6AwCLk6_zM-WotcvbtxSgaIIIVjXeBw,8304
+simars-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+simars-0.1.0.dist-info/licenses/LICENSE,sha256=9CnnVWj2YJA9SZ2daZpr5Ig2czAGsm4JXKLhm6NEk3k,1065
+simars-0.1.0.dist-info/RECORD,,
