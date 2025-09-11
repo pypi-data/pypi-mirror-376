@@ -1,0 +1,9 @@
+ggsci/__init__.py,sha256=Z8jb8MrbE7CUf4bBbEVb96KAKtphrnF_dYUepFStzVw,2301
+ggsci/data.py,sha256=f7STWOujFmQM764SmwIKmeYKRln3pX_3sc9cKL7EH-4,24544
+ggsci/palettes.py,sha256=UmXjOv9nU_UCcgAdy0TLjDrm9pi3vAYOOHrsQHqg7PQ,26513
+ggsci/scales.py,sha256=kFyH-IOUQQ7_x360IDOhR_HCgdNIsR6BQ02xqI5EwuE,28383
+ggsci/utils.py,sha256=dTAVv9kntPgUBhJ8pbmiQWn2JFE8RE-vK5DZF17-p14,2270
+ggsci-0.2.0.dist-info/METADATA,sha256=ug3Exl5Qqi1C5PJLwo3DaeE37ZyY0bmrRAIsNHUqgNo,2286
+ggsci-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ggsci-0.2.0.dist-info/licenses/LICENSE,sha256=twkpuO-LVfhrrUshrDA8xn8s43MvYfR_gJ7KFSjLsVg,1061
+ggsci-0.2.0.dist-info/RECORD,,
