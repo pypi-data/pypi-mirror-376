@@ -1,0 +1,10 @@
+pycdlib>=1.10.0
+python-dateutil>=2.8.1
+
+[dev]
+check-manifest
+pylint
+
+[test]
+coverage
+pytest

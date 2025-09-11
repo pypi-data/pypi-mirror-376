@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pydvdid2"
+version = "2.0.0"
+description = "A pure Python implementation of the Windows API IDvdInfo2::GetDiscID method, as used by Windows Media Center to compute a 'practically unique' 64-bit CRC for metadata retrieval"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+keywords = ["sample", "setuptools", "development"]
+authors = [
+  { name = "Sam Vervaeck", email = "samvv@pm.me" },
+  { name = "Steve Wood", email = "octocat@nym.hush.com" }
+]
+maintainers = [
+  { name = "Sam Vervaeck", email = "samvv@pm.me" }
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+
+  # Indicate who your project is intended for
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Operating System :: MacOS",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX",
+  "Topic :: Home Automation",
+  "Topic :: Multimedia :: Video",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+
+  # Specify the Python versions you support here. In particular, ensure
+  # that you indicate you support Python 3. These classifiers are *not*
+  # checked by "pip install". See instead "requires-python" key in this file.
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+  "pycdlib>=1.10.0",
+  "python-dateutil>=2.8.1"
+]
+
+[project.optional-dependencies]
+dev = ["check-manifest", "pylint"]
+test = ["coverage", "pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/samvv/pydvdid2"
+"Bug Reports" = "https://github.com/samvv/pydvdid2/issues"
+"Source" = "https://github.com/samvv/pydvdid2"
+
+[project.scripts]
+pydvdid2 = "pydvdid2:main"
+
+# This is configuration specific to the `setuptools` build backend.
+# If you are using a different build backend, you will need to change this.
+[tool.setuptools]
+packages = ["pydvdid2"]
+# If there are data files included in your packages that need to be
+# installed, specify them here.
+#package-data = { "sample" = ["*.dat"] }
