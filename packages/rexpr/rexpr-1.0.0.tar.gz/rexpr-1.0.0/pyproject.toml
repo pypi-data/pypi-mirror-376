@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rexpr"
+version = "1.0.0"
+authors = [
+  { name="JoniKauf" },
+]
+description = "Get the source code string of an expression and optionally evalute it."
+readme = "README.md"
+requires-python = ">=3.14"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Repository = "https://github.com/JoniKauf/rexpr"
+Issues = "https://github.com/JoniKauf/rexpr/issues"
