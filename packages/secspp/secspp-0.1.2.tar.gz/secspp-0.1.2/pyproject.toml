@@ -1,0 +1,46 @@
+# [build-system] section: Defines how the project is built
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# [project] section: Core metadata for the package
+[project]
+# Distribution name (safe for PyPI) but still represents SECS++
+name = "secspp"
+version = "0.1.2"
+description = "SECS++ Rubik's Cube Solver using phased and looped solving logic"
+authors = [
+  { name="P. Jeba Selvan Andrew", email="your_email@example.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+
+dependencies = [
+  "flask",
+  "kociemba"
+]
+
+# Optional dependencies for development (e.g., pip install ".[dev]")
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "black",
+  "isort"
+]
+
+# Defines command-line scripts
+[project.scripts]
+secs-cube = "secs.app:main"
+# Uncomment if you want API as CLI too
+# secs-api = "secs.api:main"
+
+# [tool.setuptools] section: Tells setuptools to include non-Python files
+# specified in MANIFEST.in
+[tool.setuptools]
+include-package-data = true
+
+# [tool.setuptools.packages.find] section: Helps setuptools find your Python code
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["secs*"]

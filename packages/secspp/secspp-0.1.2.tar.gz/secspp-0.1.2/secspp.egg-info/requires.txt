@@ -1,0 +1,7 @@
+flask
+kociemba
+
+[dev]
+pytest
+black
+isort
