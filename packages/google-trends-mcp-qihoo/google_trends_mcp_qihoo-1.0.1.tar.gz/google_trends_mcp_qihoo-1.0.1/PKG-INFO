@@ -1,0 +1,174 @@
+Metadata-Version: 2.4
+Name: google-trends-mcp-qihoo
+Version: 1.0.1
+Summary: Google Trends MCP Server for analyzing search trends
+Project-URL: Homepage, https://github.com/yourusername/google-trends-mcp-server
+Project-URL: Repository, https://github.com/yourusername/google-trends-mcp-server
+Project-URL: Issues, https://github.com/yourusername/google-trends-mcp-server/issues
+Author-email: Your Name <your.email@example.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: ai,google-trends,llm,mcp,model-context-protocol,search-trends
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Requires-Dist: mcp>=1.0.0
+Requires-Dist: pytrends>=4.9.0
+Description-Content-Type: text/markdown
+
+# Google Trends MCP Server
+
+一个基于 Model Context Protocol (MCP) 的 Google Trends 分析服务器，可以获取和分析 Google 搜索趋势数据。
+
+## 🚀 功能特性
+
+- 📊 获取 Google Trends 搜索趋势数据
+- 📈 分析关键词关注度对比
+- 🔍 识别上升搜索词和市场机会
+- 💡 提供基于数据的营销策略建议
+- 🌐 支持中文搜索和时区设置
+- ⚡ 通过 uvx 一键安装和运行
+
+## 📦 安装
+
+### 使用 uvx (推荐)
+
+```bash
+uvx google-trends-mcp-server
+```
+
+### 使用 pip
+
+```bash
+pip install google-trends-mcp-server
+```
+
+## 🔧 使用方法
+
+### 在 Agent 客户端中配置
+
+在你的 agent 客户端配置文件中添加：
+
+```json
+{
+  "mcpServers": {
+    "google-trends": {
+      "command": "uvx",
+      "args": ["google-trends-mcp-server"]
+    }
+  }
+}
+```
+
+### 本地直接运行
+
+```bash
+# 使用 uvx
+uvx google-trends-mcp-server
+
+# 或者使用 pip 安装后运行
+google-trends-mcp
+```
+
+## 🛠️ 可用工具
+
+### `google_trends_analysis`
+
+分析 Google 搜索趋势数据并生成报告。
+
+**参数:**
+- `keywords` (必需): 关键词列表，例如 `["iPhone", "Android"]`
+- `timeframe` (可选): 时间范围，默认 `"today 3-m"`
+
+**时间范围选项:**
+- `"today 3-m"` - 最近 3 个月
+- `"today 12-m"` - 最近 12 个月  
+- `"today 5-y"` - 最近 5 年
+- `"all"` - 所有时间
+
+**示例调用:**
+```json
+{
+  "name": "google_trends_analysis",
+  "arguments": {
+    "keywords": ["咖啡", "茶", "奶茶"],
+    "timeframe": "today 12-m"
+  }
+}
+```
+
+## 📊 分析报告内容
+
+生成的报告包含以下部分：
+
+1. **📈 平均关注度对比** - 各关键词的搜索热度排名
+2. **📊 趋势变化分析** - 最近趋势变化百分比
+3. **🚀 热门上升搜索词** - 发现新的市场机会
+4. **💡 策略建议** - 基于数据的营销建议
+
+## 🌐 配置文件位置
+
+### Claude Desktop
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+### 其他 Agent 客户端
+请参考对应客户端的文档配置 MCP 服务器。
+
+## ⚠️ 注意事项
+
+- Google Trends API 有频率限制，请适度使用
+- 如遇到 429 错误，请稍后重试
+- 建议使用通用关键词以获得更好的结果
+- 支持最多 5 个关键词同时分析
+
+## 🔨 开发
+
+### 本地开发设置
+
+```bash
+# 克隆仓库
+git clone https://github.com/yourusername/google-trends-mcp-server.git
+cd google-trends-mcp-server
+
+# 安装依赖
+pip install -e .
+
+# 运行服务器
+google-trends-mcp
+```
+
+### 构建和发布
+
+```bash
+# 构建包
+python -m build
+
+# 发布到 PyPI
+python -m twine upload dist/*
+```
+
+## 📝 依赖
+
+- [mcp](https://pypi.org/project/mcp/) - Model Context Protocol SDK
+- [pytrends](https://pypi.org/project/pytrends/) - Google Trends API 客户端
+
+## 📄 许可证
+
+MIT License
+
+## 🤝 贡献
+
+欢迎提交 Pull Request 和 Issue！
+
+## 📞 支持
+
+如有问题，请在 [GitHub Issues](https://github.com/yourusername/google-trends-mcp-server/issues) 中提出。
