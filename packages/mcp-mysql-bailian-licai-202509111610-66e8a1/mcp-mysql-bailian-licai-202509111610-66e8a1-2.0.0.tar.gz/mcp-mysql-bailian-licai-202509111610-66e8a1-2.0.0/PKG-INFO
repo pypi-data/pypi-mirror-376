@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: mcp-mysql-bailian-licai-202509111610-66e8a1
+Version: 2.0.0
+Summary: 阿里云百炼MCP服务器 - MySQL业务查询服务
+Home-page: https://github.com/your-username/mcp-mysql-server
+Author: licai-czg
+Author-email: your-email@example.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/your-username/mcp-mysql-server/issues
+Project-URL: Source, https://github.com/your-username/mcp-mysql-server
+Keywords: mcp mysql bailian alibaba cloud server
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# 阿里云百炼MCP服务器 - MySQL业务查询服务
+
+这是一个专为阿里云百炼平台设计的MCP（Model Context Protocol）服务器，提供MySQL数据库的业务查询功能。
+
+## 功能特性
+
+- 🚀 支持HTTP传输协议，兼容阿里云百炼
+- 🗄️ 提供7个核心业务查询工具
+- 🔧 支持跨数据库查询
+- 📊 返回中文字段名，便于理解
+- 🛡️ 安全的数据库连接管理
+
+## 业务工具
+
+1. **get_user_info** - 获取用户基本信息
+2. **get_user_courses** - 获取用户课程列表
+3. **get_user_cases** - 获取用户案例分析
+4. **get_user_orders** - 获取用户订单信息
+5. **get_user_invoices** - 获取用户发票信息
+6. **get_user_study_plans** - 获取用户学习计划
+7. **get_course_study_plans** - 获取课程学习计划
+
+## 安装
+
+```bash
+pip install mcp-mysql-bailian-licai
+```
+
+## 配置
+
+### 环境变量
+
+```bash
+export MYSQL_HOST="your-mysql-host"
+export MYSQL_PORT="3306"
+export MYSQL_USER="your-username"
+export MYSQL_PASSWORD="your-password"
+export MYSQL_DATABASES="database1,database2"
+export MCP_SERVICE_PORT="8001"
+```
+
+### MCP配置文件
+
+```json
+{
+  "mcpServers": {
+    "licai_mysql_mcp": {
+      "type": "http",
+      "command": "uvx",
+      "args": [
+        "main:mcp.run",
+        "--transport", "http",
+        "--host", "0.0.0.0",
+        "--port", "8001"
+      ],
+      "env": {
+        "MCP_SERVICE_NAME": "licai_mysql_mcp",
+        "MCP_SERVICE_PORT": "8001",
+        "MYSQL_HOST": "your-mysql-host",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "your-username",
+        "MYSQL_PASSWORD": "your-password",
+        "MYSQL_DATABASES": "database1,database2"
+      }
+    }
+  }
+}
+```
+
+## 使用方法
+
+### 直接启动
+
+```bash
+mcp-mysql-bailian-licai
+```
+
+### 程序化使用
+
+```python
+from mcp_mysql_server.server import main
+
+# 设置环境变量后启动
+main()
+```
+
+## 许可证
+
+MIT License
+
+

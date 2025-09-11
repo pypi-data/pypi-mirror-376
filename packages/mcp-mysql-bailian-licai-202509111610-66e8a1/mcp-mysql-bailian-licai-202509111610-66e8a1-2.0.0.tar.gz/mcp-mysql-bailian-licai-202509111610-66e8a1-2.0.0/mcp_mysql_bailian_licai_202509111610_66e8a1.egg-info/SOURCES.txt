@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+多数据库配置说明.md
+mcp_mysql_bailian_licai_202509111610_66e8a1.egg-info/PKG-INFO
+mcp_mysql_bailian_licai_202509111610_66e8a1.egg-info/SOURCES.txt
+mcp_mysql_bailian_licai_202509111610_66e8a1.egg-info/dependency_links.txt
+mcp_mysql_bailian_licai_202509111610_66e8a1.egg-info/entry_points.txt
+mcp_mysql_bailian_licai_202509111610_66e8a1.egg-info/requires.txt
+mcp_mysql_bailian_licai_202509111610_66e8a1.egg-info/top_level.txt
+mcp_mysql_server/__init__.py
+mcp_mysql_server/server.py
+tests/__init__.py
+tests/test_server.py

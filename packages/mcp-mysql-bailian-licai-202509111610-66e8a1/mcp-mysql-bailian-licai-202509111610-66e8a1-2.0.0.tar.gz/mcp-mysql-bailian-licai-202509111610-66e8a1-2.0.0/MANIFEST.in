@@ -1,0 +1,11 @@
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+include setup.py
+include 多数据库配置说明.md
+recursive-include mcp_mysql_server *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store
+recursive-exclude * .git*
