@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-mysql-bailian-uvx-202509111625-d0a865"
+version = "2.1.0"
+description = "阿里云百炼MCP服务器 - MySQL业务查询服务 (UVX兼容版)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "licai-czg", email = "your-email@example.com"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "fastmcp>=0.1.0",
+    "pymysql>=1.0.0",
+    "uvicorn>=0.20.0",
+    "pydantic>=2.0.0",
+]
+keywords = ["mcp", "mysql", "bailian", "alibaba", "cloud", "server", "uvx"]
+
+[project.urls]
+Homepage = "https://github.com/your-username/mcp-mysql-server"
+"Bug Reports" = "https://github.com/your-username/mcp-mysql-server/issues"
+"Source" = "https://github.com/your-username/mcp-mysql-server"
+
+[project.scripts]
+mcp-mysql-bailian-uvx-202509111625-d0a865 = "mcp_mysql_server.__main__:main"
