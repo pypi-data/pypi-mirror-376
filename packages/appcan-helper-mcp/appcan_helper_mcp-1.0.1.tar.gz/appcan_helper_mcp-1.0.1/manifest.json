@@ -1,0 +1,53 @@
+{
+  "dxt_version": "0.1",
+  "name": "appcan-helper-mcp",
+  "version": "1.0.1",
+  "description": "AppCan开发助手",
+  "author": {
+    "name": "sandy1108",
+    "email": "sandy1108@163.com"
+  },
+  "homepage": "https://sandy1108.github.io/tech-blogs/",
+  "server": {
+    "type": "python",
+    "entry_point": "src/appcan_helper_mcp/server.py",
+    "mcp_config": {
+      "command": "python",
+      "args": [
+        "${__dirname}/src/appcan_helper_mcp/server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "server/lib"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "get_appcan_doc_categories",
+      "description": "获取 AppCan 文档分类列表 - 完整目录索引"
+    },
+    {
+      "name": "search_appcan_docs",
+      "description": "在AppCan官方文档中搜索相关内容"
+    },
+    {
+      "name": "get_appcan_doc_content",
+      "description": "获取指定文档的详细内容"
+    },
+    {
+      "name": "clear_appcan_docs_cache",
+      "description": "清空所有文档缓存"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "help_prompt",
+      "description": "获取AppCan Helper MCP的帮助信息和完整使用指南",
+      "text": "获取AppCan Helper MCP的帮助信息和完整使用指南"
+    }
+  ],
+  "keywords": [
+    "AppCan"
+  ],
+  "license": "MIT"
+}
