@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "google-trends": {
+      "command": "uvx",
+      "args": ["google-trends-mcp-qihoo"]
+    }
+  }
+}

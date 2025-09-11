@@ -1,0 +1,513 @@
+# Google Trends MCP Server
+
+[![PyPI version](https://badge.fury.io/py/google-trends-mcp-qihoo.svg)](https://badge.fury.io/py/google-trends-mcp-qihoo)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[English](#english) | [中文](#中文)
+
+## English
+
+A Model Context Protocol (MCP) server for Google Trends analysis. This server enables AI assistants to analyze search trends, discover market opportunities, and provide data-driven insights in real-time.
+
+## 🚀 Features
+
+- 📊 Fetch and analyze Google Trends search data
+- 📈 Compare keyword popularity and trends
+- 🔍 Identify rising search queries and market opportunities
+- 💡 Provide data-driven marketing strategy recommendations
+- 🌐 Support for multiple languages and regions
+- ⚡ One-click installation and setup via uvx
+
+## 📦 Installation
+
+### Using uvx (Recommended)
+
+```bash
+uvx google-trends-mcp-qihoo
+# or
+uvx --from google-trends-mcp-qihoo google-trends-mcp-qihoo
+```
+
+### Using pip
+
+```bash
+pip install google-trends-mcp-qihoo
+```
+
+## 🔧 Usage
+
+### Agent Client Configuration
+
+Add this to your agent client configuration file:
+
+```json
+{
+  "mcpServers": {
+    "google-trends": {
+      "command": "uvx",
+      "args": ["google-trends-mcp-qihoo"]
+    }
+  }
+}
+```
+
+### Direct Usage
+
+```bash
+# Using uvx
+uvx google-trends-mcp-qihoo
+
+# Or after pip installation
+pip install google-trends-mcp-qihoo
+google-trends-mcp-qihoo
+```
+
+## 🛠️ Available Tools
+
+### `google_trends_analysis`
+
+Analyze Google Trends data and generate comprehensive reports.
+
+**Parameters:**
+- `keywords` (required): List of keywords, e.g., `["iPhone", "Android"]`
+- `timeframe` (optional): Time range, default `"today 3-m"`
+
+**Time Range Options:**
+- `"today 3-m"` - Last 3 months
+- `"today 12-m"` - Last 12 months  
+- `"today 5-y"` - Last 5 years
+- `"all"` - All time
+
+**Example Usage:**
+```json
+{
+  "name": "google_trends_analysis",
+  "arguments": {
+    "keywords": ["coffee", "tea", "energy drinks"],
+    "timeframe": "today 12-m"
+  }
+}
+```
+
+## 📊 Report Content
+
+Generated reports include:
+
+1. **📈 Average Interest Comparison** - Keyword popularity rankings
+2. **📊 Trend Analysis** - Recent trend changes with percentages
+3. **🚀 Rising Search Queries** - Discover new market opportunities
+4. **💡 Strategic Recommendations** - Data-driven marketing insights
+
+## 🌐 Configuration File Locations
+
+### Claude Desktop
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+### Other Agent Clients
+Please refer to your client's documentation for MCP server configuration.
+
+## ⚠️ Important Notes
+
+- Google Trends API has rate limits, please use moderately
+- If you encounter 429 errors, please retry later
+- Use popular keywords for better results
+- Supports up to 5 keywords per analysis (Google Trends API limit)
+
+## 🎬 Demo
+
+### Sample Analysis Report
+
+```markdown
+# 📊 Google Trends Analysis Report
+
+**Keywords**: iPhone, Android
+**Time Range**: today 12-m
+**Generated**: 2024-09-11
+
+## 📈 Average Interest Comparison
+
+🥇 **iPhone**: 65.2 points
+🥈 **Android**: 43.8 points
+
+## 📊 Trend Analysis
+
+- **iPhone**: 📈 Steady Rise (+12.5%)
+- **Android**: ➡️ Relatively Stable (-2.1%)
+
+## 🚀 Rising Search Queries (Market Opportunities)
+
+### 🔍 Rising queries for 'iPhone':
+- **iPhone 15 Pro** 🚀 Breakout growth
+- **iPhone camera** 📈 +150%
+- **iPhone battery life** 📈 +89%
+
+## 💡 Data-Driven Strategy Recommendations
+
+### 🎯 Core Keyword Strategy
+- **Primary keyword**: 'iPhone' (highest average interest: 65.2 points)
+- Recommend focusing marketing and SEO efforts on this keyword
+
+### 🌟 Emerging Opportunities
+- Pay attention to rising queries like 'iPhone 15 Pro' - they represent new market demand
+- Can be used for content creation, long-tail keyword optimization, and product development
+```
+
+## 🔧 Technical Architecture
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   AI Assistant │────│  MCP Protocol   │────│  Google Trends  │
+│   (Claude/etc)  │    │                  │    │   MCP Server    │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+                                                          │
+                                                          ▼
+                                               ┌─────────────────┐
+                                               │   pytrends      │
+                                               │   (Google API)  │
+                                               └─────────────────┘
+```
+
+## 🤔 FAQ
+
+### Q: Why do I get 429 errors?
+A: Google Trends API has rate limits. Solutions:
+- Reduce request frequency
+- Use more popular keywords
+- Retry later
+
+### Q: What time ranges are supported?
+A: Supported formats:
+- `"today 3-m"` - Last 3 months
+- `"today 12-m"` - Last 12 months
+- `"today 5-y"` - Last 5 years
+- `"all"` - All time
+
+### Q: How many keywords can I analyze at once?
+A: Maximum 5 keywords per analysis (Google Trends API limitation).
+
+## 🗺️ Roadmap
+
+- [ ] Geographic filtering support
+- [ ] Related topics analysis
+- [ ] Real-time trend monitoring
+- [ ] Data visualization features
+- [ ] Multi-language and region support
+
+## 🔨 Development
+
+### Local Development Setup
+
+```bash
+# Clone repository
+git clone https://github.com/qihoo/google-trends-mcp-server.git
+cd google-trends-mcp-server
+
+# Install dependencies
+pip install -e .
+
+# Run server
+google-trends-mcp-qihoo
+```
+
+### Build and Publish
+
+```bash
+# Build package
+python -m build
+
+# Publish to PyPI
+python -m twine upload dist/*
+```
+
+## 📝 Dependencies
+
+- [mcp](https://pypi.org/project/mcp/) - Model Context Protocol SDK
+- [pytrends](https://pypi.org/project/pytrends/) - Google Trends API client
+
+## 📄 License
+
+MIT License
+
+## 🤝 Contributing
+
+Pull requests and issues are welcome!
+
+## 📞 Support
+
+For questions, please create an issue on [GitHub Issues](https://github.com/qihoo/google-trends-mcp-server/issues).
+
+## 🙏 Acknowledgments
+
+- [pytrends](https://github.com/GeneralMills/pytrends) - Google Trends API client
+- [MCP](https://modelcontextprotocol.io/) - Model Context Protocol
+- Google Trends - Data provider
+
+---
+
+## 中文
+
+一个基于 Model Context Protocol (MCP) 的 Google Trends 分析服务器，可以获取和分析 Google 搜索趋势数据。让AI助手能够实时分析搜索趋势，发现市场机会，提供数据驱动的洞察。
+
+## 🚀 功能特性
+
+- 📊 获取和分析 Google Trends 搜索数据
+- 📈 对比关键词热度和趋势变化
+- 🔍 识别上升搜索词和市场机会
+- 💡 提供基于数据的营销策略建议
+- 🌐 支持多语言和地区设置
+- ⚡ 通过 uvx 一键安装和运行
+
+## 📦 安装
+
+### 使用 uvx (推荐)
+
+```bash
+uvx google-trends-mcp-qihoo
+# 或者
+uvx --from google-trends-mcp-qihoo google-trends-mcp-qihoo
+```
+
+### 使用 pip
+
+```bash
+pip install google-trends-mcp-server
+```
+
+## 🔧 使用方法
+
+### 在 Agent 客户端中配置
+
+在你的 agent 客户端配置文件中添加：
+
+```json
+{
+  "mcpServers": {
+    "google-trends": {
+      "command": "uvx",
+      "args": ["google-trends-mcp-qihoo"]
+    }
+  }
+}
+```
+
+### 本地直接运行
+
+```bash
+# 使用 uvx
+uvx google-trends-mcp-qihoo
+
+# 或者使用 pip 安装后运行
+pip install google-trends-mcp-qihoo
+google-trends-mcp-qihoo
+```
+
+## 🛠️ 可用工具
+
+### `google_trends_analysis`
+
+分析 Google 搜索趋势数据并生成报告。
+
+**参数:**
+- `keywords` (必需): 关键词列表，例如 `["iPhone", "Android"]`
+- `timeframe` (可选): 时间范围，默认 `"today 3-m"`
+
+**时间范围选项:**
+- `"today 3-m"` - 最近 3 个月
+- `"today 12-m"` - 最近 12 个月  
+- `"today 5-y"` - 最近 5 年
+- `"all"` - 所有时间
+
+**示例调用:**
+```json
+{
+  "name": "google_trends_analysis",
+  "arguments": {
+    "keywords": ["咖啡", "茶", "奶茶"],
+    "timeframe": "today 12-m"
+  }
+}
+```
+
+## 📊 分析报告内容
+
+生成的报告包含以下部分：
+
+1. **📈 平均关注度对比** - 各关键词的搜索热度排名
+2. **📊 趋势变化分析** - 最近趋势变化百分比
+3. **🚀 热门上升搜索词** - 发现新的市场机会
+4. **💡 策略建议** - 基于数据的营销建议
+
+## 🌐 配置文件位置
+
+### Claude Desktop
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+### 其他 Agent 客户端
+请参考对应客户端的文档配置 MCP 服务器。
+
+## ⚠️ 注意事项
+
+- Google Trends API 有频率限制，请适度使用
+- 如遇到 429 错误，请稍后重试
+- 建议使用通用关键词以获得更好的结果
+- 支持最多 5 个关键词同时分析
+
+## 🔨 开发
+
+### 本地开发设置
+
+```bash
+# 克隆仓库
+git clone https://github.com/yourusername/google-trends-mcp-server.git
+cd google-trends-mcp-server
+
+# 安装依赖
+pip install -e .
+
+# 运行服务器
+google-trends-mcp
+```
+
+### 构建和发布
+
+```bash
+# 构建包
+python -m build
+
+# 发布到 PyPI
+python -m twine upload dist/*
+```
+
+## 📝 依赖
+
+- [mcp](https://pypi.org/project/mcp/) - Model Context Protocol SDK
+- [pytrends](https://pypi.org/project/pytrends/) - Google Trends API 客户端
+
+## 📄 许可证
+
+MIT License
+
+## 🤝 贡献
+
+欢迎提交 Pull Request 和 Issue！
+
+## 📞 支持
+
+如有问题，请在 [GitHub Issues](https://github.com/qihoo/google-trends-mcp-server/issues) 中提出。
+
+## 🎬 演示
+
+### 分析结果示例
+
+```markdown
+# 📊 Google Trends 分析报告
+
+**关键词**: iPhone, Android
+**时间范围**: today 12-m
+**生成时间**: 2024-09-11
+
+## 📈 平均关注度对比
+
+🥇 **iPhone**: 65.2分
+🥈 **Android**: 43.8分
+
+## 📊 趋势变化分析
+
+- **iPhone**: 📈 稳步上升 (+12.5%)
+- **Android**: ➡️ 相对稳定 (-2.1%)
+
+## 🚀 热门上升搜索词 (市场机会)
+
+### 🔍 关于 'iPhone' 的上升搜索词:
+- **iPhone 15 Pro** 🚀 爆发式增长
+- **iPhone camera** 📈 +150%
+- **iPhone battery life** 📈 +89%
+
+## 💡 基于数据的策略建议
+
+### 🎯 核心关键词策略
+- **主推关键词**: 'iPhone' (平均关注度最高: 65.2分)
+- 建议将此关键词作为核心投放和SEO优化重点
+
+### 🌟 新兴机会点
+- 关注'iPhone 15 Pro'等上升搜索词，代表新的市场需求
+- 可用于内容创作、长尾关键词优化和新产品开发方向
+```
+
+## 🔧 技术架构
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   AI Assistant │────│  MCP Protocol   │────│  Google Trends  │
+│   (Claude/etc)  │    │                  │    │   MCP Server    │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+                                                          │
+                                                          ▼
+                                               ┌─────────────────┐
+                                               │   pytrends      │
+                                               │   (Google API)  │
+                                               └─────────────────┘
+```
+
+## 🤔 常见问题
+
+### Q: 为什么会遇到429错误？
+A: Google Trends API有频率限制。解决方案：
+- 减少请求频率
+- 使用更通用的关键词
+- 稍后重试
+
+### Q: 支持哪些时间范围？
+A: 支持以下格式：
+- `"today 3-m"` - 最近3个月
+- `"today 12-m"` - 最近12个月
+- `"today 5-y"` - 最近5年
+- `"all"` - 所有时间
+
+### Q: 最多支持多少个关键词？
+A: 最多支持5个关键词同时分析（Google Trends API限制）。
+
+## 🗺️ 路线图
+
+- [ ] 支持地理位置筛选
+- [ ] 添加相关话题分析
+- [ ] 支持实时趋势监控
+- [ ] 添加数据可视化
+- [ ] 支持更多语言和地区
+
+## 🔨 开发
+
+### 本地开发设置
+
+```bash
+# 克隆仓库
+git clone https://github.com/qihoo/google-trends-mcp-server.git
+cd google-trends-mcp-server
+
+# 安装依赖
+pip install -e .
+
+# 运行服务器
+google-trends-mcp-qihoo
+```
+
+## 📄 许可证
+
+MIT License
+
+## 🤝 贡献
+
+欢迎提交 Pull Request 和 Issue！
+
+## 📞 支持
+
+如有问题，请在 [GitHub Issues](https://github.com/qihoo/google-trends-mcp-server/issues) 中提出。
+
+## 🙏 致谢
+
+- [pytrends](https://github.com/GeneralMills/pytrends) - Google Trends API客户端
+- [MCP](https://modelcontextprotocol.io/) - Model Context Protocol
+- Google Trends - 提供数据支持
