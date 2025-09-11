@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: pytroll-collectors
+Version: 0.19.0
+Summary: Pytroll data collectors
+Project-URL: Homepage, https://github.com/pytroll/pytroll-collectors
+Author-email: Martin Raspaud <martin.raspaud@smhi.se>
+License-Expression: GPL-3.0-or-later
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.11
+Requires-Dist: posttroll>=1.3.0
+Requires-Dist: pyyaml
+Requires-Dist: trollsift
+Provides-Extra: all
+Requires-Dist: fsspec; extra == 'all'
+Requires-Dist: netifaces; extra == 'all'
+Requires-Dist: pyresample; extra == 'all'
+Requires-Dist: python-dateutil; extra == 'all'
+Requires-Dist: pytroll-schedule; extra == 'all'
+Requires-Dist: s3fs; extra == 'all'
+Requires-Dist: watchdog!=4.0.0; extra == 'all'
+Provides-Extra: geographic-gatherer
+Requires-Dist: pyresample; extra == 'geographic-gatherer'
+Requires-Dist: pytroll-schedule; extra == 'geographic-gatherer'
+Requires-Dist: watchdog!=4.0.0; extra == 'geographic-gatherer'
+Provides-Extra: s3-segment-gatherer
+Requires-Dist: fsspec; extra == 's3-segment-gatherer'
+Provides-Extra: s3stalker
+Requires-Dist: python-dateutil; extra == 's3stalker'
+Requires-Dist: s3fs; extra == 's3stalker'
+Provides-Extra: scisys-receiver
+Requires-Dist: netifaces; extra == 'scisys-receiver'
+Provides-Extra: trollstalker
+Requires-Dist: watchdog!=4.0.0; extra == 'trollstalker'
+Description-Content-Type: text/markdown
+
+pytroll-collectors
+==================
+
+
+[![Build status](https://github.com/pytroll/pytroll-collectors/workflows/CI/badge.svg?branch=main)](https://github.com/pytroll/pytroll-collectors/workflows/CI/badge.svg?branch=main)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/5lm42n0l65l5o9xn?svg=true)](https://ci.appveyor.com/project/pytroll/pytroll-collectors)
+
+[![Coverage Status](https://coveralls.io/repos/github/pytroll/pytroll-collectors/badge.svg?branch=main)](https://coveralls.io/github/pytroll/pytroll-collectors?branch=main)
+
+[![PyPI version](https://badge.fury.io/py/pytroll-collectors.svg)](https://badge.fury.io/py/pytroll-collectors)
+
+A set of modules and functions to support real-time processing of satellite
+data with pytroll. It requires the Posttroll library for messaging. Satellite
+data processing is often done in chunks, usually referred to as granules or
+segments. Several chunks are normally required to cover a given area of
+interest. When these chunks of data are processed and a Posttroll message is
+sent modules in Pytroll-collectors support the collection of such chunks into
+datasets, allowing other (Pytroll) processes to start processing on all the
+chunks in one batch once all relevant chunks are available. This is, however,
+only one example of what this package provides. There are also functionality to
+list and stalk files in an object store like AWS S3 for instance.
+
+[Documentation on Readthedocs](https://pytroll-collectors.readthedocs.io/en/latest/).
