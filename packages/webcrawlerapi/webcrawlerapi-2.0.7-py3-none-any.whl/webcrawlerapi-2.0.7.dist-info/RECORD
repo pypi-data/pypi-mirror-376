@@ -1,0 +1,10 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_client.py,sha256=IAufGhDyV4bqVqAzWOjeTQp7F_iVKU00WYSZD3IxgBQ,15412
+tests/test_models.py,sha256=eK67qPnCHLxzBvmqKolh2CzRfl9lAEsqKbkbyMGWtfo,15023
+webcrawlerapi/__init__.py,sha256=wSJuObbvwe1EAKyoNBvco9C09SlGeDyHgRgD1IhuMB4,1188
+webcrawlerapi/client.py,sha256=jWYH-Ld1JNrzjB3-zHy8bUHg2Vdkak0EwMOZDNJGQxQ,14959
+webcrawlerapi/models.py,sha256=8WxUt5Q0VyGIkol871uzNFstMD7VnvpFrEeEnr5ICg8,7139
+webcrawlerapi-2.0.7.dist-info/METADATA,sha256=AzNmb-dJCc5Y75sHM3akYAu_KWO6gzRG1W1JRA8Y7eE,7433
+webcrawlerapi-2.0.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+webcrawlerapi-2.0.7.dist-info/top_level.txt,sha256=1YnWR-rOZTiS1zJSqxOKSJETkbkLiXQA9L0zDx3rqgw,20
+webcrawlerapi-2.0.7.dist-info/RECORD,,
