@@ -1,0 +1,9 @@
+README.md
+setup.py
+OffSecIta/__init__.py
+OffSecIta/corsi.py
+OffSecIta/utils.py
+OffSecIta_h4rck4n0.egg-info/PKG-INFO
+OffSecIta_h4rck4n0.egg-info/SOURCES.txt
+OffSecIta_h4rck4n0.egg-info/dependency_links.txt
+OffSecIta_h4rck4n0.egg-info/top_level.txt
