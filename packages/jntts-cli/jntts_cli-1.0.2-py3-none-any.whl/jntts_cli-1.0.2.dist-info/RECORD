@@ -1,0 +1,14 @@
+jntts/about.py,sha256=C9Gau4j5ktN_sEzrqKKj8XwR8AmEjZZkHHuiFC_LASU,2457
+jntts/box_voice.py,sha256=tpZBdlLeVauDq925yypRWwDtFu1l-lPFDcrUn4cEuRE,6626
+jntts/config.py,sha256=ZDHgXIzBHu8jLc93u7_Us5wkmZ72OD4MATTzcGAV8eI,13831
+jntts/file_tts.py,sha256=fOzaY5b56hegJqkD1-PaPn7IyR2YKr2X6pmtD69v5Is,9696
+jntts/hardware_check.py,sha256=mIvJHBM2bgp5-Kja7_c6UnRrEQUPmp8_lOFzMt1ESDM,4579
+jntts/main.py,sha256=szt6ZpYFMDwazrkqbrK8Snmf1GdhChq_5-HCftEwcJQ,2259
+jntts/tts_utils.py,sha256=rS0jfwTqmwzVwyhSgYVY1jUnDnUU-VZ4Loa-oQo2Gjk,1163
+jntts/ui.py,sha256=L-BaMXrguBmh4RIAaeojb20jBWFJh4eliyJgG9gldWU,1246
+jntts_cli-1.0.2.dist-info/licenses/LICENSE,sha256=UbVwr8QAOJl6ixXD-7bF3uUNh465uGo4lqZnGQGfoek,6854
+jntts_cli-1.0.2.dist-info/METADATA,sha256=LsokE2b6h6_VzhndaAzhd4FiQTO7dnDbNpdckEczif8,14454
+jntts_cli-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jntts_cli-1.0.2.dist-info/entry_points.txt,sha256=lfQbbWE5GQUeEH5ENh28q30JRwK3ObRgcIk-_y69cKQ,46
+jntts_cli-1.0.2.dist-info/top_level.txt,sha256=cO1UUMO3JKCpZO3c2XCDg_9Kwko89PXn_nF3uVW8rdA,6
+jntts_cli-1.0.2.dist-info/RECORD,,
