@@ -1,0 +1,2 @@
+[console_scripts]
+superquantx = superquantx.cli:main
