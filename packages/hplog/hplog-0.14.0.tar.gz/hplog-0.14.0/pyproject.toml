@@ -1,0 +1,78 @@
+[project]
+name = "hplog"
+version = "0.14.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Arian Ott", email = "arian.ott@ieee.org" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "dask>=2025.7.0",
+    "motor>=3.7.1",
+    "pandas>=2.3.2",
+    "pyarrow>=21.0.0",
+    "pydantic>=2.11.7",
+    "pymongo>=4.14.1",
+    "python-dotenv>=1.1.1",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Arian-Ott/hplog"
+"Issues" = "https://github.com/Arian-Ott/hplog/issues"
+
+
+[project.scripts]
+hplog = "hplog:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.2",
+    "pytest-asyncio>=1.1.0",
+    "pytest-cov>=7.0.0",
+    "pytest-xdist>=3.8.0",
+    "ruff>=0.12.12",
+]
+sql = [
+    "sqlmodel>=0.0.24",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+
+exclude = [
+  "tests/**",
+  "docs/**",
+  "*.log",
+  "*.tmp",
+  ".gitignore",
+  ".DS_Store",
+  ".ruff_cache",
+  "docker-compose.yaml",
+  ".coverage",
+  
+]
+
+[tool.ruff]
+line-length = 100
+indent-width = 4
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "-n auto -ra -q --cov=hplog --cov-report=term-missing "
