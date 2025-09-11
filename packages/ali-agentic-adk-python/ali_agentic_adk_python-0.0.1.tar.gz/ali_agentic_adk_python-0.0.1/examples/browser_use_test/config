@@ -1,0 +1,22 @@
+# computer use global config
+[default]
+ali.adk.browser.use.properties.ak=LTAI5tRPRj9RCqKB5ss32Frh
+ali.adk.browser.use.properties.sk=sn8lbD7J6ZbCJi04vUfAhwqrs7B1kG
+ali.adk.browser.use.properties.endpoint=ecd.cn-hangzhou.aliyuncs.com
+ali.adk.browser.use.properties.endpoints=ecd.cn-hangzhou.aliyuncs.com
+ali.adk.browser.use.properties.endUserId=admin123
+ali.adk.browser.use.properties.password=Alibaba123AIDCAIB
+ali.adk.browser.use.properties.officeSiteId=cn-hangzhou+dir-5695751544
+#computer config
+ali.adk.browser.use.properties.enable=true
+ali.adk.browser.use.properties.enableWuying=true
+ali.adk.browser.use.properties.computerResourceId=ecd-in8p64lfr5s0pg1jt
+
+
+[oss]
+ali.adk.properties.enableOssClient=true
+ali.adk.properties.ossEndpoint=oss-cn-hangzhou.aliyuncs.com
+ali.adk.properties.ossAk=LTAI5tRPRj9RCqKB5ss32Frh
+ali.adk.properties.ossSk=sn8lbD7J6ZbCJi04vUfAhwqrs7B1kG
+ali.adk.properties.ossRegion=cn-hangzhou
+ali.adk.properties.ossBucketName=adk-artifacts
