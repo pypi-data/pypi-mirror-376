@@ -1,0 +1,17 @@
+knitro/__init__.py,sha256=UpsNUpBdH1r0a60Qen6hmwmIWmVHayP4K8hz4YBhmJ4,99
+knitro/constants.py,sha256=4s-wrbHRPlbuMmNC7uyiYv7mtrYbKtcVILfQigKf14g,38378
+knitro/knitro.py,sha256=6seqR20zxRoouzRJylMgzJbScGLHn75XEt8EkJdVpo0,50276
+knitro/wrapper.py,sha256=ndn000P8TgVzZbYWahnGMBoZeQpipqwfMkEgchyTeb8,178348
+knitro/include/knitro.h,sha256=w8mUXSu8su07rjjUX_fOGul8bgdA1QzOzBB6yD2D9qU,193736
+knitro/knitroampl/knitroampl.exe,sha256=q-afoZ6OfgkoQnN2cOpz9wx7sVffuKKiF7t3EcjbNa8,91982336
+knitro/lib/knitro.dll,sha256=fMU7hYzsexvDXMMr6oRYPrQMiEkLuiSlgomq4XXuadk,91441664
+knitro/lib/libiomp5md.dll,sha256=fzfiSyg4OyGgahmJJ8Ot2i8OOngNVTkis4GSIOhPdhU,1250312
+knitro/numpy/__init__.py,sha256=oyngdl_UD1MtSbdtzejoAd8gjZqvsMvPAzQS4dArKNg,30
+knitro/numpy/knitroNumPy.py,sha256=cZKu1kNIYhLpmi1gfQSLpWkh4g0mvVgN6w5spzjcarU,3243
+knitro/scipy/__init__.py,sha256=t30N6jGwh4M53LyrIo7XXgEP5Lh1wsDZqrQQ_1iikXU,32
+knitro/scipy/scipy_wrapper.py,sha256=lbaKw_KfLJk5Kcf7_hCDfEdooR2mw9it8apVu8mkEXE,56242
+knitro-15.0.1.dist-info/LICENSE,sha256=XW5fmvKN05Jtb8-bTK7iMrvYq1pZz1SEvG8MU80auRM,24482
+knitro-15.0.1.dist-info/METADATA,sha256=gOA8cdWJ_BWZ4Xgo7NBOzw23Mm79rOWFA1UU8lm3T3Q,31350
+knitro-15.0.1.dist-info/WHEEL,sha256=EsfqhE0qd6WfVs85_gPJMVnnwjseveFUmeew0JBezok,97
+knitro-15.0.1.dist-info/top_level.txt,sha256=AYnZ3qnvqefjEGqoY0oZHaaIu2wQJV_FSN6bBsV49Ko,7
+knitro-15.0.1.dist-info/RECORD,,
