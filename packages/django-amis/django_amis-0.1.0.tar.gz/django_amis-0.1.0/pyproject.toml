@@ -1,0 +1,32 @@
+[project]
+name = "django-amis"
+version = "0.1.0"
+description = "Django AMIS 风格的 RESTful API 工具包"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "django>=5.2.6",
+    "django-amis-render>=0.0.8",
+    "django-filter>=25.1",
+    "djangorestframework>=3.16.1",
+    "markdown>=3.9",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.2",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
