@@ -1,0 +1,15 @@
+softgraph/__init__.py,sha256=BrCsS4riCs3b49V_SLhk2BKVUqvWZ8kA3u9-Ixlaedk,125
+softgraph/onecall.py,sha256=lep2jmxgAQq0J2KKDmXGwQhCBl4SDuEkVWEFDLfnzIc,3198
+softgraph/datasets/features.py,sha256=8KOonW3Jb7FpwBqZxs2YfwO4V7XqRdetbY0mk7XijzA,2430
+softgraph/datasets/sbm.py,sha256=ITyjJ6EviuGNLc05h2SZ3o3h9tzk6M11x0RiXEzCvoI,629
+softgraph/datasets/signed.py,sha256=FUM0sflnGb-S_5BNb2ueMPVOX3TzYy0tOyNIJPgCjiw,726
+softgraph/datasets/temporal.py,sha256=aYnu0Cpq09u2HxZVXXoX-7nFQ_PyXpECX4uSaKCB4MU,940
+softgraph/evaluate/report.py,sha256=vh9V3oBW_37XvK4FanbHE3OKKIqN6lzNHXtUWd-ljak,263
+softgraph/train/edge.py,sha256=gTb9qQB9IfqZUj64kU_segUnAWAuAe5HHP8m_1raoiQ,1307
+softgraph/train/node.py,sha256=cdIponDhyUPrMUbXNfrPf8tza-RauO2K5P9asVTy-dU,913
+softgraph/train/temporal.py,sha256=DOiGc7_8rfTd4_mUw2fL4BHBeeBhchmqk7ZE9H6asa8,1009
+softgraph/utils/metrics.py,sha256=ybsUGjbsGXht8zB8ETiIJlATIeQkEtKhivD7ZK8lDuc,421
+softgraph/utils/viz.py,sha256=jRSJa5mihpw4t28xjnMAPUvQDnpS3xZzcR-YHox2LYQ,351
+softgraph-0.2.0.dist-info/METADATA,sha256=R0D8yxOP5H81r1Vv-NDqA66744iWsXA9KDtYnn6ib6c,1183
+softgraph-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+softgraph-0.2.0.dist-info/RECORD,,

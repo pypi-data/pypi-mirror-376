@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: softgraph
+Version: 0.2.0
+Summary: Graph ML in one call: softgraph(task=..., dataset=..., ...)
+Project-URL: Homepage, https://github.com/soft-tech-talks/softgraph
+Author-email: Soft Tech Talks <hello@softtechtalks.org>
+License: MIT
+Requires-Python: >=3.9
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: networkx>=3.2
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.1
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: scipy>=1.10
+Description-Content-Type: text/markdown
+
+## softgraph (one-call API)
+
+> Import once, call once, get results.
+
+```python
+import softgraph
+
+# Node classification on SBM in one call
+run = softgraph.softgraph(
+    task="node_classification",
+    dataset="sbm",
+    n=600, k=4, p_in=0.09, p_out=0.02,
+    features="degree+pagerank+cluster",
+    model="logreg",
+    test_size=0.2,
+    random_state=42,
+    plot=True
+)
+
+print(run["metrics"])
+```
+
+**Supported tasks**
+- `node_classification` (dataset: `sbm`)
+- `edge_classification` (dataset: `signed_sbm`)
+- `temporal_link_prediction` (dataset: `temporal_contacts`)
+
+All run objects include:
+```python
+{
+  "task": "...",
+  "metrics": {...},
+  "artifacts": {...}  # e.g., figures
+}
+```
