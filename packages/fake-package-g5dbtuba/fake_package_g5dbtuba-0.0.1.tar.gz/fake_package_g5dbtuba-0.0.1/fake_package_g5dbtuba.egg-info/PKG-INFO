@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: fake-package-g5dbtuba
+Version: 0.0.1
+Summary: Fake package for security verification - DO NOT USE
+Home-page: https://example.com
+Author: Security Verification
+Author-email: security@example.com
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
