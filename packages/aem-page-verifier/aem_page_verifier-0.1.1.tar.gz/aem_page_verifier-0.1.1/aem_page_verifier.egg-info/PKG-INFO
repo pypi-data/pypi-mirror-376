@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: aem-page-verifier
+Version: 0.1.1
+Summary: A tool to compare AEM publish pages with the author server
+Home-page: https://github.com/yourusername/aem-page-verifier
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.32.3
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AEM Page Verifier
+
+A Python tool to compare Adobe Experience Manager (AEM) publish pages with the author server, identifying missing (ghost) pages.
+
+## Installation
+
+```bash
+pip install aem-page-verifier
