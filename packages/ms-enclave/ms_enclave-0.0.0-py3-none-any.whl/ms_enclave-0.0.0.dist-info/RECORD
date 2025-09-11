@@ -1,0 +1,8 @@
+ms_enclave/__init__.py,sha256=r39l09GDYXaFM_s8YC-n-0W3YsK0YhFWBVCFRARFL_8,60
+ms_enclave/run_server.py,sha256=gWYluCQ-xGHS0R4TDz4De0v_mMJpuJxQ8cj-z5L-AXU,514
+ms_enclave/version.py,sha256=2aSJkcDtd3ZTHF6jCbx-_Xc_MjPIDebYAr9LLXBXFx8,62
+ms_enclave-0.0.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+ms_enclave-0.0.0.dist-info/METADATA,sha256=xt-MSW14e3vcBj45bT7eSA2y51iFcl9f9w2LE7lq8qA,7974
+ms_enclave-0.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ms_enclave-0.0.0.dist-info/top_level.txt,sha256=V_Q9rBOF-RGwACDP9ppukoyjaOtpjdht7dhe7StS86A,11
+ms_enclave-0.0.0.dist-info/RECORD,,
