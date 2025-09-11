@@ -1,0 +1,4 @@
+[console_scripts]
+tellus = tellus.core.main:main
+tellus-api = tellus.interfaces.rest.server:main
+tellus-chat = tellus_chat.cli:main
