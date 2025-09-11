@@ -1,0 +1,11 @@
+benchmarks
+build
+develop
+dist
+docker
+docs
+examples
+htmlcov
+requirements
+tensorcircuit
+tests
