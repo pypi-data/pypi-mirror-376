@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+src/jntts/about.py
+src/jntts/box_voice.py
+src/jntts/config.py
+src/jntts/file_tts.py
+src/jntts/hardware_check.py
+src/jntts/main.py
+src/jntts/tts_utils.py
+src/jntts/ui.py
+src/jntts_cli.egg-info/PKG-INFO
+src/jntts_cli.egg-info/SOURCES.txt
+src/jntts_cli.egg-info/dependency_links.txt
+src/jntts_cli.egg-info/entry_points.txt
+src/jntts_cli.egg-info/requires.txt
+src/jntts_cli.egg-info/top_level.txt
