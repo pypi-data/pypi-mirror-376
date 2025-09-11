@@ -1,0 +1,5 @@
+snakemake_storage_plugin_s3/__init__.py,sha256=iS9biNXF-qzo2V7Wt5MjFTIEboadNbJ-tydXRuexPiI,15281
+snakemake_storage_plugin_s3-0.3.6.dist-info/LICENSE,sha256=jpg1rXzRGPY4l7MAusB21rpc-5SrPkesCFTHCSO0-Vs,1066
+snakemake_storage_plugin_s3-0.3.6.dist-info/METADATA,sha256=P872zpYtpuoChr7c6m4gXtFxnqCJsuD_46A6nouOlRo,1243
+snakemake_storage_plugin_s3-0.3.6.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+snakemake_storage_plugin_s3-0.3.6.dist-info/RECORD,,
