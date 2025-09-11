@@ -1,0 +1,79 @@
+Metadata-Version: 2.4
+Name: imgshape
+Version: 2.1.0
+Summary: imgshape — image shape detection, dataset analysis, preprocessing & augmentation recommendations, reports and PyTorch loader helpers
+Home-page: https://github.com/STiFLeR7/imgshape
+Author: Stifler
+Author-email: Stifler <stiflerxd.ai@cudabit.live>
+License: MIT
+Project-URL: Homepage, https://github.com/STiFLeR7/imgshape
+Project-URL: Source, https://github.com/STiFLeR7/imgshape
+Project-URL: Issues, https://github.com/STiFLeR7/imgshape/issues
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Pillow>=9.0.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: matplotlib>=3.4.0
+Requires-Dist: scikit-image>=0.19.0
+Requires-Dist: gradio>=3.0.0
+Provides-Extra: torch
+Requires-Dist: torch>=1.12.0; (platform_system != "Windows" or python_version >= "3.8") and extra == "torch"
+Requires-Dist: torchvision>=0.13.0; extra == "torch"
+Provides-Extra: pdf
+Requires-Dist: weasyprint>=53.0; extra == "pdf"
+Provides-Extra: viz
+Requires-Dist: seaborn>=0.11.0; extra == "viz"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black>=23.0; extra == "dev"
+Requires-Dist: flake8>=3.9; extra == "dev"
+Requires-Dist: pre-commit>=2.20; extra == "dev"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+﻿# 🖼️ imgshape — Smart Image Analysis & Preprocessing Toolkit (v2.0.1)
+
+`imgshape` is a lightweight Python toolkit designed for **image shape detection**, **dataset inspection**, **preprocessing recommendation**, and **AI model compatibility checks** — all optimized for **ML/DL workflows**, both in research and production.
+
+![alt text](image.png)
+---
+
+## ⚡️ Why use `imgshape`?
+
+* 🔍 Automatically **detect shape**, **dominant color**, **entropy**, and **type** of an image.
+* 🧠 Recommend preprocessing steps like resize dims, normalization, and suitable model types.
+* 🖬 Analyze entire datasets to get size/shape distribution and dimension scatter plots.
+* ✅ Check model compatibility (e.g. with `mobilenet_v2`, `resnet18`, etc.).
+* 🌐 Supports **CLI**, **Python API**, and even a **Gradio-based GUI** for visual workflows.
+
+---
+
+
+## 🚀 Installation
+
+```bash
+pip install imgshape
+```
+
+> Requires Python 3.8+ and packages: Pillow, matplotlib, seaborn, numpy, scikit-image, gradio
+
+---
+
+## 💻 CLI Usage
+
+```bash
+imgshape --path ./sample.jpg                  # Get image shape
+imgshape --path ./sample.jpg --analyze        # Analyze image type and entropy
+imgshape --path ./sample.jpg --recommend      # Recommend preprocessing steps
+imgshape --dir ./images --check mobilenet_v2  # Check dataset compatibility with a model
+imgshape --batch --path ./folder              # Batch mode shape detection
+imgshape --viz ./images                       # Visualize size/shape distribution
+imgshape --web                                # Launch Gradio GUI
+```
+
+
+
+
