@@ -1,0 +1,17 @@
+pycff/__init__.py,sha256=lVL4VPz3c4kWCgjPtL4uuQLNmgwK92q1ffAsv5El02k,25
+pycff/__main__.py,sha256=XucNYJF-vacZPUfwKIUDc3YiZ5GNk8sXyE_oDP010bY,357
+pycff/application.cp313-win_amd64.pyd,sha256=oXMN-Uh0QoRvmWXbX61GTFi5sU4cC5t6zZEINt7XReI,50176
+pycff/cff.cp313-win_amd64.pyd,sha256=qz3IzPr4gH_yzmfV9i9oM8Ecl8So-Py4tz1WE6TwmiY,229888
+pycff/clevertw.cp313-win_amd64.pyd,sha256=kh9oY3LcG5zPVlghfyj4BG4aTJcOu6CU7CsO_mlGEqM,617984
+pycff/clevertwitem.cp313-win_amd64.pyd,sha256=aYfBWfItzSORzX9hiLJGUpKLqINWdtsKwibxG5DZ_0o,112640
+pycff/form_ui.cp313-win_amd64.pyd,sha256=njRisAGXE3GHU7JFqCSbCg8rBZ13oniRJ7Ug1E7mZtk,222208
+pycff/resource_rc.cp313-win_amd64.pyd,sha256=ln_i1_0m-etMsVB47ZC4tQkCbllGhyzRETZJ1VKFjUU,34816
+pycff/widget.cp313-win_amd64.pyd,sha256=Ua4K9w8l695bUCTsR8RSMFEY2WiQTLA_Qk_9M3dp35o,478720
+pycff/translations/PyCFF_en.qm,sha256=HYN4kPWUfkXOmoaZz-NuMQSYb4VyiLHDK1wJut-H9Io,22812
+pycff/translations/PyCFF_zh_CN.qm,sha256=pkQ_5peDx_oplyNzhcCPAlAS4Zz9u31-npJpOBt13oc,15689
+pycff-1.3.0.dist-info/licenses/LICENSE,sha256=f_4ZVFh8d9-6HPjrmy6nQ2cfpuY_nnovJYEZ1C4U7v4,27030
+pycff-1.3.0.dist-info/METADATA,sha256=BOf-2QqKALFInN2-xPj7hN0TYcYoPJupoU6s_UwhZF8,10888
+pycff-1.3.0.dist-info/WHEEL,sha256=ZjXRCNaQ9YSypEK2TE0LRB0sy2OVXSszb4Sx1XjM99k,97
+pycff-1.3.0.dist-info/entry_points.txt,sha256=LJSpi95ZS0l6TEmPrRCV_G9QRLqpgthxHOWI8Qpumss,42
+pycff-1.3.0.dist-info/top_level.txt,sha256=775wU0pXcB7vIX71K7m_F0nkxiLv2cnbM3s96M2oZnc,19
+pycff-1.3.0.dist-info/RECORD,,
