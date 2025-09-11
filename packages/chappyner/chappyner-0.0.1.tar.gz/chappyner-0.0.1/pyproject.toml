@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chappyner"
+version = "0.0.1"
+description = "Chappyner"
+authors = [
+  {name = "Fabio Pitari", email = "f.pitari@cineca.it"},
+  {name = "Lucia Rodriguez Muñoz", email = "l.rodriguezmunoz@cineca.it"},
+  {name = "Antonio Memmolo", email = "a.memmolo@cineca.it"},
+]
+maintainers = [
+  {name = "Fabio Pitari", email = "f.pitari@cineca.it"},
+  {name = "Lucia Rodriguez Muñoz", email = "l.rodriguezmunoz@cineca.it"},
+  {name = "Antonio Memmolo", email = "a.memmolo@cineca.it"},
+]
+
+dependencies = [
+  "PyYAML",
+]
+
+[project.scripts]
+chappyner = "chappyner:main"

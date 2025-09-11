@@ -1,0 +1,9 @@
+README.md
+chappyner.py
+pyproject.toml
+chappyner.egg-info/PKG-INFO
+chappyner.egg-info/SOURCES.txt
+chappyner.egg-info/dependency_links.txt
+chappyner.egg-info/entry_points.txt
+chappyner.egg-info/requires.txt
+chappyner.egg-info/top_level.txt
