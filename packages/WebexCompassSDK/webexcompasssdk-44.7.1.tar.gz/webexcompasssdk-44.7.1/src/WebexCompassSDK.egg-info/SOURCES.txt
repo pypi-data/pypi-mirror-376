@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/WebexCompassSDK.egg-info/PKG-INFO
+src/WebexCompassSDK.egg-info/SOURCES.txt
+src/WebexCompassSDK.egg-info/dependency_links.txt
+src/WebexCompassSDK.egg-info/top_level.txt
+src/sdk/WebexCompassClient.py
+src/sdk/__init__.py
+src/sdk/version.py
+src/sdk/ws.py

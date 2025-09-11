@@ -1,0 +1,4 @@
+sdk/WebexCompassClient
+sdk/__init__
+sdk/version
+sdk/ws

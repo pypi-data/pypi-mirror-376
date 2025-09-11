@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: WebexCompassSDK
+Version: 44.7.1
+Summary: A SDK for troubleshooting Webex Meetings
+Author: Won Zhou
+Author-email: wanzhou@cisco.com
+Dynamic: author
+Dynamic: author-email
+Dynamic: summary
