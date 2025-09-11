@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+aem_page_verifier/__init__.py
+aem_page_verifier/verifier.py
+aem_page_verifier.egg-info/PKG-INFO
+aem_page_verifier.egg-info/SOURCES.txt
+aem_page_verifier.egg-info/dependency_links.txt
+aem_page_verifier.egg-info/entry_points.txt
+aem_page_verifier.egg-info/requires.txt
+aem_page_verifier.egg-info/top_level.txt
+tests/__init__.py
+tests/test_verifier.py

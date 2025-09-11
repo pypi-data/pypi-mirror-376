@@ -1,0 +1,9 @@
+
+- **Why?** Required for PyPI and clarifies usage rights.
+
+#### `MANIFEST.in`
+Ensures non-code files are included in the package.
+
+**`aem_page_verifier/MANIFEST.in`**:
+include README.md
+include LICENSE
