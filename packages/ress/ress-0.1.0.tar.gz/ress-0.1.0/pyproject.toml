@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ress"
+version = "0.1.0"
+description = "Placeholder for a funtur release of ress"
+readme = "README.md"
+authors = [
+  { name="Dr.Q GmbH", email="info@askdrq.com" }
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://askdrq.com"
