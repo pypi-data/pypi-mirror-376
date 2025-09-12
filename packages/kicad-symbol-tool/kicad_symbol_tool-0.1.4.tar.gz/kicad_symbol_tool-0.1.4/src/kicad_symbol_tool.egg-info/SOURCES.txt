@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+src/kicad_symbol_tool/__init__.py
+src/kicad_symbol_tool/cli.py
+src/kicad_symbol_tool/derived_parts_from_spreadsheet.py
+src/kicad_symbol_tool.egg-info/PKG-INFO
+src/kicad_symbol_tool.egg-info/SOURCES.txt
+src/kicad_symbol_tool.egg-info/dependency_links.txt
+src/kicad_symbol_tool.egg-info/entry_points.txt
+src/kicad_symbol_tool.egg-info/requires.txt
+src/kicad_symbol_tool.egg-info/top_level.txt
+src/kicad_symbol_tool/kicad_symlib_util/__init__.py
+src/kicad_symbol_tool/kicad_symlib_util/symbol_file_class.py
+test/test_generate_spreadsheet.py
+test/test_symbol_file.py
