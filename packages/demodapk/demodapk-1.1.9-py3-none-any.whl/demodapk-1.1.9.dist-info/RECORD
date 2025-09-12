@@ -1,0 +1,15 @@
+demodapk/__init__.py,sha256=lnHAM_YSOt5TvtAm4ZVs32T0TpsCQ5kOOznnQlur1YE,22
+demodapk/__main__.py,sha256=PwqJv5nXevuc28TTQoaiGEYRkYsKvSq1nTbKA3bPoMc,69
+demodapk/argments.py,sha256=K-EAQEykGFEIyuiJEFLI5zg9yeAx1_U-kIRfjAmtHz0,2072
+demodapk/baseconf.py,sha256=6hyaAULLXOB4zrKZQhwYTwAojkXm_6FZzDyvApXF-7Y,5784
+demodapk/cli.py,sha256=KkF7mSddNx1IQ56CAca9wOBnMvZakCOVzA3UknrD7zQ,167
+demodapk/mark.py,sha256=GnETscuNJStjkJZdMGGFxh7XD0LJFtsIe4tOxKl6uMA,4927
+demodapk/mods.py,sha256=i3pb27qQrWnOXfzWXgs8Y7NwE5twdkO-UOXF1OBFqwY,9968
+demodapk/patch.py,sha256=e7gPWGD8Ar68l3RRnoSfwx7Jff_gUsVzEY5wQ7AOpoQ,13247
+demodapk/tool.py,sha256=MOVuLH0H1FKu0GsKhaN-xHGrk8Enjp3byyMDKXVqfbs,3299
+demodapk/utils.py,sha256=TiiVVJ1Nrqas5YQyJPkivDdGm7hbfJpvFKu4BU4er4I,2960
+demodapk-1.1.9.dist-info/entry_points.txt,sha256=IHzVPJewX9Bw7__ANLyBoZikNRYGCcMAhXuWkNtQ_ic,46
+demodapk-1.1.9.dist-info/licenses/LICENSE.txt,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+demodapk-1.1.9.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+demodapk-1.1.9.dist-info/METADATA,sha256=Ut6dEUfYfUd7oyTtaYPSqDcoBQdVRSrnP56BbFGumHA,3007
+demodapk-1.1.9.dist-info/RECORD,,
