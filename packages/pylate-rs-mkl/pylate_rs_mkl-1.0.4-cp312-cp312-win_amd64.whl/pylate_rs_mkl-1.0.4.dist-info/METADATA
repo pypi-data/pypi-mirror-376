@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: pylate-rs-mkl
+Version: 1.0.4
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Rust
+Classifier: Operating System :: OS Independent
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: maturin>=1.8.6 ; extra == 'dev'
+Requires-Dist: pytest-cov>=5.0.0 ; extra == 'dev'
+Requires-Dist: pytest>=7.4.4 ; extra == 'dev'
+Requires-Dist: ruff>=0.1.15 ; extra == 'dev'
+Requires-Dist: pre-commit>=3.0.0 ; extra == 'dev'
+Requires-Dist: pylate>=1.2.0 ; extra == 'dev'
+Requires-Dist: beir>=2.1.0 ; extra == 'dev'
+Requires-Dist: ranx>=0.3.20 ; extra == 'dev'
+Provides-Extra: dev
+Provides-Extra: metal
+Provides-Extra: accelerate
+Provides-Extra: cuda
+Provides-Extra: cudnn
+Provides-Extra: mkl
+License-File: LICENSE
+Summary: Rust and WebAssembly library for late interaction models.
+Keywords: 
+Author-email: "Raphael Sourty, LightOn" <raphael.sourty@lighton.ai>
+Requires-Python: >=3.9
+Project-URL: Homepage, https://github.com/lightonai/pylate-rs
+Project-URL: Documentation, https://github.com/lightonai/pylate-rs
+Project-URL: Repository, https://github.com/lightonai/pylate-rs
