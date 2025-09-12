@@ -1,0 +1,10 @@
+cmdfuncs/__init__.py,sha256=Z_zksrxeymeSt9t0Ii4gH_ExBR5GkE8vVFODCuZMR1s,96
+cmdfuncs/__main__.py,sha256=j2n-70JUmZrtln_FS8yWgJd9Q4VhugXYdsnOtJN8g0I,65
+cmdfuncs/core/__init__.py,sha256=Tr3CwIPY695IbF4DrKHrDes1AKd_iJgddUP46jxKHSw,163
+cmdfuncs/tests/__init__.py,sha256=3tb2RMqmWLTfSJt2LXFIXPHoBhctTwFT3SY7JyoHgiw,387
+cmdfuncs/tests/test_1984.py,sha256=_ami0cAP8vU0C8RpQhP1tLWnLFGTaeHlOG5O60RVKv8,222
+cmdfuncs-0.0.0.dev0.dist-info/licenses/LICENSE.txt,sha256=fOh9FHccUt9OcJPBaVJ482GX4yrl_FxCUk9YRZ53JOI,1074
+cmdfuncs-0.0.0.dev0.dist-info/METADATA,sha256=YGx9-ZFlSG21mJYO5gdT91d5aMRRPavz_8iCXamHlj8,2645
+cmdfuncs-0.0.0.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cmdfuncs-0.0.0.dev0.dist-info/top_level.txt,sha256=WsrlCJxv9qQtU7CxUJR58KJiHYdg7IdHnxQVcxTcMk4,9
+cmdfuncs-0.0.0.dev0.dist-info/RECORD,,
