@@ -1,0 +1,9 @@
+
+[debug]
+traceback-with-variables~=2.0
+
+[dev]
+build~=1.2.2.post1
+pytest==8.3.4
+pytest-cov==6.0.0
+twine~=4.0
