@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: multilibgeosuitesnd
+Version: 0.0.10.1
+Summary: Parser for the GeoSuite<tm> SND export format forked with bugfixes
+Home-page: https://github.com/Multiconsult-Group/10563014-geo-libgeosuitesnd
+Author: Jakob Drage Roti
+Author-email: jdr@multiconsult.no
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+Parser for the GeoSuite<tm> SND export format

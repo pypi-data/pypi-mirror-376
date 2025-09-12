@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+docs/codes.csv
+libgeosuitesnd/__init__.py
+libgeosuitesnd/flags.csv
+libgeosuitesnd/methods.csv
+libgeosuitesnd/stop_reasons.csv
+multilibgeosuitesnd.egg-info/PKG-INFO
+multilibgeosuitesnd.egg-info/SOURCES.txt
+multilibgeosuitesnd.egg-info/dependency_links.txt
+multilibgeosuitesnd.egg-info/entry_points.txt
+multilibgeosuitesnd.egg-info/requires.txt
+multilibgeosuitesnd.egg-info/top_level.txt
