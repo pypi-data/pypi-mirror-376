@@ -1,0 +1,184 @@
+Metadata-Version: 2.4
+Name: trasor-sdk
+Version: 2.1.0
+Summary: Official Python SDK for Trasor.io trust infrastructure platform
+Home-page: https://github.com/trasor-io/trasor-python
+Author: Trasor.io
+Author-email: "Trasor.io" <support@trasor.io>
+Maintainer-email: "Trasor.io" <support@trasor.io>
+License-Expression: MIT
+Project-URL: Homepage, https://trasor.io
+Project-URL: Documentation, https://docs.trasor.io/sdk/python
+Project-URL: Repository, https://github.com/trasor-io/trasor-python
+Project-URL: Bug Tracker, https://github.com/trasor-io/trasor-python/issues
+Project-URL: API Reference, https://docs.trasor.io/api
+Keywords: audit,logging,security,ai,agents,blockchain,verification,trust,infrastructure
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: Security
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8.1
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Requires-Dist: mypy>=0.812; extra == "dev"
+Provides-Extra: async
+Requires-Dist: aiohttp>=3.8.0; extra == "async"
+Provides-Extra: crewai
+Requires-Dist: crewai>=0.1.0; extra == "crewai"
+Provides-Extra: langchain
+Requires-Dist: langchain>=0.0.200; extra == "langchain"
+Provides-Extra: all
+Requires-Dist: aiohttp>=3.8.0; extra == "all"
+Requires-Dist: crewai>=0.1.0; extra == "all"
+Requires-Dist: langchain>=0.0.200; extra == "all"
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# Trasor Python SDK
+
+Official Python SDK for [Trasor.io](https://trasor.io) - AI Agent Security & Governance Platform
+
+## Installation
+
+```bash
+pip install trasor-sdk
+```
+
+## Quick Start
+
+```python
+from trasor import TrasorClient
+
+# Initialize the client
+client = TrasorClient(api_key="trasor_live_your_api_key_here")
+
+# Log an audit event
+result = client.log_event(
+    agent_name="my_agent",
+    action="process_data",
+    inputs={"user_id": "12345", "query": "Hello world"},
+    outputs={"response": "Hello! How can I help you?"},
+    status="success"
+)
+
+print(f"Event logged: {result['id']}")
+```
+
+## Security & Governance Features
+
+### Zero-Knowledge Proofs
+Generate cryptographic proofs for audit verification without exposing sensitive data:
+
+```python
+# Generate proof
+proof = client.generate_zk_proof(
+    agent_name="payment_processor",
+    start_date="2025-01-01", 
+    end_date="2025-01-31"
+)
+
+# Verify proof
+verification = client.verify_zk_proof(proof["hash"])
+```
+
+### Behavioral Drift Detection
+Monitor agent behavior and detect anomalies:
+
+```python
+# Set baseline behavior
+client.set_agent_baseline("my_agent", {
+    "average_response_time": 150,
+    "error_rate": 0.01,
+    "normal_actions": ["process_payment", "validate_card"]
+})
+
+# Get drift alerts
+alerts = client.get_drift_alerts(
+    agent_name="my_agent",
+    severity="critical"
+)
+```
+
+### Role-Based Access Control (RBAC)
+Manage agent permissions and monitor violations:
+
+```python
+# Assign role to agent
+client.assign_agent_role(
+    agent_name="data_processor",
+    role_id=2,  # Writer role
+    enforcement_mode="block_violations"
+)
+
+# Monitor violations
+violations = client.get_rbac_violations(limit=50)
+```
+
+### Compliance & Monitoring
+Track ISO 42001 compliance and security threats:
+
+```python
+# Get compliance score
+compliance = client.get_iso_compliance_score()
+print(f"Overall Score: {compliance['overallScore']}%")
+
+# Analyze security threats
+threats = client.get_threat_analysis(time_range="24h")
+
+# Get real-time metrics
+metrics = client.get_observability_metrics(
+    agent_name="my_agent",
+    metric_type="performance"
+)
+```
+
+## Framework Integrations
+
+### CrewAI Integration
+```python
+from trasor.integrations.crewai import TrasorCrewCallbacks
+
+crew = Crew(
+    agents=[agent],
+    tasks=[task],
+    callbacks=[TrasorCrewCallbacks(api_key="trasor_live_xxx")]
+)
+```
+
+### LangChain Integration
+```python
+from trasor.integrations.langchain import TrasorLangChainCallback
+from langchain.callbacks import CallbackManager
+
+callback_manager = CallbackManager([
+    TrasorLangChainCallback(api_key="trasor_live_xxx")
+])
+```
+
+## API Reference
+
+For complete API documentation, visit: https://docs.trasor.io/api
+
+## Support
+
+- Documentation: https://docs.trasor.io
+- Email: support@trasor.io
+- GitHub Issues: https://github.com/trasor-io/trasor-python/issues
+
+## License
+
+MIT License. See LICENSE file for details.
