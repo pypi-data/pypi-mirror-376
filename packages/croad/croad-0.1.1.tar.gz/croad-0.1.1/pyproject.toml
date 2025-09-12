@@ -1,0 +1,44 @@
+[project]
+name = "croad"
+version = "0.1.1"
+description = "Add your description here"
+authors = [
+    { name = "todo", email = "todo@todo.todo" }
+]
+dependencies = [
+    "matplotlib>=3.10.3",
+    "pyside6>=6.9.1",
+    "scipy>=1.15.3",
+    "numpy>=2.2.6",
+    "geomdl>=5.4.0",
+    "questionary[fuzzy]>=2.1.0",
+    "pymap3d>=3.2.0",
+    "rosbags>=0.10.10",
+    "autonomous-proto>=0.1.4",
+    "typer>=0.16.0",
+    "pydantic>=2.11.7",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[build-system]
+requires = ["hatchling==1.26.3"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+croad = "croad.croad:main"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "nuitka>=2.7.12",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/croad"]
+
+[tool.rye.scripts]
+build = { cmd = "python -m nuitka --enable-plugin=pyside6 --include-package=rosbags --onefile --output-dir=dist --output-filename=croad -j 16 src/croad_nuitka.py" }
