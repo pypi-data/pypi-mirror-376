@@ -1,0 +1,9 @@
+jupyter_server_mcp/__init__.py,sha256=v_7te1xxAnlwa8Cc63b965wiDqj3mI9OU1sCcXOeNcM,398
+jupyter_server_mcp/extension.py,sha256=EPiSBJAHAV2RduW1jTZVPT9_DiR9_OcvL9Ktxc3H1RE,5421
+jupyter_server_mcp/mcp_server.py,sha256=QzrzjeT5ZC9I3_TwT47WMwGUhF0Po_eQSzRmlE3wLNo,14074
+jupyter_server_mcp-0.1.1.data/data/etc/jupyter/jupyter_server_config.d/jupyter_server_mcp.json,sha256=w4Lu7wwDMI_Fg8TJ4ZlQCs1H4lxftGa0a2wndtQePu8,92
+jupyter_server_mcp-0.1.1.dist-info/METADATA,sha256=zbG0HadQKNwcg2CbtNXjh6CoYRinwiSFjhge6UKeaJ4,8868
+jupyter_server_mcp-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jupyter_server_mcp-0.1.1.dist-info/entry_points.txt,sha256=qJTFeqRsblYZFmKIdnBIwP1FT_BewFKQ9qBEiUurhEo,100
+jupyter_server_mcp-0.1.1.dist-info/licenses/LICENSE,sha256=JKmjP8I8TmWB11IKIruGPKoIAMXFZ-VSJeZg0jJ06pw,1505
+jupyter_server_mcp-0.1.1.dist-info/RECORD,,
