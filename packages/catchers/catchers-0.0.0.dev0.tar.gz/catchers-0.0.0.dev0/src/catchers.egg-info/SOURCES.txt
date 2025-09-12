@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+src/catchers/__init__.py
+src/catchers/__main__.py
+src/catchers.egg-info/PKG-INFO
+src/catchers.egg-info/SOURCES.txt
+src/catchers.egg-info/dependency_links.txt
+src/catchers.egg-info/top_level.txt
+src/catchers/core/__init__.py
+src/catchers/tests/__init__.py
+src/catchers/tests/test_1984.py
