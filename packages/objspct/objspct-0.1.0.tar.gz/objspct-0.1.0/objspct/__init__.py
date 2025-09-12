@@ -1,0 +1,1 @@
+from .objspct import inspect_object

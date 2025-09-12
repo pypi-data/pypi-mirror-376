@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "objspct"
+version = "0.1.0"
+description = "Introspect any Python object"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Davide Zepponi", email = "davidezepponi@gmail.com"}]
+dependencies = ["rich>=13.0"]
+
+[project.urls]
+Homepage = "https://github.com/DavideZepponi/objspct"
