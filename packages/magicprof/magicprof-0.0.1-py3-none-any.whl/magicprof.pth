@@ -1,0 +1,1 @@
+import os; import magicprof; os.getenv("MAGICPROF") and magicprof._instrument()
