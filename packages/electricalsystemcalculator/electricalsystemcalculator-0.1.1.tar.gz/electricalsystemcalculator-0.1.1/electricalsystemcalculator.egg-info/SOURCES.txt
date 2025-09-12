@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+electricalsystemcalculator/__init__.py
+electricalsystemcalculator/three_phase_calculations.py
+electricalsystemcalculator.egg-info/PKG-INFO
+electricalsystemcalculator.egg-info/SOURCES.txt
+electricalsystemcalculator.egg-info/dependency_links.txt
+electricalsystemcalculator.egg-info/top_level.txt
