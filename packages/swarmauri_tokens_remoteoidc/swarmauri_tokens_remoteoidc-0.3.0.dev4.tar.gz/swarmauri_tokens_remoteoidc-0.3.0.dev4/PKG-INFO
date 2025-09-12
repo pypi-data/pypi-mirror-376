@@ -1,0 +1,39 @@
+Metadata-Version: 2.3
+Name: swarmauri_tokens_remoteoidc
+Version: 0.3.0.dev4
+Summary: Remote OIDC token verification service
+License: Apache-2.0
+Author: Swarmauri
+Author-email: opensource@swarmauri.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Security :: Cryptography
+Classifier: Intended Audience :: Developers
+Provides-Extra: cbor
+Requires-Dist: cbor2 ; extra == "cbor"
+Requires-Dist: cryptography
+Requires-Dist: pyjwt (>=2.8.0)
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Description-Content-Type: text/markdown
+
+# swarmauri_tokens_remoteoidc
+
+Remote OIDC token verification service for Swarmauri.
+
+This package provides a verification-only token service that retrieves
+JSON Web Key Sets (JWKS) from a remote OpenID Connect (OIDC) issuer and
+validates JWTs in accordance with RFC 7517 and RFC 7519.
+
+## Features
+- Remote OIDC discovery with JWKS caching.
+- Audience and issuer validation.
+- Optional extras for additional canonicalisation formats.
+
+
