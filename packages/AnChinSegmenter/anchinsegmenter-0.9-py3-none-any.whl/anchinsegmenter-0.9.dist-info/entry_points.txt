@@ -1,0 +1,2 @@
+[console_scripts]
+segmenter = AnChinSegmenter.segmenter:main
