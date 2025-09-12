@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: w3shi_link
+Version: 2.3.0
+Summary: Dummy package for testing PyPI version
+Author: w3shi
+Dynamic: author
+Dynamic: summary
