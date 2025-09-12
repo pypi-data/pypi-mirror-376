@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: PLAlGaN
+Version: 1.0.0
+Summary: Package for AlGaN photoluminescence data analysis and visualization
+Author-email: Thibaut Meyer <thibaut.meyer3@gmail.com>
+License-Expression: GPL-3.0-or-later
+Project-URL: Homepage, https://github.com/thi-mey/PLApp
+Keywords: PL,AlGaN,photoluminescence,semiconductor,data-analysis,visualization
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Development Status :: 4 - Beta
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: Pillow
+Requires-Dist: PyQt5
+Requires-Dist: scipy
+Dynamic: license-file

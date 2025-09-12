@@ -1,0 +1,47 @@
+[build-system]
+requires = ['setuptools>=42']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "PLAlGaN"
+version = "1.0.0"
+authors = [
+  { name="Thibaut Meyer", email="thibaut.meyer3@gmail.com" },
+]
+description = "Package for AlGaN photoluminescence data analysis and visualization"
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = [
+    "PL",
+    "AlGaN",
+    "photoluminescence",
+    "semiconductor",
+    "data-analysis",
+    "visualization"
+]
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "Pillow",
+    "PyQt5",
+    "scipy"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Development Status :: 4 - Beta",
+]
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE*"]
+
+[project.gui-scripts]
+PL2D = "PLApp.main:main"
+
+[project.urls]
+Homepage = "https://github.com/thi-mey/PLApp"
