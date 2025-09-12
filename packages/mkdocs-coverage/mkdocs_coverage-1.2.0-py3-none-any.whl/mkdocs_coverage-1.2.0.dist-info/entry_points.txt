@@ -1,0 +1,7 @@
+[console_scripts]
+
+[gui_scripts]
+
+[mkdocs.plugins]
+coverage = mkdocs_coverage:MkDocsCoveragePlugin
+
