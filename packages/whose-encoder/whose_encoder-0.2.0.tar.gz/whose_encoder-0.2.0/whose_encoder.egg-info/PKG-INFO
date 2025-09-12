@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: whose_encoder
+Version: 0.2.0
+Summary: 一个将文件编码为'苹果'/'安卓'文本，以及解码还原的工具
+Author: Ruo1.-_1
+Author-email: 213243435@sey.edu.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+*基于户晨风“苹果-安卓”理论的编译码器*
