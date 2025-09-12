@@ -1,0 +1,14 @@
+cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cli/cli.py,sha256=jEmXse3StuNB3Gf0Cj0Ko6XPxHkchtQrR7_aXrF79BE,7161
+helpers/__init__.py,sha256=rEKVwxc8DBRqlvM_CM0ZRYlRIFkPJU3sTnIvsK9JbGY,79
+helpers/code_builder.py,sha256=U46bju-ZTk-48WqB3vWOtQNsCG23IOKKEt_5w103w1w,13124
+helpers/wheel_builder.py,sha256=CeX6GNrnEEFbBRY73q9AFE0BbehQD_W4zKvq-mC3iU8,5186
+settings/__init__.py,sha256=4UbGRbnJv_LH00Y_GQupKobZLlO_jrxe8iRzAshZ1Xk,19
+settings/urls.py,sha256=PoH9YeD-mJVtHkkruPw49YVOiM2EsujQ5hIXzKyAejY,237
+tests/test_send_to_kafka.py,sha256=3MkNEOuKlOg1KGwtS3mxX8vf3RsdvCWs4pRnu9aUqgg,3648
+tests/vertica_datacontract_pb2.py,sha256=ZpncSzcCUIjTxVwIXKEQIg0VOQ1Rg2UeeIAzsf_Bqps,1661
+datacontract_helper-0.1.42.dist-info/METADATA,sha256=p7Xwqfv9w-fhi_pRvJztWiEtNRrHV9CfDKRRREF0YJQ,2208
+datacontract_helper-0.1.42.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+datacontract_helper-0.1.42.dist-info/entry_points.txt,sha256=D_R8OjcoB2rkkf50UjuzQqX-UdewiIqmMEZgkpe39zY,52
+datacontract_helper-0.1.42.dist-info/top_level.txt,sha256=D5ty60OJBUoQvHIfzkkM4LgiMs992cFuL4b5kPfQBf4,27
+datacontract_helper-0.1.42.dist-info/RECORD,,
