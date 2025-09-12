@@ -1,0 +1,10 @@
+opensesame_plugins/screenshot/__init__.py,sha256=TcS5mXTc1RDyQVW1zZUrMsN0DllYE5plIijI4yKod1A,133
+opensesame_plugins/screenshot/screenshot/__init__.py,sha256=x6CsmGH8vEtSN9szyyFvov1SNAOzAu3bXUWHfzQQHHA,1376
+opensesame_plugins/screenshot/screenshot/screenshot.png,sha256=_pLFwCnwmsibRSDLrjQR-96ihWhvkxmrbEFnNMgMHno,1208
+opensesame_plugins/screenshot/screenshot/screenshot.py,sha256=XQghiiwqEQMBk__vVjdVD6iaMX-cwj4T90q2cozdPUY,3851
+opensesame_plugins/screenshot/screenshot/screenshot_large.png,sha256=uY9F9w5G2xq6m9JzV6MoCo-Pu5DZPEkrNO4l4mt7WmM,2334
+opensesame_plugin_screenshot-0.6.1.dist-info/COPYING,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+opensesame_plugin_screenshot-0.6.1.dist-info/LICENSE.md,sha256=JDDM4tMwet1p02KEe5Q1zZIX5sxl0jpWsCcW3W_fTq8,335
+opensesame_plugin_screenshot-0.6.1.dist-info/METADATA,sha256=S6igoluy66jhoO-Ai6IFLbAb_ay-wGuWTFvR_1zWqtY,1830
+opensesame_plugin_screenshot-0.6.1.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+opensesame_plugin_screenshot-0.6.1.dist-info/RECORD,,
