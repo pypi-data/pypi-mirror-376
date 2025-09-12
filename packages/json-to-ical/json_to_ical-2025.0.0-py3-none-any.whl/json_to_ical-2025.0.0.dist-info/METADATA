@@ -1,0 +1,12 @@
+Metadata-Version: 2.3
+Name: json-to-ical
+Version: 2025.0.0
+Summary: Script to convert json calendar data to ical format
+Requires-Dist: ical==8.2.0
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+# PyConAU calendar converter
+
+A cli tool which will take a .json agenda file or url and convert it to an .ics calendar file.
+
