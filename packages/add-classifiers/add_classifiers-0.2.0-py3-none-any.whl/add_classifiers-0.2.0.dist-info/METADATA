@@ -1,0 +1,33 @@
+Metadata-Version: 2.3
+Name: add-classifiers
+Version: 0.2.0
+Summary: Add your description here
+Author: Paul Traylor
+Author-email: Paul Traylor <kungfudiscomonkey@gmail.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: 3.15
+Requires-Dist: packaging>=25.0
+Requires-Dist: pzp>=0.0.28
+Requires-Dist: tomlkit>=0.13.3
+Requires-Dist: trove-classifiers>=2025.9.9.12
+Requires-Python: >=3.10
+Project-URL: Issues, https://codeberg.org/kfdm/add-classifiers/issues
+Project-URL: Source Code, https://codeberg.org/kfdm/add-classifiers
+Description-Content-Type: text/markdown
+
+# Simplify adding classifiers to a pyproject.toml
+
+Usage:
+
+```
+# Add individual classifiers via autocomplete
+uvx add-classifiers add
+# Automatically add suggested classifiers based on pyproject content
+# Currently supports requires-python and django
+uvx add-classifiers suggest
+```
