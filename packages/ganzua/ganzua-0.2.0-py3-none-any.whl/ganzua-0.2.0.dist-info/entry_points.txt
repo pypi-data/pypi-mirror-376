@@ -1,0 +1,2 @@
+[console_scripts]
+ganzua = ganzua.cli:app
