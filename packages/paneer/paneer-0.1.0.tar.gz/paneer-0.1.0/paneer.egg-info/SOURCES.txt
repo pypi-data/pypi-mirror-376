@@ -1,0 +1,17 @@
+MANIFEST.in
+pyproject.toml
+cli/__init__.py
+cli/__main__.py
+cli/patches/__init__.py
+cli/patches/example.py
+cli/patches/react.patch
+paneer/__init__.py
+paneer/comms.py
+paneer/paneer.js
+paneer/proto.py
+paneer.egg-info/PKG-INFO
+paneer.egg-info/SOURCES.txt
+paneer.egg-info/dependency_links.txt
+paneer.egg-info/entry_points.txt
+paneer.egg-info/requires.txt
+paneer.egg-info/top_level.txt
