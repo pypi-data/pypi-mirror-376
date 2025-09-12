@@ -1,0 +1,10 @@
+/tmp
+/.env
+__pycache__
+
+dist
+build
+guardian.egg-info
+
+!/**/.gitkeep
+*.vim

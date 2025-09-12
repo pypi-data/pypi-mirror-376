@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "guardian_vaultwarden"
+dynamic = ["version"]
+description = "Vaultwarden ciphers API client"
+readme = "README.md"
+license = "GPL-3.0-only"
+authors = [
+    { name = "Francesco Ballardin", email = "francesco.ballardin@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Information Technology",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+dependencies = [
+    "hkdf",
+    "pycryptodome",
+    "requests",
+]
+
+[project.urls]
+Homepage = "https://github.com/Pluvie/guardian"
+Documentation = "https://github.com/Pluvie/guardian"
+
+[tool.hatch.version]
+path = "src/guardian_vaultwarden/__about__.py"
