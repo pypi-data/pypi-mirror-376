@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - wxdat/1.5.1-2637f42-renovate/python-3.x+ (+https://github.com/jheddings/wxdat)
+    method: GET
+    uri: https://rt.ambientweather.net/v1/devices/98:CD:AC:22:F4:07?limit=1
+  response:
+    body:
+      string: '[{"dateutc":1736359800000,"tempinf":70.2,"humidityin":34,"baromrelin":30.366,"baromabsin":25.016,"tempf":30.6,"humidity":56,"winddir":157,"winddir_avg10m":185,"windspeedmph":2.2,"windspdmph_avg10m":3.6,"windgustmph":10.3,"maxdailygust":15.2,"hourlyrainin":0,"eventrainin":0,"dailyrainin":0,"weeklyrainin":0.008,"monthlyrainin":0.028,"yearlyrainin":0.028,"solarradiation":256.59,"uv":2,"feelsLike":30.6,"dewPoint":16.79,"feelsLikein":68.5,"dewPointin":40.5,"lastRain":"2025-01-07T19:46:00.000Z","date":"2025-01-08T18:10:00.000Z"}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fee297ecb2c7b2e-DEN
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 08 Jan 2025 18:13:32 GMT
+      ETag:
+      - W/"211-cSFk7HGGBNLNjIheQA/SjQ"
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=wGYQO1inDdZ6C22qxjwvNokMYgbk4f6Om1f0%2BjJamVLHD2XJ29R3axycsBoWKcvjgKhTYegWYoXygYEkG8HntHQ9%2FRRFZyyOpqfLXIVrxOC%2Fp8XvLaOyuoTgvjvQZDCZaeFrxcuMog%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=21369&min_rtt=14164&rtt_var=10458&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2856&recv_bytes=1015&delivery_rate=204462&cwnd=249&unsent_bytes=0&cid=6cf4c226120ee88a&ts=128&x=0"
+    status:
+      code: 200
+      message: OK
+version: 1

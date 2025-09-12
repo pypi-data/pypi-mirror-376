@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - wxdat/1.5.1-2637f42-renovate/python-3.x+ (+https://github.com/jheddings/wxdat)
+    method: GET
+    uri: https://api.openweathermap.org/data/2.5/weather?lat=39.73465&lon=-104.98672&units=imperial
+  response:
+    body:
+      string: '{"coord":{"lon":-104.9906,"lat":39.7323},"weather":[{"id":601,"main":"Snow","description":"snow","icon":"13d"}],"base":"stations","main":{"temp":32.13,"feels_like":27.21,"temp_min":29.62,"temp_max":36.18,"pressure":1025,"humidity":48,"sea_level":1025,"grnd_level":837},"visibility":10000,"wind":{"speed":5.01,"deg":179},"snow":{"1h":0.51},"clouds":{"all":2},"dt":1736359771,"sys":{"type":2,"id":2004334,"country":"US","sunrise":1736346052,"sunset":1736380340},"timezone":-25200,"id":5419384,"name":"Denver","cod":200}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '517'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 08 Jan 2025 18:13:38 GMT
+      Server:
+      - openresty
+      X-Cache-Key:
+      - /data/2.5/weather?lat=39.73&lon=-104.99&units=imperial
+    status:
+      code: 200
+      message: OK
+version: 1

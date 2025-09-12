@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - wxdat/1.5.1-2637f42-renovate/python-3.x+ (+https://github.com/jheddings/wxdat)
+    method: GET
+    uri: https://api.openweathermap.org/data/2.5/weather?lat=39.73465&lon=-104.98672&units=imperial
+  response:
+    body:
+      string: '{"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401
+        for more info."}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '108'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 08 Jan 2025 18:13:37 GMT
+      Server:
+      - openresty
+      X-Cache-Key:
+      - /data/2.5/weather?lat=39.73&lon=-104.99&units=imperial
+    status:
+      code: 401
+      message: Unauthorized
+version: 1

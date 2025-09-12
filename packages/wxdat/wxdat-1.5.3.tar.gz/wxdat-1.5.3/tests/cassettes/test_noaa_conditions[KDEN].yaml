@@ -1,0 +1,116 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/geo+json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - wxdat/1.5.1-2637f42-renovate/python-3.x+ (+https://github.com/jheddings/wxdat)
+    method: GET
+    uri: https://api.weather.gov/stations//KDEN/observations/latest
+  response:
+    body:
+      string: "{\n    \"@context\": [\n        \"https://geojson.org/geojson-ld/geojson-context.jsonld\",\n
+        \       {\n            \"@version\": \"1.1\",\n            \"wx\": \"https://api.weather.gov/ontology#\",\n
+        \           \"s\": \"https://schema.org/\",\n            \"geo\": \"http://www.opengis.net/ont/geosparql#\",\n
+        \           \"unit\": \"http://codes.wmo.int/common/unit/\",\n            \"@vocab\":
+        \"https://api.weather.gov/ontology#\",\n            \"geometry\": {\n                \"@id\":
+        \"s:GeoCoordinates\",\n                \"@type\": \"geo:wktLiteral\"\n            },\n
+        \           \"city\": \"s:addressLocality\",\n            \"state\": \"s:addressRegion\",\n
+        \           \"distance\": {\n                \"@id\": \"s:Distance\",\n                \"@type\":
+        \"s:QuantitativeValue\"\n            },\n            \"bearing\": {\n                \"@type\":
+        \"s:QuantitativeValue\"\n            },\n            \"value\": {\n                \"@id\":
+        \"s:value\"\n            },\n            \"unitCode\": {\n                \"@id\":
+        \"s:unitCode\",\n                \"@type\": \"@id\"\n            },\n            \"forecastOffice\":
+        {\n                \"@type\": \"@id\"\n            },\n            \"forecastGridData\":
+        {\n                \"@type\": \"@id\"\n            },\n            \"publicZone\":
+        {\n                \"@type\": \"@id\"\n            },\n            \"county\":
+        {\n                \"@type\": \"@id\"\n            }\n        }\n    ],\n
+        \   \"id\": \"https://api.weather.gov/stations/KDEN/observations/2025-01-08T16:53:00+00:00\",\n
+        \   \"type\": \"Feature\",\n    \"geometry\": {\n        \"type\": \"Point\",\n
+        \       \"coordinates\": [\n            -104.67,\n            39.859999999999999\n
+        \       ]\n    },\n    \"properties\": {\n        \"@id\": \"https://api.weather.gov/stations/KDEN/observations/2025-01-08T16:53:00+00:00\",\n
+        \       \"@type\": \"wx:ObservationStation\",\n        \"elevation\": {\n
+        \           \"unitCode\": \"wmoUnit:m\",\n            \"value\": 1656\n        },\n
+        \       \"station\": \"https://api.weather.gov/stations/KDEN\",\n        \"timestamp\":
+        \"2025-01-08T16:53:00+00:00\",\n        \"rawMessage\": \"KDEN 081653Z 22013KT
+        10SM CLR M04/M12 A3023 RMK AO2 SLP284 T10441117\",\n        \"textDescription\":
+        \"Clear\",\n        \"icon\": \"https://api.weather.gov/icons/land/day/skc?size=medium\",\n
+        \       \"presentWeather\": [],\n        \"temperature\": {\n            \"unitCode\":
+        \"wmoUnit:degC\",\n            \"value\": -4.4000000000000004,\n            \"qualityControl\":
+        \"V\"\n        },\n        \"dewpoint\": {\n            \"unitCode\": \"wmoUnit:degC\",\n
+        \           \"value\": -11.699999999999999,\n            \"qualityControl\":
+        \"V\"\n        },\n        \"windDirection\": {\n            \"unitCode\":
+        \"wmoUnit:degree_(angle)\",\n            \"value\": 220,\n            \"qualityControl\":
+        \"V\"\n        },\n        \"windSpeed\": {\n            \"unitCode\": \"wmoUnit:km_h-1\",\n
+        \           \"value\": 24.120000000000001,\n            \"qualityControl\":
+        \"V\"\n        },\n        \"windGust\": {\n            \"unitCode\": \"wmoUnit:km_h-1\",\n
+        \           \"value\": null,\n            \"qualityControl\": \"Z\"\n        },\n
+        \       \"barometricPressure\": {\n            \"unitCode\": \"wmoUnit:Pa\",\n
+        \           \"value\": null,\n            \"qualityControl\": \"Z\"\n        },\n
+        \       \"seaLevelPressure\": {\n            \"unitCode\": \"wmoUnit:Pa\",\n
+        \           \"value\": 102840,\n            \"qualityControl\": \"V\"\n        },\n
+        \       \"visibility\": {\n            \"unitCode\": \"wmoUnit:m\",\n            \"value\":
+        16090,\n            \"qualityControl\": \"C\"\n        },\n        \"maxTemperatureLast24Hours\":
+        {\n            \"unitCode\": \"wmoUnit:degC\",\n            \"value\": null\n
+        \       },\n        \"minTemperatureLast24Hours\": {\n            \"unitCode\":
+        \"wmoUnit:degC\",\n            \"value\": null\n        },\n        \"precipitationLastHour\":
+        {\n            \"unitCode\": \"wmoUnit:mm\",\n            \"value\": null,\n
+        \           \"qualityControl\": \"Z\"\n        },\n        \"precipitationLast3Hours\":
+        {\n            \"unitCode\": \"wmoUnit:mm\",\n            \"value\": null,\n
+        \           \"qualityControl\": \"Z\"\n        },\n        \"precipitationLast6Hours\":
+        {\n            \"unitCode\": \"wmoUnit:mm\",\n            \"value\": null,\n
+        \           \"qualityControl\": \"Z\"\n        },\n        \"relativeHumidity\":
+        {\n            \"unitCode\": \"wmoUnit:percent\",\n            \"value\":
+        56.755572735001003,\n            \"qualityControl\": \"V\"\n        },\n        \"windChill\":
+        {\n            \"unitCode\": \"wmoUnit:degC\",\n            \"value\": -11.416684232862222,\n
+        \           \"qualityControl\": \"V\"\n        },\n        \"heatIndex\":
+        {\n            \"unitCode\": \"wmoUnit:degC\",\n            \"value\": null,\n
+        \           \"qualityControl\": \"V\"\n        },\n        \"cloudLayers\":
+        [\n            {\n                \"base\": {\n                    \"unitCode\":
+        \"wmoUnit:m\",\n                    \"value\": null\n                },\n
+        \               \"amount\": \"CLR\"\n            }\n        ]\n    }\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      Cache-Control:
+      - public, max-age=274, s-maxage=300
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1043'
+      Content-Type:
+      - application/geo+json
+      Date:
+      - Wed, 08 Jan 2025 18:13:35 GMT
+      Expires:
+      - Wed, 08 Jan 2025 18:18:09 GMT
+      Last-Modified:
+      - Wed, 08 Jan 2025 16:53:00 GMT
+      Server:
+      - nginx/1.20.1
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+      Vary:
+      - Accept-Encoding
+      - Accept,Feature-Flags,Accept-Language
+      X-Correlation-ID:
+      - 27370ec0
+      X-Edge-Request-ID:
+      - b90995b
+      X-Request-ID:
+      - 5b2df467-43e4-4b72-8a0b-1b09bf9a2b62
+      X-Server-ID:
+      - vm-lnx-nids-apiapp8.ncep.noaa.gov
+    status:
+      code: 200
+      message: OK
+version: 1

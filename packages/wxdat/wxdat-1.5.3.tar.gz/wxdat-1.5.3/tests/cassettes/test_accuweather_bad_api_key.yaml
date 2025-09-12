@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - wxdat/1.5.1-2637f42-renovate/python-3.x+ (+https://github.com/jheddings/wxdat)
+    method: GET
+    uri: http://dataservice.accuweather.com/currentconditions/v1/2626674?details=True&language=en-US
+  response:
+    body:
+      string: '{"Code":"Unauthorized","Message":"Api Authorization failed","Reference":"/currentconditions/v1/2626674?apikey=12345&details=True&language=en-US"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Jan 2025 18:13:29 GMT
+    status:
+      code: 401
+      message: Unauthorized
+version: 1

@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/geo+json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - wxdat/1.5.1-2637f42-renovate/python-3.x+ (+https://github.com/jheddings/wxdat)
+    method: GET
+    uri: https://api.weather.gov/stations//XXXX/observations/latest
+  response:
+    body:
+      string: "{\n    \"correlationId\": \"2793119b\",\n    \"title\": \"Not Found\",\n
+        \   \"type\": \"https://api.weather.gov/problems/NotFound\",\n    \"status\":
+        404,\n    \"detail\": \"Not Found\",\n    \"instance\": \"https://api.weather.gov/requests/2793119b\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      Cache-Control:
+      - private, must-revalidate, max-age=300
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '225'
+      Content-Type:
+      - application/problem+json
+      Date:
+      - Wed, 08 Jan 2025 18:13:34 GMT
+      Expires:
+      - Wed, 08 Jan 2025 18:18:34 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx/1.20.1
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+      Vary:
+      - Accept,Feature-Flags,Accept-Language
+      X-Correlation-ID:
+      - 2793119b
+      X-Edge-Request-ID:
+      - b9062d4
+      X-Request-ID:
+      - 6740244a-151e-423d-906d-8da4b545a5e6
+      X-Server-ID:
+      - vm-lnx-nids-apiapp11.ncep.noaa.gov
+    status:
+      code: 404
+      message: Not Found
+version: 1

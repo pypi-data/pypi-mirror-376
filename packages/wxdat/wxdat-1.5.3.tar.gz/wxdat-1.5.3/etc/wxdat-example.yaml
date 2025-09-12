@@ -1,0 +1,63 @@
+## sample config file for wxdat app
+---
+
+# update interval (in seconds) for station data (may be specified per station);
+update_interval: 900
+
+# units will be represented by the following: imperial (default), metric
+units: imperial
+
+# override the database connection string (used by SQLAlcheny)
+# database: sqlite:///wxdat.db
+
+# enable Prometheus metrics on the specified port (remove to disable)
+# metrics: 9110
+
+# ------------------------------------------------------------------------------
+stations:
+
+  - name: Denver Airport via WUnderground
+    provider: WUndergroundPWS
+    update_interval: 1800
+    api_key: SECRET_API_KEY
+    station_id: KDEN
+
+  - name: Denver Airport via OpenWeather
+    provider: OpenWeatherMap
+    api_key: SECRET_API_EY
+    latitude: 39.8561
+    longitude: -104.6737
+
+  - name: Denver Airport via NOAA
+    provider: NOAA
+    station: KDEN
+
+# ------------------------------------------------------------------------------
+# setup logging system -- or remove this section to disable logging
+# this uses the standard dict config for the Python logging framework
+logging:
+  version: 1
+
+  formatters:
+    brief:
+      format: '%(message)s'
+    short:
+      format: '%(levelname)s:%(name)s:%(message)s'
+    precise:
+      format: '%(asctime)s %(levelname)-8s %(threadName)s %(name)s %(message)s'
+      datefmt: '%Y-%m-%d %H:%M:%S'
+
+  root:
+    level: INFO
+    handlers: [console]
+
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: brief
+      stream: ext://sys.stdout
+    logfile:
+      class: logging.FileHandler
+      formatter: precise
+      filename: wxdat.log
+      mode: w
