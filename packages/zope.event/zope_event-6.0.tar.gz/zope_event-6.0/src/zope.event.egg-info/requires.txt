@@ -1,0 +1,7 @@
+setuptools>=75.8.2
+
+[docs]
+Sphinx
+
+[test]
+zope.testrunner>=6.4
