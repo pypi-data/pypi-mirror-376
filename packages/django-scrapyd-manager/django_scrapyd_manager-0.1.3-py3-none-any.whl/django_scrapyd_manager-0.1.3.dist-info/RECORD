@@ -1,0 +1,17 @@
+django_scrapyd_manager/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_scrapyd_manager/admin.py,sha256=Bh-IR-G7oBySQOvekcqe2UlZNMU072ISsXpu10YFC9s,29639
+django_scrapyd_manager/apps.py,sha256=rjatIAZdDDeAxahPn_tXe9pdwvbpK5TzaDmUp4J-33E,1123
+django_scrapyd_manager/cache.py,sha256=FDtD8tfqbyAUNCicHfvGh9XstulBFJmJPa8mgONM6aw,1889
+django_scrapyd_manager/forms.py,sha256=YQzqjT3-j1acujkIr9GQCQ5XrhizWZIyQhPm9GjT9Bw,8168
+django_scrapyd_manager/guardian.py,sha256=JjyoV8qqnz8Tq2wYl9DnRlqcLNkjJ0QK8z58DiZmIQw,8513
+django_scrapyd_manager/models.py,sha256=qNMUMmHuP353X-EAEws_H0CrasbKlU4TclzO3TEt0Zw,15619
+django_scrapyd_manager/scrapyd_api.py,sha256=ERapXL0Sv_g5B8ZC2cOUnslz0ofHYp8nnd2WFR0Fwto,10577
+django_scrapyd_manager/tests.py,sha256=mrbGGRNg5jwbTJtWWa7zSKdDyeB4vmgZCRc2nk6VY-g,60
+django_scrapyd_manager/utils.py,sha256=WZDXYtRKyV7obl3DVzi4N61ZiBi-clFnYgn_XKtUjoU,127
+django_scrapyd_manager/migrations/0001_initial.py,sha256=-b5jVnOfe_SQSBlf7lyBr1mQ2p7gTjgTUsWBXQ4ctx0,17663
+django_scrapyd_manager/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_scrapyd_manager-0.1.3.dist-info/licenses/LICENSE,sha256=EEJSRlXN8KZR1TwDH22Ss4bMJbx0-HTd_2fqFWPxjlU,1063
+django_scrapyd_manager-0.1.3.dist-info/METADATA,sha256=zoEr_kwnPbjM3xCTv8d53h-l8hwx1aL1MbZ2s4DhA9o,3696
+django_scrapyd_manager-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_scrapyd_manager-0.1.3.dist-info/top_level.txt,sha256=vRDqIziMGvLVKInC7G9RQ307j6t2B5eMHOdYsAs0pv4,23
+django_scrapyd_manager-0.1.3.dist-info/RECORD,,
