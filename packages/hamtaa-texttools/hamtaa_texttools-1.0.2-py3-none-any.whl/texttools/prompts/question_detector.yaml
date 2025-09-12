@@ -1,0 +1,12 @@
+main_template: |
+  Determine that if the following text contains any question or request of some kind or not.
+  Respond only in JSON format:
+  {{"result": "true/false"}}
+  {input}
+
+analyze_template: |
+  We want to analyze this text snippet to see if it contains any question or request of some kind or not.
+  Read the text, and reason about it being a request or not.
+  Summerized, short answer.
+  {input}
+  
