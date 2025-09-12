@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+beautybook/__version__.py
+beautybook/core.py
+beautybook.egg-info/PKG-INFO
+beautybook.egg-info/SOURCES.txt
+beautybook.egg-info/dependency_links.txt
+beautybook.egg-info/top_level.txt
