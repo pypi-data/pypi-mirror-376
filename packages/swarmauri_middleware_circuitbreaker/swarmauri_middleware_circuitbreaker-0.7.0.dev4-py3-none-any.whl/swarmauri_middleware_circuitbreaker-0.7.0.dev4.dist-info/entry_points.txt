@@ -1,0 +1,3 @@
+[swarmauri.middlewares]
+CircuitBreakerMiddleware=swarmauri_middleware_circuitbreaker:CircuitBreakerMiddleware
+
