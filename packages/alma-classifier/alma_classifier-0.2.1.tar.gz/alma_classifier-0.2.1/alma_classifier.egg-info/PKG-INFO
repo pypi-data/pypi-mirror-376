@@ -1,0 +1,163 @@
+Metadata-Version: 2.4
+Name: alma-classifier
+Version: 0.2.1
+Summary: Epigenomic diagnosis of acute leukemia (research use only)
+Author-email: Francisco Marchi <francisco@almagenomics.com>
+License: GPL-3.0
+Keywords: methylation,leukemia,diagnosis
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Intended Audience :: Science/Research
+Requires-Python: <3.13,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy<2.0,>=1.25
+Requires-Dist: pandas<3.0,>=2.0
+Requires-Dist: scikit-learn<1.7.0,>=1.6.1
+Requires-Dist: joblib<2.0,>=1.4
+Requires-Dist: requests<3.0,>=2.25
+Requires-Dist: tqdm<5.0,>=4.60
+Provides-Extra: torch
+Requires-Dist: torch<3.0,>=2.8; extra == "torch"
+Dynamic: license-file
+
+# ALMA Classifier
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15636415.svg)](https://doi.org/10.5281/zenodo.15636415)
+[![Nat Commun](https://img.shields.io/badge/Nat%20Commun-2025-0a7bbc.svg)](https://www.nature.com/articles/s41467-025-62005-4)
+[![Downloads](https://static.pepy.tech/personalized-badge/alma-classifier?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/alma-classifier)
+[![Python versions](https://img.shields.io/pypi/pyversions/alma-classifier.svg)](https://pypi.org/project/alma-classifier/)
+[![Docker pulls](https://img.shields.io/docker/pulls/fmarchi/alma-classifier.svg)](https://hub.docker.com/r/fmarchi/alma-classifier)
+[![Research Use Only](https://img.shields.io/badge/Use-Research%20Only-orange.svg)](#important-limitations)
+
+Epigenomic diagnosis of acute leukemia and prognosis of AML.
+
+## Models
+
+1. **ALMA Subtype**: Classifies 27 subtypes of acute leukemia according to WHO 2022 + healthy control
+2. **38CpG AML Signature**: Risk stratification using targeted 38 CpG panel
+3. **AML Epigenomic Risk (v0.1.4 only)**: Predicts 5-year mortality probability for AML patients
+
+## What's New
+
+- **ALMA Subtype v2**
+  - Autoencoder–transformer architecture
+  - Near-perfect accuracy across methylation arrays and nanopore epigenomes
+  - v0.1.4 classifiers (from the publication) remain available in pip and docker.
+
+## Installation
+
+### Docker (recommended)
+
+```bash
+docker pull fmarchi/alma-classifier:0.2.1
+```
+
+### Python 3.11
+
+```bash
+pip install --extra-index-url https://download.pytorch.org/whl/cpu "torch==2.8.0+cpu"
+pip install alma-classifier
+```
+
+If you have a CUDA-enabled system, want GPU acceleration, and don't mind the extra dependency weight, install the matching CUDA build instead with `pip install torch>=2.8.0`.
+
+## Usage
+
+### Docker
+
+Run demo:
+
+```bash
+docker run --rm -v "$(pwd)":/work -w /work fmarchi/alma-classifier:0.2.1 \
+  alma-classifier --demo
+```
+
+Run using your data:
+
+```bash
+# Transfer your input data to current working directory
+docker run --rm -v "$(pwd)":/work -w /work fmarchi/alma-classifier:0.2.1 \
+  alma-classifier -i /work/your_data.pkl
+```
+
+### Python 3.11 (CLI)
+
+Run demo:
+
+```bash
+alma-classifier --demo
+```
+
+Run using your data:
+
+```bash
+alma-classifier -i path/to/your_data.pkl
+```
+
+## Input Formats
+
+### Illumina Methylation450k or EPIC
+
+Prepare a .pkl (or csv.gz) dataset with the following structure:
+
+- **Rows**: Samples
+- **Columns**: CpG sites
+- **Values**: Beta values (0-1)
+
+Got .idat files? Use [SeSAMe](https://github.com/zwdzwd/sesame) first.
+
+### Nanopore whole genome sequencing
+
+Follow the standard bedMethyl format with these key columns:
+
+- **Column 1**: `chrom` - Chromosome name
+- **Column 2**: `start_position` - 0-based start position  
+- **Column 4**: `modified_base_code` - Single letter code for modified base
+- **Column 11**: `fraction_modified` - Percentage of methylation (0-100)
+
+Got .bam files? Use [modkit](https://nanoporetech.github.io/modkit/intro_pileup.html) first:
+
+```bash
+modkit pileup \
+"$bam_file" \
+"$bed_file" \
+-t $threads \
+--combine-strands \
+--cpg \
+--ignore h \
+--ref ref/hg38.fna \
+--no-filtering
+```
+
+## CLI options
+
+```bash
+usage: alma-classifier [-h] [-i INPUT_DATA] [-o OUTPUT] [--download-models] [--demo] [--all_probs]
+
+🩸🧬 ALMA Classifier – Epigenomic diagnosis of acute leukemia (research use only) 🧬🩸
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_DATA, --input_data INPUT_DATA
+                        Input file: .pkl with β‑values, .csv/.csv.gz with β‑values, or .bed/.bed.gz nanopore file
+  -o OUTPUT, --output OUTPUT
+                        .csv output (default: alongside input data)
+  --download-models     Download model weights from GitHub release
+  --demo                Run demo with example dataset
+  --all_probs           Include all subtype/class probabilities as separate columns in the output
+```
+
+## Output
+
+Results include subtype classification, risk prediction, and confidence scores.
+
+## Important limitations
+
+- The diagnostic model does not currently recognize: AML with Down Syndrome, juvenile myelomonocytic leukemia, transient abnormal myelopoiesis, low-risk MDS, or lymphomas. We need reference methylation data for these patient populations.
+- Follow preprocessing as instructed in "Input Formats" above. Different or erroneous preprocessing may lead to poor performance. This applies to bad wet-lab handling of samples.
+- The models will attempt to work with missing CpGs. Ideally, use Methylation Array 450k,EPIC or WGS Nanopore Seq with >5x coverage. Anything below that may compromise performance.
+
+## Citation
+
+Marchi, F., Shastri, V.M., Marrero, R.J. et al. Epigenomic diagnosis and prognosis of Acute Myeloid Leukemia. Nat Commun 16, 6961 (2025). <https://doi.org/10.1038/s41467-025-62005-4>

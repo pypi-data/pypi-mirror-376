@@ -1,0 +1,46 @@
+############################
+#  Build backend
+############################
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+############################
+#  Project metadata (PEP 621)
+############################
+[project]
+name = "alma-classifier"
+version = "0.2.1"
+description = "Epigenomic diagnosis of acute leukemia (research use only)"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { text = "GPL-3.0" }
+authors = [{ name = "Francisco Marchi", email = "francisco@almagenomics.com" }]
+keywords = ["methylation", "leukemia", "diagnosis"]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Intended Audience :: Science/Research",
+]
+
+dependencies = [
+  "numpy>=1.25,<2.0",
+  "pandas>=2.0,<3.0",
+  "scikit-learn>=1.6.1,<1.7.0",
+  "joblib>=1.4,<2.0",
+  "requests>=2.25,<3.0",
+  "tqdm>=4.60,<5.0"
+]
+
+# Optional extras: lets users pull torch explicitly (with the appropriate index)
+[project.optional-dependencies]
+torch = ["torch>=2.8,<3.0"]
+
+############################
+#  Console script
+############################
+[project.scripts]
+alma-classifier = "alma_classifier.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["alma_classifier*"]
