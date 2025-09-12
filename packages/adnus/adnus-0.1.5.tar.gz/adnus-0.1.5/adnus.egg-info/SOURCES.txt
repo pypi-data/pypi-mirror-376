@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+adnus.egg-info/PKG-INFO
+adnus.egg-info/SOURCES.txt
+adnus.egg-info/dependency_links.txt
+adnus.egg-info/requires.txt
+adnus.egg-info/top_level.txt
+tests/test_adnus.py
