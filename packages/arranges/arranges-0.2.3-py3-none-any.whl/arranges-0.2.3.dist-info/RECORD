@@ -1,0 +1,9 @@
+arranges/__init__.py,sha256=VNSU--ZmpD5_6yqRMQEGp2oQyvY9K8x-3-4XpZApZVg,166
+arranges/dict.py,sha256=gdj_exSlcM2yOGaDov3bYi2X6kuD5A163gNyxSFFyQ8,9038
+arranges/ranges.py,sha256=LGj2gH174UDZ8cUl6vj8IvgKAlhVz8BnaKqi7yWHZ38,10578
+arranges/segment.py,sha256=k5G46vfQH_HG90r30vrMbq3HzLZDoojsxl3uhkJFrzI,9250
+arranges/utils.py,sha256=htp4yYCb29Gey7KgYlnci9Ke-Cn1flyL3LiITA1X9-c,3974
+arranges-0.2.3.dist-info/licenses/LICENSE.md,sha256=OnK4uNRJRGCymwedqbZpJkBCuirChTzIbFiTREuCYBk,137
+arranges-0.2.3.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+arranges-0.2.3.dist-info/METADATA,sha256=p5wHVF3pCVjW9fuTFd8n9_29FNdfUkynDvY-lSho_Wg,4386
+arranges-0.2.3.dist-info/RECORD,,
