@@ -1,0 +1,3 @@
+[console_scripts]
+nens-meta = nens_meta.update_project:main
+nens-update-project = nens_meta.update_project:main
