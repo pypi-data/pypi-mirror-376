@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: llama-index-vector-stores-vectorx
+Version: 0.1.0
+Summary: LlamaIndex VectorX vector store integration
+Author-email: Your Name <you@example.com>
+License-Expression: MIT
+License-File: LICENSE
+Requires-Python: <4.0,>=3.10
+Requires-Dist: llama-index-core<0.14,>=0.13.0
+Requires-Dist: llama-index-embeddings-huggingface
+Requires-Dist: vecx>=0.1.0
+Description-Content-Type: text/markdown
+
+# LlamaIndex Vector_Stores Integration: VectorX
+
+## 🚀 Installation
+
+```bash
+pip install llama-index-core vecx
+```
+
+## Usage
+
+```Python
+from llama_index.vector_stores.vectorx import VectorXVectorStore
+from llama_index.core import VectorStoreIndex
+
+# Initialize store
+store = VectorXVectorStore.from_params(
+    api_token="YOUR_API_TOKEN",
+    encryption_key="YOUR_ENCRYPTION_KEY",
+    index_name="my-index",
+    dimension=768,  # must match your embeddings
+)
+
+# Wrap with LlamaIndex
+index = VectorStoreIndex.from_vector_store(store)
+
+# Insert/query as usual
+query_engine = index.as_query_engine()
+response = query_engine.query("What is VectorX?")
+print(response)
+```
