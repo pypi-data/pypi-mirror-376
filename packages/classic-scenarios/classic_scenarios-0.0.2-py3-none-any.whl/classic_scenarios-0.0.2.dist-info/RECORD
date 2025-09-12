@@ -1,0 +1,8 @@
+classic/scenarios/__init__.py,sha256=e880oYewYLg5_NF9tUYPKtlAH_IL9Ia48YieWwe31I4,62
+classic/scenarios/exceptions.py,sha256=7Zo0kJMlyVKIHoew34pbNKs7-vTiqR-wTnFzChfs41k,644
+classic/scenarios/scenario.py,sha256=Ln1ncY0un5y8-UpJ3XGXFAhow4f0HafgRWhv4d5eBnE,1634
+classic_scenarios-0.0.2.dist-info/licenses/LICENSE,sha256=NJlZYf1BWmSV82IG29S9QdVpNjUsMMIeMwAtJpkkU9w,1071
+classic_scenarios-0.0.2.dist-info/METADATA,sha256=xkl29G7tv0H7Ir_FODBC86CD5UQ-gDnFkbnoFHwaFig,4811
+classic_scenarios-0.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+classic_scenarios-0.0.2.dist-info/top_level.txt,sha256=NGd9e95FycaETli7Cs0MwFTtdjK6EYJ3tq_ErbSLNZg,8
+classic_scenarios-0.0.2.dist-info/RECORD,,
