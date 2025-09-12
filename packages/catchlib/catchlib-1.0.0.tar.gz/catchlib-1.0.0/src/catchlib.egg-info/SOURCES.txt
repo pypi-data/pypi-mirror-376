@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+src/catchlib/__init__.py
+src/catchlib.egg-info/PKG-INFO
+src/catchlib.egg-info/SOURCES.txt
+src/catchlib.egg-info/dependency_links.txt
+src/catchlib.egg-info/top_level.txt
+src/catchlib/core/__init__.py
+src/catchlib/tests/__init__.py
+src/catchlib/tests/test_0.py
