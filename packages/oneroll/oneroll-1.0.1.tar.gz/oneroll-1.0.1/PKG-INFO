@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: oneroll
+Version: 1.0.1
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Robot Framework
+Classifier: Framework :: Robot Framework :: Library
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: rich>=14.1.0
+Requires-Dist: textual>=6.1.0
+License-File: LICENSE
+Summary: An efficient dice expression parsing tool, based on Rust and PEG grammar
+Keywords: hydroroll,dice,expression,parser,roll,peg,rust
+Home-Page: https://hydroroll.team/
+Author: HsiangNianian
+Author-email: HsiangNianian <leader@hydroroll.team>
+License: AGPL-3.0
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+Project-URL: homepage, https://hydroroll.team/
+Project-URL: repository, https://github.com/HydroRoll-Team/oneroll
+Project-URL: documentation, https://oneroll.hydroroll.team/
+
+OneRoll
+=======
+
+    An efficient dice expression parsing tool, based on Rust and PEG grammar
