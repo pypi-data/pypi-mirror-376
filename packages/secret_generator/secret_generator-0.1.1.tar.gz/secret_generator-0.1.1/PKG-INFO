@@ -1,0 +1,30 @@
+Metadata-Version: 2.3
+Name: secret_generator
+Version: 0.1.1
+Summary: 
+License: Apache-2.0
+Author: Bakminstof
+Author-email: bakminstof@yandex.ru
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Repository, https://github.com/Bakminstof/secret_generator
+Description-Content-Type: text/markdown
+
+Example:
+
+1) 
+```python
+from secret_generator import generate_secret
+
+print(generate_secret(40))
+```
+2) 
+```python
+from secret_generator import run
+
+run()
+```
+
