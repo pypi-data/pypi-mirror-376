@@ -1,0 +1,11 @@
+numpy>=1.21
+scipy
+scikit-learn>=0.22
+matplotlib
+torch
+grad-cam
+torchcam
+
+[ags]
+asymmetric-greedy-search
+numba
