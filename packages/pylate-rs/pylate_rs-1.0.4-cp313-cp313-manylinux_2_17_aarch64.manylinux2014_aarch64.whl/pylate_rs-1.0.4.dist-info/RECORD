@@ -1,0 +1,7 @@
+pylate_rs-1.0.4.dist-info/METADATA,sha256=j04cgMjKl5l6ThZS-2gR-6vhZ0EYdAobWPA8Clu03OE,1107
+pylate_rs-1.0.4.dist-info/WHEEL,sha256=wvPMIrp4MafmZyLFFKa_Gu58t57iXPruL8GrrDqQ9eI,131
+pylate_rs-1.0.4.dist-info/licenses/LICENSE,sha256=1kKfYTYlRIiDdKnS0Gw90cWBOC1vJleeTYiusLbN-6Q,1064
+pylate_rs/models/__init__.py,sha256=dNyQb86Dg8aR7h019QppvWQ01UCK1jcyJmpxH0jIJ7Y,52
+pylate_rs/models/colbert.py,sha256=LNspHLdU0ZkNYEG2ESw4_sxBMcqn4c5prVOWdHYUGb8,3815
+pylate_rs/pylate_rs.cpython-313-aarch64-linux-gnu.so,sha256=lDqKY3Y5bqEyHJ8YsWX3qKpsUdqB_a_yFfZZsVJzolQ,8658984
+pylate_rs-1.0.4.dist-info/RECORD,,
