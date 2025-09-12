@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brainfork"
+version = "0.1.0"
+description = "An intelligent AI model router for Azure OpenAI that automatically selects the best model for your specific use case"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Pooyan Fekrati", email = "p.fekrati@hotmail.com"}, 
+]
+maintainers = [
+    {name = "Pooyan Fekrati", email = "p.fekrati@hotmail.com"}, 
+]
+keywords = ["azure", "openai", "ai", "model", "router", "llm", "gpt"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "openai>=1.0.0",
+    "azure-identity>=1.12.0",
+    "pydantic>=2.0.0",
+    "aiohttp>=3.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/pfekrati/brainfork"  # Update with your GitHub URL
+Repository = "https://github.com/pfekrati/brainfork"  # Update with your GitHub URL
+Issues = "https://github.com/pfekrati/brainfork/issues"  # Update with your GitHub URL
+Documentation = "https://github.com/pfekrati/brainfork#readme"  # Update with your GitHub URL
+
+[tool.setuptools]
+packages = ["brainfork"]
+
+[tool.setuptools.package-data]
+brainfork = ["py.typed"]
