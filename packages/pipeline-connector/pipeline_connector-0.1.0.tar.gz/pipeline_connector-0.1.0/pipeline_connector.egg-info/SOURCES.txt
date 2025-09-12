@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+pipeline_connector/__init__.py
+pipeline_connector/base.py
+pipeline_connector/connectors.py
+pipeline_connector/data_pipeline.py
+pipeline_connector/manager.py
+pipeline_connector.egg-info/PKG-INFO
+pipeline_connector.egg-info/SOURCES.txt
+pipeline_connector.egg-info/dependency_links.txt
+pipeline_connector.egg-info/requires.txt
+pipeline_connector.egg-info/top_level.txt
+tests/test_basic.py

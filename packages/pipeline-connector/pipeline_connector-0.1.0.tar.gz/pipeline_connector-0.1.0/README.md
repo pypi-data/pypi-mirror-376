@@ -1,0 +1,139 @@
+# Pipeline Connector
+
+A powerful Python package for connecting and orchestrating multiple data pipelines with ease.
+
+## Features
+
+- **Multi-Pipeline Connection**: Connect 2 or more pipelines seamlessly
+- **Data Flow Management**: Intelligent data routing between connected pipelines
+- **Asynchronous Support**: Built-in async support for high-performance processing
+- **Type Safety**: Full type hints and Pydantic validation
+- **Extensible Architecture**: Easy to extend with custom pipeline implementations
+- **Error Handling**: Robust error handling and recovery mechanisms
+- **Logging**: Comprehensive logging for debugging and monitoring
+
+## Installation
+
+```bash
+pip install pipeline-connector
+```
+
+## Quick Start
+
+```python
+from pipeline_connector import PipelineManager, DataPipeline
+
+# Create pipeline instances
+pipeline1 = DataPipeline("data_source")
+pipeline2 = DataPipeline("data_processor") 
+pipeline3 = DataPipeline("data_sink")
+
+# Create a pipeline manager
+manager = PipelineManager()
+
+# Connect pipelines
+manager.connect(pipeline1, pipeline2)
+manager.connect(pipeline2, pipeline3)
+
+# Execute the connected pipelines
+result = await manager.execute(input_data)
+```
+
+## Advanced Usage
+
+### Custom Pipeline Implementation
+
+```python
+from pipeline_connector import BasePipeline
+from typing import Any, Dict
+
+class CustomDataProcessor(BasePipeline):
+    async def process(self, data: Any) -> Any:
+        # Your custom processing logic
+        processed_data = self.transform(data)
+        return processed_data
+    
+    def transform(self, data: Any) -> Any:
+        # Implement your transformation logic
+        return data
+```
+
+### Pipeline with Configuration
+
+```python
+from pipeline_connector import PipelineManager, PipelineConfig
+
+config = PipelineConfig(
+    name="my_pipeline",
+    batch_size=100,
+    timeout=30,
+    retry_attempts=3
+)
+
+manager = PipelineManager(config=config)
+```
+
+### Error Handling
+
+```python
+from pipeline_connector import PipelineManager, PipelineError
+
+try:
+    result = await manager.execute(data)
+except PipelineError as e:
+    print(f"Pipeline error: {e}")
+    # Handle the error appropriately
+```
+
+## API Reference
+
+### PipelineManager
+
+The main class for managing and connecting multiple pipelines.
+
+#### Methods
+
+- `connect(source_pipeline, target_pipeline)`: Connect two pipelines
+- `disconnect(source_pipeline, target_pipeline)`: Disconnect pipelines
+- `execute(data, **kwargs)`: Execute the connected pipeline chain
+- `get_connections()`: Get all current pipeline connections
+
+### BasePipeline
+
+Abstract base class for creating custom pipelines.
+
+#### Methods
+
+- `process(data)`: Abstract method to implement data processing logic
+- `validate_input(data)`: Validate input data
+- `validate_output(data)`: Validate output data
+
+### DataPipeline
+
+Ready-to-use pipeline implementation for common data processing tasks.
+
+## Examples
+
+Check out the `examples/` directory for more detailed usage examples:
+
+- `basic_usage.py`: Simple pipeline connection example
+- `async_processing.py`: Asynchronous pipeline processing
+- `custom_pipeline.py`: Creating custom pipeline implementations
+- `error_handling.py`: Error handling and recovery
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Changelog
+
+### Version 0.1.0
+- Initial release
+- Basic pipeline connection functionality
+- Asynchronous support
+- Type safety with Pydantic
+- Comprehensive error handling
