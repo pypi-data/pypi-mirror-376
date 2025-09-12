@@ -1,0 +1,3 @@
+[swarmauri.cert_services]
+MsAdcsCertService=swarmauri_certservice_ms_adcs.MsAdcsCertService:MsAdcsCertService
+
