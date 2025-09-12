@@ -1,0 +1,119 @@
+# see https://github.com/karlicoss/pymplate for up-to-date reference
+[project]
+dynamic = ["version"]  # version is managed by build backend
+# NOTE: 'my' is taken for PyPi already, and makes discovering the project impossible
+#  , so we're using HPI
+name = "HPI"
+dependencies = [
+    "pytz"                   , # even though it's not needed by the core, it's so common anyway...
+    "typing-extensions"      , # one of the most common pypi packages, ok to depend for core
+    "platformdirs"           , # very common, and makes it portable
+    "more-itertools"         , # it's just too useful and very common anyway
+    "decorator"              , # less pain in writing correct decorators. very mature and stable, so worth keeping in core
+    "click>=8.1"             , # for the CLI, printing colors, decorator-based - may allow extensions to CLI
+    "kompress>=0.2.20240918" , # for transparent access to compressed files via pathlib.Path
+
+]
+requires-python = ">=3.10"
+
+## these need to be set if you're planning to upload to pypi
+description = "A Python interface to my life"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Dima Gerasimov (@karlicoss)", email = "karlicoss@gmail.com"},
+]
+maintainers = [
+    {name = "Dima Gerasimov (@karlicoss)", email = "karlicoss@gmail.com"},
+]
+# keywords = []
+# # see: http://pypi.python.org/pypi?%3Aaction=list_classifiers
+# classifiers = [
+# ]
+
+
+[project.urls]
+Homepage = "https://github.com/karlicoss/HPI"
+##
+
+
+[project.optional-dependencies]
+optional = [
+    # todo document these?
+    "orjson",      # for my.core.serialize
+    "pyfzf_iter",  # for my.core.denylist
+    "cachew>=0.15.20231019",
+    "mypy",       # used for config checks
+    "colorlog",   # for colored logs
+    "enlighten",  # for CLI progress bars
+]
+
+[dependency-groups]
+# TODO: not sure, on the one hand could just use 'standard' dev dependency group
+# On the other hand, it's a bit annoying that it's always included by default? 
+# To make sure it's not included, need to use `uv run --exact --no-default-groups ...`
+testing = [
+    "pytest",
+    "ruff",
+
+    # used in some tests.. although shouldn't rely on it
+    "pandas",
+
+    "orjson",  # for my.core.serialize and denylist
+    "simplejson",  # for my.core.serialize
+]
+typecheck = [
+    { include-group = "testing" },
+    "mypy",
+    "lxml",  # for mypy coverage
+    "ty>=0.0.1a20",
+
+    "HPI[optional]",
+    "orgparse",  # for my.core.orgmode
+    "gpxpy",     # for hpi query --output gpx
+
+    ##
+    "types-pytz"      ,  # for my.core
+    "types-decorator" ,  # for my.core.compat
+    "pandas-stubs"    ,  # for my.core.pandas
+    "types-dateparser",  # for my.core.query_range
+    "types-simplejson",  # for my.core.serialize
+    ##
+]
+typecheck-all = [
+    { include-group = "typecheck" },
+    "lxml-stubs",         # for my.smscalls
+    "types-protobuf",     # for my.google.maps.android
+    "types-Pillow",       # for my.photos
+    "types-icalendar",    # for my.rtm
+    "types-workalendar",  # for my.calendar.holidays
+]
+
+
+[project.scripts]
+hpi = "my.core.__main__:main"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+# sigh... see https://github.com/pypa/hatch/issues/2008
+# this is due to the backwards compatible my -> src/my symlink
+# also using packages = ["my"] works for the wheel, but it breaks editable link
+# the downside is that not all soruces are included in sdist... but not a huge deal for now
+[tool.hatch.build.targets.sdist]
+only-include = [
+    "src",
+    "misc",
+    "doc",
+]
+
+# unfortunately have to duplicate project name here atm, see https://github.com/pypa/hatch/issues/1894
+[tool.hatch.build.targets.wheel]
+packages = ["src/my"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+version_scheme = "python-simplified-semver"
+local_scheme = "dirty-tag"
