@@ -1,0 +1,8 @@
+clickpesa/__init__.py,sha256=satOjVd5z_W5iFiWJa1WpjrD31G9m4wrIQ5XAspKtGQ,861
+clickpesa/client.py,sha256=lEiBoepOlNmhUZ7fEVtEaWdmHzqWdZf5jRAOgAxtUBE,9782
+clickpesa/exceptions.py,sha256=PyAYVXNmZyCKJSPddur9rTEtQfkToRRqLJcYy0ot7-E,756
+clickpesa/models.py,sha256=7wMEH2cPxbIJn-4Iygj0mjg83obWWC8z5dQuIt3WCiY,2275
+clickpesa-1.0.0.dist-info/METADATA,sha256=frdPAlCmiGyGZ--XmV2yRjVc-UysFTiSpEBSc3RpNSk,4580
+clickpesa-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+clickpesa-1.0.0.dist-info/licenses/LICENSE,sha256=a_EHoxoig6FxNVtg_rU6rKbW8J3xQAN8YSF_X92_A6o,1067
+clickpesa-1.0.0.dist-info/RECORD,,
