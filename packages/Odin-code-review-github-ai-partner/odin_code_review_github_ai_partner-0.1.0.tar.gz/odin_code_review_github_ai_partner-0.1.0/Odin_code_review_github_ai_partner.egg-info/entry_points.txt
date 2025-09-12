@@ -1,0 +1,2 @@
+[console_scripts]
+Odin-code-review-github-ai-partner = ai_code_review.cli:main
