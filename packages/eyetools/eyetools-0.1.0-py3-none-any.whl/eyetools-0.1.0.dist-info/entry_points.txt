@@ -1,0 +1,2 @@
+[console_scripts]
+eyetools-mcp = eyetools.cli:main
