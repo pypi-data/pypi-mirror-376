@@ -1,0 +1,8 @@
+views_evaluation/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+views_evaluation/evaluation/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+views_evaluation/evaluation/evaluation_manager.py,sha256=fuRzZ_ZNR60k7MIUPREmWZJ_PyBXayuL2Gadab4sSAA,23458
+views_evaluation/evaluation/metric_calculators.py,sha256=D0ayNG8F-s2QflMfxgda8n3pw8-MpaiGaXqSUte1Vv4,14474
+views_evaluation/evaluation/metrics.py,sha256=Hn6wLV3Bj_SzQPlhEgfDCtGIDDWZNQcORdGsri8-DJE,6575
+views_evaluation-0.3.1.dist-info/METADATA,sha256=3Sj645kvKbDyM8q1IJRp_D4WS-8NCTFjG9AuBHfm-1s,6323
+views_evaluation-0.3.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+views_evaluation-0.3.1.dist-info/RECORD,,
