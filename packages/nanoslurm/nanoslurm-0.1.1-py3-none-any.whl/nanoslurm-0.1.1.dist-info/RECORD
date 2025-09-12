@@ -1,0 +1,9 @@
+nanoslurm/__init__.py,sha256=zBgHOoas9VJzISclh3LTKtzwY8oGi-PVtR6IDrYGjWo,227
+nanoslurm/cli.py,sha256=4g3dDJj3jxFFnDLyaDyzSqEMgNAuPV2f4Tkj8lx03-Q,5915
+nanoslurm/nanoslurm.py,sha256=f0AjTALYBVONi5IHVgl0SMYos255Ur7WzggiS_Dzfns,7163
+nanoslurm/run.sh,sha256=e-nrg8Peo5jZOq5gfZlk0VSo2_dp1_y47BplD0Ebfik,2563
+nanoslurm-0.1.1.dist-info/METADATA,sha256=GXQ2ImTW2GbtXLl0A0dGjghNV3klRvDSdPsNnqOP7_I,2811
+nanoslurm-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+nanoslurm-0.1.1.dist-info/entry_points.txt,sha256=vzu7pKy2P-aUldUnzMNGMmK1btF6g1EPN1F0GK69J_Q,45
+nanoslurm-0.1.1.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+nanoslurm-0.1.1.dist-info/RECORD,,
