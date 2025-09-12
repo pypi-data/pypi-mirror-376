@@ -1,0 +1,4 @@
+gptqmodel
+gptqmodel_exllama_eora
+gptqmodel_exllamav2_kernels
+gptqmodel_marlin_kernels
