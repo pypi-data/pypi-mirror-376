@@ -1,0 +1,2 @@
+[console_scripts]
+ccu = ccu._cli._main:main
