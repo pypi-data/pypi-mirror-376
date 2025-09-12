@@ -1,0 +1,9 @@
+torch<2.0,>=1.11
+tqdm
+pandas
+boto3
+requests
+regex
+seqeval
+psutil
+matplotlib
