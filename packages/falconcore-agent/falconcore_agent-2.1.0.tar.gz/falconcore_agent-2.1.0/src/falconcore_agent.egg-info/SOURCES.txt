@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/falconcore_agent/__init__.py
+src/falconcore_agent/main.py
+src/falconcore_agent.egg-info/PKG-INFO
+src/falconcore_agent.egg-info/SOURCES.txt
+src/falconcore_agent.egg-info/dependency_links.txt
+src/falconcore_agent.egg-info/entry_points.txt
+src/falconcore_agent.egg-info/requires.txt
+src/falconcore_agent.egg-info/top_level.txt

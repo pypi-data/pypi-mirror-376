@@ -1,0 +1,3 @@
+[console_scripts]
+falconcore = falconcore_agent.main:main
+falconcore-agent = falconcore_agent.main:main
