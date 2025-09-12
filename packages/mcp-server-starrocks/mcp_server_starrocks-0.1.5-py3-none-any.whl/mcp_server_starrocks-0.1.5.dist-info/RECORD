@@ -1,0 +1,9 @@
+mcp_server_starrocks/__init__.py,sha256=924WOSnNMzMTXTBjO4QWyaxseNo4ran5PwNCoR_aOr4,720
+mcp_server_starrocks/db_client.py,sha256=QTSKFd3BR5mAax5ir_jRr_LHhlwrI4OYpo2W0hYI1EY,22317
+mcp_server_starrocks/db_summary_manager.py,sha256=l53bxZC9udRsseLW1dU5sY39pbM8rgG-D_un9swpUwM,17004
+mcp_server_starrocks/server.py,sha256=Q6zK8wggzFYfhctW3mm9wQVgfL9hRt7Y5c4YPqaxdnE,27733
+mcp_server_starrocks-0.1.5.dist-info/METADATA,sha256=OzUwYRcuuGrGcgQnVwbR75tp7jqH5U8wO5xMrfnCGDg,15935
+mcp_server_starrocks-0.1.5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_server_starrocks-0.1.5.dist-info/entry_points.txt,sha256=u6R21edplLPfPQe8V_EqISbjqGpcyFWsIGfaI37_b0U,67
+mcp_server_starrocks-0.1.5.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+mcp_server_starrocks-0.1.5.dist-info/RECORD,,
