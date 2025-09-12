@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: easy_middleware
+Version: 0.1.0
+Summary: A collection of useful FastAPI middleware (correlation ID, security headers, request timing)
+Author-email: Ajay <thedeveloperspace17@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/ajoyatklizos/easy_middleware.git
+Project-URL: Repository, https://github.com/ajoyatklizos/easy_middleware.git
+Project-URL: Issues, https://github.com/ajoyatklizos/easy_middleware/issues
+Keywords: fastapi,middleware,observability,security,timing
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: FastAPI
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi>=0.95.0
+Requires-Dist: starlette>=0.27.0
+Dynamic: license-file
+
+# easy_middleware
+
+A collection of lightweight and useful **FastAPI middleware** for production-ready apps.  
+
+✅ Features:
+- 🔗 **Correlation ID Middleware** – adds request IDs for logging & tracing  
+- 🛡 **Security Headers Middleware** – injects standard security headers  
+- ⏱ **Request Timing Middleware** – adds `X-Process-Time-ms` header  
+
+---
+
+## 📦 Installation
+
+```bash
+pip install easy_middleware
