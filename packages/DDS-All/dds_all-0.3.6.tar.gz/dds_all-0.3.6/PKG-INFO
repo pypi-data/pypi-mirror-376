@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: DDS_All
+Version: 0.3.6
+Summary: 为适应不同Python版本的用户，编译了不同版本的.pyd文件可供使用
+Author: JackyJia
+Author-email: 213231181@seu.edu.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.9, <=3.13
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
