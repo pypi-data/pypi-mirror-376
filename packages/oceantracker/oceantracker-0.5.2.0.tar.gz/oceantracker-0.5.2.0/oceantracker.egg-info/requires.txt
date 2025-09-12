@@ -1,0 +1,16 @@
+numba
+numpy
+netcdf4
+xarray
+scipy
+pyproj
+psutil
+matplotlib
+pyyaml
+ffmpeg
+ipykernel
+requests
+
+[dev]
+build
+twine
