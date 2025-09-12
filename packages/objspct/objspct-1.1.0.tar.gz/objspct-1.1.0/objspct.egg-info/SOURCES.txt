@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+objspct/__init__.py
+objspct/objspct.py
+objspct.egg-info/PKG-INFO
+objspct.egg-info/SOURCES.txt
+objspct.egg-info/dependency_links.txt
+objspct.egg-info/requires.txt
+objspct.egg-info/top_level.txt
