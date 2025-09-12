@@ -1,0 +1,100 @@
+Metadata-Version: 2.4
+Name: synapkit
+Version: 0.0.2
+Summary: Synapkit — a tiny, typed agent toolkit.
+Project-URL: Homepage, https://github.com/synapkit/synapkit
+License-File: LICENSE
+Requires-Python: >=3.12
+Requires-Dist: openai>=1.61.1
+Requires-Dist: pydantic>=2.11.4
+Requires-Dist: typer==0.12.0
+Provides-Extra: data
+Requires-Dist: duckdb>=0.9.0; extra == 'data'
+Requires-Dist: numpy>=1.24.0; extra == 'data'
+Requires-Dist: pandas>=2.0.0; extra == 'data'
+Requires-Dist: pyarrow>=14.0.1; extra == 'data'
+Requires-Dist: scikit-learn>=1.2.0; extra == 'data'
+Requires-Dist: scipy>=1.10.0; extra == 'data'
+Requires-Dist: statsmodels>=0.13.5; extra == 'data'
+Provides-Extra: dev
+Requires-Dist: anthropic>=0.8.0; extra == 'dev'
+Requires-Dist: beautifulsoup4>=4.12.0; extra == 'dev'
+Requires-Dist: chromadb>=1.0.20; extra == 'dev'
+Requires-Dist: duckdb>=0.9.0; extra == 'dev'
+Requires-Dist: groq>=0.20.0; extra == 'dev'
+Requires-Dist: ipython>=8.14.0; extra == 'dev'
+Requires-Dist: ipywidgets>=8.0.0; extra == 'dev'
+Requires-Dist: jupyter-dash>=0.4.2; extra == 'dev'
+Requires-Dist: jupyter>=1.0.0; extra == 'dev'
+Requires-Dist: jupyterlab>=4.0.0; extra == 'dev'
+Requires-Dist: kagglehub>=0.3.12; extra == 'dev'
+Requires-Dist: langchain-chroma>=0.2.5; extra == 'dev'
+Requires-Dist: langchain-openai>=0.3.32; extra == 'dev'
+Requires-Dist: langchain>=0.3.27; extra == 'dev'
+Requires-Dist: lxml>=4.9.0; extra == 'dev'
+Requires-Dist: matplotlib>=3.7.0; extra == 'dev'
+Requires-Dist: newspaper3k>=0.2.8; extra == 'dev'
+Requires-Dist: numpy>=1.24.0; extra == 'dev'
+Requires-Dist: openai>=1.61.1; extra == 'dev'
+Requires-Dist: pandas>=2.0.0; extra == 'dev'
+Requires-Dist: plotly>=5.13.0; extra == 'dev'
+Requires-Dist: pyarrow>=14.0.1; extra == 'dev'
+Requires-Dist: pytest>=7.3.1; extra == 'dev'
+Requires-Dist: pyyaml==6.0.1; extra == 'dev'
+Requires-Dist: requests>=2.31.0; extra == 'dev'
+Requires-Dist: scikit-learn>=1.2.0; extra == 'dev'
+Requires-Dist: scipy>=1.10.0; extra == 'dev'
+Requires-Dist: seaborn>=0.12.0; extra == 'dev'
+Requires-Dist: sentence-transformers>=5.1.0; extra == 'dev'
+Requires-Dist: statsmodels>=0.13.5; extra == 'dev'
+Requires-Dist: streamlit>=1.31.0; extra == 'dev'
+Requires-Dist: tiktoken>=0.11.0; extra == 'dev'
+Requires-Dist: tqdm>=4.65.0; extra == 'dev'
+Requires-Dist: trafilatura>=1.6.1; extra == 'dev'
+Provides-Extra: jupyter
+Requires-Dist: ipython>=8.14.0; extra == 'jupyter'
+Requires-Dist: ipywidgets>=8.0.0; extra == 'jupyter'
+Requires-Dist: jupyter-dash>=0.4.2; extra == 'jupyter'
+Requires-Dist: jupyter>=1.0.0; extra == 'jupyter'
+Requires-Dist: jupyterlab>=4.0.0; extra == 'jupyter'
+Provides-Extra: langchain
+Requires-Dist: chromadb>=1.0.20; extra == 'langchain'
+Requires-Dist: langchain-chroma>=0.2.5; extra == 'langchain'
+Requires-Dist: langchain-openai>=0.3.32; extra == 'langchain'
+Requires-Dist: langchain>=0.3.27; extra == 'langchain'
+Requires-Dist: sentence-transformers>=5.1.0; extra == 'langchain'
+Requires-Dist: tiktoken>=0.11.0; extra == 'langchain'
+Provides-Extra: providers
+Requires-Dist: anthropic>=0.8.0; extra == 'providers'
+Requires-Dist: groq>=0.20.0; extra == 'providers'
+Provides-Extra: streamlit
+Requires-Dist: streamlit>=1.31.0; extra == 'streamlit'
+Provides-Extra: testing
+Requires-Dist: pytest>=7.3.1; extra == 'testing'
+Provides-Extra: util
+Requires-Dist: pyyaml==6.0.1; extra == 'util'
+Requires-Dist: tqdm>=4.65.0; extra == 'util'
+Provides-Extra: viz
+Requires-Dist: matplotlib>=3.7.0; extra == 'viz'
+Requires-Dist: plotly>=5.13.0; extra == 'viz'
+Requires-Dist: seaborn>=0.12.0; extra == 'viz'
+Provides-Extra: webtext
+Requires-Dist: beautifulsoup4>=4.12.0; extra == 'webtext'
+Requires-Dist: lxml>=4.9.0; extra == 'webtext'
+Requires-Dist: newspaper3k>=0.2.8; extra == 'webtext'
+Requires-Dist: requests>=2.31.0; extra == 'webtext'
+Requires-Dist: trafilatura>=1.6.1; extra == 'webtext'
+Description-Content-Type: text/markdown
+
+# synapkit
+
+**Synapkit — a tiny, typed agent toolkit.**
+
+This is a minimal placeholder release (`0.0.1`) 
+
+## Install (once published)
+
+```bash
+pip install synapkit
+```
+
