@@ -1,0 +1,39 @@
+[project]
+name = "pychilaslasers"
+version = "0.0.1"
+description = "Python library for controlling Chilas lasers"
+readme = "README.md"
+authors = [
+  { name = "Chilas B.V.", email = "software@chilas.com" }
+]
+license =  "Apache-2.0"
+
+requires-python = ">=3.10"
+dependencies = [
+    "packaging>=25.0",
+    "pyserial>=3.5",
+]
+
+[dependency-groups]
+dev = [
+    "pychilaslasers",
+    "pytest>=8.4.1",
+]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-api-autonav>=0.3.1",
+    "mkdocs-drawio-exporter>=0.10.2",
+    "mkdocs-gen-files>=0.5.0",
+    "mkdocs-literate-nav>=0.6.2",
+    "mkdocs-material>=9.6.18",
+    "mkdocstrings[python]>=0.30.0",
+]
+
+[tool.uv.sources]
+pychilaslasers = { workspace = true }
+
+
+[tool.pyright]
+
+reportOptionalMemberAccess = "warning"
+reportAttributeAccessIssue = "warning"
