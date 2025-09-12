@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+eyeagent.egg-info/PKG-INFO
+eyeagent.egg-info/SOURCES.txt
+eyeagent.egg-info/dependency_links.txt
+eyeagent.egg-info/requires.txt
+eyeagent.egg-info/top_level.txt
