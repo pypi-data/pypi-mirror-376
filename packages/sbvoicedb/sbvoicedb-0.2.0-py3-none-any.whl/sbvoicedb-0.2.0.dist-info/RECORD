@@ -1,0 +1,9 @@
+sbvoicedb/__init__.py,sha256=eQe77q3kcDYURmHU2ajsBs-HhLES6vLr1_7gNCqMJfY,398
+sbvoicedb/database.py,sha256=foZqgQydyPl1mmXZCh-UvMkDmNCCowh_IbAY4Q-y3ms,58244
+sbvoicedb/download.py,sha256=NFYLsvIKaKZtegN6xD-v2D8Ank200b5QnxMzUlYk-U0,3642
+sbvoicedb/utils.py,sha256=oOHmfVnFxOyIUXh4Pn2aPk4CEy828a_edSmp3d54SEs,4422
+sbvoicedb-0.2.0.dist-info/licenses/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+sbvoicedb-0.2.0.dist-info/METADATA,sha256=OCFcnYZMV2vGCfcvUzWVM6_nuHGEml_P6XuaEv63Ni4,7923
+sbvoicedb-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sbvoicedb-0.2.0.dist-info/top_level.txt,sha256=i9Kx-Akf88zqrB93yzLdb2njlx5dElPXN3WH0WBe5xI,10
+sbvoicedb-0.2.0.dist-info/RECORD,,
