@@ -1,0 +1,108 @@
+[project]
+name = "ganzua"
+version = "0.2.0"
+description = "extract dependency information from lockfiles"
+readme = "README.md"
+authors = [
+    { name = "Lukas Atkinson", email = "opensource@LukasAtkinson.de" },
+]
+license = "Apache-2.0"
+keywords = ["poetry", "uv", "dependency", "requirements", "packaging", "dependabot"]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Intended Audience :: Developers",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.2.1",
+    "packaging>=25.0",
+    "pydantic>=2.11.7",
+    "rich>=14.1.0",
+    "tomlkit>=0.13.3",
+]
+
+[project.scripts]
+ganzua = "ganzua.cli:app"
+
+[project.urls]
+Repository = "https://github.com/latk/ganzua"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "dirty-equals>=0.9.0",
+    "inline-snapshot>=0.27.2",
+    "mypy>=1.17.1",
+    "pytest-cov>=6.2.1",
+    "pytest>=8.4.1",
+    "ruff>=0.12.8",
+    "byexample>=10.5.6",
+]
+
+[tool.uv.workspace]
+exclude = ["tests/*"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src/",
+  "/tests/",
+]
+
+[tool.ruff.lint]
+select = [
+  "ANN",  # type annotations
+  "ARG",  # unused arguments
+  "B",  # bugbear
+  "C4",  # comprehensions
+  "C90",  # mccabe complexity
+  "D",  # pydocstyle
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "G",  # logging
+  "I",  # isort
+  "LOG",  # logging
+  "N", # naming
+  "PERF",
+  "PLC",  # pylint conventions
+  "PLE",  # pylint errors
+  "PLR",  # pylint refactor
+  "PT", # pytest
+  "PTH",  # use pathlib
+  "RET",  # return and control flow
+  "RUF100",  # unused-noqa
+  "S",  # bandit
+  "SIM",  # simplify
+]
+ignore = [
+  "D104",  # undocumented-public-package
+  "S603",  # subprocess-without-shell-equals-true  # usually safe
+  "E501",  # line-too-long # should be handled by `ruff format`
+]
+pydocstyle.convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# tests may use asserts and do not need docstrings
+"tests/**.py" = ["D100"]
+"tests/test_**.py" = ["S101", "D103"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+  "--doctest-modules",
+  "--cov-fail-under=100",
+]
+testpaths = ["src", "tests"]
+
+[tool.inline-snapshot]
+format-command = "ruff format --stdin-filename {filename}"
+
+[tool.coverage]
+run.source_dirs = ["src", "tests"]
+run.branch = true
+report.show_missing = true
