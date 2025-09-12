@@ -1,0 +1,58 @@
+Metadata-Version: 2.3
+Name: swarmauri_tokens_tlsboundjwt
+Version: 0.2.0.dev4
+Summary: mTLS-bound JWT token service for Swarmauri
+License: Apache-2.0
+Author: Swarmauri
+Author-email: opensource@swarmauri.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Security :: Cryptography
+Provides-Extra: cbor
+Provides-Extra: xml
+Requires-Dist: cbor2 ; extra == "cbor"
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Requires-Dist: xmltodict ; extra == "xml"
+Description-Content-Type: text/markdown
+
+![Swamauri Logo](https://res.cloudinary.com/dbjmpekvl/image/upload/v1730099724/Swarmauri-logo-lockup-2048x757_hww01w.png)
+
+# Swarmauri Tokens TLS-Bound JWT
+
+A mutual-TLS bound JWT token service per [RFC 8705](https://www.rfc-editor.org/rfc/rfc8705).
+It derives the `x5t#S256` confirmation claim from the current client certificate
+and verifies that presented certificates match the token binding.
+
+Features:
+- Automatic `cnf` claim insertion with the SHA-256 thumbprint of the client certificate
+- Verification that rejects tokens when the live certificate is missing or mismatched
+
+## Installation
+
+```bash
+pip install swarmauri_tokens_tlsboundjwt
+```
+
+## Usage
+
+```python
+from swarmauri_core.crypto.types import JWAAlg
+from swarmauri_tokens_tlsboundjwt import TlsBoundJWTTokenService
+
+svc = TlsBoundJWTTokenService(key_provider, client_cert_der_getter=my_cert_getter)
+await svc.mint({"sub": "alice"}, alg=JWAAlg.HS256)
+```
+
+## Entry Point
+
+The service registers under the `swarmauri.tokens` entry point as
+`TlsBoundJWTTokenService`.
+

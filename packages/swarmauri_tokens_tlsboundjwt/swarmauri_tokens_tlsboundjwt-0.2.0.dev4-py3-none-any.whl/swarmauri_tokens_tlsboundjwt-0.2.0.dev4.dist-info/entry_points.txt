@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+tlsboundjwt=swarmauri_tokens_tlsboundjwt:TlsBoundJWTTokenService
+
+[swarmauri.tokens]
+TlsBoundJWTTokenService=swarmauri_tokens_tlsboundjwt:TlsBoundJWTTokenService
+
