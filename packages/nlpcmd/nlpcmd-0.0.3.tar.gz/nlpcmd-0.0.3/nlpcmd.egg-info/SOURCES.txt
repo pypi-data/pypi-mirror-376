@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+nlpcmd/__init__.py
+nlpcmd/actions.py
+nlpcmd/cli.py
+nlpcmd/engine.py
+nlpcmd.egg-info/PKG-INFO
+nlpcmd.egg-info/SOURCES.txt
+nlpcmd.egg-info/dependency_links.txt
+nlpcmd.egg-info/entry_points.txt
+nlpcmd.egg-info/top_level.txt

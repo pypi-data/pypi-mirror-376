@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nlpcmd"
+version = "0.0.3"
+description = "Small natural-language-like CLI helper for Windows CMD (and cross-platform basics)."
+readme = { file = "README.md", content-type = "text/markdown" }
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Avik Pramanick", email = "avik.pramanick@gmail.com"}]
+requires-python = ">=3.8"
+keywords = ["cli","nlp","windows"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: OS Independent",
+]
+
+[project.scripts]
+nlpcmd = "nlpcmd.cli:main"
