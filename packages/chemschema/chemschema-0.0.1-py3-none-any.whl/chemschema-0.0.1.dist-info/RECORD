@@ -1,0 +1,14 @@
+chemschema/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemschema/base.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemschema/bingo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemschema/bingo/comparators.py,sha256=l63YLOD5YyMfVt5AcpsfcJYJWuS70JiWMXqgP3ec26Q,520
+chemschema/bingo/functions.py,sha256=h71bch7lSd_3cuMx5jDtr_pcHOxMoMF3EPOFBIzgCQA,948
+chemschema/bingo/index.py,sha256=91F3mnKNRLL-pjTLvJ7DuywaarNjfcvOn5mNeICm3NQ,919
+chemschema/bingo/types.py,sha256=iXOJ0L4RZjsYytuiG2Mt3tYKyreaVB-69kboNBmjaSQ,415
+chemschema/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemschema/rdkit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemschema/rdkit/types.py,sha256=xHmz5a-Fr5Ne3f-0a9K5hb4EGoIqNXMj8RifTFLPN2o,124
+chemschema/utils.py,sha256=LXBMKv0ZlcOL7dBexW-n257bb8fS6eIaoBZ5latzVoI,642
+chemschema-0.0.1.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+chemschema-0.0.1.dist-info/METADATA,sha256=WwQI-UZkoqBu9IGKV8h8jhqHeoVjNxDYF4nQvQC376U,1112
+chemschema-0.0.1.dist-info/RECORD,,

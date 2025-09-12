@@ -1,0 +1,31 @@
+Metadata-Version: 2.3
+Name: chemschema
+Version: 0.0.1
+Summary: Extensions for SQLAlchemy to work with chemical cartridges
+Keywords: chemistry
+Author: Anton Siomchen
+Author-email: Anton Siomchen <41703271+asiomchen@users.noreply.github.com>
+License: Apache-2.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Utilities
+Classifier: Topic :: Database
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: datamol>=0.12.5
+Requires-Dist: geoalchemy2>=0.18.0
+Requires-Dist: psycopg[binary]>=3.2.9
+Requires-Dist: rdkit>=2025.3.6
+Requires-Dist: sqlalchemy>=2.0.43
+Requires-Python: >=3.10
+Project-URL: homepage, https://github.com/asiomchen/chemschema
+Project-URL: repository, https://github.com/asiomchen/chemschema
+Description-Content-Type: text/markdown
+
+# ChemSchema
+
+[WIP]
