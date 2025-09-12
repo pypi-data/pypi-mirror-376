@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: bunnets
+Version: 0.9.0
+Summary: Tidy wee caps to keep your code neat
+Author: Maff
+Project-URL: Repository, https://git.sr.ht/~maff/bunnets
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.12

@@ -1,0 +1,50 @@
+[project]
+name = "bunnets"
+version = "0.9.0"
+description = "Tidy wee caps to keep your code neat"
+authors = [
+    { name = "Maff" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12"
+]
+
+[project.urls]
+Repository = "https://git.sr.ht/~maff/bunnets"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:datetime.datetime.utcfromtimestamp",
+]
+
+[tool.ruff]
+line-length = 100
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"**/__init__.py" = ["F401"]
+"conftest.py" = ["F401", "F403"]
+"**/conftest.py" = ["F401", "F403"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+    "ruff>=0.12.12",
+]
+
+[[tool.uv.index]]
+name = "codeberg"
+url = "https://codeberg.org/api/packages/maff/pypi/simple"
+publish-url = "https://codeberg.org/api/packages/maff/pypi"
+explicit = true
