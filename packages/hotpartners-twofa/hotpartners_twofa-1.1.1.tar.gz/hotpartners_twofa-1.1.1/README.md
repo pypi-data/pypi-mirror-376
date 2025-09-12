@@ -1,0 +1,209 @@
+# HotPartners 2FA Package
+
+[![PyPI version](https://badge.fury.io/py/hotpartners-twofa.svg)](https://badge.fury.io/py/hotpartners-twofa)
+[![Python Support](https://img.shields.io/pypi/pyversions/hotpartners-twofa.svg)](https://pypi.org/project/hotpartners-twofa/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Two-Factor Authentication (2FA) 패키지로 TOTP 기반 인증을 제공합니다.
+
+## 주요 기능
+
+- 🔐 **TOTP 기반 2FA**: Google Authenticator, Authy 등과 호환
+- 📱 **QR 코드 생성**: 모바일 앱 연동을 위한 QR 코드 자동 생성
+- 🔑 **백업 코드**: 일회용 백업 코드 생성 및 관리
+- 🛡️ **암호화 저장**: 민감한 데이터의 안전한 암호화 저장
+- 📊 **로그 관리**: 2FA 사용 이력 추적
+- 🔄 **비동기 지원**: async/await 패턴 완전 지원
+
+## 설치
+
+```bash
+pip install hotpartners-twofa
+```
+
+## 빠른 시작
+
+### 1. 데이터베이스 스키마 설정
+
+```bash
+# CLI 도구로 스키마 생성
+hotpartners-twofa-setup --connection-string "postgresql://user:pass@localhost/db"
+
+# 또는 Python 코드로
+from hotpartners_twofa.schema import TwoFASchemaManager
+
+schema_manager = TwoFASchemaManager(connection_func)
+await schema_manager.create_tables()
+```
+
+### 2. 기본 사용법
+
+```python
+import asyncio
+from hotpartners_twofa import TwoFAService, AdminTwoFARepository, TwoFAConfig
+
+async def main():
+    # 설정
+    config = TwoFAConfig()
+    repository = AdminTwoFARepository(config)
+    service = TwoFAService(repository)
+
+    # 2FA 설정
+    user_id = "user123"
+    setup_result = await service.setup_2fa(user_id)
+
+    print(f"QR 코드: {setup_result.qr_code}")
+    print(f"백업 코드: {setup_result.backup_codes}")
+
+    # 2FA 인증
+    token = "123456"  # 사용자가 입력한 6자리 코드
+    auth_result = await service.authenticate_2fa(user_id, token)
+
+    if auth_result.success:
+        print("2FA 인증 성공!")
+    else:
+        print(f"인증 실패: {auth_result.message}")
+
+asyncio.run(main())
+```
+
+## 데이터베이스 스키마
+
+### PostgreSQL
+
+```sql
+-- 사용자 2FA 테이블
+CREATE TABLE user_twofa (
+    user_id VARCHAR(255) PRIMARY KEY,
+    otp_secret TEXT,
+    backup_codes TEXT,  -- JSON 문자열
+    is_2fa_enabled BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 2FA 사용 로그
+CREATE TABLE user_twofa_logs (
+    id SERIAL PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    ip_address INET,
+    user_agent TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## API 문서
+
+### TwoFAService
+
+#### `setup_2fa(user_id: str) -> TwoFASetupResponse`
+사용자의 2FA를 설정합니다.
+
+**반환값:**
+- `qr_code`: QR 코드 (Base64 인코딩된 이미지)
+- `backup_codes`: 백업 코드 리스트
+- `secret`: OTP 비밀키 (수동 입력용)
+
+#### `authenticate_2fa(user_id: str, token: str) -> TwoFAAuthenticateResponse`
+2FA 토큰을 검증합니다.
+
+**매개변수:**
+- `user_id`: 사용자 ID
+- `token`: 6자리 TOTP 코드
+
+#### `verify_backup_code(user_id: str, backup_code: str) -> TwoFAVerifyResponse`
+백업 코드를 검증합니다.
+
+#### `regenerate_backup_codes(user_id: str) -> TwoFARegenerateBackupCodesResponse`
+새로운 백업 코드를 생성합니다.
+
+#### `disable_2fa(user_id: str) -> TwoFADisableResponse`
+2FA를 비활성화합니다.
+
+### TwoFARepository
+
+데이터베이스 작업을 담당하는 추상 클래스입니다.
+
+#### 구현체
+- `AdminTwoFARepository`: 관리자용 구현체
+- `UserTwoFARepository`: 일반 사용자용 구현체 (확장 가능)
+
+## 설정
+
+환경 변수로 설정을 변경할 수 있습니다:
+
+```bash
+# 2FA 발급자 이름
+export TWOFA_ISSUER_NAME="MyApp"
+
+# 백업 코드 개수 (기본값: 8)
+export TWOFA_BACKUP_CODES_COUNT="10"
+
+# TOTP 윈도우 크기 (기본값: 1)
+export TWOFA_WINDOW_SIZE="2"
+
+# 최대 재시도 횟수 (기본값: 5)
+export TWOFA_MAX_RETRY_ATTEMPTS="3"
+
+# 재시도 윈도우 (분, 기본값: 5)
+export TWOFA_RETRY_WINDOW_MINUTES="10"
+```
+
+## 보안 고려사항
+
+1. **암호화**: OTP 비밀키와 백업 코드는 Fernet으로 암호화되어 저장됩니다.
+2. **재시도 제한**: 무차별 대입 공격을 방지하기 위한 재시도 제한이 있습니다.
+3. **로그 관리**: 2FA 사용 이력이 추적되어 보안 모니터링이 가능합니다.
+4. **권한 분리**: 관리자와 일반 사용자 권한을 분리하여 관리합니다.
+
+## 개발
+
+### 개발 환경 설정
+
+```bash
+git clone https://github.com/hotpartners/hotpartners-twofa.git
+cd hotpartners-twofa
+pip install -e ".[dev]"
+```
+
+### 테스트 실행
+
+```bash
+pytest
+```
+
+### 코드 포맷팅
+
+```bash
+black hotpartners_twofa/
+flake8 hotpartners_twofa/
+mypy hotpartners_twofa/
+```
+
+## 라이선스
+
+MIT License - 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+
+## 기여하기
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 지원
+
+- 이슈 리포트: [GitHub Issues](https://github.com/hotpartners/hotpartners-twofa/issues)
+- 문서: [Read the Docs](https://hotpartners-twofa.readthedocs.io/)
+- 이메일: dev@hotpartners.com
+
+## 변경 이력
+
+### 1.0.0 (2024-12-02)
+- 초기 릴리스
+- TOTP 기반 2FA 지원
+- QR 코드 생성
+- 백업 코드 관리
+- 암호화 저장
+- 비동기 지원
