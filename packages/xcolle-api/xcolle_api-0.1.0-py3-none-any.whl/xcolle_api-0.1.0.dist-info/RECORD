@@ -1,0 +1,15 @@
+xcolle_api/__init__.py,sha256=ca7iPA7dGr6EExagaCcApy7F5pG2jbvk27OeyLdb0DI,180
+xcolle_api/__main__.py,sha256=FzGWzg36XNbs9jAjISNg4wUectpRenTXhwKYGxR0W4Y,72
+xcolle_api/_common.py,sha256=zyYwdu2xknjHLrXYStNev8MR5T_XEQkGGsNxQV9C4cU,5935
+xcolle_api/_css.py,sha256=Vw7YpLCClm1zywfJK1I94SYhqJldL_Vbc2uSGD495oY,1854
+xcolle_api/_tests.py,sha256=BILjzhf4ItuJ4YsURCKKAVA_-_D5aOi6kqwzP9u7rJg,2443
+xcolle_api/_utils.py,sha256=ghumeV6JFLl7lJnHeo7Sc3izDkMGu0F9q7PC2BBbgMY,2722
+xcolle_api/gcolle/__init__.py,sha256=MHxpA5Xjid_mF6QgPhJIBGGJI1wXHh0NWxrIwwztCVI,4045
+xcolle_api/gcolle/models.py,sha256=I4PwRkaOggi7AbvADwlPH-3OjbQUfPvBx2nZ642vmGY,370
+xcolle_api/pcolle/__init__.py,sha256=gcbF9w6a8HW_TJRr9tu90XD6j-r_xCnhaCdzzMvVXWQ,12202
+xcolle_api/pcolle/models.py,sha256=Q_Ir8q227Lzs_rGIXv4Hxz2KuGSON-ay7kkTLJ1OwZk,1272
+xcolle_api-0.1.0.dist-info/licenses/LICENSE,sha256=46mU2C5kSwOnkqkw9XQAJlhBL2JAf1_uCD8lVcXyMRg,7652
+xcolle_api-0.1.0.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+xcolle_api-0.1.0.dist-info/entry_points.txt,sha256=KuFZuBcAztpZkhAr_zgKLChWAGQL3bStlFbhfSJd5uw,57
+xcolle_api-0.1.0.dist-info/METADATA,sha256=JiHpghBhK21C1kt4Z2lZXWq8PKPhizV8C1gvcw4dq30,3920
+xcolle_api-0.1.0.dist-info/RECORD,,
