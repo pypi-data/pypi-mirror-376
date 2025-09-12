@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+objspect/__init__.py
+objspect/objspect.py
+objspect.egg-info/PKG-INFO
+objspect.egg-info/SOURCES.txt
+objspect.egg-info/dependency_links.txt
+objspect.egg-info/requires.txt
+objspect.egg-info/top_level.txt
