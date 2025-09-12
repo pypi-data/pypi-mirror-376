@@ -1,0 +1,2 @@
+[console_scripts]
+cartes-dictee = cartes_dictee.main:main
