@@ -1,0 +1,52 @@
+[project]
+name = "elongation_simulator"
+version = "v1.1.0"
+readme = "README.md"
+description="High-performance codon simulator and elongation simulator for eukaryotic organism"
+
+authors = [
+  {name = "Fabio Hedayioglu", email="fheday@gmail.com"},
+  { name = "Tobias von der Haar", email = "T.von-der-Haar@kent.ac.uk"}
+]
+
+maintainers = [
+  {name="Fabio Hedayioglu", email="fheday@gmail.com"}
+]
+license = {file="LICENSE"}
+requires-python = ">=3.9"
+
+classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: C++',
+        'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13'
+    ]
+
+
+[tool.cibuildwheel]
+skip = ["*musllinux*", "*pp*win*", "pp*manylinux*", "cp36*", "cp37*", "cp38*"]
+
+[build-system]
+requires = ["setuptools", "numpy", "pyqt5", "pybind11"]
+build-backend = "setuptools.build_meta"
+
+[tool.pylint.MASTER]
+extension-pkg-whitelist = "PyQt5"
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint.DESIGN]
+# Maximum number of statements in function / method body.
+max-statements = 60
+# Maximum number of branch for function / method body.
+max-branches = 31
+max-args = 6
+max-positional-arguments = 6
