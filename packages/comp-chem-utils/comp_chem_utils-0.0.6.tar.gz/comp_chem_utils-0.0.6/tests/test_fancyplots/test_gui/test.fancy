@@ -1,0 +1,50 @@
+{
+  "style_parameters": {
+    "boxsize": [
+        6,
+        4.5
+    ],
+    "font": "Sans Serif",
+    "fontsize": 14,
+    "markeredgewidth": 0.3,
+    "markersize": 7,
+    "linewidth": 2.25,
+    "xlim": null,
+    "ylim": null,
+    "xscale": null,
+    "yscale": "linear",
+    "tick_loc": "out",
+    "tick_dec": 2,
+    "tick_min": 0,
+    "tick_double": false,
+    "legend_loc": "best",
+    "xlabel": "Reaction Coordinate",
+    "ylabel": "$\\Delta$G / eV",
+    "colors": [
+        "black",
+        "blue",
+        "red",
+        "lime",
+        "fuchsia"
+    ],
+    "savename": "fed.svg",
+    "dpi": 1200,
+    "title": ""
+},
+  "diagram_data": {
+    "energy_data": [
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "mechanism": [
+      "1",
+      "2"
+    ],
+    "legend_labels": [
+      "A"
+    ]
+  },
+  "annotations": []
+}

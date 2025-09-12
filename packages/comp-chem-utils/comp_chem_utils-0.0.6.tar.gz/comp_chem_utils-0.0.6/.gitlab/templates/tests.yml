@@ -1,0 +1,96 @@
+quality:
+  stage: quality
+  needs: []
+  allow_failure: true
+  variables:
+    HATCH_ENV: quality
+  script:
+    - hatch run quality
+
+build:
+  stage: build
+  needs: []
+  artifacts:
+    name: "wheel-distribution"
+    paths:
+      - dist/*.whl
+  script:
+    - hatch build
+
+# If inheriting rules, must define PYTHON_VERSION
+.test:
+  rules:
+    - if: $PYTHON_VERSION == '3.10'
+      variables:
+        IMAGE: python:3.10.18-bookworm
+    - if: $PYTHON_VERSION == '3.11'
+      variables:
+        IMAGE: python:3.11.13-bookworm
+    - if: $PYTHON_VERSION == '3.12'
+      variables:
+        IMAGE: python:3.12.11-bookworm
+    - if: $PYTHON_VERSION == '3.13'
+      variables:
+        IMAGE: python:3.13.7-bookworm
+
+unit-testing:
+  stage: test
+  needs: ["build"]
+  parallel:
+    matrix:
+      - PYTHON_VERSION:
+          - '3.10'
+          - '3.11'
+          - '3.12'
+          - '3.13'
+  rules:
+    - !reference [.test, rules]
+  variables:
+    HATCH_ENV: test.py$PYTHON_VERSION
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+    paths:
+      - htmlcov/
+  script:
+    - hatch run pip install dist/*.whl
+    - hatch run test-cov -m 'not gui'
+
+doctests:
+  stage: test
+  needs: ["build"]
+  allow_failure: true
+  parallel:
+    matrix:
+      - PYTHON_VERSION:
+          - '3.10'
+          - '3.11'
+          - '3.12'
+          - '3.13'
+  rules:
+    - !reference [.test, rules]
+  variables:
+    HATCH_ENV: docs
+  script:
+    - hatch run doctest
+
+build-docs:
+  variables:
+    HATCH_ENV: docs
+  needs: ["build"]
+  allow_failure: true
+  stage: docs
+  script:
+    - hatch run apidoc
+    - hatch run docs
+
+linkcheck:
+  variables:
+    HATCH_ENV: docs
+  needs: ["build"]
+  allow_failure: true
+  stage: docs
+  script:
+    - hatch run linkcheck

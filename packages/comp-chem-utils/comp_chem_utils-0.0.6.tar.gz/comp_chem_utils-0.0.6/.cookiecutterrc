@@ -1,0 +1,57 @@
+# This file exists so you can easily regenerate your project.
+#
+# `cookiepatcher` is a convenient shim around `cookiecutter`
+# for regenerating projects (it will generate a .cookiecutterrc
+# automatically for any template). To use it:
+#
+#    pip install cookiepatcher
+#    cookiepatcher gh:ionelmc/cookiecutter-pylibrary python-comp-chem-utils
+#
+# See:
+#    https://pypi.org/project/cookiepatcher
+#
+# Alternatively, you can run:
+#
+#    cookiecutter --overwrite-if-exists --config-file=python-comp-chem-utils/.cookiecutterrc gh:ionelmc/cookiecutter-pylibrary
+
+default_context:
+    cli_bin_name: "ccu"
+    codacy: "yes"
+    codacy_projectid: "8d79bcc0099b43328fe63777132b7a81"
+    codeclimate: "no"
+    codecov: "no"
+    command_line_interface: "click"
+    coveralls: "no"
+    distribution_name: "comp-chem-utils"
+    email: "ugognw@gmail.com"
+    full_name: "Ugochukwu Nwosu"
+    gitchangelog: "yes"
+    github_actions: "no"
+    gitlab_ci_cd: "yes"
+    initialize_git_repository: "yes"
+    install_package: "yes"
+    install_precommit_hooks: "yes"
+    keywords: "Template"
+    license: "MIT License"
+    package_name: "ccu"
+    pre_commit: "yes"
+    project_name: "CompChemUtils"
+    project_short_description: "Utilities for computational chemistry."
+    pypi_badge: "yes"
+    pypi_disable_upload: "no"
+    pytest_datadir: "yes"
+    pytest_xdist: "yes"
+    release_date: "today"
+    repo_hosting: "gitlab.com"
+    repo_main_branch: "main"
+    repo_name: "python-comp-chem-utils"
+    repo_username: "ugognw"
+    sphinx_docs_hosting: "https://python-comp-chem-utils.readthedocs.io/"
+    sphinx_doctest: "yes"
+    sphinx_theme: "furo"
+    test_on_osx: "yes"
+    test_on_windows: "yes"
+    version: "0.0.0"
+    website: "https://www.law-two.com"
+    year_from: "2023"
+    year_to: "2023"

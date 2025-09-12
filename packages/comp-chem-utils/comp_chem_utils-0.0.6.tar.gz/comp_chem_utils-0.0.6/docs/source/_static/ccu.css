@@ -1,0 +1,13 @@
+@import url("css/theme.css");
+
+div.ccutop {text-align: right}
+
+dl.function {background-color: #e0ffef}
+dl.method {background-color: #e0ffef}
+dl.class {background-color: #e0ffef}
+
+img {border: none;}
+img.center{display:block; margin-left:auto; margin-right:auto; text-align: center;}
+.wy-nav-content {
+    max-width: none;
+}

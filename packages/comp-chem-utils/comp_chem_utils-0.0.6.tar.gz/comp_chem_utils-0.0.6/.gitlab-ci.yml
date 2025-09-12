@@ -1,0 +1,35 @@
+include:
+  - local: .gitlab/templates/*.yml
+
+variables:
+  HATCH_VERSION: "1.14.1"
+  PIPELINE_NAME: 'Pipeline for branch: $CI_COMMIT_BRANCH'
+  PIPX_VERSION: "1.7.1"
+  PYTHON_VERSION: "3.11"
+  IMAGE: "python:3.11.13-bookworm"
+
+workflow:
+  name: '$PIPELINE_NAME'
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH
+
+default:
+  image: $IMAGE
+  before_script:
+    - python3 --version  # For debugging
+    - pip3 --version  # For debugging
+    - python3 -m pip install --user pipx==$PIPX_VERSION
+    - python3 -m pipx ensurepath
+    - source ~/.bashrc
+    - pipx --version  # For debugging
+    - pipx install hatch==$HATCH_VERSION
+
+stages:
+  - quality
+  - build
+  - test
+  - docs
+  - publish

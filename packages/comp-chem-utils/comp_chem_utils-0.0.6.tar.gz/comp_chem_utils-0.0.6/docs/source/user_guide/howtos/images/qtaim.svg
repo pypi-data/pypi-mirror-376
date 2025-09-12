@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="395.79279mm"
+   height="152.9097mm"
+   viewBox="0 0 395.79279 152.90971"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="qtaim.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.83293798"
+     inkscape:cx="747.95485"
+     inkscape:cy="288.73699"
+     inkscape:window-width="1352"
+     inkscape:window-height="844"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient4"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="1"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4"
+       id="linearGradient5"
+       x1="238.55093"
+       y1="-124.82996"
+       x2="238.55093"
+       y2="239.79805"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.5,0,0,0.5,120.83371,-55.056892)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-43.771023,186.56863)">
+    <rect
+       style="fill:url(#linearGradient5);fill-opacity:1;stroke:none;stroke-width:3.52778;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect3"
+       width="395.66299"
+       height="152.73709"
+       x="43.771023"
+       y="-186.56863" />
+    <path
+       style="fill:#94d0ec;fill-opacity:1;stroke:#000000;stroke-width:4.40972;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       d="m 437.3899,-55.240825 c -62.29449,0 -97.70816,-128.993645 -97.70816,-128.993645 0,0 -35.41368,89.75374 -97.88456,89.75374 -62.47088,10e-7 -97.88456,-89.75374 -97.88456,-89.75374 0,0 -35.41367,128.993645 -97.70816,128.993645 z"
+       id="path1-2"
+       sodipodi:nodetypes="ccccc" />
+    <circle
+       style="fill:#545454;fill-opacity:1;stroke:#000000;stroke-width:3.52778;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path1"
+       cx="144.00082"
+       cy="-55.422832"
+       r="20" />
+    <circle
+       style="fill:#545454;fill-opacity:1;stroke:#000000;stroke-width:3.52778;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path1-3"
+       cx="338.60162"
+       cy="-55.422832"
+       r="20" />
+    <path
+       style="fill:#ff4200;fill-opacity:0.501401;stroke:#000000;stroke-width:1.76389;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:5.29167009,5.29167009;stroke-dashoffset:1.76389003;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 242.80504,-118.95944 v 64.62453"
+       id="path2"
+       sodipodi:nodetypes="cc"
+       inkscape:transform-center-y="1.5882536" />
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;white-space:pre;inline-size:252.881;display:inline;fill:#94d0ec;fill-opacity:1;stroke:#000000;stroke-width:3.52777;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="308.52649"
+       y="104.27574"
+       id="text2"
+       transform="matrix(0.5,0,0,0.5,94.406847,-193.79789)"><tspan
+         x="308.52649"
+         y="104.27574"
+         id="tspan4"><tspan
+           style="font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none;stroke-width:3.52778"
+           id="tspan1">surface of charge</tspan><tspan
+           y="104.27574"
+           id="tspan5"> </tspan></tspan><tspan
+         x="308.52649"
+         y="135.4296"
+         id="tspan7"><tspan
+           style="font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none;stroke-width:3.52778"
+           id="tspan6">density minimum</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;white-space:pre;inline-size:200.027;display:inline;fill:#94d0ec;fill-opacity:1;stroke:#000000;stroke-width:3.52777;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="308.52649"
+       y="104.27574"
+       id="text2-0"
+       transform="matrix(0.5,0,0,0.5,242.02554,-224.38959)"><tspan
+         x="308.52649"
+         y="104.27574"
+         id="tspan9"><tspan
+           style="font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none"
+           id="tspan8">maximum on</tspan><tspan
+           y="104.27574"
+           id="tspan10"> </tspan></tspan><tspan
+         x="308.52649"
+         y="135.4296"
+         id="tspan12"><tspan
+           style="font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none"
+           id="tspan11">charge density</tspan><tspan
+           y="135.4296"
+           id="tspan13"> </tspan></tspan><tspan
+         x="308.52649"
+         y="166.58347"
+         id="tspan15"><tspan
+           style="font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none"
+           id="tspan14">surface</tspan></tspan></text>
+  </g>
+</svg>
