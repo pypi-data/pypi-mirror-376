@@ -1,0 +1,136 @@
+site_name: Zenith Framework
+docs_dir: docs-mkdocs
+site_dir: site
+site_description: Modern Python web framework with clean architecture and exceptional performance
+site_url: https://nijaru.github.io/zenith/
+repo_url: https://github.com/nijaru/zenith
+repo_name: nijaru/zenith
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  favicon: assets/favicon.ico
+  logo: assets/logo.svg
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.share
+    - header.autohide
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - awesome-pages:
+      collapse_single_pages: false
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nijaru/zenith
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/zenith-web/
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Introduction: introduction.md
+    - Installation: installation.md
+    - Quick Start: quick-start.md
+    - Project Structure: project-structure.md
+  - Core Concepts:
+    - Context System: concepts/contexts.md
+    - Routing: concepts/routing.md
+    - Middleware: concepts/middleware.md
+    - Database: concepts/database.md
+    - Authentication: concepts/authentication.md
+  - Examples:
+    - Hello World: examples/hello-world.md
+    - Basic Routing: examples/basic-routing.md
+    - File Upload: examples/file-upload.md
+    - WebSocket Chat: examples/websocket-chat.md
+    - Blog API: examples/blog-api.md
+    - Chat Application: examples/chat.md
+    - Full-Stack SPA: examples/fullstack-spa.md
+  - API Reference:
+    - Application: api/application.md
+    - Context: api/context.md
+    - Router: api/router.md
+    - Middleware: api/middleware.md
+    - Testing: api/testing.md
