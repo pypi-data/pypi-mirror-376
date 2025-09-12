@@ -1,0 +1,10 @@
+nlpcmd/__init__.py,sha256=4dCrvStS1OgE3Vlcv-qx5-TAo377yOMEToEqCi-PwY4,23
+nlpcmd/actions.py,sha256=_3W_Ik0kCC9GpAcotoNxyeY-d5zY-jfveXyPLs0WPvk,5339
+nlpcmd/cli.py,sha256=B7NVLdN5qemluHCoKB-KOPIM_1Tf0wZ4JD_lZ-afeu0,1774
+nlpcmd/engine.py,sha256=Mlttp3IkeiY4xos-yccR4XllY4gSjZ0nO3PBKAuSnMw,1312
+nlpcmd-0.0.3.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nlpcmd-0.0.3.dist-info/METADATA,sha256=dMKjNN6xeDNrFe2yzK48wNqvM7jno81V3g_2fQaJ1Po,922
+nlpcmd-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nlpcmd-0.0.3.dist-info/entry_points.txt,sha256=hg59V7-bCvxRgOI9LIuNhYQWsOilM9i6Hwfujp43-mA,43
+nlpcmd-0.0.3.dist-info/top_level.txt,sha256=c5y0mDtevqM8MogEfndov-a9MYD-ENoXg0n_nWUZa7c,7
+nlpcmd-0.0.3.dist-info/RECORD,,
