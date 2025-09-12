@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: classic-thread-pool-executor
+Version: 1.1.1
+Summary: Simple threadpool executor without futures
+Author-email: Sergey Variasov <variasov@gmail.com>
+Project-URL: Homepage, https://github.com/variasov/classic-thread-pool-executor
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: build~=1.2.2.post1; extra == "dev"
+Requires-Dist: pytest==8.3.4; extra == "dev"
+Requires-Dist: pytest-cov==6.0.0; extra == "dev"
+Requires-Dist: twine~=4.0; extra == "dev"
+Dynamic: license-file
+
+# classic-thread-pool-executor
+
+Библиотека дает простой класс Executor для исполнения задач в порядке очереди.
+
+Для использования необходимо передать количество worker-ов.
+
+Для добавления callback-ов используется метод .submit(). В него
+следует передать callback. Callback будет вызван когда подойдёт его очередь.
+
+Методом .stop() можно остановить работу исполнителя.
+
+Например:
+```python
+from classic.executor import Executor
+
+executor = Executor(workers_num=1)
+
+def some_task():
+    print('Hello, world!')
+
+executor.submit(some_task)
+executor.stop(block=True) # Дожидается остановки
+```
