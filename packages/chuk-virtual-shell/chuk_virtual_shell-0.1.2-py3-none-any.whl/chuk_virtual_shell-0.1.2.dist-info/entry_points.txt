@@ -1,0 +1,7 @@
+[console_scripts]
+chuk-virtual-shell = chuk_virtual_shell.main:main
+sandbox-cli = chuk_virtual_shell.cli.sandbox_cli:main
+virtual-shell = chuk_virtual_shell.main:main
+
+[gui_scripts]
+
