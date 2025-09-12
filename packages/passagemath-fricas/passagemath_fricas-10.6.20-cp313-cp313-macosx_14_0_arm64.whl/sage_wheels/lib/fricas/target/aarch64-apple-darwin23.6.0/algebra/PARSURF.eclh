@@ -1,0 +1,12 @@
+
+#ifdef ECL_DYNAMIC_VV
+static cl_object *VV;
+#else
+static cl_object VV[VM];
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+static cl_object L326_parsurf_surface_3componentfunction__1_(cl_object , cl_object , cl_object , cl_object );
+static cl_object L327_parsurf_coordinate__nnicomponentfunction_2_(cl_object , cl_object , cl_object );
