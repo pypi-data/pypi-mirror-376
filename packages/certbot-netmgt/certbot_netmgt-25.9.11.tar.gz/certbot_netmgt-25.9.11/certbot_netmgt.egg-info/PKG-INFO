@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: certbot-netmgt
+Version: 25.9.11
+Summary: Certbot plugin for django-netmgt
+Requires-Dist: certbot
+Dynamic: requires-dist
+Dynamic: summary

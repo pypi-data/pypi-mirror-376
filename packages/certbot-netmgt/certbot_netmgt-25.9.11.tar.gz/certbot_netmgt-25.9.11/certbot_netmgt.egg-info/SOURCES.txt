@@ -1,0 +1,9 @@
+README.md
+dns_core_netmgt.py
+setup.py
+certbot_netmgt.egg-info/PKG-INFO
+certbot_netmgt.egg-info/SOURCES.txt
+certbot_netmgt.egg-info/dependency_links.txt
+certbot_netmgt.egg-info/entry_points.txt
+certbot_netmgt.egg-info/requires.txt
+certbot_netmgt.egg-info/top_level.txt
