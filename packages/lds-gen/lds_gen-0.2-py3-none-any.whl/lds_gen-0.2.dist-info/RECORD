@@ -1,0 +1,9 @@
+lds_gen/__init__.py,sha256=1hYDxLfuGfz6zqWteOhQuJpObAgUwr_y56GKRmShk_4,578
+lds_gen/ilds.py,sha256=TK0X9i3C2rNKGAIaaxCTjBj2SLDVghbnT2-bFzfO7Yw,7401
+lds_gen/lds.py,sha256=CFTZmRBw_OMXRct0Jo92Y3AngNYrK2PigjikQkS3KiE,32337
+lds_gen/skeleton.py,sha256=-G9PJsKjAW-7jokCc578s-z-nE7LzYAkXevQR56HJk0,4214
+lds_gen-0.2.dist-info/licenses/LICENSE.txt,sha256=MyvlyWiWdJ3ZpAOA4wziXlNa9Hbx8XnEL1Aztt9F7W8,1080
+lds_gen-0.2.dist-info/METADATA,sha256=kM1lHD6UwsLoqkJxQfnCyEX3ZCdfqxPB8WnT4gMzmzQ,5243
+lds_gen-0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+lds_gen-0.2.dist-info/top_level.txt,sha256=VhWCtJr3irO8-UavnRn6D9d7YCFx8J4Z5vR-6SDjlxA,8
+lds_gen-0.2.dist-info/RECORD,,
