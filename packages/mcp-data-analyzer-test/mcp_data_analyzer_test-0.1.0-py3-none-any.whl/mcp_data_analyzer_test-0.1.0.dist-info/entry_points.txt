@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-data-analyzer-test = mcp_data_analyzer.cli:main
