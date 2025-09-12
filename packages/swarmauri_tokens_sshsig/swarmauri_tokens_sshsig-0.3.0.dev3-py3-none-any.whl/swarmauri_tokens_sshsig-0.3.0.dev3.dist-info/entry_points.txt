@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+sshsig=swarmauri_tokens_sshsig:SshSigTokenService
+
+[swarmauri.tokens]
+SshSigTokenService=swarmauri_tokens_sshsig:SshSigTokenService
+

@@ -1,0 +1,27 @@
+Metadata-Version: 2.3
+Name: swarmauri_tokens_sshsig
+Version: 0.3.0.dev3
+Summary: SSH signature token service for Swarmauri
+License: Apache-2.0
+Author: Swarmauri
+Author-email: opensource@swarmauri.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: ecdsa
+Provides-Extra: ed25519
+Requires-Dist: cryptography (>=41.0.3)
+Requires-Dist: cryptography ; extra == "ecdsa"
+Requires-Dist: cryptography ; extra == "ed25519"
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Description-Content-Type: text/markdown
+
+# swarmauri_tokens_sshsig
+
+An SSH signature token service for the Swarmauri framework. This service
+implements minting and verifying tokens signed with SSH-compatible
+algorithms such as Ed25519 and ECDSA P-256.
+
