@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+llm_formats/__init__.py
+llm_formats.egg-info/PKG-INFO
+llm_formats.egg-info/SOURCES.txt
+llm_formats.egg-info/dependency_links.txt
+llm_formats.egg-info/top_level.txt
