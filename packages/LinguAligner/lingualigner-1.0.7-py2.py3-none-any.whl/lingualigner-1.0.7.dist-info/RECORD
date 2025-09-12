@@ -1,0 +1,9 @@
+LinguAligner/__init__.py,sha256=PxhkW29SxrKKEByTs36HfsWc35oZBNxwLXUBaMnczXw,3459
+LinguAligner/aligners.py,sha256=wLhh0YhMgi3hKYSM_5qiIz5NRTtuvLCWOysRDYo1t8Y,6974
+LinguAligner/multiple_translations.py,sha256=N6g135FnR93xABwkkpW3FDwnkilpjZQaNCTjd_eP4Vg,1406
+LinguAligner/translation.py,sha256=0LW5AOsSY1KbV8f2kj2t2cbgrab2PU8uvXGUcfuVehk,3956
+LinguAligner/utils.py,sha256=ZEAF0gPQO41JXOQurZLi0BVBcpghjha3NlhmwNJ0m7M,2398
+lingualigner-1.0.7.dist-info/LICENSE,sha256=8MIxVBwp8WXcFEnRjaPZwW4uaJb_cuVALIzuTWdDPp0,1091
+lingualigner-1.0.7.dist-info/WHEEL,sha256=kdeDBNPvBI0w3meLKPoGgAnEr54n1jzrZWUoaLmGzVY,99
+lingualigner-1.0.7.dist-info/METADATA,sha256=OPiTgiMAbaZawz57X2yR4uIP0TY1RysG9NY8E20-Ho4,7860
+lingualigner-1.0.7.dist-info/RECORD,,
