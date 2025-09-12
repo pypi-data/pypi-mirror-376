@@ -1,0 +1,5 @@
+py_simple_sharepoint/__init__.py,sha256=66ae208ad05c76c9bacb1e6feb73d2407eb7b0af88d62f78f7a989218941b932,16605
+py_simple_sharepoint/test_it.py,sha256=fcc421536e9c3af9261332e5944b3a8b4bcf4642532aaa1a8f03ab5e103ff254,691
+py_simple_sharepoint-1.1.0.dist-info/WHEEL,sha256=b55c8eb6ce77f343db8f225b967f9e1dd1c3eff9778753bd9be1c6e32105776f,78
+py_simple_sharepoint-1.1.0.dist-info/METADATA,sha256=3d075236f561f5f4584c0a51eb3c1afab7b6a4728736e36e4a8cee2ab481785a,1283
+py_simple_sharepoint-1.1.0.dist-info/RECORD,,
