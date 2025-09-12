@@ -1,0 +1,10 @@
+README.md
+main.py
+setup.py
+vritraai/__init__.py
+vritraai/__main__.py
+vritraai.egg-info/PKG-INFO
+vritraai.egg-info/SOURCES.txt
+vritraai.egg-info/dependency_links.txt
+vritraai.egg-info/entry_points.txt
+vritraai.egg-info/top_level.txt

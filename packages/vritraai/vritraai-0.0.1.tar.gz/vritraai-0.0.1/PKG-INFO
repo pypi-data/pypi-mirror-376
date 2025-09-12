@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: vritraai
+Version: 0.0.1
+Summary: Reserved package name for upcoming VritraAI Shell project by VritraSec.
+Home-page: https://github.com/VritraSecz/vritraai
+Author: Alex Butler
+Author-email: contact@vritrasec.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# 🚀 VritraAI Shell
+
+Upcoming **AI-powered terminal shell** by **VritraSec**.  
+This is a placeholder release to reserve the name on PyPI.  
+
+---
+
+## 📥 Installation
+
+```bash
+pip install vritraai
