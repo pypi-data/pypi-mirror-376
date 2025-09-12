@@ -1,0 +1,5 @@
+setup.py
+data_platform_vin_brand_identifier.egg-info/PKG-INFO
+data_platform_vin_brand_identifier.egg-info/SOURCES.txt
+data_platform_vin_brand_identifier.egg-info/dependency_links.txt
+data_platform_vin_brand_identifier.egg-info/top_level.txt
