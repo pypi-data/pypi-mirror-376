@@ -1,0 +1,3 @@
+[swarmauri.cert_services]
+CfsslCertService=swarmauri_cert_cfssl.CfsslCertService:CfsslCertService
+
