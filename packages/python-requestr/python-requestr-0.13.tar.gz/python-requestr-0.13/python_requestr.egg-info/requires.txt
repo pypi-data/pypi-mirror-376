@@ -1,0 +1,3 @@
+python-objectifier
+beautifulsoup4
+requests-futures
