@@ -1,0 +1,7 @@
+fru_parser/__init__.py,sha256=faqHlVvxa2K5YW5JUcK7SvylKN3S-DJMFChTQ6pM_SY,222
+fru_parser/cli.py,sha256=WRq4wHQnQh_IW8n1WMsZ7__R_unYe8yR-8Ie2kIELfA,6689
+fru_parser/parser.py,sha256=YoXNLMNCgx_T17shFbtDnVsuB4PPTjbbX4UIbzbckj4,39166
+fru_parser-0.1.1.dist-info/METADATA,sha256=AK_zlUK3LbTGDoXkJ1CjYe4r5gOoXsbxXxxWgSRMw08,8030
+fru_parser-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fru_parser-0.1.1.dist-info/entry_points.txt,sha256=3BtK0c1lyH4J8YXYw8prZLHABR1wVQ21g7s8EZKXrXc,51
+fru_parser-0.1.1.dist-info/RECORD,,
