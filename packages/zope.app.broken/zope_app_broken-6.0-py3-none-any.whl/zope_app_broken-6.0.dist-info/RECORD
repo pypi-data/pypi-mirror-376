@@ -1,0 +1,12 @@
+zope/app/broken/__init__.py,sha256=CzomNg7Fym4dhcUYLafhS2e5Ewgdgxlf79aPsKddipo,33
+zope/app/broken/broken.gif,sha256=aRyckR2TSmbQarvMneobHkBb6CiYtrqPEa0wdNK6ybk,894
+zope/app/broken/broken.pt,sha256=IjaXCkZNplzuOGveATgJWWEMX4yVK3EdwPzOd1ohlTo,542
+zope/app/broken/broken.py,sha256=-JApTgVSckv8ADU2J_BC0mNXINvPNzrGVhuZP9L8n0I,3720
+zope/app/broken/browser.zcml,sha256=rnpn1_B2pkyjDY1Aod7jeKt0hQ3EZ_nIrJ0hn7skHDs,655
+zope/app/broken/configure.zcml,sha256=w1RzGGE4V6gzdQ7L_w5cvgrOgiWp7SPjXmJ1wOfQnSc,581
+zope/app/broken/tests.py,sha256=O34TMfYgfb6YV7lAEdqw2UywhxwLD9xe1CEMFQRLQI4,3590
+zope_app_broken-6.0.dist-info/licenses/LICENSE.txt,sha256=PmcdsR32h1FswdtbPWXkqjg-rKPCDOo_r1Og9zNdCjw,2070
+zope_app_broken-6.0.dist-info/METADATA,sha256=U81xvpgcDRFsOFqjqVAheahB97AlPmMEe-FD1No0cCE,4349
+zope_app_broken-6.0.dist-info/WHEEL,sha256=lTU6B6eIfYoiQJTZNc-fyaR6BpL6ehTzU3xGYxn2n8k,91
+zope_app_broken-6.0.dist-info/top_level.txt,sha256=QpUHvpO4wIuZDeEgKY8qZCtD-tAukB0fn_f6utzlb98,5
+zope_app_broken-6.0.dist-info/RECORD,,
