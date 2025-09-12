@@ -1,0 +1,10 @@
+error_manager/__init__.py,sha256=F-8o9AlIlTPpPLHL29v9JcFTz8N99Wzd5Mz3APfsomA,125
+error_manager/email_config.py,sha256=nNqc8YKMfdCOtvUePd2v23c9Yltv6sfJhw6umjqJeaQ,241
+error_manager/logger.py,sha256=DUEmUjD1i6ZSx7CrLOMloIAkgSsq6wmhsi2PiiNm2fg,1762
+error_manager/manager.py,sha256=ueNiF1vkO6FSnepswE0scD1UwxAuyZbdEyaLqTAhmm4,3300
+error_manager/report.py,sha256=2Wx00jOsUHTqVwdrz0gnsm8-82mTwGxsljuTxXngxtI,1474
+error_manager/transports.py,sha256=uFdoENNQgUGrE5KSwQqQnF6R6Pqm5JTr4HDzuDzTw8U,2974
+runreporter-0.1.0.dist-info/METADATA,sha256=VtEQmtt7uTz17M8wwo27HUFpoRCXSoXtCnAena--D6g,2097
+runreporter-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+runreporter-0.1.0.dist-info/top_level.txt,sha256=lbskBaHAGd8299ZLukxosz6fJw_kmY6eoahqIrCfD-s,14
+runreporter-0.1.0.dist-info/RECORD,,
