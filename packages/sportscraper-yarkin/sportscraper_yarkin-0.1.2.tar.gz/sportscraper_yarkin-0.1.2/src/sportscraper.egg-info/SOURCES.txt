@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/sportscraper/__init__.py
+src/sportscraper/__main__.py
+src/sportscraper/cli.py
+src/sportscraper/fifaindex.py
+src/sportscraper/utils.py
+src/sportscraper.egg-info/PKG-INFO
+src/sportscraper.egg-info/SOURCES.txt
+src/sportscraper.egg-info/dependency_links.txt
+src/sportscraper.egg-info/top_level.txt
+tests/test_import.py

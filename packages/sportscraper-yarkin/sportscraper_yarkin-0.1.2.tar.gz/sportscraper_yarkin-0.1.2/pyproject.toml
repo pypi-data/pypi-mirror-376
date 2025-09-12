@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sportscraper-yarkin"
+version = "0.1.2" 
+description = "Scrapers for sports data websites (FIFAIndex, Sofascore, Understat, Transfermarkt, etc.)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{ name = "Yarkin Yorulmaz" }]
+
+dependencies = [
+  "requests>=2.31",
+  "pandas>=2.0",
+  "numpy>=1.24",
+  "tqdm>=4.66",
+  "selenium>=4.20",
+  "selenium-stealth>=1.0.6",
+  "webdriver-manager>=4.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/yarkin-y/sportscraper"
+Issues   = "https://github.com/yarkin-y/sportscraper/issues"
+
+
+[project.scripts]
+sportscraper-cli = "sportscraper.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sportscraper"]

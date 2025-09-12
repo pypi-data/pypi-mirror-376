@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: sportscraper-yarkin
+Version: 0.1.2
+Summary: Scrapers for sports data websites (FIFAIndex, Sofascore, Understat, Transfermarkt, etc.)
+Project-URL: Homepage, https://github.com/yarkin-y/sportscraper
+Project-URL: Issues, https://github.com/yarkin-y/sportscraper/issues
+Author: Yarkin Yorulmaz
+License: MIT
+License-File: LICENSE
+Requires-Python: >=3.9
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: requests>=2.31
+Requires-Dist: selenium-stealth>=1.0.6
+Requires-Dist: selenium>=4.20
+Requires-Dist: tqdm>=4.66
+Requires-Dist: webdriver-manager>=4.0
+Description-Content-Type: text/markdown
+
+# sportscraper
