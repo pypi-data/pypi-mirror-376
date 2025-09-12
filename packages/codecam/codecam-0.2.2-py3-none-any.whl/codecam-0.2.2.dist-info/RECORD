@@ -1,0 +1,11 @@
+codecam/__init__.py,sha256=m6kyaNpwBcP1XYcqrelX2oS3PJuOnElOcRdBa9pEb8c,22
+codecam/cli.py,sha256=N__MrJqSGs3rztm7PfVTvTcaOLiWoxx6oJzmMozOpsQ,1437
+codecam/web.py,sha256=tqVEWFozBAH6vOffu9lxjnnbU8wlrVEAgPFo6DWoZrE,7539
+codecam/static/app.js,sha256=W44txeos0HfQzn4rCAkiz867qwT62cTjU66HBgLmxiA,4259
+codecam/templates/index.html,sha256=CNencY60GlfPUM4MhoqJ9uyOaADr4PE6CU_XVyXpP1M,1926
+codecam-0.2.2.dist-info/LICENSE,sha256=JemjeI1n3_SNXr8nEUTCf3nLasmMElYszFUfZD_gZtg,1064
+codecam-0.2.2.dist-info/METADATA,sha256=Wzf-dFVd8_O-SKoP7e0o1tNNg1sr9lL6QpD0ePH3qzs,2743
+codecam-0.2.2.dist-info/WHEEL,sha256=beeZ86-EfXScwlR_HKu4SllMC9wUEj_8Z_4FJ3egI2w,91
+codecam-0.2.2.dist-info/entry_points.txt,sha256=deLaH424JlvCXAAa3c3e2oWPvSkSBGaX47X5nTco3JU,45
+codecam-0.2.2.dist-info/top_level.txt,sha256=_dTKKkYPOctaQtFvotTXND5R25xzf6mP82jB-Y-Zl24,8
+codecam-0.2.2.dist-info/RECORD,,
