@@ -1,0 +1,14 @@
+cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cli/__main__.py,sha256=igIrkj1UUYIIhtb46vbTkpms3qZ8CRuFogDt3F0K7-A,3775
+cli/patches/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cli/patches/example.py,sha256=6y8yID2STte0srWp6wJA8K4JE3ysHX-DQsWolbDWYHY,353
+cli/patches/react.patch,sha256=5yWaMHBvjcPius1njkQaaHG9oVslfigt1UWePZXAeT8,1545
+paneer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+paneer/comms.py,sha256=Wpwj6ouk5aL_JPcQnucZCgN9sU2CWnBMwwmnqXS7rCM,500
+paneer/paneer.js,sha256=HUe3MZx3RQtCPNECkJEP3EdtINN9DH3GP4kEMN5Dk5U,708
+paneer/proto.py,sha256=szDV4FmnIevAozJclcgtaZZ0tKAKOX0Wz0lcznIBBaI,5549
+paneer-0.1.0.dist-info/METADATA,sha256=plRXmrQZZsJVdjnqYG89gdu4Ogt-Z3Mbtl6JD_L_yFI,340
+paneer-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+paneer-0.1.0.dist-info/entry_points.txt,sha256=aNciWUnn7KMQDsx5rKVAfCWSdoMj-XNcCPuW-UJJRpI,45
+paneer-0.1.0.dist-info/top_level.txt,sha256=OqmaXVOhK7a8HjF2Fikxw4MCdfUBZe9yTPn1cmEJkPQ,11
+paneer-0.1.0.dist-info/RECORD,,
