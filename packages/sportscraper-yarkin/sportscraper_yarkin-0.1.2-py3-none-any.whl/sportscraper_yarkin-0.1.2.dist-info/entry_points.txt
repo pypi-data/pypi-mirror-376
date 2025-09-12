@@ -1,0 +1,2 @@
+[console_scripts]
+sportscraper-cli = sportscraper.cli:main

@@ -1,0 +1,10 @@
+sportscraper/__init__.py,sha256=GBLgI0YkqmBcz66YwglfevDD7J7Wo5I0ehNmH6v5Dhk,54
+sportscraper/__main__.py,sha256=w8JGOEG8BTzf1cutNtlh3Wjk8dIEo8UNKuZUYzgn8JQ,90
+sportscraper/cli.py,sha256=IFKDaKYcWXbsI2jMvX5xuq5cZudM2JqpJqz2jbo2zZw,970
+sportscraper/fifaindex.py,sha256=EiCEGYrNIw8rhhVKW-Pqs9N8nSArCN45luvXpb4IL_k,9319
+sportscraper/utils.py,sha256=w8Y_rp1VkE5FSy2vvTFvc5Hbr3IFeBOO4Oe2-ovANAU,2443
+sportscraper_yarkin-0.1.2.dist-info/METADATA,sha256=ZHXviMxSzNGYeQAIftMtTvwFOf0x_FekVs1UywCBVGw,648
+sportscraper_yarkin-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+sportscraper_yarkin-0.1.2.dist-info/entry_points.txt,sha256=a3I2hnM1nRDTOa_DEE0GlkK6As06jUwgAHECUfDL3L8,59
+sportscraper_yarkin-0.1.2.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sportscraper_yarkin-0.1.2.dist-info/RECORD,,
