@@ -1,0 +1,12 @@
+vkarious/__init__.py,sha256=7m46zqfmhLCdx0PjwKT1_fwjiQBJC309wGh4xiAL_IE,87
+vkarious/change_capture.py,sha256=H8Gi0XRVHBhYbnABpMLHm124r3iZ8lZnI6VvnmD0_PQ,3832
+vkarious/cli.py,sha256=pR95Deg8rB4vpMcCmeDfiIy2vPZZ4D4v92x4GOuhohw,10631
+vkarious/db.py,sha256=UeLI_vx6O6PTnTUBK6_I0_U3u9lCb_oN0DtyREgrRn8,27122
+vkarious/migration/vkarious_1.sql,sha256=0DuP6CuKL0Y5YlmMMTSBC4CQmkbRFdRfkQL7oiSshu4,304
+vkarious/migration/vkarious_2.sql,sha256=o0n7_UmB_KXRlLGmby0pa9p9d9YQKVJot5nHRu7gDrY,405
+vkarious/sql/change_capture.sql,sha256=3-V2d16sD-jueQKdwxNZ5QdGEUZUtrBvzg9JuOTj-DA,16633
+vkarious-0.1.0.dist-info/METADATA,sha256=RRwS0UrbcouPU0J-zfaVIz-SCsaATyEIcUf5i9xh8A8,3677
+vkarious-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+vkarious-0.1.0.dist-info/entry_points.txt,sha256=mcpDx-4Pr5KYhR7QjPDej3LSaxSdiz2U9YoRfmguwBY,46
+vkarious-0.1.0.dist-info/licenses/LICENSE,sha256=ig7yDflqfhs7mTIzwdohsslQvaInMI-Ug5n-bABOrGg,1069
+vkarious-0.1.0.dist-info/RECORD,,
