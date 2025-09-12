@@ -1,0 +1,306 @@
+Metadata-Version: 2.4
+Name: yt_dlp_host_api
+Version: 0.2.1
+Summary: A Python library for interacting with the yt-dlp-host API
+Author-email: "Amadeus (Wasys)" <tubik.corp@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/Vasysik/yt-dlp-host-api
+Project-URL: Issues, https://github.com/Vasysik/yt-dlp-host-api/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.1
+Dynamic: license-file
+
+# [yt-dlp-host](https://github.com/Vasysik/yt-dlp-host) API Client
+
+This is a Python library for interacting with the [yt-dlp-host](https://github.com/Vasysik/yt-dlp-host) API.
+
+## Installation
+
+You can install the library using pip:
+
+```
+pip install yt-dlp-host-api
+```
+
+## Usage
+
+Here's a basic example of how to use the library:
+
+```python
+import yt_dlp_host_api
+
+# Initialize the API client
+api = yt_dlp_host_api.api('http://your-api-url.com')
+client = api.get_client('YOUR_API_KEY')
+
+# Download a complete video in MP4 format
+client.get_video(url='https://youtu.be/1FPdtR_5KFo', output_format='mp4').save_file("test_video.mp4")
+print("Video saved to test_video.mp4")
+
+# Download a video in WebM format
+client.get_video(url='https://youtu.be/1FPdtR_5KFo', output_format='webm').save_file("test_video.webm")
+print("Video saved to test_video.webm")
+
+# Download a video segment with precise cutting
+client.get_video(
+    url='https://youtu.be/1FPdtR_5KFo',
+    output_format='mkv',
+    start_time="00:05:00",
+    end_time="00:10:00",
+    force_keyframes=True
+).save_file("precise_cut.mkv")
+print("Precisely cut segment saved to precise_cut.mkv")
+
+# Download a video segment with faster cutting at keyframes
+client.get_video(
+    url='https://youtu.be/1FPdtR_5KFo',
+    output_format='mp4',
+    start_time="00:05:00",
+    end_time="00:10:00",
+    force_keyframes=False
+).save_file("keyframe_cut.mp4")
+print("Keyframe-cut segment saved to keyframe_cut.mp4")
+
+# Download a complete audio in MP3 format
+client.get_audio(url='https://youtu.be/1FPdtR_5KFo', output_format='mp3').save_file("test_audio.mp3")
+print("Audio saved to test_audio.mp3")
+
+# Download audio in FLAC format (lossless)
+client.get_audio(url='https://youtu.be/1FPdtR_5KFo', output_format='flac').save_file("test_audio.flac")
+print("Audio saved to test_audio.flac")
+
+# Get info with available qualities and languages
+info_result = client.get_info(url='https://youtu.be/1FPdtR_5KFo')
+
+# Get available qualities
+qualities = info_result.get_qualities()
+print("Available qualities:", qualities)
+
+# Get available languages
+languages = info_result.get_languages()
+print("Available audio languages:", languages['languages']['audio'])
+print("Available subtitle languages:", languages['languages']['subtitles'])
+
+# Get specific fields from info
+info_json = info_result.get_json(['title', 'duration', 'upload_date'])
+print("Video info:", info_json)
+
+# Admin operations (requires admin API key)
+new_key = client.create_key("user_key", ["get_video", "get_audio", "get_info"])
+keys = client.get_keys()
+key = client.get_key("user_key")
+client.delete_key("user_key")
+```
+
+## Features
+
+- Download YouTube videos
+  - Download complete videos
+  - Download specific time segments
+    - Precise cutting with frame re-encoding
+    - Fast cutting at keyframes
+  - Choose video and audio quality
+  - Choose output format (MP4, MKV, WebM, AVI, MOV, FLV, 3GP)
+  - Select specific audio language or download all audio tracks
+- Download YouTube audio
+  - Download complete audio
+  - Download specific time segments
+  - Choose audio quality
+  - Choose output format (MP3, M4A, Opus, FLAC, WAV, AAC, OGG)
+  - Select specific audio language
+- Extract live stream segments
+- Retrieve video information
+  - Get available video and audio qualities
+  - Get available audio and subtitle languages
+  - Filter specific fields from video metadata
+- Checking client permissions
+- Admin operations:
+  - Create new API keys
+  - List existing API keys
+  - Get API key by key name
+  - Delete API keys
+
+## API Reference
+
+### Client
+
+- `client.get_video(url, video_format="bestvideo", audio_format="bestaudio", audio_language=None, output_format="mp4", start_time=None, end_time=None, force_keyframes=False)`: Get video with optional time segment selection and language preference
+- `client.get_audio(url, audio_format="bestaudio", audio_language=None, output_format=None, start_time=None, end_time=None, force_keyframes=False)`: Get audio with optional time segment selection and language preference
+- `client.get_live_video(url, duration, start=0, video_format="bestvideo", audio_format="bestaudio", audio_language=None, output_format="mp4")`: Get live video segment with language preference
+- `client.get_live_audio(url, duration, start=0, audio_format="bestaudio", audio_language=None, output_format=None)`: Get live audio segment with language preference
+- `client.get_info(url)`: Get video information
+- `client.send_task.get_video(...)`: Initiate a video download task
+- `client.send_task.get_audio(...)`: Initiate an audio download task
+- `client.send_task.get_live_video(...)`: Initiate a live video download task
+- `client.send_task.get_live_audio(...)`: Initiate a live audio download task
+- `client.send_task.get_info(url)`: Initiate an info retrieval task
+- `client.check_permissions(permissions)`: Check for all permissions in the list
+
+### Supported Output Formats
+
+#### Video Formats
+- **mp4** - MPEG-4 Part 14 (recommended)
+- **mkv** - Matroska (supports multiple audio tracks)
+- **webm** - WebM
+- **avi** - Audio Video Interleave
+- **mov** - QuickTime File Format
+- **flv** - Flash Video
+- **3gp** - 3GPP multimedia
+
+#### Audio Formats
+- **mp3** - MPEG Audio Layer III
+- **m4a** - MPEG-4 Audio
+- **opus** - Opus Audio
+- **flac** - Free Lossless Audio Codec
+- **wav** - Waveform Audio File Format
+- **aac** - Advanced Audio Coding
+- **ogg** - Ogg Vorbis
+
+Note: If `output_format` is not specified for audio, the original format will be used.
+
+### Audio Language Support
+
+The `audio_language` parameter allows you to specify which audio track to download:
+- **None** (default): yt-dlp automatically selects the best available audio track
+- **ISO Language Code** (e.g., "en", "ru", "es", "de", "fr", "ja"): Downloads the specific language audio track
+- **"all"**: Downloads all available audio tracks (video will be saved in MKV format with multiple audio streams)
+
+Examples:
+```python
+# Default audio track (auto-selected by yt-dlp)
+client.get_video(url='...', output_format='mp4')
+
+# Specific language
+client.get_video(url='...', audio_language='ru', output_format='mp4')
+
+# All audio tracks
+client.get_video(url='...', audio_language='all', output_format='mkv')
+```
+
+### Time Format
+
+Time parameters (`start_time` and `end_time`) should be provided in the following format:
+- "HH:MM:SS" (hours:minutes:seconds)
+
+Examples:
+- "00:05:00" - 5 minutes
+- "01:30:45" - 1 hour, 30 minutes, and 45 seconds
+
+### Cutting Modes
+
+The `force_keyframes` parameter determines how video/audio segments are cut:
+- `force_keyframes=False` (default): Faster cutting that aligns to nearest keyframes. May not be exactly at specified timestamps but is much faster as it avoids re-encoding.
+- `force_keyframes=True`: Precise cutting at exact timestamps. This requires re-encoding which takes longer but provides exact cuts.
+
+### Task
+
+- `task.get_status()`: Get the current status of a task
+- `task.get_result()`: Wait for and return the result of a task
+
+### TaskResult
+
+- `result.get_file()`: Get the file content
+- `result.get_file_url()`: Get the URL of the downloaded file
+- `result.save_file(path)`: Save the downloaded file to the specified path
+- `result.get_json(fields=None)`: Get the JSON data for info tasks (optionally filtered by fields)
+- `result.get_qualities()`: Get available video and audio qualities (info tasks only)
+- `result.get_languages()`: Get available audio and subtitle languages (info tasks only)
+
+### Admin
+
+- `client.create_key(name, permissions)`: Create a new API key
+- `client.get_keys()`: List all existing API keys
+- `client.get_key(name)`: Get API key by key name
+- `client.delete_key(name)`: Delete an API key
+
+## Advanced Examples
+
+### Checking available languages before downloading
+
+```python
+import yt_dlp_host_api
+
+api = yt_dlp_host_api.api('http://your-api-url.com')
+client = api.get_client('YOUR_API_KEY')
+
+# First, get video info to check available languages
+info_result = client.get_info(url='https://youtu.be/1FPdtR_5KFo')
+languages = info_result.get_languages()
+
+print(f"Available audio languages: {languages['languages']['audio']}")
+print(f"Available subtitle languages: {languages['languages']['subtitles']}")
+
+# Download with a specific language if available
+if 'ru' in languages['languages']['audio']:
+    client.get_video(
+        url='https://youtu.be/1FPdtR_5KFo',
+        audio_language='ru',
+        output_format='mp4'
+    ).save_file("video_russian.mp4")
+    print("Downloaded video with Russian audio")
+```
+
+### Getting video qualities information
+
+```python
+import yt_dlp_host_api
+
+api = yt_dlp_host_api.api('http://your-api-url.com')
+client = api.get_client('YOUR_API_KEY')
+
+info_result = client.get_info(url='https://youtu.be/1FPdtR_5KFo')
+qualities = info_result.get_qualities()
+
+# Display available video qualities
+print("Available video qualities:")
+for format_id, details in qualities['qualities']['video'].items():
+    print(f"  Format {format_id}: {details['height']}p, {details['fps']}fps, {details['vcodec']}")
+
+# Display available audio qualities
+print("\nAvailable audio qualities:")
+for format_id, details in qualities['qualities']['audio'].items():
+    print(f"  Format {format_id}: {details['abr']}kbps, {details['acodec']}, language: {details.get('language', 'unknown')}")
+```
+
+### Downloading with specific quality selection
+
+```python
+import yt_dlp_host_api
+
+api = yt_dlp_host_api.api('http://your-api-url.com')
+client = api.get_client('YOUR_API_KEY')
+
+# Download 720p video with 128kbps audio
+client.get_video(
+    url='https://youtu.be/1FPdtR_5KFo',
+    video_format='bestvideo[height<=720]',
+    audio_format='bestaudio[abr<=128]',
+    output_format='mp4'
+).save_file("video_720p_128k.mp4")
+```
+
+## Error Handling
+
+The library uses exceptions to handle errors. Catch `yt_dlp_host_api.exceptions.APIError` to handle API-related errors.
+
+```python
+import yt_dlp_host_api
+from yt_dlp_host_api.exceptions import APIError
+
+api = yt_dlp_host_api.api('http://your-api-url.com')
+client = api.get_client('YOUR_API_KEY')
+
+try:
+    result = client.get_video(url='https://youtu.be/invalid-url')
+    result.save_file("video.mp4")
+except APIError as e:
+    print(f"API Error: {e}")
+```
+
+## Contributing
+
+Contributions to yt-dlp-host-api are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the GitHub repository. Pull requests are also encouraged.
