@@ -1,0 +1,6 @@
+[peagen.plugins.signings]
+ecdsa=swarmauri_signing_ecdsa:EcdsaEnvelopeSigner
+
+[swarmauri.signings]
+EcdsaEnvelopeSigner=swarmauri_signing_ecdsa:EcdsaEnvelopeSigner
+
