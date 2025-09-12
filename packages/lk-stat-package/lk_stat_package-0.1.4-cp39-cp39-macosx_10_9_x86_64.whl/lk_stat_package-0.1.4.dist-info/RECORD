@@ -1,0 +1,10 @@
+lk_stat_package/__init__.py,sha256=caes5oZOT_U1YMcpgirZj4CvhPR63n7dp6txAsHxx74,29
+lk_stat_package/lk_stat.c,sha256=hiH66eiuTcuRuXWcdVxrw0-WfflZJR1CsVzWwegj5eQ,1158061
+lk_stat_package/lk_stat.cpython-39-darwin.so,sha256=-DhSN6oPLsmjEvmql_FhAlF5f5xmjqx1zFrBpGF4Drw,172744
+lk_stat_package/lk_stat.pyx,sha256=isH1rlysQg1ZDa4RCGj7lgkYQfQ38Rxl924NOm7FYFM,2091
+lk_stat_package/lk_stat_old.pyx,sha256=N4O5vHoAMDVm4ZmvabvFlg_Vlh90XHPuNSxCckfncH4,2216
+lk_stat_package/lk_stat_old_2.pyx,sha256=e5hwY84LGbHYxl0yh9mORYzXUFWQTSrMBLVih27o9SI,2855
+lk_stat_package-0.1.4.dist-info/METADATA,sha256=3Y3iMhzakcxskPnFk7ECxAeDnokkGJwl-c1qTP5SY34,1602
+lk_stat_package-0.1.4.dist-info/WHEEL,sha256=Ui60MbQStN7UWmlHrvRSzB8m_B5-okiNGeb8CWQReOs,108
+lk_stat_package-0.1.4.dist-info/top_level.txt,sha256=djFryox01MTR996_QwiwE3pkP_My_RcfFjcKSiL709c,16
+lk_stat_package-0.1.4.dist-info/RECORD,,
