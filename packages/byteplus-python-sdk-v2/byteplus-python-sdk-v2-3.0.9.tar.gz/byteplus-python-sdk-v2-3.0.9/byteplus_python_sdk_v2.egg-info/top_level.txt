@@ -1,0 +1,16 @@
+byteplussdkapig
+byteplussdkapig20221112
+byteplussdkark
+byteplussdkarkruntime
+byteplussdkautoscaling
+byteplussdkbilling
+byteplussdkcore
+byteplussdkcr
+byteplussdkdms
+byteplussdkecs
+byteplussdkfilenas
+byteplussdkkms
+byteplussdksmc
+byteplussdkstorageebs
+byteplussdkvke
+byteplussdkvpc
