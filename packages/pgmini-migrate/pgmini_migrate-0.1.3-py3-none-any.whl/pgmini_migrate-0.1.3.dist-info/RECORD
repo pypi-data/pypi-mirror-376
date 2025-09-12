@@ -1,0 +1,10 @@
+pgmini_migrate/__init__.py,sha256=Pru0BlFBASFCFo7McHdohtKkUtgMPDwbGfyUZlE2_Vw,21
+pgmini_migrate/__main__.py,sha256=0g3iknXOS9gZUcpL_trgAcuCJnZZKjdsT_xt61WOVb4,60
+pgmini_migrate/cli.py,sha256=7i-kwA5rlG6rpQw4NyMzaxs_OEZXvuA2ZGK2bfYyKBg,12179
+pgmini_migrate/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pgmini_migrate-0.1.3.dist-info/licenses/LICENSE,sha256=n8ph1nmbOC4LqVLKRE-5SrUxzlv71A4saf-2_iNWR2Y,37
+pgmini_migrate-0.1.3.dist-info/METADATA,sha256=JEI-i9nzM3D_E1UR8JxsHAFGVHJOQsy8-IH6RMXXRKw,1197
+pgmini_migrate-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pgmini_migrate-0.1.3.dist-info/entry_points.txt,sha256=Zy6EN7sJuzTPbMhyoFjri1OdQ2iX1HuPw4UcSi4G6OY,54
+pgmini_migrate-0.1.3.dist-info/top_level.txt,sha256=ok556JVjy6jjrWTHi9d_lE4TteBXjQIoLOoJFD7_yhg,15
+pgmini_migrate-0.1.3.dist-info/RECORD,,
