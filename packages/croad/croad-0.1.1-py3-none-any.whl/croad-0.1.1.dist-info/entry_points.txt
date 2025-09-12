@@ -1,0 +1,2 @@
+[console_scripts]
+croad = croad.croad:main
