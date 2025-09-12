@@ -1,0 +1,17 @@
+layoutlens/__init__.py,sha256=DUmqojYy_WiSsvSqTaneKCqlf4_Nh6pqrORX_9mKGeE,440
+layoutlens/cli.py,sha256=J_rjzmuI1POxr9shnxRRX1u53VNuoNztGkj2uZyu8D0,15182
+layoutlens/config.py,sha256=RDfWpUUlY17VcE0qnii7GVdSN2ldaKnUvEGMjsHNCos,15444
+layoutlens/api/__init__.py,sha256=h1VrjACZVVdR30SO4X03GdfsIBl0rVXpTpNWqQEdBUg,367
+layoutlens/api/core.py,sha256=sK-vsquMQFxTRMXim3ttFeLBnXHQqNRKZRZbYyH1xuQ,13600
+layoutlens/integrations/__init__.py,sha256=YCXjEg_cSSuu__bx66JtNrzKEg4HRcpJD_Y0wsL---c,359
+layoutlens/integrations/github.py,sha256=Pl8KMSBDavqmR3fIsBEjml2oqYE40FjtCYS8ThEINrs,9535
+layoutlens/vision/__init__.py,sha256=xvz5_yLSgKDKR3xINj2ozRoa3Cjp_NDTAf30QUJKEts,410
+layoutlens/vision/analyzer.py,sha256=Jb8DM01EFN5BeyO8h_KESPcY6ZXcoJW2RZaSaiZ4_mk,9993
+layoutlens/vision/capture.py,sha256=OGVSvivkxI9KwRtSF10_iVCaUjqSOJDJjxniiRZmwcQ,9331
+layoutlens/vision/comparator.py,sha256=6_C50M4F9EyaXgTDuqfyBc922Fh81xc9lUwyemlmTws,11379
+layoutlens-1.0.1.dist-info/licenses/LICENSE,sha256=u2Xv6GhpsJ52XQnsaCW92r7aZwkHW-XpHc-9jAB0Kwc,1067
+layoutlens-1.0.1.dist-info/METADATA,sha256=MFouRZlnLvmVFir44419eFHCLEcW05W2gx24B3RhKcM,16800
+layoutlens-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+layoutlens-1.0.1.dist-info/entry_points.txt,sha256=u-k5kDV93mPmFv4_exdPPqaKbyROrBrtGY3Uv_ml3CM,51
+layoutlens-1.0.1.dist-info/top_level.txt,sha256=zmx7Lp_zIUG6DpMJQpT-1A8wNcaDf4mKpYjshPFvPRM,11
+layoutlens-1.0.1.dist-info/RECORD,,
