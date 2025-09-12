@@ -1,0 +1,3 @@
+[swarmauri.cert_services]
+AwsKmsCertService=swarmauri_certservice_aws_kms.AwsKmsCertService:AwsKmsCertService
+
