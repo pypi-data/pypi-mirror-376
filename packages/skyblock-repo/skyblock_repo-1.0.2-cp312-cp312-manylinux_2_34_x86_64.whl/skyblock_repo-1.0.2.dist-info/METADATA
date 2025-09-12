@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: skyblock-repo
+Version: 1.0.2
+Summary: Cargo/Python package to interface with the Skyblock Repo
+Keywords: skyblock,hypixel,hypixel-skyblock
+Home-Page: https://skyblockrepo.com
+License: MIT
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Source Code, https://github.com/SkyblockRepo/RepoRS
+
+# skyblock-repo
+
+Cargo package to interface with the [Skyblock Repo]
+
+### Adding to your project
+
+Rust
+```sh
+cargo add skyblock-repo
+```
+
+Python
+```sh
+pip install skyblock-repo
+```
+
+### Usage
+
+Look at the [examples](./examples/) for how to use.
+
+[Skyblock Repo]: https://skyblockrepo.com
+
