@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: pvml-sdk
+Version: 0.1
+Requires-Python: >=3.11
+Requires-Dist: aiohttp~=3.11.13
+Requires-Dist: PyJWT~=2.10.1
+Requires-Dist: nest-asyncio~=1.6.0
+Requires-Dist: requests~=2.32.4
+Requires-Dist: sseclient-py~=1.8.0
+Dynamic: requires-dist
+Dynamic: requires-python
