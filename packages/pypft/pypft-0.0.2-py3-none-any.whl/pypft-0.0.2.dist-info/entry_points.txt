@@ -1,0 +1,2 @@
+[console_scripts]
+run-tests = pypft.run_tests:main
