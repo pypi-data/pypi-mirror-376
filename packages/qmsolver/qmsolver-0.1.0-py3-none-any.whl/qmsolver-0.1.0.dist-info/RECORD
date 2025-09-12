@@ -1,0 +1,15 @@
+qmsolver/__init__.py,sha256=U19FuADHSLQFLG3y9xXt-m-aNciTuOnogg9Ef0KFa_Y,238
+qmsolver/potentials/__init__.py,sha256=YE5RNwmCU72AfazjB9o5x5JO1rRYxuSnMYuke2xQFQw,521
+qmsolver/potentials/base.py,sha256=F_odQu6kcm_lYi_Mf9ssi-RfSWEZ2IvNoHlkeowfqrs,1136
+qmsolver/potentials/double_square_well.py,sha256=YDa8njnEJLmHoFNof0mvzle153YxabIvvlJKv-0518A,1767
+qmsolver/potentials/finite_square_well.py,sha256=szwM6NjKMUz09PnZ1r2uw8pEL5Hpu51jOrRl2yqTCI0,875
+qmsolver/potentials/harmonic_oscillator.py,sha256=tLv5HF4dRazQxMLK0cKL5QSZuIEiXEJgu1gHwZMuyBw,1194
+qmsolver/potentials/multiple_square_well.py,sha256=7DD5XVd8rEaM2yw6qYz66vhEC9tQc3gwqlAo8PCkRV8,1590
+qmsolver/potentials/poschl_teller.py,sha256=FM5QslFz89dMpSmXgP0bfpF_1KrlyoCydfsA7CfPsHw,855
+qmsolver/tise/__init__.py,sha256=roVMXSoBBE9UGbJ9ecPp3NOHRDX1LpDjAb-itF8W6q0,65
+qmsolver/tise/finite_differences.py,sha256=6wb-a-hkN-2CoJxml0R-imESpPoNqvxnuYRcT34Hmyc,8487
+qmsolver-0.1.0.dist-info/licenses/LICENSE,sha256=XtxJZzdvxfA7srcUBz23YapePau6GCES9aY_ZUm1tgA,1064
+qmsolver-0.1.0.dist-info/METADATA,sha256=hCmjEjGsDbFCUX0THkJfmpDqEPtfQYPVuRYOywWJ5Pg,11832
+qmsolver-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qmsolver-0.1.0.dist-info/top_level.txt,sha256=jD4cBTJuj4-36gCsvVWi8iQgivblch-0tSz3U61CHl4,9
+qmsolver-0.1.0.dist-info/RECORD,,
