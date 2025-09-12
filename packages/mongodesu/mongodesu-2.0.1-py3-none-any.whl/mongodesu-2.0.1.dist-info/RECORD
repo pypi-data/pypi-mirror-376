@@ -1,0 +1,12 @@
+mongodesu/__init__.py,sha256=mchXsykthXohXj4Ao9EMgcrRf1YIoDt0WWefn43w8_A,70
+mongodesu/mongolib.py,sha256=dTJxuyaMWvBpntFsOuzP4lVM0DIa948vmiR02KIZ6S8,17539
+mongodesu/fields/__init__.py,sha256=kIBzQUfz-8DRUSbTHhEJeAbr7s3zkCC-LFh_f5qspWE,262
+mongodesu/fields/base.py,sha256=rnbRsQmIaHysLKgT4uNkzf1joX9hPNfg4tAbiT5VUFs,1408
+mongodesu/fields/types.py,sha256=r7WhNe10VvcMTA9Dd6KE8Me0_gGm5jqW03rpgb8rhUc,7523
+mongodesu/serializable/__init__.py,sha256=XEhmEiYsAl-649wlisxezX6x6RAdOwEjdGdTMl6GtHg,66
+mongodesu/serializable/serializable.py,sha256=k6xtCiZ2pdYfBxfMXjrWpFKDmQK2XjtqHkwBMaCQW_4,974
+mongodesu-2.0.1.dist-info/licenses/LICENSE,sha256=-9sFhWhixPpzeO66SLU9vnDBuHwT8Oo6LMXgOC9HM9w,1067
+mongodesu-2.0.1.dist-info/METADATA,sha256=rj68QSqb6WyH4Sc5nYQ6o8tLnNb26BzSj6fQ-YSgexM,8755
+mongodesu-2.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mongodesu-2.0.1.dist-info/top_level.txt,sha256=GSLGn0K3jCds54e38q6EKFiZkUdwJuoa8FM9BkhOt2U,10
+mongodesu-2.0.1.dist-info/RECORD,,
