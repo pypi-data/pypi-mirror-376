@@ -1,0 +1,13 @@
+[package]
+name = "openmander-pack"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = { workspace = true }
+reqwest = { workspace = true }
+tempfile = { workspace = true }
+zip = { workspace = true }
+
+openmander-map = { path = "../map" }
+openmander-plan = { path = "../plan" }
