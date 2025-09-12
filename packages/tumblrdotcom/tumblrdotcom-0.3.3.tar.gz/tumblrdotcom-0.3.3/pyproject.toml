@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tumblrdotcom"
+description = "Tumblr API wrapper with support for Polls"
+keywords = ["Tumblr", "API"]
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dynamic = ["dependencies", "version"]
+
+[project.urls]
+repository = "https://codeberg.org/jamesansley/tumblrdotcom"
+documentation = "https://tumblrdotcom.rtfd.io"
+
+[tool.setuptools.dynamic]
+version = { attr = "tumblr.__version__" }
+dependencies = { file = "requirements.txt" }
