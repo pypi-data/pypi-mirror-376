@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scatterbin"
+version = "0.1.0"
+description = "Adjustable binning of scatter plot data"
+
+readme = "README.md"
+authors = [
+    {name = "Stephen Curran", email = "scurran.astro@gmail.com"},
+]
+requires-python = ">=3.9"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/steviecurran/scatterbin"
