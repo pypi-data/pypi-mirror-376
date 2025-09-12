@@ -1,0 +1,6 @@
+[peagen.plugins.signings]
+rsa=swarmauri_signing_rsa:RSAEnvelopeSigner
+
+[swarmauri.signings]
+RSAEnvelopeSigner=swarmauri_signing_rsa:RSAEnvelopeSigner
+
