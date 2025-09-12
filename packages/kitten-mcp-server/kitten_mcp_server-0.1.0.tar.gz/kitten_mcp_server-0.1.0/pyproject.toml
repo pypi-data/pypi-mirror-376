@@ -1,0 +1,16 @@
+[project]
+name = "kitten-mcp-server"
+version = "0.1.0"
+description = "MCP Server for Kitten"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = ["fastmcp>=2.0.0"]
+classifiers = [
+    "License :: OSI Approved :: MIT License", # 关键！在PyPI分类中指明是MIT许可证
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+kitten-mcp-server = "kitten_mcp_server.main:main"

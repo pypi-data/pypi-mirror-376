@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+kitten_mcp_server/__init__.py
+kitten_mcp_server/__main__.py
+kitten_mcp_server/main.py
+kitten_mcp_server.egg-info/PKG-INFO
+kitten_mcp_server.egg-info/SOURCES.txt
+kitten_mcp_server.egg-info/dependency_links.txt
+kitten_mcp_server.egg-info/entry_points.txt
+kitten_mcp_server.egg-info/requires.txt
+kitten_mcp_server.egg-info/top_level.txt

@@ -1,0 +1,31 @@
+# Kitten MCP Server
+
+一个轻量级的 MCP（消息控制协议）服务器，专为 Kitten 应用设计。
+
+## 功能
+- 快速高效的消息处理
+- 基于 Python 3.11+ 构建
+- MIT 许可证
+
+## 安装
+
+1. 确保已安装 Python 3.11 或更高版本。
+2. 使用 pip 安装包：
+   ```bash
+   pip install kitten_mcp_server
+   ```
+
+## 使用方法
+
+运行以下命令启动服务器：
+```bash
+  kitten_mcp_server
+```
+
+## 依赖
+
+- `fastmcp>=2.0.0`
+
+## 许可证
+
+本项目采用 MIT 许可证。详情请参阅 [LICENSE](LICENSE) 文件。
