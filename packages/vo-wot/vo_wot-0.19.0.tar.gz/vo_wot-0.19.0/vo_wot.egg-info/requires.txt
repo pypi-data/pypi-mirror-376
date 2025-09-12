@@ -1,0 +1,8 @@
+wotpy2
+influxdb-client>=1.49.0
+statsmodels>=0.14.5
+numpy>=2.0.2
+
+[docs]
+Sphinx>=7.4.7
+sphinx-rtd-theme>=3.0.2
