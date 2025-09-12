@@ -1,0 +1,6 @@
+[peagen.plugins.cert_services]
+localca=swarmauri_certs_local_ca:LocalCaCertService
+
+[swarmauri.cert_services]
+LocalCaCertService=swarmauri_certs_local_ca:LocalCaCertService
+
