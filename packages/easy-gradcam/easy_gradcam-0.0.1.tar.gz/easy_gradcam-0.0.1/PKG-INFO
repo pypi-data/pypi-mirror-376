@@ -1,0 +1,140 @@
+Metadata-Version: 2.4
+Name: easy_gradcam
+Version: 0.0.1
+Summary: GradCAM for torchvision, timm and huggingface model.
+Author-email: PoYung Chou <ball60304@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Po-Yung Chou
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights  
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+        copies of the Software, and to permit persons to whom the Software is  
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all  
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
+        SOFTWARE.
+Keywords: gradcam
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: torch
+Requires-Dist: matplotlib
+Dynamic: license-file
+
+# easy_gradcam
+
+A lightweight tool to generate Grad-CAM visualizations for image classification models.
+It supports popular backbones such as **ResNet**, **Vision Transformers (ViT)**, and **Hugging Face Transformers**.
+
+---
+
+## Installation
+
+```bash
+pip install easy_gradcam
+```
+
+## Quick Start
+
+### 1. Import dependencies
+```python
+import cv2
+import torchvision.models as models
+import torchvision.transforms as transforms
+import timm
+from transformers import AutoModelForImageClassification
+from easy_gradcam.classification import EasyGradCAM
+from easy_gradcam.visualization import save_heatmap, save_mix_heatmap
+```
+
+### 2. Load a model
+You can use different backbones:
+```python
+# Example 1: ResNet-50 (torchvision)
+model = models.resnet50(pretrained=True)   # target layer: "layer4"
+
+# Example 2: ViT (timm)
+model = timm.create_model("vit_base_patch16_224_miil", pretrained=True)   # target layer: "blocks.10"
+
+# Example 3: Hugging Face (DINOv2)
+model = AutoModelForImageClassification.from_pretrained(
+    "facebook/dinov2-small-imagenet1k-1-layer"
+)
+model.eval()
+
+```
+
+### 3. Prepare an image
+```python
+img = cv2.imread("./exp1.jpg")
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+totensor = transforms.ToTensor()
+resize = transforms.Resize((224, 224))
+normalize = transforms.Normalize([0.485, 0.456, 0.406],
+                                 [0.229, 0.224, 0.225])
+
+t = totensor(img)
+t = resize(t)
+t = normalize(t)
+t = t.unsqueeze(0)  # add batch dimension
+
+```
+
+### 4. Compute Grad-CAM
+```python
+gradcam = EasyGradCAM(model, target_layer="dinov2.encoder.layer.11")
+
+# Extract features and gradients
+feats, grads = gradcam.cal_feat_and_grad(t)
+
+# Generate heatmaps
+heats = gradcam.cal_heats(img, feats, grads)
+```
+
+### 5. Save results
+```python
+for i in range(len(heats)):
+    for name in heats[i]:
+        # Save plain heatmap
+        save_heatmap(
+            save_path=f"results/{i}-{name}.jpg",
+            heat=heats[i][name],
+            cmap="jet",
+            title="grad-cam"
+        )
+
+        # Save overlay with original image
+        save_mix_heatmap(
+            save_path=f"results/{i}-{name}-mix.jpg",
+            heat=heats[i][name],
+            ori_img=img,
+            cmap="jet"
+        )
+```
+
+### Example Output
+- results/0-dinov2.encoder.layer.11.jpg: heatmap only
+<img src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_a05f1eddb8ad02fdf6b4a4e4ba804ecc.jpg?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1757664967&Signature=C6D2nHzRjvJ6WAKpUZdjeSZ4Rzw%3D" width="400">
+
+- results/0-dinov2.encoder.layer.11-mix.jpg: heatmap overlay on the input image
+<img src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_a3749220bab545262528304ae6542148.jpg?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1757664978&Signature=rMiL%2BcLtmqti5tE2dPfQQskrVGU%3D" width="400">
+
+### Notes
+* Make sure the target layer you pass matches the internal structure of the model.
+* Pretrained models from torchvision, timm, and Hugging Face are supported.
+* Heatmaps are saved as .jpg files in the results/ directory.
