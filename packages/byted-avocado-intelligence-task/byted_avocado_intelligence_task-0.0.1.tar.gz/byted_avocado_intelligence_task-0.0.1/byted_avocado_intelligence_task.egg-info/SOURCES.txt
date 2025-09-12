@@ -1,0 +1,6 @@
+README.md
+setup.py
+byted_avocado_intelligence_task.egg-info/PKG-INFO
+byted_avocado_intelligence_task.egg-info/SOURCES.txt
+byted_avocado_intelligence_task.egg-info/dependency_links.txt
+byted_avocado_intelligence_task.egg-info/top_level.txt
