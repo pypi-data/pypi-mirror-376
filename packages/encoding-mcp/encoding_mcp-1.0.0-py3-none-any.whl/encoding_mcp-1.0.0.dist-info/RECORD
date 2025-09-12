@@ -1,0 +1,11 @@
+encoding_mcp/__init__.py,sha256=KxYgKtKTkFKXVSulqfkgo-7iNA0jTjAWQZPLQhvoOnk,987
+encoding_mcp/__main__.py,sha256=lt9mhyhQ77DgyFLTyzdX1nQ4TDUrPRVtCk_2nmhqoOE,234
+encoding_mcp/encoding_detector.py,sha256=c2KtWo-ePW_iWO1MgJxwfaKOZyL0j6UXVX9pFAGEKbM,9012
+encoding_mcp/file_operations.py,sha256=CJdAgt8Y30JFfMic1lGwOifchukUqcw4NkycmnWATMI,12882
+encoding_mcp/server.py,sha256=pNCeZ_MRKUN4ohsCmyQIGP7L4jqeW9cNXU8enjJaGJE,12267
+encoding_mcp-1.0.0.dist-info/licenses/LICENSE,sha256=FlQTAbSbF833PGdQhYJnadQf9PbzlyaKov7G00zesIM,1095
+encoding_mcp-1.0.0.dist-info/METADATA,sha256=maLXXsAPZ_MC3ef95YG7V7qs_Hel3TPfWDHqz8lE1eY,9526
+encoding_mcp-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+encoding_mcp-1.0.0.dist-info/entry_points.txt,sha256=X288bY2rRUv2FYobmYyKd71sqV9elxQSdddOCt3VXxI,62
+encoding_mcp-1.0.0.dist-info/top_level.txt,sha256=cGADJzqj3Z94HIFJJur5qqL9JZWeHyLC6sXGAQH9Bcc,13
+encoding_mcp-1.0.0.dist-info/RECORD,,
