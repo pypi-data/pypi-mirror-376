@@ -1,0 +1,53 @@
+[project]
+name = "show-me-your-vibe"
+version = "0.1.0"
+description = "Simple CLI tool to generate context for LLMs from codebase"
+authors = [
+    {name = "Skylar V. Allen", email = "vladimir@alinsky.tech"}
+]
+keywords = ["cli", "llm", "context", "prompt", "developer-tools"]
+readme = "README.md"
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Utilities"
+]
+
+requires-python = ">=3.10"
+dependencies = [
+    "typer (>=0.17.4,<0.18.0)",
+    "pyperclip (>=1.9.0,<2.0.0)",
+    "gitpython (>=3.1.45,<4.0.0)",
+    "pydantic (>=2.11.7,<3.0.0)"
+]
+
+[project.urls]
+Homepage = "https://github.com/SKY-ALIN/vibe"
+Repository = "https://github.com/SKY-ALIN/vibe"
+Issues = "https://github.com/SKY-ALIN/vibe/issues"
+
+[tool.poetry]
+packages = [{include = "vibe", from = "src"}]
+
+[tool.poetry.scripts]
+vibe = "vibe.main:app"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^6.0.1"
+flake8 = "^7.3.0"
+pylint = "^3.3.8"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
