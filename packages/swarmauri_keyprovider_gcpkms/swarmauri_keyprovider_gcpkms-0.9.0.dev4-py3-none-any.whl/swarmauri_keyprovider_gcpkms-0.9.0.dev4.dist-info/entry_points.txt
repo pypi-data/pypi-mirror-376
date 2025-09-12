@@ -1,0 +1,3 @@
+[swarmauri.key_providers]
+GcpKmsKeyProvider=swarmauri_keyprovider_gcpkms.GcpKmsKeyProvider:GcpKmsKeyProvider
+
