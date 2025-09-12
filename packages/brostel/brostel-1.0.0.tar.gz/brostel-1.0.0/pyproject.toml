@@ -1,0 +1,53 @@
+[project]
+name = "brostel"
+authors = [{ name = "ventuero", email = "amerfoe@gmail.com" }]
+maintainers = [{ name = "ventuero", email = "amerfoe@gmail.com" }]
+description = "Telegram formatting tool for telegrinder"
+readme = "README.md"
+version = "1.0.0"
+requires-python = ">=3.13"
+dependencies = ["markupsafe>=3.0.2,<4.0.0", "sulguk>=0.9.1,<1.0.0"]
+
+keywords = [
+    "async",
+    "asyncio",
+    "text",
+    "fmt",
+    "format",
+    "formatting",
+    "telegram",
+    "bot",
+    "telegrinder",
+    "html",
+    "entities",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Communications :: Chat",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Framework :: AsyncIO",
+    "Typing :: Typed",
+]
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+telegrinder = { git = "https://github.com/timoniq/telegrinder.git" }
+
+[project.urls]
+Homepage = "https://github.com/ventuero/brostel/"
+Repository = "https://github.com/ventuero/brostel"
+"Bug Tracker" = "https://github.com/ventuero/brostel/issues"
+
+[project.optional-dependencies]
+dev = ["ruff>=0.13.0", "telegrinder"]
