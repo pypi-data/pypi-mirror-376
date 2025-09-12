@@ -1,0 +1,10 @@
+simple_carla/__init__.py,sha256=vnaDXh1Rsfb0QCWbImKtXyB9UgHjT8n25UdWdZP6Big,111175
+simple_carla/plugin_dialog.py,sha256=uof7YSqVEjgUrWqF-bo76hegsecIOtu6aZr03kdNrKQ,1498
+simple_carla/qt.py,sha256=8J56Zagbh9ip_HGkhqcNQR36JC8YrUsR4H0QIlhPWIA,15636
+simple_carla/scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+simple_carla/scripts/sc_plugin_def.py,sha256=CVseichHuDCmGeD8v7CfHweeyHHXI60-RcvzU8OILqo,2214
+simple_carla-2.3.2.dist-info/entry_points.txt,sha256=oqJRVQXTCIUOmspGNnqDWq9mhz397uoRMQQOhBFbIcs,73
+simple_carla-2.3.2.dist-info/licenses/LICENSE,sha256=ljOS4DjXvqEo5VzGfdaRwgRZPbNScGBmfwyC8PChvmQ,32422
+simple_carla-2.3.2.dist-info/WHEEL,sha256=Dyt6SBfaasWElUrURkknVFAZDHSTwxg3PaTza7RSbkY,100
+simple_carla-2.3.2.dist-info/METADATA,sha256=TmpI6h38JlwUxsuifu9GrNbuBO5z7iXfp6ZGB9UnuMU,1739
+simple_carla-2.3.2.dist-info/RECORD,,
