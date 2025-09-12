@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "matlab-simulink-mcp"
+version = "0.1.0"
+description = "An MCP server for allowing LLMs to interact with MATLAB and Simulink"
+authors = [
+  { name = "Rohail"}
+]
+license = { text = "MIT" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "fastmcp>=2.12.2",
+    "platformdirs>=4.4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"matlab_simulink_mcp" = ["data/*.txt", "data/*.json", "data/helpers/*.py"]
+
+[project.scripts]
+matlab_simulink_mcp = "matlab_simulink_mcp.__main__:main"
