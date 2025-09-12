@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: objspect
+Version: 0.1.0
+Summary: Introspect any Python object
+Author-email: Davide Zepponi <davidezepponi@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/DavideZepponi/objspect
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rich>=13.0
+Dynamic: license-file
+
+# ObjSpect
+
+## Installation
+
+```bash
+pip install objspect
