@@ -1,0 +1,52 @@
+[project]
+name = "google_ngrams"
+description = "Fetch and analyze Google Ngram data for specified word forms."
+readme = { file = "README.rst", content-type = "text/x-rst" }
+urls.Documentation = "https://browndw.github.io/google_ngrams"
+urls.Homepage = "https://github.com/browndw/google_ngrams"
+authors = [{ name = "David Brown", email = "dwb2@andrew.cmu.edu" }]
+maintainers = [{ name = "David Brown", email = "dwb2@andrew.cmu.edu" }]
+keywords = ["nlp", "language"]
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Science/Research",
+    "Topic :: Text Processing :: Linguistic",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+version = "0.2.0"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "numpy>=1.22",
+    "matplotlib>=3.5",
+    "polars>=1.17",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0"
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "build>=1.0.0",
+    "twine>=5.0.0"
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages]
+find = { namespaces = false }
+
+[tool.setuptools.package-data]
+google_ngrams = ["data/*.parquet"]
