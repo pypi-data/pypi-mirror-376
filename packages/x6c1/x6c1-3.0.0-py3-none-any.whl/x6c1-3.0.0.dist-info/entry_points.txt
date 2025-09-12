@@ -1,0 +1,2 @@
+[console_scripts]
+x6c1 = x6c1.cli:main

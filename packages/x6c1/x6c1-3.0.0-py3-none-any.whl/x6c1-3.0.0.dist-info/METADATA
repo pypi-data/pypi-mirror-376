@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: x6c1
+Version: 3.0.0
+Summary: A comprehensive tool for converting between hexadecimal representations and their corresponding text or numeric values
+Home-page: https://github.com/celestine1729/x6c1
+Author: celestine1729
+Author-email: celestine1729@proton.me
+Keywords: hex,converter,translator,text,number,file
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# x6c1 - Hex Translator
+
+A comprehensive command-line tool and Python library for converting between hexadecimal representations and their corresponding text or numeric values with file support.
+
+## Installation
+
+```bash
+pip install x6c1
+```
