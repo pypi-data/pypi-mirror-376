@@ -1,0 +1,306 @@
+Metadata-Version: 2.4
+Name: fairdomseekclient
+Version: 0.1.1rc5
+Summary: A python client for fairdomseek platform
+Author-email: Pascal Le Metayer <pascal.lemetayer@irt-saintexupery.com>
+License-Expression: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.1
+Requires-Dist: fairdomseek-openapi-client==1.0.0
+Requires-Dist: tenacity==9.1.2
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+
+# Purpose
+
+`fairdomseekclient` is a Python library that simplifies batch loading and synchronization of data into a 
+[FAIRDOM-SEEK](https://fairdomseek.org) server instance.
+
+## Installation
+
+Install the library as following:
+
+```
+pip install fairdomseekclient
+```
+
+## How to use
+
+### Declarative data structures
+
+the fairdomseekclient library handles the following data structure:
+
+* Investigation
+* Study
+* Sample schema
+
+as declarative information. It means that you only have to declare the data, 
+all the synchronisation work will be done for you by the library.
+
+
+### Imperative data structures
+
+Because these object types can involve large or complex data, a declarative approach is not suitable. 
+Instead, you must handle creation, update, and deletion explicitly through the API. 
+
+* Assay
+* Model
+* Datafile
+* Sample
+
+
+### Project skeleton
+
+Your project should look like something like this (see tests/skeleton):
+
+```
+src
+├── ingestion
+│   ├── actors.py
+│   ├── __init__.py
+│   ├── investigation.py
+│   ├── sample_type.py
+│   └── study.py
+├── __init__.py
+├── meta.py
+└── run.py
+```
+
+This is just a suggested layout; you may adapt it.
+
+#### ingestion package
+
+*ingestion* is the python package where declarative data structures will be searched by the library. 
+The package can be named freely, and files within it may be organized as needed.
+
+##### actors.py
+
+You define here the actors that will be referenced for policy management:
+
+```python
+from fairdomseek.types.base_types import People, Project, Institution, Public
+from meta import project_metadata
+
+me = People(metadata=project_metadata, first_name="Justin", last_name="Demo")
+demo_project = Project(metadata=project_metadata, title="Ingestion demo")
+irt = Institution(metadata=project_metadata, title="IRT Saint Exupéry")
+public = Public(metadata=project_metadata)
+```
+
+*Actor* will be used later to setup access policy to created objects
+
+##### investigation.py
+
+*Investigation* is the top level object in the ISA (Investigation/Study/Assay) to organize your data. 
+Create it as following:
+
+```python
+from fairdomseek.types.access.policy import Policy
+from fairdomseek.types.investigation import Investigation
+
+from ingestion.actors import public, me, irt, demo_project
+from meta import project_metadata
+
+demo_investigation = Investigation(
+    "Investigation demo",
+    project_metadata,
+    "Testing ingestion tool for an investigation",
+    [
+        Policy(Policy.NO_ACCESS, public),
+        Policy(Policy.MANAGE, me),
+        Policy(Policy.EDIT, demo_project),
+        Policy(Policy.VIEW, irt),
+    ],
+)
+```
+
+Policies determine who can access or modify the object.
+
+##### study.py
+
+*Study* is the second level of organization (one investigation might contain several studies)
+
+```python
+from fairdomseek.types.access.policy import Policy
+from fairdomseek.types.study import Study
+
+from ingestion.actors import public, me, demo_project, irt
+from ingestion.investigation import demo_investigation
+from meta import project_metadata
+
+double_pulse_study_lab = Study(
+    "Ingestion demo study",
+    project_metadata,
+    "All experimentations made in lab, with nice sensors and all",
+    policies=[
+        Policy(Policy.NO_ACCESS, public),
+        Policy(Policy.MANAGE, me),
+        Policy(Policy.EDIT, demo_project),
+        Policy(Policy.VIEW, irt),
+    ],
+    investigation=demo_investigation
+)
+
+```
+
+
+##### sample_type.py
+
+*SampleType* is a meta description of samples (piece of structured data) that could be attached to an assay. 
+Define a *SampleType* as following;
+when defining sample instances later, you must reference a corresponding SampleType.
+
+```python
+from fairdomseek.types.access.policy import Policy
+from fairdomseek.types.attribute import SampleTypeAttribute, AttrType
+from fairdomseek.types.sample_type import SampleType
+
+from ingestion.actors import public, me, irt, demo_project
+from meta import project_metadata
+
+measurement_tool = SampleType(
+    "demo sample type",
+    project_metadata,
+    "Defining a sample type for demo",
+    ["demo", "sample type"],
+    [
+        Policy(Policy.NO_ACCESS, public),
+        Policy(Policy.MANAGE, me),
+        Policy(Policy.EDIT, demo_project),
+        Policy(Policy.VIEW, irt),
+    ],
+     SampleTypeAttribute(title="identifier", description="Identification number", required=True,
+                        attr_type=AttrType.String, is_title=True),
+    SampleTypeAttribute(title="someAttribute", description="some attribute with an awesome value", required=True,
+                        attr_type=AttrType.String),
+    SampleTypeAttribute(title="anOtherAttribute", description="an other attribute with an awesome value", required=True,
+                        attr_type=AttrType.RealNumber),
+
+)
+
+```
+
+
+#### __init__.py
+
+__init__.py must contain the following code to enable auto-discovery of investigations, studies, and sample types. 
+
+```python
+import os
+
+from fairdomseek.util.importer import recursive_import
+```
+
+#### meta.py
+
+meta instantiates here the *Metadata* object which loads and manages all declared objects in the package 
+
+```python
+from fairdomseek.metadata.metadata import Metadata
+
+project_name = "Ingestion demo"
+project_metadata = Metadata(project_name=project_name)
+project_metadata.load_package("ingestion")
+```
+
+#### run.py
+
+It's the entry point of the script. This script triggers here the reconciliation between the state of the declared
+object, and the state on the server. Obviously, credentials must be supplied to interact with the backend.
+
+This is also where you define here the ingestion logic for all the unmanaged object types (assay, datafile, samples)
+
+```python
+import logging
+import os
+from pathlib import Path
+
+from meta import project_name, project_metadata
+from fairdomseek.app_context import FairdomSeekContext
+from fairdomseek.types.access.policy import Policy
+from fairdomseek.types.assay import Assay, AssayClass
+from fairdomseek.types.data import DataFile, DataFileRef
+from fairdomseek.types.sample import Sample, SampleRef
+from openapi_client import Configuration, ApiClient
+
+from ingestion.actors import me, public, irt, demo_project
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)-8s %(name)s: %(message)s",
+)
+logging.getLogger("ingestion").setLevel(logging.DEBUG)
+LOGGER = logging.getLogger(__name__)
+
+# Resolve datapath
+CWD = os.path.dirname(os.path.realpath(__file__))
+
+# set policies for everything
+policies = [
+    Policy(Policy.NO_ACCESS, public),
+    Policy(Policy.MANAGE, me),
+    Policy(Policy.EDIT, demo_project),
+    Policy(Policy.VIEW, irt),
+]
+
+if __name__ == "__main__":
+
+    # Configuring access
+    access = Configuration(
+        host="http://fairdomseek.local/",
+        username="jdemo",
+        password="justin_demo",
+    )
+
+    with ApiClient(access) as api_client:
+
+        ctx = FairdomSeekContext(api_client, project_name)
+
+        # Creating metadata (declared investigations, studies and schema type)
+        project_metadata.create_all(api_client, auto_delete=False)
+
+        # Creating a sample
+        sp =  Sample(
+            sample_type_name="demo sample type",
+            tags=["sample example"],
+            policies=policies,
+            **{
+                "identifier": "sample1",
+                "someAttribute": "That's a nice value",
+                "anOtherAttribute": 5.2,
+            }
+        )
+        ctx.samples_service().create_sample_batch([sp])
+
+        # Creating a data file
+        f = Path(os.path.abspath(__file__))
+        if f.exists():
+            dfile = DataFile(title="demo data file",
+                             description="an example file to attach to an assay",
+                             tags=["awesome", "file"],
+                             policies=policies)
+            dfile.set_data_path(f)
+            LOGGER.info("Creating datafile for {}".format(f))
+            ctx.data_file_service().create_datafile(dfile)
+
+        # Creating an assay
+        assay = Assay(
+            "Demo assay for ingestion tutorial",
+            DataFileRef(title="demo data file"),
+            SampleRef(sample_type_name="demo sample type", title="sample1"),
+            description="Double pulse experimental assay",
+            tags=["demo", "nice assay"],
+            assay_class=AssayClass.EXPERIMENT,
+            policies=policies,
+            study_name="Ingestion demo study")
+        ctx.assays_service().create_assay(assay)
+
+
+```
+
+
