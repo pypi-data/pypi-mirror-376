@@ -1,0 +1,64 @@
+include README.md
+include LICENSE
+include pyproject.toml
+
+# Include only essential huez package files
+recursive-include huez *.py
+recursive-include huez *.yaml
+recursive-include huez *.json
+
+# Include examples for users
+recursive-include examples *.py
+
+# Exclude all development and demo files
+exclude *.png
+exclude *.html
+exclude *.pdf
+exclude *.csv
+exclude Makefile
+exclude requirements.txt
+exclude .gitignore
+exclude .gitattributes
+exclude *.md
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .pytest_cache
+global-exclude .coverage
+global-exclude htmlcov
+global-exclude test_*.py
+global-exclude *_test.py
+global-exclude demo_*.py
+global-exclude create_*.py
+global-exclude generate_*.py
+global-exclude process_*.py
+global-exclude recolor_*.py
+global-exclude run_*.py
+global-exclude *_demo.*
+global-exclude demo_*
+global-exclude test_*
+exclude tests/
+exclude scripts/
+exclude docs/
+exclude out/
+exclude dist/
+exclude nature_*
+exclude nejm_*
+exclude business_*
+exclude altair_*
+exclude matplotlib_*
+exclude seaborn_*
+exclude plotly_*
+exclude plotnine_*
+exclude huez_*
+exclude precise_*
+exclude improved_*
+exclude simple_*
+exclude specific_*
+exclude legend_*
+exclude color_manager*
+exclude viz_consistency*
+exclude tokens_viewer*
+exclude my_custom_colors*
+exclude .github/
+
+

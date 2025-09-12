@@ -1,0 +1,120 @@
+Metadata-Version: 2.4
+Name: huez
+Version: 0.0.3
+Summary: A unified color scheme solution for Python visualization
+Author-email: Ang <ang@hezhiang.com>
+Maintainer-email: Ang <ang@hezhiang.com>
+License: MIT
+Project-URL: Homepage, https://github.com/hzacode/huez
+Project-URL: Repository, https://github.com/hzacode/huez
+Project-URL: Issues, https://github.com/hzacode/huez/issues
+Keywords: visualization,color,scheme,matplotlib,seaborn,plotly,altair,plotnine
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: click>=8.0.0
+Provides-Extra: matplotlib
+Requires-Dist: matplotlib>=3.5.0; extra == "matplotlib"
+Provides-Extra: seaborn
+Requires-Dist: seaborn>=0.11.0; extra == "seaborn"
+Provides-Extra: plotly
+Requires-Dist: plotly>=5.0.0; extra == "plotly"
+Provides-Extra: altair
+Requires-Dist: altair>=4.2.0; extra == "altair"
+Provides-Extra: plotnine
+Requires-Dist: plotnine>=0.8.0; extra == "plotnine"
+Provides-Extra: all
+Requires-Dist: matplotlib>=3.5.0; extra == "all"
+Requires-Dist: seaborn>=0.11.0; extra == "all"
+Requires-Dist: plotly>=5.0.0; extra == "all"
+Requires-Dist: altair>=4.2.0; extra == "all"
+Requires-Dist: plotnine>=0.8.0; extra == "all"
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0.0; extra == "dev"
+Dynamic: license-file
+
+# Huez
+
+A unified color scheme solution for Python visualization libraries.
+
+## Installation
+
+```bash
+pip install huez
+```
+
+## Quick Start
+
+```python
+import huez as hz
+import matplotlib.pyplot as plt
+
+# Apply a color scheme
+hz.use("scheme-1")
+
+# Create plots with automatic coloring
+plt.plot(x, y1, label='Data 1')
+plt.plot(x, y2, label='Data 2')
+plt.legend()
+plt.show()
+```
+
+## Supported Libraries
+
+- **Matplotlib** - Automatic color cycling
+- **Seaborn** - Consistent palette integration  
+- **plotnine** - Native ggplot2-style coloring
+- **Altair** - Theme-based color schemes
+- **Plotly** - Template-based styling
+
+## Built-in Schemes
+
+- `scheme-1` - Nature journal style (NPG colors)
+- `scheme-2` - Science journal style (AAAS colors)
+- `scheme-3` - NEJM medical journal style
+- `scheme-4` - Lancet journal style
+- `scheme-5` - JAMA journal style
+
+## Custom Configuration
+
+Create a YAML config file:
+
+```yaml
+version: 1
+default_scheme: my_style
+schemes:
+  my_style:
+    title: "My Custom Style"
+    fonts: { family: "Arial", size: 11 }
+    palettes:
+      discrete: "npg"
+      sequential: "viridis"
+      diverging: "coolwarm"
+      cyclic: "twilight"
+    figure: { dpi: 300 }
+    style: { grid: "y", legend_loc: "best", spine_top_right_off: true }
+```
+
+Load and use:
+
+```python
+hz.load_config("my_config.yaml")
+hz.use("my_style")
+```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
