@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: upload_test_project
+Version: 0.1.0
+Summary: A short description of my project.
+Author-email: 홍길동 <hong.gildong@example.com>
+Project-URL: Homepage, https://github.com/my-username/my-awesome-package
+Project-URL: Issues, https://github.com/my-username/my-awesome-package/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# My Simple Math Package
+
+이 패키지는 PyPI 배포 테스트를 위한 간단한 예제입니다.
+
+### 설치
+
+```bash
+pip install my_simple_math_package

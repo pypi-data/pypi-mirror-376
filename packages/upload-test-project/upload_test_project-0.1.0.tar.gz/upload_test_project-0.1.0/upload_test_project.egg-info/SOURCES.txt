@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+upload_test_project/__init__.py
+upload_test_project/simple_math.py
+upload_test_project.egg-info/PKG-INFO
+upload_test_project.egg-info/SOURCES.txt
+upload_test_project.egg-info/dependency_links.txt
+upload_test_project.egg-info/top_level.txt
