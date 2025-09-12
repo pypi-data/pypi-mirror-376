@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+camsniff.egg-info/PKG-INFO
+camsniff.egg-info/SOURCES.txt
+camsniff.egg-info/dependency_links.txt
+camsniff.egg-info/entry_points.txt
+camsniff.egg-info/requires.txt
+camsniff.egg-info/top_level.txt
+data/passwords.txt
+data/rtsp_paths.csv
+data/usernames.txt
+python_core/__init__.py
+python_core/cli.py
+python_core/web_backend.py
