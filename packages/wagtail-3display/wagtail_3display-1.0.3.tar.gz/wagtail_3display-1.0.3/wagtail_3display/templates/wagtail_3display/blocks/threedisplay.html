@@ -1,0 +1,34 @@
+{% load threedisplay_tags l10n static wagtailimages_tags %}
+{% threedisplay_id as id %}
+{% comment %} no localization from here on {% endcomment %}
+
+{% localize off %}
+
+<div id="threedisplay-{{ id }}" class="threedisplay-container" 
+     style="width: 100%; min-height: 400px;"
+     data-controller="3display"
+     data-3display-filename-value="{{ self.file.url }}"
+     {% if self.envhdr %}data-3display-envhdr-value="{{ self.envhdr }}"{% endif %}
+     {% if self.envhdr_path %}data-3display-envhdr-path-value="{{ self.envhdr_path.url }}"{% endif %}
+     {% if self.autospin %}data-3display-autospin-value="{{ self.autospin }}"{% endif %}
+     {% if self.offset %}data-3display-offset-value="{{ self.offset }}"{% endif %}
+     {% if self.ambient_light_level %}data-3display-ambient-light-level-value="{{ self.ambient_light_level }}"{% endif %}
+     
+     {% if self.room_static_background %}data-3display-room-static-background-value="true"{% endif %}
+     {% if self.room_texture_url %}{% image self.room_texture_url original as tmp_photo %}data-3display-room-texture-url-value="{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_back_wall_url %}{% image self.room_back_wall_url original as tmp_photo %}data-3display-room-back-wall-url-value="{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_texture_repeat %}data-3display-room-texture-repeat-value="{{ self.room_texture_repeat }}"{% endif %}
+     {% if self.room_size_multiplier %}data-3display-room-size-multiplier-value="{{ self.room_size_multiplier }}"{% endif %}
+
+     {% if self.room_walls_px %}data-3display-room-walls-px="{% image self.room_walls_px original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_nx %}data-3display-room-walls-nx="{% image self.room_walls_nx original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_py %}data-3display-room-walls-py="{% image self.room_walls_py original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_ny %}data-3display-room-walls-ny="{% image self.room_walls_ny original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_pz %}data-3display-room-walls-pz="{% image self.room_walls_pz original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_nz %}data-3display-room-walls-nz="{% image self.room_walls_nz original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_x %}data-3display-room-walls-x="{% image self.room_walls_x original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_y %}data-3display-room-walls-y="{% image self.room_walls_y original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}
+     {% if self.room_walls_z %}data-3display-room-walls-z="{% image self.room_walls_z original as tmp_photo %}{{ tmp_photo.url }}"{% endif %}>
+</div>
+
+{% endlocalize %}
