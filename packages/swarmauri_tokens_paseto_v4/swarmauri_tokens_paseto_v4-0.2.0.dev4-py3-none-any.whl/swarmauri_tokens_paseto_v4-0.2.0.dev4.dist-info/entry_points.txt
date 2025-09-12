@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+paseto_v4=swarmauri_tokens_paseto_v4:PasetoV4TokenService
+
+[swarmauri.tokens]
+PasetoV4TokenService=swarmauri_tokens_paseto_v4:PasetoV4TokenService
+
