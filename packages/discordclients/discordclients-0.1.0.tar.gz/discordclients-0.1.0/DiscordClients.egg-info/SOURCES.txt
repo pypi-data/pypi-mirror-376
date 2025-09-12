@@ -1,0 +1,6 @@
+setup.py
+DiscordClients.egg-info/PKG-INFO
+DiscordClients.egg-info/SOURCES.txt
+DiscordClients.egg-info/dependency_links.txt
+DiscordClients.egg-info/requires.txt
+DiscordClients.egg-info/top_level.txt
