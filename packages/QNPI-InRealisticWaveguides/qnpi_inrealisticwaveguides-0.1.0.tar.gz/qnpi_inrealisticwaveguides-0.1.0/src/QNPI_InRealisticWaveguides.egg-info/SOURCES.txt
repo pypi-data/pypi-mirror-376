@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/QNPI_InRealisticWaveguides/__init__.py
+src/QNPI_InRealisticWaveguides/classes.py
+src/QNPI_InRealisticWaveguides.egg-info/PKG-INFO
+src/QNPI_InRealisticWaveguides.egg-info/SOURCES.txt
+src/QNPI_InRealisticWaveguides.egg-info/dependency_links.txt
+src/QNPI_InRealisticWaveguides.egg-info/requires.txt
+src/QNPI_InRealisticWaveguides.egg-info/top_level.txt
