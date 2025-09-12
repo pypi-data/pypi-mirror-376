@@ -1,0 +1,5 @@
+numpy
+pillow
+
+[ui]
+gradio<5,>=4
