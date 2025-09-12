@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-1-20250805",
+  "permissions": {
+    "allow": [
+      "Read(**/*)",
+      "Write(**/*)",
+      "Bash(python:*)",
+      "Bash(pip:*)",
+      "Bash(uv:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(go:*)",
+      "Bash(cargo:*)",
+      "Bash(git:*)",
+      "Bash(curl:*)",
+      "Bash(pytest:*)",
+      "Bash(jest:*)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:*)",
+      "Bash(psql:*)",
+      "Bash(mysql:*)",
+      "Bash(redis-cli:*)",
+      "Bash(mongosh:*)"
+    ],
+    "deny": [
+      "Read(.env*)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/*secret*)",
+      "Delete(**)",
+      "Bash(rm:*)",
+      "Bash(sudo:*)"
+    ]
+  },
+  "env": {
+    "PROJECT_TYPE": "api",
+    "API_ENV": "development",
+    "CLAUDE_SETUP_VERSION": "1.0.0"
+  }
+}

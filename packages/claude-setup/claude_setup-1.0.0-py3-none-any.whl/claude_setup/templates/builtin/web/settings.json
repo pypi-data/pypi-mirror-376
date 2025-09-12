@@ -1,0 +1,36 @@
+{
+  "model": "claude-opus-4-1-20250805",
+  "permissions": {
+    "allow": [
+      "Read(**/*)",
+      "Write(**/*)",
+      "Bash(npm:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(git:*)",
+      "Bash(curl:*)",
+      "Bash(webpack:*)",
+      "Bash(vite:*)",
+      "Bash(next:*)",
+      "Bash(jest:*)",
+      "Bash(vitest:*)",
+      "Bash(eslint:*)",
+      "Bash(prettier:*)"
+    ],
+    "deny": [
+      "Read(.env*)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Delete(**)",
+      "Bash(rm:*)",
+      "Bash(sudo:*)"
+    ]
+  },
+  "env": {
+    "PROJECT_TYPE": "web",
+    "NODE_ENV": "development",
+    "CLAUDE_SETUP_VERSION": "1.0.0"
+  }
+}

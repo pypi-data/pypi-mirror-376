@@ -1,0 +1,3 @@
+[console_scripts]
+claude-setup = claude_setup.__main__:main
+cs = claude_setup.__main__:main
