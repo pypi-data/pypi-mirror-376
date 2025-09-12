@@ -1,0 +1,51 @@
+# Ultra Paas Sidecar 默认配置文件
+# 功能描述: 内置默认配置，用户无需创建bootstrap.yml即可使用
+# @author: lzg
+# @created: 2025-01-12
+# @version: 1.0.0
+
+server:
+  port: 9202
+ 
+application:
+  name: auto-detect-project-name  # 将被自动替换为项目目录名
+  code: 10001
+
+profiles:
+  active: dev
+
+# 权限配置
+auth:
+  enabled: true     # 是否开启权限检查
+  fail_open: false  # 容错机制，网络不稳定容错，升级期间业务不中断
+  exclude_paths:   # 排除权限检查的路径
+    - /api/health
+    - /api/config
+    - /api/search
+    - /static
+    - /api/menu/resources
+    - /index.html
+    - /auth/login
+    - /
+  timeout: 5000    # 权限检查超时时间(毫秒)
+
+cloud:
+  nacos:
+    discovery:
+      # 服务注册地址
+      server-addr: 34.212.106.66:8848
+      ip: 34.212.106.66
+      namespace: upcloudx_test
+      username: nacos
+      password: qrFt.jIrt4561#
+    config:
+      # 配置中心地址
+      server-addr: 34.212.106.66:8848
+      # 配置文件格式
+      file-extension: yml
+      namespace: upcloudx_test
+      username: nacos
+      password: qrFt.jIrt4561#
+      # 共享配置
+      shared-configs:
+        - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
