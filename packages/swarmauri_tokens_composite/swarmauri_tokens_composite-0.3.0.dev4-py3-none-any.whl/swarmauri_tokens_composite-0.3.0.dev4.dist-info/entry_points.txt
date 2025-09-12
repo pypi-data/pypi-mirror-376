@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+composite=swarmauri_tokens_composite:CompositeTokenService
+
+[swarmauri.tokens]
+CompositeTokenService=swarmauri_tokens_composite:CompositeTokenService
+
