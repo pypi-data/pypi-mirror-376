@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: agent-framework-lab-gaia
+Version: 0.0.1a0
+Summary: Agent Framework GAIA Benchmark
+Author-email: Eric Zhu <ekzhu@microsoft.com>
+License-Expression: MIT
+Project-URL: Homepage, https://pypi.org/project/agent-framework-lab-gaia/
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# agent-framework-lab-gaia
+
+Agent Framework GAIA Benchmark
