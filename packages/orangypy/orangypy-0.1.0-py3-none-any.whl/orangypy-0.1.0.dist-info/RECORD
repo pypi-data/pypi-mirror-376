@@ -1,0 +1,12 @@
+orangypy/__init__.py,sha256=lKZ3jjxVd8lOXwflC-KXMKkvrd_Ki4yqV0Hz7fI9LsQ,768
+orangypy/animation.py,sha256=H04dTi29hzaaBk0O_To8DpE8rq_-2BblDY5z0Z15nkI,1544
+orangypy/audio.py,sha256=VLrwdTFAdBI7LwQMH_IlllhClFVtbUXtQiKWl9Zmz4w,927
+orangypy/colors.py,sha256=RNiUglbSby64Ro3GHAXPSCCEDk2OKmd9GJ6D1gOKjdw,525
+orangypy/core.py,sha256=8eOMWrgtJsLIeLp2yAQmBa2qbiVx9RfTmkDda4Bnzvg,1315
+orangypy/input.py,sha256=7iPwEA9Qt6D5vkVnMVMzTCsoWAg0YgLYxuIbdqH0kBA,245
+orangypy/shapes.py,sha256=qMXa2Dbu-tBU4lzrvS4hl0XE83PBHjeYD1iCuV2JW6U,1097
+orangypy/sprite.py,sha256=a4SDdpH6ygbAbOkjRnOgb5RGZK-aCw8Z-5UTQDuog4M,1471
+orangypy-0.1.0.dist-info/METADATA,sha256=hx3uxx0obAwVk_cR_ntMpA0HIGuPNjiEClZtZK5vCes,253
+orangypy-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+orangypy-0.1.0.dist-info/top_level.txt,sha256=7dACBRK9n7vjqNWIMXfbBfUEWounrxgaxam_7cW4hKk,9
+orangypy-0.1.0.dist-info/RECORD,,

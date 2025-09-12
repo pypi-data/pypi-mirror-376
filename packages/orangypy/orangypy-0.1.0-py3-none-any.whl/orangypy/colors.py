@@ -1,0 +1,23 @@
+# Colores básicos
+NEGRO = (0, 0, 0)
+BLANCO = (255, 255, 255)
+ROJO = (255, 0, 0)
+VERDE = (0, 255, 0)
+AZUL = (0, 0, 255)
+AMARILLO = (255, 255, 0)
+MAGENTA = (255, 0, 255)
+CYAN = (0, 255, 255)
+
+# Colores adicionales
+NARANJA = (255, 165, 0)
+MORADO = (128, 0, 128)
+ROSA = (255, 192, 203)
+MARRON = (139, 69, 19)
+GRIS = (128, 128, 128)
+GRIS_CLARO = (192, 192, 192)
+GRIS_OSCURO = (64, 64, 64)
+VERDE_LIMA = (50, 205, 50)
+TURQUESA = (64, 224, 208)
+ORO = (255, 215, 0)
+PLATA = (192, 192, 192)
+INDIGO = (75, 0, 130)
