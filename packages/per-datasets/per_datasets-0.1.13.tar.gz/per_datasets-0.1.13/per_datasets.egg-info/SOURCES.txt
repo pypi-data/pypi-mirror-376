@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+example_usage.py
+pyproject.toml
+requirements.txt
+per_datasets/__init__.py
+per_datasets/cli.py
+per_datasets/reservoir.py
+per_datasets.egg-info/PKG-INFO
+per_datasets.egg-info/SOURCES.txt
+per_datasets.egg-info/dependency_links.txt
+per_datasets.egg-info/entry_points.txt
+per_datasets.egg-info/requires.txt
+per_datasets.egg-info/top_level.txt
+per_datasets/talkaholic/__init__.py
+per_datasets/talkaholic/reservoir.py
