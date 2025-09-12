@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: lab2mod167128850
+Version: 0.1.1
+Summary: A simple example package with basic calculation of fixed_point_iteration and  false_position.
+Author: Yok
+Author-email: raseljone.com@gmail.com
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# lab2mod167128850
+
+`lab2mod167128850` is a lightweight Python package that provides simple utility functions
+for **fixed_point_iteration**, **false_position**
+It is designed mainly for learning purposes and as an example of Python packaging.
+
+---
+
+## Features
+
+
+---
+
+## Installation
+
+You can install the package directly from PyPI:
+
+```bash
+pip install lab2mod167128850
