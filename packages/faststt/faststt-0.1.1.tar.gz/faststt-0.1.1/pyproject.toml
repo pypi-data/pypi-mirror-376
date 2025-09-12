@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faststt"
+version = "0.1.1"
+description = "Hybrid Speech-to-Text using Faster-Whisper and SpeechRecognition"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name="Harsharaj", email="rharsharaj03@gmail.com"}]
+dependencies = [
+    "faster-whisper==1.2.0",
+    "SpeechRecognition==3.14.3",
+    "PyAudio==0.2.14"
+]
+keywords = ["STT", "speech-to-text", "whisper", "faster-whisper", "microphone","transcription","python-stt","offline-stt","low-latency-stt","speech-recognition"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
