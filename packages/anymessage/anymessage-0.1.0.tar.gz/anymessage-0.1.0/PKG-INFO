@@ -1,0 +1,95 @@
+Metadata-Version: 2.3
+Name: anymessage
+Version: 0.1.0
+Summary: Asynchronous Python SDK for AnyMessage email service
+License: MIT
+Keywords: anymessage,sdk,async,email,api
+Author: Alexander
+Author-email: xuizzoee@gmail.com
+Requires-Python: >=3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: aiohttp (>=3.8.0)
+Project-URL: Homepage, https://github.com/whoissoee/anymessage-sdk
+Project-URL: Repository, https://github.com/whoissoee/anymessage-sdk
+Description-Content-Type: text/markdown
+
+## **[AnyMessage](https://anymessage.shop) asynchronous API wrapper**
+
+**Docs:** https://anymessage.shop/docs
+
+**Install**
+
+```bash
+pip install anymessage-sdk
+poetry add anymessage-sdk
+```
+
+**Basic methods**
+
+```python
+import asyncio
+from anymessage import AnyMessageClient
+
+async def main():
+    client = AnyMessageClient(token="your_token_here")
+    
+    balance = await client.get_balance()
+    print(balance)  # {'status': 'success', 'balance': '1.0'}
+    
+    email_quantity = await client.get_email_quantity(site="instagram.com")
+    print(email_quantity)  # {'status': 'success', 'data': {...}}
+
+asyncio.run(main())
+```
+
+**Order, get, and cancel email methods**
+
+```python
+import asyncio
+from anymessage import AnyMessageClient
+
+async def main():
+    client = AnyMessageClient(token="your_token_here")
+    
+    # Заказать email
+    email = await client.order_email(site="instagram.com", domain="gmx")
+    print(email)  # {'status': 'success', 'id': '1001', 'email': 'test@gmx.com'}
+    
+    # Получить сообщение
+    message = await client.get_message(id=email.id, preview=False)
+    print(message)  # {'status': 'success', 'message': '<html>...</html>'}
+    
+    # Отменить email
+    cancel = await client.cancel_email(id=email.id)
+    print(cancel)  # {'status': 'success', 'value': 'activation canceled'}
+
+asyncio.run(main())
+```
+
+**Reorder email methods**
+
+```python
+import asyncio
+from anymessage import AnyMessageClient
+
+async def main():
+    client = AnyMessageClient(token="your_token_here")
+    
+    # Перезаказать email по ID
+    reordered = await client.reorder_email(id="1001")
+    print(reordered)  # {'status': 'success', 'id': '1002', 'email': 'test@gmx.com'}
+    
+    # Перезаказать email по email и сайту
+    reordered = await client.reorder_email(email="test@gmx.com", site="instagram.com")
+    print(reordered)  # {'status': 'success', 'id': '1003', 'email': 'test@gmx.com'}
+
+asyncio.run(main())
+```
