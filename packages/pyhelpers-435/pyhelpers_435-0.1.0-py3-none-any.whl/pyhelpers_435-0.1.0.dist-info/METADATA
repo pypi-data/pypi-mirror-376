@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: pyhelpers-435
+Version: 0.1.0
+Summary: A collection of Pythonic helpers using comprehensions, HOFs, and recursion
+Author-email: Boopathy <kboopathyk7@email.com>
+Requires-Python: >=3.8
