@@ -1,0 +1,5 @@
+codex_native/__init__.py,sha256=F6wnaifw2lA804o89FM946g2tbrunIvG3xy1PWR_9DE,131
+codex_native/codex_native.cpython-312-darwin.so,sha256=UHXcgFwwlIn7zHXRAa9ZNjEEaPYnAktxPLjwfTSyokw,13794480
+codex_python-0.2.3.dist-info/METADATA,sha256=UzfAu5R_WMSXigpt_nDEEIwcdvv9hdDQHsM9eiKJc78,80
+codex_python-0.2.3.dist-info/WHEEL,sha256=qPmdr8fB5VyzHuEe_BZYkwViBC6_YLDjr40IyuSix7k,104
+codex_python-0.2.3.dist-info/RECORD,,
