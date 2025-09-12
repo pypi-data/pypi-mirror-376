@@ -1,0 +1,2 @@
+[console_scripts]
+efx = EFX.main:main_cli
