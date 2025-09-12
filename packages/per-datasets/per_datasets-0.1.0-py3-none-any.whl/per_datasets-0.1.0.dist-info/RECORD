@@ -1,0 +1,8 @@
+per_datasets/__init__.py,sha256=X5YBtMVLaX65e_9TrinzA5_UWrf5lXMjUiQ1J27OCps,349
+per_datasets/reservoir.py,sha256=p54xCMvin3u5dyP0sZmfjN3TaNBR3Aqq_OGSJgq1oT8,12446
+per_datasets/talkaholic/__init__.py,sha256=-M69NJtaaHSzFcodN-6I6fVupZXdUOGLSK28St079KY,118
+per_datasets/talkaholic/reservoir.py,sha256=x2d6eN4QODeBM2qdraIZfmYJfZFbXuE7ud-uRbjyyYY,2543
+per_datasets-0.1.0.dist-info/METADATA,sha256=OoYh_kb6CYL3NUfmin9JckSI0LZzYp3437UQZPj-zvY,1855
+per_datasets-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+per_datasets-0.1.0.dist-info/top_level.txt,sha256=I6LzfxkIJaVG-RTETdmbmfqT9BTmq_hvYdQjUX7eXjk,13
+per_datasets-0.1.0.dist-info/RECORD,,
