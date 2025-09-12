@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: bunnets
+Version: 0.8.6
+Summary: A wee cap to keep your data classes neat and tidy
+Author: Maff
+Project-URL: Repository, https://git.sr.ht/~maff/bunnet-lib
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.12
