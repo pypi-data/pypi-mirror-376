@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: hex_renderer_py
+Version: 0.1.4
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: sphinx ; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme ; extra == 'dev'
+Requires-Dist: myst-nb ; extra == 'dev'
+Provides-Extra: dev
+License-File: LICENSE
+Keywords: hexrenderer, hex_renderer
+Author: JohnDog3112
+Requires-Python: >=3.8
+Project-URL: source, https://github.com/JohnDog3112/hex_renderer_python
