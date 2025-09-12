@@ -1,0 +1,3 @@
+[swarmauri.tools]
+GithubLoadedTool=swarmauri_tool_githubloader:GithubLoadedTool
+
