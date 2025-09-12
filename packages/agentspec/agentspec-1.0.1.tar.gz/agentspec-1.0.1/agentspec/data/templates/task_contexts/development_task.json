@@ -1,0 +1,20 @@
+{
+  "id": "development_task",
+  "name": "Development Task",
+  "description": "Template for general development tasks",
+  "category": "development",
+  "priority": "medium",
+  "estimated_duration": 120,
+  "tags": [
+    "development",
+    "coding"
+  ],
+  "default_dependencies": [],
+  "context_data_template": {
+    "files_to_modify": [],
+    "testing_required": true,
+    "documentation_required": false
+  },
+  "inheritance": null,
+  "metadata": {}
+}
