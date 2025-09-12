@@ -1,0 +1,239 @@
+Metadata-Version: 2.4
+Name: huez
+Version: 0.0.2
+Summary: A unified color scheme solution for Python visualization
+Author-email: Ang <ang@hezhiang.com>
+Maintainer-email: Ang <ang@hezhiang.com>
+License: MIT
+Project-URL: Homepage, https://github.com/hzacode/huez
+Project-URL: Repository, https://github.com/hzacode/huez
+Project-URL: Issues, https://github.com/hzacode/huez/issues
+Keywords: visualization,color,scheme,matplotlib,seaborn,plotly,altair,plotnine
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: click>=8.0.0
+Provides-Extra: matplotlib
+Requires-Dist: matplotlib>=3.5.0; extra == "matplotlib"
+Provides-Extra: seaborn
+Requires-Dist: seaborn>=0.11.0; extra == "seaborn"
+Provides-Extra: plotly
+Requires-Dist: plotly>=5.0.0; extra == "plotly"
+Provides-Extra: altair
+Requires-Dist: altair>=4.2.0; extra == "altair"
+Provides-Extra: plotnine
+Requires-Dist: plotnine>=0.8.0; extra == "plotnine"
+Provides-Extra: all
+Requires-Dist: matplotlib>=3.5.0; extra == "all"
+Requires-Dist: seaborn>=0.11.0; extra == "all"
+Requires-Dist: plotly>=5.0.0; extra == "all"
+Requires-Dist: altair>=4.2.0; extra == "all"
+Requires-Dist: plotnine>=0.8.0; extra == "all"
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0.0; extra == "dev"
+Dynamic: license-file
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hzacode/huez/main/logo.png" alt="Huez Logo" width="200"/>
+</p>
+
+<h1 align="center">Huez</h1>
+
+<p align="center">
+  <em>A Unified Color Scheme Solution for Python Visualization</em>
+  <br />
+  <a href="#features">✨ Features</a> •
+  <a href="#installation">🚀 Quick Start</a> •
+  <a href="#usage">📚 Libraries</a> •
+  <a href="#schemes">🎨 Schemes</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.7+-blue.svg" alt="Python Version"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"/>
+  <img src="https://img.shields.io/badge/status-alpha-orange.svg" alt="Status"/>
+</p>
+
+<p align="center">
+  <em>"Good visualizations should not be ruined by bad color schemes."</em>
+</p>
+
+<div align="center">
+
+**Huez** is a unified Python visualization color scheme solution that instantly upgrades your charts from amateur to professional publication-quality. 
+
+*True one-line code, automatic coloring for all libraries!*
+
+</div>
+
+## ✨ Features
+
+- 🚀 **智能自动着色**: 主要可视化库支持原生语法自动着色，无需手动指定颜色
+- 🎯 **完美跨库一致性**: Matplotlib, Seaborn, plotnine, Altair, Plotly 统一的颜色体验
+- 🎨 **Rich Built-in & Custom Schemes**: Professional academic palettes plus easy custom scheme creation and loading
+- ⚡ **Zero Learning Cost**: Use native syntax of each library, no need to learn additional APIs
+- 🔧 **One Line Does It All**: Just `hz.use("scheme-1")` to enable automatic coloring for all libraries
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install huez
+```
+
+### Basic Usage
+
+```python
+import huez as hz
+
+# 🎨 One line of code, global coloring
+hz.use("scheme-1")
+
+# ✨ Now all libraries automatically color using native syntax!
+```
+
+## 📚 Supported Visualization Libraries
+
+**Matplotlib**
+
+```python
+import matplotlib.pyplot as plt
+plt.plot(x, y1, label='Data 1')  # Pure native syntax - colors auto-applied!
+plt.plot(x, y2, label='Data 2')  # Pure native syntax - colors auto-applied!
+plt.legend()
+```
+
+**Seaborn**
+
+```python
+import seaborn as sns
+sns.scatterplot(data=df, x='x', y='y', hue='category')  # Pure native syntax - colors auto-applied!
+```
+
+**plotnine**
+
+```python
+from plotnine import *
+(ggplot(df, aes('x', 'y', color='category')) + 
+ geom_point())  # Pure native syntax - colors auto-applied!
+```
+
+**Altair**
+
+```python
+import altair as alt
+alt.Chart(df).mark_circle().encode(
+    x='x:Q', y='y:Q', color='category:N'  # 使用huez主题颜色，配色自动优化!
+)
+```
+
+**Plotly**
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=x, y=y, name='Data'))  # Pure native syntax - colors auto-applied!
+```
+
+## 🎯 Multi-Scheme Visualization Showcase
+
+See Huez's versatility with  different color schemes across major libraries:
+
+### Matplotlib + scheme-1 (Academic)
+![Matplotlib scheme-1](demo/matplotlib_scheme1.png)
+
+### Seaborn + scheme-2 (Alternative)
+![Seaborn scheme-2](demo/seaborn_scheme2.png)
+
+### plotnine + scheme-3 (NEJM)
+![plotnine scheme-3](demo/plotnine_scheme3.png)
+
+### Altair - Interactive Portfolio Analysis
+*Interactive HTML chart: [View Altair Demo](altair_complex_single.html)*
+
+### Plotly - 3D Investment Universe
+*Interactive 3D chart: [View Plotly Demo](plotly_complex_single.html)*
+
+**🎨 所有图表自动使用统一配色方案 - 大部分情况下无需手动指定颜色!**
+
+## 🎨 Rich Built-in & Custom Schemes
+
+Huez comes with a rich collection of **professional color schemes** and supports **easy customization**:
+
+### ✨ Custom Schemes
+```python
+# Switch between built-in schemes
+hz.use("lancet")  # Academic journal style
+hz.use("scheme-2")  # Alternative color palette
+
+# Load custom configuration file
+hz.load_config("my_custom_config.yaml")
+hz.use("my_custom_scheme")
+```
+
+**Create custom config file (my_custom_config.yaml):**
+```yaml
+version: 1
+default_scheme: my_custom_scheme
+schemes:
+  my_custom_scheme:
+    title: "My Custom Style"
+    fonts: { family: "DejaVu Sans", size: 10 }
+    palettes:
+      discrete: "npg"
+      sequential: "viridis"
+      diverging: "coolwarm"
+      cyclic: "twilight"
+    figure: { dpi: 300 } # Set project-wide DPI, size is controlled in code
+    style: { grid: "y", legend_loc: "best", spine_top_right_off: true }
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Third-Party Software Notices
+
+This project uses the following open-source libraries:
+
+**Huez Core Dependencies:**
+- **PyYAML** (MIT License) - YAML configuration parsing  
+  Copyright (c) 2017-2021 Ingy döt Net, Copyright (c) 2006-2016 Kirill SimonovHe was.
+- **click** (BSD-3-Clause License) - Command-line interface  
+  Copyright 2014 Pallets
+
+**Demo Script Dependencies:**
+- **NumPy** - Copyright (c) 2005-2024, NumPy Developers - BSD-3-Clause License
+- **Pandas** - Copyright (c) 2008-2024, AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team - BSD-3-Clause License
+- **Matplotlib** - Copyright (c) 2012-2024 Matplotlib Development Team - PSF License
+- **Seaborn** - Copyright (c) 2012-2024, Michael Waskom - BSD-3-Clause License  
+- **plotnine** - Copyright (c) 2017-2024, Hassan Kibirige - MIT License
+
+**License Compliance:**
+All third-party libraries are used in accordance with their respective licenses. For BSD-3-Clause and MIT licensed software, the above copyright notices and license terms are preserved. For PSF licensed software (Python and Matplotlib), this software is provided under the Python Software Foundation License.
+
+We are grateful to the maintainers and contributors of these projects for their invaluable contributions to the open-source community.
+
+<div align="center">
+
+---
+
+<sub>Made with ❤️ for the Python visualization community</sub>
+
+⭐ **If this project helps you, please give us a star!** ⭐
+
+</div>
