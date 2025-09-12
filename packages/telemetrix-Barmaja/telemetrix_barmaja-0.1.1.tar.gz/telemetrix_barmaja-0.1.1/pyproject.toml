@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telemetrix_Barmaja"
+version = "0.1.1"
+description = "Barmaja teacher-friendly wrapper for Telemetrix with polling helpers, sonar, I2C LCD, and RFID (PN532 UART + RC522 bridge)."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+authors = [{name = "Barmaja Robotics School", email = "team@barmaja.school"}]
+dependencies = ["telemetrix>=1.16.0", "pyserial>=3.5"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Education",
+  "Topic :: System :: Hardware :: Hardware Drivers"
+]
+
+[project.urls]
+Homepage = "https://github.com/barmaja-school/telemetrix_Barmaja"
+Source = "https://github.com/barmaja-school/telemetrix_Barmaja"
+Issues = "https://github.com/barmaja-school/telemetrix_Barmaja/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.package-data]
+telemetrix_Barmaja = [
+  "examples/*",
+  "arduino_sketches/**"
+]
