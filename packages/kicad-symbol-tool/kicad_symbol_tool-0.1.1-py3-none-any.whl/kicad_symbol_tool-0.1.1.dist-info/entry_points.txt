@@ -1,0 +1,2 @@
+[console_scripts]
+kicad-symbol-tool = kicad_symbol_tool.cli:app
