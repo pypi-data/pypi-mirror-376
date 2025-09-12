@@ -1,0 +1,6 @@
+[peagen.plugins.signings]
+ssh=swarmauri_signing_ssh:SshEnvelopeSigner
+
+[swarmauri.signings]
+SshEnvelopeSigner=swarmauri_signing_ssh:SshEnvelopeSigner
+
