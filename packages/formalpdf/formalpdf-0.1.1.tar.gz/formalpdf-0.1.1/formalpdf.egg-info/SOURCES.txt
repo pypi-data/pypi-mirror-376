@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+formalpdf/__init__.py
+formalpdf/utils.py
+formalpdf/widget.py
+formalpdf.egg-info/PKG-INFO
+formalpdf.egg-info/SOURCES.txt
+formalpdf.egg-info/dependency_links.txt
+formalpdf.egg-info/requires.txt
+formalpdf.egg-info/top_level.txt
+test/test_form_read.py
