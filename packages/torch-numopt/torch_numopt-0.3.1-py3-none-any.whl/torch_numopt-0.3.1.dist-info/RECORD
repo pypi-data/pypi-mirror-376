@@ -1,0 +1,16 @@
+torch_numopt/__init__.py,sha256=vTrG4yNGov6DP3Pa8EpP-3_uqwTOAacgt_29Izgs0xA,427
+torch_numopt/adahessian.py,sha256=yyGoajaSyfvTnmq4JSMVdCfsTHf_NShAPQtVVW5mchQ,3589
+torch_numopt/conjugate_gradient.py,sha256=1Ypea5T5byJ6rleot8HB3LOSbIL3cf9BoWfVtw3IK3Q,3798
+torch_numopt/custom_optimizer.py,sha256=1IXNMfZmNqjkZZm26s0WRwOck082joGWPU2VD1TcpDA,1103
+torch_numopt/gauss_newton_optim.py,sha256=c9KG_2J0Umo9kIDBV3-SFeDVOaaTldawx-bpkX__o-U,2994
+torch_numopt/gradient_descent_lineseach.py,sha256=JnnPMTzRl2G3_lz-Bggeu4pxR0-l3EpOm031dnF-sFw,1980
+torch_numopt/lbfgs_optim.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+torch_numopt/line_search_optimizer.py,sha256=d8ufIYkTBjjWki3BWMrkPO3fDB6IQ_gwjeGqJaVw_mU,14875
+torch_numopt/lm_optim.py,sha256=cotHJhL0M21fNZPIvQpPluFsk-6pz6qxjsJ2zt28yfc,4913
+torch_numopt/newton_optim.py,sha256=SiJg0k1UO3Q-Wj2YtCGtoKUMnNjn1sfkZ3qwszpH8Ew,3964
+torch_numopt/second_order_optimizer.py,sha256=awRHXyp-uekgdKMwg0mOiG4Po0SgVmLDHJ_HlT0qOl0,9477
+torch_numopt/utils.py,sha256=Ky8LDIynXBa-dTYN3fQ-NCeelKDxvTzbdSYDHW198pM,2440
+torch_numopt-0.3.1.dist-info/METADATA,sha256=r0OhkveVMneMAmOgBxQTe5hiHGT54O3QmEF_a2qqzNg,2365
+torch_numopt-0.3.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+torch_numopt-0.3.1.dist-info/top_level.txt,sha256=VL_71mLSYTuD8uebt1RIAyF7aJXL6ixFek5K9mJoVgU,13
+torch_numopt-0.3.1.dist-info/RECORD,,
