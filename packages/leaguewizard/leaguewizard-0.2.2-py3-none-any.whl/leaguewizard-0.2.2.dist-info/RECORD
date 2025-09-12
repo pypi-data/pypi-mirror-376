@@ -1,0 +1,12 @@
+leaguewizard/__init__.py,sha256=iIdnaHqC49rwsbieoSapv8TFpuBoRq_pUft3oRYwyC8,1542
+leaguewizard/constants.py,sha256=MYYeM5xgG3lhNloXQwZl8x1y5abJ5VY3dBL6dKYP9-Y,721
+leaguewizard/core.py,sha256=AQnFTslVvRL-LHnFPBpSTIqWesDZPKwkqhJWnORFelA,6314
+leaguewizard/exceptions.py,sha256=OJUyINr5vtBGCSvaletFZ7REzDqLNy2viYPnIc-y8-I,481
+leaguewizard/mobalytics.py,sha256=B6LNv1Lt1e8MzHjQ7zwYCB6LF1jloDZzDpKwGA7a92o,5152
+leaguewizard/models.py,sha256=4Y1dcYkFuDfkZ_g3AH1xxmewy1pYX0voyb2MRT6jMDQ,2158
+leaguewizard/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+leaguewizard-0.2.2.dist-info/METADATA,sha256=pbmNVC6vXimLn9dH-_ajc2yAcerHIVKbn6Qs7XV6pVw,2990
+leaguewizard-0.2.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+leaguewizard-0.2.2.dist-info/entry_points.txt,sha256=qfvN-ul39pLbdz0Y62HqtvJyWwhDlq01sEQ5aHANLAk,56
+leaguewizard-0.2.2.dist-info/licenses/LICENSE,sha256=s1KARegoCCS7XgGMspTfxDv_xVNWYV38At6PYinHuag,1088
+leaguewizard-0.2.2.dist-info/RECORD,,
