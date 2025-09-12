@@ -1,0 +1,5 @@
+dagster==1.11.10
+dagster-duckdb==0.27.10
+pyspark<4,>=3
+pandas
+pyarrow
