@@ -1,0 +1,454 @@
+Metadata-Version: 2.4
+Name: verifyo
+Version: 1.0.0
+Summary: Official Python SDK for Verifyo Zero-Knowledge KYC API
+Author-email: Verifyo Team <developers@verifyo.com>
+Project-URL: Homepage, https://verifyo.com
+Project-URL: Documentation, https://verifyo.com/docs
+Project-URL: Repository, https://github.com/verifyo-dot-com/verifyo-python-sdk
+Project-URL: Bug Tracker, https://github.com/verifyo-dot-com/verifyo-python-sdk/issues
+Keywords: kyc,verification,identity,crypto,blockchain,compliance,aml,zero-knowledge
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Security
+Classifier: Topic :: Office/Business :: Financial
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+Requires-Dist: typing-extensions>=4.0.0
+Provides-Extra: async
+Requires-Dist: aiohttp>=3.8.0; extra == "async"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: types-requests>=2.25.0; extra == "dev"
+
+# Verifyo Python SDK
+
+![Python Version](https://img.shields.io/badge/Python-%3E%3D3.8-blue)
+![License](https://img.shields.io/badge/license-MIT-green)  
+![Status](https://img.shields.io/badge/status-stable-brightgreen)
+
+Official Python SDK for the [Verifyo](https://verifyo.com) Zero-Knowledge KYC API. Verify wallet addresses for KYC compliance without exposing user personal data.
+
+## Features
+
+- ✅ **Zero-Knowledge KYC Verification** - Check wallet KYC status without accessing personal data
+- 🔐 **Type-Safe Implementation** - Full type hints with mypy support
+- 📊 **Rate Limit Monitoring** - Built-in rate limit tracking and warnings
+- 🛡️ **AML Screening** - Complete anti-money laundering compliance checks
+- 🌍 **Multi-Chain Support** - Works with 190+ cryptocurrencies and blockchains
+- 🔄 **Robust Error Handling** - Specific exceptions for different error types
+- ⚡ **Modern Python** - Dataclasses, context managers, and clean APIs
+- 🚀 **Async Support** - Optional async client for high-performance applications
+
+## Installation
+
+Install via pip:
+
+```bash
+pip install verifyo
+```
+
+For async support:
+```bash
+pip install verifyo[async]
+```
+
+## Requirements
+
+- Python 3.8 or higher
+- requests library (automatically installed)
+- typing-extensions (automatically installed)
+
+## Quick Start
+
+```python
+from verifyo import VerifyoClient
+
+# Initialize client with your API key
+client = VerifyoClient("vfy_sk_your_api_key_here")
+
+try:
+    # Check KYC status for a wallet address
+    response = client.check_address("0x742d35Cc6634C0532925a3b8D89B0E5C9a7c9f35")
+    
+    if response.has_results:
+        verification = response.first_result
+        
+        if verification.is_verified and verification.age_over_18:
+            print("✅ User is KYC verified and over 18")
+            print(f"KYC Level: {verification.kyc_level}")
+            print(f"Document Country: {verification.document_country}")
+        else:
+            print("❌ User does not meet requirements")
+    else:
+        print("❌ No KYC verification found for this address")
+        
+except Exception as e:
+    print(f"Error: {e}")
+    
+finally:
+    client.close()
+```
+
+## Context Manager Support
+
+Use the client as a context manager for automatic resource cleanup:
+
+```python
+from verifyo import VerifyoClient
+
+with VerifyoClient("vfy_sk_your_api_key_here") as client:
+    response = client.check_address("0x742d35Cc6634C0532925a3b8D89B0E5C9a7c9f35")
+    
+    if response.has_results:
+        verification = response.first_result
+        print(f"KYC Status: {verification.kyc_status}")
+# Client automatically closed
+```
+
+## Authentication
+
+Get your API keys from the [Verifyo Dashboard](https://verifyo.com/app/api-keys):
+
+1. **Public Key** (`vfy_pk_*`) - For frontend SDK (not used in Python SDK)
+2. **Secret Key** (`vfy_sk_*`) - For backend API calls (use this in Python SDK)
+
+⚠️ **Keep your secret key secure** - Never expose it in frontend code or commit to version control.
+
+## API Reference
+
+### VerifyoClient
+
+#### Constructor
+
+```python
+client = VerifyoClient(
+    api_key: str,
+    *,
+    base_url: Optional[str] = None,
+    timeout: Optional[int] = None, 
+    debug: bool = False
+)
+```
+
+**Parameters:**
+- `api_key` - Your Verifyo secret API key (starts with `vfy_sk_`)
+- `base_url` - API base URL (default: `https://api.verifyo.com`)
+- `timeout` - Request timeout in seconds (default: 30)
+- `debug` - Enable debug logging (default: False)
+
+#### Methods
+
+##### check_address(address: str, network: Optional[str] = None) -> CheckResponse
+
+Check KYC verification status for a wallet address.
+
+**Parameters:**
+- `address` - Wallet address to check (required)
+- `network` - Blockchain network identifier (optional, e.g., 'ethereum', 'bitcoin')
+
+**Returns:** `CheckResponse` object containing verification results
+
+### Response Models
+
+#### CheckResponse
+
+Main response wrapper containing verification results and rate limit information.
+
+```python
+# Properties
+response.has_results: bool                    # Check if any results found
+response.results: List[VerificationResult]    # All verification results
+response.first_result: Optional[VerificationResult]  # First result (most common)
+response.result_count: int                    # Number of results
+response.has_verified_result: bool            # Check if any verified results
+response.verified_results: List[VerificationResult]  # Only verified results
+response.rate_limit_info: Optional[RateLimitInfo]    # Rate limit information
+response.is_approaching_rate_limit: bool      # Check if near limit
+```
+
+#### VerificationResult
+
+Individual KYC verification result for a wallet address.
+
+```python
+# Basic verification info
+result.zk_kyc_token: str              # Zero-knowledge proof token
+result.identity: str                  # User identity/email
+result.kyc_level: int                 # KYC level (0-3)
+result.kyc_status: str               # "verified" or "not_verified"
+result.is_verified: bool             # Quick verification check
+
+# Geographic information  
+result.document_country: Optional[str]   # Document issuing country
+result.residence_country: Optional[str]  # Residence country
+
+# Age verification
+result.age_over_18: bool             # Age 18+ verification
+result.age_over_21: bool             # Age 21+ verification
+
+# Wallet and AML data
+result.wallet: WalletInfo            # Wallet information
+result.aml: AmlScreening             # AML screening results
+
+# Convenience properties
+result.meets_basic_requirements: bool                # Verified + 18+ + AML clean + safe wallet
+result.is_suitable_for_age_restricted_services: bool # Above + 21+
+```
+
+#### WalletInfo
+
+Wallet-specific information and risk assessment.
+
+```python
+wallet.address: str                        # Wallet address
+wallet.ownership_status: str               # "verified", "self_declared", "not_found"
+wallet.is_ownership_verified: bool         # Cryptographic ownership proof
+wallet.sanctioned: bool                    # Wallet on sanctions lists
+wallet.high_risk: bool                     # High-risk wallet flag
+wallet.is_safe_to_interact: bool           # Not sanctioned + not high risk
+```
+
+#### AmlScreening
+
+Anti-Money Laundering screening results.
+
+```python
+aml.sanctioned: bool                 # On government sanctions lists
+aml.pep: bool                        # Politically Exposed Person
+aml.criminal: bool                   # Criminal convictions
+aml.barred: bool                     # Barred from financial services
+aml.military: bool                   # Military organization connections
+aml.adverse_media: bool              # Negative media coverage
+aml.passes_aml_screening: bool       # Passes all AML checks
+```
+
+## Error Handling
+
+The SDK provides specific exceptions for different error types:
+
+```python
+from verifyo import VerifyoClient
+from verifyo.exceptions import (
+    AuthenticationException,
+    RateLimitException,
+    ApiException,
+    NetworkException,
+)
+
+client = VerifyoClient("vfy_sk_your_key")
+
+try:
+    response = client.check_address(address)
+    # Process response...
+    
+except AuthenticationException as e:
+    # Invalid API key - check configuration
+    print(f"Authentication failed: {e}")
+    
+except RateLimitException as e:
+    # Rate limit exceeded - implement backoff or upgrade plan
+    print(f"Rate limit exceeded: {e}")
+    print(f"Usage: {e.used}/{e.limit} ({e.tier} tier)")
+    
+except ApiException as e:
+    # API error - log and handle gracefully
+    print(f"API error: {e}")
+    print(f"Status code: {e.status_code}")
+    
+except NetworkException as e:
+    # Network issue - retry with exponential backoff
+    print(f"Network error: {e}")
+    
+except Exception as e:
+    # Unexpected error - log and fail safe
+    print(f"Unexpected error: {e}")
+```
+
+## Rate Limiting
+
+The API enforces rate limits based on your plan:
+
+- **Unauthenticated**: 10 requests per 24 hours
+- **Free Account**: 30 requests per month
+- **With MTO Tokens**: Up to 1,000,000 requests per month
+
+```python
+response = client.check_address(address)
+rate_limit_info = response.rate_limit_info
+
+if rate_limit_info:
+    print(f"Used: {rate_limit_info.used}/{rate_limit_info.limit}")
+    print(f"Remaining: {rate_limit_info.remaining}")
+    print(f"Tier: {rate_limit_info.tier}")
+    
+    if rate_limit_info.is_near_limit:
+        print("⚠️ Approaching rate limit!")
+```
+
+## Common Use Cases
+
+### Exchange Onboarding
+
+```python
+def can_user_trade(wallet_address: str) -> bool:
+    """Check if user can trade on exchange."""
+    with VerifyoClient(os.getenv("VERIFYO_API_KEY")) as client:
+        try:
+            response = client.check_address(wallet_address)
+            
+            if not response.has_results:
+                return False  # No KYC found
+            
+            verification = response.first_result
+            
+            # Check minimum requirements for trading
+            return (
+                verification.is_verified
+                and verification.age_over_18
+                and verification.kyc_level >= 1
+                and verification.aml.passes_aml_screening
+                and verification.wallet.is_safe_to_interact
+            )
+            
+        except Exception as e:
+            # Log error and fail safe
+            print(f"KYC check failed: {e}")
+            return False  # Deny access on errors
+```
+
+### Age-Restricted Services
+
+```python
+def can_access_age_restricted_content(wallet_address: str) -> dict:
+    """Check access to age-restricted services (21+)."""
+    with VerifyoClient(os.getenv("VERIFYO_API_KEY")) as client:
+        try:
+            response = client.check_address(wallet_address)
+            
+            if not response.has_results:
+                return {"allowed": False, "reason": "No KYC verification found"}
+            
+            verification = response.first_result
+            
+            if not verification.is_verified:
+                return {"allowed": False, "reason": "KYC verification required"}
+            
+            if not verification.age_over_21:
+                return {"allowed": False, "reason": "Must be 21 years or older"}
+            
+            if not verification.aml.passes_aml_screening:
+                return {"allowed": False, "reason": "Failed compliance screening"}
+            
+            return {
+                "allowed": True,
+                "kyc_level": verification.kyc_level,
+                "document_country": verification.document_country,
+            }
+            
+        except Exception as e:
+            print(f"Age verification failed: {e}")
+            return {"allowed": False, "reason": "Verification service unavailable"}
+```
+
+## Configuration
+
+### Environment Variables
+
+```bash
+# .env file
+VERIFYO_API_KEY=vfy_sk_your_secret_key_here
+```
+
+```python
+import os
+from verifyo import VerifyoClient
+
+client = VerifyoClient(os.getenv("VERIFYO_API_KEY"))
+```
+
+### Advanced Configuration
+
+```python
+client = VerifyoClient(
+    "vfy_sk_your_api_key_here",
+    timeout=60,                           # 60 second timeout
+    debug=True,                          # Enable debug logging
+    base_url="https://api.verifyo.com"   # Custom API endpoint
+)
+```
+
+## Development
+
+### Running Tests
+
+```bash
+# Install dev dependencies
+pip install -e .[dev]
+
+# Run tests
+pytest
+
+# Run tests with coverage
+pytest --cov=src/verifyo --cov-report=html
+
+# Type checking
+mypy src/
+
+# Code formatting  
+black src/ tests/ examples/
+
+# Linting
+flake8 src/ tests/ examples/
+```
+
+## Async Support (Optional)
+
+For high-performance applications, use the async client:
+
+```python
+import asyncio
+from verifyo import AsyncVerifyoClient
+
+async def check_kyc_async():
+    async with AsyncVerifyoClient("vfy_sk_your_key") as client:
+        response = await client.check_address("0x742d35Cc...")
+        return response.has_results
+
+# Run async function
+result = asyncio.run(check_kyc_async())
+```
+
+## Support
+
+- **Documentation**: [https://verifyo.com/docs](https://verifyo.com/docs)
+- **Issues**: [GitHub Issues](https://github.com/verifyo-dot-com/verifyo-python-sdk/issues)
+- **Email**: developers@verifyo.com
+
+## License
+
+This SDK is open-sourced software licensed under the [MIT license](LICENSE).
+
+## Security
+
+If you discover any security related issues, please email security@verifyo.com instead of using the issue tracker.
+
+---
+
+**Made with ❤️ by the Verifyo Team**
+
+For more information about Verifyo's Zero-Knowledge KYC platform, visit [verifyo.com](https://verifyo.com).
