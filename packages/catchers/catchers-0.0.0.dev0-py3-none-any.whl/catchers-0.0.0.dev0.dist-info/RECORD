@@ -1,0 +1,10 @@
+catchers/__init__.py,sha256=opI54v70jphIg2yGVfeMJN4onoFIZxQS543_mHB-3Xw,96
+catchers/__main__.py,sha256=9H7sbeMcJY4BF_uSue28pcmt8N5aNXSSliEM20ha-NU,65
+catchers/core/__init__.py,sha256=Tr3CwIPY695IbF4DrKHrDes1AKd_iJgddUP46jxKHSw,163
+catchers/tests/__init__.py,sha256=L4Uu8CaiVJYAZwHV9vRVVwyXTGaT9npbNkF9CRIHZnI,387
+catchers/tests/test_1984.py,sha256=_ami0cAP8vU0C8RpQhP1tLWnLFGTaeHlOG5O60RVKv8,222
+catchers-0.0.0.dev0.dist-info/licenses/LICENSE.txt,sha256=fOh9FHccUt9OcJPBaVJ482GX4yrl_FxCUk9YRZ53JOI,1074
+catchers-0.0.0.dev0.dist-info/METADATA,sha256=_GMg73a0Puys7H74gGUMtOSrpgl6QEoGcK6HUibEiQI,2645
+catchers-0.0.0.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+catchers-0.0.0.dev0.dist-info/top_level.txt,sha256=R_z3y1BZVtbFqAo63k78mpwQqb1q2v0diTmShV6cJ90,9
+catchers-0.0.0.dev0.dist-info/RECORD,,
