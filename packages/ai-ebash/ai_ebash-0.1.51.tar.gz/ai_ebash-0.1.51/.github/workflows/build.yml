@@ -1,0 +1,56 @@
+name: Build and Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write  # Для Trusted Publishing на PyPI
+
+    steps:
+      # 1️⃣ Получаем код
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Нужно для setuptools-scm и версий
+
+      # 2️⃣ Устанавливаем Python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      # 3️⃣ Обновляем pip и сертификаты
+      - name: Install dependencies and update SSL
+        run: |
+
+          python -m pip install --upgrade pip certifi setuptools wheel setuptools-scm twine build
+
+      # 4️⃣ Собираем пакет
+      - name: Build package
+        run: python -m build
+
+      # 5️⃣ Публикуем на PyPI через Trusted Publishing
+      - name: Publish to PyPI (Trusted Publishing)
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # attestations: true
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+      # 6️⃣ Публикуем на GitHub Packages через twine
+      - name: Publish to GitHub Packages
+        run: |
+          python -m pip install --upgrade twine
+          python -m twine upload \
+            --repository-url https://upload.pkg.github.com/${{ github.repository }} \
+            dist/*
+        env:
+          TWINE_USERNAME: ${{ github.actor }}
+          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
