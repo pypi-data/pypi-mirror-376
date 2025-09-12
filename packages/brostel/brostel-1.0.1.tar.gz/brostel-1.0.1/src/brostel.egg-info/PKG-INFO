@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: brostel
+Version: 1.0.1
+Summary: Telegram formatting tool for telegrinder
+Author-email: ventuero <amerfoe@gmail.com>
+Maintainer-email: ventuero <amerfoe@gmail.com>
+Project-URL: Homepage, https://github.com/ventuero/brostel/
+Project-URL: Repository, https://github.com/ventuero/brostel
+Project-URL: Bug Tracker, https://github.com/ventuero/brostel/issues
+Keywords: async,asyncio,text,fmt,format,formatting,telegram,bot,telegrinder,html,entities
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Framework :: AsyncIO
+Classifier: Typing :: Typed
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: markupsafe<4.0.0,>=3.0.2
+Requires-Dist: sulguk<1.0.0,>=0.9.1
+Provides-Extra: dev
+Requires-Dist: ruff>=0.13.0; extra == "dev"
+Requires-Dist: telegrinder; extra == "dev"
+Dynamic: license-file
+
+<div align="center">
+  <a href="https://github.com/ventuero/brostel">
+    <img src="https://raw.githubusercontent.com/ventuero/brostel/master/assets/logo.png" alt="Brostel" width="160" height="160">
+  </a>
+
+  <h1 align="center">Brostel</h1>
+
+  <p align="center">
+    Telegram formatting tool for <a href='https://github.com/timoniq/telegrinder'>telegrinder</a>
+  </p>
+</div>
+
+## 🌍 Documentation
+
+- [**🇷🇺 Русский**](https://github.com/ventuero/brostel/blob/master/docs/ru/README.md)
+- [**🇺🇸 English**](https://github.com/ventuero/brostel/blob/master/docs/en/README.md)
+
+## 🚀 Quick Start
+
+```bash
+pip install brostel
+```
+
+```python
+from brostel import brostel
+from telegrinder import API, Message, Telegrinder, Token
+
+bot = Telegrinder(API(Token.from_env()))
+
+@bot.on.message()
+async def handler(msg: Message):
+    await (
+        brostel(msg)
+        .tags(user=msg.from_user.first_name)
+        .reply(msg)
+    )
+```
+
+## ✨ Key Features
+
+- 📐 **Solves entity-position mismatch** - correct entities after tag replacement
+- 🛡️ **Controlled HTML processing** - Sulguk ensures safe tag handling
+- 🏷️ **Dynamic tags** - `%placeholder%` replacement with proper entities
+- 🔘 **Auto inline buttons** - create keyboards from `[Text](URL)` syntax
+- ⚙️ **Global configuration** - set once, use everywhere
+- 🎯 **Method chaining** - `brostel(text).tags(user="John").reply(msg)`
+
+## 📄 License
+
+This project is licensed under the [MIT License](https://github.com/ventuero/brostel/blob/master/LICENSE).\
+Copyright © 2025 [ventuero](https://github.com/ventuero)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Support
+
+- GitHub Issues: [Create an issue](https://github.com/ventuero/brostel/issues)
+- Telegram: [@ventuero](https://t.me/ventuero)
