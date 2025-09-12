@@ -1,0 +1,35 @@
+[project]
+name = "django-vb-connection-pool"
+description = "vastbase connection pool component library for Django"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "wangxiaoyang", email = "yayaxxww@163.com" }]
+keywords = ["django", "vb", "vastbase", "persistent", "connection", "pool", "pooling"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.0"
+dependencies = [
+    "django-db-connection-pool",
+    "django-vastbase-backend",
+    "SQLAlchemy",
+]
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://github.com/yayaxxww/django-vb-connection-pool"
+repository = "https://github.com/yayaxxww/django-vb-connection-pool"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = { attr = "dj_vb_conn_pool.__version__" }
