@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_first_library_gugalm_2025"
+version = "0.0.1"
+authors = [
+  { name="Seu Nome", email="seu@email.com" },
+]
+description = "Uma breve descricao do projeto."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/seu_usuario/my_first_library"
+Issues = "https://github.com/seu_usuario/my_first_library/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
