@@ -1,0 +1,4 @@
+[console_scripts]
+universal-video-downloader = universal_video_downloader.gui:main
+uvd-cli = universal_video_downloader.cli:main
+uvd-gui = universal_video_downloader.gui:main
