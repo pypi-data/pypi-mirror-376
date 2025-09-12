@@ -1,0 +1,11 @@
+axis_vapix/DoorControl.py,sha256=OJc5KjLnbsKCm4-4S7FJTF4cp2jFWT2nzxWrTuQ8UzY,5823
+axis_vapix/GeolocationAPI.py,sha256=Pf8e6xuAyoawD02woHH2l1hmRMoIUp37coj-J_nLIOM,1520
+axis_vapix/PTZControl.py,sha256=jubp81GWmc7ca0SeDE1Ta8YJBwBItJqiIPX3iEA8228,12676
+axis_vapix/Schedule.py,sha256=-N4WnxJ99MEyGJ3r_ltVgQ-1FWnCqw-m9fDa_v-wKeA,4159
+axis_vapix/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+axis_vapix/api.py,sha256=TKdBrJ9JIoDi7Tw0Zu1BADOyaFfRk9YIY2rVbswmKAU,2646
+axis_vapix/device.py,sha256=aG0tiSXgR_ZnA5FaI7bf_XxnjfbAGJwFIiMRtecSVl4,485
+axis_vapix/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+axis_vapix-0.1.1.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+axis_vapix-0.1.1.dist-info/METADATA,sha256=CxbsYJZnEg0inVh3nxpNbwVpyUOef2mMp9_lsWhPbDQ,809
+axis_vapix-0.1.1.dist-info/RECORD,,
