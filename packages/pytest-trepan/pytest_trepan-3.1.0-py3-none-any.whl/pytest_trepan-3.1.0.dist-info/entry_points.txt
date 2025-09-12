@@ -1,0 +1,2 @@
+[pytest11]
+trepan = pytest_trepan.plugin
