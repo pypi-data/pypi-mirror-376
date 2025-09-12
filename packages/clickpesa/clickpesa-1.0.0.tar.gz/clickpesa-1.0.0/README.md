@@ -1,0 +1,120 @@
+# ClickPesa Python SDK
+
+A comprehensive Python library for integrating with the ClickPesa payment gateway API. This library provides easy-to-use methods for processing mobile money payments in Tanzania.
+
+## Features
+
+- **Complete API Coverage**: All ClickPesa USSD API endpoints supported
+- **Type Safety**: Full type hints and data models
+- **Error Handling**: Comprehensive exception handling with specific error types
+- **Token Management**: Automatic JWT token generation and refresh
+- **Easy Integration**: Simple, intuitive interface
+
+## Project Status:
+- [x] Authorization
+- Payments:
+  - [x] USSD
+  - [ ] Card
+  - [x] Queries
+- Payouts:
+  - [ ] Mobile
+  - [ ] Bank
+  - [ ] Queries
+- [ ] Billpay
+- [ ] Checkout Link
+- [ ] Payout Link
+- Account:
+  - [ ] Retrieve Account Balance
+  - [ ] Retrieve Account Statement
+- [ ] Exchange Rates
+
+## Installation
+
+```bash
+pip install clickpesa
+```
+
+## Quick Start
+
+```python
+from clickpesa import ClickPesaClient, Currency
+
+# Initialize the client
+client = ClickPesaClient(
+    client_id="your_client_id",
+    api_key="your_api_key"
+)
+
+# Preview available payment methods
+preview = client.preview_ussd_push(
+    amount="1000",
+    currency=Currency.TZS,
+    order_reference="ORDER123",
+    phone_number="255712345678"
+)
+
+# Initiate payment
+transaction = client.initiate_ussd_push(
+    amount="1000",
+    currency=Currency.TZS,
+    order_reference="ORDER123",
+    phone_number="255712345678"
+)
+
+# Check payment status
+status = client.query_payment_status("ORDER123")
+print(f"Payment status: {status['status']}")
+```
+
+## API Methods
+
+### Authentication
+- Automatic JWT token generation and management
+- Token refresh when expired
+
+### Payment Operations
+- `preview_ussd_push()` - Preview payment and get available methods
+- `initiate_ussd_push()` - Initiate USSD push payment
+- `query_payment_status()` - Check single payment status
+- `query_all_payments()` - Query multiple payments with filters
+
+### Convenience Methods
+- `get_payment_methods()` - Get available payment methods
+- `check_payment_completed()` - Simple boolean check for payment completion
+
+## Error Handling
+
+The library provides specific exception types for different error scenarios:
+
+```python
+from clickpesa import (
+    ClickPesaAuthError,      # Authentication errors
+    ClickPesaValidationError, # Request validation errors
+    ClickPesaNotFoundError,  # Resource not found errors
+    ClickPesaAPIError        # General API errors
+)
+
+try:
+    client.initiate_ussd_push(...)
+except ClickPesaValidationError as e:
+    print(f"Invalid request: {e.message}")
+except ClickPesaAuthError as e:
+    print(f"Authentication failed: {e.message}")
+```
+
+## Examples
+
+See the `examples/` directory for complete usage examples:
+
+- `simple.py` - Basic usage example
+- `complete_flow.py` - Full payment processing workflow with monitoring
+
+## Requirements
+
+- Python 3.8+
+- requests >= 2.25.0
+- typing-extensions >= 4.0.0
+
+## License
+
+MIT License - see LICENSE file for details.
