@@ -1,0 +1,14 @@
+temporal_normalization/__init__.py,sha256=CTTK9QRo4svHwDwjzPpn9wO3epLsgWq9tIx9H8dmouc,289
+temporal_normalization/index.py,sha256=fF4oBtUrlLZA8bHxttWt08peRpsKm4bP8zlDoFkj6vI,11004
+temporal_normalization/commons/__init__.py,sha256=pxxCsrvNQpZGf33g37TdDqVt-6ZOCAD9F6llBbXKYo4,148
+temporal_normalization/commons/print_utils.py,sha256=yS5i69KEwAxY7urERPF3B8b5334BUFxRA305RdBHGfg,3639
+temporal_normalization/commons/temporal_models.py,sha256=4zwKJ9P8vNjhw32e-v2KCzqXgut2U1IdiMMZDIoerao,6646
+temporal_normalization/commons/temporal_types.py,sha256=qhK3XevYKu0UNwuBI8uTxpmdir_TGH2Y0A_814wV7ZE,184
+temporal_normalization/libs/temporal-normalization-2.1.0.jar,sha256=2tg0GCOx4qEtzYxFSgl1PGzhCxhFPfU9JoK1cT--ImE,17056630
+temporal_normalization/process/__init__.py,sha256=HY4z-y7GQgHm9r9W51Y6M3y1m0Pz4YjmJF8ra6U1HlI,48
+temporal_normalization/process/java_process.py,sha256=XyFXUQphumovJCSNS6kZFjmDsgSdJzwBp86hWSCO_po,4331
+temporal_normalization_spacy-2.1.0.dist-info/licenses/LICENSE,sha256=nYe07t4F4knSwlYA9jge3TgKdpF78uvSabkvfys-Hlc,1061
+temporal_normalization_spacy-2.1.0.dist-info/METADATA,sha256=beQ5GFxTgQDvdn9766q1FdjFFdmoOyNy2Ebhh-M9NR0,9304
+temporal_normalization_spacy-2.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+temporal_normalization_spacy-2.1.0.dist-info/top_level.txt,sha256=jQLSU446jNv8F7sYuZBV7MTLAGdar8iz2kZiwcEFGD8,23
+temporal_normalization_spacy-2.1.0.dist-info/RECORD,,
