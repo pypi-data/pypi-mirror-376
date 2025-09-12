@@ -1,0 +1,19 @@
+# Ignore model + atlas files
+required_docs/
+
+# Ignore any job output folders
+*/Predicted_fitness/
+*/Predicted_fitness_with_1_letter_mutations/
+*/Sequence's_AAC_DPC/
+*/heatmap/
+*/sequence_variants/
+*/sequences_with_features/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore build artifacts
+*.egg-info/
+dist/
+build/

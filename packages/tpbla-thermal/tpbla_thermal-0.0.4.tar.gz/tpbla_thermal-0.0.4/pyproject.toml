@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tpbla-thermal"
+version = "0.0.4"
+description = "TPBLA_ThermAL: ML for amyloid thermodynamic landscape prediction."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [{ name = "Conor McKay" }]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+dependencies = [
+  "pandas",
+  "numpy",
+  "scipy==1.9.3",
+  "scikit-learn==1.2.2",
+  "seaborn",
+  "matplotlib",
+  "pillow",
+  "joblib",
+  "openpyxl",
+]
+
+[project.scripts]
+tpbla-thermal = "tpbla_thermal.cli:main"
+tpbla-thermal-gui = "tpbla_thermal.gui:main"
+
+[project.urls]
+Homepage = "https://github.com/conor-mckay98/ThermAL"
+Issues = "https://github.com/conor-mckay98/ThermAL/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tpbla_thermal"]
+
