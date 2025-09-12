@@ -1,0 +1,152 @@
+Metadata-Version: 2.4
+Name: wpdwf
+Version: 0.0.1
+Summary: Wrapper over Waveforms SDK - application runtime
+Author-email: Bogdan Stănese <bogdan.stanese@digilent.ro>
+License-Expression: MIT
+Classifier: Topic :: Software Development
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+
+# Wpdwf
+
+# Wrapper for Digilent Waveforms Application SDK
+
+*Wpdwf* is an overlay for Waveforms Application runtime.
+
+## Overview
+
+This library manages C types with `ctypes` module and gives to the
+user a compact alternative to configure, for example, an Analog Discovery 3
+with a minimum number of functions. It has the capability to discover multiple
+devices, extract data and switch between them.
+
+## Code Snippets
+
+*wpdwf* offers a simpler way to interact with Digilent Mixed Signal Products.
+
+Conneting to a first device can be done using *DeviceCfg*, afterwards if
+multiple boards are needed, all can be grouped into a list and passed to
+*WaveFormsCommonInstrumentation*.
+
+```python
+from wpdwf.deviceconfiguration import DeviceCfg
+from wpdwf.wfcommoninstruments import WaveFormsCommonInstrumentation
+
+idxDev = 0
+dev = DeviceCfg()
+print(dev)
+wfci = WaveFormsCommonInstrumentation(lsDevsToUse=[dev])
+wfci.disconnect(idxDev)
+```
+
+---
+
+Devices offers the following functions *findDev*, *findDevByIdx*,
+*findDevByName*, *findDevByConfig* to search for devices connected
+to the host PC. These store data internally into Devices' attributes.
+
+```python
+from wpdwf.deviceconfiguration import Devices
+
+devs = Devices()
+tDevs = devs.sweepDevs() # returns a tuple
+print(tDevs)
+```
+
+---
+
+To configure IO instrument a local *dict* should be created as
+the one below because *IO* sub-functions separates them internally.
+One call to *confDI* enables it (Outputs for DIO in this case), then
+another call starts DIO6, DIO8 on high (3V3 default). To change logic
+level some functionalities from *Analog* instruments are needed, but
+will come in the next version.
+
+```python
+from wpdwf.deviceconfiguration import DeviceCfg
+from wpdwf.wfcommoninstruments import WaveFormsCommonInstrumentation
+
+idxDev = 0
+# i... prefix ~ value that is modified
+lcData = {
+	"Io" : {
+	 "bReset":False,"bStatus":False,
+	 "bEnable":True,"bInfo":False,
+	 "format":32,
+	 "dDio":{"DIO0":0,"DIO1":0,"DIO2":0,"DIO3":0,
+			 "DIO4":0,"DIO5":0,"DIO6":1,"DIO7":1,
+			 "DIO8":0,"DIO9":0,"DIO10":0,"DIO11":0,
+			 "DIO12":0,"DIO13":0,"DIO14":0,"DIO15":0},
+	 "dOutput":{"Mask":0,"DIO":-1,"iDIO":-1},
+	 "dPull":{"PullUp":0,"PullDown":0,
+			  "iPullUp":0,"iPullDown":0,
+			  "MaskPullUp":0,"MaskPullDown":0},
+	 "dDrive":{"Channel":0,"Amplitude":0.0,"Slew":0,
+			   "iAmplitude":0.0,"iSlew":0,"AmpMin":0.0,
+			   "AmpMax":0.0,"AmpSteps":0,"SlewSteps":0},
+	 "dInput":{"stsMask":0,"Mask":0}
+	}
+}
+dev = DeviceCfg()
+wfci = WaveFormsCommonInstrumentation(lsDevsToUse=[dev])
+wfci.confDI(nrDev=idxDev, dInstFlags={"IO":True},
+			dFlags={"Io":True},
+			data=lcData
+			)
+lcData["Io"]["bEnable"] = False
+wfci.confDI(nrDev=idxDev, dInstFlags={"IO":True},
+			dFlags={"Io":True},
+			data=lcData
+			)
+```
+
+---
+
+To configure Digital Protocols instrument a local *dict* should be created as
+the one below because *DP* sub-functions separates them internally.
+One call to *confDI* is enough to write or read data on *Uart*.
+
+```python
+from wpdwf.deviceconfiguration import DeviceCfg
+from wpdwf.wfcommoninstruments import WaveFormsCommonInstrumentation
+
+idxDev = 0
+lcData = {
+	"Uart" : {
+	 "bReset":False,"frequency":9600,
+	 "bRead":False,"bWrite":True,
+	 "chDIOTx":7,"chDIORx":6,
+	 "nrCntTx":5,
+	 "data":{"Polarity":0,"Parity":0,"BufferTx":[1,2,3,4,5],
+			 "BufferRx":[],"CntRx":0}
+	}
+}
+dev = DeviceCfg()
+wfci = WaveFormsCommonInstrumentation(lsDevsToUse=[dev])
+wfci.confDI(nrDev=idxDev, dInstFlags={"DigitalProtocols":True},
+			dFlags={"Uart":True},
+			data=lcData
+			)
+```
+
+## Project Information
+
+For v0.0.1:
+
+- Multiple devices can be detected and used
+- Instruments
+	- Digital IO
+	- Digital Protocols
+
+## More Information
+
+This is not open-source so as others can contibute to it
+due to internal resons, but it will be in the future. In file
+*wfcommoninstruments.py*, there are data templates for implemented
+instruments configurations (confDI member function).
