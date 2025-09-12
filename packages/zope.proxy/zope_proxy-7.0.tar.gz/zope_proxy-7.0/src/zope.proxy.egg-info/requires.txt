@@ -1,0 +1,11 @@
+zope.interface
+setuptools
+
+[docs]
+Sphinx
+repoze.sphinx.autointerface
+sphinx_rtd_theme
+
+[test]
+zope.security>=7.3
+zope.testrunner>=6.4
