@@ -1,0 +1,33 @@
+[project]
+name = "cartes-dictee"
+version = "0.1.0"
+description = "Génère des cartes de dictée imprimables à partir de fichiers CSV"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+keywords = ["education", "dictée", "cartes", "impression", "A4"]
+authors = [
+    { name = "Matthieu Boileau", email = "matthieu.boileau@gmail.com" }
+]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Education",
+    "Topic :: Printing",
+    "Topic :: Text Processing :: Markup :: HTML"
+]
+
+[project.urls]
+Homepage = "https://github.com/votrenom/cartes-dictee"
+Repository = "https://github.com/votrenom/cartes-dictee"
+
+[project.scripts]
+cartes-dictee = "cartes_dictee:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
