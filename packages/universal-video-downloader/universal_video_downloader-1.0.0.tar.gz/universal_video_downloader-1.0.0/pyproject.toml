@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "universal-video-downloader"
+authors = [
+    {name = "Aarif5856", email = "your-email@example.com"},
+]
+description = "Download videos and audio from YouTube, TikTok, Instagram, Facebook, X, Reddit, Vimeo, DailyMotion, and more"
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["video", "downloader", "youtube", "tiktok", "instagram"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Video",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "yt-dlp>=2023.1.6",
+    "PyQt5>=5.15.0",
+    "requests>=2.28.0",
+    "tkinterdnd2>=0.2.1",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Aarif5856/UniversalVideoDownloader"
+Repository = "https://github.com/Aarif5856/UniversalVideoDownloader"
+Issues = "https://github.com/Aarif5856/UniversalVideoDownloader/issues"
+
+[project.scripts]
+uvd-gui = "universal_video_downloader.gui:main"
+uvd-cli = "universal_video_downloader.cli:main"
+universal-video-downloader = "universal_video_downloader.gui:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "flake8>=4.0",
+]
+
+[tool.setuptools]
+packages = ["universal_video_downloader"]
+
+[tool.setuptools.package-data]
+universal_video_downloader = ["*.py"]
