@@ -1,0 +1,3 @@
+[console_scripts]
+myc = mycelium_ei:main
+mycelium = mycelium_ei:main
