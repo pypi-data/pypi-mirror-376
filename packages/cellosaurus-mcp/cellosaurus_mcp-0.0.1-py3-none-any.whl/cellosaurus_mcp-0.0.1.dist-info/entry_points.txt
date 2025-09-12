@@ -1,0 +1,2 @@
+[console_scripts]
+cellosaurus_mcp = cellosaurus_mcp.main:run_app
