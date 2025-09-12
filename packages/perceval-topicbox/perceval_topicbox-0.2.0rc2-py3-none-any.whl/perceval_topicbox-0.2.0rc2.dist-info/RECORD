@@ -1,0 +1,8 @@
+perceval/backends/topicbox/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+perceval/backends/topicbox/_version.py,sha256=AyygL21ii0uu07DS78ZIbTd51SHEJiWkF-cyWkWws8A,91
+perceval/backends/topicbox/topicbox.py,sha256=gdOdaPgXRFWbOndDWS-pPUIzGezLmFdrdq_ifqb0MgM,10326
+perceval_topicbox-0.2.0rc2.dist-info/AUTHORS,sha256=7h8T0byXPF3WnvJV96Q7DMODixkasLpFScW8d7li5n4,50
+perceval_topicbox-0.2.0rc2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+perceval_topicbox-0.2.0rc2.dist-info/METADATA,sha256=iacnqqiQSUBFr9_C_fCASwhmuV6fXcEJVjMdnC-wtYE,3265
+perceval_topicbox-0.2.0rc2.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+perceval_topicbox-0.2.0rc2.dist-info/RECORD,,
