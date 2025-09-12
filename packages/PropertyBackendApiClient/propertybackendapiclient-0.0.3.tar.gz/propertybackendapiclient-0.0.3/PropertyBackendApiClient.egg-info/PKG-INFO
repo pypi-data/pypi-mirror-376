@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: PropertyBackendApiClient
+Version: 0.0.3
+Summary: Client for interacting with property pipeline builder
+Home-page: https://github.com/rmetcalf9/PropertyBackendApiClient
+Author: Robert Metcalf
+Author-email: rmetcalf9@googlemail.com
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: requests==2.31.0
+Requires-Dist: pytz==2025.2
+Requires-Dist: python-dateutil==2.8.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+# TODO
