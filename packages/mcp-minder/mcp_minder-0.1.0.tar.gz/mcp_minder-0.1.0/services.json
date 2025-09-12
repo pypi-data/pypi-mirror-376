@@ -1,0 +1,72 @@
+{
+  "c93edba3-c230-42d4-9f94-7b43c675a25d": {
+    "id": "c93edba3-c230-42d4-9f94-7b43c675a25d",
+    "name": "天气查询啊",
+    "file_path": "mcpserver/tianqi.py",
+    "port": null,
+    "host": "127.0.0.1",
+    "status": "running",
+    "created_at": "2025-09-11T18:10:06.451703",
+    "updated_at": "2025-09-12T11:06:58.827940",
+    "pid": 3023452,
+    "log_file": "service_logs/tianqi.log",
+    "description": "查天气",
+    "author": ""
+  },
+  "6093c43f-5cec-4983-a1e3-8decc15ee7e5": {
+    "id": "6093c43f-5cec-4983-a1e3-8decc15ee7e5",
+    "name": "test_server2",
+    "file_path": "mcpserver/test_server2.py",
+    "port": null,
+    "host": "127.0.0.1",
+    "status": "stopped",
+    "created_at": "2025-09-12T09:09:20.746856",
+    "updated_at": "2025-09-12T09:09:20.746856",
+    "pid": null,
+    "log_file": null,
+    "description": "从mcpserver目录自动发现的MCP服务: test_server2",
+    "author": "系统自动发现"
+  },
+  "fad63395-e562-4618-9169-39bfd0de0a6f": {
+    "id": "fad63395-e562-4618-9169-39bfd0de0a6f",
+    "name": "my_server",
+    "file_path": "mcpserver/my_server.py",
+    "port": null,
+    "host": "127.0.0.1",
+    "status": "stopped",
+    "created_at": "2025-09-12T09:09:20.747063",
+    "updated_at": "2025-09-12T09:09:20.747063",
+    "pid": null,
+    "log_file": null,
+    "description": "从mcpserver目录自动发现的MCP服务: my_server",
+    "author": "系统自动发现"
+  },
+  "059bb00c-84ca-4224-98fb-8db526d50bb3": {
+    "id": "059bb00c-84ca-4224-98fb-8db526d50bb3",
+    "name": "test_server",
+    "file_path": "mcpserver/test_server.py",
+    "port": null,
+    "host": "127.0.0.1",
+    "status": "stopped",
+    "created_at": "2025-09-12T09:09:20.747344",
+    "updated_at": "2025-09-12T09:09:20.747344",
+    "pid": null,
+    "log_file": null,
+    "description": "从mcpserver目录自动发现的MCP服务: test_server",
+    "author": "系统自动发现"
+  },
+  "035d2cd6-ed3d-4508-816e-cc9a9fbb10f8": {
+    "id": "035d2cd6-ed3d-4508-816e-cc9a9fbb10f8",
+    "name": "test_server1",
+    "file_path": "mcpserver/test_server1.py",
+    "port": null,
+    "host": "127.0.0.1",
+    "status": "stopped",
+    "created_at": "2025-09-12T09:09:20.747482",
+    "updated_at": "2025-09-12T09:09:20.747482",
+    "pid": null,
+    "log_file": null,
+    "description": "从mcpserver目录自动发现的MCP服务: test_server1",
+    "author": "系统自动发现"
+  }
+}
