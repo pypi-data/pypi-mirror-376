@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+jwt=swarmauri_tokens_jwt:JWTTokenService
+
+[swarmauri.tokens]
+JWTTokenService=swarmauri_tokens_jwt:JWTTokenService
+
