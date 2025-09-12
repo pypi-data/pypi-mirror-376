@@ -1,0 +1,3 @@
+[swarmauri.middlewares]
+RetryPolicyMiddleware=swarmauri_middleware_ratepolicy:RetryPolicyMiddleware
+
