@@ -1,0 +1,23 @@
+tornado<7.0,>=6.5.2
+jsonschema>=4.25.1
+reactivex<5.0,>=4.0.4
+python-slugify>=8.0.4
+requests-oauthlib<3.0,>=2.0.0
+pyOpenSSL>=25.1.0
+amqtt>=0.10.1
+eclipse-zenoh>=1.5.0
+websockets>=15.0.1
+
+[:platform_system != "Darwin"]
+aiocoap[linkheader,oscore]>=0.4.7
+
+[docs]
+Sphinx>=7.4.7
+sphinx-rtd-theme>=3.0.2
+
+[tests]
+pytest>=8.4.1
+pytest-cov>=6.2.1
+pytest-rerunfailures>=16.0.1
+pytest-asyncio>=1.1.0
+faker>=37.6.0
