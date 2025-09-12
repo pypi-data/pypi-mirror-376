@@ -1,0 +1,33 @@
+[build-system]
+requires = [
+    "setuptools >= 40.6.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "classic-thread-pool-executor"
+version = "1.1.1"
+authors = [
+    {name = "Sergey Variasov", email = "variasov@gmail.com"},
+]
+description = "Simple threadpool executor without futures"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+]
+
+[project.urls]
+Homepage = "https://github.com/variasov/classic-thread-pool-executor"
+
+[project.optional-dependencies]
+dev = [
+    "build~=1.2.2.post1",
+    "pytest==8.3.4",
+    "pytest-cov==6.0.0",
+    "twine~=4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["sources"]
+namespaces = true
