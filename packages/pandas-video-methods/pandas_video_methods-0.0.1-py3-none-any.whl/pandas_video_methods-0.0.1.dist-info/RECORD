@@ -1,0 +1,8 @@
+pandas_video_methods/__init__.py,sha256=FuAmF9gTGWZkV7rv-arpPVVvfHGMtZ_gmqBsarrlRsU,48
+pandas_video_methods/core.py,sha256=j7DAeJsIDHoua1YSvKPwx9gixZFLW48lBlWHTCdZ6lY,6075
+pandas_video_methods/dask.py,sha256=kKx6utzFMoQ0oOjSvDHFcwRI0VgZMZiiRinJYd52-3o,814
+pandas_video_methods/huggingface.py,sha256=3xrBOxJTTRTRfQROfCsgvoqKbetXwwoku6WHwOCHdhk,638
+pandas_video_methods-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pandas_video_methods-0.0.1.dist-info/METADATA,sha256=xHiRuaWwg4PQSjnazZDkNiL9PdCjlCvjDHSJ0P03JQA,4008
+pandas_video_methods-0.0.1.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+pandas_video_methods-0.0.1.dist-info/RECORD,,
