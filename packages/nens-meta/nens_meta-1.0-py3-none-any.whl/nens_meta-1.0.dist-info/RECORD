@@ -1,0 +1,16 @@
+nens_meta/__init__.py,sha256=kM55qqhSrc4b-StNTuN03Srg0kwfg1G4BckCKhUytaE,20
+nens_meta/nens_toml.py,sha256=-XiToQUrIr1mLFdncStxNptqCagL0_QEcEPgk3tPyEw,5939
+nens_meta/pyproject_toml.py,sha256=bvbQ7JUafU2GssegaYt1dTNxXV4Cv4_dH3zYq_JCSkA,4972
+nens_meta/update_project.py,sha256=nbklAQAQwloX22nTfuM9fBQS4QEm0DJy86d8X6NR1Jc,7811
+nens_meta/utils.py,sha256=3WbCnhq4NiGMRv53ohRNLbAxfF_rS4WQMTiSl6BbLFQ,2606
+nens_meta/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nens_meta/tests/test_nens_toml.py,sha256=GtlpW0-_yM9B9Av5_LuuvNnSFiarzDWcbf2-AoD1nWM,3894
+nens_meta/tests/test_pyproject_toml.py,sha256=sVC9dKX_Rx_hccOhW7eg1qYuHnGw3FPa51cUCqfQRrg,2567
+nens_meta/tests/test_update_project.py,sha256=wFWqx8icDkowO2uTyHx5FZ_vFTw-k0RCA-5QNBEWyBw,3198
+nens_meta/tests/test_utils.py,sha256=arEwCel3AedLKMVYRqkMyBMYiaWDM8R9n0TzVX5zNHA,2419
+nens_meta-1.0.dist-info/licenses/LICENSE,sha256=13l6HJCp403cKeu7aTCw_oW0N_HlWUaAt8Iq8qz0DSs,1075
+nens_meta-1.0.dist-info/METADATA,sha256=69aHJuqyNXVwXuWeiRV1OQ-45YBSO4FkPtzUOGZdCEQ,2079
+nens_meta-1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nens_meta-1.0.dist-info/entry_points.txt,sha256=9GMF4b64dJtEZL1H50nE7u93XrbCXALBPa904iL9I_I,112
+nens_meta-1.0.dist-info/top_level.txt,sha256=1cNBxFF2cCTqBJ9SRnCKgc4pd2XTcc8r8WNnptGtKt0,10
+nens_meta-1.0.dist-info/RECORD,,
