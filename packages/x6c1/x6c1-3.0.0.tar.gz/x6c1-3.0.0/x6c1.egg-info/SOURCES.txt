@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+x6c1/__init__.py
+x6c1/cli.py
+x6c1.egg-info/PKG-INFO
+x6c1.egg-info/SOURCES.txt
+x6c1.egg-info/dependency_links.txt
+x6c1.egg-info/entry_points.txt
+x6c1.egg-info/top_level.txt
