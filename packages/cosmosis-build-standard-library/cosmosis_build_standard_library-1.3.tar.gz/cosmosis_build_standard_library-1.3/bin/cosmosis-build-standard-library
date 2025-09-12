@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+set -e
+
+DEFAULT_BRANCH=main
+INPLACE=0
+
+while getopts "hi" opt; do
+  case "$opt" in
+    h)
+      echo "cosmosis-build-standard-library downloads and builds the standard lib"
+      echo "Syntax: cosmosis-build-standard-library [-h] [-i] [BRANCH]"
+      echo "    -h displays this help message"
+      echo "    -i builds the library underneath the installed cosmosis directory"
+      echo "    BRANCH chooses a branch other than the default main"
+      exit 0
+      ;;
+    i)  INPLACE=1
+      ;;
+  esac
+done
+
+shift $((OPTIND-1))
+if [ "$1" == "" ]; then
+    branch=${DEFAULT_BRANCH}
+else
+    branch=$1
+fi
+
+
+# If running in-place then find the CSL dir
+if [ "$INPLACE" == "1" ]; then
+    # find the cosmosis directory and install there
+    COSMOSIS_FILE=$(python -c 'import cosmosis;print(cosmosis.__file__)')
+    COSMOSIS_DIR=$(dirname ${COSMOSIS_FILE})
+    echo "Installing inside CosmoSIS directory: ${COSMOSIS_DIR}"
+    pushd ${COSMOSIS_DIR}
+fi
+
+echo "Downloading version '$branch'"
+
+set -x
+
+# Download and build the standard library
+git clone --branch ${branch} https://github.com/cosmosis-developers/cosmosis-standard-library
+pushd cosmosis-standard-library
+
+# it turns out that if you source a script with no arguments
+# then it inherits the arguments from the parent script.
+# Which is clearly insane, but we have to work around it like this.
+# https://stackoverflow.com/a/65912397/989692
+function DoSource() { source cosmosis-configure ; } ; DoSource
+make
+popd
+
+if [ "$INPLACE" == "1" ]; then
+    popd
+fi
