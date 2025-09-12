@@ -1,0 +1,6 @@
+pyproject.toml
+src/mazinsmath/__init__.py
+src/mazinsmath.egg-info/PKG-INFO
+src/mazinsmath.egg-info/SOURCES.txt
+src/mazinsmath.egg-info/dependency_links.txt
+src/mazinsmath.egg-info/top_level.txt
