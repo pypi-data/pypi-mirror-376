@@ -1,0 +1,17 @@
+hotpartners_twofa/__init__.py,sha256=-InYWKaNbiGaecUvmKdSkZInEyxPjWWLnKxp1Ut5XKY,827
+hotpartners_twofa/cli.py,sha256=ry_jCqc70MI7P8Ek6dXnJ3y8PO2rqodaK65cd1kS_dg,3864
+hotpartners_twofa/config.py,sha256=2wzs4_yWg9qZBNttt_iY3V9vWkCHeeJTPR5X9ASliIw,1953
+hotpartners_twofa/decorator.py,sha256=y07uMmmK1YjjHXl2uidtdud99NMY-54OMbokR5f2tYo,5444
+hotpartners_twofa/exceptions.py,sha256=lG-MoEPHYF72jMC9RlpZL6fpdHC9zAd3dxC8uqIYCMw,1539
+hotpartners_twofa/models.py,sha256=GxPjINDbdCdg4ZVNbrtcvTTJXgWcLaZ2VkdjR_94o_4,1910
+hotpartners_twofa/repository.py,sha256=spMojbwIV43Qs7c_RVUxp0I35-DTx8s1nti2sCK59f8,6916
+hotpartners_twofa/schema.py,sha256=fo852iUpefmRdYQ7USHd1vYqwPydl8Yzi_3fwhopKEA,5526
+hotpartners_twofa/service.py,sha256=YBT-y_nMH07iMhVTW0dvpx-aoqPdyAm5gdP4ZStOPzI,12414
+hotpartners_twofa/setup.py,sha256=it-XqcP1vLDaNesRIyRtQy1wswTEOsZQsNxHwy3q5QE,2766
+hotpartners_twofa/sql/schema.sql,sha256=hV4VldzBKIneiGuxoQ3G0CGws2bi_okUsriHa50gI6U,1019
+hotpartners_twofa-1.1.1.dist-info/LICENSE,sha256=WRzbP4C2ohx_uZS9k9oKr1hFksRIrAxtk2HR_CUsvIw,1073
+hotpartners_twofa-1.1.1.dist-info/METADATA,sha256=J3N_uRtbFL5EbsdLT2mbi0nXByXh1acvPoeVTs7226I,7046
+hotpartners_twofa-1.1.1.dist-info/WHEEL,sha256=PZUExdf71Ui_so67QXpySuHtCi3-J3wvF4ORK6k_S8U,91
+hotpartners_twofa-1.1.1.dist-info/entry_points.txt,sha256=rh4Hj_HVZASw_8uWGBzSDU1DRjdMrrvWl6Bk5aeo_G0,79
+hotpartners_twofa-1.1.1.dist-info/top_level.txt,sha256=9yNdduVTWCc7xIE0SZRuBuR0vqwseV5LwQGNzOavI28,18
+hotpartners_twofa-1.1.1.dist-info/RECORD,,
