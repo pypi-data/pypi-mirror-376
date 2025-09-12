@@ -1,0 +1,65 @@
+from jarvisHAplugin.main import HomeAssistantClient
+
+# JARVIS-HA-PLUGIN
+
+---
+![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg?logo=python)
+![Status](https://img.shields.io/badge/Release_Version-Latest-green.svg)
+![Status](https://img.shields.io/badge/Status-Under%20Active%20Development-yellow.svg)
+![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
+
+
+A plugin for The J.A.R.V.I.S. Project that manages and handles all the hand-offs and communications between J.A.R.V.I.S. and a HomeAssistant instance.
+
+## Installation
+
+---
+``` bash
+ pip install jarvis-ha-plugin
+```
+
+
+---
+
+# Documentation
+
+---
+
+### Initializing with the Home Assistant Client
+
+```python
+import jarvisHAplugin
+
+ha = jarvisHAplugin.HomeAssistantClient(base_url="http://localhost:8123", token="YOUR HOME ASSISTANT TOKEN HERE")
+```
+
+When you run the program written above, this will initialize a connection between The J.A.R.V.I.S. Project and Home Assistant.
+These two values are latter used in the other functions since they are part of the core api's function, and they are required to have to make this plugin run properly.
+Since that is the case with this plugin, the user can have it setup in a way in which the user can set the base_url and the token in a .json file or a .env file and have The J.A.R.V.I.S. Project call out that file to get that information to initialize with the Home Assistant Client.
+These features later down the line are going to be more streamlined and more user-friendly in terms of not needing to know how to program to get this part of The J.A.R.V.I.S. Project setup and in operating conditions.
+This is the main part of this plugin that will practically never change when the rest of the plugin is being updated, at any given point if this is changed or modified The J.A.R.V.I.S. Project will alert the user to the change and how to go about correcting it or doing it himself.
+This initializing command also sets up the base Header set that is needed when The J.A.R.V.I.S. Project is calling out the HomeAssistant API to gather/change variables and various information that is sanctioned between the handoffs between The J.A.R.V.I.S. Project and the HomeAssistantClient.
+
+---
+
+### Turn On a Light
+
+```python
+import jarvisHAplugin
+
+ha = jarvisHAplugin.HomeAssistantClient(base_url="http://localhost:8123", token="YOUR HOME ASSISTANT TOKEN HERE")
+
+LIGHT_ENTITY = "light.light_1"
+
+ha.turn_on_light(LIGHT_ENTITY) #Simply Turns on Light (NO OUTPUT)
+
+print(ha.turn_on_light(LIGHT_ENTITY)) #Turns on Light (WITH OUTPUT)
+```
+
+When you run the program written above, this will initialize a connection between The J.A.R.V.I.S. Project and Home Assistant, Which is also referenced in the above portion of the documentation referring to this topic.
+When you are looking to activate/turn on any given light, you must first get the ID of that specific light entity, this can be found in the settings portion of the light found inside Home Assistant.
+Once you have gotten the Light's Entity ID, you put it in its respective spot in the program, and the program will call out to the HomeAssistant API endpoint "/api/services/light/turn_on", and proceed with using the given data to activate/turn on the specified light.
+To turn on/activate multiple lights at a time, you must run the commands separately, and have them run one light at a time, due to the fact that the HomeAssistant API does not accept multiple light entities at once.
+The J.A.R.V.I.S. Project will handle all the communication, and he will also spit out the output text if that is what he asked to do, or he can just keep a log of it and say the light was changed or turned on successfully.
+
+---
