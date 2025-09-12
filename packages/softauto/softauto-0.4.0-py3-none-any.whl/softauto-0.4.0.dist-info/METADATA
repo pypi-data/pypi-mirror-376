@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: softauto
+Version: 0.4.0
+Summary: One-call EDA + preprocessing + feature selection + plotting + advisor + tuning (robust CV).
+Author: Soft Tech Talks
+License: MIT
+Keywords: auto-ml,EDA,machine learning,sklearn,feature selection
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: joblib>=1.3.0
+Requires-Dist: matplotlib>=3.7.0
+Provides-Extra: boosters
+Requires-Dist: xgboost>=2.0.0; extra == "boosters"
+Requires-Dist: lightgbm>=4.0.0; extra == "boosters"
+Requires-Dist: catboost; extra == "boosters"
+Provides-Extra: imbalance
+Requires-Dist: imbalanced-learn>=0.12.0; extra == "imbalance"
+
+# 🪶 softauto — AutoML with seatbelts
+
+> AutoML that **respects small, messy, real-world datasets.**  
+> One line in → a trained pipeline, metrics, and a human-readable report out.
+
+---
+
+## ✨ Why softauto?
+
+Most AutoML libraries brute-force models until something sticks.  
+**softauto is different:**
+
+- 🧑‍🏫 **Advisor mode** – if your model underperforms, it suggests fixes (or auto-switches).  
+- ⚖️ **Safe imbalance handling** – SMOTE applied *only* when statistically valid, else falls back to class weights.  
+- 🧹 **Robust preprocessing** – rare category binning, outlier clipping, flexible scalers.  
+- 🔍 **Smart feature selection** – Mutual Information & RFECV options.  
+- 📊 **Automatic reporting** – HTML + plots (target distribution, missingness, correlations, feature importances).  
+- 🎯 **Opinionated model zoo** – Random Forest, GB, SVM, KNN, MLP, Ridge/Lasso, all with tuned search spaces.  
+
+---
+
+## 🚀 Quickstart
+
+```python
+import pandas as pd
+from softauto.autorun import AutoRun
+
+# load your dataset
+df = pd.read_csv("mydata.csv")
+
+# run softauto
+run = AutoRun(df=df, target="label", task="classification")
+results = run.fit()
+
+print(results["metrics"])        # final holdout metrics
+print(results["best_model_name"])# chosen model
+print(results["artifacts_dir"])  # directory with reports + plots
+```

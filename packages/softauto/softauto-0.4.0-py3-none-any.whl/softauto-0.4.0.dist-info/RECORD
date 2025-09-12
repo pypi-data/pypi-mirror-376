@@ -1,0 +1,12 @@
+examples/example.py,sha256=HsWfskxRkclzhbBpz7lcfr3ZrHiMimJZL9gQspIoSrc,1296
+softauto/__init__.py,sha256=8J6OnoI3XY9IQzmG0-64WHLYypqKR6ZnlKej_Y3hiLo,72
+softauto/autorun.py,sha256=Sv3xW8P4gZiGPb7JsGZn99HKfyD_TuzXX0fVDI4wGe8,20916
+softauto/feature_select.py,sha256=F9DTMb4aPgJo2k7q0zXjPM1r4cUQjcnNLD66PD2-CZg,1532
+softauto/guards.py,sha256=CdpzeIXbUvN4OCE0Ap9BDgmEm2ZckPrXcA43IRxsWWs,3576
+softauto/model_zoo.py,sha256=EhQlm11ooG_s7rKjJfA_QjbPUZSSd69mIAFfGJlnb60,3518
+softauto/preprocess.py,sha256=RtfxZl3fSdcQriOfC2dPCnTJi4gWKO40D9xzHiENOtc,2469
+softauto/report.py,sha256=5DttndFWkIB-LqxVBENi9fJz-ED7OJadVfoqVmeDZlY,10840
+softauto-0.4.0.dist-info/METADATA,sha256=3BPIz0Kty0pZk_ZDGYNzWJNJm6pxG1SLdXDx1g_251M,2384
+softauto-0.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+softauto-0.4.0.dist-info/top_level.txt,sha256=2mNhJs5BfZ3FJRNRA23W2h5sAWsz7JWMwTTFOL729Dk,18
+softauto-0.4.0.dist-info/RECORD,,
