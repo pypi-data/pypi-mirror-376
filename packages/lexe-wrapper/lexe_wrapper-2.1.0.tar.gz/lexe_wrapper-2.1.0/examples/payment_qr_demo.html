@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightning Payment QR Code Demo</title>
+    
+    <!-- QRCode.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .amount-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        input[type="number"] {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .qr-container {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .qr-container.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        #qrcode {
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .invoice-text {
+            word-break: break-all;
+            font-size: 12px;
+            color: #666;
+            padding: 10px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .invoice-text:hover {
+            background: #f0f0f0;
+        }
+        
+        .copy-btn {
+            margin-top: 10px;
+            background: #28a745;
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .status.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0,0,0,.1);
+            border-radius: 50%;
+            border-top-color: #667eea;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .info-box {
+            background: #e8f4fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box h3 {
+            color: #1976D2;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .info-box p {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Lightning Payment Demo</h1>
+        <p class="subtitle">Generate QR codes for Lightning Network payments</p>
+        
+        <div class="info-box">
+            <h3>How it works:</h3>
+            <p>1. Enter amount in satoshis (1 BTC = 100,000,000 sats)</p>
+            <p>2. Click "Create Invoice" to generate a Lightning invoice</p>
+            <p>3. Scan the QR code with any Lightning wallet</p>
+            <p>4. Watch the payment status update in real-time</p>
+        </div>
+        
+        <div class="amount-input">
+            <input type="number" id="amount" placeholder="Amount in sats" value="1000" min="1">
+            <button onclick="createInvoice()" id="createBtn">Create Invoice</button>
+        </div>
+        
+        <div id="qr-container" class="qr-container">
+            <div id="qrcode"></div>
+            <p style="font-weight: 600; margin-bottom: 10px;">Scan with Lightning Wallet</p>
+            <div class="invoice-text" id="invoice-text" onclick="copyInvoice()">
+                Click to copy invoice
+            </div>
+            <button class="copy-btn" onclick="copyInvoice()">📋 Copy Invoice</button>
+            
+            <div id="status" class="status pending">
+                <span class="spinner"></span> Waiting for payment...
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentPaymentIndex = null;
+        let statusCheckInterval = null;
+        
+        async function createInvoice() {
+            const amount = document.getElementById('amount').value;
+            const button = document.getElementById('createBtn');
+            
+            if (!amount || amount < 1) {
+                alert('Please enter a valid amount');
+                return;
+            }
+            
+            button.disabled = true;
+            button.textContent = 'Creating...';
+            
+            try {
+                // Call your backend API that uses lexe-wrapper
+                // Replace with your actual backend endpoint
+                const response = await fetch('/api/create-invoice', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        amount: amount,
+                        description: `Payment for ${amount} sats`
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to create invoice');
+                }
+                
+                const data = await response.json();
+                
+                // Store payment index for status checking
+                currentPaymentIndex = data.payment_index || data.index;
+                
+                // Generate QR code
+                displayQRCode(data.invoice);
+                
+                // Start monitoring payment status
+                startStatusMonitoring();
+                
+            } catch (error) {
+                console.error('Error creating invoice:', error);
+                
+                // For demo purposes, generate a mock invoice
+                const mockInvoice = `lnbc${amount}n1pn0sjxqpp5qvqz3e5gqg9awd8fqhrkrmnhgfnms24xtw5mac5d2kgw2l8qcndsdqqcqzzsxqyz5vqsp5c0fqtxdx2jmg5akzvpddxah8hlm8r5qjvf8nnhqkqr6za43s0f8q9qyyssqvg7km8lmaj0lvu3xg65wjpy7qhrmgklvqms839jxptfjfm9zpyj0xf7ea83jxd46t4c8c7dl9hs8l5c9r0krk5lmktfq7rp0najehcqw2x8y3`;
+                displayQRCode(mockInvoice);
+                
+                // Mock status updates for demo
+                mockStatusUpdates();
+            }
+            
+            button.disabled = false;
+            button.textContent = 'Create Invoice';
+        }
+        
+        function displayQRCode(invoice) {
+            // Clear any existing QR code
+            document.getElementById('qrcode').innerHTML = '';
+            
+            // Generate new QR code
+            new QRCode(document.getElementById('qrcode'), {
+                text: invoice,
+                width: 256,
+                height: 256,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.M
+            });
+            
+            // Display invoice text
+            document.getElementById('invoice-text').textContent = invoice;
+            
+            // Show QR container
+            document.getElementById('qr-container').classList.add('show');
+            
+            // Reset status
+            updateStatus('pending');
+        }
+        
+        async function checkPaymentStatus() {
+            if (!currentPaymentIndex) return;
+            
+            try {
+                // Call your backend API to check payment status
+                // Replace with your actual backend endpoint
+                const response = await fetch(`/api/payment-status/${currentPaymentIndex}`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to check status');
+                }
+                
+                const data = await response.json();
+                
+                if (data.status === 'completed' || data.paid === true) {
+                    updateStatus('success');
+                    stopStatusMonitoring();
+                } else if (data.status === 'failed' || data.status === 'cancelled') {
+                    updateStatus('failed');
+                    stopStatusMonitoring();
+                }
+            } catch (error) {
+                console.error('Error checking status:', error);
+            }
+        }
+        
+        function startStatusMonitoring() {
+            // Clear any existing interval
+            stopStatusMonitoring();
+            
+            // Check status every 2 seconds
+            statusCheckInterval = setInterval(checkPaymentStatus, 2000);
+            
+            // Also check immediately
+            checkPaymentStatus();
+        }
+        
+        function stopStatusMonitoring() {
+            if (statusCheckInterval) {
+                clearInterval(statusCheckInterval);
+                statusCheckInterval = null;
+            }
+        }
+        
+        function updateStatus(status) {
+            const statusEl = document.getElementById('status');
+            
+            statusEl.className = 'status ' + status;
+            
+            switch(status) {
+                case 'pending':
+                    statusEl.innerHTML = '<span class="spinner"></span> Waiting for payment...';
+                    break;
+                case 'success':
+                    statusEl.innerHTML = '✅ Payment received successfully!';
+                    break;
+                case 'failed':
+                    statusEl.innerHTML = '❌ Payment failed or cancelled';
+                    break;
+            }
+        }
+        
+        function copyInvoice() {
+            const invoiceText = document.getElementById('invoice-text').textContent;
+            
+            if (invoiceText && invoiceText !== 'Click to copy invoice') {
+                navigator.clipboard.writeText(invoiceText).then(() => {
+                    const btn = document.querySelector('.copy-btn');
+                    const originalText = btn.textContent;
+                    btn.textContent = '✅ Copied!';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy:', err);
+                });
+            }
+        }
+        
+        // Mock status updates for demo purposes
+        function mockStatusUpdates() {
+            setTimeout(() => {
+                updateStatus('success');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
