@@ -1,0 +1,29 @@
+[CDF-25251] Search configuration resource loader (#1864)
+
+# Description
+
+Stacked on #1907 
+This PR introduces the SearchConfigLoader, a new resource loader that
+enables the toolkit to read and handle SearchConfig resource
+configurations. This loader addresses a current limitation in the search
+config API where configurations are not properly handled on a per-view
+basis. To resolve this, the toolkit now merges all configurations for a
+single view into a unified object. This object is then updated whenever
+a new configuration view property is modified, ensuring that changes are
+correctly applied and that a new configuration is not created
+unnecessarily during a POST request without an id field.
+## Changelog
+
+- [x] Patch
+- [ ] Skip
+
+## cdf
+
+### Added
+
+- [alpha] Added a search configuration resource loader
+SearchConfigLoader.
+
+## templates
+
+No changes.
