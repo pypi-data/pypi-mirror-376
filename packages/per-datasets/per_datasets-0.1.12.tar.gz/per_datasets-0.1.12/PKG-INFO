@@ -1,0 +1,153 @@
+Metadata-Version: 2.4
+Name: per-datasets
+Version: 0.1.12
+Summary: A Python package for loading reservoir datasets
+Author-email: PERD Team <support@perd.example.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/P-E-R-D/library-py
+Project-URL: Bug Tracker, https://github.com/P-E-R-D/library-py/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.1
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: typing-extensions>=3.10.0.2; python_version < "3.10"
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0; extra == "dev"
+
+# per-datasets
+
+A Python package for loading reservoir datasets from API endpoints.
+
+## Installation
+
+```bash
+pip install per-datasets
+```
+
+## Usage
+
+```python
+import per_datasets as pds
+
+# Initialize with your API key
+pds.initialize('your_api_key_here')
+
+# Load a random reservoir dataset
+df_random = pds.load_random()
+print(f"Loaded dataset with shape: {df_random.shape}")
+
+# Load all available datasets
+df_all = pds.load_all()
+
+# Load a specific dataset by ID
+df_specific = pds.load_dataset_by_id('your_dataset_id')
+
+# Get information about available datasets
+info = pds.get_dataset_info()
+
+# Load a random reservoir object (legacy function)
+reservoir = pds.load_random_reservoir()
+```
+
+## API Reference
+
+### `initialize(api_key, base_url=None)`
+Initialize the per_datasets module with API credentials.
+
+**Parameters:**
+- `api_key` (str): The API key for authentication
+- `base_url` (str, optional): Base URL for the API (defaults to localhost:5000)
+
+### `load_random()`
+Loads a random reservoir model from the API endpoint and returns as pandas DataFrame.
+
+**Returns:**
+- `pandas.DataFrame`: A DataFrame containing the dataset
+
+### `load_all()`
+Loads all reservoir datasets from the API endpoint and returns as pandas DataFrame.
+
+**Returns:**
+- `pandas.DataFrame`: A DataFrame containing all reservoir datasets combined
+
+### `load_dataset_by_id(dataset_id)`
+Loads a specific dataset by its ID and returns as pandas DataFrame.
+
+**Parameters:**
+- `dataset_id` (str): The ID of the dataset to load
+
+**Returns:**
+- `pandas.DataFrame`: A DataFrame containing the specified dataset
+
+### `get_dataset_info()`
+Gets information about all available datasets.
+
+**Returns:**
+- `dict`: Dictionary containing dataset information
+
+### `load_random_reservoir()`
+Loads a random reservoir model from the API endpoint (legacy function).
+
+**Returns:**
+- `per_datasets.talkaholic.Reservoir`: A random reservoir dataset
+
+## Dependencies
+
+- requests>=2.25.1
+- pandas>=1.3.0
+
+## License
+
+MIT
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## Development
+
+To set up the development environment:
+
+```bash
+git clone https://github.com/your-username/per-datasets.git
+cd per-datasets
+pip install -e .
+```
+
+## Building and Publishing
+
+### Automatic Deployment (Recommended)
+This package uses GitHub Actions for automatic deployment to PyPI:
+
+1. **Make your changes** to the code
+2. **Update version numbers** in `per_datasets/__init__.py` and `pyproject.toml`
+3. **Create a git tag** with the new version:
+   ```bash
+   git tag v0.2.0
+   git push origin v0.2.0
+   ```
+4. **GitHub Actions automatically** builds and uploads to PyPI!
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed setup instructions.
+
+### Manual Publishing
+```bash
+python -m build
+twine upload dist/*
+```
