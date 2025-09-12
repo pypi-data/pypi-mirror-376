@@ -1,0 +1,2 @@
+[console_scripts]
+lazyslurm = lazyslurm.main:main
