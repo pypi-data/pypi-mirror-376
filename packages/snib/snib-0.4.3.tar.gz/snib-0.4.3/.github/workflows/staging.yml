@@ -1,0 +1,43 @@
+name: Sync Staging
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  sync-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Checkout or create staging branch
+        run: |
+          if git rev-parse --verify staging; then
+            git checkout staging
+          else
+            git checkout -b staging
+          fi
+
+      - name: Merge main into staging
+        run: |
+          git merge origin/main --allow-unrelated-histories --no-ff --commit -m "ci: sync staging with main" || echo "Merge conflict resolved manually"
+
+      - name: Push staging branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git push origin staging --force
