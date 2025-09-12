@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: icao
+Version: 0.0.0rc1
+Author-email: jqssun <jqssun+git@googlemail.com>
+Project-URL: Homepage, https://github.com/jqssun/icao
+Project-URL: Repository, https://github.com/jqssun/icao.git
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# ICAO
+
+```shell
+pip install icao
+```
