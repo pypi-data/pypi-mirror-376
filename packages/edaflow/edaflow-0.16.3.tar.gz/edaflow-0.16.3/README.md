@@ -1,0 +1,1133 @@
+# 🚀 What's New in v0.16.0
+
+**Major Documentation Overhaul for Education:**
+- Added a dedicated Learning Path for new and aspiring data scientists
+- Consolidated ML workflow steps into a single, copy-paste-safe guide
+- Expanded examples: classification, regression, and computer vision
+- Improved navigation: clear table of contents, user guide, API reference, and best practices
+- Advanced features and troubleshooting tips for power users
+
+**Why Upgrade?**
+This release makes edaflow best-in-class for educational value, with a structured progression for learners and educators. All documentation is now easier to follow, with practical code and hands-on exercises.
+
+See the full documentation at [edaflow.readthedocs.io](https://edaflow.readthedocs.io)
+# edaflow
+
+[![Documentation Status](https://readthedocs.org/projects/edaflow/badge/?version=latest)](https://edaflow.readthedocs.io/en/latest/?badge=latest)
+[![PyPI version](https://badge.fury.io/py/edaflow.svg)](https://badge.fury.io/py/edaflow)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://pepy.tech/badge/edaflow)](https://pepy.tech/project/edaflow)
+
+**Quick Navigation**: 
+📚 [Documentation](https://edaflow.readthedocs.io) | 
+📦 [PyPI Package](https://pypi.org/project/edaflow/) | 
+🚀 [Quick Start](https://edaflow.readthedocs.io/en/latest/quickstart.html) | 
+📋 [Changelog](#-changelog) | 
+🐛 [Issues](https://github.com/evanlow/edaflow/issues)
+
+A Python package for streamlined exploratory data analysis workflows.
+
+ > **📦 Current Version: v0.15.1** - [Latest Release](https://pypi.org/project/edaflow/0.15.1/) adds **robust primary_metric support** in ML experiment setup, ensuring error-free metric handling in all workflows. *Updated: August 15, 2025*
+
+## 📖 Table of Contents
+
+- [Description](#description)
+- [🚨 Critical Fixes in v0.15.0](#-critical-fixes-in-v0150)
+- [✨ What's New](#-whats-new)
+- [Features](#features)
+- [🆕 Recent Updates](#-recent-updates)
+- [📚 Documentation](#-documentation)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [📋 Changelog](#-changelog)
+- [Support](#support)
+- [Roadmap](#roadmap)
+
+## Description
+
+`edaflow` is designed to simplify and accelerate the exploratory data analysis (EDA) process by providing a collection of tools and utilities for data scientists and analysts. The package integrates popular data science libraries to create a cohesive workflow for data exploration, visualization, and preprocessing.
+
+## 🚨 What's New in v0.15.1
+
+**NEW:** `setup_ml_experiment` now supports a `primary_metric` argument, making metric selection robust and error-free for all ML workflows. All documentation, tests, and downstream code are updated for consistency. A new test ensures the metric is set and accessible throughout the workflow.
+
+**Upgrade recommended for all users who want reliable, copy-paste-safe ML workflows with dynamic metric selection.**
+
+---
+
+## 🚨 Critical Fixes in v0.15.0
+**(Previous release)**
+
+### 🎯 **Issues Resolved**:
+- ❌ **FIXED**: `RandomForestClassifier instance is not fitted yet` errors
+- ❌ **FIXED**: `TypeError: unexpected keyword argument` errors  
+- ❌ **FIXED**: Missing imports and undefined variables in examples
+- ❌ **FIXED**: Duplicate step numbering in documentation
+- ✅ **RESULT**: All ML workflow examples now work perfectly!
+
+### 📋 **What This Means For You**:
+- 🎉 **Copy-paste examples that work immediately**
+- 🎯 **No more confusing error messages**
+- 📚 **Complete, beginner-friendly documentation**
+- 🚀 **Smooth learning experience for new users**
+
+**Upgrade recommended for all users following ML workflow documentation.**
+
+## ✨ What's New
+
+### 🚨 Critical ML Documentation Fixes (v0.15.0)
+**MAJOR DOCUMENTATION UPDATE**: Fixed critical issues that were causing user errors when following ML workflow examples.
+
+**Problems Resolved**:
+- ✅ **Model Fitting**: Added missing `model.fit()` steps that were causing "not fitted" errors
+- ✅ **Function Parameters**: Fixed incorrect parameter names in all examples
+- ✅ **Missing Context**: Added imports and data preparation context  
+- ✅ **Step Numbering**: Corrected duplicate step numbers in documentation
+- ✅ **Enhanced Warnings**: Added prominent warnings about critical requirements
+
+**Result**: All ML workflow documentation now works perfectly out-of-the-box!
+
+### 🎯 Enhanced rank_models Function (v0.14.x)
+**DUAL RETURN FORMAT SUPPORT**: Major enhancement based on user requests.
+
+```python
+# Both formats now supported:
+df_results = ml.rank_models(results, 'accuracy')  # DataFrame (default)
+list_results = ml.rank_models(results, 'accuracy', return_format='list')  # List of dicts
+
+# User-requested pattern now works:
+best_model = ml.rank_models(results, 'accuracy', return_format='list')[0]["model_name"]
+```
+
+### 🚀 ML Expansion (v0.13.0+)
+**COMPLETE MACHINE LEARNING SUBPACKAGE**: Extended edaflow into full ML workflows.
+
+**New ML Modules Added**:
+- **`ml.config`**: ML experiment setup and data validation
+- **`ml.leaderboard`**: Multi-model comparison and ranking
+- **`ml.tuning`**: Advanced hyperparameter optimization
+- **`ml.curves`**: Learning curves and performance visualization
+- **`ml.artifacts`**: Model persistence and experiment tracking
+
+**Key ML Features**:
+```python
+# Complete ML workflow in one package
+import edaflow.ml as ml
+
+# Setup experiment with flexible parameter support
+# Both calling patterns work:
+experiment = ml.setup_ml_experiment(df, 'target')  # DataFrame style
+# OR
+experiment = ml.setup_ml_experiment(X=X, y=y, val_size=0.15)  # sklearn style
+
+# Compare multiple models
+results = ml.compare_models(models, **experiment)
+
+# Optimize hyperparameters with multiple strategies
+best_model = ml.optimize_hyperparameters(model, params, **experiment)
+
+# Generate comprehensive visualizations
+ml.plot_learning_curves(model, **experiment)
+```
+
+### Previous: API Improvement (v0.12.33)
+**NEW CLEAN APIs**: Introduced consistent, user-friendly encoding functions that eliminate confusion and crashes.
+
+**Root Cause Solved**: The inconsistent return type of `apply_smart_encoding()` (sometimes DataFrame, sometimes tuple) was causing AttributeError crashes and user confusion.
+
+**New Functions Added**:
+```python
+# ✅ NEW: Clean, consistent DataFrame return (RECOMMENDED)
+df_encoded = edaflow.apply_encoding(df)  # Always returns DataFrame
+
+# ✅ NEW: Explicit tuple return when encoders needed
+df_encoded, encoders = edaflow.apply_encoding_with_encoders(df)  # Always returns tuple
+
+# ⚠️ DEPRECATED: Inconsistent behavior (still works with warnings)
+df_encoded = edaflow.apply_smart_encoding(df, return_encoders=True)  # Sometimes tuple!
+```
+
+**Benefits**:
+- 🎯 **Zero Breaking Changes**: All existing workflows continue working exactly the same
+- 🛡️ **Better Error Messages**: Helpful guidance when mistakes are made  
+- 🔄 **Migration Path**: Multiple options for users who want cleaner APIs
+- 📚 **Clear Documentation**: Explicit examples showing best practices
+
+### 🐛 Critical Input Validation Fix (v0.12.32)
+**RESOLVED**: Fixed AttributeError: 'tuple' object has no attribute 'empty' in visualization functions when `apply_smart_encoding(..., return_encoders=True)` result is used incorrectly.
+
+**Problem Solved**: Users who passed the tuple result from `apply_smart_encoding` directly to visualization functions without unpacking were experiencing crashes in step 14 of EDA workflows.
+
+**Enhanced Error Messages**: Added intelligent input validation with helpful error messages guiding users to the correct usage pattern:
+```python
+# ❌ WRONG - This causes the AttributeError:
+df_encoded = edaflow.apply_smart_encoding(df, return_encoders=True)  # Returns (df, encoders) tuple!
+edaflow.visualize_scatter_matrix(df_encoded)  # Crashes with AttributeError
+
+# ✅ CORRECT - Unpack the tuple:  
+df_encoded, encoders = edaflow.apply_smart_encoding(df, return_encoders=True)
+edaflow.visualize_scatter_matrix(df_encoded)  # Should work well!
+```
+
+### 🎨 BREAKTHROUGH: Universal Dark Mode Compatibility (v0.12.30)
+- **NEW FUNCTION**: `optimize_display()` - The **FIRST** EDA library with universal notebook compatibility!
+- **Universal Platform Support**: Improved visibility across Google Colab, JupyterLab, VS Code, and Classic Jupyter
+- **Automatic Detection**: Zero configuration needed - automatically detects your environment
+- **Accessibility Support**: Built-in high contrast mode for improved accessibility
+- **One-Line Solution**: `edaflow.optimize_display()` fixes all visibility issues instantly
+
+### 🐛 Critical KeyError Hotfix (v0.12.31)
+- **Fixed KeyError**: Resolved "KeyError: 'type'" in `summarize_eda_insights()` function
+- **Enhanced Error Handling**: Added robust exception handling for target analysis edge cases
+- **Improved Stability**: Function now handles missing or invalid target columns gracefully
+
+### 🌟 Platform Benefits:
+- ✅ **Google Colab**: Auto light/dark mode detection with improved text visibility
+- ✅ **JupyterLab**: Dark theme compatibility with custom theme support
+- ✅ **VS Code**: Native theme integration with seamless notebook experience  
+- ✅ **Classic Jupyter**: Full compatibility with enhanced readability options
+
+```python
+import edaflow
+# ⭐ NEW: Improved visibility everywhere!
+edaflow.optimize_display()  # Universal dark mode fix!
+
+# All functions now display beautifully
+edaflow.check_null_columns(df)
+edaflow.visualize_histograms(df)
+```
+
+### ✨ NEW FUNCTION: `summarize_eda_insights()` (Added in v0.12.28)
+- **Comprehensive Analysis**: Generate complete EDA insights and actionable recommendations after completing your analysis workflow
+- **Smart Recommendations**: Provides intelligent next steps for modeling, preprocessing, and data quality improvements
+- **Target-Aware Analysis**: Supports both classification and regression scenarios with specific insights
+- **Function Tracking**: Knows which edaflow functions you've already used in your workflow
+- **Structured Output**: Returns organized dictionary with dataset overview, data quality assessment, and recommendations
+
+### 🎨 Display Formatting Excellence
+- **Enhanced Visual Experience**: Refined Rich console styling with optimized panel borders and alignment
+- **Google Colab Optimized**: Improved display formatting specifically tailored for notebook environments
+- **Consistent Design**: Professional rounded borders, proper width constraints, and refined color schemes
+- **Universal Compatibility**: Beautiful output rendering across all major Python environments and notebooks
+
+### � Recent Fixes (v0.12.24-0.12.26)
+- **LBP Warning Resolution**: Fixed scikit-image UserWarning in texture analysis functions
+- **Parameter Documentation**: Corrected `analyze_image_features` documentation mismatches
+- **RTD Synchronization**: Updated Read the Docs changelog with all recent improvements
+
+### 🌈 Rich Styling (v0.12.20-0.12.21)
+- **Vibrant Output**: ALL major EDA functions now feature professional, color-coded styling
+- **Smart Indicators**: Color-coded severity levels (✅ CLEAN, ⚠️ WARNING, 🚨 CRITICAL)
+- **Professional Tables**: Beautiful formatted output with rich library integration
+- **Actionable Insights**: Context-aware recommendations and visual status indicators
+
+## Features
+
+### 🔍 **Exploratory Data Analysis**
+- **Missing Data Analysis**: Color-coded analysis of null values with customizable thresholds
+- **Categorical Data Insights**: 🐛 *FIXED in v0.12.29* Identify object columns that might be numeric, detect data type issues (now handles unhashable types)
+- **Automatic Data Type Conversion**: Smart conversion of object columns to numeric when appropriate
+- **Categorical Values Visualization**: Detailed exploration of categorical column values with insights
+- **Column Type Classification**: Simple categorization of DataFrame columns into categorical and numerical types
+- **Data Type Detection**: Smart analysis to flag potential data conversion needs
+- **EDA Insights Summary**: ⭐ *NEW in v0.12.28* Comprehensive EDA insights and actionable recommendations after completing analysis workflow
+
+### 📊 **Advanced Visualizations**
+- **Numerical Distribution Visualization**: Advanced boxplot analysis with outlier detection and statistical summaries
+- **Interactive Boxplot Visualization**: Interactive Plotly Express boxplots with zoom, hover, and statistical tooltips
+- **Comprehensive Heatmap Visualizations**: Correlation matrices, missing data patterns, values heatmaps, and cross-tabulations
+- **Statistical Histogram Analysis**: Advanced histogram visualization with skewness detection, normality testing, and distribution analysis
+- **Scatter Matrix Analysis**: Advanced pairwise relationship visualization with customizable matrix layouts, regression lines, and statistical insights
+
+### 🤖 **Machine Learning Preprocessing** ⭐ *Introduced in v0.12.0*
+- **Intelligent Encoding Analysis**: Automatic detection of optimal encoding strategies for categorical variables
+- **Smart Encoding Application**: Automated categorical encoding with support for:
+  - One-Hot Encoding for low cardinality categories
+  - Target Encoding for high cardinality with target correlation
+  - Ordinal Encoding for ordinal relationships
+  - Binary Encoding for medium cardinality
+  - Text Vectorization (TF-IDF) for text features
+  - Leave Unchanged for numeric columns
+- **Memory-Efficient Processing**: Intelligent handling of high-cardinality features to prevent memory issues
+- **Comprehensive Encoding Pipeline**: End-to-end preprocessing solution for ML model preparation
+
+### 🤖 **Machine Learning Workflows** ⭐ *NEW in v0.13.0*
+The powerful `edaflow.ml` subpackage provides comprehensive machine learning workflow capabilities:
+
+#### **ML Experiment Setup (`ml.config`)**
+- **Smart Data Validation**: Automatic data quality assessment and problem type detection
+- **Intelligent Data Splitting**: Train/validation/test splits with stratification support
+- **ML Pipeline Configuration**: Automated preprocessing pipeline setup for ML workflows
+
+#### **Model Comparison & Ranking (`ml.leaderboard`)**
+- **Multi-Model Evaluation**: Compare multiple models with comprehensive metrics
+- **Smart Leaderboards**: Automatically rank models by performance with visual displays
+- **Export Capabilities**: Save comparison results for reporting and analysis
+
+#### **Hyperparameter Optimization (`ml.tuning`)**
+- **Multiple Search Strategies**: Grid search, random search, and Bayesian optimization
+- **Cross-Validation Integration**: Built-in CV with customizable scoring metrics
+- **Parallel Processing**: Multi-core hyperparameter optimization for faster results
+
+#### **Learning & Performance Curves (`ml.curves`)**
+- **Learning Curves**: Visualize model performance vs training size
+- **Validation Curves**: Analyze hyperparameter impact on model performance
+- **ROC & Precision-Recall Curves**: Comprehensive classification performance analysis
+- **Feature Importance**: Visual analysis of model feature contributions
+
+#### **Model Persistence & Tracking (`ml.artifacts`)**
+- **Complete Model Artifacts**: Save models, configs, and metadata
+- **Experiment Tracking**: Track multiple experiments with organized storage
+- **Model Reports**: Generate comprehensive model performance reports
+- **Version Management**: Organized model versioning and retrieval
+
+**Quick ML Example:**
+```python
+import edaflow.ml as ml
+from sklearn.ensemble import RandomForestClassifier
+
+# Setup ML experiment - Multiple parameter patterns supported
+# Method 1: DataFrame + target column (recommended)
+experiment = ml.setup_ml_experiment(df, target_column='target')
+
+# Method 2: sklearn-style (also supported)
+X = df.drop('target', axis=1)
+y = df['target']
+experiment = ml.setup_ml_experiment(
+    X=X, y=y,
+    test_size=0.2,
+    val_size=0.15,  # Alternative to validation_size
+    experiment_name="my_ml_project",
+    stratify=True,
+    random_state=42
+)
+
+# Compare multiple models
+models = {
+    'RandomForest': RandomForestClassifier(),
+    'LogisticRegression': LogisticRegression()
+}
+comparison = ml.compare_models(models, **experiment)
+
+# Rank models with flexible access patterns
+# Method 1: Easy dictionary access (recommended for getting best model)
+best_model_name = ml.rank_models(comparison, 'accuracy', return_format='list')[0]['model_name']
+
+# Method 2: Traditional DataFrame format
+ranked_df = ml.rank_models(comparison, 'accuracy')
+best_model_traditional = ranked_df.iloc[0]['model']
+
+# Both methods give the same result
+print(f"Best model: {best_model_name}")  # Easy access
+print(f"Best model: {best_model_traditional}")  # Traditional access
+
+# Optimize hyperparameters
+
+# --- Copy-paste-safe hyperparameter optimization example ---
+model_name = 'LogisticRegression'  # or 'RandomForest' or 'GradientBoosting'
+
+if model_name == 'RandomForest':
+    param_distributions = {
+        'n_estimators': [100, 200, 300],
+        'max_depth': [5, 10, 15, None],
+        'min_samples_split': [2, 5, 10]
+    }
+    model = RandomForestClassifier()
+    method = 'grid'
+elif model_name == 'GradientBoosting':
+    param_distributions = {
+        'n_estimators': (50, 200),
+        'learning_rate': (0.01, 0.3),
+        'max_depth': (3, 8)
+    }
+    from sklearn.ensemble import GradientBoostingClassifier
+    model = GradientBoostingClassifier()
+    method = 'bayesian'
+elif model_name == 'LogisticRegression':
+    param_distributions = {
+        'C': [0.01, 0.1, 1, 10, 100],
+        'penalty': ['l1', 'l2', 'elasticnet', 'none'],
+        'solver': ['lbfgs', 'liblinear', 'saga']
+    }
+    model = LogisticRegression(max_iter=1000)
+    method = 'grid'
+else:
+    raise ValueError(f"Unknown model_name: {model_name}")
+
+results = ml.optimize_hyperparameters(
+    model,
+    param_distributions=param_distributions,
+    **experiment
+)
+
+# Generate learning curves
+ml.plot_learning_curves(results['best_model'], **experiment)
+
+# Save complete artifacts
+ml.save_model_artifacts(
+    model=results['best_model'],
+    model_name='optimized_rf',
+    experiment_config=experiment,
+    performance_metrics=results['cv_results']
+)
+```
+
+### 🖼️ **Computer Vision Support**
+- **Computer Vision EDA**: Class-wise image sample visualization and comprehensive quality assessment for image classification datasets
+- **Image Quality Assessment**: Automated detection of corrupted images, quality issues, blur, artifacts, and dataset health metrics
+
+### Usage Examples
+
+### Basic Usage
+```python
+import edaflow
+
+# Verify installation
+message = edaflow.hello()
+print(message)  # Output: "Hello from edaflow! Ready for exploratory data analysis."
+```
+
+### Missing Data Analysis with `check_null_columns`
+
+The `check_null_columns` function provides a color-coded analysis of missing data in your DataFrame:
+
+```python
+import pandas as pd
+import edaflow
+
+# Create sample data with missing values
+df = pd.DataFrame({
+    'customer_id': [1, 2, 3, 4, 5],
+    'name': ['Alice', 'Bob', None, 'Diana', 'Eve'],
+    'age': [25, None, 35, None, 45],
+    'email': [None, None, None, None, None],  # All missing
+    'purchase_amount': [100.5, 250.0, 75.25, None, 320.0]
+})
+
+# Analyze missing data with default threshold (10%)
+styled_result = edaflow.check_null_columns(df)
+styled_result  # Display in Jupyter notebook for color-coded styling
+
+# Use custom threshold (20%) to change color coding sensitivity
+styled_result = edaflow.check_null_columns(df, threshold=20)
+styled_result
+
+# Access underlying data if needed
+data = styled_result.data
+print(data)
+```
+
+**Color Coding:**
+- 🔴 **Red**: > 20% missing (high concern)
+- 🟡 **Yellow**: 10-20% missing (medium concern)  
+- 🟨 **Light Yellow**: 1-10% missing (low concern)
+- ⬜ **Gray**: 0% missing (no issues)
+
+### Categorical Data Analysis with `analyze_categorical_columns`
+
+The `analyze_categorical_columns` function helps identify data type issues and provides insights into object-type columns:
+
+```python
+import pandas as pd
+import edaflow
+
+# Create sample data with mixed categorical types
+df = pd.DataFrame({
+    'product_name': ['Laptop', 'Mouse', 'Keyboard', 'Monitor'],
+    'price_str': ['999', '25', '75', '450'],  # Numbers stored as strings
+    'category': ['Electronics', 'Accessories', 'Accessories', 'Electronics'],
+    'rating': [4.5, 3.8, 4.2, 4.7],  # Already numeric
+    'mixed_ids': ['001', '002', 'ABC', '004'],  # Mixed format
+    'status': ['active', 'inactive', 'active', 'pending']
+})
+
+# Analyze categorical columns with default threshold (35%)
+edaflow.analyze_categorical_columns(df)
+
+# Use custom threshold (50%) to be more lenient about mixed data
+edaflow.analyze_categorical_columns(df, threshold=50)
+```
+
+**Output Interpretation:**
+- 🔴🔵 **Highlighted in Red/Blue**: Potentially numeric columns that might need conversion
+- 🟡⚫ **Highlighted in Yellow/Black**: Shows unique values for potential numeric columns
+- **Regular text**: Truly categorical columns with statistics
+- **"not an object column"**: Already properly typed numeric columns
+
+### Data Type Conversion with `convert_to_numeric`
+
+After analyzing your categorical columns, you can automatically convert appropriate columns to numeric:
+
+```python
+import pandas as pd
+import edaflow
+
+# Create sample data with string numbers
+df = pd.DataFrame({
+    'product_name': ['Laptop', 'Mouse', 'Keyboard', 'Monitor'],
+    'price_str': ['999', '25', '75', '450'],      # Should convert
+    'mixed_ids': ['001', '002', 'ABC', '004'],    # Mixed data
+    'category': ['Electronics', 'Accessories', 'Electronics', 'Electronics']
+})
+
+# Convert appropriate columns to numeric (threshold=35% by default)
+df_converted = edaflow.convert_to_numeric(df, threshold=35)
+
+# Or modify the original DataFrame in place
+edaflow.convert_to_numeric(df, threshold=35, inplace=True)
+
+# Use a stricter threshold (only convert if <20% non-numeric values)
+df_strict = edaflow.convert_to_numeric(df, threshold=20)
+```
+
+**Function Features:**
+- ✅ **Smart Detection**: Only converts columns with few non-numeric values
+- ✅ **Customizable Threshold**: Control conversion sensitivity 
+- ✅ **Safe Conversion**: Non-numeric values become NaN (not errors)
+- ✅ **Inplace Option**: Modify original DataFrame or create new one
+- ✅ **Detailed Output**: Shows exactly what was converted and why
+
+### Categorical Data Visualization with `visualize_categorical_values`
+
+After cleaning your data, explore categorical columns in detail to understand value distributions:
+
+```python
+import pandas as pd
+import edaflow
+
+# Example DataFrame with categorical data
+df = pd.DataFrame({
+    'department': ['Sales', 'Marketing', 'Sales', 'HR', 'Marketing', 'Sales', 'IT'],
+    'status': ['Active', 'Inactive', 'Active', 'Pending', 'Active', 'Active', 'Inactive'],
+    'priority': ['High', 'Medium', 'High', 'Low', 'Medium', 'High', 'Low'],
+    'employee_id': [1001, 1002, 1003, 1004, 1005, 1006, 1007],  # Numeric (ignored)
+    'salary': [50000, 60000, 70000, 45000, 58000, 62000, 70000]  # Numeric (ignored)
+})
+
+# Visualize all categorical columns
+edaflow.visualize_categorical_values(df)
+```
+
+**Advanced Usage Examples:**
+
+```python
+# Handle high-cardinality data (many unique values)
+large_df = pd.DataFrame({
+    'product_id': [f'PROD_{i:04d}' for i in range(100)],  # 100 unique values
+    'category': ['Electronics'] * 40 + ['Clothing'] * 35 + ['Books'] * 25,
+    'status': ['Available'] * 80 + ['Out of Stock'] * 15 + ['Discontinued'] * 5
+})
+
+# Limit display for high-cardinality columns
+edaflow.visualize_categorical_values(large_df, max_unique_values=5)
+```
+
+```python
+# DataFrame with missing values for comprehensive analysis
+df_with_nulls = pd.DataFrame({
+    'region': ['North', 'South', None, 'East', 'West', 'North', None],
+    'customer_type': ['Premium', 'Standard', 'Premium', None, 'Standard', 'Premium', 'Standard'],
+    'transaction_id': [f'TXN_{i}' for i in range(7)],  # Mostly unique (ID-like)
+})
+
+# Get detailed insights including missing value analysis
+edaflow.visualize_categorical_values(df_with_nulls)
+```
+
+**Function Features:**
+- 🎯 **Zero Breaking Changes**: All existing workflows continue working exactly the same
+- 🛡️ **Better Error Messages**: Helpful guidance when mistakes are made  
+- 🔄 **Migration Path**: Multiple options for users who want cleaner APIs
+- 📚 **Clear Documentation**: Explicit examples showing best practices
+
+### Column Type Classification with `display_column_types`
+
+The `display_column_types` function provides a simple way to categorize DataFrame columns into categorical and numerical types:
+
+```python
+import pandas as pd
+import edaflow
+
+# Create sample data with mixed types
+data = {
+    'name': ['Alice', 'Bob', 'Charlie'],
+    'age': [25, 30, 35],
+    'city': ['NYC', 'LA', 'Chicago'],
+    'salary': [50000, 60000, 70000],
+    'is_active': [True, False, True]
+}
+df = pd.DataFrame(data)
+
+# Display column type classification
+result = edaflow.display_column_types(df)
+
+# Access the categorized column lists
+categorical_cols = result['categorical']  # ['name', 'city']
+numerical_cols = result['numerical']      # ['age', 'salary', 'is_active']
+```
+
+**Example Output:**
+```
+📊 Column Type Analysis
+==================================================
+
+📝 Categorical Columns (2 total):
+    1. name                 (unique values: 3)
+    2. city                 (unique values: 3)
+
+🔢 Numerical Columns (3 total):
+    1. age                  (dtype: int64)
+    2. salary               (dtype: int64)
+    3. is_active            (dtype: bool)
+
+📈 Summary:
+   Total columns: 5
+   Categorical: 2 (40.0%)
+   Numerical: 3 (60.0%)
+```
+
+**Function Features:**
+- 🔍 **Simple Classification**: Separates columns into categorical (object dtype) and numerical (all other dtypes)
+- 📊 **Detailed Information**: Shows unique value counts for categorical columns and data types for numerical columns
+- 📈 **Summary Statistics**: Provides percentage breakdown of column types
+- 🎯 **Return Values**: Returns dictionary with categorized column lists for programmatic use
+- ⚡ **Fast Processing**: Efficient classification based on pandas data types
+- 🛡️ **Error Handling**: Validates input and handles edge cases like empty DataFrames
+
+### Data Imputation with `impute_numerical_median` and `impute_categorical_mode`
+
+After analyzing your data, you often need to handle missing values. The edaflow package provides two specialized imputation functions for this purpose:
+
+#### Numerical Imputation with `impute_numerical_median`
+
+The `impute_numerical_median` function fills missing values in numerical columns using the median value:
+
+```python
+import pandas as pd
+import edaflow
+
+# Create sample data with missing numerical values
+df = pd.DataFrame({
+    'age': [25, None, 35, None, 45],
+    'salary': [50000, 60000, None, 70000, None],
+    'score': [85.5, None, 92.0, 88.5, None],
+    'name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve']
+})
+
+# Impute all numerical columns with median values
+df_imputed = edaflow.impute_numerical_median(df)
+
+# Impute specific columns only
+df_imputed = edaflow.impute_numerical_median(df, columns=['age', 'salary'])
+
+# Impute in place (modifies original DataFrame)
+edaflow.impute_numerical_median(df, inplace=True)
+```
+
+**Function Features:**
+- 🔢 **Smart Detection**: Automatically identifies numerical columns (int, float, etc.)
+- 📊 **Median Imputation**: Uses median values which are robust to outliers
+- 🎯 **Selective Imputation**: Option to specify which columns to impute
+- 🔄 **Inplace Option**: Modify original DataFrame or create new one
+- 🛡️ **Safe Handling**: Gracefully handles edge cases like all-missing columns
+- 📋 **Detailed Reporting**: Shows exactly what was imputed and summary statistics
+
+#### Categorical Imputation with `impute_categorical_mode`
+
+The `impute_categorical_mode` function fills missing values in categorical columns using the mode (most frequent value):
+
+```python
+import pandas as pd
+import edaflow
+
+# Create sample data with missing categorical values
+df = pd.DataFrame({
+    'category': ['A', 'B', 'A', None, 'A'],
+    'status': ['Active', None, 'Active', 'Inactive', None],
+    'priority': ['High', 'Medium', None, 'Low', 'High'],
+    'age': [25, 30, 35, 40, 45]
+})
+
+# Impute all categorical columns with mode values
+df_imputed = edaflow.impute_categorical_mode(df)
+
+# Impute specific columns only
+df_imputed = edaflow.impute_categorical_mode(df, columns=['category', 'status'])
+
+# Impute in place (modifies original DataFrame)
+edaflow.impute_categorical_mode(df, inplace=True)
+```
+
+**Function Features:**
+- 📝 **Smart Detection**: Automatically identifies categorical (object) columns
+- 🎯 **Mode Imputation**: Uses most frequent value for each column
+- ⚖️ **Tie Handling**: Gracefully handles mode ties (multiple values with same frequency)
+- 🔄 **Inplace Option**: Modify original DataFrame or create new one
+- 🛡️ **Safe Handling**: Gracefully handles edge cases like all-missing columns
+- 📋 **Detailed Reporting**: Shows exactly what was imputed and mode tie warnings
+
+#### Complete Imputation Workflow Example
+
+```python
+import pandas as pd
+import edaflow
+
+# Sample data with both numerical and categorical missing values
+df = pd.DataFrame({
+    'age': [25, None, 35, None, 45],
+    'salary': [50000, None, 70000, 80000, None],
+    'category': ['A', 'B', None, 'A', None],
+    'status': ['Active', None, 'Active', 'Inactive', None],
+    'score': [85.5, 92.0, None, 88.5, None]
+})
+
+print("Original DataFrame:")
+print(df)
+print("\n" + "="*50)
+
+# Step 1: Impute numerical columns
+print("STEP 1: Numerical Imputation")
+df_step1 = edaflow.impute_numerical_median(df)
+
+# Step 2: Impute categorical columns
+print("\nSTEP 2: Categorical Imputation")
+df_final = edaflow.impute_categorical_mode(df_step1)
+
+print("\nFinal DataFrame (all missing values imputed):")
+print(df_final)
+
+# Verify no missing values remain
+print(f"\nMissing values remaining: {df_final.isnull().sum().sum()}")
+```
+
+**Expected Output:**
+```
+🔢 Numerical Missing Value Imputation (Median)
+=======================================================
+🔄 age                  - Imputed 2 values with median: 35.0
+🔄 salary               - Imputed 2 values with median: 70000.0
+🔄 score                - Imputed 1 values with median: 88.75
+
+📊 Imputation Summary:
+   Columns processed: 3
+   Columns imputed: 3
+   Total values imputed: 5
+
+📝 Categorical Missing Value Imputation (Mode)
+=======================================================
+🔄 category             - Imputed 2 values with mode: 'A'
+🔄 status               - Imputed 1 values with mode: 'Active'
+
+📊 Imputation Summary:
+   Columns processed: 2
+   Columns imputed: 2
+   Total values imputed: 3
+```
+
+### Numerical Distribution Analysis with `visualize_numerical_boxplots`
+
+Analyze numerical columns to detect outliers, understand distributions, and assess skewness:
+
+```python
+import pandas as pd
+import edaflow
+
+# Create sample dataset with outliers
+df = pd.DataFrame({
+    'age': [25, 30, 35, 40, 45, 28, 32, 38, 42, 100],  # 100 is an outlier
+    'salary': [50000, 60000, 75000, 80000, 90000, 55000, 65000, 70000, 85000, 250000],  # 250000 is outlier
+    'experience': [2, 5, 8, 12, 15, 3, 6, 9, 13, 30],  # 30 might be an outlier
+    'score': [85, 92, 78, 88, 95, 82, 89, 91, 86, 20],  # 20 is an outlier
+    'category': ['A', 'B', 'A', 'C', 'B', 'A', 'C', 'B', 'A', 'C']  # Non-numerical
+})
+
+# Basic boxplot analysis
+edaflow.visualize_numerical_boxplots(
+    df, 
+    title="Employee Data Analysis - Outlier Detection",
+    show_skewness=True
+)
+
+# Custom layout and specific columns
+edaflow.visualize_numerical_boxplots(
+    df, 
+    columns=['age', 'salary'],
+    rows=1, 
+    cols=2,
+    title="Age vs Salary Analysis",
+    orientation='vertical',
+    color_palette='viridis'
+)
+```
+
+**Expected Output:**
+```
+📊 Creating boxplots for 4 numerical column(s): age, salary, experience, score
+
+📈 Summary Statistics:
+==================================================
+📊 age:
+   Range: 25.00 to 100.00
+   Median: 36.50
+   IQR: 11.00 (Q1: 30.50, Q3: 41.50)
+   Skewness: 2.66 (highly skewed)
+   Outliers: 1 values outside [14.00, 58.00]
+   Outlier values: [100]
+
+📊 salary:
+   Range: 50000.00 to 250000.00
+   Median: 72500.00
+   IQR: 22500.00 (Q1: 61250.00, Q3: 83750.00)
+   Skewness: 2.88 (highly skewed)
+   Outliers: 1 values outside [27500.00, 117500.00]
+   Outlier values: [250000]
+
+📊 experience:
+   Range: 2.00 to 30.00
+   Median: 8.50
+   IQR: 7.50 (Q1: 5.25, Q3: 12.75)
+   Skewness: 1.69 (highly skewed)
+   Outliers: 1 values outside [-6.00, 24.00]
+   Outlier values: [30]
+
+📊 score:
+   Range: 20.00 to 95.00
+   Median: 87.00
+   IQR: 7.75 (Q1: 82.75, Q3: 90.50)
+   Skewness: -2.87 (highly skewed)
+   Outliers: 1 values outside [71.12, 102.12]
+   Outlier values: [20]
+```
+
+### Complete EDA Workflow Example
+
+```python
+import edaflow
+import pandas as pd
+
+# Test the installation
+print(edaflow.hello())
+
+# Load your data
+df = pd.read_csv('your_data.csv')
+
+# Complete EDA workflow with all core functions:
+# 1. Analyze missing data with styled output
+null_analysis = edaflow.check_null_columns(df, threshold=10)
+
+# 2. Analyze categorical columns to identify data type issues
+edaflow.analyze_categorical_columns(df, threshold=35)
+
+# 3. Convert appropriate object columns to numeric automatically
+df_cleaned = edaflow.convert_to_numeric(df, threshold=35)
+
+# 4. Visualize categorical column values
+edaflow.visualize_categorical_values(df_cleaned)
+
+# 5. Display column type classification
+edaflow.display_column_types(df_cleaned)
+
+# 6. Impute missing values
+df_numeric_imputed = edaflow.impute_numerical_median(df_cleaned)
+df_fully_imputed = edaflow.impute_categorical_mode(df_numeric_imputed)
+
+# 7. Statistical distribution analysis with advanced insights
+edaflow.visualize_histograms(df_fully_imputed, kde=True, show_normal_curve=True)
+
+# 8. Comprehensive relationship analysis
+edaflow.visualize_heatmap(df_fully_imputed, heatmap_type='correlation')
+edaflow.visualize_scatter_matrix(df_fully_imputed, show_regression=True)
+
+# 9. Generate comprehensive EDA insights and recommendations
+insights = edaflow.summarize_eda_insights(df_fully_imputed, target_column='your_target_col')
+print(insights)  # View insights dictionary
+
+# 10. Outlier detection and visualization
+edaflow.visualize_numerical_boxplots(df_fully_imputed, show_skewness=True)
+edaflow.visualize_interactive_boxplots(df_fully_imputed)
+
+# 10. Advanced heatmap analysis
+edaflow.visualize_heatmap(df_fully_imputed, heatmap_type='missing')
+edaflow.visualize_heatmap(df_fully_imputed, heatmap_type='values')
+
+# 11. Final data cleaning with outlier handling
+df_final = edaflow.handle_outliers_median(df_fully_imputed, method='iqr', verbose=True)
+
+# 12. Results verification
+edaflow.visualize_scatter_matrix(df_final, title="Clean Data Relationships")
+edaflow.visualize_numerical_boxplots(df_final, title="Final Clean Distribution")
+```
+
+### 🤖 **Complete ML Workflow** ⭐ *Enhanced in v0.14.0*
+```python
+import edaflow.ml as ml
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+
+# Continue from cleaned data above...
+df_final['target'] = your_target_data  # Add your target column
+
+# 1. Setup ML experiment ⭐ NEW: Enhanced parameters in v0.14.0
+experiment = ml.setup_ml_experiment(
+    df_final, 'target',
+    test_size=0.2,               # Test set: 20%
+    val_size=0.15,               # ⭐ NEW: Validation set: 15% 
+    experiment_name="production_ml_pipeline",  # ⭐ NEW: Experiment tracking
+    random_state=42,
+    stratify=True
+)
+
+# Alternative: sklearn-style calling (also enhanced)
+# X = df_final.drop('target', axis=1)
+# y = df_final['target']
+# experiment = ml.setup_ml_experiment(X=X, y=y, val_size=0.15, experiment_name="sklearn_workflow")
+
+print(f"Training: {len(experiment['X_train'])}, Validation: {len(experiment['X_val'])}, Test: {len(experiment['X_test'])}")
+
+# 2. Compare multiple models ⭐ Enhanced with validation set support
+models = {
+    'RandomForest': RandomForestClassifier(random_state=42),
+    'GradientBoosting': GradientBoostingClassifier(random_state=42),
+    'LogisticRegression': LogisticRegression(random_state=42),
+    'SVM': SVC(random_state=42, probability=True)
+}
+
+# Fit all models
+for name, model in models.items():
+    model.fit(experiment['X_train'], experiment['y_train'])
+
+# ⭐ Enhanced compare_models with experiment_config support
+comparison = ml.compare_models(
+    models=models,
+    experiment_config=experiment,  # ⭐ NEW: Automatically uses validation set
+    verbose=True
+)
+print(comparison)  # Professional styled output
+
+# ⭐ Enhanced rank_models with flexible return formats
+# Quick access to best model (list format - NEW)
+best_model = ml.rank_models(comparison, 'accuracy', return_format='list')[0]['model_name']
+print(f"🏆 Best model: {best_model}")
+
+# Detailed ranking analysis (DataFrame format - traditional)
+ranked_models = ml.rank_models(comparison, 'accuracy')
+print("📊 Top 3 models:")
+print(ranked_models.head(3)[['model', 'accuracy', 'f1', 'rank']])
+
+# Advanced: Multi-metric weighted ranking
+weighted_ranking = ml.rank_models(
+    comparison, 
+    'accuracy',
+    weights={'accuracy': 0.4, 'f1': 0.3, 'precision': 0.3},
+    return_format='list'
+)
+print(f"🎯 Best by weighted score: {weighted_ranking[0]['model_name']}")
+
+# 3. Hyperparameter optimization ⭐ Enhanced with validation set
+param_grid = {
+    'n_estimators': [100, 200, 300],
+    'max_depth': [5, 10, 15, None],
+    'min_samples_split': [2, 5, 10]
+}
+
+best_results = ml.optimize_hyperparameters(
+    RandomForestClassifier(random_state=42),
+    param_distributions=param_grid,
+    X_train=experiment['X_train'],
+    y_train=experiment['y_train'],
+    method='grid_search',
+    cv=5
+)
+
+# 4. Generate comprehensive performance visualizations
+ml.plot_learning_curves(best_results['best_model'], 
+                       X_train=experiment['X_train'], y_train=experiment['y_train'])
+ml.plot_roc_curves({'optimized_model': best_results['best_model']}, 
+                   X_test=experiment['X_test'], y_test=experiment['y_test'])
+ml.plot_feature_importance(best_results['best_model'], 
+                          feature_names=experiment['feature_names'])
+
+# 5. Save complete model artifacts with experiment tracking
+ml.save_model_artifacts(
+    model=best_results['best_model'],
+    model_name=f"{experiment['experiment_name']}_optimized_model",  # ⭐ NEW: Uses experiment name
+    experiment_config=experiment,
+    performance_metrics={
+        'cv_score': best_results['best_score'],
+        'test_score': best_results['best_model'].score(experiment['X_test'], experiment['y_test']),
+        'model_type': 'RandomForestClassifier'
+    },
+    metadata={
+        'experiment_name': experiment['experiment_name'],  # ⭐ NEW: Experiment tracking
+        'data_shape': df_final.shape,
+        'feature_count': len(experiment['feature_names'])
+    }
+)
+
+print(f"✅ Complete ML pipeline finished! Experiment: {experiment['experiment_name']}")
+```
+
+### 🤖 **ML Preprocessing with Smart Encoding** ⭐ *Introduced in v0.12.0*
+```python
+import edaflow
+import pandas as pd
+
+# Load your data
+df = pd.read_csv('your_data.csv')
+
+# Step 1: Analyze encoding needs (with or without target)
+encoding_analysis = edaflow.analyze_encoding_needs(
+    df, 
+    target_column=None,            # Optional: specify target if you have one
+    max_cardinality_onehot=15,     # Optional: max categories for one-hot encoding
+    max_cardinality_target=50,     # Optional: max categories for target encoding
+    ordinal_columns=None           # Optional: specify ordinal columns if known
+)
+
+# Step 2: Apply intelligent encoding transformations  
+df_encoded = edaflow.apply_smart_encoding(
+    df,                            # Use your full dataset (or df.drop('target_col', axis=1) if needed)
+    encoding_analysis=encoding_analysis,  # Optional: use previous analysis
+    handle_unknown='ignore'        # Optional: how to handle unknown categories
+)
+
+# The encoding pipeline automatically:
+# ✅ One-hot encodes low cardinality categoricals
+# ✅ Target encodes high cardinality with target correlation  
+# ✅ Binary encodes medium cardinality features
+# ✅ TF-IDF vectorizes text columns
+# ✅ Preserves numeric columns unchanged
+# ✅ Handles memory efficiently for large datasets
+
+print(f"Shape transformation: {df.shape} → {df_encoded.shape}")
+print(f"Encoding methods applied: {len(encoding_analysis['encoding_methods'])} different strategies")
+```
+
+## Project Structure
+
+```
+edaflow/
+├── edaflow/
+│   ├── __init__.py
+│   ├── analysis/
+│   ├── visualization/
+│   └── preprocessing/
+├── tests/
+├── docs/
+├── examples/
+├── setup.py
+├── requirements.txt
+├── README.md
+└── LICENSE
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
+
+## Development
+
+### Setup Development Environment
+```bash
+# Clone the repository
+git clone https://github.com/evanlow/edaflow.git
+cd edaflow
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run linting
+flake8 edaflow/
+black edaflow/
+isort edaflow/
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Changelog
+
+> **🚀 Latest Updates**: This changelog reflects the most current releases including v0.12.32 critical input validation fix, v0.12.31 hotfix with KeyError resolution and v0.12.30 universal display optimization breakthrough.
+
+### v0.12.32 (2025-08-11) - Critical Input Validation Fix 🐛
+- **CRITICAL**: Fixed AttributeError: 'tuple' object has no attribute 'empty' in visualization functions
+- **ROOT CAUSE**: Users passing tuple result from `apply_smart_encoding(..., return_encoders=True)` directly to visualization functions
+- **ENHANCED**: Added intelligent input validation with helpful error messages for common usage mistakes
+- **IMPROVED**: Better error handling in `visualize_scatter_matrix` and other visualization functions
+- **DOCUMENTED**: Clear examples showing correct vs incorrect usage patterns for `apply_smart_encoding`
+- **STABILITY**: Prevents crashes in step 14 of EDA workflows when encoding functions are misused
+
+### v0.12.31 (2025-01-05) - Critical KeyError Hotfix 🚨
+- **CRITICAL**: Fixed KeyError: 'type' in `summarize_eda_insights()` function during Google Colab usage
+- **RESOLVED**: Exception handling when target analysis dictionary missing expected keys
+- **IMPROVED**: Enhanced error handling with safe dictionary access using `.get()` method
+- **MAINTAINED**: All existing functionality preserved - pure stability fix
+- **TESTED**: Verified fix works across all notebook platforms (Colab, JupyterLab, VS Code)
+
+### v0.12.30 (2025-01-05) - Universal Display Optimization Breakthrough 🎨
+- **BREAKTHROUGH**: Introduced `optimize_display()` function for universal notebook compatibility
+- **REVOLUTIONARY**: Automatic platform detection (Google Colab, JupyterLab, VS Code Notebooks, Classic Jupyter)
+- **ENHANCED**: Dynamic CSS injection for perfect dark/light mode visibility across all platforms
+- **NEW FEATURE**: Automatic matplotlib backend optimization for each notebook environment  
+- **ACCESSIBILITY**: Solves visibility issues in dark mode themes universally
+- **SEAMLESS**: Zero configuration required - automatically detects and optimizes for your platform
+- **COMPATIBILITY**: Works flawlessly across Google Colab, JupyterLab, VS Code, Classic Jupyter
+- **EXAMPLE**: Simple usage: `from edaflow import optimize_display; optimize_display()`
+
+### v0.12.3 (2025-08-06) - Complete Positional Argument Compatibility Fix 🔧
+- **CRITICAL**: Fixed positional argument usage for `visualize_image_classes()` function  
+- **RESOLVED**: TypeError when calling `visualize_image_classes(image_paths, ...)` with positional arguments
+- **ENHANCED**: Comprehensive backward compatibility supporting all three usage patterns:
+  - Positional: `visualize_image_classes(path, ...)` (shows warning)
+  - Deprecated keyword: `visualize_image_classes(image_paths=path, ...)` (shows warning)
+  - Recommended: `visualize_image_classes(data_source=path, ...)` (no warning)
+- **IMPROVED**: Clear deprecation warnings guiding users toward recommended syntax
+- **SECURE**: Prevents using both parameters simultaneously to avoid confusion
+- **RESOLVED**: TypeError for users calling with `image_paths=` parameter from v0.12.0 breaking change
+- **ENHANCED**: Improved error messages for parameter validation in image visualization functions
+- **DOCUMENTATION**: Added comprehensive parameter documentation including deprecation notices
+
+### v0.12.2 (2025-08-06) - Documentation Refresh 📚
+- **IMPROVED**: Enhanced README.md with updated timestamps and current version indicators
+- **FIXED**: Ensured PyPI displays the most current changelog information including v0.12.1 fixes
+- **ENHANCED**: Added latest updates indicator to changelog for better visibility
+- **DOCUMENTATION**: Forced PyPI cache refresh to display current version information
+
+## ✨ What's New in v0.16.2
+
+**New Features:**
+- Faceted visualizations with `display_facet_grid`
+- Feature scaling with `scale_features`
+- Grouping rare categories with `group_rare_categories`
+- Exporting figures with `export_figure`
+
+**Documentation Updates:**
+- User Guide, Advanced Features, and Best Practices now reference all new APIs
+- Visualization Guide includes external library requirements and troubleshooting
+- Changelog documents all new features and documentation changes
+
+**External Library Requirements:**
+Some advanced features require additional libraries:
+- matplotlib
+- seaborn
+- scikit-learn
+- statsmodels
+- pandas
+
+See the Visualization Guide for installation instructions and troubleshooting tips.
+
+---
