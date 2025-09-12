@@ -1,0 +1,2 @@
+[console_scripts]
+cv = cv_cli.main:cli
