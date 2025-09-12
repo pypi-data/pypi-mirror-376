@@ -1,0 +1,2 @@
+[console_scripts]
+dwind = dwind.main:app
