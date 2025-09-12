@@ -1,0 +1,1 @@
+from news import get_cn_news, get_hk_news
