@@ -1,0 +1,11 @@
+csdfgen.cpython-313-darwin.so,sha256=UmGE1cMVWK_jiCQNkzSj4NTB7qVCeSg5NdNGo2u_epM,675607
+libcsdfgen.0.26.1.dylib,sha256=UmGE1cMVWK_jiCQNkzSj4NTB7qVCeSg5NdNGo2u_epM,675607
+libcsdfgen.0.dylib,sha256=UmGE1cMVWK_jiCQNkzSj4NTB7qVCeSg5NdNGo2u_epM,675607
+libcsdfgen.dylib,sha256=UmGE1cMVWK_jiCQNkzSj4NTB7qVCeSg5NdNGo2u_epM,675607
+sdfgen/__init__.py,sha256=_d7GGV8GhadIAEYP8uiJlez0yKtXnHMHdRkRzVMKS3c,143
+sdfgen/module.py,sha256=D7_EwTuYhocW3SGGrGo4Hn0fhBf1bGoYeTNUiz0Yxoc,47070
+sdfgen/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sdfgen-0.26.1.dist-info/METADATA,sha256=IdNtkOxAmsUgl35trA3uRsdKh4vKd7i8XiWcBC1VFQw,4549
+sdfgen-0.26.1.dist-info/WHEEL,sha256=HXmnlrVozp5y56Nz9E1C1sgqMyBzGLnKqZmysPEEnt0,110
+sdfgen-0.26.1.dist-info/top_level.txt,sha256=M3gUW9vTMij10peQKgv1Qs0jZkdsk_PG0REFxuv6jNY,15
+sdfgen-0.26.1.dist-info/RECORD,,
