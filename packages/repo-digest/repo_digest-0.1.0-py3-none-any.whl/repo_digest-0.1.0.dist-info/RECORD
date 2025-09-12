@@ -1,0 +1,8 @@
+repo_digest/__init__.py,sha256=f0YYw7y8uxO-ZqTMSI0J0d2dhlHzOvvf7EazkTRO4uA,80
+repo_digest/cli.py,sha256=dNP_ldwnN8Zw2tl_AH9KzAtrAWMJD-9R_Ooivex6HB4,1770
+repo_digest/core.py,sha256=MBBZ6MgDNmt4HLK0dW3fR2u3Z3tF1lQgSwqHpRFmlP8,13605
+repo_digest-0.1.0.dist-info/METADATA,sha256=YoWPUhfS-8b9bdqGPCAonEb_xsUd3_2Y6WSduH6LQZ8,2667
+repo_digest-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+repo_digest-0.1.0.dist-info/entry_points.txt,sha256=0DbXPeQq15cx9Vn6miNs0w3ijVBoksyPi90QCIqKhEg,53
+repo_digest-0.1.0.dist-info/licenses/LICENSE,sha256=OphKV48tcMv6ep-7j-8T6nycykPT0g8ZlMJ9zbGvdPs,1066
+repo_digest-0.1.0.dist-info/RECORD,,

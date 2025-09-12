@@ -1,0 +1,2 @@
+[console_scripts]
+repo-digest = repo_digest.cli:main
