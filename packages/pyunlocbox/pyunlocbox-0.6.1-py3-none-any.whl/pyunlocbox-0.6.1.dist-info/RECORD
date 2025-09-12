@@ -1,0 +1,15 @@
+pyunlocbox/__init__.py,sha256=dhtJjNC-VlvPxEalaSsy35hF-aydatcI-Xmhkv2gX_g,1253
+pyunlocbox/acceleration.py,sha256=mgyShhDsO3w7WGtic5Wv8sXFpP2ORt9aJyxrQ4iF0SA,18693
+pyunlocbox/functions.py,sha256=HBWTwTCLEGCWjroqnkpjoevxondSyJBLeqhvcGzX1eY,36691
+pyunlocbox/operators.py,sha256=xnnm01DSKzMzrA_5zZi8hkKy0hz03h6qLgeyL0OSpS8,4754
+pyunlocbox/solvers.py,sha256=ADlA8cAKe--dJ_2gHqT2b5XpWNMwjkkklDVbbfOosd4,41090
+pyunlocbox/tests/test_acceleration.py,sha256=bQFRX5MhZvciz1u2Pgs0y-lY6WhFypaHRFQSyxqCtC8,8278
+pyunlocbox/tests/test_docstrings.py,sha256=zJWwNiLPfwpuTcS_bQEi25-3CZ0sSUZETHmvWO_nEWA,1537
+pyunlocbox/tests/test_functions.py,sha256=lNTih2d5s1Y8BS4p_JG6__-vBaHec9Zb0-AGOaLCuaM,25322
+pyunlocbox/tests/test_operators.py,sha256=D6ImJjimBeC-cVtNyBM9n07juHAE_HZvyyXOyQuKnTk,18258
+pyunlocbox/tests/test_solvers.py,sha256=Q_15lJZ5DCqXpquNRjxpxYlLubNIHtuhjHCZZYeXa0A,19277
+pyunlocbox-0.6.1.dist-info/licenses/LICENSE.txt,sha256=6LaqZsBR3h0OFPqtGeIYBNUH2cknxKCd8gcMDdm0aLA,1477
+pyunlocbox-0.6.1.dist-info/METADATA,sha256=yLK-gSjTg8JpajbBDJs7Rw5MOvWxSRU6JzU8UyMmPhI,11418
+pyunlocbox-0.6.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pyunlocbox-0.6.1.dist-info/top_level.txt,sha256=virqWnMPCtTYhP8NU-d9Jj9huENLoQRb3lQgF5oL6vQ,11
+pyunlocbox-0.6.1.dist-info/RECORD,,

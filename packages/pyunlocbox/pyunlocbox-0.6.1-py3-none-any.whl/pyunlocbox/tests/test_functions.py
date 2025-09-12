@@ -1,0 +1,684 @@
+#!/usr/bin/env python
+
+"""
+Test suite for the functions module of the pyunlocbox package.
+
+"""
+
+import inspect
+
+import numpy as np
+import numpy.testing as nptest
+import pytest
+
+from pyunlocbox import functions
+
+
+class TestFunctions:
+
+    def test_func(self):
+        """
+        Test the func base class.
+        First test that all the methods raise a NotImplemented exception.
+        Then assign valid methods and test return values.
+
+        """
+        x = 10
+        T = 1
+        f = functions.func()
+        with pytest.raises(NotImplementedError):
+            f.eval(x)
+        with pytest.raises(NotImplementedError):
+            f.prox(x, T)
+        with pytest.raises(NotImplementedError):
+            f.grad(x)
+        assert len(f.cap(x)) == 0
+        # Set up but never used:
+        # f.eval = lambda x: x**2 - 5
+        # f.grad = lambda x: 2 * x
+        # f.prox = lambda x, T: x + T
+
+        def assert_equivalent(param1, param2):
+            x = [[7, 8, 9], [10, 324, -45], [-7, -0.2, 5]]
+            for name, func in inspect.getmembers(functions, inspect.isclass):
+                if name not in ["func", "norm", "proj"]:
+                    f1 = func(**param1)
+                    f2 = func(**param2)
+                    assert f1.eval(x) == f2.eval(x)
+                    nptest.assert_array_equal(f1.prox(x, 3), f2.prox(x, 3))
+                    if "GRAD" in f1.cap(x):
+                        nptest.assert_array_equal(f1.grad(x), f2.grad(x))
+
+        # Default parameters. Callable or matrices.
+        assert_equivalent({"y": 3.2}, {"y": lambda: 3.2})
+        assert_equivalent({"A": None}, {"A": np.identity(3)})
+        A = np.array([[-4, 2, 5], [1, 3, -7], [2, -1, 0]])
+        pinvA = np.linalg.pinv(A)  # For proj_linalg.
+        assert_equivalent({"A": A}, {"A": A, "At": A.T})
+        assert_equivalent({"A": lambda x: A.dot(x), "pinvA": pinvA}, {"A": A, "At": A})
+
+    def test_dummy(self):
+        """
+        Test the dummy derived class.
+        All the methods should return 0.
+
+        """
+        f = functions.dummy()
+        assert f.eval(34) == 0
+        nptest.assert_array_equal(f.grad(34), [0])
+        nptest.assert_array_equal(f.prox(34, 1), [34])
+        x = [34, 2, 1.0, -10.2]
+        assert f.eval(x) == 0
+        nptest.assert_array_equal(f.grad(x), np.zeros(len(x)))
+        nptest.assert_array_equal(f.prox(x, 1), x)
+
+    def test_norm_l2(self):
+        """
+        Test the norm_l2 derived class.
+        We test the three methods : eval, grad and prox.
+        First with default class properties, then custom ones.
+
+        """
+        f = functions.norm_l2(lambda_=3)
+        assert f.eval([10, 0]) == 300
+        assert f.eval(np.array([-10, 0])) == 300
+        nptest.assert_allclose(f.grad([10, 0]), [60, 0])
+        nptest.assert_allclose(f.grad([-10, 0]), [-60, 0])
+        assert f.eval([3, 4]) == 3 * 5**2
+        assert f.eval(np.array([-3, 4])) == 3 * 5**2
+        nptest.assert_allclose(f.grad([3, 4]), [18, 24])
+        nptest.assert_allclose(f.grad([3, -4]), [18, -24])
+        assert f.prox(0, 1) == 0
+        assert f.prox(7, 1.0 / 6) == 3.5
+        f = functions.norm_l2(lambda_=4)
+        nptest.assert_allclose(f.prox([7, -22], 0.125), [3.5, -11])
+
+        f = functions.norm_l2(
+            lambda_=1, A=lambda x: 2 * x, At=lambda x: x / 2, y=[8, 12]
+        )
+        assert f.eval([4, 6]) == 0
+        assert f.eval([5, -2]) == 256 + 4
+        nptest.assert_allclose(f.grad([4, 6]), 0)
+        # nptest.assert_allclose(f.grad([5, -2]), [8, -64])
+        nptest.assert_allclose(f.prox([4, 6], 1), [4, 6])
+
+        f = functions.norm_l2(
+            lambda_=2,
+            y=np.fft.fft([2, 4]) / np.sqrt(2),
+            A=lambda x: np.fft.fft(x) / np.sqrt(x.size),
+            At=lambda x: np.fft.ifft(x) * np.sqrt(x.size),
+        )
+        # assert f.eval(np.fft.ifft([2, 4]*np.sqrt(2)), 0)
+        # assert f.eval([3, 5], 2*np.sqrt(25+81))
+        nptest.assert_allclose(f.grad([2, 4]), 0)
+        # nptest.assert_allclose(f.grad([3, 5]), [4*np.sqrt(5), 4*3])
+        nptest.assert_allclose(f.prox([2, 4], 1), [2, 4])
+        nptest.assert_allclose(f.prox([3, 5], 1), [2.2, 4.2])
+        nptest.assert_allclose(f.prox([2.2, 4.2], 1), [2.04, 4.04])
+        nptest.assert_allclose(f.prox([2.04, 4.04], 1), [2.008, 4.008])
+
+        # Test prox for non-tight matrices A
+        L = np.array([[8, 1, 10], [1, 9, 1], [3, 7, 5], [1, 4, 4]])
+        f = functions.norm_l2(
+            A=L, tight=False, y=np.array([1, 2, 3, 4]), w=np.array([1, 1, 0.5, 0.75])
+        )
+        nptest.assert_allclose(f.eval([1, 1, 1]), 455.0625)
+        nptest.assert_allclose(
+            f.grad([1, 1, 1]), [329.625, 262.500, 430.500], rtol=1e-3
+        )
+        nptest.assert_allclose(f.prox([1, 1, 1], 1), [-0.887, 0.252, 0.798], rtol=1e-3)
+        nptest.assert_allclose(f.prox([6, 7, 3], 1), [-0.345, 0.298, 0.388], rtol=1e-3)
+        nptest.assert_allclose(
+            f.prox([10, 0, -5], 1), [1.103, 0.319, -0.732], rtol=1e-3
+        )
+
+        # Cannot have non-scalar weights with tight operator.
+        with pytest.raises(ValueError):
+            functions.norm_l2(
+                A=L, tight=True, y=np.array([1, 2, 3, 4]), w=np.array([1, 1, 0.5, 0.75])
+            )
+        functions.norm_l2(A=L, tight=True, y=[1, 2, 3, 4], w=np.array([2]))
+        functions.norm_l2(A=L, tight=True, y=[1, 2, 3, 4], w=2)
+
+    def test_soft_thresholding(self):
+        """
+        Test the soft thresholding helper function.
+
+        """
+        x = np.arange(-4, 5, 1)
+        # Test integer division for complex method.
+        Ts = [2]
+        y_gold = [[-2, -1, 0, 0, 0, 0, 0, 1, 2]]
+        # Test division by 0 for complex method.
+        Ts.append([0.4, 0.3, 0.2, 0.1, 0, 0.1, 0.2, 0.3, 0.4])
+        y_gold.append([-3.6, -2.7, -1.8, -0.9, 0, 0.9, 1.8, 2.7, 3.6])
+        for k, T in enumerate(Ts):
+            for cmplx in [False, True]:
+                y_test = functions._soft_threshold(x, T, cmplx)
+                nptest.assert_array_equal(y_test, y_gold[k])
+
+    def test_norm_l1(self):
+        """
+        Test the norm_l1 derived class.
+        We test the two methods : eval and prox.
+        First with default class properties, then custom ones.
+
+        """
+        f = functions.norm_l1(lambda_=3)
+        assert f.eval([10, 0]) == 30
+        assert f.eval(np.array([-10, 0])) == 30
+        assert f.eval([-3, 4]) == 21
+        nptest.assert_array_equal(
+            f.prox(np.array([[1, -4], [5, -2]]), 1), [[0, -1], [2, 0]]
+        )
+
+        f = functions.norm_l1(tight=False)
+        with pytest.raises(NotImplementedError):
+            f.prox([1, 2], 1)
+
+        # Let us test the weights
+        f2 = functions.norm_l1(lambda_=4, w=2)
+        assert f2.eval([10, 1]) == 88
+        assert f2.eval([5]) == 40
+        assert f2.eval([0, -2, 1]) == 24
+        assert f2.eval(np.array([-10, 0])) == 80
+        assert f2.eval([-3, 4]) == 56
+        nptest.assert_array_equal(
+            f2.prox(np.array([[7, -9], [10, -2]]), 1), [[0, -1], [2, 0]]
+        )
+
+        # Let us multiple weights
+        f3 = functions.norm_l1(lambda_=4, w=[1, 2])
+        assert f3.eval([10, 1]) == 48
+        nptest.assert_array_equal(
+            f3.prox(np.array([[7, -9], [10, -2]]), 1), [[3, -1], [6, 0]]
+        )
+
+        # Let us test y
+        f3 = functions.norm_l1(lambda_=2, y=[1, 2])
+        assert f3.eval([10, 1]) == 20
+        nptest.assert_array_equal(
+            f3.prox(np.array([[2, 5], [-1, -2]]), 1), [[1, 3], [1, 0]]
+        )
+
+        # Forward operators (square and non-square).
+        A = np.eye(3)
+        f = functions.norm_l1(A=A)
+        assert f.eval([1, 2, 4]) == 7
+        nptest.assert_allclose(f.prox([1, 2, 4], 1), [0, 1, 3])
+        A = np.concatenate([A] * 2, 0)
+        f = functions.norm_l1(A=A)
+        assert f.eval([1, 2, 4]) == 14
+        nptest.assert_allclose(f.prox([1, 2, 4], 1), [-1, 0, 2])
+
+    def test_norm_nuclear(self):
+        """
+        Test the norm_nuclear derived class.
+        We test the two methods : eval and prox.
+        First with default class properties, then custom ones.
+
+        """
+
+        # TODO: this method should be tested more extensively.
+        f = functions.norm_nuclear(lambda_=3)
+        assert f.eval(np.diag([10, 0])) == 30
+        assert f.eval(np.diag(np.array([-10, 0]))) == 30
+        assert f.eval([[-3]]) == 9
+        nptest.assert_allclose(
+            f.prox(np.array([[1, 1], [1, 1]]), 1.0 / 3), [[0.5, 0.5], [0.5, 0.5]]
+        )
+
+    def test_norm_tv(self):
+        """
+        Test the norm_tv derived class.
+        We test the grad, div, eval and prox.
+
+        """
+        # Test Matrices initialization
+        # test for a 1dim matrice (testing with a 5)
+        # mat1d = np.arange(5) + 1
+        # test for a 2dim matrice (testing with a 2x4)
+        mat2d = np.array([[2, 3, 0, 1], [22, 1, 4, 5]])
+        # test for a 3 dim matrice (testing with a 2x3x2)
+        mat3d = np.arange(1, stop=13).reshape(2, 2, 3).transpose((1, 2, 0))
+        # test for a 4dim matrice (2x3x2x2)
+        # mat4d = np.arange(1, stop=25).reshape(2, 2, 2, 3)
+        # mat4d = mat4d.transpose((2, 3, 1, 0))
+        # test for a 5dim matrice (2x2x3x2x2)
+        # mat5d = np.arange(1, stop=49).reshape(2, 2, 3, 2, 2)
+        # mat5d = mat5d.transpose((3, 4, 2, 1, 0))
+
+        # Test for evals
+        def test_eval():
+
+            # test with 2d matrices
+            # test without weight
+            f = functions.norm_tv(dim=1)
+            xeval = 30
+            nptest.assert_array_equal(xeval, f.eval(mat2d))
+            f = functions.norm_tv(dim=2)
+            xeval = np.array([56.753641295582440])
+            nptest.assert_array_equal(xeval, f.eval(mat2d))
+
+            # test with weights
+            f = functions.norm_tv(dim=1, wx=3)
+            xeval = np.sum(np.array([60, 6, 12, 12]))
+            nptest.assert_array_equal(xeval, f.eval(mat2d))
+            f = functions.norm_tv(dim=2, wx=0.5, wy=2)
+            xeval = np.array([71.1092])
+            nptest.assert_array_equal(xeval, np.around(f.eval(mat2d), decimals=4))
+
+            # test with 3d matrices (2x3x2)
+            # test without weight
+            f = functions.norm_tv(dim=2)
+            sol = np.sum(np.array([11.324555320336760, 11.324555320336760]))
+            nptest.assert_array_equal(sol, f.eval(mat3d))
+            f = functions.norm_tv(dim=3)
+            xeval = np.array(49.762944279683104)
+            nptest.assert_array_equal(xeval, f.eval(mat3d))
+
+            # test with weights
+            f = functions.norm_tv(dim=2, wx=2, wy=3)
+            sol = np.sum(np.array([25.4164, 25.4164]))
+            nptest.assert_array_equal(sol, np.around(f.eval(mat3d), decimals=4))
+
+            f = functions.norm_tv(dim=3, wx=2, wy=3, wz=0.5)
+            xeval = np.array([58.3068])
+            nptest.assert_array_equal(xeval, np.around(f.eval(mat3d), decimals=4))
+
+        # Test for prox
+        def test_prox():
+
+            # Test with 2d matrices
+            # Test without weights
+            f = functions.norm_tv(tol=10e-4, dim=1)
+            gamma = 30
+            sol = np.array(
+                [
+                    [
+                        12.003459453582762,
+                        1.999654054641723,
+                        2.000691890716554,
+                        3.000691890716554,
+                    ],
+                    [
+                        11.996540546417238,
+                        2.000345945358277,
+                        1.999308109283446,
+                        2.999308109283446,
+                    ],
+                ]
+            )
+            nptest.assert_array_equal(
+                np.around(sol, decimals=5),
+                np.around((f.prox(mat2d, gamma)), decimals=5),
+            )
+
+            f = functions.norm_tv(tol=10e-4, dim=2)
+            gamma = 1.5
+            x2d = np.array([[2, 3, 0, 1], [22, 1, 4, 5], [2, 10, 7, 8]])
+            sol = np.array(
+                [
+                    [3.44427, 2.87332, 2.51662, 2.45336],
+                    [18.38207, 3.10251, 4.0028, 4.64074],
+                    [4.50809, 6.44118, 6.38421, 6.25082],
+                ]
+            )
+            nptest.assert_array_equal(
+                np.around(sol, decimals=5), np.around((f.prox(x2d, gamma)), decimals=5)
+            )
+
+            # Test with weights
+
+            # Test with 3d matrices
+            # Test without weights
+            f = functions.norm_tv(tol=10e-4, dim=2)
+            gamma = 42
+            sol = np.array(
+                [
+                    [[3.50087, 9.50087], [3.50000, 9.50000], [3.49913, 9.49913]],
+                    [[3.50087, 9.50087], [3.50000, 9.50000], [3.49913, 9.49913]],
+                ]
+            )
+            nptest.assert_array_equal(sol, np.around(f.prox(mat3d, gamma), decimals=5))
+
+            f = functions.norm_tv(tol=10e-4, dim=3)
+            gamma = 18
+            sol = np.array(
+                [
+                    [[6.5, 6.5], [6.5, 6.5], [6.5, 6.5]],
+                    [[6.5, 6.5], [6.5, 6.5], [6.5, 6.5]],
+                ]
+            )
+            nptest.assert_array_equal(sol, np.around(f.prox(mat3d, gamma), decimals=1))
+            # Test with weights
+            f = functions.norm_tv(tol=10e-10, dim=2, wx=5, wy=10)
+            gamma = 3
+            x3d = np.array(
+                [
+                    [[1, 10, 19], [2, 11, 20], [3, 12, 21]],
+                    [[4, 13, 22], [5, 14, 23], [6, 15, 24]],
+                    [[7, 16, 25], [8, 17, 26], [9, 18, 27]],
+                ]
+            )
+            sol = np.array(
+                [
+                    [[5, 14, 23], [5, 14, 23], [5, 14, 23]],
+                    [[5, 14, 23], [5, 14, 23], [5, 14, 23]],
+                    [[5, 14, 23], [5, 14, 23], [5, 14, 23]],
+                ]
+            )
+            nptest.assert_array_equal(sol, np.around(f.prox(x3d, gamma)))
+
+            # Test with 4d matrices
+            # Test without weights
+            f = functions.norm_tv(tol=10e-4, dim=3)
+            gamma = 10
+            x4d = np.array(
+                [
+                    [
+                        [[1, 28, 55], [10, 37, 64], [19, 46, 73]],
+                        [[2, 29, 56], [11, 38, 65], [20, 47, 74]],
+                        [[3, 30, 57], [12, 39, 66], [21, 48, 75]],
+                    ],
+                    [
+                        [[4, 31, 58], [13, 40, 67], [22, 49, 76]],
+                        [[5, 32, 59], [14, 41, 68], [23, 50, 77]],
+                        [[6, 33, 60], [15, 42, 69], [24, 51, 78]],
+                    ],
+                    [
+                        [[7, 34, 61], [16, 43, 70], [25, 52, 79]],
+                        [[8, 35, 62], [17, 44, 71], [26, 53, 80]],
+                        [[9, 36, 63], [18, 45, 72], [27, 54, 81]],
+                    ],
+                ]
+            )
+            sol = np.array(
+                [
+                    [
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                    ],
+                    [
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                    ],
+                    [
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                        [[14, 41, 68], [14, 41, 68], [14, 41, 68]],
+                    ],
+                ]
+            )
+            sol = np.around(sol)
+            nptest.assert_array_equal(sol, np.around(f.prox(x4d, gamma)))
+
+            f = functions.norm_tv(tol=10e-4, dim=4)
+            gamma = 15
+            sol = np.array(
+                [
+                    [
+                        [[22, 34, 54], [26, 40, 54], [31, 44, 53]],
+                        [[23, 35, 54], [27, 40, 54], [32, 44, 53]],
+                        [[23, 35, 54], [27, 41, 54], [32, 45, 53]],
+                    ],
+                    [
+                        [[24, 36, 54], [28, 41, 54], [32, 45, 53]],
+                        [[24, 36, 54], [28, 42, 53], [33, 45, 53]],
+                        [[24, 37, 54], [29, 42, 53], [33, 46, 53]],
+                    ],
+                    [
+                        [[25, 38, 54], [29, 43, 53], [34, 46, 53]],
+                        [[25, 38, 54], [30, 43, 53], [34, 46, 53]],
+                        [[26, 39, 54], [30, 43, 53], [35, 47, 53]],
+                    ],
+                ]
+            )
+            sol = np.around(sol)
+            nptest.assert_array_equal(sol, np.around(f.prox(x4d, gamma)))
+
+        # Test with weights
+        test_prox()
+        test_eval()
+
+    def test_proj_b2(self):
+        """
+        Test the projection on the L2-ball.
+        ISTA and FISTA algorithms for tight and non-tight frames.
+
+        """
+        tol = 1e-7
+
+        # Tight frame, radius 0 --> x == y.
+        x = np.random.uniform(size=7) + 10
+        y = np.random.uniform(size=7) - 10
+        f = functions.proj_b2(y=y, epsilon=tol)
+        nptest.assert_allclose(f.prox(x, 0), y, atol=tol)
+
+        # Tight frame, random radius --> ||x-y||_2 = radius.
+        radius = np.random.uniform()
+        f = functions.proj_b2(y=y, epsilon=radius)
+        nptest.assert_almost_equal(np.linalg.norm(f.prox(x, 0) - y), radius)
+
+        # Always evaluate to zero.
+        assert f.eval(x) == 0
+
+        # Non-tight frame : compare FISTA and ISTA results.
+        nx = 30
+        ny = 15
+        x = np.random.standard_normal(nx)
+        y = np.random.standard_normal(ny)
+        A = np.random.standard_normal((ny, nx))
+        nu = np.linalg.norm(A, ord=2) ** 2
+        f = functions.proj_b2(
+            y=y, A=A, nu=nu, tight=False, method="FISTA", epsilon=5, tol=tol / 10
+        )
+        sol_fista = f.prox(x, 0)
+        f.method = "ISTA"
+        sol_ista = f.prox(x, 0)
+        nptest.assert_allclose(sol_fista, sol_ista, rtol=1e-3)
+
+        f.method = "NOT_A_VALID_METHOD"
+        with pytest.raises(ValueError):
+            f.prox(x, 0)
+
+    def test_proj_lineq(self):
+        """
+        Test the projection on Ax = y
+
+        """
+        x = np.zeros([10])
+        A = np.ones([1, 10])
+        y = np.array([10])
+        f = functions.proj_lineq(A=A, y=y)
+        sol = f.prox(x, 0)
+        np.testing.assert_allclose(sol, np.ones([10]))
+        np.testing.assert_allclose(A.dot(sol), y)
+
+        f = functions.proj_lineq(A=A)
+        sol = f.prox(x, 0)
+        np.testing.assert_allclose(sol, np.zeros([10]))
+
+        for i in range(1, 15):
+            x = np.random.randn(10)
+            y = np.random.randn(i)
+            A = np.random.randn(i, 10)
+            pinvA = np.linalg.pinv(A)
+            f1 = functions.proj_lineq(A=A, y=y)
+            f2 = functions.proj_lineq(A=lambda x: A.dot(x), pinvA=pinvA, y=y)
+            f3 = functions.proj_lineq(A=A, pinvA=lambda x: pinvA.dot(x), y=y)
+            f4 = functions.proj_lineq(A=A, pinvA=pinvA, y=y)
+            sol1 = f1.prox(x, 0)
+            sol2 = f2.prox(x, 0)
+            sol3 = f3.prox(x, 0)
+            sol4 = f4.prox(x, 0)
+            np.testing.assert_allclose(sol1, sol2)
+            np.testing.assert_allclose(sol1, sol3)
+            np.testing.assert_allclose(sol1, sol4)
+            if i <= x.size:
+                np.testing.assert_allclose(A.dot(sol1), y)
+            if i >= x.size:
+                np.testing.assert_allclose(sol1, pinvA.dot(y))
+
+        with pytest.raises(ValueError):
+            functions.proj_lineq(A=lambda x: x)
+
+    def test_proj_positive(self):
+        """
+        Test the projection on the positive octant.
+
+        """
+        fpos = functions.proj_positive()
+        x = np.random.randn(10, 12)
+        res = fpos.prox(x, T=1)
+        nptest.assert_equal(res >= 0, True)  # All values are positive.
+        nptest.assert_equal(res[x < 0], 0)  # Negative values are set to zero.
+        nptest.assert_equal(res[x > 0], x[x > 0])  # Positives are unchanged.
+        assert fpos.eval(x) == 0
+
+    def test_proj_spsd(self):
+        """
+        Test the projection on symmetric positive semi-definite matrices.
+
+        """
+        f_spds = functions.proj_spsd()
+        A = np.random.randn(10, 10)
+        A = A + A.T
+        eig1 = np.sort(np.real(np.linalg.eig(A)[0]))
+        res = f_spds.prox(A, T=1)
+        eig2 = np.sort(np.real(np.linalg.eig(res)[0]))
+        # All eigenvalues are positive.
+        assert (eig2 > -1e-13).all()
+
+        # Positive value are unchanged.
+        np.testing.assert_allclose(eig2[eig1 > 0], eig1[eig1 > 0])
+
+        # The symmetrization works.
+        A = np.random.rand(10, 10) + 10 * np.eye(10)
+        res = f_spds.prox(A, T=1)
+        np.testing.assert_allclose(res, (A + A.T) / 2)
+
+        assert f_spds.eval(A) == 0
+
+    def test_structured_sparsity(self):
+        """
+        Test the structured sparsity function.
+
+        """
+        # test init
+        # test parsing of lambda
+        with pytest.raises(ValueError):
+            functions.structured_sparsity(-1, [[]], [0.0])
+        # test parsing of groups
+        with pytest.raises(TypeError):
+            functions.structured_sparsity(1.0, 1, [0.0])
+        # test parsing of weights
+        with pytest.raises(ValueError):
+            functions.structured_sparsity(1.0, [[1, 2], [3, 4]], [10.0])
+
+        # test call of eval and prox
+        x = np.array([0.01, 0.5, 3, 4])
+        groups = [[0, 1], [2, 3]]
+        weights = np.array([10, 0.2])
+        f = functions.structured_sparsity(1, groups, weights)
+        # test eval
+        result = f.eval(x)
+        gt = weights[0] * np.linalg.norm(x[groups[0]], 2) + weights[1] * np.linalg.norm(
+            x[groups[1]], 2
+        )
+        assert result == pytest.approx(gt)
+        # test prox
+        gt = x.copy()
+        # the first group has norm lower than the corresponding weight
+        gt[groups[0]] = 0
+        # the second group has norm higher than the corresponding weight
+        gt[groups[1]] -= x[groups[1]] * weights[1] / np.linalg.norm(x[groups[1]])
+        prox = f.prox(x, 1)
+        np.testing.assert_almost_equal(prox, gt)
+
+    def test_capabilities(self):
+        """
+        Test that a function implements the necessary methods. A function must
+        always be evaluable (by implementing _eval) and must have a gradient or
+        proximal operator (by implementing at least one of _prox or _grad).
+
+        """
+        for name, func in inspect.getmembers(functions, inspect.isclass):
+            if name in ["func", "proj", "norm"]:  # exclude abstract classes
+                continue
+            cap = func().cap(np.diag([10, 42]))
+            assert "EVAL" in cap
+            assert "GRAD" in cap or "PROX" in cap
+
+    def test_independent_problems(self):
+        """
+        Test that multiple independent problems can be solved in parallel.
+
+        """
+
+        # Parameters.
+        N = 3  # independent problems.
+        n = 25  # dimensions.
+
+        # Generate some data.
+        X = 7 - 10 * np.random.uniform(size=(n, N))
+        step = 10 * np.random.uniform()
+
+        # Test all available functions.
+        for name, func in inspect.getmembers(functions, inspect.isclass):
+            # TODO: use subTest once python 2.7 is dropped
+            # with self.subTest(i=func[0]):
+
+            # Instantiate the class.
+            if name == "norm_tv":
+                # Each column is one-dimensional.
+                f = func(dim=1, maxit=20, tol=0)
+            elif name in ["norm_nuclear", "proj_spsd"]:
+                # TODO: make this test two dimensional for the norm nuclear
+                # and the spsd projection?
+                continue
+            else:
+                f = func()
+
+            cap = f.cap(X)
+
+            # The combined objective function of the N problems is the sum of
+            # each objective.
+            if "EVAL" in cap:
+                res = 0
+                for iN in range(N):
+                    res += f.eval(X[:, iN])
+                nptest.assert_array_almost_equal(res, f.eval(X))
+
+            # Each column is the prox of one of the N problems.
+            if "PROX" in cap:
+                res = np.zeros((n, N))
+                for iN in range(N):
+                    res[:, iN] = f.prox(X[:, iN], step)
+                nptest.assert_array_almost_equal(res, f.prox(X, step))
+
+            # Each column is the gradient of one of the N problems.
+            if "GRAD" in cap:
+                res = np.zeros((n, N))
+                for iN in range(N):
+                    res[:, iN] = f.grad(X[:, iN])
+                nptest.assert_array_almost_equal(res, f.grad(X))
+
+    def test_prox_star(self):
+        n = 10
+        x = 3 * np.random.randn(n, 1)
+        f = functions.norm_l1()
+        f2 = functions.dummy()
+        f2.prox = lambda x, T: functions._prox_star(f, x, T)
+        gamma = np.random.rand()
+
+        p1 = f.prox(x, gamma)
+        p2 = functions._prox_star(f2, x, gamma)
+
+        np.testing.assert_array_almost_equal(p1, p2)
+
+        p1 = f.prox(x, gamma) - x
+        p2 = -gamma * f2.prox(x / gamma, 1 / gamma)
+        np.testing.assert_array_almost_equal(p1, p2)
