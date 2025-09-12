@@ -1,0 +1,15 @@
+biblemate/README.md,sha256=0xKiXqwB-WBxHCKyUByD-2Yre0zgflTDun-wYc9o-J0,6173
+biblemate/__init__.py,sha256=aFO4_EperOrwwDBdrkTKfDMt2Fh18Y0A2G_nUC_cmmM,78
+biblemate/bible_study_mcp.py,sha256=xwCPkI-yxil9_WQfgt7d86Nzmxvz_XUJoSIoUGUdyEQ,18439
+biblemate/config.py,sha256=NOl8IJ5fkpYtCDrRxL9u_WcErpdrlzs2NQ3grR7Ox0Y,52
+biblemate/main.py,sha256=p5J-MfFHItr9-adp7naufzrpqcelwqKKR4n1a9C2q5M,26284
+biblemate/package_name.txt,sha256=WkkuEEkgw7EKpXV8GshpzhZlwRor1wpotTS7vP24b_g,9
+biblemate/requirements.txt,sha256=lry6drnaK9tEIaXy5MAgTb2p5PunsPaaCVjwpeXN7KE,76
+biblemate/core/systems.py,sha256=nG_NgcLSRhdaHuxuCPN5ZfJUhP88kdfwhRCvRk4RLjI,1874
+biblemate/ui/info.py,sha256=QRCno0CYUHVoOtVkZIxVamZONmtI7KRmOT2YoUagY5s,811
+biblemate/ui/prompts.py,sha256=DIvURrf6doEgC7gxbyeGV6gVf4zcP9YAm60gCITs5Sc,4221
+biblemate-0.0.26.dist-info/METADATA,sha256=p-JexRVHVjOHl887XCbTeWzTk_4knyKnDF08udfuCpU,7689
+biblemate-0.0.26.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+biblemate-0.0.26.dist-info/entry_points.txt,sha256=tbEfTFr6LhPR1E_zP3CsPwJsmG-G4MCnJ3FcQEMiqo0,50
+biblemate-0.0.26.dist-info/top_level.txt,sha256=pq9uX0tAS0bizZcZ5GW5zIoDLQBa-b5QDlDGsdHNgiU,10
+biblemate-0.0.26.dist-info/RECORD,,
