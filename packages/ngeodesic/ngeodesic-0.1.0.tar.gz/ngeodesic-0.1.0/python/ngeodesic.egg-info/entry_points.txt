@@ -1,0 +1,2 @@
+[console_scripts]
+ngeodesic-stage11-bridge = ngeodesic.demo.stage11_bridge:main
