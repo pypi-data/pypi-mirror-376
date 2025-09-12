@@ -1,0 +1,60 @@
+Metadata-Version: 2.3
+Name: swarmauri_tokens_dpopboundjwt
+Version: 0.3.0.dev3
+Summary: DPoP-bound JWT token service for Swarmauri
+License: Apache-2.0
+Author: Swarmauri
+Author-email: opensource@swarmauri.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Security :: Cryptography
+Classifier: Intended Audience :: Developers
+Provides-Extra: ec
+Provides-Extra: okp
+Provides-Extra: rsa
+Requires-Dist: cryptography ; extra == "ec"
+Requires-Dist: cryptography ; extra == "okp"
+Requires-Dist: cryptography ; extra == "rsa"
+Requires-Dist: pyjwt[crypto] (>=2.8.0)
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Description-Content-Type: text/markdown
+
+![Swamauri Logo](https://res.cloudinary.com/dbjmpekvl/image/upload/v1730099724/Swarmauri-logo-lockup-2048x757_hww01w.png)
+
+# Swarmauri Tokens DPoP Bound JWT
+
+DPoP-bound JSON Web Token (JWT) service for Swarmauri implementing
+[RFC 9449](https://www.rfc-editor.org/rfc/rfc9449) and JWK thumbprint
+handling per [RFC 7638](https://www.rfc-editor.org/rfc/rfc7638).
+
+Features:
+- Mints and verifies DPoP-bound JWTs
+- Computes JWK thumbprints for binding proofs
+- Optional replay protection hook
+
+## Installation
+
+```bash
+pip install swarmauri_tokens_dpopboundjwt
+```
+
+## Usage
+
+```python
+from swarmauri_tokens_dpopboundjwt import DPoPBoundJWTTokenService
+
+service = DPoPBoundJWTTokenService(key_provider)
+```
+
+## Entry Point
+
+The service registers under the `swarmauri.tokens` entry point as
+`DPoPBoundJWTTokenService`.
+
