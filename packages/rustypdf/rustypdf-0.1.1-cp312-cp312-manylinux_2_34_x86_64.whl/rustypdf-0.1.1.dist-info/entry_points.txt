@@ -1,0 +1,2 @@
+[console_scripts]
+rustypdf=rustypdf.__main__:main
