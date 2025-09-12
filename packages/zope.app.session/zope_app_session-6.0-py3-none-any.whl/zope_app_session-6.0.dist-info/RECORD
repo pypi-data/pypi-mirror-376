@@ -1,0 +1,14 @@
+zope/app/session/__init__.py,sha256=eyNdoVIeU25LCpwlirCdZLNYz6_YOofOlIB5x9Aw5vU,688
+zope/app/session/api.rst,sha256=voJOJSuI422AOaHAL9U4635Zta1WK2JOrdgKQ3snib8,4977
+zope/app/session/browser.zcml,sha256=uSmrEUvTNjplGE8fSJAWZKdJHJFlA5YG0-JwM01-DQk,1393
+zope/app/session/configure.zcml,sha256=pyxi4yGBDHcANnvbrb8qFFKEwNkqC1KcV3JWZBMjhN4,221
+zope/app/session/ftesting.zcml,sha256=b5MOVrIGj_O-0uMwe6NQXBGL2OIX9Mo-uqIcF1YYBJs,4660
+zope/app/session/http.py,sha256=UjgPOOjI_-HnRoaXqfA0C__Ymh0DcoC6CR0mnmwUuw8,947
+zope/app/session/interfaces.py,sha256=w9UCf20IvzoS9smXa52AuKi5TQsRoEjWLc0sAuev_rM,987
+zope/app/session/session.py,sha256=qoZ-ZhvWGJLXiwKbxeqM6yyasisUQBSdqdioYbrqzXo,1018
+zope/app/session/testing.py,sha256=q4_6ytRNsVYtEcY4cG404MPmsiNnBxhBTfOhhbQwWIU,1034
+zope/app/session/tests.py,sha256=EGb8IsDsDToDEzIqc2EtYDEEL6fP1qJV2liNh8B1E1U,9375
+zope_app_session-6.0.dist-info/METADATA,sha256=4VW9Scgb7lijId0KSbO9gTlfvyqh3Tm17w1plgENgag,8983
+zope_app_session-6.0.dist-info/WHEEL,sha256=lTU6B6eIfYoiQJTZNc-fyaR6BpL6ehTzU3xGYxn2n8k,91
+zope_app_session-6.0.dist-info/top_level.txt,sha256=QpUHvpO4wIuZDeEgKY8qZCtD-tAukB0fn_f6utzlb98,5
+zope_app_session-6.0.dist-info/RECORD,,
