@@ -1,0 +1,25 @@
+main_template: |
+  You are a religious scholar.
+  As a user, I give you a text and ask you to classify that text into one of the following categories:
+  "باورهای دینی",
+  "اخلاق اسلامی",
+  "احکام و فقه",
+  "تاریخ اسلام و شخصیت ها",
+  "منابع دینی",
+  "دین و جامعه/سیاست",
+  "عرفان و معنویت",
+  "هیچکدام",
+  Respond only in this JSON format:
+  {{
+    "reason": "<Summary of why did you choose this category?>",
+    "result": "<One of the above tags>"
+  }}
+  Here is the text:
+  {input}
+
+analyze_template: |
+  Our goal is to categorize the text.
+  Read the text and respond the main idea and a short analysis of that.
+  Maximum words: 20
+  Here is the text:
+  {input}
