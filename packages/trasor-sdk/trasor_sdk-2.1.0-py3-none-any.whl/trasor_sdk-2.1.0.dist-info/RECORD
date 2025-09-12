@@ -1,0 +1,12 @@
+trasor/__init__.py,sha256=flTYQqROuxQZlBZOBf8wltmZEP76gJZNtQOcyxI9ZX4,528
+trasor/async_client.py,sha256=7oCP24pDxSCc1sOhqLjHLyWp5HdmxUxpXVe4Y3NKKjA,13656
+trasor/client.py,sha256=TydFlR6AoXdW-Jey-i6Dp2_fQ8c28VjEEjEtBxjLImo,21082
+trasor/client_original.py,sha256=ueBLdjXED4NP7e2ETCuU9ZKXa8MaZc2uRSJjYH8ZLRo,10868
+trasor/exceptions.py,sha256=vflfPtPempMIWbG0PncV2tAiIK6YTAl8xLhc-IgvijY,487
+trasor/integrations/__init__.py,sha256=reXr42Lid03cHxXk7Y-dPM4uMGzSC0EqWsX8E7_r1_Q,389
+trasor/integrations/crewai.py,sha256=dhfGBGaUGLommcUbniqWxUh-oGA5fCg3Abzy5KCutWc,10867
+trasor/integrations/langchain.py,sha256=znOnYkHHQJe_Oy9LYK8OTFkdXE-D03JeUcvYML73j7k,17603
+trasor_sdk-2.1.0.dist-info/METADATA,sha256=cJ2q0tbMNmop3yLBC4uyDOFjjK3riVIOYmJp1RKP_4I,4978
+trasor_sdk-2.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+trasor_sdk-2.1.0.dist-info/top_level.txt,sha256=zhojtNlmC-ohFquyrGCRZu8zYBAyVXh9CHKv3_jgRxo,7
+trasor_sdk-2.1.0.dist-info/RECORD,,
