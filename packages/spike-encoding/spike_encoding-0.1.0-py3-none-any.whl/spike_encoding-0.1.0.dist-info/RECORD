@@ -1,0 +1,15 @@
+spike_encoding/__init__.py,sha256=RKsmL4dFV13lDAAgGNw7dhTh8bVW8yG1geewr9aunZA,121
+spike_encoding/base_converter.py,sha256=NPrvQqEX87XsxPDOfu7DpGS3OMpiOqgsNuWJTzNWT3k,352
+spike_encoding/bens_spiker_algorithm.py,sha256=CZLHCVYFXkcFa1MBc_g_6xXGf-2GRlVgkowa5NdYfbw,10495
+spike_encoding/bin_encoder.py,sha256=ggCaXfvc5i78-hKqBTQ15JduBcLCEDdqQZ1M-P7GDF4,3555
+spike_encoding/delta_modulation_converter.py,sha256=WJk4nxO4tLvImoAF0He_Bxj3xC6AmAm8C8nBT9HuhKM,2199
+spike_encoding/encoder_common.py,sha256=DNC-QELuCY4IdsErFv2P-yR-2HPaz488cMiexCgLnjc,895
+spike_encoding/gymnasium_bounds_finder.py,sha256=E4RnqSETqjMUKOsDwGa_It0iLL0OgoCKuzOHkm-aV6M,7473
+spike_encoding/gymnasium_encoder.py,sha256=vm4q5qO1VUN9ONk6dIj-YNMZGkr8lTKdNchoKSZZoo8,6704
+spike_encoding/lif_based_encoding.py,sha256=BoBfPNcNO33wZccg7MaUGRffjPQp7ogBFSYgc3j54YE,17505
+spike_encoding/pulse_width_modulation.py,sha256=49Z3z6XoO6msoUwR5WGx6wn8MoPav1ZVBWeIsh6omG0,13004
+spike_encoding/rate_step_forward_converter.py,sha256=wXk_GAZQ0-BLud8xxad8lLxVP4bNomBUzsRTKI3xunc,7743
+spike_encoding/step_forward_converter.py,sha256=w8tUh4xL5CJ-uGulEr7oMxsDinbsp2yNHG0DQHkYN-o,19185
+spike_encoding-0.1.0.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+spike_encoding-0.1.0.dist-info/METADATA,sha256=9wJBHgVTJy_3inTDV0ySVFFicldm_LhsfBjhukbNfVk,19848
+spike_encoding-0.1.0.dist-info/RECORD,,
