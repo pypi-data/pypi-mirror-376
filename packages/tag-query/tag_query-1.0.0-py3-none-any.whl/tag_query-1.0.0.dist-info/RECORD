@@ -1,0 +1,10 @@
+tag_query/__init__.py,sha256=SpDNdHcuDR6qjG7kp2020slvqzwwfSkzNAjZopM8PMA,235
+tag_query/compiler/__init__.py,sha256=REZ3FFujcNK1ULPrygFYnSpCe2ppnD18T5P2xC9jPN8,1856
+tag_query/compiler/exceptions.py,sha256=4X8KciN-iWDGwFkDuE2j1uevI2eigVCOpT8boR6XG_o,2904
+tag_query/compiler/lexer.py,sha256=CKpH1Wqnj-GXqG-NK2FBtlk1rGqOfZpdaTZWQFw2rZg,3052
+tag_query/compiler/tokens.py,sha256=0hqDVdJ4piGuXVEIKupjrf0w9Z7be_q_TZ--H3uFHhY,18329
+tag_query-1.0.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+tag_query-1.0.0.dist-info/METADATA,sha256=LbR08SY7afyj9Z1WPrx0d9228Gs5q4qWfd7KoUxEnVE,5709
+tag_query-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tag_query-1.0.0.dist-info/top_level.txt,sha256=ioskDh-F1j3URdxgU1LTpkmuV3JSWSDkR8b86nLhXc4,10
+tag_query-1.0.0.dist-info/RECORD,,
