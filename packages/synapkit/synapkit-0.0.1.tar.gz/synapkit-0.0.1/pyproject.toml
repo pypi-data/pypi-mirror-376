@@ -1,0 +1,141 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "synapkit"
+version = "0.0.1"
+description = "Synapkit — a tiny, typed agent toolkit."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.61.1",
+    "typer==0.12.0",
+  "pydantic>=2.11.4",
+]
+
+[project.optional-dependencies]
+# Install with: pip/uv install -e .[extra1,extra2]
+langchain = [
+    "langchain>=0.3.27",
+    "langchain-chroma>=0.2.5",
+    "langchain-openai>=0.3.32",
+    "chromadb>=1.0.20",
+    "sentence-transformers>=5.1.0",
+    "tiktoken>=0.11.0",
+]
+data = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "pyarrow>=14.0.1",
+    "scikit-learn>=1.2.0",
+    "scipy>=1.10.0",
+    "statsmodels>=0.13.5",
+    "duckdb>=0.9.0",
+]
+jupyter = [
+    "jupyter>=1.0.0",
+    "jupyterlab>=4.0.0",
+    "ipython>=8.14.0",
+    "ipywidgets>=8.0.0",
+    "jupyter-dash>=0.4.2",
+]
+viz = [
+    "matplotlib>=3.7.0",
+    "plotly>=5.13.0",
+    "seaborn>=0.12.0",
+]
+providers = [
+    "anthropic>=0.8.0",
+    "groq>=0.20.0",
+]
+webtext = [
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "newspaper3k>=0.2.8",
+    "trafilatura>=1.6.1",
+    "requests>=2.31.0",
+]
+streamlit = [
+    "streamlit>=1.31.0",
+]
+util = [
+    "tqdm>=4.65.0",
+    "pyyaml==6.0.1",
+]
+testing = [
+    "pytest>=7.3.1",
+]
+
+dev = [
+    # roll-up of common extras for convenience
+    "pytest>=7.3.1",
+    "kagglehub>=0.3.12",
+    # include all groups
+    "langchain>=0.3.27",
+    "langchain-chroma>=0.2.5",
+    "langchain-openai>=0.3.32",
+    "chromadb>=1.0.20",
+    "sentence-transformers>=5.1.0",
+    "tiktoken>=0.11.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "pyarrow>=14.0.1",
+    "scikit-learn>=1.2.0",
+    "scipy>=1.10.0",
+    "statsmodels>=0.13.5",
+    "duckdb>=0.9.0",
+    "jupyter>=1.0.0",
+    "jupyterlab>=4.0.0",
+    "ipython>=8.14.0",
+    "ipywidgets>=8.0.0",
+    "jupyter-dash>=0.4.2",
+    "matplotlib>=3.7.0",
+    "plotly>=5.13.0",
+    "seaborn>=0.12.0",
+    "openai>=1.61.1",
+    "anthropic>=0.8.0",
+    "groq>=0.20.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "newspaper3k>=0.2.8",
+    "trafilatura>=1.6.1",
+    "requests>=2.31.0",
+    "streamlit>=1.31.0",
+    "tqdm>=4.65.0",
+    "pyyaml==6.0.1",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["synapkit*"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/synapkit"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/synapkit/**",
+    "README.md",
+    "LICENSE",
+]
+exclude = [
+    "Dockerfile.dev",
+    "docker-compose.yml",
+    "custom_startup.sh",
+    "start_dev_container.sh",
+    "*.ipynb",
+    ".vscode/**",
+    "tests/**",
+    ".github/**",
+    "pyproject.deps.toml",
+    "uv.lock",
+    "notebooks/**",
+    "data/**",
+]
+
+[project.urls]
+Homepage = "https://github.com/synapkit/synapkit"
