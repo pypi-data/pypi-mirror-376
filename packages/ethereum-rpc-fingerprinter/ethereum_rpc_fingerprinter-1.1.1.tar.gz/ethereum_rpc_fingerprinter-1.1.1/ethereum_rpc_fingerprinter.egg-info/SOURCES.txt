@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+ethereum_rpc_fingerprinter.py
+pyproject.toml
+requirements.txt
+setup.py
+ethereum_rpc_fingerprinter.egg-info/PKG-INFO
+ethereum_rpc_fingerprinter.egg-info/SOURCES.txt
+ethereum_rpc_fingerprinter.egg-info/dependency_links.txt
+ethereum_rpc_fingerprinter.egg-info/entry_points.txt
+ethereum_rpc_fingerprinter.egg-info/not-zip-safe
+ethereum_rpc_fingerprinter.egg-info/requires.txt
+ethereum_rpc_fingerprinter.egg-info/top_level.txt
+tests/test_client_parsing.py
+tests/test_fingerprinter.py
