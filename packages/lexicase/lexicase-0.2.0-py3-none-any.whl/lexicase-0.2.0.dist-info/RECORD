@@ -1,0 +1,14 @@
+lexicase/__init__.py,sha256=YYkhSxH61MJxruuHByhN_URAO-oHT92oxLT8wltQpVo,999
+lexicase/base.py,sha256=VJebB2etjbESHxT8vVZmaMAJqjlfHQR7StQO-mArliE,2573
+lexicase/dispatch.py,sha256=o0xkB59AubPgFg5Z-eSCoSny9JOan_eU9i2S_vH2H_w,13543
+lexicase/downsample.py,sha256=JucVf8p1PS6Syms40DJtG4A7mWiS6SnNh0reOTD3VK0,3352
+lexicase/epsilon.py,sha256=DIeTSw57huR9H6-YkFZtO0SJJdDmSFCUscswHW7bCoY,3803
+lexicase/jax_impl.py,sha256=ft7hnpqm3nyrYNt6QilSYtaudGaZ3a69WUFr-fxxZNs,9435
+lexicase/jax_impl_simple.py,sha256=5fTIRmF34o8vj-2y5PKmKAVR5xhPJkRH5vRBpX_mn5U,38751
+lexicase/numpy_impl.py,sha256=ipLef4xR9j9XfZergJsyLhfwQUgSohfshdJ57TyUnYw,15849
+lexicase/utils.py,sha256=xnJAxUnjsbg_PPutypn1YHJ7OelKjAYcKojq9Ol-5Zg,4374
+lexicase-0.2.0.dist-info/licenses/LICENSE,sha256=jnxr5XTZgd1sFg6aH06fVCNuFv_3phQ9nUT2h2L6eEE,1075
+lexicase-0.2.0.dist-info/METADATA,sha256=LZQMCQFh1uFuSoqPPkthOyr6-F1_aFgzrRUSiPCeb7w,10376
+lexicase-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+lexicase-0.2.0.dist-info/top_level.txt,sha256=w-oMvUuVpb2jZS3VWJNGzwrAsaLeQCZsPxGTJmoiIok,9
+lexicase-0.2.0.dist-info/RECORD,,
