@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/tkinter3d/__init__.py
+src/tkinter3d/core.py
+src/tkinter3d/tools.py
+src/tkinter3d.egg-info/PKG-INFO
+src/tkinter3d.egg-info/SOURCES.txt
+src/tkinter3d.egg-info/dependency_links.txt
+src/tkinter3d.egg-info/top_level.txt
