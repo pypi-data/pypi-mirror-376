@@ -1,0 +1,2 @@
+[console_scripts]
+vo-wot = vowot.cli.cli:main
