@@ -1,0 +1,10 @@
+LICENSE.md
+README.md
+setup.py
+opensr_utils/__init__.py
+opensr_utils/main.py
+opensr_utils.egg-info/PKG-INFO
+opensr_utils.egg-info/SOURCES.txt
+opensr_utils.egg-info/dependency_links.txt
+opensr_utils.egg-info/requires.txt
+opensr_utils.egg-info/top_level.txt
