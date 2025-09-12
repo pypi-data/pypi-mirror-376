@@ -1,0 +1,7 @@
+numpy==2.3.*
+scipy==1.16.*
+cexprtk==0.4.*
+
+[dev]
+pytest==8.*
+twine>=4.0.2
