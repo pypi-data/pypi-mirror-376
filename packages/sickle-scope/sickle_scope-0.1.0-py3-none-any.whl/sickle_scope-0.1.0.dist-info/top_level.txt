@@ -1,0 +1,3 @@
+notebooks
+sickle_scope
+tests
