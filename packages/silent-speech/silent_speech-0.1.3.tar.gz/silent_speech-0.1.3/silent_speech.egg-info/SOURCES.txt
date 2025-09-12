@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+silent_speech/__init__.py
+silent_speech/main.py
+silent_speech.egg-info/PKG-INFO
+silent_speech.egg-info/SOURCES.txt
+silent_speech.egg-info/dependency_links.txt
+silent_speech.egg-info/entry_points.txt
+silent_speech.egg-info/not-zip-safe
+silent_speech.egg-info/requires.txt
+silent_speech.egg-info/top_level.txt

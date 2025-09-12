@@ -1,0 +1,2 @@
+[console_scripts]
+silent-speech = silent_speech.main:cli_main
