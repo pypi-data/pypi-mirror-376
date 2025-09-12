@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+introspection=swarmauri_tokens_introspection:IntrospectionTokenService
+
+[swarmauri.tokens]
+IntrospectionTokenService=swarmauri_tokens_introspection:IntrospectionTokenService
+
