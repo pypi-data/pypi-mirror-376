@@ -1,0 +1,11 @@
+zope/untrustedpython/__init__.py,sha256=MsSFjiLMLJZ7QhUPpVBWKiyDnCzryquRyr329NoCACI,2
+zope/untrustedpython/builtins.py,sha256=_UZlY9dvrJWFKoqC__etWUlNleaIY2lV9erAwF9hmc0,4621
+zope/untrustedpython/interpreter.py,sha256=OjoQiUx8gHUnhOOKrTLsDl-UAN8AvJ6mxz9VEJ4AXwo,2188
+zope/untrustedpython/rcompile.py,sha256=BrLzULik80oCGTqDD6sdqm5ilhkNftkvSUUgi3F0A0c,981
+zope/untrustedpython/tests.py,sha256=-0PQi4Sa_j2Ah9jKG2sAobXnyQAzLDFksmtOBDDMZYA,6386
+zope/untrustedpython/transformer.py,sha256=UEBDpp8LMh6r9UCWCxppzpKRm7wo-nSlIO1RSL7WSgQ,1143
+zope_untrustedpython-7.0.dist-info/METADATA,sha256=_xuqZLToIJBmDGtEvfXs2QGKs62D7zuuAjIc7xyCK2E,3631
+zope_untrustedpython-7.0.dist-info/WHEEL,sha256=lTU6B6eIfYoiQJTZNc-fyaR6BpL6ehTzU3xGYxn2n8k,91
+zope_untrustedpython-7.0.dist-info/top_level.txt,sha256=QpUHvpO4wIuZDeEgKY8qZCtD-tAukB0fn_f6utzlb98,5
+zope_untrustedpython-7.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+zope_untrustedpython-7.0.dist-info/RECORD,,
