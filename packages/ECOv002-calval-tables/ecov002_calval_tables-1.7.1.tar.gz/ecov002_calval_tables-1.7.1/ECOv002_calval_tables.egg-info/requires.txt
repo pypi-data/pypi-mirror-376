@@ -1,0 +1,17 @@
+daylight-evapotranspiration>=v1.3.4
+pandas
+geopandas
+numpy
+tables
+scikit-learn
+scipy
+matplotlib
+shapely
+
+[dev]
+build
+pytest>=6.0
+pytest-cov
+jupyter
+pytest
+twine
