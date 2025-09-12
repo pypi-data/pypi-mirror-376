@@ -1,0 +1,97 @@
+Metadata-Version: 2.4
+Name: omga-cli
+Version: 0.1.0
+Summary: A CLI tool for code checking, explanation, and AI assistance
+Author: Pouria Hosseini
+Author-email: Pouria Hosseini <PouriaHosseini@outlook.com>
+License: MIT
+Keywords: cli,code-analysis,ai
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: prompt_toolkit>=3.0.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: google-generativeai>=0.3.0
+Requires-Dist: requests>=2.28
+Requires-Dist: rich>=13.0.0
+Requires-Dist: python-dotenv>=0.20.0
+Dynamic: author
+Dynamic: license-file
+
+# omga-cli
+
+**omga-cli** is an advanced, AI-powered command-line assistant built for developers.  
+It combines **local checks** (syntax, linting, project scaffolding) with the power of **OMGA**, giving you a smart, minimal, and developer-friendly workflow.
+
+---
+
+## ✨ Features
+
+- ✅ Syntax & lint checks (`check file.py`)
+- 🤖 AI explanations & Q&A (`explain`, `ask`)
+- 🔧 Auto-fixes with diff previews (`fix --apply`)
+- ⚡ Run shell commands safely (`run "ls -la"`)
+- 🚀 Project scaffolding (e.g., FastAPI starter)
+- 📚 Snippet management (`snippet add/list`)
+- 💡 Interactive mode with **Tab-completion** (static + AI suggestions)
+
+---
+
+## 🚀 Quickstart
+
+```bash
+# 1. Install omga-cli
+pip install omga-cli
+
+# 2. Run in interactive mode
+omga-cli
+
+# Or run a one-shot command
+omga-cli <command>
+```
+
+---
+
+## 🖥️ Example Usage
+
+```bash
+# Check syntax
+omga-cli check file.py
+# → "Syntax OK" or error list
+
+# Explain code
+omga-cli explain file.py
+# → "This code does X, but watch for Y pitfall."
+
+# Ask general AI question
+omga-cli ask "how to use pandas?"
+
+# Fix code with AI suggestions
+omga-cli fix file.py --apply
+
+# Scaffold a FastAPI project
+omga-cli generate project fastapi myapp
+
+# Manage code snippets
+omga-cli snippet add hello "print('Hello World')"
+omga-cli snippet list
+```
+
+---
+
+## 🔒 Security Note
+
+The `run` command executes **local shell commands** directly.  
+⚠️ Use it only with trusted commands. No sandboxing is provided.
+
+---
+
+## 👨‍💻 Author
+
+Developed with ❤️ by **Pouria Hosseini**  
+📧 Contact: [PouriaHosseini@Outlook.com](mailto:PouriaHosseini@Outlook.com)
+
+---
