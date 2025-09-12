@@ -1,0 +1,10 @@
+companion/config.py,sha256=lgcfEvVfDcXPCvxXP0AISv-zNpu8UTl-jEf6ZSMDc10,2353
+companion/genconfig.py,sha256=Oqi_Kq_iseKiXCVzR3MTb36KFPrDIYV-nOfuuRhNsBc,3210
+companion/ipcext.py,sha256=wjcttGgNYoA4O40YiPcP9gyLk2IGAyGSBluMgVgAUe4,1605
+companion/logger.py,sha256=dS5kTlgQkrrIovrn56-Mr4uLbq5yg0nj6k416heZmXU,181
+companion/workspaces.py,sha256=L1qsvTNEzH2a0x47O5Cc_Pdt2FqCuGwn_JVqWr_Uxvc,1130
+niri_companion-2.0.0.dist-info/METADATA,sha256=UoGv2s_VXadZQH2eGS-LsH1vT1EzD81jxEBwmeBO5BM,2367
+niri_companion-2.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+niri_companion-2.0.0.dist-info/entry_points.txt,sha256=rB5jVnltLdiO3PiW45w9klH_VPgbHxHvie7q-ws-EHg,140
+niri_companion-2.0.0.dist-info/top_level.txt,sha256=KbgWY0vLOhOeRXAAnrtM-UnFEsZiL-ehmBYwPGVfY28,10
+niri_companion-2.0.0.dist-info/RECORD,,
