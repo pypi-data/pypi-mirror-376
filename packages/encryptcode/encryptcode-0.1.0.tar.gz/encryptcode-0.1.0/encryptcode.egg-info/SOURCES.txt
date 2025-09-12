@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+pyproject.toml
+encryptcode/__init__.py
+encryptcode/encryptcode.py
+encryptcode/encryptit.sh
+encryptcode/setup.py
+encryptcode.egg-info/PKG-INFO
+encryptcode.egg-info/SOURCES.txt
+encryptcode.egg-info/dependency_links.txt
+encryptcode.egg-info/requires.txt
+encryptcode.egg-info/top_level.txt
