@@ -1,0 +1,11 @@
+ai-edge-model-explorer<0.2.0,>=0.1.25
+flatbuffers
+
+[build]
+build
+
+[format]
+ruff==0.5.2
+
+[test]
+pytest
