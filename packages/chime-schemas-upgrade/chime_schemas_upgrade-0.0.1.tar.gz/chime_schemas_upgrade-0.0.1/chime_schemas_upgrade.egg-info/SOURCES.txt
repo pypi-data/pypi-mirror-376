@@ -1,0 +1,6 @@
+setup.py
+chime-schemas-upgrade/__init__.py
+chime_schemas_upgrade.egg-info/PKG-INFO
+chime_schemas_upgrade.egg-info/SOURCES.txt
+chime_schemas_upgrade.egg-info/dependency_links.txt
+chime_schemas_upgrade.egg-info/top_level.txt
