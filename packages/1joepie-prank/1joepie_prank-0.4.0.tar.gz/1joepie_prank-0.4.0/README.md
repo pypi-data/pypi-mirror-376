@@ -1,0 +1,43 @@
+# 1joepie-prank (import as `joepie_tools`) — v0.4.0
+
+**Safe, visual prank toolkit**. New in 0.4.0:
+- **Sounds:** beep, alarm loop, typewriter clicks, error ding
+- **New tools:** Fake BSOD, Fake Update Screen, Fake Virus Scan, Random Popups
+- **Runner:** `run_full_prank()` with consent modal + reveal hotkey (F12) + stop-all
+- **Improvements:** more realistic terminal output/themes; stop events
+
+> This is 100% visual. It does **not** run real hacks, delete files, or scan networks. Use responsibly and always tell people it's a joke afterwards.
+
+## Install (dev)
+```bash
+python -m pip install --upgrade build twine
+python -m pip install -e .
+```
+
+## Quick usage
+```python
+from joepie_tools.hackerprank import run_full_prank
+run_full_prank(require_ack=True, beep=True, reveal_hotkey="F12", num_windows=3, duration=8.0)
+```
+
+## CLI
+```bash
+python -m joepie_tools.cli hack -n 4 -d 10
+python -m joepie_tools.cli matrix -d 12
+python -m joepie_tools.cli term -d 8
+python -m joepie_tools.cli dump -d 6
+python -m joepie_tools.cli popup -m "Just kidding!" -d 4
+python -m joepie_tools.cli bsod -d 8
+python -m joepie_tools.cli update -d 15
+python -m joepie_tools.cli scan -d 12 --max 500
+python -m joepie_tools.cli popups -c 12 -d 8
+python -m joepie_tools.cli runfull --beep --ack --hotkey F12 -n 3 -d 8
+```
+
+## Build & publish
+```bash
+python -m build
+python -m twine upload --repository testpypi dist/*
+# If OK:
+python -m twine upload dist/*
+```
