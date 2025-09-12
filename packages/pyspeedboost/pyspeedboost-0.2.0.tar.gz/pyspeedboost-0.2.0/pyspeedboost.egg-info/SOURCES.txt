@@ -1,0 +1,15 @@
+README.md
+setup.py
+pyspeedboost/__init__.py
+pyspeedboost/cli.py
+pyspeedboost/compiler.py
+pyspeedboost/config.py
+pyspeedboost/exceptions.py
+pyspeedboost/utils.py
+pyspeedboost.egg-info/PKG-INFO
+pyspeedboost.egg-info/SOURCES.txt
+pyspeedboost.egg-info/dependency_links.txt
+pyspeedboost.egg-info/entry_points.txt
+pyspeedboost.egg-info/requires.txt
+pyspeedboost.egg-info/top_level.txt
+tests/test_pyspeedboost.py
