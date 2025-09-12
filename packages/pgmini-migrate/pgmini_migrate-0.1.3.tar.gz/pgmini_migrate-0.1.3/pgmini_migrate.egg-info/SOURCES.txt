@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+pgmini_migrate/__init__.py
+pgmini_migrate/__main__.py
+pgmini_migrate/cli.py
+pgmini_migrate/utils.py
+pgmini_migrate.egg-info/PKG-INFO
+pgmini_migrate.egg-info/SOURCES.txt
+pgmini_migrate.egg-info/dependency_links.txt
+pgmini_migrate.egg-info/entry_points.txt
+pgmini_migrate.egg-info/requires.txt
+pgmini_migrate.egg-info/top_level.txt

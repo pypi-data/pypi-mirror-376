@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: pgmini-migrate
+Version: 0.1.3
+Summary: A minimal PostgreSQL migration tool for Python
+Author-email: Nguyen Vu Duy Luan <nvdluan@gmail.com>
+License: Copyright (c) 2025 Nguyen Vu Duy Luan
+Project-URL: Homepage, https://github.com/NVDLuan/pgmini-migrate
+Project-URL: Issues, https://github.com/NVDLuan/pgmini-migrate/issues
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: psycopg[binary]>=3.1.8
+Requires-Dist: dotenv<0.10.0,>=0.9.9
+Requires-Dist: click<9.0.0,>=8.2.1
+Dynamic: license-file
+
+# pgmini-migrate
+
+`pgmini-migrate` is a **lightweight SQL migration tool** for PostgreSQL.  
+It allows you to easily **create migration files** and run **upgrades/downgrades** using simple CLI commands.  
+
+No ORM required — just pure SQL.
+
+---
+
+## ✨ Features
+- Auto-generate migration files (`upgrade` + `downgrade`).
+- Run **upgrade** or **downgrade** up to a specific version.
+- Two connection options:
+  - via `DATABASE_URL`
+  - via `host`, `port`, `user`, `password`, `dbname`.
+- Configurable migrations directory.
+- Minimal, simple, and PostgreSQL-focused.
+
+---
+
+## 📦 Installation
+
+```bash
+pip install pgmini-migrate
