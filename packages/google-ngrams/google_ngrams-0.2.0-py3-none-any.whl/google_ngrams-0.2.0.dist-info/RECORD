@@ -1,0 +1,14 @@
+google_ngrams/__init__.py,sha256=01F_2COa0bIM7j6u-TM5bDQ27OPAlU_Jmz2FHRc6cTs,379
+google_ngrams/ngrams.py,sha256=cMGlZQXyE8DUPf3TPO0OYiJATLd3HNbyhxxaHYkMZNU,12192
+google_ngrams/scatter_helpers.py,sha256=JlMrUe-8PZIu68C1Yp06AH1KHb_8PLxzAbuuNcGJbEQ,5657
+google_ngrams/vnc.py,sha256=unsIZqKP4Yh3iA3vJvmKIAVvDGQUGhkuBPOKlKBcFds,17018
+google_ngrams/vnc_helpers.py,sha256=1YxN9dxAYDXIqd5KBmkWa7sz5S_LzYryYqGUaJNUKQ8,25123
+google_ngrams/data/__init__.py,sha256=HGJ8SSIb7oP17ZtqwBVE4MzrbHEkR7Wkr2yleI-qTUM,420
+google_ngrams/data/googlebooks_eng_all_totalcounts_20120701.parquet,sha256=z39hgtEE18o3qAdOc_HpFJOFCPjdgVWDef1rAbZRndQ,12000
+google_ngrams/data/googlebooks_eng_gb_all_totalcounts_20120701.parquet,sha256=oxcdjSOEFuvt19CiaD0kPapy6Z8lkij0rIDuiJuJUVc,12251
+google_ngrams/data/googlebooks_eng_us_all_totalcounts_20120701.parquet,sha256=CQi0n-vovKbKYQ7nUWEn7gerGHm8pAusGVpGIx1m9Go,11063
+google_ngrams-0.2.0.dist-info/licenses/LICENSE,sha256=gCVdJQkFNFbywKo3EZ1w6kV-Zt5jkXozXV0wWjDed1g,9122
+google_ngrams-0.2.0.dist-info/METADATA,sha256=EE4Yw3AOQCFgn_1cQGAlthgIu9el-x0pmg60nUIUq2k,6273
+google_ngrams-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+google_ngrams-0.2.0.dist-info/top_level.txt,sha256=IjVijaqC11yDFtc5yqqDR_ikNpUJT0zu_6AaDpHs0SA,14
+google_ngrams-0.2.0.dist-info/RECORD,,
