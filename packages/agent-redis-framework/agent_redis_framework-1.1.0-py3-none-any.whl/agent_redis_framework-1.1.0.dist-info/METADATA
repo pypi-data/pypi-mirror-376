@@ -1,0 +1,401 @@
+Metadata-Version: 2.4
+Name: agent-redis-framework
+Version: 1.1.0
+Summary: A clean, elegant Python library for Redis-based multi-task scheduling with SortedSets and Streams.
+Requires-Python: >=3.12
+Requires-Dist: redis<7.0,>=5.0
+Requires-Dist: typing-extensions<5.0,>=4.12
+Provides-Extra: dev
+Requires-Dist: fastapi>=0.104.0; extra == 'dev'
+Requires-Dist: pydantic>=2.0.0; extra == 'dev'
+Requires-Dist: uvicorn[standard]>=0.24.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# Agent Redis Framework
+
+一个优雅、高效的 Python Redis 框架，专为多任务调度与消息流处理而设计。提供基于 Redis Sorted Sets 的轻量任务队列和基于 Redis Streams 的消费组封装，适合构建可扩展的分布式任务系统。
+
+## ✨ 核心特性
+
+### 🚀 SortedSetQueue - 智能任务队列
+- **优先级调度**: 基于 Redis Sorted Set 实现的轻量任务队列
+- **原子操作**: 使用 `ZPOPMIN`/`ZPOPMAX` 确保多消费者场景下的任务安全分发
+- **灵活排序**: 支持按分数升序/降序弹出任务
+- **失败处理**: 内置任务处理失败的回调机制
+- **批量处理**: 支持一次性弹出并处理多个任务
+
+### 📡 RedisStreamsClient - 流式消息处理
+- **消费组管理**: 完整的 Redis Streams 消费组封装
+- **自动 ACK**: 消息处理成功后自动确认
+- **流量控制**: 支持流长度限制和自动修剪
+- **阻塞消费**: 可配置的阻塞时间和批量消费
+- **错误恢复**: 处理待确认消息和消费者故障恢复
+
+### 🔧 企业级特性
+- **连接池管理**: 自动连接池复用，优化高并发性能
+- **环境配置**: 灵活的 `.env` 文件和环境变量支持
+- **类型安全**: 完整的 Python 类型注解
+- **线程安全**: 所有核心组件支持多线程并发
+- **零依赖**: 仅依赖 `redis` 和 `typing-extensions`
+
+## 🚀 快速开始
+
+### Redis 连接配置
+
+#### 方式一：环境变量配置（推荐）
+
+创建 `.env` 文件：
+```bash
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_PASSWORD=your_password
+REDIS_MAX_CONNECTIONS=20
+```
+
+```python
+from agent_redis_framework import get_redis
+
+# 自动从环境变量加载配置
+redis_client = get_redis()
+print(redis_client.ping())  # True
+```
+
+### SortedSetQueue - 任务队列示例
+
+```python
+from agent_redis_framework import SortedSetQueue, Task, get_redis
+import time
+
+# 初始化
+redis_client = get_redis()
+queue = SortedSetQueue(redis_client=redis_client)
+queue_key = "my_task_queue"
+
+# 清空队列（可选）
+queue.clear(queue_key)
+
+# 推送任务（分数越小优先级越高）
+import json
+queue.push(queue_key, Task(id="urgent_task", payload=json.dumps({"priority": "high"})), score=1)
+queue.push(queue_key, Task(id="normal_task", payload=json.dumps({"priority": "normal"})), score=5)
+queue.push(queue_key, Task(id="delayed_task", payload=json.dumps({"priority": "low"})), score=10)
+
+# 定义任务处理函数
+def process_task(task: Task) -> bool:
+    print(f"Processing task {task.id}: {task.payload}")
+    # 模拟任务处理
+    time.sleep(0.1)
+    return True  # 返回 True 表示处理成功
+
+# 定义失败处理函数
+def handle_failure(task: Task) -> None:
+    print(f"Task {task.id} failed, logging for retry...")
+
+# 原子弹出并处理任务
+processed = queue.pop_and_handle(
+    queue_key,
+    callback=process_task,
+    on_failure=handle_failure,
+    count=2  # 一次处理 2 个任务
+)
+
+print(f"Processed {len(processed)} tasks")
+print(f"Remaining tasks: {queue.size(queue_key)}")
+```
+
+### RedisStreamsClient - 流式消息示例
+
+```python
+from agent_redis_framework import RedisStreamsClient, StreamMsg, get_redis
+import threading
+import time
+
+# 初始化
+redis_client = get_redis()
+stream_client = RedisStreamsClient(redis_client=redis_client)
+
+stream_name = "user_events"
+group_name = "analytics_group"
+consumer_name = "consumer_1"
+
+# 创建消费组（幂等操作）
+stream_client.ensure_group(stream_name, group_name)
+
+# 推送消息
+message_id = stream_client.push(stream_name, {
+    "event_type": "user_login",
+    "user_id": "12345",
+    "timestamp": time.time(),
+    "ip_address": "192.168.1.100"
+})
+print(f"Message pushed with ID: {message_id}")
+
+# 定义消息处理函数
+def handle_message(msg: StreamMsg) -> None:
+    print(f"Processing message {msg.message_id} from {msg.stream}")
+    print(f"Payload: {dict(msg.payload)}")
+    # 处理业务逻辑
+    time.sleep(0.1)
+
+# 在单独线程中启动消费者
+def start_consumer():
+    stream_client.consume(
+        streams=[stream_name],
+        group=group_name,
+        consumer=consumer_name,
+        callback=handle_message,
+        block_ms=5000,  # 5秒阻塞超时
+        count=10        # 每次最多读取10条消息
+    )
+
+# 启动消费者线程
+consumer_thread = threading.Thread(target=start_consumer, daemon=True)
+consumer_thread.start()
+
+# 继续推送更多消息
+for i in range(5):
+    stream_client.push(stream_name, {
+        "event_type": "page_view",
+        "user_id": f"user_{i}",
+        "page": f"/page/{i}",
+        "timestamp": time.time()
+    })
+    time.sleep(1)
+```
+
+## 🏗️ 高级用法
+
+### 延时任务调度
+
+```python
+import time
+from agent_redis_framework import SortedSetQueue, Task, get_redis
+
+queue = SortedSetQueue(redis_client=get_redis())
+delay_queue = "delayed_tasks"
+
+# 推送延时任务（5分钟后执行）
+future_time = time.time() + 300  # 5分钟后
+queue.push(delay_queue, Task(
+    id="send_email",
+    payload=json.dumps({"to": "user@example.com", "subject": "Welcome!"})
+), score=future_time)
+
+# 处理到期任务
+def process_if_ready(task: Task) -> bool:
+    current_time = time.time()
+    # 检查任务是否到期（这里需要从Redis重新获取分数）
+    return True  # 简化示例
+
+# 定期检查并处理到期任务
+while True:
+    processed = queue.pop_and_handle(delay_queue, process_if_ready, count=5)
+    if not processed:
+        time.sleep(10)  # 没有任务时等待10秒
+```
+
+### 流消息批量处理
+
+```python
+from agent_redis_framework import RedisStreamsClient, StreamMsg, get_redis
+
+stream_client = RedisStreamsClient(redis_client=get_redis())
+
+# 批量推送消息
+messages = [
+    {"order_id": f"order_{i}", "amount": i * 100, "status": "pending"}
+    for i in range(100)
+]
+
+for msg in messages:
+    stream_client.push("order_stream", msg, maxlen=1000)  # 限制流长度
+
+# 批量消费处理
+def batch_process_orders(msg: StreamMsg) -> None:
+    order_data = json.loads(msg.payload) if msg.payload else {}
+    print(f"Processing order: {order_data.get('order_id', 'unknown')}")
+    # 批量处理逻辑
+
+stream_client.consume(
+    streams=["order_stream"],
+    group="order_processors",
+    consumer="processor_1",
+    callback=batch_process_orders,
+    count=50,  # 每次批量处理50条消息
+    block_ms=1000
+)
+```
+
+## 🔧 配置选项
+
+### RedisConfig 完整配置
+
+```python
+from agent_redis_framework import RedisConfig
+
+config = RedisConfig(
+    host="localhost",                    # Redis 主机地址
+    port=6379,                          # Redis 端口
+    db=0,                               # 数据库编号
+    username="myuser",                  # 用户名（Redis 6.0+）
+    password="mypassword",              # 密码
+    ssl=False,                          # 是否使用 SSL
+    socket_timeout=30.0,                # Socket 超时时间
+    socket_connect_timeout=10.0,        # 连接超时时间
+    health_check_interval=30,           # 健康检查间隔（秒）
+    max_connections=20,                 # 连接池最大连接数
+    retry_on_timeout=True               # 超时时是否重试
+)
+```
+
+### 环境变量配置
+
+支持的环境变量：
+
+```bash
+# 基础连接配置
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_USERNAME=myuser
+REDIS_PASSWORD=mypassword
+REDIS_SSL=false
+
+# 连接池配置
+REDIS_MAX_CONNECTIONS=20
+REDIS_SOCKET_TIMEOUT=30.0
+REDIS_SOCKET_CONNECT_TIMEOUT=10.0
+REDIS_HEALTH_CHECK_INTERVAL=30
+REDIS_RETRY_ON_TIMEOUT=true
+```
+
+## 🧪 测试和开发
+
+项目提供了完整的测试 API，方便开发和调试：
+
+```bash
+# 安装开发依赖
+uv sync --extra dev
+
+# 启动测试 API 服务
+UV_INDEX_URL=https://pypi.org/simple/ uv run uvicorn tests.test_api:app --host 0.0.0.0 --port 8081
+```
+
+访问 http://localhost:8081/docs 查看交互式 API 文档。
+
+详细的测试说明请参考 [tests/README.md](tests/README.md)。
+
+## 🏭 生产环境最佳实践
+
+### 1. 连接池优化
+
+```python
+# 根据并发需求调整连接池大小
+config = RedisConfig(
+    max_connections=50,  # 高并发场景
+    health_check_interval=30,  # 定期健康检查
+    socket_timeout=10.0,  # 避免长时间阻塞
+    retry_on_timeout=True  # 自动重试
+)
+```
+
+### 2. 错误处理和监控
+
+```python
+import logging
+from agent_redis_framework import SortedSetQueue, Task
+
+logger = logging.getLogger(__name__)
+
+def robust_task_handler(task: Task) -> bool:
+    try:
+        # 任务处理逻辑
+        process_business_logic(task.payload)
+        return True
+    except Exception as e:
+        logger.error(f"Task {task.id} failed: {e}")
+        return False
+
+def failure_handler(task: Task) -> None:
+    # 记录失败任务，可能需要重试
+    logger.warning(f"Task {task.id} marked for retry")
+    # 可以将失败任务重新入队或发送到死信队列
+```
+
+### 3. 优雅关闭
+
+```python
+import signal
+import threading
+from agent_redis_framework import RedisStreamsClient
+
+class GracefulConsumer:
+    def __init__(self):
+        self.running = True
+        self.stream_client = RedisStreamsClient()
+        
+    def signal_handler(self, signum, frame):
+        print("Received shutdown signal, stopping consumer...")
+        self.running = False
+        
+    def consume_loop(self):
+        while self.running:
+            try:
+                # 使用较短的阻塞时间以便及时响应关闭信号
+                self.stream_client.consume(
+                    streams=["my_stream"],
+                    group="my_group",
+                    consumer="my_consumer",
+                    callback=self.handle_message,
+                    block_ms=1000  # 1秒超时
+                )
+            except KeyboardInterrupt:
+                break
+                
+    def handle_message(self, msg):
+        if not self.running:
+            return
+        # 处理消息逻辑
+        
+# 使用示例
+consumer = GracefulConsumer()
+signal.signal(signal.SIGINT, consumer.signal_handler)
+signal.signal(signal.SIGTERM, consumer.signal_handler)
+consumer.consume_loop()
+```
+
+## 📚 API 参考
+
+### SortedSetQueue
+
+- `push(key, task, score=None)` - 推送任务到队列
+- `pop_and_handle(key, callback, on_failure=None, ascending=True, count=1)` - 原子弹出并处理任务
+- `size(key)` - 获取队列大小
+- `clear(key)` - 清空队列
+
+### RedisStreamsClient
+
+- `push(stream, fields, maxlen=None)` - 推送消息到流
+- `ensure_group(stream, group, id='0')` - 确保消费组存在
+- `consume(streams, group, consumer, callback, block_ms=5000, count=1)` - 消费消息
+
+### 数据类
+
+- `Task(id, payload, meta={})` - 任务数据类，payload 为字符串格式（JSON 或原生字符串）
+- `StreamMsg(stream, message_id, payload, meta={})` - 流消息数据类，payload 为字符串格式
+- `RedisConfig(...)` - Redis 连接配置
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+## 📄 许可证
+
+MIT License
+
+## 🔗 相关链接
+
+- [Redis 官方文档](https://redis.io/documentation)
+- [Redis Streams 指南](https://redis.io/topics/streams-intro)
+- [Redis Sorted Sets 指南](https://redis.io/topics/data-types#sorted-sets)
