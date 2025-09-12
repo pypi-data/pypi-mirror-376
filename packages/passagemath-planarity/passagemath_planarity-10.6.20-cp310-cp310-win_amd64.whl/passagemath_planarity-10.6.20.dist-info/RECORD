@@ -1,0 +1,10 @@
+passagemath_planarity-10.6.20.dist-info/DELVEWHEEL,sha256=Gss9QzTIRJRJlw5SkDe4H7B8jaZ_on98Uo6Wc6k4HLE,441
+passagemath_planarity-10.6.20.dist-info/METADATA,sha256=SxRvNZvnoKpZqkrfb5_CVsVAVALkx7-CnA8qWJPM6qg,4973
+passagemath_planarity-10.6.20.dist-info/RECORD,,
+passagemath_planarity-10.6.20.dist-info/top_level.txt,sha256=Kmzulf9WsphADFQuqgvdy5mvTLDj_V2zkFHU2s3UXos,6
+passagemath_planarity-10.6.20.dist-info/WHEEL,sha256=KUuBC6lxAbHCKilKua8R9W_TM71_-9Sg5uEP3uDWcoU,101
+passagemath_planarity.libs/libplanarity-2-0ddd0f341261e174df742a578de62412.dll,sha256=Dd0PNBJh4XTfdCpXjeYkEghBABRiD8uxVBpozp4q0es,643402
+sage/all__sagemath_planarity.py,sha256=uS38LyVLeWFnh2ps7ZDWuLvivfwGyvbspQmSduiGlVI,413
+sage/graphs/all__sagemath_planarity.py,sha256=CYZamBzI163p8V2TX9c1rV2S9cGAOxEOhc82QQkpTvQ,48
+sage/graphs/planarity.cp310-win_amd64.pyd,sha256=q9b7MrjSpexS3RkXHdtSZ6jwOxOIe4t1fTz0y41-DO4,51200
+sage/graphs/planarity.pyx,sha256=2OQXReYJKYQ6MjVMO0uAj3I-z_X7fN4nau1aCfe_EUU,7093
