@@ -1,0 +1,3 @@
+[console_scripts]
+decoder = whose_encoder.decoder:decoder
+encoder = whose_encoder.encoder:encoder
