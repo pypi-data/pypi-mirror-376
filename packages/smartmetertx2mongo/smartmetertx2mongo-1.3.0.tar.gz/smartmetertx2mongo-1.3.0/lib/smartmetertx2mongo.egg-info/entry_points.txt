@@ -1,0 +1,4 @@
+[console_scripts]
+smtx-fetch = smartmetertx.smtx2mongo:main
+smtx-report = smartmetertx.meterReport:main
+smtx-server = smartmetertx.server:main
