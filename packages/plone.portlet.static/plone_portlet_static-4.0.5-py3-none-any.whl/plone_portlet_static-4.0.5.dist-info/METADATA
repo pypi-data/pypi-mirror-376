@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: plone.portlet.static
+Version: 4.0.5
+Summary: An editable static HTML portlet for Plone.
+Home-page: https://pypi.org/project/plone.portlet.static
+Author: Plone Foundation
+Author-email: plone-developers@lists.sourceforge.net
+License: GPL version 2
+Keywords: plone portlet static
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Plone
+Classifier: Framework :: Plone :: 6.0
+Classifier: Framework :: Plone :: Core
+Classifier: Framework :: Zope :: 5
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Requires-Dist: setuptools
+Requires-Dist: plone.base
+Requires-Dist: plone.portlets
+Requires-Dist: plone.app.portlets
+Requires-Dist: plone.app.textfield
+Requires-Dist: plone.app.z3cform
+Requires-Dist: plone.autoform
+Requires-Dist: plone.i18n
+Requires-Dist: Products.GenericSetup
+Requires-Dist: Zope
+Provides-Extra: test
+Requires-Dist: plone.app.testing; extra == "test"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Introduction
+============
+
+A Plone Portlet providing a rich-text field for more or less static text.
+It is available and will be displayed where portlets can be placed.
+
+It is part of the Plone core package.
+
+Source Code
+===========
+
+Contributors please read the document `Process for Plone core's development <https://docs.plone.org/develop/coredev/docs/index.html>`_
+
+Sources are at the `Plone code repository hosted at Github <https://github.com/plone/plone.portlet.static>`_.
+
+CHANGES.rst
