@@ -1,0 +1,12 @@
+zope/ramcache/__init__.py,sha256=MsSFjiLMLJZ7QhUPpVBWKiyDnCzryquRyr329NoCACI,2
+zope/ramcache/ram.py,sha256=dWtBFF1JON8mop3JSGXVa28Fy1AN-h6kI_q7IbWCGOk,10915
+zope/ramcache/interfaces/__init__.py,sha256=nloaRPELLJViawllUR_8XVjNNPBm2L_xIk91nXrftWI,1550
+zope/ramcache/interfaces/ram.py,sha256=i3ewnixBQZeNObggafHzilnvqRush9F04V8chWqyWxI,1853
+zope/ramcache/tests/__init__.py,sha256=MsSFjiLMLJZ7QhUPpVBWKiyDnCzryquRyr329NoCACI,2
+zope/ramcache/tests/test_icache.py,sha256=CSPbFYD0916ML0hejmYEpB4ZqVWD76oWrhQ6cFZVJlI,2923
+zope/ramcache/tests/test_ramcache.py,sha256=9u60N2HwDa3tt6Ng6oh5oMFUfPG7I1Sk8-3V2YPmSOg,18696
+zope_ramcache-4.0.dist-info/licenses/LICENSE.txt,sha256=PmcdsR32h1FswdtbPWXkqjg-rKPCDOo_r1Og9zNdCjw,2070
+zope_ramcache-4.0.dist-info/METADATA,sha256=s-O2X464sQ9nrOp0Gp64vCTiyZCEss_F8agQJyWQUbY,4612
+zope_ramcache-4.0.dist-info/WHEEL,sha256=lTU6B6eIfYoiQJTZNc-fyaR6BpL6ehTzU3xGYxn2n8k,91
+zope_ramcache-4.0.dist-info/top_level.txt,sha256=QpUHvpO4wIuZDeEgKY8qZCtD-tAukB0fn_f6utzlb98,5
+zope_ramcache-4.0.dist-info/RECORD,,
