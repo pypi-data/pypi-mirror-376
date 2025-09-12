@@ -1,0 +1,13 @@
+zpic/__init__.py,sha256=gOkvQY-UrvHymDst8WlioA5ObllF8gYt7XTqACRMCcQ,470
+zpic/contrib/__init__.py,sha256=V_lhKi_2U8RTBNbU2mvs38jdlaqt5Y9AfXnEz1XN9CA,474
+zpic/contrib/em2d_rr.cpython-310-x86_64-linux-gnu.so,sha256=UF1CGmvl0WX-4Zun5JoGq7QjzUB48Am9hA7CGZAn41E,597688
+zpic/em1d.cpython-310-x86_64-linux-gnu.so,sha256=aInWktwLOON82_ishFI3SObbn6SVh83ypcag6FOAXYI,579936
+zpic/em1ds.cpython-310-x86_64-linux-gnu.so,sha256=VU-72RIHgBsnCr3sCGCpJ5OPmPetQqJdjxdZK_WzoDM,584624
+zpic/em2d.cpython-310-x86_64-linux-gnu.so,sha256=sajrVLHjKFTQjRVXBJGGs53eK5ndTvKdg2lJTH57Thc,596888
+zpic/em2ds.cpython-310-x86_64-linux-gnu.so,sha256=6MBR_SNQO17HAcqCfWR6y0ZMGhBJkqMO2M-MGenDKeQ,529976
+zpic/es1d.cpython-310-x86_64-linux-gnu.so,sha256=GCrLgXIxoKQay03zGkrKZ58sqojLJkv3p1GASdh0LsY,420304
+zpic/zdf.py,sha256=nHSq_12NCP-wy4sqiAJzfTTyyayq74BclKODQjYfQpE,21864
+zpic-0.1.2.dist-info/LICENCE,sha256=dql8h4yceoMhuzlcK0TT_i-NgTFNIZsgE47Q4t3dUYI,34520
+zpic-0.1.2.dist-info/METADATA,sha256=txQC3ZhDdpUBaUPjpkMMFSn4OtPbrbFwaH9QxVAcp-s,2842
+zpic-0.1.2.dist-info/WHEEL,sha256=xyjVhkk_nIAJONQ5umeApDmcfPdrIWBstuNx6kqr8tE,110
+zpic-0.1.2.dist-info/RECORD,,
