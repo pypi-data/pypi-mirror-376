@@ -1,0 +1,53 @@
+# Include important documentation files
+include README.md
+include LICENSE
+include CHANGELOG.md
+include pyproject.toml
+include setup.py
+
+# Include configuration files
+recursive-include config *.json *.yaml *.yml
+recursive-include config/recipes *.json
+recursive-include config/datasets *.json
+
+# Include documentation
+recursive-include docs *.md *.rst *.txt
+recursive-include docs/user-guide *.md
+recursive-include docs/developer *.md
+
+# Include example scripts
+recursive-include scripts/demo *.py
+recursive-include scripts/validation *.py
+
+# Include test files (for development installations)
+recursive-include tests *.py
+
+# Exclude development and build artifacts
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .pytest_cache
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude *.swp
+global-exclude *.swo
+global-exclude *~
+
+# Exclude data directories
+prune data
+prune models
+prune logs
+prune reports
+prune temp
+prune mlruns
+
+# Exclude Docker artifacts
+prune docker
+exclude docker-compose*.yml
+exclude Dockerfile*
+exclude run.sh
+exclude test_docker.sh
+
+# Exclude IDE files
+prune .vscode
+prune .idea
+exclude *.code-workspace

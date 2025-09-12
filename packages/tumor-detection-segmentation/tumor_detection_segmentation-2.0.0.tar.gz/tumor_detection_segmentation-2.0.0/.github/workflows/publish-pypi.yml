@@ -1,0 +1,160 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: # Allow manual triggers
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[dev]
+
+      - name: Run tests
+        run: |
+          pytest tests/ -v --tb=short -m "not gpu and not download"
+
+      - name: Test package import
+        run: |
+          python -c "import tumor_detection; print(f'Version: {tumor_detection.__version__}')"
+          python -c "from tumor_detection import load_model, run_inference; print('API imports successful')"
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine
+
+      - name: Build package
+        run: |
+          python -m build
+
+      - name: Check package
+        run: |
+          twine check dist/*
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist/
+
+  publish-testpypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testpypi
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to Test PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          skip-existing: true
+
+      - name: Test installation from Test PyPI
+        run: |
+          pip install --index-url https://test.pypi.org/simple/ \
+            --extra-index-url https://pypi.org/simple/ \
+            tumor-detection-segmentation
+          python -c "import tumor_detection; print(f'Test PyPI install successful: {tumor_detection.__version__}')"
+
+  publish-pypi:
+    needs: [build, publish-testpypi]
+    runs-on: ubuntu-latest
+    environment: pypi
+    if: github.event_name == 'release'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+      - name: Create GitHub Release Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*
+          body: |
+            ## 🎉 New Release Available on PyPI!
+
+            This release is now available on PyPI. Install with:
+
+            ```bash
+            pip install tumor-detection-segmentation==${{ github.ref_name }}
+            ```
+
+            ### Installation Options
+            - Basic: `pip install tumor-detection-segmentation`
+            - Clinical: `pip install tumor-detection-segmentation[clinical]`
+            - GUI: `pip install tumor-detection-segmentation[gui]`
+            - All features: `pip install tumor-detection-segmentation[all]`
+
+            See [CHANGELOG.md](CHANGELOG.md) for full details.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-docs:
+    needs: publish-pypi
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update version badge
+        run: |
+          # Update PyPI badge in README if needed
+          echo "Version ${{ github.ref_name }} published successfully!"
+
+      - name: Commit version updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --staged --quiet || git commit -m "docs: update for release ${{ github.ref_name }} [skip ci]"
+          git push

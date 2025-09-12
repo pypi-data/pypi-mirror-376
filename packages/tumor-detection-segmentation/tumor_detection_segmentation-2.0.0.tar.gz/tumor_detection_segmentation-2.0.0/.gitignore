@@ -1,0 +1,186 @@
+# ===== COMPREHENSIVE .GITIGNORE FOR MEDICAL IMAGING AI =====
+
+# ===== PYTHON =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===== VIRTUAL ENVIRONMENTS =====
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pyvenv.cfg
+
+# Keep an example in git, but ignore actual env files in docker/
+/docker/.env
+/docker/.env.example
+
+# ===== PYTORCH & MACHINE LEARNING =====
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+checkpoints/
+saved_models/
+experiments/
+outputs/
+results/
+mlruns/
+wandb/
+
+# ===== MEDICAL DATA (NEVER COMMIT PATIENT DATA!) =====
+data/
+!data/README.md
+datasets/
+models/
+!models/README.md
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.ima
+*.img
+temp/
+tmp/
+logs/
+!logs/README.md
+reports/*.pdf
+reports/*.docx
+!reports/README.md
+
+# ===== JUPYTER NOTEBOOK =====
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ===== NODE.JS & FRONTEND =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+build/
+dist/
+coverage/
+.nyc_output/
+.cache/
+.parcel-cache/
+
+# Frontend specific paths
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/coverage/
+gui/frontend/node_modules/
+gui/frontend/build/
+gui/frontend/.env
+gui/frontend/coverage/
+
+# ===== ENVIRONMENT & SECRETS =====
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pyvenv.cfg
+
+# Keep an example in git, but ignore actual env files in docker/
+/docker/.env
+/docker/.env.example
+
+# ===== DOCKER =====
+.docker/
+.dockerignore
+
+# ===== TEMPORARY FILES =====
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ===== TYPE CHECKING =====
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# ===== PROFILING =====
+.prof
+*.prof
+
+# ===== PROJECT SPECIFIC =====
+# Remove duplicate nested repository
+tumor-detection-segmentation/
+notebooks/tumor-detection-segmentation/
+
+# Application uploads and runtime data
+uploads/
+gui/uploads/
+gui/logs/
+gui/reports/
+
+# Backup files
+*.backup
+*.bak
+PROJECT_ORGANIZATION_SUMMARY.md.backup
+README.md.backup
+
+# ROCm/CUDA cache
+.nv/
+.cache/
+
+# AI model cache
+.cache/
+.huggingface/
+.transformers_cache/
+
+# ===== MEDICAL IMAGING SPECIFIC =====
+# DICOM and medical imaging formats
+*.dcm
+*.dicom
+*.ima
+*.img
+*.nii
+*.nii.gz
+*.mgz
+*.mgh
+*.mnc
+*.par
+*.rec
+
+# Medical reports and PHI
+*patient*
+*PHI*
+*protected*
+*confidential*
