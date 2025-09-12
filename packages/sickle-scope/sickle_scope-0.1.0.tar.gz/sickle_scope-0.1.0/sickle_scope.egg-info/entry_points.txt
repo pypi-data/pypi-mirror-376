@@ -1,0 +1,2 @@
+[console_scripts]
+sickle-analyse = sickle_scope.cli:cli
