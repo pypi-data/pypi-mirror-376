@@ -1,0 +1,5 @@
+numpy
+fastplotlib
+PyQt6
+PySide6
+scikit-image
