@@ -1,0 +1,12 @@
+osmomemo/__init__.py,sha256=lNUcav9c0Bzy7XYWZLHYWZNJsg3IFwcLiFtcqKEdgAk,223
+osmomemo/bundle.py,sha256=byd-UwaUikS0y7Fn_0OznwpnFbhETBz2UYuWfDvqXDA,2171
+osmomemo/crypto.py,sha256=b9NOr0twPT5h0Vi-X5ksSwwiF-8yecHyX5AQr9-wdFE,5908
+osmomemo/key.py,sha256=TahbG32JMXKsnJxJ-Bwk_dC0_ikVZm_7KtWgPxJAy-4,9109
+osmomemo/omemo.py,sha256=7Zvx0pWxFmgcsUXc-aVooL0kYyLJ6biyyAiWdd4wCp4,5160
+osmomemo/storage/__init__.py,sha256=WmQAzETYNZ8a9GjdQDphziB68XGVopwKWvLV2oQt2qM,65
+osmomemo/storage/api.py,sha256=DCHIMmIQN24lod11A3Rmu1qaMdJTpQ065WOn0kSLL0w,5230
+osmomemo/storage/models.py,sha256=9WdOHIAGEL0-JcBqnWnlVayfdLokSZQ97KA7fNOBEDo,1749
+osmomemo-1.1.2.dist-info/METADATA,sha256=k3UT7zTyFzRiQedGvYSFYpBaL5b7RdMCcFQ1D3-LLPM,304
+osmomemo-1.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+osmomemo-1.1.2.dist-info/top_level.txt,sha256=GozdgSkh-3yFgjr161j44f7AyAOY_8QEoHRSRzyJ4UA,9
+osmomemo-1.1.2.dist-info/RECORD,,
