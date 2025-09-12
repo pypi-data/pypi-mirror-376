@@ -1,0 +1,7 @@
+.direnv
+.venv
+uv.lock
+*.db
+__pycache__
+*.sqlite
+dist
