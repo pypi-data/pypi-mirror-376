@@ -1,0 +1,10 @@
+qpay_client/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+qpay_client/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qpay_client/v2/__init__.py,sha256=RSIC54lU08az-Ow7cB2F1xX6UWb5oDQHHTqTrW48ezQ,62
+qpay_client/v2/enums.py,sha256=Llg5vKkMLwnwPtqZjQg9wf8J2XKkF5MxEYJxyHaSMng,973
+qpay_client/v2/error.py,sha256=vkcm_G9ifE7F--rh8aDZl-yiFbglt5xNMvSaW0nNqR4,692
+qpay_client/v2/qpay_client.py,sha256=e4dEjZRAkjms7bvxYZHDkpVxV3bCD0pAeSoWZgn2N2w,7310
+qpay_client/v2/schemas.py,sha256=jCtsAfDzh46VybP92ljnp0I6oi2W88NgfCl0JyKw250,8144
+qpay_client-0.1.1.dist-info/WHEEL,sha256=NHRAbdxxzyL9K3IO2LjmlNqKSyPZnKv2BD16YYVKo18,79
+qpay_client-0.1.1.dist-info/METADATA,sha256=xYbKsb4MkSwpJKlYC0INrmlVQunsyI27xf73XK6rEQ4,1637
+qpay_client-0.1.1.dist-info/RECORD,,
