@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: softauto
+Version: 0.3.2
+Summary: One-call EDA + preprocessing + feature selection + plotting + advisor + tuning (robust CV).
+Author: Soft Tech Talks
+License: MIT
+Keywords: auto-ml,EDA,machine learning,sklearn,feature selection
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: joblib>=1.3.0
+Requires-Dist: matplotlib>=3.7.0
+Provides-Extra: boosters
+Requires-Dist: xgboost>=2.0.0; extra == "boosters"
+Requires-Dist: lightgbm>=4.0.0; extra == "boosters"
+Provides-Extra: imbalance
+Requires-Dist: imbalanced-learn>=0.12.0; extra == "imbalance"
+
+# softauto 0.3.1 – tiny-data safe SMOTE, advisor, plots
