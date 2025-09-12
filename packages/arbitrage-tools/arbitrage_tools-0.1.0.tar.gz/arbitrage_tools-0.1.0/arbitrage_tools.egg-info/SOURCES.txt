@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+arbitrage_tools/__init__.py
+arbitrage_tools.egg-info/PKG-INFO
+arbitrage_tools.egg-info/SOURCES.txt
+arbitrage_tools.egg-info/dependency_links.txt
+arbitrage_tools.egg-info/top_level.txt
