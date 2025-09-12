@@ -1,0 +1,22 @@
+{
+  "id": "feature_implementation",
+  "name": "Feature Implementation",
+  "description": "Template for implementing new features",
+  "category": "feature",
+  "priority": "medium",
+  "estimated_duration": 240,
+  "tags": [
+    "feature",
+    "implementation",
+    "development"
+  ],
+  "default_dependencies": [],
+  "context_data_template": {
+    "requirements": [],
+    "design_document": "",
+    "testing_strategy": "",
+    "documentation_required": true
+  },
+  "inheritance": null,
+  "metadata": {}
+}
