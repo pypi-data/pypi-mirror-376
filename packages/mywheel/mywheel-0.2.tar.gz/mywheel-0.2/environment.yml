@@ -1,0 +1,6 @@
+name: mywheel
+channels:
+  - conda-forge
+dependencies:
+  - pytest
+  - pytest-benchmark
