@@ -1,0 +1,1 @@
+import{aV as t,bn as s,t as e,bs as n}from"./main-d46UvpG6.js";function i(){const o=t(!1);return s(()=>{window.requestAnimationFrame(()=>{o.value=!0})}),{ssrBootStyles:e(()=>o.value?void 0:{transition:"none !important"}),isBooted:n(o)}}export{i as u};
