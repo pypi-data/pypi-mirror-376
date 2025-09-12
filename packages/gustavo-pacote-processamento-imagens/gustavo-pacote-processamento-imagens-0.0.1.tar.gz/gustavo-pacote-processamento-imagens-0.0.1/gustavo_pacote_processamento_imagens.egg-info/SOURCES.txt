@@ -1,0 +1,12 @@
+README.md
+setup.py
+gustavo_pacote_processamento_imagens.egg-info/PKG-INFO
+gustavo_pacote_processamento_imagens.egg-info/SOURCES.txt
+gustavo_pacote_processamento_imagens.egg-info/dependency_links.txt
+gustavo_pacote_processamento_imagens.egg-info/top_level.txt
+processing/__init__.py
+processing/combinantion.py
+processing/tranformation.py
+utils/__init__.py
+utils/io.py
+utils/plot.py
