@@ -1,0 +1,9 @@
+json_tabulator/__init__.py,sha256=5mjuSzl8QhGzkvUthyq9a2eYmholERdQ5Vi6tuYNG_w,81
+json_tabulator/api.py,sha256=3VVWWxoMGbf1NJFFB189KqhZAcaLgax4ESiwfaVaSnQ,1128
+json_tabulator/expression.py,sha256=xofhW8ttYc4SqO9urN4DYXu_5uoWrgAEDOU4vsOaWZw,1710
+json_tabulator/parser.py,sha256=m19oT9nENlW0L9wgk5eVxcSiCzvON5t6uZULLVfNfos,1967
+json_tabulator/query.py,sha256=H1xt-jxgi4cXLLaUX7Bb5RuxIEiHwiz8O6ZgAU15DtA,3036
+json_tabulator-0.4.0.dist-info/LICENSE,sha256=Tt3iAHzeNC74Am1aPC_-4V1HAUrPwOE0HzlMTjGQJbM,1074
+json_tabulator-0.4.0.dist-info/METADATA,sha256=qeslZKF9FT-5b4ayp0BqLnGFOpRuQIFBxy_9jD3aZDI,5527
+json_tabulator-0.4.0.dist-info/WHEEL,sha256=Nq82e9rUAnEjt98J6MlVmMCZb-t9cYE2Ir1kpBmnWfs,88
+json_tabulator-0.4.0.dist-info/RECORD,,
