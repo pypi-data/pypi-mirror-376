@@ -1,0 +1,23 @@
+typing_extensions>=4.0.0
+
+[:python_version < "3.7"]
+dataclasses
+
+[cloud]
+boto3>=1.26.0
+azure-monitor-opentelemetry-exporter>=1.0.0b17
+google-cloud-logging>=3.4.0
+
+[dev]
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-asyncio>=0.21.0
+black>=22.0.0
+mypy>=1.0.0
+flake8>=5.0.0
+pylint>=2.15.0
+types-aiofiles>=22.0.0
+aiofiles>=22.0.0
+
+[file]
+aiofiles>=22.0.0
