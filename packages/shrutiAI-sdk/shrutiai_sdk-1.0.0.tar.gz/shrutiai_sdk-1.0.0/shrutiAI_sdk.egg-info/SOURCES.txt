@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+shrutiAI/__init__.py
+shrutiAI/client.py
+shrutiAI/exceptions.py
+shrutiAI_sdk.egg-info/PKG-INFO
+shrutiAI_sdk.egg-info/SOURCES.txt
+shrutiAI_sdk.egg-info/dependency_links.txt
+shrutiAI_sdk.egg-info/requires.txt
+shrutiAI_sdk.egg-info/top_level.txt
