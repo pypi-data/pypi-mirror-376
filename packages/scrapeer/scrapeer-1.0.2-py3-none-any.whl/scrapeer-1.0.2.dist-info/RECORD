@@ -1,0 +1,13 @@
+scrapeer_cli.py,sha256=3h-ThsIhqb1adnSwGurmWYLpLO0LM5SI0mjrm8Hfi4E,4492
+scrapeer/__init__.py,sha256=iMPtPDq2Cf2EVql-AYUHHRua7sBD4fBPNvOS5KvvXIo,259
+scrapeer/config.py,sha256=1qGTfoZx6xe4og-YZA96phhmy1Yw_s7TdKal1tGJWGY,4162
+scrapeer/http.py,sha256=nMqJ1_QqxWKA0jRsHhBFATMzc0IwmyQTteEGF1Hos50,10147
+scrapeer/scraper.py,sha256=isyp4g7j45O9WINOd42SKH7m7jeXBbRUTYt_inHDWvc,7605
+scrapeer/udp.py,sha256=MoTP4GqQqI2UbCyZe15bxpfCtZw72z6YooAMRWWuxSI,12599
+scrapeer/utils.py,sha256=vAUteHAR_aQkVQA5jjgcu2LNOc53oS1tgILH2tW0zXQ,2679
+scrapeer-1.0.2.dist-info/licenses/LICENSE.txt,sha256=KmCLyo-TwxkpW2o9AQEnGfK6lZmsoNViZb432reI4cc,1086
+scrapeer-1.0.2.dist-info/METADATA,sha256=UhOggpyEnmxNXZFywia5fQ5FA0zDIUOgaF3Z5Qa_i4w,5550
+scrapeer-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scrapeer-1.0.2.dist-info/entry_points.txt,sha256=fM-0xXiqv5iqN-KaA9Ku2xT1EGWCQYHUYh3ezG8o9gQ,47
+scrapeer-1.0.2.dist-info/top_level.txt,sha256=A79ptxjJdF4TLB7Lvj5ZnHmgxiXy2oUueiYOAJgDPcY,22
+scrapeer-1.0.2.dist-info/RECORD,,
