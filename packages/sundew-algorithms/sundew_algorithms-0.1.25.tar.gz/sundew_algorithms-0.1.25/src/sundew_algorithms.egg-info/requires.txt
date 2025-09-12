@@ -1,0 +1,13 @@
+
+[benchmarks]
+numpy<2.0,>=1.23
+matplotlib>=3.3
+
+[dev]
+numpy<2.0,>=1.23
+pytest>=8.0
+pytest-cov>=4.0
+hypothesis>=6.0
+ruff>=0.13.0
+mypy>=1.17.0
+pre-commit>=3.5.0
