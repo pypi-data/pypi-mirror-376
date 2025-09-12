@@ -1,0 +1,9 @@
+django_refresh_migration/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_refresh_migration/app.py,sha256=qp5f7xcVo1ycGIFeCVceF0FYpKrks1xJT6qXr-iuRfE,166
+django_refresh_migration/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_refresh_migration/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_refresh_migration/management/commands/refresh_migration.py,sha256=ILe0h-ZGOCeWKvisZwCtLi8RP85tae2jpbIWQ2lp-aU,3461
+django_refresh_migration-0.0.1.dist-info/LICENSE,sha256=_LTGwtrS-pWQp8GyC1-1U9e9U-thol0EYqyouRXfNQY,1073
+django_refresh_migration-0.0.1.dist-info/METADATA,sha256=iSWIlrROQ75Jf3ZzlgamxWS6J_Tu1g3WQGLCHH34_7E,561
+django_refresh_migration-0.0.1.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+django_refresh_migration-0.0.1.dist-info/RECORD,,
