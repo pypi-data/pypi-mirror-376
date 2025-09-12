@@ -1,0 +1,38 @@
+name: Build and Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*" #r
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      - name: Install dependencies and update SSL
+        run: |
+          python -m pip install --upgrade pip certifi setuptools wheel setuptools-scm twine build
+
+      - name: Build package
+        run: python -m build
+
+      - name: Publish to PyPI and GitHub Packages
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          attestations: true
+
