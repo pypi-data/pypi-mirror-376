@@ -1,0 +1,6 @@
+[peagen.plugins.cert_services]
+selfsigned=swarmauri_certs_self_signed:SelfSignedCertificate
+
+[swarmauri.cert_services]
+SelfSignedCertificate=swarmauri_certs_self_signed:SelfSignedCertificate
+
