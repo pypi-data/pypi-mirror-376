@@ -1,0 +1,22 @@
+{
+  "id": "testing_task",
+  "name": "Testing Task",
+  "description": "Template for testing tasks",
+  "category": "testing",
+  "priority": "medium",
+  "estimated_duration": 90,
+  "tags": [
+    "testing",
+    "qa",
+    "validation"
+  ],
+  "default_dependencies": [],
+  "context_data_template": {
+    "test_type": "unit",
+    "coverage_target": 80,
+    "test_cases": [],
+    "automation_required": true
+  },
+  "inheritance": null,
+  "metadata": {}
+}

@@ -1,0 +1,22 @@
+{
+  "id": "bug_fix",
+  "name": "Bug Fix",
+  "description": "Template for bug fixing tasks",
+  "category": "maintenance",
+  "priority": "high",
+  "estimated_duration": 60,
+  "tags": [
+    "bug",
+    "fix",
+    "maintenance"
+  ],
+  "default_dependencies": [],
+  "context_data_template": {
+    "bug_report_id": "",
+    "reproduction_steps": [],
+    "affected_components": [],
+    "testing_required": true
+  },
+  "inheritance": null,
+  "metadata": {}
+}
