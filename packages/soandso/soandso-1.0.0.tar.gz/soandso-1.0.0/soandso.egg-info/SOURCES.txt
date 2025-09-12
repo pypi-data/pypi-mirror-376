@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+soandso/__init__.py
+soandso/core.py
+soandso/utils.py
+soandso.egg-info/PKG-INFO
+soandso.egg-info/SOURCES.txt
+soandso.egg-info/dependency_links.txt
+soandso.egg-info/entry_points.txt
+soandso.egg-info/requires.txt
+soandso.egg-info/top_level.txt
+tests/__init__.py
+tests/test_soandso.py
