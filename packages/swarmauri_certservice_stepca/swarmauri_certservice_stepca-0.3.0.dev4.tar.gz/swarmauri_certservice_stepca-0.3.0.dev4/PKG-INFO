@@ -1,0 +1,43 @@
+Metadata-Version: 2.3
+Name: swarmauri_certservice_stepca
+Version: 0.3.0.dev4
+Summary: Step-ca backed certificate service for Swarmauri
+License: Apache-2.0
+Author: Swarmauri
+Author-email: opensource@swarmauri.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: docs
+Provides-Extra: perf
+Requires-Dist: cryptography
+Requires-Dist: httpx (>=0.27.0)
+Requires-Dist: mkdocs ; extra == "docs"
+Requires-Dist: pytest-benchmark (>=4.0.0) ; extra == "perf"
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Requires-Dist: swarmauri_standard
+Description-Content-Type: text/markdown
+
+# Swarmauri Step-ca Certificate Service
+
+Community plugin providing a step-ca backed certificate service for Swarmauri.
+
+## Features
+- Create CSRs following [RFC 2986](https://datatracker.ietf.org/doc/html/rfc2986)
+- Handle X.509 certificates per [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280)
+
+## Installation
+```bash
+pip install swarmauri_certservice_stepca
+```
+
+## Usage
+```python
+from swarmauri_certservice_stepca import StepCaCertService
+
+service = StepCaCertService("https://ca.example", token_provider=lambda claims: "token")
+```
+
