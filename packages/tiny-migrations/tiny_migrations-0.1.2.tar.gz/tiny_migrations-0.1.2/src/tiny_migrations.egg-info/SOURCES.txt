@@ -1,0 +1,17 @@
+HISTORY.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/tiny_migrations/__init__.py
+src/tiny_migrations/__main__.py
+src/tiny_migrations/migration_base.py
+src/tiny_migrations/tiny_migrations.py
+src/tiny_migrations/utils.py
+src/tiny_migrations.egg-info/PKG-INFO
+src/tiny_migrations.egg-info/SOURCES.txt
+src/tiny_migrations.egg-info/dependency_links.txt
+src/tiny_migrations.egg-info/requires.txt
+src/tiny_migrations.egg-info/top_level.txt
+tests/__init__.py
+tests/test_tiny_migrations.py
