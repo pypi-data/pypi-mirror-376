@@ -1,0 +1,16 @@
+MANIFEST.in
+setup.py
+PyWebWinUI3/__init__.py
+PyWebWinUI3/core.py
+PyWebWinUI3.egg-info/PKG-INFO
+PyWebWinUI3.egg-info/SOURCES.txt
+PyWebWinUI3.egg-info/dependency_links.txt
+PyWebWinUI3.egg-info/not-zip-safe
+PyWebWinUI3.egg-info/requires.txt
+PyWebWinUI3.egg-info/top_level.txt
+PyWebWinUI3/web/PretendardVariable.ttf
+PyWebWinUI3/web/SegoeFluentIcons.ttf
+PyWebWinUI3/web/favicon.ico
+PyWebWinUI3/web/index.html
+PyWebWinUI3/web/assets/index.5f301150.css
+PyWebWinUI3/web/assets/index.7925e0dd.js
