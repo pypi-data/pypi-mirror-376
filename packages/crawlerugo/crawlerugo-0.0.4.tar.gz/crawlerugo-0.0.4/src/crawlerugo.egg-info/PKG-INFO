@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: crawlerugo
+Version: 0.0.4
+Summary: A python package that crawls a directory recursively and returns the file names and file stats as well as execute a custom function passed as a parameter.
+Author-email: Sixtus Onumajuru <jigga.e10@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/jiggabyte/crawlerugo
+Project-URL: Issues, https://github.com/jiggabyte/crawlerugo/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENCE.md
+Dynamic: license-file
+
+# 🚀 CrawlerUgo
+
+**Crawler Ugo** is a Python package for recursively crawling directories, collecting file stats, and executing custom actions on each file.  
+It’s perfect for building file search tools, batch processors, or custom directory explorers.
+
+---
+
+## 📦 Installation
+
+```bash
+$ pip install crawlerugo
+```
+
+
+
+
+## Usage
+crawl() takes three arguments
+=> path (str), function (callable), max_depth (int|None) = None
+
+``` python
+from crawlerugo.crawler import crawl
+import os
+
+# Set your target directory
+base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+
+def main():
+    # Crawl the directory and run a custom action on each file
+    result = crawl(base_dir, lambda f: f, 1000)  # max_depth is optional but if present indicates the debth count to crawl
+    print("Crawled Data:", result)
+
+if __name__ == "__main__":
+    main()
+```
