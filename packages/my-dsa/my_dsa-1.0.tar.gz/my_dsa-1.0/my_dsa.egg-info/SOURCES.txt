@@ -1,0 +1,7 @@
+README.md
+setup.py
+structure.py
+my_dsa.egg-info/PKG-INFO
+my_dsa.egg-info/SOURCES.txt
+my_dsa.egg-info/dependency_links.txt
+my_dsa.egg-info/top_level.txt
