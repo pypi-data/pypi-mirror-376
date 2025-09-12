@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: pyrox-client
+Version: 0.0.12
+Summary: HYROX race data client – retrieve full race results via Python
+Author: Vlad Matei
+Requires-Python: >=3.9
+Requires-Dist: fastparquet>=2024.5.0
+Requires-Dist: fsspec>=2024.2.0
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pandas>=2.2
+Requires-Dist: platformdirs>=4.2.0
+Requires-Dist: pyarrow<18.0.0,>=14.0.0
+Requires-Dist: requests>=2.31
+Requires-Dist: respx>=0.22.0
+Requires-Dist: s3fs>=2024.2.0
+Description-Content-Type: text/markdown
+
+Python client to retrieve Hyrox race data as pandas DataFrames.
+
+## Install
+
+```commandline
+uv pip install pyrox-client
+```
+or 
+```commandline
+pip install pyrox-client
+```
+
+## Quickstart
+
+```commandline
+import pyrox
+
+# Create client
+client = pyrox.PyroxClient()
+
+# Discover available races
+all_races = client.list_races()          # all seasons
+s6_races = client.list_races(season=6)   # season 6 only
+
+# Get multiple races from a season (parallelized)
+subset_s6 = client.get_season(season=6, locations=["london", "hamburg"])
+
+# Get single race with optional filters
+london_race = client.get_race(season=6, location="london")
+rott_race = client.get_race(season=6, location="rotterdam")
+```
+
+All functions return a pandas DataFrame. 
+
+
