@@ -1,0 +1,15 @@
+numpy
+pandas
+python-dateutil
+rasters>=1.12.3
+solar-apparent-time
+sun-angles>=1.4.0
+verma-net-radiation>=1.8.0
+
+[dev]
+build
+pytest>=6.0
+pytest-cov
+jupyter
+pytest
+twine
