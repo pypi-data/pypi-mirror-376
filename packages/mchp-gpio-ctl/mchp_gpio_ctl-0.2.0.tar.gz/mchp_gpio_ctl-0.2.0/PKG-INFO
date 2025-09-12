@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: mchp-gpio-ctl
+Version: 0.2.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: pytest ; extra == 'tests'
+Provides-Extra: tests
+Keywords: CLI,USB,Serial
+Author-email: Roman Isaikin <romix.lab@gmail.com>, Nicola Coretti <nico.coretti@gmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Repository, https://github.com/romixlab/mchp_gpio_ctl
+
+# MCHP - GPIP - CTL
+
+Command-line tool to control USB-Serial Board
+

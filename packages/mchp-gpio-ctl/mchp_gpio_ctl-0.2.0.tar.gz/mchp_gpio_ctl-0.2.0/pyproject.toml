@@ -1,0 +1,51 @@
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "mchp-gpio-ctl"
+requires-python = ">=3.8"
+keywords = [
+    "CLI",
+    "USB",
+    "Serial",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dynamic = ["version"]
+
+authors = [
+    { name = "Roman Isaikin", email = "romix.lab@gmail.com" },
+    { name = "Nicola Coretti", email = "nico.coretti@gmail.com" }
+]
+readme = "README.md"
+
+
+
+[project.optional-dependencies]
+tests = [
+    "pytest",
+]
+
+[tool.maturin]
+bindings = "bin"
+manifest-path = "Cargo.toml"
+module-name = "mchmp_gpio_ctl"
+strip = true
+
+
+[project.urls]
+Repository = "https://github.com/romixlab/mchp_gpio_ctl"
