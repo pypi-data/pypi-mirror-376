@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: cbor-diag
+Version: 1.1.1
+Classifier: Development Status :: 6 - Mature
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Rust
+Requires-Python: >=3.7
