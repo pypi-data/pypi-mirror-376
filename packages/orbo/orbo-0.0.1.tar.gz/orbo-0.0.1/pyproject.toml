@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orbo"
+version = "0.0.1"
+description = "A simple test package"
+authors = [
+  { name="Your Name", email="you@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+
