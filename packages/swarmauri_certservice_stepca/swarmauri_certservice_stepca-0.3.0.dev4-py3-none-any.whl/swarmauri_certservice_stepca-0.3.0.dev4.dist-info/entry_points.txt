@@ -1,0 +1,3 @@
+[swarmauri.cert_services]
+StepCaCertService=swarmauri_certservice_stepca.StepCaCertService:StepCaCertService
+
