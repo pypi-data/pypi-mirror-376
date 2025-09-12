@@ -1,0 +1,8 @@
+include .langcode/*
+include README.md
+include LICENSE
+
+
+recursive-include src/langchain_code/config *.json
+
+recursive-include assets *.png *.jpg *.svg *.gif
