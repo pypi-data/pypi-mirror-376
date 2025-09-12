@@ -1,0 +1,157 @@
+Metadata-Version: 2.4
+Name: civic-transparency-sdk
+Version: 0.1.0
+Summary: Civic Transparency SDK - Development kit for transparency applications
+Author: Civic Interconnect
+License-Expression: MIT
+Project-URL: Documentation, https://civic-interconnect.github.io/civic-transparency-sdk/latest/
+Project-URL: Homepage, https://github.com/civic-interconnect/civic-transparency-sdk
+Project-URL: Repository, https://github.com/civic-interconnect/civic-transparency-sdk
+Keywords: transparency,api,sdk,civic
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: duckdb
+Requires-Dist: civic-transparency-types>=0.2.1
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: orjson
+Requires-Dist: pandas
+Requires-Dist: pydantic>=2.0.1
+Requires-Dist: pyyaml
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: jsonschema; extra == "dev"
+Requires-Dist: mkdocs; extra == "dev"
+Requires-Dist: mkdocs-git-revision-date-localized-plugin; extra == "dev"
+Requires-Dist: mkdocs-include-markdown-plugin; extra == "dev"
+Requires-Dist: mkdocs-material; extra == "dev"
+Requires-Dist: mkdocs-static-i18n; extra == "dev"
+Requires-Dist: mkdocstrings[python]; extra == "dev"
+Requires-Dist: mike; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Provides-Extra: docs-minify
+Requires-Dist: mkdocs-minify-plugin; extra == "docs-minify"
+Dynamic: license-file
+
+# Civic Transparency Software Development Kit (SDK)
+
+[![Docs](https://img.shields.io/badge/docs-mkdocs--material-blue)](https://civic-interconnect.github.io/civic-transparency-sdk/)
+[![PyPI](https://img.shields.io/pypi/v/civic-transparency-sdk.svg)](https://pypi.org/project/civic-transparency-sdk/)
+[![Python versions](https://img.shields.io/pypi/pyversions/civic-transparency-sdk.svg)](https://pypi.org/project/civic-transparency-sdk/)
+[![CI Status](https://github.com/civic-interconnect/civic-transparency-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/civic-interconnect/civic-transparency-sdk/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+A software development kit for civic transparency applications.
+
+## Installation
+
+```pwsh
+pip install civic-transparency-sdk
+```
+
+## What This Package Provides
+
+**Core Data Types**: Standardized structures for transparency APIs including WindowAgg aggregations, ContentHash identifiers, and content fingerprinting that enable consistent data exchange.
+
+**Implementation Support**: Essential utilities for platforms implementing transparency APIs, including JSON serialization, database schemas, and validation helpers.
+
+**Research Tools**: Synthetic data generation capabilities for testing transparency implementations and conducting research without exposing real user data.
+
+**Database Integration**: Ready-to-use schemas and conversion utilities for storing transparency data in SQL databases with proper indexing and query patterns.
+
+## Quick Start
+
+Generate synthetic data:
+
+```pwsh
+ct-sdk generate --world A --topic-id aa55ee77 --out world_A.jsonl
+
+ct-sdk convert --jsonl world_A.jsonl --duck world_A.duckdb --schema schema/schema.sql
+```
+
+## Use Generated Data
+
+The generated DuckDB files are ready for analysis with any SQL-compatible tools or custom analysis scripts.
+
+## Reproducibility
+
+All generation is deterministic and includes:
+- **Seed-based randomization**: Reproduce exact datasets
+- **Version tracking**: Metadata includes package versions
+- **Parameter logging**: All generation settings preserved
+- **Schema versioning**: Database structures documented
+
+**Example Seeds:**
+- World A (baseline): `4242`
+
+## Use Cases
+
+- **Platform Implementation**: Implement transparency APIs with standardized data structures and serialization utilities.
+
+- **Academic Research**: Generate controlled datasets for studying information dynamics with known parameters.
+
+- **Education**: Provide realistic data for analysis exercises and transparency system understanding.
+
+- **Testing & Validation**: Create test datasets for transparency system development without requiring real user data.
+
+- **Algorithm Development**: Build transparency tools using standard data formats and proven utilities.
+
+## Package Structure
+
+```
+ci.transparency.sdk/
+├── cli/            # Command-line interfaces
+├── digests.py      # Content fingerprinting (SimHash64, MinHashSig, Digests)
+├── hash_core.py    # Content identification (HashId, ContentHash, TopHash)
+├── ids.py          # ID management (WorldId, TopicId, HashId)
+├── io_schema.py    # Serialization utilities (JSON conversion, dumps, loads)
+└── window_agg.py   # Window aggregation data structure (WindowAgg)
+```
+
+## Security Model
+
+This package provides foundational building blocks for transparency applications.
+It does not include:
+- Detection algorithms or thresholds
+- Verification workflows or assessment criteria  
+- Specific patterns that trigger alerts
+
+Detection logic and verification tools are maintained separately to prevent adversarial use while enabling legitimate transparency system development.
+
+## Documentation
+
+Comprehensive docs are published with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/):
+
+- **[Home](https://civic-interconnect.github.io/civic-transparency-sdk/)** – project overview and installation instructions  
+- **[Usage Guide](https://civic-interconnect.github.io/civic-transparency-sdk/usage/)** – quick-start workflow and common tasks  
+- **[CLI Reference](https://civic-interconnect.github.io/civic-transparency-sdk/cli/)** – full command-line interface details  
+- **[SDK Reference](https://civic-interconnect.github.io/civic-transparency-sdk/sdk/overview/)** – core Python APIs  
+  - [Window Aggregation](https://civic-interconnect.github.io/civic-transparency-sdk/sdk/window_agg/)  
+  - [Content Hashing](https://civic-interconnect.github.io/civic-transparency-sdk/sdk/hash_core/)  
+  - [Content Digests](https://civic-interconnect.github.io/civic-transparency-sdk/sdk/digests/)  
+  - [ID Management](https://civic-interconnect.github.io/civic-transparency-sdk/sdk/ids/)  
+  - [I/O Schema](https://civic-interconnect.github.io/civic-transparency-sdk/sdk/io_schema/)  
+- **[Schema Reference](https://civic-interconnect.github.io/civic-transparency-sdk/schema/)** – database schema and integration notes  
+- **Related Projects**  
+  - [Civic Transparency Spec](https://civic-interconnect.github.io/civic-transparency-spec/)  
+  - [Civic Transparency Types](https://civic-interconnect.github.io/civic-transparency-types/)
+
+
+## License
+
+See LICENSE file for details.
