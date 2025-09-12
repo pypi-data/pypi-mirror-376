@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: envgen-cli
+Version: 0.2.1
+Summary: Smart .env generator with auto-passwords, rich UI, and dotenv-vault support
+Author-email: Den Ignatov <whickybravo388@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/whickybravo388/envgen
+Project-URL: Repository, https://github.com/whickybravo388/envgen
+Project-URL: Documentation, https://github.com/whickybravo388/envgen#readme
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=8.0
+Requires-Dist: rich>=13.0
+Provides-Extra: vault
+Dynamic: license-file
+
+# 🧰 envgen — Generate `.env` from `.env.example`
+
+> A simple CLI tool that helps developers generate `.env` files interactively from `.env.example`.
+
+## ✨ Features
+
+- Reads `.env.example` in current directory
+- Prompts for missing values
+- Uses defaults if provided
+- Safe — won’t overwrite `.env` unless forced
+- Lightweight, zero config
+
+## 🚀 Installation
+
+```bash
+pip install .
+# or from PyPI later:
+# pip install envgen
+## 🚀 Advanced Usage
+
+### Auto-generate secrets
+```bash
+envgen --auto-generate

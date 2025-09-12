@@ -1,0 +1,9 @@
+envgen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+envgen/cli.py,sha256=H_nX2hl3P0gviXMJGgzvex8R8TXEBPX9jHEL7-LTb7o,2300
+envgen/core.py,sha256=TWnhOpkow63t__8e-RmnRqGVopMzOvjkQ0uCwI5lb9c,7225
+envgen_cli-0.2.1.dist-info/licenses/LICENSE,sha256=GTVQl3vH6ht70wJXKC0yMT8CmXKHxv_YyO_utAgm7EA,1065
+envgen_cli-0.2.1.dist-info/METADATA,sha256=cpfOxuZ2lXphIyMcyCifdv4z3f9g-ovw60uejF0hATU,1674
+envgen_cli-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+envgen_cli-0.2.1.dist-info/entry_points.txt,sha256=J9XXYKqR-IlSwrxWD1Hlr_HLQjg4wQFQ6FD4XsNoAPY,43
+envgen_cli-0.2.1.dist-info/top_level.txt,sha256=U1dsEMt15k-Il-geAfTdIo0EkXaQUJbxldCWpjt-EQ4,7
+envgen_cli-0.2.1.dist-info/RECORD,,
