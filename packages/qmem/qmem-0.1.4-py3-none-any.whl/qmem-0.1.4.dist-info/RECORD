@@ -1,0 +1,14 @@
+qmem/__init__.py,sha256=H2JRQ2NKn_nVRIFdRcK9D_MOYkETXb2poLE4Tz2NeV4,12423
+qmem/api.py,sha256=ZVaIPYuyCW5HJVh88OuqHU53oLO4Nht-mP3U7s_htvE,10031
+qmem/cli.py,sha256=8ZbL-RzeAV2vPE3JYyvMny6ARqMXanKocmYh8tusx4c,28421
+qmem/client.py,sha256=Q8xR3GyuyQHefIvErzsRz4prbQtjMoLwMHOC8_2y90g,15201
+qmem/config.py,sha256=7WuGajHC0B1WCk-ceiqgCbyLHm5Bl4S4qp1s2K0068k,6929
+qmem/embedder.py,sha256=_CB6jUI-TXNIeZzr6PD6EHtMKKmPcRUdmlHJmpgponI,13128
+qmem/mongo_sink.py,sha256=XO-EjZhNK_rlV23ojL4x8iGqg7OytSqugIuN1DkLXkI,2383
+qmem/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qmem/schemas.py,sha256=Dj_LCc4en6wPGrkDGP34K2bqFU3hf3HmevAl_h2kr1w,1605
+qmem-0.1.4.dist-info/METADATA,sha256=JJHSKZVH3_f8ZWotNOeqU9Qh0y6Lqdn4EyCE4onHeW4,3305
+qmem-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qmem-0.1.4.dist-info/entry_points.txt,sha256=6UhnREvHS-_SHfPEj8Tx2KhqyWfrIc_4vMHTwM_PGLg,38
+qmem-0.1.4.dist-info/top_level.txt,sha256=2Q1Uef_PrDhdq8cpAG0qDzrVa5ORL-8KvvKTBEJX5n0,5
+qmem-0.1.4.dist-info/RECORD,,
