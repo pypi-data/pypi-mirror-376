@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+src/FuyaoDownloadMusic/__init__.py
+src/FuyaoDownloadMusic/download.py
+src/FuyaoDownloadMusic/kugou.py
+src/FuyaoDownloadMusic/netease.py
+src/FuyaoDownloadMusic.egg-info/PKG-INFO
+src/FuyaoDownloadMusic.egg-info/SOURCES.txt
+src/FuyaoDownloadMusic.egg-info/dependency_links.txt
+src/FuyaoDownloadMusic.egg-info/requires.txt
+src/FuyaoDownloadMusic.egg-info/top_level.txt
+src/FuyaoDownloadMusic/js/KugouEncrypt.js
+src/FuyaoDownloadMusic/js/NeteaseEncrypt.js
+src/FuyaoDownloadMusic/utils/execJsUtil.py
+src/FuyaoDownloadMusic/utils/getJSPath.py
+tests/test.py
