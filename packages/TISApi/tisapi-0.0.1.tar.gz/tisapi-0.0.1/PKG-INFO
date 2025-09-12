@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: TISApi
+Version: 0.0.1
+Summary: A library for TIS Control
+Project-URL: Homepage, https://github.com/IbrahimMohamed2001
+Project-URL: Issues, https://github.com/IbrahimMohamed2001/issues
+Author-email: Ibrahim Mohamed <ibrali2001.ia@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# TISApi
+
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Version 0.5.14](https://img.shields.io/badge/version-0.5.14-blue)
+![License MIT](https://img.shields.io/badge/license-MIT-green)
+![Python](https://img.shields.io/badge/python-3.11+-orange)
+![signed](https://img.shields.io/badge/signed-yes-green)
+
+TISApi is a powerful Python package for controlling TIS devices. It provides a simple and intuitive API for interacting with TIS devices, making it easy to integrate TIS devices into your Python applications.
+
+## Features
+
+- ✅ Fully Supports Asynchronous Operations
+- ✅ Flawless feedback mechanism to prevent data loss
+- ✅ Debounce mechanism to prevent multiple commands from being sent for protection
+- ✅ Easy to use API for controlling TIS devices
+- ✅ Clean and simple codebase
+- ✅ Ready to integrate with Home Assistant
+
+## Installation
+
+You can install TISApi by adding it to your Manifest file or by using pip. Here's how you can install it using pip:
+
+```bash
+pip install TISApi
+```
+
+## Verifying Package Signatures
+
+This package is signed with GPG to ensure authenticity. Follow these steps to verify:
+
+1. **Install GPG**: Ensure you have GPG installed (`gpg --version`).
+2. **Get My Public Key**:
+    - Import from a keyserver: `gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 97DADF7C6008FBCEB93506624A93BA55D2B45649`
+    - Import it: `gpg --import mykey.pub`
+3. **Download Files**: Get the `.tar.gz`, `.whl`, and `.asc` files from PyPI or GitHub Releases.
+4. **Verify**:
+
+```bash
+gpg --verify TISApi-0.5.14.tar.gz.asc TISApi-0.5.14.tar.gz
+gpg --verify TISApi-0.5.14-py3-none-any.whl.asc TISApi-0.5.14-py3-none-any.whl
+```
+
+## License
+
+TISApi is licensed under the MIT license. See the [LICENSE](https://github.com/IbrahimMohamed2001/TISApi/blob/main/LICENSE) file for details.
