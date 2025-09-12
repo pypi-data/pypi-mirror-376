@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+crypto_bytes_mcp_server.egg-info/PKG-INFO
+crypto_bytes_mcp_server.egg-info/SOURCES.txt
+crypto_bytes_mcp_server.egg-info/dependency_links.txt
+crypto_bytes_mcp_server.egg-info/requires.txt
+crypto_bytes_mcp_server.egg-info/top_level.txt
