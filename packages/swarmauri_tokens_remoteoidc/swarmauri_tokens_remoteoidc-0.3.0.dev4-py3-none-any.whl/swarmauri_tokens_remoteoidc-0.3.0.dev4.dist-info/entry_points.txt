@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+remoteoidc=swarmauri_tokens_remoteoidc:RemoteOIDCTokenService
+
+[swarmauri.tokens]
+RemoteOIDCTokenService=swarmauri_tokens_remoteoidc:RemoteOIDCTokenService
+
