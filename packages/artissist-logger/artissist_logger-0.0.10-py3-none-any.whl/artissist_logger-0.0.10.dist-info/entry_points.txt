@@ -1,0 +1,2 @@
+[console_scripts]
+artissist-logger-validate = artissist_logger.cli:validate
