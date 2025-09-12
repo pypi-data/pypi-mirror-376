@@ -1,0 +1,3 @@
+[swarmauri.certs]
+AcmeCertService=swarmauri_certs_acme.AcmeCertService:AcmeCertService
+
