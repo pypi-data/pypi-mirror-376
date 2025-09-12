@@ -1,0 +1,18 @@
+Metadata-Version: 2.2
+Name: my_dsa
+Version: 1.0
+Summary: Ultimate Python DSA single-file toolkit
+Home-page: https://github.com/Mohitbhosale22062005/my_dsa
+Author: Mohit Bhosale
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+# My DSA Python Package
+
+Single-file Python toolkit for Data Structures and Algorithms.
+Supports Array, LinkedList, Stack, Queue, Graph, Sorting, Searching.
+Pipe-style chaining supported.
