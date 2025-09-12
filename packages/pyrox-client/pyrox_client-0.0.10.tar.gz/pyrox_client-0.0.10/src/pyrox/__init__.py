@@ -1,0 +1,9 @@
+from .core import PyroxClient
+from .config import set_bucket, set_manifest_path, get_config
+from .core import PyroxError, RaceNotFound, ApiError
+__version__ = "0.0.10"
+
+
+##  what is available to users
+__all__ = ["PyroxClient", "PyroxError", "RaceNotFound", "ApiError", "set_bucket", "set_manifest_path", "get_config"]
+
