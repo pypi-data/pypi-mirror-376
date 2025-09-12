@@ -1,0 +1,79 @@
+Metadata-Version: 2.4
+Name: astronomer-registry-cleanup
+Version: 0.1.2
+Summary: A command-line tool for managing Docker registry cleanup operations in Astronomer environments
+License: All Rights Reserved
+        
+        Copyright (c) 2021 Astronomer, LLC
+        
+        Created by Astronomer, LLC
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
+Requires-Python: >=3.10
+Requires-Dist: cryptography>=45.0.6
+Requires-Dist: docker-registry-client>=0.5.2
+Requires-Dist: docker>=7.1.0
+Requires-Dist: pyjwt>=2.10.1
+Requires-Dist: requests>=2.32.5
+Provides-Extra: dev
+Requires-Dist: ruff; extra == 'dev'
+Provides-Extra: k8s
+Requires-Dist: kubernetes; extra == 'k8s'
+Description-Content-Type: text/markdown
+
+# Astronomer Registry Cleanup
+
+Minimal CLI to delete old Docker image tags in Astronomer registries.
+
+## Install
+
+```bash
+pip install astronomer-registry-cleanup
+```
+
+## Usage
+
+```bash
+astronomer-registry-cleanup -r <registry> -p <token> <release_name> -f <prefix> (--keep-n-tags N | --drop-older-tags YYYY-MM-DD) [--dry-run]
+```
+
+## Behavior
+
+- Auth: `-p` is your systemadmin token (username is not required).
+- Tags considered: `<prefix>-<number>` only.
+- Safety: never deletes if ≤ 1 tag exists for the prefix.
+- Dry-run prints one line per planned deletion: `<release_name>:<tag> <digest>`.
+
+## Examples
+
+```bash
+# Keep the latest 3 tags for prefix "deploy-" (dry-run)
+astronomer-registry-cleanup -r registry.example.com -p <token> my-release -f deploy- --keep-n-tags 3 --dry-run
+
+# Delete everything older than a date for prefix "cli-" (dry-run)
+astronomer-registry-cleanup -r registry.example.com -p <token> my-release -f cli- --drop-older-tags 2025-08-01 --dry-run
+```
+
+## Notes
+
+- Works against Docker Registry v2 auth flow via Houston.
