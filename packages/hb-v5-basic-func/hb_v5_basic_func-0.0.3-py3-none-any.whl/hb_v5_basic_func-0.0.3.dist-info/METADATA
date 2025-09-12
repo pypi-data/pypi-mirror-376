@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: hb_v5_basic_func
+Version: 0.0.3
+Summary: Basic function package with Pyarmor protection (v5)
+Home-page: https://github.com/unknown/basic_func
+Author: Unknown
+Author-email: unknown@example.com
+Project-URL: Bug Reports, https://github.com/unknown/basic_func/issues
+Project-URL: Source, https://github.com/unknown/basic_func
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+Enhanced basic function package with Pyarmor protection and runtime support
