@@ -1,0 +1,39 @@
+Metadata-Version: 2.3
+Name: swarmauri_certs_azure
+Version: 0.3.0.dev4
+Summary: Azure Key Vault certificate utilities for the Swarmauri ecosystem
+License: Apache-2.0
+Author: Community
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: azure
+Provides-Extra: crypto
+Requires-Dist: asn1crypto
+Requires-Dist: asn1crypto ; extra == "crypto"
+Requires-Dist: azure-identity
+Requires-Dist: azure-identity ; extra == "azure"
+Requires-Dist: azure-keyvault-keys
+Requires-Dist: azure-keyvault-keys ; extra == "azure"
+Requires-Dist: cryptography
+Requires-Dist: cryptography ; extra == "crypto"
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Description-Content-Type: text/markdown
+
+# swarmauri_certs_azure
+
+Community-maintained utilities for working with X.509 certificates via Azure Key Vault.
+
+## Features
+- AzureKeyVaultCertService for issuing and managing certificates.
+- Helper utilities aligned with RFC 5280 and RFC 7468.
+
+## Testing
+Run tests with:
+```bash
+uv run --package swarmauri_certs_azure --directory community pytest
+```
+
