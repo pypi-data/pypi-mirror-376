@@ -1,0 +1,29 @@
+# test build
+```
+pip uninstall GenMine
+python setup.py clean --all
+python setup.py install
+```
+# pypi build
+In new conda environment
+```
+conda create -n GenMine_build
+conda activate GenMine_build
+conda install pip
+pip install build twine
+python -m build
+twine upload dist/GenMine-{YOUR_VERSION}* --config-file {your pypirc file} 	// use current build number, don't forget *
+```
+# conda build
+In new conda environment
+```
+conda create -n GenMine_condabuild
+conda activate GenMine_condabuild
+conda install -c conda-forge grayskull packaging -y
+conda install conda-build conda-verify anaconda-client git -y
+grayskull pypi GenMine
+anaconda login
+conda config --set anaconda_upload no
+conda-build ./genmine -c conda-forge
+anaconda upload {Build file location} // copy tar.bz2 file from the stdout of conda-build
+```
