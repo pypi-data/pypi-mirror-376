@@ -1,0 +1,11 @@
+Products.CMFCore
+Products.ZCatalog
+plone.uuid
+plone.indexer
+setuptools
+Zope
+
+[test]
+plone.app.testing
+plone.dexterity
+plone.testing
