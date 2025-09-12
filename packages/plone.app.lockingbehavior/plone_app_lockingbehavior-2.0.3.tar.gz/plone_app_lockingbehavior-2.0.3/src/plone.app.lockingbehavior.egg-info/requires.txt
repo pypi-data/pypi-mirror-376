@@ -1,0 +1,12 @@
+AccessControl
+setuptools
+plone.behavior
+plone.dexterity>=1.1
+plone.locking
+zExceptions
+zope.component
+
+[tests]
+plone.app.testing
+plone.testing
+transaction
