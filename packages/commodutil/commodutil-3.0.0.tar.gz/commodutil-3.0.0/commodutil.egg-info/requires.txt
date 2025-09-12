@@ -1,0 +1,7 @@
+pandas
+dask[delayed]
+pint
+
+[test]
+pytest
+pytest-runner
