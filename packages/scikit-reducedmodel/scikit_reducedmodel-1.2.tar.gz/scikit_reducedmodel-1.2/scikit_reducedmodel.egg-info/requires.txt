@@ -1,0 +1,7 @@
+numpy
+scipy
+anytree
+attr
+attrs
+gwtools
+scikit-learn
