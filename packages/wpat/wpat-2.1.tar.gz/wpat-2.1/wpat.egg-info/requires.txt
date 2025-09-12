@@ -1,0 +1,10 @@
+colorama
+requests
+beautifulsoup4
+tqdm
+urllib3
+jinja2
+
+[gui]
+pyqt5
+PyQtWebEngine
