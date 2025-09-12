@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+src/cmdfuncs/__init__.py
+src/cmdfuncs/__main__.py
+src/cmdfuncs.egg-info/PKG-INFO
+src/cmdfuncs.egg-info/SOURCES.txt
+src/cmdfuncs.egg-info/dependency_links.txt
+src/cmdfuncs.egg-info/top_level.txt
+src/cmdfuncs/core/__init__.py
+src/cmdfuncs/tests/__init__.py
+src/cmdfuncs/tests/test_1984.py
