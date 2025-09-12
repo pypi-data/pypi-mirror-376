@@ -1,0 +1,7 @@
+dagster==1.11.10
+
+[managed]
+dagster-managed-elements==0.27.10
+
+[test]
+pytest-order
