@@ -1,0 +1,9 @@
+goiam/__init__.py,sha256=c-kkOPCFmVRGweceYiE3kwYCpBc1yTJfpQhQi_qhDng,459
+goiam/models.py,sha256=ZhdYWva1_6XhUuwOXUQYPO0oCsEKSbSMLHgE1vL2n3w,4712
+goiam/service.py,sha256=g5gyvdWcFJXHgk4aa9mivRN6B_cAnDZUbF3Fc47aK8Q,1467
+goiam/service_impl.py,sha256=mK3gPfE9sJ6mvCFrZy2Oy0-aJly2NgXOmzqS6Dyls3o,5872
+goiam_python-0.3.0.dist-info/licenses/LICENSE,sha256=NT284t7qZZznz5BwVR8jpQLZO8tN8DBRLSlEE7nmiLI,1067
+goiam_python-0.3.0.dist-info/METADATA,sha256=d_fhwMwHQr9lHawWI343cIG6SDwPIHrqncEj233xMng,6699
+goiam_python-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+goiam_python-0.3.0.dist-info/top_level.txt,sha256=IDA5e7PzqWgCW6VNXTxZO1nEYksFV4sspAwp8JCnAyg,6
+goiam_python-0.3.0.dist-info/RECORD,,
