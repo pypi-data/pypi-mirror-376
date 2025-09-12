@@ -1,0 +1,3 @@
+[swarmauri.cert_services]
+GcpKmsCertService=swarmauri_certservice_gcpkms.GcpKmsCertService:GcpKmsCertService
+
