@@ -1,0 +1,3 @@
+[console_scripts]
+tumor-detect-infer = tumor_detection.cli.infer:main
+tumor-detect-train = tumor_detection.cli.train:main

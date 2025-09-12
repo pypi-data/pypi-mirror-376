@@ -1,0 +1,14 @@
+tumor_detection/__init__.py,sha256=RPn7W7h2Q-20cQZQtCEy1tRo5dtT90Qxrrf9zaCh0n8,1502
+tumor_detection/config.py,sha256=5F8emQ1yBdYUPNor1GP8l7_8VSjUrB1ZnxQvxNDJ1RU,2857
+tumor_detection/cli/__init__.py,sha256=qZ1S_xPtdhfP7wpFPW6aPSiS0wvBWc6L9nSyNBxbX-s,203
+tumor_detection/cli/infer.py,sha256=pKNR98u-m_d-rSSypmnchaAhZyQ4-1B5t1YZZsbPFBE,602
+tumor_detection/cli/train.py,sha256=sIXw2-XHTESeSS3nUKxj0qhVT9oRxmYr4F6l4h_8qZE,738
+tumor_detection/inference/__init__.py,sha256=tmknkcqMtR0idIEIaGED5DogypXQ2Oo-vLJx3lLZwyM,322
+tumor_detection/inference/api.py,sha256=G_KXdAv69Ds4FNjO-Kk_CwSl9dH8YSOD1I2VsjsIpvM,14567
+tumor_detection/utils/__init__.py,sha256=bMT5pgPjstdjCEgJoi8yDW1cJf_jxKlPBabiIe_2stE,199
+tumor_detection/utils/device.py,sha256=NvN22-wKWaZSHlfhmUkV_mfZPfOSDPFlCz2Okrrm1NY,3770
+tumor_detection_segmentation-2.0.0.dist-info/METADATA,sha256=aQBfRUHrFt4WIkCDZkfWwee5B8ZxspvTaeYe8es6R8c,72089
+tumor_detection_segmentation-2.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tumor_detection_segmentation-2.0.0.dist-info/entry_points.txt,sha256=8H7TG3AilubgpTSOkHJkGXTtdao9SqDXgOPbYAymntw,122
+tumor_detection_segmentation-2.0.0.dist-info/licenses/LICENSE,sha256=2WnLGG2RpTwJmsx7FIN8QYvTBpbcv2I4z3LZW2XtKjY,1095
+tumor_detection_segmentation-2.0.0.dist-info/RECORD,,
