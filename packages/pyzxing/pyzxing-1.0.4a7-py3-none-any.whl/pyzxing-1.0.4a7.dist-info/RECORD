@@ -1,0 +1,12 @@
+pyzxing/__init__.py,sha256=NygDecfrIt65tBMhYRmyXoVfjeJ-0P9EjJj7-VLjz3Q,92
+pyzxing/__version__.py,sha256=pP3qKLWglX6np6RJ02_dPjURrW_8k5B0bkp9IaetDn8,123
+pyzxing/_version.py,sha256=ekTvalb9Wkb-s7cv8DsxWy8H5DZojYJCRmqIbpBtZ9Y,712
+pyzxing/config.py,sha256=E2qL3pJLO3dSsCJX2tC-_3mPp1mMZMHuhcxhCRAj8nc,1931
+pyzxing/platform_utils.py,sha256=ZjWTMgtOYtnx8yDvlaiX8f3iRmVr1PzQoFtUGv7dpiM,2819
+pyzxing/reader.py,sha256=FvSf279A0rHRtp_ZzcxfixGpM_4zf7gSozHoITpCwP8,8429
+pyzxing/utils.py,sha256=OdoT1m_d4c4v44SQpwafX3m2lmtF5oI947h79cGbTWg,9096
+src/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyzxing-1.0.4a7.dist-info/METADATA,sha256=I6Tq6AkgDtCIa4GD5j8ZwrXkjk74Za9OY157nKjZZgg,4441
+pyzxing-1.0.4a7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pyzxing-1.0.4a7.dist-info/top_level.txt,sha256=2i3svDGCTEzcn0N3OEZ9rh28SVpiBjnLE-x0KwDceas,12
+pyzxing-1.0.4a7.dist-info/RECORD,,
