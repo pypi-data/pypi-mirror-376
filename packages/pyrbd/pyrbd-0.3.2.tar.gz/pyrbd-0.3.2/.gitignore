@@ -1,0 +1,8 @@
+
+/pyrbd.egg-info
+*.pyc
+*.gz
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
