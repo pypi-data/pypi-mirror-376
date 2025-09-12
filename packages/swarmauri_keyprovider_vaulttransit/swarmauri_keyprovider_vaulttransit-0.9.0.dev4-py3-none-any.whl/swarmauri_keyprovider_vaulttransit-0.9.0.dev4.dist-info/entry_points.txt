@@ -1,0 +1,3 @@
+[swarmauri.key_providers]
+VaultTransitKeyProvider=swarmauri_keyprovider_vaulttransit.VaultTransitKeyProvider:VaultTransitKeyProvider
+
