@@ -1,0 +1,3 @@
+[console_scripts]
+ccloud=cacholong_cli.cli:app
+
