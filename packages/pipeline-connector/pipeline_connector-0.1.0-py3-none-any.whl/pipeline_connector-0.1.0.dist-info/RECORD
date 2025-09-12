@@ -1,0 +1,10 @@
+pipeline_connector/__init__.py,sha256=QabwfeOoEzsAlaeeACQkgD_WNWwVMsnimuRFKym72KE,1327
+pipeline_connector/base.py,sha256=0Czxs7ndT-_7AHEq8M6q07h93PlCt5TmefLRm_oYoMM,13079
+pipeline_connector/connectors.py,sha256=EhWv9xNekqKtudRxH9fOR0lFW0Cx1--8M7g4LggoXlQ,8857
+pipeline_connector/data_pipeline.py,sha256=6mmS_RxLszR-qEpmRCrTZQUgZdZDrrgv0Zbsrbi75Sk,9109
+pipeline_connector/manager.py,sha256=tRGLo37l2JaIa-y4Q6_kAHwPReWcVTR2onR2lQqDpkQ,12664
+pipeline_connector-0.1.0.dist-info/LICENSE,sha256=ump4QtysrlMh3ucxTHOFifwe3l_pjWMHkyXIqApla_k,1090
+pipeline_connector-0.1.0.dist-info/METADATA,sha256=sHEyGxc5TZFTAAToACNA3ZwpoDPigciy46ZtYsl-FLg,5383
+pipeline_connector-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+pipeline_connector-0.1.0.dist-info/top_level.txt,sha256=sfZgDWUomIjB7773i9urtsAdVrySjGyiN5g5JPQrfQ4,19
+pipeline_connector-0.1.0.dist-info/RECORD,,
