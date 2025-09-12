@@ -1,0 +1,9 @@
+jepler_circuitpython_udecimal-1.0.13.dist-info/licenses/LICENSE,sha256=AOUZOeNdPRqWD68L8XwZf96Q2IybJCCAaBbMCE56aXo,3960
+jepler_udecimal/__init__.py,sha256=rs4UKDIOEOxVfqLnO47K6_hF-iACRWoNVTsGn1xaURQ,186176
+jepler_udecimal/__version__.py,sha256=mepv7T4YOQ8y5cbALCHL4fdSLQHDyVVs53BeYxvm4p4,706
+jepler_udecimal/test.py,sha256=UCU2EIceGyLhXesIbqWT3pjxAzYVdrtbFhINViUseMY,550
+jepler_udecimal/utrig.py,sha256=bfn2jLfgayscJ8rksmHG-Q5tw0XVCmleffXtPhBhdE0,6145
+jepler_circuitpython_udecimal-1.0.13.dist-info/METADATA,sha256=DKpIKYYXX1vg3ljmXXumcmriR_tXxPD9rsv4tRYwuEQ,3675
+jepler_circuitpython_udecimal-1.0.13.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jepler_circuitpython_udecimal-1.0.13.dist-info/top_level.txt,sha256=OVmlCoH45xjro7yG-gklCSetNr7CSb3vlOByf3D-hhU,16
+jepler_circuitpython_udecimal-1.0.13.dist-info/RECORD,,
