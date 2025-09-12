@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mcp-feedback-enhanced": {
+      "command": "mcp-feedback-enhanced",
+      "args": []
+    }
+  }
+}
