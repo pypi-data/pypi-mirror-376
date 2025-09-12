@@ -1,0 +1,22 @@
+
+
+recursive-include dist *.pyd 
+recursive-include dist *.so  
+recursive-include dist *.py  
+recursive-include dist *.pyc 
+
+
+
+
+recursive-include pyarmor_runtime_* *
+
+
+recursive-include dist *
+
+
+include README.md
+recursive-include doc *
+recursive-include test *
+
+
+
