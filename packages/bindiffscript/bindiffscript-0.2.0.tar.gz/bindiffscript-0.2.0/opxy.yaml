@@ -1,0 +1,15 @@
+#!/usr/bin/env bindiffscript
+
+width: 12
+head: 1000
+files:
+    - path: ${here}/00reverse-1-init.xy
+      disable: false
+      #padding:
+      #- [10, 4]
+      #- [28, 2]
+    - path: ${here}/00reverse-2-metro-off.xy
+      disable: false
+      padding:
+      - [10, 4, 0]
+    
