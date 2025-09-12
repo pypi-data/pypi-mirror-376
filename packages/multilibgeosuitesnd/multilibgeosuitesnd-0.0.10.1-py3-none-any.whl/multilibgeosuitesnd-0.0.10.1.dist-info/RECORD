@@ -1,0 +1,10 @@
+libgeosuitesnd/__init__.py,sha256=-TPN6Im42Kuss3-V1n-Q6Bgg6DId18m3Bi1OGU2vyzE,9955
+libgeosuitesnd/flags.csv,sha256=30aaguosPAfXGyiXCalF48jejwGNRJiPmz22SUNgGEs,412
+libgeosuitesnd/methods.csv,sha256=xTAGE5vQg1-mzIEQmVslTfjuB-R17LzogBJgv_VWzX4,494
+libgeosuitesnd/stop_reasons.csv,sha256=ziVilo0SJ-XVp9HXD3P6FEJqdf4tgT4QziyljyFqAr0,241
+multilibgeosuitesnd-0.0.10.1.dist-info/licenses/LICENSE,sha256=Vcyn22opv4pFKYWYncaMRPCGvGUtAty2boc17hn8IBw,1098
+multilibgeosuitesnd-0.0.10.1.dist-info/METADATA,sha256=ILhVpTz276GXC3FDUQD2qo5N_6Ug963fSKH7oOPjTnk,625
+multilibgeosuitesnd-0.0.10.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+multilibgeosuitesnd-0.0.10.1.dist-info/entry_points.txt,sha256=iOYPB4zZBKI4qO_8fenHyLbJu-qVcSAOB2Fa9VRXvlE,48
+multilibgeosuitesnd-0.0.10.1.dist-info/top_level.txt,sha256=OUDR-wbZczbODL8WdxZZCLYDiwFctMCiC52cCo2WfWA,15
+multilibgeosuitesnd-0.0.10.1.dist-info/RECORD,,
