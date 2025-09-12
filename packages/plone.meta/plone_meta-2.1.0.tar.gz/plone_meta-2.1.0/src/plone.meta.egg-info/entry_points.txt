@@ -1,0 +1,4 @@
+[console_scripts]
+config-package = plone.meta.config_package:main
+multi-call = plone.meta.multi_call:main
+re-enable-actions = plone.meta.re_enable_actions:main
