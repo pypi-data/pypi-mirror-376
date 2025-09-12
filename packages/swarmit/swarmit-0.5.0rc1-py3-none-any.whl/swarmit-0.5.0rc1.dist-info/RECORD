@@ -1,0 +1,12 @@
+dotbot-firmware/doc/sphinx/conf.py,sha256=uQJVglqE9HoqMXJf5nbmCVCLSSGbqfiSr5ZQbE7HsLk,6211
+testbed/cli/main.py,sha256=2jix2xPzP4XLcnpk804gKGOJWnXAho73lbZXqJGk_6g,9399
+testbed/swarmit/__init__.py,sha256=9WnHRrMe9HW-DxZwi-StMTVa8hbBeNHnZ2iyADAhHzg,25
+testbed/swarmit/adapter.py,sha256=Qmx7ULkx0OfyU7PJh-VBQibEOhvnDfnB3_DmntQ2tfU,4616
+testbed/swarmit/controller.py,sha256=JavaaRgwKxmiIvPGPIyxjEy4vGrt8Qt7hiHxv2wKz_g,23559
+testbed/swarmit/protocol.py,sha256=6G-cZfbLqnffiEGw2uEgxjzid-kPP4deisDY5SEiTGo,6925
+swarmit-0.5.0rc1.dist-info/METADATA,sha256=X0B9W3SDJTOR3x0etRQttOnHYOE2P8duhoV7yBR3yh0,4868
+swarmit-0.5.0rc1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+swarmit-0.5.0rc1.dist-info/entry_points.txt,sha256=R6BGQe6I1FcI5B2jo7Dr-Gh6-Rjn1Ykx3uAGuV5rVTo,50
+swarmit-0.5.0rc1.dist-info/licenses/AUTHORS,sha256=o2cH3J5JkbZssK_1zYj0m8PHiGiILV0lySR6_hoWKK0,45
+swarmit-0.5.0rc1.dist-info/licenses/LICENSE,sha256=j97C1uBc5chpQWi4bv_2SrqExuvKaJK2Ch6L2LFkoc4,1492
+swarmit-0.5.0rc1.dist-info/RECORD,,
