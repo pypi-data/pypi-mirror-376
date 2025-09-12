@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+llm_jsonl_converter/__init__.py
+llm_jsonl_converter.egg-info/PKG-INFO
+llm_jsonl_converter.egg-info/SOURCES.txt
+llm_jsonl_converter.egg-info/dependency_links.txt
+llm_jsonl_converter.egg-info/requires.txt
+llm_jsonl_converter.egg-info/top_level.txt

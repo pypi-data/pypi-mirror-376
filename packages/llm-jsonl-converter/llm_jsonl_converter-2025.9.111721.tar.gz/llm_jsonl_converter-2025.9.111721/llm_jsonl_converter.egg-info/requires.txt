@@ -1,0 +1,4 @@
+langchain-core
+langchain-llm7
+llmatch-messages==2025.9.111720
+tqdm
