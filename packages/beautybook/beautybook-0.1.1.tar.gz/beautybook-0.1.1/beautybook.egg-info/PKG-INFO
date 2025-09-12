@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: beautybook
+Version: 0.1.1
+Summary: A Dynamic Table Visualization Tool for Iterative Processes
+Author-email: Abolfazl Mohammadpour <Mohampouraz@gmail.com>
+License: MIT
+Project-URL: Homepage, https://pypi.org/project/beautybook/
+Project-URL: Repository, https://github.com/mohampouraz/iutils/
+Project-URL: Documentation, https://github.com/mohampouraz/iutils/#readme
+Project-URL: BugTracker, https://github.com/mohampouraz/iutils/issues
+Keywords: Python,Jupyter,notebook,Colab,Data Visualization,Table,IPython,MLOps
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Framework :: Jupyter
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# BeautyBook
+
+**BeautyBook** is a lightweight Python class for dynamic, real-time visualization of tabular data in Jupyter and Google Colab notebooks. Designed for iterative workflows like machine learning training loops, it renders a beautifully styled HTML table that updates in-place—no need for manual DataFrame reconstruction or external file writes.
+
+---
+
+## Features
+
+- **Real-time Updates**: Clean, in-place table rendering using `IPython.display`, without cluttering notebook output.
+- **Automatic Indexing**: Each entry is auto-numbered for easy tracking.
+- **Responsive Styling**: Column widths adapt to content length using `ch` units for optimal readability.
+- **Standalone Class**: Fully self-contained—just copy and paste into your notebook.
+
+---
+
+## Installation
+
+BeautyBook is distributed as a single Python class. To use it, simply copy the class definition into a notebook cell:
+
+```pip install beautybook```
