@@ -1,0 +1,10 @@
+gradio_creditspanel/__init__.py,sha256=jSAmixeO7dOIFsNDoCDj7hxlfu_hGsjGCBMBybbKynI,72
+gradio_creditspanel/creditspanel.py,sha256=HBF5Fvt8RVfWCntjIiSKB7uf9R73S26HS9jrmQOP33Q,11892
+gradio_creditspanel/creditspanel.pyi,sha256=TnQ9S9cSxiP-4MziioDpKEzXz-7EvFaPW92hidx5uhc,18461
+gradio_creditspanel/templates/component/index.js,sha256=s-yvNCXp517Ypo9_89LXYxgLwaM1Ma0U34PtO3M3X2k,273034
+gradio_creditspanel/templates/component/style.css,sha256=0t7wnQlVG1XdlAei2-vYqPOj7WdddSZiGfWyv0WRHIQ,27875
+gradio_creditspanel/templates/example/index.js,sha256=vSxBQzNUzJ_m5YNVEj1EGWwic3DuGi6sP2b2AQltLq0,1776
+gradio_creditspanel/templates/example/style.css,sha256=EzznrGq1I3G47_ePZ5nVZSyc72-R1WMc2EOS5Tj_tGE,47
+gradio_creditspanel-0.0.1.dist-info/METADATA,sha256=PK3VtfksxJkUEgUwBDOw-xFBjnYRBcWBgwlmVcK5TgY,19237
+gradio_creditspanel-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gradio_creditspanel-0.0.1.dist-info/RECORD,,
