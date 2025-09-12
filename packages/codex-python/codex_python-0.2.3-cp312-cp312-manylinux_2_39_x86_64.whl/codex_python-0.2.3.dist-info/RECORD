@@ -1,0 +1,7 @@
+codex_native.libs/libcrypto-fca80f7e.so.3,sha256=W_nlaWqqwVjQDsWInJhX2p9JmjaaaejiK8SAyNGxANo,5463233
+codex_native.libs/libssl-e50e007b.so.3,sha256=CG4oarhB5Xu4VTrq1CwcT9ydUaV5LflnrNtckZkdyIQ,750633
+codex_native/__init__.py,sha256=F6wnaifw2lA804o89FM946g2tbrunIvG3xy1PWR_9DE,131
+codex_native/codex_native.cpython-312-x86_64-linux-gnu.so,sha256=xDo_ozZ0ijrgjaTM1X394nc04lJccpJZz-7rOtjwbAs,15939121
+codex_python-0.2.3.dist-info/METADATA,sha256=UzfAu5R_WMSXigpt_nDEEIwcdvv9hdDQHsM9eiKJc78,80
+codex_python-0.2.3.dist-info/WHEEL,sha256=R8WXEyYwLe1CMvL0-HUOcbXgeh-2v1GFMH8E9G6WKsU,108
+codex_python-0.2.3.dist-info/RECORD,,
