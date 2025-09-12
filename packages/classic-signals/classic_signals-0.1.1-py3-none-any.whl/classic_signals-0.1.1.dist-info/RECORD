@@ -1,0 +1,11 @@
+classic/signals/__init__.py,sha256=p_AXchTG2EIF_NN4IOs3cIWH1rXZXREwjHt-2VnJ7a8,151
+classic/signals/decorator.py,sha256=E1jfX_wQxeLXQHIfDhQF4xG4BZ3RN9-dTMdY6QYjmvU,537
+classic/signals/hub.py,sha256=rKjyoj9JYTR5vMaaMOxZXZIvXFv6lWNE7yobBYViQCw,4316
+classic/signals/reaction.py,sha256=QKFlAC1N-vuIihCCbEaO8bbwl5Q5XliK_MdGrVeRInk,841
+classic/signals/signal.py,sha256=qkjuJOeqOon4nP3Y38ygq6N8u2T_bDw6KRkWFRAidQo,624
+classic/signals/utils.py,sha256=pCD4fu1CQDr9jk-7cNkH6VxCyciv58WVuSv3ibWoFWk,1392
+classic_signals-0.1.1.dist-info/licenses/LICENSE,sha256=NJlZYf1BWmSV82IG29S9QdVpNjUsMMIeMwAtJpkkU9w,1071
+classic_signals-0.1.1.dist-info/METADATA,sha256=VlswXFykj010TLZ7-mRK9kIveybk4E8vQZtn9rvbrbI,3083
+classic_signals-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+classic_signals-0.1.1.dist-info/top_level.txt,sha256=NGd9e95FycaETli7Cs0MwFTtdjK6EYJ3tq_ErbSLNZg,8
+classic_signals-0.1.1.dist-info/RECORD,,
