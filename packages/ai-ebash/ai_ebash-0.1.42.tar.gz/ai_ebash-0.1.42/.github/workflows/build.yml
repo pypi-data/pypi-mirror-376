@@ -1,0 +1,108 @@
+# ---
+---
+name: Build and Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*"   # Запуск при пуше тега вида vX.Y.Z
+  workflow_dispatch:   # Можно запускать вручную
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      # 1️⃣ Checkout с полным history и тегами
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2️⃣ Установка Python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      # 3️⃣ Установка зависимостей для сборки
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install setuptools wheel setuptools-scm certifi twine build
+
+      # 4️⃣ Сборка пакета (sdist + wheel)
+      - name: Build package
+        run: python -m build
+
+      # 5️⃣ Публикация на PyPI (через Trusted Publishing)
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # attestations: true
+          # Если Trusted Publishing не настроен, можно использовать:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+      # 6️⃣ Публикация в GitHub Packages
+      - name: Publish to GitHub Packages
+        run: |
+          python -m twine upload \
+            --repository-url https://upload.pypi.pkg.github.com/Vivatist \
+            --non-interactive \
+            --verbose \
+            dist/* \
+            -u ${{ github.actor }} \
+            -p ${{ secrets.GITHUB_TOKEN }}
+
+# name: Build and Publish
+
+# on:
+#   push:
+#     tags:
+#       - "v*.*.*"   # Запуск при пуше тега вида vX.Y.Z
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     permissions:
+#       contents: read
+#       packages: write  # нужно для публикации в GitHub Packages
+#       id-token: write  # нужно для Trusted Publishing на PyPI
+
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0  # важно для setuptools-scm
+
+#       - uses: actions/setup-python@v5
+#         with:
+#           python-version: "3.11"
+
+#       - name: Install dependencies
+#         run: pip install build
+
+#       - name: Build package
+#         run: python -m build
+
+#       # ---- Публикация на PyPI ----
+#       - name: Publish to PyPI
+#         uses: pypa/gh-action-pypi-publish@release/v1
+#         with:
+#           # attestations: true
+#           # если не настроен Trusted Publishing, тогда: 
+#            user: __token__
+#            password: ${{ secrets.PYPI_API_TOKEN }}
+
+#       # ---- Публикация в GitHub Packages ---- 
+#       - name: Publish to GitHub Packages
+#         run: |
+#           pip install twine
+#           python -m twine upload \
+#             --repository-url https://upload.pypi.pkg.github.com/Vivatist dist/* \
+#             -u ${{ github.actor }} \
+#             -p ${{ secrets.GITHUB_TOKEN }}
