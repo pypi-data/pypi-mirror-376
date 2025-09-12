@@ -1,0 +1,4 @@
+numpy
+fastplotlib
+PyQt6
+PySide6
