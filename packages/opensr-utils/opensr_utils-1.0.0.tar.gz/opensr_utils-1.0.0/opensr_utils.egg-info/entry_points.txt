@@ -1,0 +1,2 @@
+[console_scripts]
+opensr-utils = opensr_utils.large_file_processing:main
