@@ -1,0 +1,10 @@
+# default arguments; any other argument files should include
+# this file.
+--pythonpath .
+--variable BROWSER:headlesschrome
+--variable KEYWORD_DIR:tests/sample_resources
+
+--outputdir tests/results
+
+--exclude in-progress
+--exclude test-data

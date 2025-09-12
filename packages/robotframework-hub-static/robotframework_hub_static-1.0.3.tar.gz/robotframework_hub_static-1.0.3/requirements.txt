@@ -1,0 +1,3 @@
+Jinja2>=3
+robotframework>=2.8.5
+robotframework-requests;       'test' in extra
