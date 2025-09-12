@@ -1,0 +1,3 @@
+[console_scripts]
+obcli = openbridge.cli:obcli
+openbridge = openbridge.cli:main

@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openbridge"
+version = "0.1.0"
+description = "Use Claude Code with any LLM"
+readme = "README.md"
+license = {text = "BSD-3-Clause"}
+authors = [
+    {name = "mrfakename"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers", 
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+    "openai>=1.0.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+    "click>=8.0.0",
+    "huggingface-hub>=0.20.0",
+    "pyyaml>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+openbridge = "openbridge.cli:main"
+obcli = "openbridge.cli:obcli"
+
+[project.urls]
+Homepage = "https://github.com/fakerybakery/openbridge"
+Repository = "https://github.com/fakerybakery/openbridge"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["openbridge*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.ruff]
+target-version = "py38"
+line-length = 88
+select = ["E", "F", "I"]
+
+[tool.ruff.isort]
+known-first-party = ["openbridge"]

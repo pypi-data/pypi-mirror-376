@@ -1,0 +1,71 @@
+Metadata-Version: 2.4
+Name: openbridge
+Version: 0.1.0
+Summary: Use Claude Code with any LLM
+Author: mrfakename
+License: BSD-3-Clause
+Project-URL: Homepage, https://github.com/fakerybakery/openbridge
+Project-URL: Repository, https://github.com/fakerybakery/openbridge
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: uvicorn>=0.20.0
+Requires-Dist: openai>=1.0.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: huggingface-hub>=0.20.0
+Requires-Dist: pyyaml>=6.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+
+> Formerly "claude-code-kimi-groq" - now OpenBridge! Legacy code still available in the `cckg-legacy` branch.
+
+# OpenBridge
+
+Use models like Kimi K2, DeepSeek V3.1, and GLM-4.5 in Claude Code.
+
+Open-source API bridge that enables any LLM to work with Anthropic-compatible tools.
+
+## Quick Start
+
+Quick start using Kimi K2 on Hugging Face
+
+## Usage
+
+```bash
+# Install the package
+pip install openbridge
+
+# Start the proxy
+openbridge --port 8323
+
+# Configure your environment
+export ANTHROPIC_API_KEY=NOT_NEEDED # If you are not already logged in to Anthropic
+export ANTHROPIC_BASE_URL=http://localhost:8323/
+
+# Run Claude Code
+claude
+```
+
+CLI options:
+- `--host` - Host to bind to (default: 0.0.0.0)
+- `--port` - Port to bind to (default: 8323)
+
+## License
+
+BSD-3-Clause
