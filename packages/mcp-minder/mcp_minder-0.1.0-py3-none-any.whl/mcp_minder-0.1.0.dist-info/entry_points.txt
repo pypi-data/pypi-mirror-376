@@ -1,0 +1,5 @@
+[console_scripts]
+mcp-api-server = mcp_generator.cli.api_cli:main
+mcp-generator = mcp_generator.cli.main:main
+mcp-launcher = mcp_generator.cli.launcher_cli:main
+mcp-web = mcp_generator.cli.web_cli:main
