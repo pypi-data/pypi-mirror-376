@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: notemate-cv
+Version: 0.2.0
+Summary: A command-line interface for NoteMate Code Verse.
+Author-email: Abhishek  <abhi.bharthana@gmail.com>
+Project-URL: Homepage, https://notemate.space
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: requests

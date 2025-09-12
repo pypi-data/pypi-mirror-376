@@ -1,0 +1,14 @@
+pyproject.toml
+cv_cli/__init__.py
+cv_cli/main.py
+cv_cli/utils.py
+cv_cli/commands/__init__.py
+cv_cli/commands/auth.py
+cv_cli/commands/repo.py
+cv_cli/commands/vcs.py
+notemate_cv.egg-info/PKG-INFO
+notemate_cv.egg-info/SOURCES.txt
+notemate_cv.egg-info/dependency_links.txt
+notemate_cv.egg-info/entry_points.txt
+notemate_cv.egg-info/requires.txt
+notemate_cv.egg-info/top_level.txt

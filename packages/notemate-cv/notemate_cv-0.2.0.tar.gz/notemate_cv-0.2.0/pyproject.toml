@@ -1,0 +1,24 @@
+[project]
+name = "notemate-cv"
+version = "0.2.0"
+authors = [
+    { name="Abhishek ", email="abhi.bharthana@gmail.com" },
+]
+description = "A command-line interface for NoteMate Code Verse."
+readme = "README.md" # README file ka naam
+requires-python = ">=3.7" # Python version
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", # Aapka license
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click",
+    "requests",
+]
+
+[project.scripts]
+cv = "cv_cli.main:cli"
+
+[project.urls]
+"Homepage" = "https://notemate.space" 
