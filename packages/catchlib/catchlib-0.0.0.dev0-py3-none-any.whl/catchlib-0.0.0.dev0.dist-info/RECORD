@@ -1,0 +1,10 @@
+catchlib/__init__.py,sha256=cQbMQNae02UxVtDduzj3ZCzH87hbyJGbR5oXA_B0oCw,96
+catchlib/__main__.py,sha256=dN8d0Nu8AGoONqnHvThcjtCb9E9YcNFGlaVHYYTeK4w,65
+catchlib/core/__init__.py,sha256=Tr3CwIPY695IbF4DrKHrDes1AKd_iJgddUP46jxKHSw,163
+catchlib/tests/__init__.py,sha256=F79E9ssYcoufZpYJ4I6XSvZTR0wkvc9r-5K3XpYvXsY,387
+catchlib/tests/test_1984.py,sha256=_ami0cAP8vU0C8RpQhP1tLWnLFGTaeHlOG5O60RVKv8,222
+catchlib-0.0.0.dev0.dist-info/licenses/LICENSE.txt,sha256=fOh9FHccUt9OcJPBaVJ482GX4yrl_FxCUk9YRZ53JOI,1074
+catchlib-0.0.0.dev0.dist-info/METADATA,sha256=75xWXIpQsdmWirkcj_HaJpuMasBk7NDuoWrb-e4K5aA,2645
+catchlib-0.0.0.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+catchlib-0.0.0.dev0.dist-info/top_level.txt,sha256=pZsP_Y2Suk_fAyIQrw4g81DUtgZBRIWzb-5Bk-0jmZs,9
+catchlib-0.0.0.dev0.dist-info/RECORD,,
