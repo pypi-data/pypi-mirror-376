@@ -1,0 +1,14 @@
+setuptools
+
+[docs]
+Sphinx
+sphinx_rtd_theme
+
+[test]
+zope.testing
+zope.testrunner>=6.4
+
+[testing]
+zope.testing
+zope.testrunner>=6.4
+coverage
