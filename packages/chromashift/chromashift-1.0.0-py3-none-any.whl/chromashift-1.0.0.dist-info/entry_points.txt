@@ -1,0 +1,2 @@
+[console_scripts]
+chromashift = chromashift.cli:main
