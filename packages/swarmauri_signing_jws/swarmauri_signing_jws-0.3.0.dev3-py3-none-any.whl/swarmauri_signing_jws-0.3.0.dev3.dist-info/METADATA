@@ -1,0 +1,63 @@
+Metadata-Version: 2.3
+Name: swarmauri_signing_jws
+Version: 0.3.0.dev3
+Summary: Composite JWS signer/verifier for Swarmauri
+License: Apache-2.0
+Author: Swarmauri
+Author-email: opensource@swarmauri.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Security :: Cryptography
+Classifier: Intended Audience :: Developers
+Provides-Extra: cbor
+Provides-Extra: secp256k1
+Requires-Dist: cbor2 ; extra == "cbor"
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Requires-Dist: swarmauri_signing_ecdsa
+Requires-Dist: swarmauri_signing_ed25519
+Requires-Dist: swarmauri_signing_hmac
+Requires-Dist: swarmauri_signing_rsa
+Requires-Dist: swarmauri_signing_secp256k1 ; extra == "secp256k1"
+Description-Content-Type: text/markdown
+
+![Swamauri Logo](https://res.cloudinary.com/dbjmpekvl/image/upload/v1730099724/Swarmauri-logo-lockup-2048x757_hww01w.png)
+
+# Swarmauri Signing JWS
+
+Composite JSON Web Signature (JWS) signer and verifier combining multiple
+Swarmauri signing providers.
+
+Features:
+- Supports compact and general JWS serialization
+- Routes algorithms to existing HMAC, RSA, ECDSA, Ed25519, and optional
+  secp256k1 signers
+- Optional CBOR canonicalization via `cbor2`
+
+## Installation
+
+```bash
+pip install swarmauri_signing_jws
+```
+
+## Usage
+
+```python
+from swarmauri_signing_jws import JwsSignerVerifier
+
+verifier = JwsSignerVerifier()
+compact = await verifier.sign_compact(payload={"msg": "hi"}, alg="HS256", key={"kind": "raw", "key": "secret"})
+result = await verifier.verify_compact(compact, hmac_keys=[{"kind": "raw", "key": "secret"}])
+```
+
+## Entry Point
+
+The signer registers under the `swarmauri.signings` entry point as
+`JwsSignerVerifier`.
+
