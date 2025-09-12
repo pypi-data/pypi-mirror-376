@@ -1,0 +1,3 @@
+[console_scripts]
+vulnreach = vulnreach.cli:main
+vulnreach-scan = vulnreach.cli:main
