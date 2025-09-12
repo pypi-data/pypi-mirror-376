@@ -1,0 +1,29 @@
+from .base import BASE_URL, ContentPiece, PybitesSearch
+
+YOUTUBE_ENDPOINT = BASE_URL + "api/videos/"
+YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v="
+
+
+class YouTubeSearch(PybitesSearch):
+    def __init__(self) -> None:
+        self.title = "Pybites YouTube Videos"
+
+    def match_content(self, search: str) -> list[ContentPiece]:
+        entries = self.get_data(YOUTUBE_ENDPOINT)
+        results = []
+        for entry in entries:
+            if search.lower() in (entry["title"] + entry["description"]).lower():
+                results.append(
+                    ContentPiece(
+                        title=entry["title"],
+                        url=YOUTUBE_BASE_URL + entry["video_id"],
+                        channel=self.title,
+                    )
+                )
+        return results
+
+
+if __name__ == "__main__":
+    searcher = YouTubeSearch()
+    results = searcher.match_content("django")
+    searcher.show_matches(results)
