@@ -1,0 +1,37 @@
+numpy
+GitPython 
+soiltexture
+SALib
+pyvistaqt
+itkwidgets
+rosetta-soil
+rich
+pandas
+natsort
+shapely
+imageio
+nltk
+
+# Optionnal packages
+# resipy
+
+# Documentation building requirements
+numpydoc
+sphinx
+sphinx-book-theme
+sphinx-gallery
+sphinx-design
+sphinx-copybutton
+jupyter-sphinx
+sphinxcontrib-bibtex
+matplotlib
+pyvista
+vtk
+myst_nb
+myst-parser #https://myst-parser.readthedocs.io/en/latest/intro.html
+geopandas
+
+# pypi building requirements
+# twine
+
+
