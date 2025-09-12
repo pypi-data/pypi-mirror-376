@@ -1,0 +1,15 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+include = ["./examples/*"]
+manifest-path = "lakers-python/Cargo.toml"
+
+[project]
+name = "lakers-python"
+dynamic = ["version"]
+
+[project.urls]
+"Source Code" = "https://github.com/lake-rs/lakers/tree/main/lakers-python"
+Documentation = "https://lakers.readthedocs.io/"
