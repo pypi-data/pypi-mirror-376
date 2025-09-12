@@ -1,0 +1,12 @@
+PyGObject
+babel
+packaging
+
+[healthstats]
+croniter
+
+[wayland]
+pywayland
+
+[x11]
+python-xlib
