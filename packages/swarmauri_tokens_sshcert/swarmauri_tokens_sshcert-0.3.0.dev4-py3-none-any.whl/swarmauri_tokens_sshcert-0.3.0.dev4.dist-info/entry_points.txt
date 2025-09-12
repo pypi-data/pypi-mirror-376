@@ -1,0 +1,6 @@
+[peagen.plugins.tokens]
+ssh-cert=swarmauri_tokens_sshcert:SshCertTokenService
+
+[swarmauri.tokens]
+SshCertTokenService=swarmauri_tokens_sshcert:SshCertTokenService
+
