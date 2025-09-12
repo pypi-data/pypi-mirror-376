@@ -1,0 +1,11 @@
+importlib-metadata
+numpy
+lds-gen
+
+[testing]
+setuptools
+pytest
+pytest-cov
+lds-gen
+numpy
+scipy
