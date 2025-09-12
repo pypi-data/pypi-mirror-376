@@ -1,0 +1,8 @@
+build/
+dist/
+htmlcov/
+huscy.project_design.egg-info/
+
+.coverage
+
+docs/class_diagram.png
