@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="470ee1c4-06bb-42b7-9b51-62f0a341d99d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Pynums/EnumMember.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pynums/EnumMetaClass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.5-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.5.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.6-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.6.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.7-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.7.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.8-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/dist/pynums-0.0.1.8.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/pyproject.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/src/Pynums/Enum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynums/src/Pynums/__init__.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="32NI60xCvxCAUhvR9bqVvPP01n0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests in EnumMetaClass.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.EnumMetaClass.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cnum.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Henry Watts/UserDocuments/Programming/GitHub/Python/Pynums/pynums&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry Watts\UserDocuments\Programming\GitHub\Python\Pynums\pynums" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="470ee1c4-06bb-42b7-9b51-62f0a341d99d" name="Changes" comment="" />
+      <created>1757254423627</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757254423627</updated>
+    </task>
+    <servers />
+  </component>
+</project>
