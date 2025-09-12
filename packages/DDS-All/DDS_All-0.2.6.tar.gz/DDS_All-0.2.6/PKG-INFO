@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: DDS_All
+Version: 0.2.6
+Summary: 添加不同版本Python编译出的.pyd文件
+Home-page: UNKNOWN
+Author: JackyJia
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.9, <=3.13
+
+UNKNOWN
+
