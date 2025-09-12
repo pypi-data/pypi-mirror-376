@@ -1,0 +1,13 @@
+FuyaoDownloadMusic/__init__.py,sha256=805znp_zyIB1HRYj45rbWKkE8BpS1Spg8fc0zYc3gFY,603
+FuyaoDownloadMusic/download.py,sha256=p6q67tDt4rW4od_WISDsceVp4heyID_ei2Dj2M8_xp0,2040
+FuyaoDownloadMusic/kugou.py,sha256=ToQAxzlPSBfDMfh5FcRVghjgiLvaEsUdDiYrBQOCGPA,7617
+FuyaoDownloadMusic/netease.py,sha256=cDXDn9jIn3Ywn1JhYEqGF-KcevV1_U9ip4LrixlbK3c,8319
+FuyaoDownloadMusic/js/KugouEncrypt.js,sha256=owNT1Hpi2fM91FWhgkhUbEZ9cmKEPhaHj9hN7GVfhXI,6921
+FuyaoDownloadMusic/js/NeteaseEncrypt.js,sha256=0hRo4aZyXAcyi6owcO8KBCtK8iIYdcFICfq5EqoOvZw,12309
+FuyaoDownloadMusic/utils/execJsUtil.py,sha256=FGuEH-eJVwabj1eKih5_eTqfriNmQYg4eh5hX-8oV3Y,467
+FuyaoDownloadMusic/utils/getJSPath.py,sha256=2jbSXasRJFWGCQFN7IEpUJLaUQ0xIv6C_4ExiY-o_BA,384
+fuyaodownloadmusic-0.0.8.dist-info/licenses/LICENSE,sha256=vXKqNunJApO7N2bjNG3y2ttg82plo9_TDgUreOvj0Sw,1089
+fuyaodownloadmusic-0.0.8.dist-info/METADATA,sha256=uyVaWtPSF74oT9Rd8R_wm4jrH5PhXOVmpxj_cLr2Vh4,3989
+fuyaodownloadmusic-0.0.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fuyaodownloadmusic-0.0.8.dist-info/top_level.txt,sha256=eEFqQfXrupZgOJy6kfeVoM-QsmLGfHXjPZDNKt6epWs,19
+fuyaodownloadmusic-0.0.8.dist-info/RECORD,,
