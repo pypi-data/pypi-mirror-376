@@ -1,0 +1,15 @@
+legend_pygeom_tools-0.0.20.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+pygeomtools/__init__.py,sha256=Li9ZqyKxoSaHhDi56RYrQhryX4AGH_y0tgWjH6GiZC0,835
+pygeomtools/_version.py,sha256=8FWqMenH0vIxIRfUQxFCzTnv2dsyjwSoAhVLD84lkZ4,706
+pygeomtools/detectors.py,sha256=FVynSGfaqmQhCA6y4QTrq5k_srz0n0OC-2te4D4Ig88,8851
+pygeomtools/geometry.py,sha256=6BeWLuD3W7SgeE8X33BmekC13f8NPX2zJIg_6Mi-QRA,3605
+pygeomtools/materials.py,sha256=Nx3ito9bJO5mO6Dk_PNTHb9Nf_WxJzl0D0WT9HUJg4o,3191
+pygeomtools/utils.py,sha256=8PetSbtbMTcbl5kPzOLjPTWjl0dYSROkg0Vk8N8njGo,1276
+pygeomtools/viewer.py,sha256=nqgkCY_nTA2DhCguDD2B-o8y3MODXFAEklawqqZqs7s,15850
+pygeomtools/visualization.py,sha256=MqWZKLpbOJWFxs0Bkwa3AGDiWNH0OdQKCY29GULrK1g,3805
+pygeomtools/write.py,sha256=4Ef8Mr4uJgLOIttLfsfPtVW3_ewvyKos90_VMrk_aoA,1567
+legend_pygeom_tools-0.0.20.dist-info/METADATA,sha256=7z1J0zAOcXdmb8gqd0ChjvDE5PcJKfKDy4VClJabkS8,43680
+legend_pygeom_tools-0.0.20.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+legend_pygeom_tools-0.0.20.dist-info/entry_points.txt,sha256=piRvte20pSSUnLLtDcT_htzd8_bGpGlnFK4HMVPTpiY,70
+legend_pygeom_tools-0.0.20.dist-info/top_level.txt,sha256=K_iYrD8lTcfZIpEaiM1j2Y4Y--iTtJEHd_KQ_mNmdVM,12
+legend_pygeom_tools-0.0.20.dist-info/RECORD,,
