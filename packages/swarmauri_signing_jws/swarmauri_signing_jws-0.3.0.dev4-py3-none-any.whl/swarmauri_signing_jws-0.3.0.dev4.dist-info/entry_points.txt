@@ -1,0 +1,6 @@
+[peagen.plugins.signings]
+jws=swarmauri_signing_jws:JwsSignerVerifier
+
+[swarmauri.signings]
+JwsSignerVerifier=swarmauri_signing_jws:JwsSignerVerifier
+
