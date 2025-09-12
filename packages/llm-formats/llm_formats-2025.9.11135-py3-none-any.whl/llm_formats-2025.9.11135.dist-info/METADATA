@@ -1,0 +1,80 @@
+Metadata-Version: 2.4
+Name: llm_formats
+Version: 2025.9.11135
+Summary: Minimal llm_formats package exposing a single public function
+Home-page: https://github.com/chigwell/llm_formats
+Author: Eugene Evstafev
+Author-email: hi@eugene.plus
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+[![PyPI version](https://badge.fury.io/py/llm_formats.svg)](https://badge.fury.io/py/llm_formats)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/llm_formats)](https://pepy.tech/project/llm_formats)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://www.linkedin.com/in/eugene-evstafev-716669181/)
+
+# llm_formats
+
+`llm_formats` is a Python package designed to provide data structures for various JSONL formats used for training and fine-tuning Large Language Models (LLMs). It includes predefined schemas for formats such as OpenAI prompts, chat messages, Alpaca instructions, Dolly responses, preference data, and more. This package is useful for validating, generating, and analyzing data in different LLM training formats.
+
+## Installation
+
+To install `llm_formats`, use pip:
+
+```bash
+pip install llm_formats
+```
+
+## Usage
+
+Once installed, you can import the main function to access the format definitions:
+
+```python
+from llm_formats import get_llm_jsonl_formats
+
+formats = get_llm_jsonl_formats()
+for fmt in formats:
+    print(fmt['name'])
+```
+
+This will list all supported LLM data formats.
+
+## Example
+
+Here's an example demonstrating how to retrieve and print the supported formats:
+
+```python
+from llm_formats import get_llm_jsonl_formats
+
+formats = get_llm_jsonl_formats()
+for format in formats:
+    print(f"Format: {format['name']}")
+    print(f"Aliases: {', '.join(format['aliases'])}")
+    print(f"Example: {format['example']}\n")
+```
+
+## License
+
+`llm_formats` is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+## Author
+
+Eugene Evstafev  
+[LinkedIn](https://www.linkedin.com/in/eugene-evstafev-716669181/)
