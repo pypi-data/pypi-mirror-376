@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: cb_jtag
+Version: 0.2.0
+Project-URL: Homepage, https://github.com/chriesibaum/cb-pyutils
+Requires-Python: >=3.12
+Requires-Dist: cb-bsdl-parser
+Requires-Dist: key-stroke
+Requires-Dist: pylink-square
