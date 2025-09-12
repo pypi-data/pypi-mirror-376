@@ -1,0 +1,41 @@
+[CDF-25717] 😅Remove auth check on extraction pipeline config (#1942)
+
+# Description
+
+## User error
+The user failed to deploy an extraction pipeline configuration as they
+only had `extractionPipelineAcl` scoped to a dataset:
+<img width="819" height="686" alt="image"
+src="https://github.com/user-attachments/assets/3115c28d-8851-45a6-b2ac-c76f3dc2db2b"
+/>
+
+## Solution
+Temporary solution remove this check.
+
+## Risk
+This means we do not give a good error message when the user lacks
+extraction pipeline acl, but instead they will get an API failure on the
+create requests instead. This is a temporarily solution to unblock user,
+as a permanent solution requires a redesign of how we do this check in
+Toolkit to account for dependencies between resources. I captured this
+in the following task:
+https://cognitedata.atlassian.net/browse/CDF-25720?atlOrigin=eyJpIjoiNjBhN2EwNDEyOWFjNDAwMjk2NDhhYjk3NmRjZThhNzQiLCJwIjoiaiJ9
+
+The risk is worth it as this is currently a blocker for our users.
+
+
+## Changelog
+
+- [x] Patch
+- [ ] Skip
+
+## cdf
+
+### Fixed
+
+- When deploying extraction pipeline configurations, Toolkit no longer
+require `extractionPipelineAcl` that is all scoped.
+
+## templates
+
+No changes.
