@@ -1,0 +1,15 @@
+prefix=/private/var/folders/x7/ch5v91h56_zbvbd1y2f600dm0000gn/T/tmpcm6uh9rt/wheel/platlib
+bindir=
+mandir=
+docdir=
+libdir=
+includedir=
+
+Name: openjp2
+Description: JPEG2000 library (Part 1 and 2)
+URL: http://www.openjpeg.org/
+Version: 2.3.0
+Libs: -L${libdir} -lopenjp2
+Libs.private: -lm
+Cflags: -I${includedir}
+Cflags.private: -DOPJ_STATIC
