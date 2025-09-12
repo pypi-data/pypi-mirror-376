@@ -1,0 +1,12 @@
+sgn_inspect/__init__.py,sha256=ZBu-SlVpYRyAurHc6XTJZN5fghpxB5UAAIWFqxkjT0o,457
+sgn_inspect/_version.py,sha256=5jwwVncvCiTnhOedfkzzxmxsggwmTBORdFL_4wq0ZeY,704
+sgn_inspect/cli.py,sha256=3o6Krf6NuhuoSRl2HjPue8D3SW5aeoXb_arGvqEhLqY,3666
+sgn_inspect/registry.py,sha256=jmRuLSvudieGcddnOtKoLvFivU9VYv3ijz5pHs7H6Cg,5376
+sgn_inspect/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sgn_inspect/tests/test_cli.py,sha256=LOyBP_t714T7es_zg8R09DD-4ttqxNU1fWAq2lHDfWQ,1018
+sgn_inspect/tests/test_registry.py,sha256=bmOqSMbUVVYaZ5vutQBszCfRkVkVNFnIcFkHhm3O-SA,663
+sgn_inspect-0.1.0.dist-info/METADATA,sha256=1BiNh1rE1OAEv-dL0gYzkcEwancYPksuyCMMW7v2rc4,11094
+sgn_inspect-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+sgn_inspect-0.1.0.dist-info/entry_points.txt,sha256=fdfZqvxZgcQgch3O_mamkVuBafJNDhhkqK1If9eYNh0,52
+sgn_inspect-0.1.0.dist-info/licenses/LICENSE,sha256=HyVuytGSiAUQ6ErWBHTqt1iSGHhLmlC8fO7jTCuR8dU,16725
+sgn_inspect-0.1.0.dist-info/RECORD,,
