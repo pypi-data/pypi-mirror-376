@@ -1,0 +1,8 @@
+classifierPratik/__init__.py,sha256=kqllV-1OJM1Rvi7KLsl3c-kQNB9V8koOLf3GfJzMtG4,95
+classifierPratik/classifierPratikFunctions.py,sha256=pfBKdw1zq3sF3cABQqMoofQW10cu6_rRLBvtEsSJjWM,523
+tests/__init__.py,sha256=kqllV-1OJM1Rvi7KLsl3c-kQNB9V8koOLf3GfJzMtG4,95
+tests/test_classifier.py,sha256=2ZYDCz8fKS3gVxILgO6gehgE3eObHJ9nKvv-7SHObRM,857
+classifierpratik-0.0.2.dist-info/METADATA,sha256=iPDnOUFSX32j24bMazu-OoSHDcpjUpOnptdd5du9Bq8,1158
+classifierpratik-0.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+classifierpratik-0.0.2.dist-info/top_level.txt,sha256=9HaaItzi5GWgjDhW6f2KlmrqKLj6JsbGWsMRloWMt10,23
+classifierpratik-0.0.2.dist-info/RECORD,,
