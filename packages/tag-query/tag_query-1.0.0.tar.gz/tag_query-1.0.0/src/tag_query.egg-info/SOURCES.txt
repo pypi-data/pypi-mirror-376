@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/tag_query/__init__.py
+src/tag_query.egg-info/PKG-INFO
+src/tag_query.egg-info/SOURCES.txt
+src/tag_query.egg-info/dependency_links.txt
+src/tag_query.egg-info/top_level.txt
+src/tag_query/compiler/__init__.py
+src/tag_query/compiler/exceptions.py
+src/tag_query/compiler/lexer.py
+src/tag_query/compiler/tokens.py
