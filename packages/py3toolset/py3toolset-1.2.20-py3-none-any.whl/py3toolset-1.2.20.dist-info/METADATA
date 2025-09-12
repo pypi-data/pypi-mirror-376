@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: py3toolset
+Version: 1.2.20
+Summary: Python utility modules.
+Home-page: 
+License: 3-clause BSD 2.0
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: numpy>=2
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+Python collection of utility modules: [bash_autocomp](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.bash_autocomp), [cmd_interact](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.cmd_interact), [dep](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.dep), [file_backup](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.file_backup), [fs](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.fs), [nmath](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.nmath), [tuple_file](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.tuple_file), [txt_color](https://neemgrp.univ-nantes.io/py3toolset/html/api.html#module-py3toolset.txt_color)...
+
+This package software engineering has been funded by the [Laboratoire de Planétologie et Géosciences](https://lpg-umr6112.fr/), Nantes (France).
+    
