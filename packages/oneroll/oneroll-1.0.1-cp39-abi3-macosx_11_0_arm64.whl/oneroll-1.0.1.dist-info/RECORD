@@ -1,0 +1,11 @@
+oneroll-1.0.1.dist-info/METADATA,sha256=xst-NaxIRTLefMzRUN1co6g4nDxUOjGBCjKgH3AJit4,1152
+oneroll-1.0.1.dist-info/WHEEL,sha256=6kcRj6OxKF73Kk9A-y1ed3Vm1nD_hs5oAkJ02tSEJJE,102
+oneroll-1.0.1.dist-info/entry_points.txt,sha256=koxcVfbfSmBZsbP1s4BwEU3LNoqyXaAaEe8xKwo_DVc,76
+oneroll-1.0.1.dist-info/licenses/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+oneroll/__init__.py,sha256=qWsKFKcPWUAPuS1wJ9rTXJvJCOVL75e-vnV4rrQBmgs,5828
+oneroll/__main__.py,sha256=mlIn-o4FDwRIsTuax2mbkK3bP736f8krzZDBQAXba0Y,11239
+oneroll/_core.abi3.so,sha256=JpOgsE9NtW2fzLhCm0qLsDcb2XeBUqEv6CFjMCSFces,622352
+oneroll/_core.pyi,sha256=OktO4YmVlJDV5TBtYFgzwnBrpNB27mA-J0xJmted2bw,6659
+oneroll/grammar.pest,sha256=-3zhrMs3rsk9FhS7n3e2f7C2FScKPsOz78VfT_p2y5w,797
+oneroll/tui.py,sha256=mmysA19rPxag_cf_aaefmqhIyd0IDRk3cU75pyUtK8k,7035
+oneroll-1.0.1.dist-info/RECORD,,
