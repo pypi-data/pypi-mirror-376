@@ -1,0 +1,10 @@
+[package]
+name = "openmander-partition"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ndarray = { workspace = true }
+rand = { workspace = true }
+
+openmander-graph = { path = "../graph" }

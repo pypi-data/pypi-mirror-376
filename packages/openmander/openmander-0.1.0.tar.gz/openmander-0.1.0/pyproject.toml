@@ -1,0 +1,28 @@
+[build-system]
+requires = ["maturin>=1.5"]
+build-backend = "maturin"
+
+[project]
+name = "openmander"
+dynamic = ["version"]
+requires-python = ">=3.8"
+description = "OpenMander: a redistricting toolkit in Rust with Python bindings"
+readme = { file = "README.md", content-type = "text/markdown" }
+# license = {file = "LICENSE"}
+authors = [{ name = "Benjamin Darnell" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Rust",
+  "Operating System :: OS Independent",
+]
+
+[tool.maturin]
+bindings = "pyo3"
+sdist-include = [
+  "Cargo.toml",
+  "pyproject.toml",
+  "README.md",
+  "LICENSE",
+  "src/**",
+]
+manifest-path = "bindings/python/Cargo.toml"

@@ -1,0 +1,11 @@
+[package]
+name = "openmander-plan"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = { workspace = true }
+polars = { workspace = true }
+
+openmander-map = { path = "../map" }
+openmander-partition = { path = "../partition" }
