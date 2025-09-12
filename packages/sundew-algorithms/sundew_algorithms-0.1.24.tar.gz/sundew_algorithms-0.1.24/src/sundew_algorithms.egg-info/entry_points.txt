@@ -1,0 +1,3 @@
+[console_scripts]
+sundew = sundew.cli:main
+sundew-ecg = benchmarks.run_ecg:main
