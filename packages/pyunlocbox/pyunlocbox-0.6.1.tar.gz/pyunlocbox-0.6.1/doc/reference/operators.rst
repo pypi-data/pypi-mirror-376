@@ -1,0 +1,5 @@
+=========
+Operators
+=========
+
+.. automodule:: pyunlocbox.operators

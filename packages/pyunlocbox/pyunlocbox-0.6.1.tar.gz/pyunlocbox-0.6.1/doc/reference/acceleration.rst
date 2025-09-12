@@ -1,0 +1,5 @@
+============
+Acceleration
+============
+
+.. automodule:: pyunlocbox.acceleration

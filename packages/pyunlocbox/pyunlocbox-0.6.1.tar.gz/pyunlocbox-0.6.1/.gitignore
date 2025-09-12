@@ -1,0 +1,41 @@
+uv.lock
+.venv/
+coverage.xml
+__pycache__/
+.vscode/
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Coverage reports
+.coverage
+htmlcov
+
+# Complexity
+output/*.html
+output/*/index.html
+
+# Sphinx documentation
+doc/_build
+
+# Vim swap files
+.*.swp
+
+# Mac OS garbage
+.DS_Store
+
+# Jupyter notebook
+.ipynb_checkpoints/
