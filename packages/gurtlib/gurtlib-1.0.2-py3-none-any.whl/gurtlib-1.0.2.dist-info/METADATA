@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: gurtlib
+Version: 1.0.2
+Summary: A community-maintained framework that makes creating Gurt websites easy.
+Author-email: Jasper Green <jasper@jasperdev.org>
+License-Expression: CC-BY-NC-SA-4.0
+License-File: LICENSE.md
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
