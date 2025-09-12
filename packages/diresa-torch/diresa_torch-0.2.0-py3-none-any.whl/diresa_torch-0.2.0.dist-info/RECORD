@@ -1,0 +1,12 @@
+diresa_torch/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+diresa_torch/arch/config.py,sha256=_zfjDmwp8E7m8pwyqKmIer6r9U3k3Oz6RB8iAInhdys,6605
+diresa_torch/arch/models.py,sha256=5b1pDya9or1KVfgsHLEl3h9H6nxzI5b7CrV9zxr2HcU,15637
+diresa_torch/arch/modules.py,sha256=fJ6AaLYkNo_TSh-gJNVLsSt6UCoIAkmqRktfFDw1Ndg,8901
+diresa_torch/losses/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+diresa_torch/losses/loss_funcs.py,sha256=tCwSPFY8cwrmkqpTsUub2AlF7lRCAysQWvg00MOdJTs,4404
+diresa_torch/training/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+diresa_torch/training/trainer.py,sha256=BiqrLPsmPzm3XJ-hIZTEO60GPzIHyFGArDTdDqceum8,10775
+diresa_torch-0.2.0.dist-info/METADATA,sha256=vTHGsSZK5nxiLjYmbPq4o_SaWFzgmxm-o4O_fg4CgcY,1394
+diresa_torch-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+diresa_torch-0.2.0.dist-info/licenses/LICENSE,sha256=PcprmmtAh6MlwasW84RQVXKWu_wv-EJ9WmAMHPk-CSY,1069
+diresa_torch-0.2.0.dist-info/RECORD,,
