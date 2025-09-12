@@ -1,0 +1,46 @@
+Metadata-Version: 2.3
+Name: swarmauri_certs_csronly
+Version: 0.8.0.dev4
+Summary: Community service for generating PKCS#10 CSRs
+License: Apache-2.0
+Author: Community Contributor
+Author-email: community@swarmauri.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: tests
+Requires-Dist: cryptography (>=41)
+Requires-Dist: pytest (>=8.0) ; extra == "tests"
+Requires-Dist: pytest-asyncio (>=0.24.0) ; extra == "tests"
+Requires-Dist: pytest-benchmark (>=4.0.0) ; extra == "tests"
+Requires-Dist: pytest-json-report (>=1.5.0) ; extra == "tests"
+Requires-Dist: pytest-timeout (>=2.3.1) ; extra == "tests"
+Requires-Dist: pytest-xdist (>=3.6.1) ; extra == "tests"
+Requires-Dist: ruff (>=0.9.9) ; extra == "tests"
+Requires-Dist: swarmauri_base
+Requires-Dist: swarmauri_core
+Description-Content-Type: text/markdown
+
+# swarmauri_certs_csronly
+
+A community-provided certificate service that builds PKCS#10 Certificate Signing Requests (CSRs).
+
+## Features
+- Generate CSRs using RSA, EC, and Ed25519 keys
+- Support for subject alternative names and basic constraints
+
+## Installation
+```bash
+pip install swarmauri_certs_csronly
+```
+
+## Usage
+```python
+from swarmauri_certs_csronly import CsrOnlyService
+
+service = CsrOnlyService()
+csr_bytes = await service.create_csr(key_ref, {"CN": "example"})
+```
+
