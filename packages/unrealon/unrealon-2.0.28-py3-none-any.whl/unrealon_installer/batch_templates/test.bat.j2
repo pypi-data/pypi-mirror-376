@@ -1,0 +1,56 @@
+@echo off
+REM {{ parser_name }} - System Test
+REM Comprehensive system and functionality test
+
+title {{ parser_name }} System Test
+
+echo.
+echo {{ parser_name }} - System Test
+echo {{ "=" * (parser_name|length + 15) }}
+echo.
+
+REM Setup environment
+set PYTHONIOENCODING=utf-8
+set PLAYWRIGHT_BROWSERS_PATH=0
+set PYTHONUNBUFFERED=1
+
+echo [1/5] Testing Python environment...
+python --version || (
+    echo ERROR: Python not found!
+    pause
+    exit /b 1
+)
+
+echo [2/5] Testing UnrealOn Driver...
+python -c "import unrealon_driver; print('UnrealOn Driver version:', unrealon_driver.__version__)" || (
+    echo ERROR: UnrealOn Driver not installed!
+    echo Run: pip install -r requirements.txt
+    pause
+    exit /b 1
+)
+
+echo [3/5] Testing platform compatibility...
+python -c "from unrealon_installer.platform import get_platform_info; print('Platform OK')" || (
+    echo ERROR: Platform compatibility issues!
+    pause
+    exit /b 1
+)
+
+echo [4/5] Testing browser availability...
+playwright --version || (
+    echo ERROR: Playwright not installed!
+    echo Run: playwright install chromium
+    pause
+    exit /b 1
+)
+
+echo [5/5] Running parser test...
+python main.py 1 1
+
+echo.
+echo {{ "=" * (parser_name|length + 15) }}
+echo All tests completed successfully!
+echo {{ parser_name }} is ready to use.
+echo {{ "=" * (parser_name|length + 15) }}
+echo.
+pause
