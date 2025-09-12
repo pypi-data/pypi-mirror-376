@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.py
+w3shi_link.egg-info/PKG-INFO
+w3shi_link.egg-info/SOURCES.txt
+w3shi_link.egg-info/dependency_links.txt
+w3shi_link.egg-info/top_level.txt
