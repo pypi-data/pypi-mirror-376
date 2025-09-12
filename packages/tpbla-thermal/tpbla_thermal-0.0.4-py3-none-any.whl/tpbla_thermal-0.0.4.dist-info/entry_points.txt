@@ -1,0 +1,3 @@
+[console_scripts]
+tpbla-thermal = tpbla_thermal.cli:main
+tpbla-thermal-gui = tpbla_thermal.gui:main

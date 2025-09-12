@@ -1,0 +1,151 @@
+Metadata-Version: 2.4
+Name: tpbla-thermal
+Version: 0.0.4
+Summary: TPBLA_ThermAL: ML for amyloid thermodynamic landscape prediction.
+Project-URL: Homepage, https://github.com/conor-mckay98/ThermAL
+Project-URL: Issues, https://github.com/conor-mckay98/ThermAL/issues
+Author: Conor McKay
+License: MIT License
+        
+        Copyright (c) 2025 Conor McKay
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.8
+Requires-Dist: joblib
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: openpyxl
+Requires-Dist: pandas
+Requires-Dist: pillow
+Requires-Dist: scikit-learn==1.2.2
+Requires-Dist: scipy==1.9.3
+Requires-Dist: seaborn
+Description-Content-Type: text/markdown
+
+# ThermAL (**Therm**odynamics of **A**myloid **L**andscapes)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PyPI - Version](https://img.shields.io/pypi/v/tpbla-thermal)](https://pypi.org/project/tpbla-thermal/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tpbla-thermal)](https://pypi.org/project/tpbla-thermal/)
+
+<img src="ThermAL.png" alt="ThermAL Logo" width="300"/>
+
+---
+
+## 🔧 Installation
+
+Install from **PyPI**:
+
+```bash
+pip install tpbla-thermal
+```
+
+Then run:
+
+```bash
+tpbla-thermal
+```
+
+---
+
+## 📦 Requirements
+
+- Python 3.8+
+
+Dependencies (exact pins where required):
+
+```bash
+pip install pandas numpy scipy==1.9.3 scikit-learn==1.2.2 seaborn matplotlib pillow joblib openpyxl
+```
+
+---
+
+## 🧪 What is ThermAL?
+
+ThermAL is a tool for predicting regions that stabilise amyloid fibrils.
+
+**Note:** The feature extraction step can be time-limiting for larger sequences. These features are reusable for other ML tasks.
+
+ThermAL takes one or more FASTA sequences as input, generates all single–residue variants, computes physicochemical features (AAC, DPC, sliding-window AUC), feeds them into a pre-trained Random Forest model, and produces the following key outputs:
+
+- `Predicted_fitness_with_1_letter_mutations.xlsx`
+- `heatmap_simple.xlsx`
+- `heatmap.png`
+- `sliding_window.xlsx`
+- `sliding_window_with_foldx.png`
+
+All outputs are written into per-job directories named after each input sequence.
+
+---
+
+## 📁 Project Structure
+
+```
+/ThermAL
+│
+├── required_docs/                  ← precomputed resources
+│   ├── 3_B_Atlas.xlsx
+│   ├── 3_BT_Atlas.xlsx
+│   ├── 3_cDR_Atlas.xlsx
+│   ├── 3_CF_Atlas.xlsx
+│   ├── 3_Kd_Atlas.xlsx
+│   ├── 3_P_Atlas.xlsx
+│   ├── 3_DR_Atlas.xlsx
+│   └── ThermAL.joblib
+│
+├── ThermAL.png                     ← logo displayed in GUI
+├── src/tpbla_thermal/              ← package source
+│   ├── __init__.py
+│   ├── cli.py
+│   └── gui.py
+└── README.md
+```
+
+---
+
+## 🚀 Usage (GUI)
+
+1. Launch the GUI:
+
+```bash
+tpbla-thermal-gui
+```
+
+2. In the GUI:
+   - Click **Select FASTA File** and choose your `.fasta` or `.fa` file.
+   - Click **Run Analysis**.
+   - Progress bars will update during AAC/DPC and feature processing.
+
+When complete, you’ll find a subfolder per sequence in the working directory containing the outputs above.
+
+---
+
+## 📬 Contact
+
+Any problems, feel free to reach out:  
+📧 conor_mckay98@aol.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/conor-mckay-babba7171/)
