@@ -1,0 +1,3 @@
+[swarmauri.certs]
+OcspVerifyService=swarmauri_certs_ocspverify.OcspVerifyService:OcspVerifyService
+
