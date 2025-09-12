@@ -1,0 +1,35 @@
+{
+  "model": "claude-opus-4-1-20250805",
+  "permissions": {
+    "allow": [
+      "Read(**/*)",
+      "Write(**/*)",
+      "Bash(python:*)",
+      "Bash(pip:*)",
+      "Bash(conda:*)",
+      "Bash(jupyter:*)",
+      "Bash(ipython:*)",
+      "Bash(git:*)",
+      "Bash(pandas:*)",
+      "Bash(numpy:*)",
+      "Bash(matplotlib:*)",
+      "Bash(scikit-learn:*)",
+      "Bash(tensorflow:*)",
+      "Bash(pytorch:*)",
+      "Bash(R:*)",
+      "Bash(julia:*)"
+    ],
+    "deny": [
+      "Read(.env*)",
+      "Read(**/*.key)",
+      "Delete(**)",
+      "Bash(rm:*)",
+      "Bash(sudo:*)"
+    ]
+  },
+  "env": {
+    "PROJECT_TYPE": "data-science",
+    "PYTHONPATH": "./src:./notebooks",
+    "CLAUDE_SETUP_VERSION": "1.0.0"
+  }
+}
