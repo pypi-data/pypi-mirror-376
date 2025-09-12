@@ -1,0 +1,5 @@
+[mlflow.tracking_store]
+modelregistry = model_registry_mlflow.tracking_store:ModelRegistryTrackingStore
+modelregistry+http = model_registry_mlflow.tracking_store:ModelRegistryTrackingStore
+modelregistry+https = model_registry_mlflow.tracking_store:ModelRegistryTrackingStore
+
