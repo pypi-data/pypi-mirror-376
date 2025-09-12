@@ -1,0 +1,18 @@
+<!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            {%- block footer %}
+                {% include "/modules/copyright.html" %}
+            {%- endblock %}
+        </div>
+        <div class="col-12 col-md-6 text-end">
+            {% if config.repo_url %}
+                {% if config.repo_name != 'GitHub' %}
+                    {% include "modules/source.html" %}
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
