@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+wafaHell/__init__.py
+wafaHell/middleware.py
+wafaHell.egg-info/PKG-INFO
+wafaHell.egg-info/SOURCES.txt
+wafaHell.egg-info/dependency_links.txt
+wafaHell.egg-info/requires.txt
+wafaHell.egg-info/top_level.txt
