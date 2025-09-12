@@ -1,0 +1,58 @@
+name: Build and Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*"   # Запуск при пуше тега вида vX.Y.Z
+  workflow_dispatch:   # Можно запускать вручную
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      # 1️⃣ Checkout с полным history и тегами
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2️⃣ Установка Python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      # 3️⃣ Обновление SSL сертификатов и установка зависимостей
+      - name: Install build dependencies and update SSL
+        run: |
+          sudo apt update
+          sudo apt install --reinstall ca-certificates -y
+          sudo update-ca-certificates
+          python -m pip install --upgrade pip certifi setuptools wheel setuptools-scm twine build
+
+      # 4️⃣ Сборка пакета (sdist + wheel)
+      - name: Build package
+        run: python -m build
+
+      # 5️⃣ Публикация на PyPI (через Trusted Publishing)
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          #attestations: true
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+      # 6️⃣ Публикация в GitHub Packages
+      - name: Publish to GitHub Packages
+        run: |
+          python -m twine upload \
+            --repository-url https://upload.pypi.pkg.github.com/Vivatist \
+            --non-interactive \
+            --verbose \
+            dist/* \
+            -u ${{ github.actor }} \
+            -p ${{ secrets.GITHUB_TOKEN }}
