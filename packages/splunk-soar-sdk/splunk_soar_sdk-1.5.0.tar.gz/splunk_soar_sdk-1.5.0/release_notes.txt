@@ -1,0 +1,39 @@
+# [1.5.0](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.4.1...1.5.0) (2025-09-11)
+
+
+### Bug Fixes
+
+* **actions:** stop using deprecated summary setter in example app ([719926e](https://github.com/phantomcyber/splunk-soar-sdk/commit/719926ef10a6a31c1e5c5ac64d0b792b5884521c))
+* **docs:** expand on getting started guide ([6cb652e](https://github.com/phantomcyber/splunk-soar-sdk/commit/6cb652eb45f9496799b911921b7fd997ba95b3c5))
+* **docs:** fix grammatical error ([22b6528](https://github.com/phantomcyber/splunk-soar-sdk/commit/22b6528b6239c32be855c74295f2f1f8fb9de996))
+* **docs:** use title case across all titles in docs ([71fdc45](https://github.com/phantomcyber/splunk-soar-sdk/commit/71fdc459b021eccf395a5869654ef8ee2d130a99))
+* **views:** restore full import path for view handlers in manifest ([2ffdff6](https://github.com/phantomcyber/splunk-soar-sdk/commit/2ffdff6f86d73fbae3fc8b239c016a67caec14db))
+
+
+### Features
+
+* **actions:** make it possible to register actions with import strings ([8fb2883](https://github.com/phantomcyber/splunk-soar-sdk/commit/8fb28833e6941fd9fdcaa38501b1a9523b6455ff))
+
+
+
+
+
+# [1.5.0](https://github.com/phantomcyber/splunk-soar-sdk/compare/1.4.1...1.5.0) (2025-09-11)
+
+
+### Bug Fixes
+
+* **actions:** stop using deprecated summary setter in example app ([719926e](https://github.com/phantomcyber/splunk-soar-sdk/commit/719926ef10a6a31c1e5c5ac64d0b792b5884521c))
+* **docs:** expand on getting started guide ([6cb652e](https://github.com/phantomcyber/splunk-soar-sdk/commit/6cb652eb45f9496799b911921b7fd997ba95b3c5))
+* **docs:** fix grammatical error ([22b6528](https://github.com/phantomcyber/splunk-soar-sdk/commit/22b6528b6239c32be855c74295f2f1f8fb9de996))
+* **docs:** use title case across all titles in docs ([71fdc45](https://github.com/phantomcyber/splunk-soar-sdk/commit/71fdc459b021eccf395a5869654ef8ee2d130a99))
+* **views:** restore full import path for view handlers in manifest ([2ffdff6](https://github.com/phantomcyber/splunk-soar-sdk/commit/2ffdff6f86d73fbae3fc8b239c016a67caec14db))
+
+
+### Features
+
+* **actions:** make it possible to register actions with import strings ([8fb2883](https://github.com/phantomcyber/splunk-soar-sdk/commit/8fb28833e6941fd9fdcaa38501b1a9523b6455ff))
+
+
+
+
