@@ -1,0 +1,6 @@
+[peagen.plugins.signings]
+ca=swarmauri_signing_ca:CASigner
+
+[swarmauri.signings]
+CASigner=swarmauri_signing_ca:CASigner
+
