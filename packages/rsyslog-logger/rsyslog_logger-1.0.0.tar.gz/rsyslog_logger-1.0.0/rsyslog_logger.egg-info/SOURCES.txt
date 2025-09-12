@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+logger/__init__.py
+logger/logger.py
+rsyslog_logger.egg-info/PKG-INFO
+rsyslog_logger.egg-info/SOURCES.txt
+rsyslog_logger.egg-info/dependency_links.txt
+rsyslog_logger.egg-info/requires.txt
+rsyslog_logger.egg-info/top_level.txt
+tests/test_cleanup.py
+tests/test_formatting.py
+tests/test_rotation.py
