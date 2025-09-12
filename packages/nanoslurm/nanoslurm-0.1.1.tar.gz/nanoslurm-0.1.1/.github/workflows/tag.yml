@@ -1,0 +1,47 @@
+name: Tag Version
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v3
+        with:
+          python-version: "3.11"
+      - name: Determine version change
+        id: version
+        run: |
+          new_version=$(uv version --short)
+          echo "version=$new_version" >> "$GITHUB_OUTPUT"
+          tmp_dir=$(mktemp -d)
+          git show HEAD^:pyproject.toml 2>/dev/null > "$tmp_dir/pyproject.toml" || true
+          if [ -s "$tmp_dir/pyproject.toml" ]; then
+            old_version=$(uv version --short --project "$tmp_dir")
+          else
+            old_version=""
+          fi
+          if [ "$new_version" != "$old_version" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Create tag
+        if: steps.version.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git rev-parse "v${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "Tag v${{ steps.version.outputs.version }} already exists"
+          else
+            git tag "v${{ steps.version.outputs.version }}"
+            git push origin "v${{ steps.version.outputs.version }}"
+          fi
