@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/torchspd/__init__.py
+src/torchspd/torchspd.py
+src/torchspd.egg-info/PKG-INFO
+src/torchspd.egg-info/SOURCES.txt
+src/torchspd.egg-info/dependency_links.txt
+src/torchspd.egg-info/not-zip-safe
+src/torchspd.egg-info/requires.txt
+src/torchspd.egg-info/top_level.txt
