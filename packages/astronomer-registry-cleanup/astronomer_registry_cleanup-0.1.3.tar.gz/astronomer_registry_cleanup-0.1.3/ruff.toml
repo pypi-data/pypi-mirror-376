@@ -1,0 +1,14 @@
+[lint]
+# Ban relative imports and code comments
+select = [
+    "TID252",  # Relative imports are banned
+    "COM812",  # Missing trailing comma in comment
+    "COM819",  # Trailing comma prohibited
+]
+
+# Set to error level
+ignore = []
+
+[lint.flake8-tidy-imports]
+# Ban relative imports
+ban-relative-imports = "all"
