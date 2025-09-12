@@ -1,0 +1,7 @@
+examples/coapclient.rs.rust,sha256=M3Cfgx5AWg9BDPdPHIQJqnrFLVoARJyS9efqCE1CjoQ,2091
+examples/traces-zeroconf.ipynb,sha256=8zWdoQW_xuoaviEAtgQ23FzPcsz709LlwYR_x69ZomA,29797
+lakers/__init__.py,sha256=Dwz7y_WfDVx_8VvCWV0uuIusgrvL6sNGL1xX4643Tuc,107
+lakers/lakers.cpython-311-x86_64-linux-gnu.so,sha256=DKvprVFduDbAvV19ASZ8kafUnHR-1VSiD9wFIX32d84,1126288
+lakers_python-0.6.0.dist-info/METADATA,sha256=s6WIl6ab6qcwcv8O86CQBUNISa17w_pNVfAlrPE3y9k,200
+lakers_python-0.6.0.dist-info/WHEEL,sha256=PA5XCNhH0mshwYI5VqGJSkAgTbfE427wmHgrhpfqxnk,108
+lakers_python-0.6.0.dist-info/RECORD,,
