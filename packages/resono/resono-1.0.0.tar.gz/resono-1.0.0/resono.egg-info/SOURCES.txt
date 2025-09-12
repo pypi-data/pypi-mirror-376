@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+resono/__init__.py
+resono/aes.py
+resono/cli.py
+resono/phase_embed.py
+resono/phase_extract.py
