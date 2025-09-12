@@ -1,0 +1,11 @@
+symjoy/__init__.py,sha256=3_ecPiNv-IOiToaTjNfdQNm5lU7OQtxmROOZMsM5_-o,308
+symjoy/arrows.py,sha256=1QlQwWaPbF50HZjbWQ49EqtmtOS22XnyHRaNK0wty-c,331
+symjoy/currency.py,sha256=bzf9CWEi2YL7Rn8F_Qwhnn_aVLipxbDDDLwr9rYJOA4,257
+symjoy/emojis.py,sha256=EoaMdLrMwHPTViojjV8lf1jNmLVm9iK6HqKKwsdg2_c,1431
+symjoy/math_symbols.py,sha256=xK3InfZkv51OZ_AA9DWLUB0Qs7mMZsXETkfC4eSl3cs,1341
+symjoy/misc.py,sha256=c9eJM0HcHkwu5Iv1jZCFv1-KblXIpR-UFsGzfqVe-Eo,342
+symjoy/symbols.py,sha256=6BE8WYM8B0T4K4qyqEo8LJjDsUaPiHDKr41vvGOuQRo,480
+symjoy-1.0.dist-info/METADATA,sha256=PGA1APuRlFSiN0nogh93lIAJ-yJA0IbgFt3Xf86HJCs,2195
+symjoy-1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+symjoy-1.0.dist-info/licenses/LICENSE,sha256=jtxhV_4W67T4C7ih0WC2EdePQRQsqY8tADUsfS0BO5I,1072
+symjoy-1.0.dist-info/RECORD,,
