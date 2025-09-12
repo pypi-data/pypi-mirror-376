@@ -1,0 +1,22 @@
+[package]
+name = "iceoryx2-bb-log"
+description = "iceoryx2: [internal] the logger"
+categories = { workspace = true }
+edition = { workspace = true }
+homepage = { workspace = true }
+keywords = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+rust-version = { workspace = true }
+version = { workspace = true }
+
+[features]
+# Enables https://crates.io/crates/log as default logger
+logger_log = ["dep:log"]
+# Enables https://crates.io/crates/tracing as default logger
+logger_tracing = ["dep:tracing"]
+
+[dependencies]
+iceoryx2-pal-concurrency-sync = { workspace = true }
+log = { workspace = true, optional = true }
+tracing = { workspace = true, optional = true }
