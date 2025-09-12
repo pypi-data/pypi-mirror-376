@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: PyWebWinUI3
+Version: 1.0.0b1
+Summary: Create modern WinUI3-style desktop UIs in Python effortlessly using pywebview.
+Home-page: https://github.com/Haruna5718/PyWebWinUI3
+Author: Haruna5718
+Author-email: devharuna5718@gmail.com
+Keywords: PyWebWinUI3,Haruna5718,pywebview,winui3,pypi
+Requires-Python: >=3.8
+Requires-Dist: pywebview
+Requires-Dist: pywin32
+
