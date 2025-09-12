@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: guardian_vaultwarden
+Version: 0.1.1
+Summary: Vaultwarden ciphers API client
+Project-URL: Homepage, https://github.com/Pluvie/guardian
+Project-URL: Documentation, https://github.com/Pluvie/guardian
+Author-email: Francesco Ballardin <francesco.ballardin@gmail.com>
+License-Expression: GPL-3.0-only
+License-File: LICENSE
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Information Technology
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Security
+Requires-Dist: hkdf
+Requires-Dist: pycryptodome
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+<div align="center">
+  <h1>🛡️Guardian🪽</h1>
+  <h3>Vaultwarden Ciphers API Client</h3>
+</div>
+
+## Introduction
+
+🛡️Guardian🪽 is a Vaultwarden client in Python which lets you to retrieve and decrypt
+your ciphers (items in the vault).
+
+## Usage
+
+Install it with pip:
+
+```bash
+pip install guardian_vaultwarden
+```
+
+Inside your code do:
+
+```python
+import guardian_vaultwarden
+
+vault = guardian_vaultwarden.Client(uri, email, password, client_id, client_secret)
+# Client id and secret are available in the Vaultwarden webapp, under Settings ->
+# Security -> Keys.
+
+vault.login()
+cipher = valut.cipher(cipher_id) # UUID of the cipher.
+
+# Returns a decrypted dict with cipher information, like:
+#
+# {
+#   "name": "MY_CIPHER",
+#   "login": {
+#     "username": "email@email.com",
+#     "password": "mypass",
+#     ...
+#   },
+#   ...
+# }
+```
