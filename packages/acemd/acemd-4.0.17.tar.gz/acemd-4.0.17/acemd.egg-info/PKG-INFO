@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: acemd
+Version: 4.0.17
+Summary: ACEMD is the next generation molecular dynamic simulation software
+Author-email: Acellera <info@acellera.com>
+Project-URL: Homepage, https://github.com/Acellera/acemd
+Project-URL: Bug Tracker, https://github.com/Acellera/acemd/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: moleculekit>=1.9.35
+Requires-Dist: pyyaml
+Requires-Dist: natsort
+Requires-Dist: requests
+Provides-Extra: cpu
+Requires-Dist: openmm-unofficial-cpu; extra == "cpu"
+Provides-Extra: cu11
+Requires-Dist: openmm-unofficial-cu11; extra == "cu11"
+Provides-Extra: cu12
+Requires-Dist: openmm-unofficial-cu12; extra == "cu12"
+Provides-Extra: nnp-cpu
+Requires-Dist: openmm-unofficial-cpu; extra == "nnp-cpu"
+Requires-Dist: openmm-torch-unofficial-cpu; extra == "nnp-cpu"
+Requires-Dist: torchmd-net-cpu; extra == "nnp-cpu"
+Requires-Dist: torch; extra == "nnp-cpu"
+Requires-Dist: torchani; extra == "nnp-cpu"
+Requires-Dist: huggingface_hub; extra == "nnp-cpu"
+Provides-Extra: nnp-cu11
+Requires-Dist: openmm-unofficial-cu11; extra == "nnp-cu11"
+Requires-Dist: openmm-torch-unofficial-cu11; extra == "nnp-cu11"
+Requires-Dist: torchmd-net-cu11; extra == "nnp-cu11"
+Requires-Dist: torch; extra == "nnp-cu11"
+Requires-Dist: torchani; extra == "nnp-cu11"
+Requires-Dist: huggingface_hub; extra == "nnp-cu11"
+Provides-Extra: nnp-cu12
+Requires-Dist: openmm-unofficial-cu12; extra == "nnp-cu12"
+Requires-Dist: openmm-torch-unofficial-cu12; extra == "nnp-cu12"
+Requires-Dist: torchmd-net-cu12; extra == "nnp-cu12"
+Requires-Dist: torch; extra == "nnp-cu12"
+Requires-Dist: torchani; extra == "nnp-cu12"
+Requires-Dist: huggingface_hub; extra == "nnp-cu12"
+Dynamic: license-file
+
+# ACEMD
+
+Python reimplementation of ACEMD
+
+## Documentation & Installation
+
+https://software.acellera.com/internal/acemd/
