@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myAwesomeAndWonderfulPackageJhs"
+version = "0.1.0"
+authors = [
+  { name="홍길동", email="hong.gildong@example.com" },
+]
+description = "A short description of my project."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+]
+
+[project.urls]
+Homepage = "https://github.com/my-username/my-awesome-package"
+Issues = "https://github.com/my-username/my-awesome-package/issues"
