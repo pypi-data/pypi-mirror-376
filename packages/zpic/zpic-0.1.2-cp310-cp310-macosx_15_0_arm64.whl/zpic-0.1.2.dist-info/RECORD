@@ -1,0 +1,13 @@
+zpic/__init__.py,sha256=gOkvQY-UrvHymDst8WlioA5ObllF8gYt7XTqACRMCcQ,470
+zpic/contrib/__init__.py,sha256=V_lhKi_2U8RTBNbU2mvs38jdlaqt5Y9AfXnEz1XN9CA,474
+zpic/contrib/em2d_rr.cpython-310-darwin.so,sha256=D2Gcj9jrVqCHY9Fl5YNStrnmNpyLo42PoEcOLuh4kN4,936256
+zpic/em1d.cpython-310-darwin.so,sha256=40Ez0EC4aWfVZQI7ECKblvIa4ez0UtMrcYHh4RcT8GI,885928
+zpic/em1ds.cpython-310-darwin.so,sha256=vo9zACtWLeMlKux8T8W5CymN9VkBdm-eZvDSrnId_Sc,885336
+zpic/em2d.cpython-310-darwin.so,sha256=9XGImiiZiDnIVzCceqj-0b-q5bUbX4FDj2DHOxoA1Jw,935048
+zpic/em2ds.cpython-310-darwin.so,sha256=DLVz86I6SWCZgDGZvYyJODcrYdn43JAShiM58hfbfBQ,826456
+zpic/es1d.cpython-310-darwin.so,sha256=kfSDf9Rvhl2ejUI8zOgjyCoUdEXcia31q3qXhErcQgw,634984
+zpic/zdf.py,sha256=nHSq_12NCP-wy4sqiAJzfTTyyayq74BclKODQjYfQpE,21864
+zpic-0.1.2.dist-info/LICENCE,sha256=dql8h4yceoMhuzlcK0TT_i-NgTFNIZsgE47Q4t3dUYI,34520
+zpic-0.1.2.dist-info/METADATA,sha256=txQC3ZhDdpUBaUPjpkMMFSn4OtPbrbFwaH9QxVAcp-s,2842
+zpic-0.1.2.dist-info/WHEEL,sha256=OGZjwypyJnl3Dt4tsa3cvutwo3VFPpH2hizQfbnLBAw,106
+zpic-0.1.2.dist-info/RECORD,,
