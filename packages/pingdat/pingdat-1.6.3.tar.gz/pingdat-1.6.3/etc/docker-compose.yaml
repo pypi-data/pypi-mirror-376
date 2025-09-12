@@ -1,0 +1,11 @@
+---
+version: "3"
+
+services:
+  pingdat:
+    image: jheddings/pingdat:1.6.2
+    volumes:
+      - /opt/pingdat:/opt/pingdat
+    restart: unless-stopped
+    ports:
+      - "9056:9056"

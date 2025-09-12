@@ -1,0 +1,69 @@
+## sample config file for pingdat
+---
+# the update interval for ping statistics in seconds (defaults to 60 sec)
+#
+# this value may be overridden in each target
+interval: 60
+
+# the timeout when waiting for ping responses in seconds (defaults to half
+# of the configured 'interval' value)
+#
+# this value may be overridden in each target
+timeout: 5
+
+# the number of ping attempts per iteration.  the result will be an average
+# of the times, errors will be dropped
+#
+# this value may be overridden in each target
+count: 3
+
+# a list of targets that will be monitored by this service (defaults to an
+# empty list)
+targets:
+
+  - name: CloudFlare Primary DNS
+    address: "1.1.1.1"
+
+  - name: Google Primary DNS
+    address: "8.8.8.8"
+
+# configuration for the metrics exported by this service
+metrics:
+
+  # the bind address to export metrics (defaults to '0.0.0.0')
+  address: "0.0.0.0"
+
+  # the port used to export metrics (defaults to 9056)
+  port: 9056
+
+
+# ------------------------------------------------------------------------------
+# setup logging system -- or remove this section to disable logging
+# this uses the standard dict config for the Python logging framework
+
+logging:
+  version: 1
+
+  formatters:
+    brief:
+      format: '%(message)s'
+    short:
+      format: '%(levelname)s:%(name)s:%(message)s'
+    precise:
+      format: '%(asctime)s %(levelname)-8s %(threadName)s %(name)s %(message)s'
+      datefmt: '%Y-%m-%d %H:%M:%S'
+
+  root:
+    level: INFO
+    handlers: [console]
+
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: brief
+      stream: ext://sys.stdout
+    logfile:
+      class: logging.FileHandler
+      formatter: precise
+      filename: pingdat.log
+      mode: w
