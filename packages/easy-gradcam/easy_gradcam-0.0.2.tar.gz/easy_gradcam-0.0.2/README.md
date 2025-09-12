@@ -1,0 +1,103 @@
+# easy_gradcam
+
+A lightweight tool to generate Grad-CAM visualizations for image classification models.
+It supports popular backbones such as **ResNet**, **Vision Transformers (ViT)**, and **Hugging Face Transformers**.
+
+---
+
+## Installation
+
+```bash
+pip install easy_gradcam
+```
+
+## Quick Start
+
+### 1. Import dependencies
+```python
+import cv2
+import torchvision.models as models
+import torchvision.transforms as transforms
+import timm
+from transformers import AutoModelForImageClassification
+from easy_gradcam.classification import EasyGradCAM
+from easy_gradcam.visualization import save_heatmap, save_mix_heatmap
+```
+
+### 2. Load a model
+You can use different backbones:
+```python
+# Example 1: ResNet-50 (torchvision)
+model = models.resnet50(pretrained=True)   # targets: "layer4"
+
+# Example 2: ViT (timm)
+model = timm.create_model("vit_base_patch16_224_miil", pretrained=True)   # targets: "blocks.10"
+
+# Example 3: Hugging Face (DINOv2)
+model = AutoModelForImageClassification.from_pretrained(
+    "facebook/dinov2-small-imagenet1k-1-layer"
+) # targets: "dinov2.encoder.layer.11"
+model.eval()
+
+```
+
+### 3. Prepare an image
+```python
+img = cv2.imread("./exp1.jpg")
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+totensor = transforms.ToTensor()
+resize = transforms.Resize((224, 224))
+normalize = transforms.Normalize([0.485, 0.456, 0.406],
+                                 [0.229, 0.224, 0.225])
+
+t = totensor(img)
+t = resize(t)
+t = normalize(t)
+t = t.unsqueeze(0)  # add batch dimension
+
+```
+
+### 4. Compute Grad-CAM
+```python
+gradcam = EasyGradCAM(model, targets="dinov2.encoder.layer.11")
+
+# Extract features and gradients
+feats, grads = gradcam.cal_feat_and_grad(t)
+
+# Generate heatmaps
+heats = gradcam.cal_heats(img, feats, grads)
+```
+
+### 5. Save results
+```python
+for i in range(len(heats)):
+    for name in heats[i]:
+        # Save plain heatmap
+        save_heatmap(
+            save_path=f"results/{i}-{name}.jpg",
+            heat=heats[i][name],
+            cmap="jet",
+            title="grad-cam"
+        )
+
+        # Save overlay with original image
+        save_mix_heatmap(
+            save_path=f"results/{i}-{name}-mix.jpg",
+            heat=heats[i][name],
+            ori_img=img,
+            cmap="jet"
+        )
+```
+
+### Example Output
+- results/0-dinov2.encoder.layer.11.jpg: heatmap only
+<img src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_a05f1eddb8ad02fdf6b4a4e4ba804ecc.jpg?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1757664967&Signature=C6D2nHzRjvJ6WAKpUZdjeSZ4Rzw%3D" width="400">
+
+- results/0-dinov2.encoder.layer.11-mix.jpg: heatmap overlay on the input image
+<img src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_a3749220bab545262528304ae6542148.jpg?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1757664978&Signature=rMiL%2BcLtmqti5tE2dPfQQskrVGU%3D" width="400">
+
+### Notes
+* Make sure the target layer you pass matches the internal structure of the model.
+* Pretrained models from torchvision, timm, and Hugging Face are supported.
+* Heatmaps are saved as .jpg files in the results/ directory.
