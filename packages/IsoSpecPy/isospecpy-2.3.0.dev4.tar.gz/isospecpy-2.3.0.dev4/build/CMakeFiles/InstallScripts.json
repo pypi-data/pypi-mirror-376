@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/mist/git/IsoSpec/build/cmake_install.cmake",
+		"/Users/mist/git/IsoSpec/build/IsoSpec++/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

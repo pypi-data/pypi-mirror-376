@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "IsoSpec++",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-IsoSpec++-Debug-87c56e7a0e96c2273c86.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "IsoSpec++",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "IsoSpec",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "IsoSpec++-shared::@89ccc8507c4815dc7cdc",
+					"jsonFile" : "target-IsoSpec++-shared-Debug-1621fd5fc9f6dc191282.json",
+					"name" : "IsoSpec++-shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "IsoSpec++-static::@89ccc8507c4815dc7cdc",
+					"jsonFile" : "target-IsoSpec++-static-Debug-510f7c261243cd280220.json",
+					"name" : "IsoSpec++-static",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/mist/git/IsoSpec/build",
+		"source" : "/Users/mist/git/IsoSpec"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

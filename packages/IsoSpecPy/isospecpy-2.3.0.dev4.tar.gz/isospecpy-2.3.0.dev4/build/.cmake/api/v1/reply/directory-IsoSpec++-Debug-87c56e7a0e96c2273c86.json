@@ -1,0 +1,59 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"IsoSpec++/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 52,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"IsoSpec++/libIsoSpec++.2.1.3.dylib",
+				"IsoSpec++/libIsoSpec++.2.dylib"
+			],
+			"targetId" : "IsoSpec++-shared::@89ccc8507c4815dc7cdc",
+			"targetIndex" : 0,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"IsoSpec++/libIsoSpec++.a"
+			],
+			"targetId" : "IsoSpec++-static::@89ccc8507c4815dc7cdc",
+			"targetIndex" : 1,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "IsoSpec++",
+		"source" : "IsoSpec++"
+	}
+}

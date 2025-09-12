@@ -1,0 +1,24 @@
+LoggingMarginal::get_lProbs_ptr: 
+LoggingMarginal::get_no_confs: 0
+LoggingMarginal::extend: -0.916301 1
+LoggingMarginal::get_lProbs_ptr: -0.916291 
+LoggingMarginal::get_lProb: 0 -0.916291
+LoggingMarginal::get_mass: 0 10000
+LoggingMarginal::get_prob: 0 0.4
+LoggingMarginal::get_no_confs: 1
+LoggingMarginal::extend: -2.9163 1
+LoggingMarginal::get_lProbs_ptr: -0.916291 -1.56065 -1.66073 -2.20727 -2.40795 
+LoggingMarginal::get_lProb: 0 -0.916291
+LoggingMarginal::get_mass: 1 1000
+LoggingMarginal::get_prob: 1 0.21
+LoggingMarginal::get_mass: 2 10
+LoggingMarginal::get_prob: 2 0.19
+LoggingMarginal::get_mass: 3 100
+LoggingMarginal::get_prob: 3 0.11
+LoggingMarginal::get_mass: 4 1
+LoggingMarginal::get_prob: 4 0.09
+LoggingMarginal::get_no_confs: 5
+LoggingMarginal::extend: -4.9163 0
+LoggingMarginal::get_lProbs_ptr: -0.916291 -1.56065 -1.66073 -2.20727 -2.40795 
+LoggingMarginal::get_lProb: 0 -0.916291
+LoggingMarginal::get_no_confs: 5
