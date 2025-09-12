@@ -1,0 +1,15 @@
+zope/app/folder/__init__.py,sha256=GlzigfYO3jNus8OMUOPkRccwERSvC7LluYcypHBp9Lw,762
+zope/app/folder/configure.zcml,sha256=DKgJjr_OW_eyFqNEj26GQEVlQq-JOOhfJPyKAsnSpkk,329
+zope/app/folder/filerepresentation.py,sha256=NBn7KmiGIscM36gpg4YBlranqb1xy4L2ymmXh--VPlc,854
+zope/app/folder/folder.py,sha256=QNpAY6qzgPwZRLTM-IEW2na0qzy_rCtk-RpJtVfKGwE,817
+zope/app/folder/interfaces.py,sha256=sKOdasVtJT-JPEHQMq9jkbYQXA7zlyQH4ya4adtj0rg,772
+zope/app/folder/tests.py,sha256=Y1ft_gXdUghZjoeu28aL8IT66HEcR0ANTPhzaP9XU_E,3194
+zope/app/folder/browser/__init__.py,sha256=690b_c98_VbdhbkaIIiCjDZc8aFNpJYPu9eSy_5lq-w,61
+zope/app/folder/browser/configure.zcml,sha256=-l-NiFWLTdzLAcj48k_vRzO88yPW4szF5ETavPslxV0,1136
+zope/app/folder/browser/folder_icon.gif,sha256=ph2rG9CLFOUD_5rqRiiSNU9gLU3duERFA0Bh-fxV8h0,942
+zope/app/folder/browser/preview.pt,sha256=cmBNrdJyUnYqSO9uFdENyRw47ej2NF3ZcZi5q4SEfdQ,171
+zope_app_folder-6.0.dist-info/licenses/LICENSE.txt,sha256=PmcdsR32h1FswdtbPWXkqjg-rKPCDOo_r1Og9zNdCjw,2070
+zope_app_folder-6.0.dist-info/METADATA,sha256=CDh6B8bmAL2W7JQurUO7slW7At4P9xHxvv_8n-DSHfE,3693
+zope_app_folder-6.0.dist-info/WHEEL,sha256=lTU6B6eIfYoiQJTZNc-fyaR6BpL6ehTzU3xGYxn2n8k,91
+zope_app_folder-6.0.dist-info/top_level.txt,sha256=QpUHvpO4wIuZDeEgKY8qZCtD-tAukB0fn_f6utzlb98,5
+zope_app_folder-6.0.dist-info/RECORD,,
