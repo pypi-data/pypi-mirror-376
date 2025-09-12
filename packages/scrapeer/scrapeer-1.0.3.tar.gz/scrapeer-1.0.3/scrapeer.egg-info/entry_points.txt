@@ -1,0 +1,2 @@
+[console_scripts]
+scrapeer = scrapeer_cli:main
