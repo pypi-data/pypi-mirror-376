@@ -1,0 +1,3 @@
+[console_scripts]
+semfarm = semfarm.cli:main
+
