@@ -1,0 +1,49 @@
+# new_logger
+
+A small utility package that wraps Loguru with two pre-configured loggers and file handlers:
+
+- `logger`: console-bound logger (INFO+ to stderr by default) with optional rotating file handlers per level.
+- `tracker_logger`: silent console, writes tracker lines to a dedicated rotating file.
+
+## Installation
+
+Build the wheel and install it into your environment:
+
+```bash
+python -m pip install --upgrade build wheel
+python -m build
+python -m pip install dist/new_logger-0.1.0-py3-none-any.whl
+```
+
+## Usage
+
+```python
+from new_logger import (
+    logger,
+    tracker_logger,
+    add_file_handler_to_logger,
+    add_track_handler,
+)
+
+# Add rotating file handlers (daily rotation, 7 days retention)
+add_file_handler_to_logger(name="app", dir_path="./logs", level="DEBUG")
+add_file_handler_to_logger(name="app", dir_path="./logs", level="ERROR")
+
+# Add tracker handler (plain message lines)
+add_track_handler(dir_path="./logs")
+
+logger.info("Hello from new_logger")
+tracker_logger.info("user_id=123 action=click item_id=42")
+```
+
+## Requirements
+
+- Python >= 3.8
+- `loguru>=0.7`
+
+## Notes
+
+- Console output filters to `INFO` and above.
+- File handlers rotate daily and keep 7 days.
+- `tracker_logger` writes only to its tracker sink, not console.
+
