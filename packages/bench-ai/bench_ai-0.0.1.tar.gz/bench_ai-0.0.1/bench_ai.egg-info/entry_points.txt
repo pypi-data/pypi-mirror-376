@@ -1,0 +1,2 @@
+[console_scripts]
+bench-ai = bench_ai.cli:main
