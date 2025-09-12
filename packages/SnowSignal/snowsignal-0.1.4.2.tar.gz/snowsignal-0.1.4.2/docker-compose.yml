@@ -1,0 +1,17 @@
+services:
+  snowsignal:
+    image: harbor.stfc.ac.uk/isis-accelerator-controls/snowsignal:main
+    environment:
+      SERVICENAME: '{{.Service.Name}}'
+    networks:
+      - controls
+    deploy: 
+      mode: global
+      placement:
+         max_replicas_per_node: 1
+    restart: unless-stopped
+    
+
+networks:
+  controls:
+    external: true

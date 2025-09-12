@@ -1,0 +1,27 @@
+services:
+  snowsignal:
+    image: harbor.stfc.ac.uk/isis-accelerator-controls/snowsignal:dev
+    environment:
+      SERVICENAME: '{{.Service.Name}}'
+      LOGLEVEL:
+    networks:
+      - controls
+    deploy: 
+      mode: global
+      placement:
+         max_replicas_per_node: 1
+    restart: unless-stopped
+
+  probe:
+    image: harbor.stfc.ac.uk/isis-accelerator-controls/internal-pvagw-tests
+    networks:
+      - controls
+    deploy: 
+      mode: global
+      placement:
+         max_replicas_per_node: 1
+    command: ["sleep", "infinity"]
+
+networks:
+  controls:
+    external: true
