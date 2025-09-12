@@ -1,0 +1,9 @@
+sqlai/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlai/cli.py,sha256=CiXa3I0fl2QESzB9SeWJ7RZtwxsGezaRaFhaeIYyk-0,1252
+sqlai/config.py,sha256=j4M1FKUkczewOvo4zCNHJRC-AaEV7cBx95dQhFCPVs8,2398
+sqlai/helpers.py,sha256=ODscznHFn2ecwTCTL1GWtH7l9is2RlzsYaJyx1yVEtE,3559
+sqlai-0.1.1.dist-info/METADATA,sha256=u7OvD722YMAe5DkdqLmjFnZTb9o_oUuSgG6b1V_96dc,4170
+sqlai-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sqlai-0.1.1.dist-info/entry_points.txt,sha256=k-WZqMAXn024g4sjYOHgE5ULJrs2tcjuskloOd4sgyI,41
+sqlai-0.1.1.dist-info/top_level.txt,sha256=ZYAYVYQkJFTUm6ZnjytTO37HcHFv6uXQ01hg-IqF7fs,6
+sqlai-0.1.1.dist-info/RECORD,,
