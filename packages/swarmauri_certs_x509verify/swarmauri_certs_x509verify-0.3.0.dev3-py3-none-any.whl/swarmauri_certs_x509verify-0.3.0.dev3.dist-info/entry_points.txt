@@ -1,0 +1,6 @@
+[peagen.plugins.certs]
+x509verify=swarmauri_certs_x509verify:X509VerifyService
+
+[swarmauri.certs]
+X509VerifyService=swarmauri_certs_x509verify:X509VerifyService
+
