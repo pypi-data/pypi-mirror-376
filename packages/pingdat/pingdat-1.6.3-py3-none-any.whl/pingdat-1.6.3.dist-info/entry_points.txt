@@ -1,0 +1,2 @@
+[console_scripts]
+pingdat = pingdat.__main__:main
