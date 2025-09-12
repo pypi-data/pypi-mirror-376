@@ -1,0 +1,2 @@
+[console_scripts]
+gmail-cli = gmail_sender:cli
