@@ -1,0 +1,6 @@
+"资治通鑑_NA 卷_NA 第_NA 一_NA 百_NA 八_NA
+端明殿_NA 学士_NA 兼_VT 翰林侍读_NA 学士_NA 朝散大夫_NA 右谏议大夫_NA 充_VT 集贤院_NA 修撰_NA 权_D 判_VT 西京_NA 留司_NA 御史台_NA 上柱国_NA 河内郡_NA 开国侯_NA 食邑_NA 一_NA 千_NA 三_NA 百_NA 户_NF 食_NA 实_D 封_VT 四_NA 百_NA 户_NA 赐_VT 紫金鱼袋_NA 臣_NH 司马光_NA 奉_VT 敕_NA 编集_VT
+后_NA 学_VT 天台_NA 胡三省_NA 音注_NA
+晋纪_NB 三_A 十_A 起_VT 玄黓_NB 执徐_NB （壬辰_NA ），尽_VT 柔兆_NA 涒滩_NC （丙申_NA ），凡_D 五_A 年_NA
+烈宗孝武皇帝_NB 下_NG
+太元_ND 十七年_NA （壬辰_NA 、三_A 九_A 二_A
