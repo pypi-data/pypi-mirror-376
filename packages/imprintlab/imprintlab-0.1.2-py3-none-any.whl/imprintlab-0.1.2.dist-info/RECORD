@@ -1,0 +1,12 @@
+imprint/__init__.py,sha256=s2GXuq6fUK4ukam7IlE_gK5bx0d8Fy4OejgQzELwQ_0,118
+imprint/components.py,sha256=3mZO-NKBQJ9NYrdadPl7CVOQZ_ESGPUfhnoU-C4rXGk,3964
+imprint/field.py,sha256=X4x-SoAAcT0MmrySzbmqKieurt16fA0Ryo5WOHztL1M,244
+imprint/model.py,sha256=B1dBfhSgtgxna21-aJ0AY1FjYfub0-y5zG4Suc_hp5U,2454
+imprint/page.py,sha256=NFYtOykQuUQ7k1J1RAr86bGbtWCTacw0V99nAvBl-Pw,1521
+imprint/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+imprint/engines/pillow.py,sha256=PLl0zkfPNNSYQa1IDf_DjQg6qQ-c9BAt1wlK-FCjsB8,2290
+imprint/engines/repository.py,sha256=mZ3jiK6SHAN2gfVBQpKGcI1ihf4E7LTZXjLF3Bjo2IU,365
+imprintlab-0.1.2.dist-info/METADATA,sha256=OG6qxWish-pS5fX3V77cLv0VHR5RDGG7PgFaVIbSG14,3743
+imprintlab-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+imprintlab-0.1.2.dist-info/top_level.txt,sha256=734cZ-CbhUQUqqwXL90O24h68KQayWEcc-DlnLpn9ho,8
+imprintlab-0.1.2.dist-info/RECORD,,
