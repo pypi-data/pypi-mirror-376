@@ -1,0 +1,14 @@
+bunnets/__init__.py,sha256=M5KFjDqhsFZkZQzaFMNvIuf8rEW-_vxASus1rTI1cwI,173
+bunnets/error.py,sha256=QtrptXs65kBQH6p_8VTVcjdA0Ov-ZYbMUtBWJMPpYAw,796
+bunnets/func.py,sha256=clLJJ4NahWSKLTQXtZWxNG09uqYB23dMiHBgNzAGaEk,6451
+bunnets/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bunnets/typedefs.py,sha256=IoDvmhKXWrrrcmFnlmeb9oxNz510QYQiSN7_Ms8VEN8,21812
+bunnets/typehintlib.py,sha256=OtguFwLjcqrsfSJHxGo3hjhTAR8BPJKTDA9iCNu6vZc,13203
+bunnets/test/test_coercion.py,sha256=u7PzRw3eL9ryAUCF7YT0MprgxAJN045a_kR-jFIl4dw,1649
+bunnets/test/test_decorators.py,sha256=Iwj6sjIPpC24_TyC25FwUttc-K_QMbEJAS-NzrQPQFI,1098
+bunnets/test/test_func.py,sha256=jt2AXBFPRWOgAJ2U6nXCmJWiOrf-gKa_TupMTdaeY7M,1391
+bunnets/test/test_types.py,sha256=qZjs10CTkoM3vfA_qCLej14ZkDGS5YPc_J220daOTmI,10817
+bunnets-0.9.0.dist-info/METADATA,sha256=50XlhTO_KzugD1L5DAQwdToBwB2AqLUA7rnB6XXP-O4,329
+bunnets-0.9.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bunnets-0.9.0.dist-info/top_level.txt,sha256=jDqzd_oeAqEk1-mSk2NmTa0ks56mIdxqTgsGv8BIGRs,8
+bunnets-0.9.0.dist-info/RECORD,,
