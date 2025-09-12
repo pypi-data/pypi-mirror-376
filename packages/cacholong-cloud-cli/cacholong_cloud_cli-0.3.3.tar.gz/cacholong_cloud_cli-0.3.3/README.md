@@ -1,0 +1,94 @@
+# CLI frontend
+
+The API client library for managing various resources.
+
+[Client Library Documentation](https://docs.cacholong.eu/api/)
+
+## Getting started
+
+You will need an API-token. This token can be created using our panel at https://cp.cacholong.eu/#/user/settings/api. You can create an api token within your profile under API.
+
+When running the command `ccloud` for the first time it will ask you for an API-token.
+
+After that you will be able to run the following command:
+```bash
+ccloud accounts list
+```
+
+This will give you an overview of accounts where you have access to.
+
+## Usage
+
+Overview of the possibilities:
+```bash
+ccloud --help
+```
+
+To fetch an overview of the dns-zones for an account:
+```bash
+ccloud dns-zones list --account <account uuid>
+```
+
+Creating a DNS-record:
+```bash
+ccloud dns-records create --dns-zone <dns-zone uuid> \
+    --name localhost.example.com \
+    --dns-record-type A \
+    --content 127.0.0.1 \
+    --ttl 300
+```
+
+Updating a DNS-record:
+```bash
+ccloud dns-records update <dns-record uuid> \
+    --content 127.0.0.1
+```
+
+Deleting a DNS-record:
+```bash
+ccloud dns-records delete <dns-record uuid>
+```
+
+Every command includes an option --help which will give an overview of the possibilities.
+
+## Advanced usage
+
+Its also possible to create your own command line utility to handle various parts. Here are the same examples as above but now using python.
+
+### Fetching DNS-zones
+```python
+import asyncio
+
+from cacholong_sdk.connection import connection
+from cacholong_sdk import ResourceTuple, Inclusion, Filter
+from cacholong_sdk import DnsZone, DnsZoneModel, DnsRecord, DnsRecordModel
+
+async def main():
+    async with connection('https://api.cacholong.eu/api/v1/', 'YOUR-API-TOKEN') as api:
+        searchfilter = Filter(domain=sys.argv[1])
+        DnsZoneCtrl = DnsZone(api)
+        async for zone in DnsZoneCtrl.fetch_all(searchfilter):
+            print(zone["domain"])
+
+# Execute main function
+asyncio.run(main())
+```
+
+## Suggestions for a good README
+Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+
+## Support
+Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+
+## Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
+
+## Contributing
+State if you are open to contributions and what your requirements are for accepting them.
+
+For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+
+## License
+For open source projects, say how it is licensed.
