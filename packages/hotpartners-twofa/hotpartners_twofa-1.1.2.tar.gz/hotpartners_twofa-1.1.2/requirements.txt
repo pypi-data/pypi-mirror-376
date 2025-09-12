@@ -1,0 +1,4 @@
+pyotp>=2.9.0
+qrcode[pil]>=7.4.2
+cryptography>=41.0.7
+pillow>=11.3.0
