@@ -1,0 +1,17 @@
+numpy
+
+[dev]
+mkdocs
+mkdocs-material
+mkdocs-jupyter
+mkdocstrings
+mkdocs-material-extensions
+
+[numba]
+numba
+
+[test]
+pytest
+pytest-cov
+scikit-image
+pooch
