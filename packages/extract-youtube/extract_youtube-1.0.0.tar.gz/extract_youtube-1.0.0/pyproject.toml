@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "extract-youtube"
+version = "1.0.0"
+description = "A Python module to extract thumbnail URLs from YouTube video URLs with multiple quality options"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Kevin", email = "kevin@cattt.space"},
+]
+maintainers = [
+    {name = "Kevin", email = "kevin@cattt.space"},
+]
+keywords = [
+    "youtube",
+    "thumbnail",
+    "video",
+    "extractor",
+    "image",
+    "url"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.900",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/kevin-celternity/extract-youtube"
+"Bug Reports" = "https://github.com/kevin-celternity/extract-youtube/issues"
+"Source" = "https://github.com/kevin-celternity/extract-youtube"
+"Documentation" = "https://github.com/kevin-celternity/extract-youtube#readme"
+
+[project.scripts]
+extract-youtube = "extractor.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["extractor"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/extractor",
+    "/README.md",
+    "/LICENSE",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

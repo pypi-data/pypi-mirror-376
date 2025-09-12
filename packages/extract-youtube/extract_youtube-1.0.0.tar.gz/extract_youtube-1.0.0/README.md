@@ -1,0 +1,183 @@
+# YouTube Thumbnail Extractor
+
+[![PyPI version](https://badge.fury.io/py/extract-youtube.svg)](https://badge.fury.io/py/extract-youtube)
+[![Python versions](https://img.shields.io/pypi/pyversions/extract-youtube.svg)](https://pypi.org/project/extract-youtube/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A Python module to extract thumbnail URLs from YouTube video URLs with support for multiple quality options and URL verification.
+
+## Features
+
+- Extract thumbnails from various YouTube URL formats
+- Support for multiple thumbnail qualities (maxresdefault, sddefault, hqdefault, mqdefault, default)
+- Optional URL verification to check if thumbnails actually exist
+- Handle single URLs or batch processing of multiple URLs
+- Simple, clean API with comprehensive error handling
+
+## Installation
+
+```bash
+pip install extract-youtube
+```
+
+## Quick Start
+
+```python
+from extractor import YouTubeThumbnailExtractor
+
+# Create an instance
+extractor = YouTubeThumbnailExtractor()
+
+# Extract thumbnail from a single URL
+url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+thumbnail = extractor.extract_thumbnail(url)
+
+if thumbnail:
+    print(f"Video ID: {thumbnail.video_id}")
+    print(f"Best thumbnail: {thumbnail.url}")
+    print(f"High quality: {thumbnail.hqdefault}")
+    print(f"Medium quality: {thumbnail.mqdefault}")
+```
+
+## Supported URL Formats
+
+The extractor supports all common YouTube URL formats:
+
+- `https://www.youtube.com/watch?v=VIDEO_ID`
+- `https://youtu.be/VIDEO_ID`
+- `https://www.youtube.com/embed/VIDEO_ID`
+- `https://www.youtube.com/v/VIDEO_ID`
+- And more variations with or without `www.` and `https://`
+
+## API Reference
+
+### `YouTubeThumbnailExtractor`
+
+#### Methods
+
+##### `extract_thumbnail(url, quality='maxresdefault', verify_existence=False)`
+
+Extract thumbnail information from a single YouTube URL.
+
+**Parameters:**
+- `url` (str): YouTube video URL
+- `quality` (str): Preferred thumbnail quality (default: 'maxresdefault')
+- `verify_existence` (bool): Whether to verify thumbnail exists via HTTP request
+
+**Returns:** `ThumbnailInfo` object or `None` if invalid URL
+
+##### `extract_thumbnails(urls, quality='maxresdefault', verify_existence=False)`
+
+Extract thumbnails from multiple YouTube URLs.
+
+**Parameters:**
+- `urls` (List[str]): List of YouTube video URLs
+- `quality` (str): Preferred thumbnail quality
+- `verify_existence` (bool): Whether to verify thumbnails exist
+
+**Returns:** List of `ThumbnailInfo` objects
+
+### `ThumbnailInfo`
+
+Data class containing thumbnail information:
+
+- `video_id`: YouTube video ID
+- `url`: Best quality thumbnail URL based on preferences
+- `maxresdefault`: 1280x720 thumbnail URL
+- `sddefault`: 640x480 thumbnail URL
+- `hqdefault`: 480x360 thumbnail URL
+- `mqdefault`: 320x180 thumbnail URL
+- `default`: 120x90 thumbnail URL
+
+## Thumbnail Quality Options
+
+| Quality | Resolution | Description |
+|---------|------------|-------------|
+| maxresdefault | 1280x720 | Highest quality (may not exist for all videos) |
+| sddefault | 640x480 | Standard definition |
+| hqdefault | 480x360 | High quality |
+| mqdefault | 320x180 | Medium quality |
+| default | 120x90 | Lowest quality (always available) |
+
+## Usage Examples
+
+### Basic Usage
+
+```python
+from extractor import YouTubeThumbnailExtractor
+
+extractor = YouTubeThumbnailExtractor()
+
+# Single URL
+url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+thumbnail = extractor.extract_thumbnail(url)
+print(thumbnail.url)
+```
+
+### Batch Processing
+
+```python
+urls = [
+    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    'https://youtu.be/jNQXAC9IVRw',
+    'https://www.youtube.com/embed/M7lc1UVf-VE'
+]
+
+thumbnails = extractor.extract_thumbnails(urls)
+for thumb in thumbnails:
+    print(f"{thumb.video_id}: {thumb.url}")
+```
+
+### With URL Verification
+
+```python
+# Verify that thumbnail URLs actually exist
+thumbnail = extractor.extract_thumbnail(
+    url, 
+    quality='hqdefault',
+    verify_existence=True
+)
+```
+
+### Command Line Interface
+
+The package also includes a command-line tool:
+
+```bash
+# Extract thumbnails from URLs in a file
+extract-youtube --url-file urls.txt --quality hqdefault --verify
+
+# Help
+extract-youtube --help
+```
+
+## Error Handling
+
+The extractor gracefully handles various error conditions:
+
+- Invalid YouTube URLs return `None`
+- Network errors during verification are handled gracefully
+- Missing thumbnails fall back to lower quality options
+
+## Requirements
+
+- Python 3.8+
+- requests >= 2.25.0
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Changelog
+
+### 1.0.0 (2025-09-12)
+- Initial release
+- Support for all major YouTube URL formats
+- Multiple thumbnail quality options
+- Optional URL verification
+- Batch processing capabilities
+- Command-line interface
