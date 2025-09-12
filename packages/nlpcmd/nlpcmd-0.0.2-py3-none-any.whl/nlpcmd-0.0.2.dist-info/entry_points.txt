@@ -1,0 +1,2 @@
+[console_scripts]
+nlpcmd = nlpcmd.cli:main
