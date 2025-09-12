@@ -1,0 +1,3 @@
+[swarmauri.tokens]
+DPoPBoundJWTTokenService=swarmauri_tokens_dpopboundjwt:DPoPBoundJWTTokenService
+
