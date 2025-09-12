@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psx-dashboard-MWBK"  # Choose a unique name
+version = "0.1.0"
+authors = [
+  { name="Eebee16", email="ebbutt786@gmail.com" },
+]
+description = "A Streamlit dashboard for PSX stock data, including price history and fundamental analysis."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "streamlit",
+    "pandas",
+    "requests",
+    "beautifulsoup4",
+    "plotly",
+    "numpy",
+]
+
+[tool.setuptools.package-data]
+"psx_dashboard" = ["KMI30/*.csv"]

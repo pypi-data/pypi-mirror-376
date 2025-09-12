@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+pyproject.toml
+psx_dashboard/psx_dashboard.py
+psx_dashboard/psx_fundamental_analysis.py
+psx_dashboard/psx_price_and_volume.py
+psx_dashboard/KMI30/kmi30_companies.csv
+psx_dashboard_MWBK.egg-info/PKG-INFO
+psx_dashboard_MWBK.egg-info/SOURCES.txt
+psx_dashboard_MWBK.egg-info/dependency_links.txt
+psx_dashboard_MWBK.egg-info/requires.txt
+psx_dashboard_MWBK.egg-info/top_level.txt
