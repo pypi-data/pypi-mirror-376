@@ -1,0 +1,107 @@
+Metadata-Version: 2.4
+Name: faststt
+Version: 0.1.0
+Summary: Hybrid Speech-to-Text using Faster-Whisper and SpeechRecognition
+Author-email: Harsharaj <rharsharaj03@gmail.com>
+License: MIT
+Keywords: STT,speech-to-text,whisper,faster-whisper,microphone,transcription,python-stt,offline-stt,low-latency-stt,speech-recognition
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: faster-whisper==1.2.0
+Requires-Dist: SpeechRecognition==3.14.3
+Requires-Dist: PyAudio==0.2.14
+Dynamic: license-file
+
+# FastSTT
+
+**FastSTT** is a lightweight, hybrid Speech-to-Text Python library with real-time microphone and audio file transcription. Ideal for virtual assistants, chatbots, and low-latency voice input applications.
+
+## Features
+
+- Offline transcription with low latency
+- Real-time microphone transcription
+- Audio file transcription (WAV, MP3, M4A, etc.)
+- Optional timestamps for segments
+- Automatic or forced language detection
+- Lightweight and easy to use
+- Compatible with Python 3.10+
+
+## Installation
+
+You can install FastSTT via PyPI:
+```bash
+pip install faststt
+```
+
+**Note:** Microphone support requires `PyAudio` installed.
+On some systems, you may need system dependencies:
+
+**Ubuntu/Debian:** 
+```bash
+sudo apt-get install portaudio19-dev
+```
+
+**Windows** 
+Use the prebuilt PyAudio wheel for your Python version.
+
+## Usage
+### 1. Transcribe from microphone
+```python
+from faststt import FastSTT
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+stt = FastSTT(model_size="base", device="cpu")
+
+print("Speak something...")
+text = stt.listen_and_transcribe(timeout=5, phrase_time_limit=10)
+
+print("Transcription:", text)
+```
+
+### 2. Transcribe from microphone in real-time
+```python
+from faststt import FastSTT
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+stt = FastSTT(model_size="base", device="cpu")
+
+print("Listening continuously. Press Ctrl+C to stop.\n")
+
+try:
+    while True:
+        text = stt.listen_and_transcribe(timeout=3, phrase_time_limit=5)
+        if text and isinstance(text, dict):
+            print("Transcription:", text["text"])
+        else:
+            print("...no speech detected.")
+except KeyboardInterrupt:
+    print("\nStopped by user.")
+```
+
+### 3. Transcribe from audio file
+```python
+from faststt import FastSTT
+
+stt = FastSTT(model_size="base", device="cpu", compute_type="int8")
+
+file_path = "audio_file.wav"
+result = stt.listen_from_file(file_path, with_timestamps=True)
+
+if result:
+    print("Transcription with timestamps:")
+    for seg in result:
+        print(f"[{seg['start']:.2f}s - {seg['end']:.2f}s]: {seg['text']}")
+else:
+    print("Transcription failed.")
+```
+
+## License
+This project is licensed under the MIT License.
