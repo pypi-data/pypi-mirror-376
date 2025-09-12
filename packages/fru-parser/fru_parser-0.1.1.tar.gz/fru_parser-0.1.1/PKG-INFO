@@ -1,0 +1,333 @@
+Metadata-Version: 2.4
+Name: fru-parser
+Version: 0.1.1
+Summary:  parses a binary FRU (Field Replaceable Unit) file and extracts information from it.
+Author-email: Jack Lin <farwill@gmail.com>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# FRU Parser
+
+A comprehensive Python package that parses binary FRU (Field Replaceable Unit) files according to the IPMI Platform Management FRU Information Storage Definition v1.0 rev 1.3 specification.
+
+## Features
+
+- **Complete IPMI FRU Support**: Parses all standard FRU areas including Common Header, Internal Use, Chassis Info, Board Info, Product Info, and Multi-Record areas
+- **Multiple String Encodings**: Supports ASCII, BCD+, 6-bit ASCII, and binary string encodings
+- **Comprehensive Validation**: Validates checksums, format versions, and data integrity
+- **Chassis Type Mapping**: Includes complete chassis type enumeration according to IPMI specification
+- **Multi-Record Support**: Parses various multi-record types including Management Access Records (UUID), Power Supply Information, and OEM records
+- **Robust Error Handling**: Detailed error reporting with specific exception types
+- **Command-Line Interface**: Easy-to-use CLI with verbose and quiet modes
+- **JSON Output**: Clean, structured JSON output for easy integration
+- **Comprehensive Testing**: Full test suite with unit and integration tests
+
+## Installation
+
+### From PyPI (when published)
+```bash
+pip install fru-parser
+```
+
+### From Source
+```bash
+git clone https://github.com/your-username/fru-parser.git
+cd fru-parser
+pip install -e .
+```
+
+### Using uv (recommended)
+```bash
+uv sync
+```
+
+## Usage
+
+### Command Line Interface
+
+Basic usage:
+```bash
+fru-parser --fru-bin system.fru --output system.json
+```
+
+With verbose output:
+```bash
+fru-parser --fru-bin system.fru --output system.json --verbose
+```
+
+Quiet mode (errors only):
+```bash
+fru-parser --fru-bin system.fru --output system.json --quiet
+```
+
+Help and version:
+```bash
+fru-parser --help
+fru-parser --version
+```
+
+### Python API
+
+```python
+from fru_parser import parse_fru
+
+# Parse a FRU file
+fru_data = parse_fru("system.fru", "output.json")
+
+# Access parsed data
+print(f"Chassis Type: {fru_data['chassis']['type_name']}")
+print(f"Board Manufacturer: {fru_data['board']['mfg']['data']}")
+print(f"Product Name: {fru_data['product']['pname']['data']}")
+
+# Check for multi-record data
+if 'multirecord' in fru_data:
+    for record in fru_data['multirecord']:
+        if record['type_name'] == 'Management Access Record':
+            print(f"System UUID: {record['uuid']}")
+```
+
+## FRU File Structure
+
+The FRU parser extracts information from the following areas:
+
+### Common Header
+- Format version validation
+- Area offset pointers
+- Checksum validation
+
+### Internal Use Area (Optional)
+- Vendor-specific data
+- Raw hex output
+
+### Chassis Info Area
+- Chassis type (with human-readable names)
+- Part number and serial number
+- Custom fields
+
+### Board Info Area
+- Manufacturing date/time
+- Board manufacturer and product name
+- Serial number and part number
+- File identifier
+- Custom fields
+
+### Product Info Area
+- Product manufacturer and name
+- Version and part number
+- Serial number and asset tag
+- File identifier
+- Custom fields
+
+### Multi-Record Area (Optional)
+- Management Access Records (UUID)
+- Power Supply Information
+- Additional Information
+- Onboard Devices Extended Information
+- OEM Records
+
+## Output Format
+
+The parser generates structured JSON output:
+
+```json
+{
+    "internal": "010203040A0B0C0D",
+    "chassis": {
+        "type": 10,
+        "type_name": "Notebook",
+        "pn": {
+            "type": "text",
+            "data": "CHAS-C00L-12"
+        },
+        "serial": {
+            "type": "bcdplus",
+            "data": "45678"
+        },
+        "custom": []
+    },
+    "board": {
+        "date": "20/5/2025 07:55:00",
+        "lang": 1,
+        "mfg": {
+            "type": "text",
+            "data": "Biggest International Corp."
+        },
+        "pname": {
+            "type": "text",
+            "data": "Some Cool Product"
+        },
+        "serial": {
+            "type": "bcdplus",
+            "data": "123456"
+        },
+        "pn": {
+            "type": "6bitascii",
+            "data": "BRD-PN-345"
+        },
+        "file": {
+            "type": "text",
+            "data": "example1.json"
+        },
+        "custom": []
+    },
+    "product": {
+        "lang": 1,
+        "mfg": {
+            "type": "text",
+            "data": "Super OEM Company"
+        },
+        "pname": {
+            "type": "text",
+            "data": "Label-engineered Super Product"
+        },
+        "pn": {
+            "type": "6bitascii",
+            "data": "PRD-PN-1234"
+        },
+        "ver": {
+            "type": "text",
+            "data": "v1.1"
+        },
+        "serial": {
+            "type": "6bitascii",
+            "data": "OEM12345"
+        },
+        "atag": {
+            "type": "text",
+            "data": "Accounting Dept."
+        },
+        "file": {
+            "type": "text",
+            "data": "example2.json"
+        },
+        "custom": []
+    },
+    "multirecord": [
+        {
+            "type": 4,
+            "type_name": "Management Access Record",
+            "subtype": "uuid",
+            "uuid": "9BD70799-CCF0-4915-A7F9-7CE7D64385CF"
+        }
+    ]
+}
+```
+
+## String Encoding Support
+
+The parser supports all IPMI FRU string encodings:
+
+- **Text/ASCII (Type 3)**: Standard ASCII text
+- **6-bit ASCII (Type 2)**: Compressed ASCII encoding
+- **BCD+ (Type 1)**: Binary Coded Decimal Plus with special characters
+- **Binary (Type 0)**: Raw binary data (output as hex)
+
+## Error Handling
+
+The parser provides detailed error reporting:
+
+- `FRUChecksumError`: Checksum validation failures
+- `FRUInvalidValueError`: Invalid field values
+- `FRUFormatError`: File format issues
+- `FRUStringDecodeError`: String decoding problems
+- `FRUParseError`: General parsing errors
+
+## Chassis Types
+
+The parser includes complete chassis type mapping:
+
+- Desktop, Laptop, Notebook
+- Tower, Mini Tower, Rack Mount
+- Blade, Blade Enclosure
+- Tablet, Convertible, Detachable
+- IoT Gateway, Embedded PC
+- And many more (see `CHASSIS_TYPES` in the source)
+
+## Development
+
+### Setup Development Environment
+
+```bash
+git clone https://github.com/your-username/fru-parser.git
+cd fru-parser
+uv sync
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+python -m pytest tests/
+
+# Run with coverage
+python -m pytest tests/ --cov=src/fru_parser
+
+# Run specific test file
+python -m pytest tests/test_parser.py
+```
+
+### Code Quality
+
+```bash
+# Linting
+flake8 src/ tests/
+
+# Type checking
+mypy src/
+
+# Formatting
+black src/ tests/
+```
+
+### Building and Publishing
+
+1. Update the version in `pyproject.toml`
+2. Build and publish:
+   ```bash
+   uv publish
+   ```
+
+#### Authentication Options
+
+**Option 1: Command-line arguments**
+```bash
+# Using API token (recommended)
+uv publish --token <your-token>
+```
+
+**Option 2: Environment variables**
+```bash
+# Using API token (recommended)
+export UV_PUBLISH_TOKEN=<your-token>
+uv publish
+```
+
+**Option 3: Trusted publishing (GitHub Actions)**
+```bash
+uv publish --trusted-publishing automatic
+```
+
+#### Getting PyPI API Token
+
+1. Go to [PyPI](https://pypi.org) and log in
+2. Go to Account Settings → API tokens
+3. Create a new token with "Entire account" scope
+4. Copy the token and use it with the `--token` option
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new functionality
+5. Ensure all tests pass
+6. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## References
+
+- [IPMI Platform Management FRU Information Storage Definition v1.0 rev 1.3](https://www.intel.com/content/www/us/en/products/docs/servers/ipmi/ipmi-platform-mgt-fru-info-storage-def-v1-0-rev-1-3-spec.html)
+- [IPMI Specification v2.0](https://www.intel.com/content/www/us/en/products/docs/servers/ipmi/ipmi-second-gen-interface-spec-v2-rev1-1.html)
