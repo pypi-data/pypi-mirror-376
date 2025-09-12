@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "cacholong-cloud-cli"
+version = "0.3.2"
+description = "Cacholong CLI, manage cloud environments at Cacholong!"
+authors = ["Matthijs Möhlmann <matthijs@cacholong.nl>"]
+readme = "README.md"
+packages = [
+    { include = "cacholong_cli" },
+    { include = "cacholong_sdk" },
+    { include = "jsonapi_client", from = "jsonapi-client/src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = "*"
+rich = "*"
+pyxdg = "*"
+aiofiles = "^23.2.1"
+types-aiofiles = "^23.2.0.20240403"
+aiohttp = ">=3.0"
+requests = "^2.32.5"
+aiodns = "^3.5.0"
+jsonschema = "^4.25.1"
+
+[tool.poetry.scripts]
+ccloud = 'cacholong_cli.cli:app'
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.9.0"
+black = "^24.4.0"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
