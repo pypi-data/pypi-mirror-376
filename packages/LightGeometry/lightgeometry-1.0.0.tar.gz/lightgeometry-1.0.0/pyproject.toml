@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LightGeometry"
+version = "1.0.0"
+description = "Light geometry library with essential function"
+readme = "README.md"
+authors = [
+    { name = "Cristiano", email = "cristianoferrara.2006@gmail.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["python", "library", "geometry", "math"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+requires-python = ">=3.9"
+
+dependencies = []
+
+
+[tool.setuptools]
+packages = ["LightGeometry"]

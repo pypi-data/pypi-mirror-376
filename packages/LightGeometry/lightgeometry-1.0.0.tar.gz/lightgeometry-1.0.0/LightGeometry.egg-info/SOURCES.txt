@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+pyproject.toml
+LightGeometry/__init__.py
+LightGeometry/geometry.py
+LightGeometry.egg-info/PKG-INFO
+LightGeometry.egg-info/SOURCES.txt
+LightGeometry.egg-info/dependency_links.txt
+LightGeometry.egg-info/top_level.txt
