@@ -1,0 +1,25 @@
+@echo off
+REM {{ parser_name }} - Quick Run
+REM Fast execution without menus
+
+title {{ parser_name }} Quick Run
+
+echo.
+echo {{ parser_name }} - Quick Run Mode
+echo {{ "=" * (parser_name|length + 20) }}
+echo.
+
+REM Setup environment
+set PYTHONIOENCODING=utf-8
+set PLAYWRIGHT_BROWSERS_PATH=0
+set PYTHONUNBUFFERED=1
+
+REM Apply platform fixes
+python -c "from unrealon_installer.platform import apply_platform_fixes; apply_platform_fixes()" 2>nul
+
+echo Starting quick test: 5 requests, 2 concurrent...
+python main.py 5 2
+
+echo.
+echo Quick run completed!
+pause
