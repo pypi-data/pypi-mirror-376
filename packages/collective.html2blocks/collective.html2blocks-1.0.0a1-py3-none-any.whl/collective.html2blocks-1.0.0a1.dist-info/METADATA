@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: collective.html2blocks
+Version: 1.0.0a1
+Summary: Convert html to blocks to be used by Volto
+Project-URL: Homepage, https://github.com/collective/collective.html2blocks#readme
+Project-URL: Changelog, https://github.com/collective/collective.html2blocks/blob/main/CHANGELOG.md
+Project-URL: Issues, https://github.com/collective/collective.html2blocks/issues
+Project-URL: Source, https://github.com/collective/collective.html2blocks
+Project-URL: Repository, https://github.com/collective/collective.html2blocks
+Author-email: Érico Andrei <ericof@plone.org>
+Keywords: Plone,Python,Volto
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Plone
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.12
+Requires-Dist: beautifulsoup4>=4.13.3
+Requires-Dist: fastapi[standard]>=0.116.1
+Requires-Dist: python-slugify>=8.0.4
+Requires-Dist: typer>=0.15.1
+Description-Content-Type: text/markdown
+
+<h1 align="center">collective.html2blocks</h1>
+
+<div align="center">
+
+[![PyPI](https://img.shields.io/pypi/v/collective.html2blocks)](https://pypi.org/project/collective.html2blocks/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/collective.html2blocks)](https://pypi.org/project/collective.html2blocks/)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/collective.html2blocks)](https://pypi.org/project/collective.html2blocks/)
+[![PyPI - License](https://img.shields.io/pypi/l/collective.html2blocks)](https://pypi.org/project/collective.html2blocks/)
+[![PyPI - Status](https://img.shields.io/pypi/status/collective.html2blocks)](https://pypi.org/project/collective.html2blocks/)
+
+
+[![Code Quality](https://github.com/collective/collective.html2blocks/actions/workflows/qa.yml/badge.svg)](https://github.com/collective/collective.html2blocks/actions/workflows/qa.yml)
+[![Tests](https://github.com/collective/collective.html2blocks/actions/workflows/test.yml/badge.svg)](https://github.com/collective/collective.html2blocks/actions/workflows/test.yml)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/collective/collective.html2blocks)](https://github.com/collective/collective.html2blocks)
+[![GitHub Repo stars](https://img.shields.io/github/stars/collective/collective.html2blocks?style=social)](https://github.com/collective/collective.html2blocks)
+
+</div>
+
+**collective.html2blocks** helps with migrations from old Plone versions -- and other CMS -- to Volto.
