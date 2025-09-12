@@ -1,0 +1,3 @@
+[swarmauri.key_providers]
+AwsKmsKeyProvider=swarmauri_keyprovider_aws_kms.AwsKmsKeyProvider:AwsKmsKeyProvider
+
