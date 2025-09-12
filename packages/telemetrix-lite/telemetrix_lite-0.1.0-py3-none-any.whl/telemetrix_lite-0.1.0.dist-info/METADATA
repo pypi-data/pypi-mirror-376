@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: telemetrix-lite
+Version: 0.1.0
+Summary: Lite, teacher-friendly wrapper for Telemetrix (digital/analog/sonar/LCD) + RFID helpers (PN532 UART, RC522 bridge).
+Author-email: Barmaja Robotics School <team@barmaja.school>
+License: MIT License
+        
+        Copyright (c) 2025 Barmaja Robotics
+        
+        Permission is hereby granted... THE SOFTWARE IS PROVIDED “AS IS”...
+Project-URL: Homepage, https://github.com/barmaja-school/telemetrix-lite
+Project-URL: Source, https://github.com/barmaja-school/telemetrix-lite
+Project-URL: Issues, https://github.com/barmaja-school/telemetrix-lite/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Education
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: telemetrix>=1.16.0
+Requires-Dist: pyserial>=3.5
+Dynamic: license-file
+
+# telemetrix-lite (v0.1.0)
+
+Teacher-friendly wrapper for Telemetrix adding polling-style helpers (digital/analog/debounce), sonar, I2C LCD,
+and optional RFID helpers (PN532 UART; RC522 via Arduino sketch).
+
+> Disclaimer: Independent educational wrapper; not affiliated with Telemetrix authors.
+
+## Install
+pip install .
+
+## Quick start
+from telemetrix_lite import TelemetrixSync
+t = TelemetrixSync(); t.set_input(7, pullup=True); t.set_output(13)
+while True:
+    v = t.digital_read(7, default=1)
+    if v == 0: t.digital_write(13,1)
+    else: t.digital_write(13,0)

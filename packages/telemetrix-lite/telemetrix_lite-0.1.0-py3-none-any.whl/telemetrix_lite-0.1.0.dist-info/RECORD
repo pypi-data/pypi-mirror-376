@@ -1,0 +1,8 @@
+telemetrix_lite/__init__.py,sha256=d5MufwqlW77acIiVI9d3S-LridpvlSqNT3R2nmXPcGs,71
+telemetrix_lite/rfid_pn532.py,sha256=J8_eMKr6lt5cwrShwk-LCtp5dWiXMnLsCDM8TGEcwx8,1637
+telemetrix_lite/telemetrix_sync.py,sha256=FIvxETGSpKPiiNe_w22lRNKuDnUHq4sD1I-no1OWD5E,3097
+telemetrix_lite-0.1.0.dist-info/licenses/LICENSE,sha256=R_Z4D6KZDlx45zPQgKR3j4jyE7l7XyxEfm__0BLQKPQ,121
+telemetrix_lite-0.1.0.dist-info/METADATA,sha256=n55wOgVvlOqJaYZaJ3049rj_1ggI-iP1JoBlQcRNF74,1644
+telemetrix_lite-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+telemetrix_lite-0.1.0.dist-info/top_level.txt,sha256=9HiaEkF1h6J1Uzl7hdDVh4DfdFCM474Uy3jVKOF0Q1U,16
+telemetrix_lite-0.1.0.dist-info/RECORD,,
