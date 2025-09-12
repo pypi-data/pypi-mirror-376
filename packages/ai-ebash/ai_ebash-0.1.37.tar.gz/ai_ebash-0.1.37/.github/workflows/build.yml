@@ -1,0 +1,81 @@
+---
+name: Build and Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*"   # Запуск при пуше тега вида vX.Y.Z
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write  # нужно для публикации в GitHub Packages
+      id-token: write  # нужно для Trusted Publishing на PyPI
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # важно для setuptools-scm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install build
+
+      - name: Build package
+        run: python -m build
+
+      # ---- Публикация на PyPI ----
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # attestations: true
+          # если не настроен Trusted Publishing, тогда:
+           user: __token__
+           password: ${{ secrets.PYPI_API_TOKEN }}
+
+      # ---- Публикация в GitHub Packages ----
+      - name: Publish to GitHub Packages
+        run: |
+          pip install twine
+          python -m twine upload \
+            --repository-url https://upload.pypi.pkg.github.com/Vivatist dist/* \
+            -u ${{ github.actor }} \
+            -p ${{ secrets.GITHUB_TOKEN }}
+
+
+# name: Build and Publish
+
+# on:
+#   push:
+#     tags:
+#       - "v*.*.*"    # Запускать только при пуше тега вида vX.Y.Z
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0  # важно для setuptools-scm
+#       - uses: actions/setup-python@v5
+#         with:
+#           python-version: "3.12"
+
+#       - name: Install dependencies
+#         run: pip install build
+
+#       - name: Build package
+#         run: python -m build
+
+#       - name: Publish to PyPI
+#         uses: pypa/gh-action-pypi-publish@release/v1
+#         with:
+#           #attestations: true  # если используешь Trusted Publishing
+#           user: __token__
+#           password: ${{ secrets.PYPI_API_TOKEN }}
