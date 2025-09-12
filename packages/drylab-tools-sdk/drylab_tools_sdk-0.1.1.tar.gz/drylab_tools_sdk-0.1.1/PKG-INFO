@@ -1,0 +1,78 @@
+Metadata-Version: 2.4
+Name: drylab-tools-sdk
+Version: 0.1.1
+Summary: Client SDK for DryLab open access tools (Boltz, Cellpose, Uni-Mol V2, RFdiffusion, Biomni database tools and more)
+Author-email: DryLab <support@thedrylab.com>
+License: MIT
+Project-URL: Homepage, https://tools.thedrylab.com
+Project-URL: Documentation, https://drylab-tools-sdk.readthedocs.io/
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Typing :: Typed
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.31.0
+
+DryLab Tools SDK
+=================
+
+Installation
+------------
+
+```bash
+pip install drylab-tools-sdk
+```
+
+Python client SDK for DryLab hosted tools:
+
+- Boltz (protein–ligand modeling)
+- Cellpose (cell segmentation)
+- Uni-Mol V2 (protein–ligand scoring)
+- RFdiffusion (protein design)
+- ProteinMPNN / LigandMPNN (sequence design)
+- AntiFold (antibody modeling)
+- DiffDock++ (docking)
+- ThermoMPNN (stability prediction)
+- ESM3 (sequence modeling)
+- ImmuneBuilder (immune modeling)
+
+It also contains biomni tool set for databases, bioengineering, microbiology and cell biology from biomni as well
+
+for example 
+```python
+from drylab.tools.biomni.database import query_uniprot
+
+results = query_uniprot("Find information about human insulin")
+
+```
+
+Quickstart
+----------
+
+```python
+from pathlib import Path
+import base64
+from drylab import DryLabClient
+
+# Initialize client with default service URLs
+dl = DryLabClient()
+
+# Example: Cellpose segmentation with a single image (base64)
+img_b64 = base64.b64encode(Path("sample.png").read_bytes()).decode()
+out_dir = Path("outputs/cellpose")
+result_paths = dl.cellpose.segment_image_b64(image_b64=img_b64, target_dir=out_dir)
+print("Wrote:", result_paths)
+
+# Example: RFdiffusion basic design
+contigs = "A10-20 B5-10"  # example contig string
+rf_out = dl.rfdiffusion.basic(contigs=contigs, target_dir="outputs/rfdiffusion")
+print("RFdiffusion outputs:", rf_out)
+```
+
+MIT License. See LICENSE for details.
+
+DryLab Tools SDK
+
+Python client SDK for interacting with DryLab Tools microservices: Boltz, Cellpose, UniMolV2, RFdiffusion, ProteinMPNN, LigandMPNN, AntiFold, DiffDock-PP, ThermoMPNN, ESM3, ImmuneBuilder and Biomni database tools
