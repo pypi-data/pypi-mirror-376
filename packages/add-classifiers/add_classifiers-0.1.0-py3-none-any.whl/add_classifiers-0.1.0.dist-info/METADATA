@@ -1,0 +1,17 @@
+Metadata-Version: 2.3
+Name: add-classifiers
+Version: 0.1.0
+Summary: Add your description here
+Author: Paul Traylor
+Author-email: Paul Traylor <kungfudiscomonkey@gmail.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: 3.15
+Requires-Dist: packaging>=25.0
+Requires-Dist: pzp>=0.0.28
+Requires-Dist: tomlkit>=0.13.3
+Requires-Dist: trove-classifiers>=2025.9.9.12
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
