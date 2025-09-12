@@ -1,0 +1,33 @@
+[project]
+name = "crypto-bytes-mcp-server"
+version = "0.1.1"
+description = "Crypto Bytes is a Model Context Protocol server that delivers curated crypto news."
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Dependencies required to run the server
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.14.0",
+]
+
+# Optional but recommended metadata for robustness
+authors = [
+    { name = "Micky Multani" }
+]
+license = { text = "MIT" }
+keywords = ["crypto", "news", "MCP", "server", "Crypto Bytes"]
+
+# Where your package lives (helpful for uv/pip build tools)
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["crypto_bytes_server*"]
+
+# Type checking + editor support
+[tool.pylance]
+reportMissingImports = "warning"
+
+# Testing config
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "-ra -q"
