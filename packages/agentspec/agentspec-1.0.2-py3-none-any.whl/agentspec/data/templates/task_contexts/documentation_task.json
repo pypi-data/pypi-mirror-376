@@ -1,0 +1,21 @@
+{
+  "id": "documentation_task",
+  "name": "Documentation Task",
+  "description": "Template for documentation tasks",
+  "category": "documentation",
+  "priority": "low",
+  "estimated_duration": 60,
+  "tags": [
+    "documentation",
+    "writing"
+  ],
+  "default_dependencies": [],
+  "context_data_template": {
+    "document_type": "user_guide",
+    "target_audience": "developers",
+    "format": "markdown",
+    "review_required": true
+  },
+  "inheritance": null,
+  "metadata": {}
+}
