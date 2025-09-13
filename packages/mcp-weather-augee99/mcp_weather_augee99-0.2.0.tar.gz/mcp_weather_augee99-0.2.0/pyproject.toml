@@ -1,0 +1,16 @@
+[project]
+name = "mcp-weather-augee99"
+version = "0.2.0"
+description = "Weather MCP server providing forecasts and alerts using National Weather Service API"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.14.0",
+]
+
+[project.scripts]
+mcp-weather = "weather:main"
+
+[tool.setuptools]
+py-modules = ["weather"]

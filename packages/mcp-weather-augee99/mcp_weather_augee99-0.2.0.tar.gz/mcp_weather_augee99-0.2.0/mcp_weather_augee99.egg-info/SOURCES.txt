@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+weather.py
+mcp_weather_augee99.egg-info/PKG-INFO
+mcp_weather_augee99.egg-info/SOURCES.txt
+mcp_weather_augee99.egg-info/dependency_links.txt
+mcp_weather_augee99.egg-info/entry_points.txt
+mcp_weather_augee99.egg-info/requires.txt
+mcp_weather_augee99.egg-info/top_level.txt

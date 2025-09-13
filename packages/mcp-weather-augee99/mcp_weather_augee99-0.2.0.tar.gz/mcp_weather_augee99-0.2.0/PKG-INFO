@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: mcp-weather-augee99
+Version: 0.2.0
+Summary: Weather MCP server providing forecasts and alerts using National Weather Service API
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: mcp[cli]>=1.14.0
+
+mcp-name: io.github.augee99/mcp-weather

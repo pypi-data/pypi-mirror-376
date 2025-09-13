@@ -1,0 +1,1 @@
+mcp-name: io.github.augee99/mcp-weather
