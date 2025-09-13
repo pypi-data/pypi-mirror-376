@@ -1,0 +1,2 @@
+[console_scripts]
+bridge-server = server.cli:run_server_cli
