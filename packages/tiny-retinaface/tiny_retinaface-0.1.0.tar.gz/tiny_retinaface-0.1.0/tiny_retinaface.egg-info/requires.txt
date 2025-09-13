@@ -1,0 +1,8 @@
+numpy
+opencv-python
+onnxruntime
+
+[dev]
+pytest
+pytest-cov
+ruff

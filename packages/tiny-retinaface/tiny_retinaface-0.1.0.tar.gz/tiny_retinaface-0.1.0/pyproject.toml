@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tiny-retinaface"
+version = "0.1.0"
+dependencies = ["numpy", "opencv-python", "onnxruntime"]
+requires-python = ">=3.9"
+authors = [ {name = "Davi A D Fabbro", email = "fabda01@gmail.com"}]
+description = "A fast and simplified implementation of biubug6/Pytorch_Retinaface inference module"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["face-detection", "retinaface"]
+classifiers = ["Programming Language :: Python :: 3"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/ddfabbro/tiny-retinaface"
+
+[tool.setuptools]
+packages = ["retinaface"]
