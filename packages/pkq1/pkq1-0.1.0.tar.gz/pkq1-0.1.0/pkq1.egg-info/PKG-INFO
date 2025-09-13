@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: pkq1
+Version: 0.1.0
+Summary: A quantum circuit simulator for beginners, the first from Pakistan!
+Home-page: https://github.com/CETQAP/pkq1
+Author: CETQAP
+Author-email: info@thecetqap.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.19.0
+Requires-Dist: matplotlib>=3.3.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PKQ1 Quantum
+A quantum circuit simulator for beginners, the first quantum simulator of Pakistan! Create quantum circuits with up to 2 qubits and experiment with algorithms like Bell states or algorithm's for two qubits.
+
+## Installation
+```bash
+pip install pkq1
