@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: chopshop
+Version: 0.0.1
+Summary: Coming soon...
+Author-email: "Ryan L. Boyd" <ryan@ryanboyd.io>
+Project-URL: Homepage, https://github.com/ryanboyd/chopshop
+Project-URL: Issues, https://github.com/ryanboyd/chopshop/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: faster-whisper>=1.1.0
+Requires-Dist: nemo-toolkit[asr]>=2.dev
+Requires-Dist: nvidia-cudnn-cu12
+Dynamic: license-file
+
+# ChopShop
+
+Coming soon...

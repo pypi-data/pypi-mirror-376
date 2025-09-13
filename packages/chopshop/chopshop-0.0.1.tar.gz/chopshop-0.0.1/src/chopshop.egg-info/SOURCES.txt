@@ -1,0 +1,10 @@
+LICENSE
+README.MD
+pyproject.toml
+src/__init__.py
+src/chopshop/ChopShop.py
+src/chopshop.egg-info/PKG-INFO
+src/chopshop.egg-info/SOURCES.txt
+src/chopshop.egg-info/dependency_links.txt
+src/chopshop.egg-info/requires.txt
+src/chopshop.egg-info/top_level.txt
