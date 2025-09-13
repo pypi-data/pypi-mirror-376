@@ -1,0 +1,17 @@
+pycff/__init__.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+pycff/__main__.py,sha256=eIDWyijrhq8ZheMsZGyK0jGvp0uG2L92zUNg1usx3Hc,339
+pycff/application.cpython-313-darwin.so,sha256=h6Ow1DQTYzBQ43hIEafUNj_Z5TUsMlbd-Ya2uqBibfM,189792
+pycff/cff.cpython-313-darwin.so,sha256=EPFBCGecxUT89TkNugICgBQelt7jDAuqrk4BtXx6BZ0,700872
+pycff/clevertw.cpython-313-darwin.so,sha256=Soxx5wMqHR7RAXZkoulh-SlXwL8oJ76mgnwl4ORoAbE,1823888
+pycff/clevertwitem.cpython-313-darwin.so,sha256=F5xGypRAE0CRY7LCiPMlNpBx2gZVPD2HfKDlbdKKkZs,376560
+pycff/form_ui.cpython-313-darwin.so,sha256=3E9DQjycgPlKrdsAfRSekOPnSdD1DaCsdtkN1hGm0dQ,815744
+pycff/resource_rc.cpython-313-darwin.so,sha256=1VO0AjRKiWTYkQ3MEVsK6B2tavkBvWH6i7bx1DnEydY,149520
+pycff/widget.cpython-313-darwin.so,sha256=-BkRMAsz_dE8VDnMOsloYuY-SWKDUF_lB7pG9PkxsHs,1338512
+pycff/translations/PyCFF_en.qm,sha256=HYN4kPWUfkXOmoaZz-NuMQSYb4VyiLHDK1wJut-H9Io,22812
+pycff/translations/PyCFF_zh_CN.qm,sha256=pkQ_5peDx_oplyNzhcCPAlAS4Zz9u31-npJpOBt13oc,15689
+pycff-1.3.1.dist-info/licenses/LICENSE,sha256=IMF9i4xIpgCADf0U-V1cuf9HBmqWQd3qtI3FSuyW4zE,26526
+pycff-1.3.1.dist-info/METADATA,sha256=XYvF8_XefIrLHxFxKxKJ1_sYePIlToKCQtmyZa79-Dc,5737
+pycff-1.3.1.dist-info/WHEEL,sha256=myJqw5qSoAB19Z--Aeksryn_fkSl7_ov9ZWbGRFTp4s,110
+pycff-1.3.1.dist-info/entry_points.txt,sha256=LJSpi95ZS0l6TEmPrRCV_G9QRLqpgthxHOWI8Qpumss,42
+pycff-1.3.1.dist-info/top_level.txt,sha256=775wU0pXcB7vIX71K7m_F0nkxiLv2cnbM3s96M2oZnc,19
+pycff-1.3.1.dist-info/RECORD,,
