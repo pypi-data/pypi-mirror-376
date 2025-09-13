@@ -1,0 +1,55 @@
+Metadata-Version: 2.4
+Name: pktron
+Version: 0.1.1
+Summary: A quantum circuit simulator with statevector, stabilizer, and MPS backends
+Home-page: https://github.com/cetqap/pktron
+Author: CETQAP
+Author-email: info@thecetqap.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: matplotlib>=3.4.0
+Requires-Dist: quimb>=1.4.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PKTron: Pakistan Tron Quantum Simulator
+
+PKTron is a 100 Qubit quantum circuit simulator and Pakistan's 1st Quantum Simulator for 100 Qubits - Version 0.1.1 supporting statevector, stabilizer, and MPS backends. It provides tools for quantum circuit simulation, visualization, and quantum algorithms.
+
+## Installation
+```bash
+pip install pktron
+```
+
+## Usage
+```python
+from pktron import QuantumCircuit, execute, StatevectorSimulator
+from pktron.gates import h, cnot
+
+qc = QuantumCircuit(2, "statevector")
+h(qc, 0)
+cnot(qc, 0, 1)
+result = execute(qc, StatevectorSimulator())
+print(result.get_counts())
+```
+
+## Features
+- Quantum circuit simulation with multiple backends
+- Visualization of quantum states (histogram, Bloch sphere)
+- Basic quantum algorithms (e.g., Quantum Treasure Hunt)
+
+## License
+MIT License
