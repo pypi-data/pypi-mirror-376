@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+scatterbin.egg-info/PKG-INFO
+scatterbin.egg-info/SOURCES.txt
+scatterbin.egg-info/dependency_links.txt
+scatterbin.egg-info/top_level.txt
