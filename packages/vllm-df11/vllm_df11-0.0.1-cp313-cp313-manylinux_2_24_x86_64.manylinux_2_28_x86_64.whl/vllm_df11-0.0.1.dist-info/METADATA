@@ -1,0 +1,83 @@
+Metadata-Version: 2.4
+Name: vllm-df11
+Version: 0.0.1
+Summary: Dfloat11 plugin for vLLM
+Author-email: Mohsen Hariri <mohsen.hariri@case.edu>, Tianyi Zhang <tz21@rice.edu>
+License-Expression: Apache-2.0
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: <3.14,>=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# vLLM x DFloat11
+---
+
+## 📦 Installation
+
+```bash
+pip install vllm-df11
+```
+
+**Dependencies:**
+- vLLM >= 0.9.0
+- CUDA-compatible GPU (A100, H100, H200, RTX, etc.)
+
+You do not need `nvcc` or a `C/C++` compiler to install this package.
+However, a CUDA-enabled GPU is required to use `dfloat11` with `vLLM`.
+
+---
+
+## 🚀 Usage
+
+Enable the plugin by setting the environment variable:
+
+```python
+import os
+
+os.environ["VLLM_PLUGINS"] = "df11"
+
+from vllm.plugins import load_general_plugins 
+
+load_general_plugins()
+
+from vllm import LLM, SamplingParams
+
+df11_model_path = "/path/to/dfloat11/e.g./llama3.1-8b-it-df11"
+
+llm = LLM(
+    model=df11_model_path,
+    load_format="df11",
+    dtype="bfloat16"  
+)
+
+prompts = ["Explain Huffman coding and describe its applications."]
+
+sampling_params = SamplingParams(
+    temperature=0.6,
+    top_p=.95,
+    max_tokens=64,
+)
+
+outputs = llm.generate(prompts, sampling_params=sampling_params)
+
+for output in outputs:
+    prompt = output.prompt
+    generated_text = output.outputs[0].text
+    print(f"Prompt: {prompt}")
+    print(f"Generated: {generated_text}")
+    print(" 🌳🦖🗜️📦🌲 " * 5)
+```
+
+
+## 📚 Reference
+
+If you use this plugin in your research or deployment, please cite our paper.
