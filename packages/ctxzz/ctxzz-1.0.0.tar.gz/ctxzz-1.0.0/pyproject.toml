@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ctxzz"
+version = "1.0.0"
+description = "Atsushi Omata / ctxzz's animated profile card generator"
+authors = [
+    { name = "Atsushi Omata", email = "omata.atushi.open@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "terminaltexteffects>=0.10.0"
+]
+keywords = ["profile", "card", "terminal", "animation", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+    "Topic :: Terminals",
+]
+
+[project.urls]
+Homepage = "https://omata.me"
+Repository = "https://github.com/ctxzz/ctxzz-profile-card"
+Issues = "https://github.com/ctxzz/ctxzz-profile-card/issues"
+
+[project.scripts]
+ctxzz = "ctxzz.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ctxzz"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/README.md",
+    "/LICENSE",
+]
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
