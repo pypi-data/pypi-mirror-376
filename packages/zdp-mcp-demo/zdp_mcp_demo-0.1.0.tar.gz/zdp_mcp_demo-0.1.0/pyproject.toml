@@ -1,0 +1,19 @@
+[project]
+name = "zdp-mcp-demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "zhouyuheng", email = "957017253@qq.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.14.0",
+]
+
+[project.scripts]
+zdp-mcp-demo = "zdp_mcp_demo:main"
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
