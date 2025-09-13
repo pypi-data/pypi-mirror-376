@@ -1,0 +1,10 @@
+Metadata-Version: 2.3
+Name: shimsim
+Version: 0.1.0
+Summary: This package carefully simulates interferogram output from spatial heterodyne interferometers.
+Author: Cole
+Author-email: Cole <cmmeyer@arizona.edu>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# shimsim
