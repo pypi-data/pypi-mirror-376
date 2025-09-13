@@ -1,0 +1,673 @@
+Metadata-Version: 2.4
+Name: devix
+Version: 2.1.8
+Summary: Automated development and code repair system with enhanced analysis capabilities
+Project-URL: Homepage, https://github.com/c20frame/devix
+Project-URL: Documentation, https://devix.softreck.dev
+Project-URL: Repository, https://github.com/c20frame/devix
+Project-URL: Issues, https://github.com/c20frame/devix/issues
+Project-URL: Changelog, https://github.com/c20frame/devix/blob/main/CHANGELOG.md
+Author-email: Tom Sapletta <info@softreck.dev>
+License:                                  Apache License
+                                   Version 2.0, January 2004
+                                http://www.apache.org/licenses/
+        
+           TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+        
+           1. Definitions.
+        
+              "License" shall mean the terms and conditions for use, reproduction,
+              and distribution as defined by Sections 1 through 9 of this document.
+        
+              "Licensor" shall mean the copyright owner or entity granting the License.
+        
+              "Legal Entity" shall mean the union of the acting entity and all
+              other entities that control, are controlled by, or are under common
+              control with that entity. For the purposes of this definition,
+              "control" means (i) the power, direct or indirect, to cause the
+              direction or management of such entity, whether by contract or
+              otherwise, or (ii) ownership of fifty percent (50%) or more of the
+              outstanding shares, or (iii) beneficial ownership of such entity.
+        
+              "You" (or "Your") shall mean an individual or Legal Entity
+              exercising permissions granted by this License.
+        
+              "Source" form shall mean the preferred form for making modifications,
+              including but not limited to software source code, documentation
+              source, and configuration files.
+        
+              "Object" form shall mean any form resulting from mechanical
+              transformation or translation of a Source form, including but
+              not limited to compiled object code, generated documentation,
+              and conversions to other media types.
+        
+              "Work" shall mean the work of authorship, whether in Source or
+              Object form, made available under the License, as indicated by a
+              copyright notice that is included in or attached to the work
+              (an example is provided in the Appendix below).
+        
+              "Derivative Works" shall mean any work, whether in Source or Object
+              form, that is based upon (or derived from) the Work and for which the
+              editorial revisions, annotations, elaborations, or other modifications
+              represent, as a whole, an original work of authorship. For the purposes
+              of this License, Derivative Works shall not include works that remain
+              separable from, or merely link (or bind by name) to the interfaces of,
+              the Work and derivative works thereof.
+        
+              "Contribution" shall mean any work of authorship, including
+              the original version of the Work and any modifications or additions
+              to that Work or Derivative Works thereof, that is intentionally
+              submitted to Licensor for inclusion in the Work by the copyright owner
+              or by an individual or Legal Entity authorized to submit on behalf of
+              the copyright owner. For the purposes of this definition, "submitted"
+              means any form of electronic, verbal, or written communication sent
+              to the Licensor or its representatives, including but not limited to
+              communication on electronic mailing lists, source code control systems,
+              and issue tracking systems that are managed by, or on behalf of, the
+              Licensor for the purpose of discussing and improving the Work, but
+              excluding communication that is conspicuously marked or otherwise
+              designated in writing by the copyright owner as "Not a Contribution."
+        
+              "Contributor" shall mean Licensor and any individual or Legal Entity
+              on behalf of whom a Contribution has been received by Licensor and
+              subsequently incorporated within the Work.
+        
+           2. Grant of Copyright License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              copyright license to use, reproduce, prepare Derivative Works of,
+              publicly display, publicly perform, sublicense, and distribute the
+              Work and such Derivative Works in Source or Object form.
+        
+           3. Grant of Patent License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              (except as stated in this section) patent license to make, have made,
+              use, offer to sell, sell, import, and otherwise transfer the Work,
+              where such license applies only to those patent claims licensable
+              by such Contributor that are necessarily infringed by their
+              Contribution(s) alone or by combination of their Contribution(s)
+              with the Work to which such Contribution(s) was submitted. If You
+              institute patent litigation against any entity (including a
+              cross-claim or counterclaim in a lawsuit) alleging that the Work
+              or a Contribution incorporated within the Work constitutes direct
+              or contributory patent infringement, then any patent licenses
+              granted to You under this License for that Work shall terminate
+              as of the date such litigation is filed.
+        
+           4. Redistribution. You may reproduce and distribute copies of the
+              Work or Derivative Works thereof in any medium, with or without
+              modifications, and in Source or Object form, provided that You
+              meet the following conditions:
+        
+              (a) You must give any other recipients of the Work or
+                  Derivative Works a copy of this License; and
+        
+              (b) You must cause any modified files to carry prominent notices
+                  stating that You changed the files; and
+        
+              (c) You must retain, in the Source form of any Derivative Works
+                  that You distribute, all copyright, trademark, patent,
+                  attribution and other notices from the Source form of the Work,
+                  excluding those notices that do not pertain to any part of
+                  the Derivative Works; and
+        
+              (d) If the Work includes a "NOTICE" file as part of its
+                  distribution, then any Derivative Works that You distribute must
+                  include a readable copy of the attribution notices contained
+                  within such NOTICE file, excluding those notices that do not
+                  pertain to any part of the Derivative Works, in at least one
+              of the following places: within a NOTICE file distributed
+              as part of the Derivative Works; within the Source form or
+              documentation, if provided along with the Derivative Works; or,
+              within a display generated by the Derivative Works, if and
+              wherever such third-party notices normally appear. The contents
+              of the NOTICE file are for informational purposes only and
+              do not modify the License. You may add Your own attribution
+              notices within Derivative Works that You distribute, alongside
+              or as an addendum to the NOTICE text from the Work, provided
+              that such additional attribution notices cannot be construed
+              as modifying the License.
+        
+              You may add Your own copyright notice to Your modifications and
+              may provide additional or different license terms and conditions
+              for use, reproduction, or distribution of Your modifications, or
+              for any such Derivative Works as a whole, provided Your use,
+              reproduction, and distribution of the Work otherwise complies with
+              the conditions stated in this License.
+        
+           5. Submission of Contributions. Unless You explicitly state otherwise,
+              any Contribution intentionally submitted for inclusion in the Work
+              by You to the Licensor shall be under the terms and conditions of
+              this License, without any additional terms or conditions.
+              Notwithstanding the above, nothing herein shall supersede or modify
+              the terms of any separate license agreement you may have executed
+              with Licensor regarding such Contributions.
+        
+           6. Trademarks. This License does not grant permission to use the trade
+              names, trademarks, service marks, or product names of the Licensor,
+              except as required for reasonable and customary use in describing the
+              origin of the Work and reproducing the content of the NOTICE file.
+        
+           7. Disclaimer of Warranty. Unless required by applicable law or
+              agreed to in writing, Licensor provides the Work (and each
+              Contributor provides its Contributions) on an "AS IS" BASIS,
+              WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+              implied, including, without limitation, any warranties or conditions
+              of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+              PARTICULAR PURPOSE. You are solely responsible for determining the
+              appropriateness of using or redistributing the Work and assume any
+              risks associated with Your exercise of permissions under this License.
+        
+           8. Limitation of Liability. In no event and under no legal theory,
+              whether in tort (including negligence), contract, or otherwise,
+              unless required by applicable law (such as deliberate and grossly
+              negligent acts) or agreed to in writing, shall any Contributor be
+              liable to You for damages, including any direct, indirect, special,
+              incidental, or consequential damages of any character arising as a
+              result of this License or out of the use or inability to use the
+              Work (including but not limited to damages for loss of goodwill,
+              work stoppage, computer failure or malfunction, or any and all
+              other commercial damages or losses), even if such Contributor
+              has been advised of the possibility of such damages.
+        
+           9. Accepting Support, Warranty or Additional Liability. While redistributing
+              the Work or Derivative Works thereof, You may choose to offer,
+              and charge a fee for, acceptance of support, warranty, indemnity,
+              or other liability obligations and/or rights consistent with this
+              License. However, in accepting such obligations, You may act only
+              on Your own behalf and on Your sole responsibility, not on behalf
+              of any other Contributor, and only if You agree to indemnify,
+              defend, and hold each Contributor harmless for any liability
+              incurred by, or claims asserted against, such Contributor by reason
+              of your accepting any such warranty or additional liability.
+        
+           END OF TERMS AND CONDITIONS
+        
+           APPENDIX: How to apply the Apache License to your work.
+        
+              To apply the Apache License to your work, attach the following
+              boilerplate notice, with the fields enclosed by brackets "[]"
+              replaced with your own identifying information. (Don't include
+              the brackets!)  The text should be enclosed in the appropriate
+              comment syntax for the file format. We also recommend that a
+              file or class name and description of purpose be included on the
+              same "page" as the copyright notice for easier identification within
+              third-party archives.
+        
+           Copyright 2024 Tom Sapletta
+        
+           Licensed under the Apache License, Version 2.0 (the "License");
+           you may not use this file except in compliance with the License.
+           You may obtain a copy of the License at
+        
+               http://www.apache.org/licenses/LICENSE-2.0
+        
+           Unless required by applicable law or agreed to in writing, software
+           distributed under the License is distributed on an "AS IS" BASIS,
+           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           See the License for the specific language governing permissions and
+           limitations under the License.
+License-File: LICENSE
+Keywords: automated-development,code-analysis,code-repair,continuous-integration,monitoring,quality-assurance,testing
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=3.8
+Requires-Dist: click>=8.0.0
+Requires-Dist: colorama>=0.4.6
+Requires-Dist: docker>=6.0.0
+Requires-Dist: gitpython>=3.1.0
+Requires-Dist: jinja2>=3.1.0
+Requires-Dist: markdown>=3.4.0
+Requires-Dist: pathlib2>=2.3.0
+Requires-Dist: psutil>=5.9.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: tabulate>=0.9.0
+Requires-Dist: typing-extensions>=4.5.0
+Provides-Extra: dev
+Requires-Dist: bandit>=1.7.0; extra == 'dev'
+Requires-Dist: black>=23.0.0; extra == 'dev'
+Requires-Dist: flake8>=6.0.0; extra == 'dev'
+Requires-Dist: isort>=5.12.0; extra == 'dev'
+Requires-Dist: mypy>=1.0.0; extra == 'dev'
+Requires-Dist: pre-commit>=3.0.0; extra == 'dev'
+Requires-Dist: pylint>=2.17.0; extra == 'dev'
+Requires-Dist: pytest-cov>=4.0.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Requires-Dist: radon>=6.0.0; extra == 'dev'
+Requires-Dist: safety>=2.3.0; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: mkdocs-click>=0.8.0; extra == 'docs'
+Requires-Dist: mkdocs-material>=9.0.0; extra == 'docs'
+Requires-Dist: mkdocs>=1.4.0; extra == 'docs'
+Requires-Dist: mkdocstrings[python]>=0.20.0; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: pytest-cov>=4.0.0; extra == 'test'
+Requires-Dist: pytest-mock>=3.10.0; extra == 'test'
+Requires-Dist: pytest-xdist>=3.2.0; extra == 'test'
+Requires-Dist: pytest>=7.0.0; extra == 'test'
+Description-Content-Type: text/markdown
+
+# 🔍 Devix - Modular Code Analysis Platform
+
+**Devix** is a comprehensive, modular code analysis platform that provides deep insights into your codebase through multiple specialized analyzers. Built with Python, it offers powerful CLI tools, rich reporting, and intelligent project structure analysis.
+
+## ✨ Key Features
+
+- 🔍 **Multi-Analyzer Architecture**: 5 specialized analyzers (ProjectScanner, Security, Quality, Test, Performance)
+- 📊 **Rich Reporting**: Enhanced markdown and text reports with project tree visualization
+- 🚫 **Smart Filtering**: `.devixignore` support with visual indicators for ignored files
+- ⚡ **Parallel Execution**: Concurrent analyzer execution for optimal performance
+- 🎯 **CLI Subcommands**: Clean command-line interface with `analyze`, `config`, and `info` commands
+- 📈 **Comprehensive Metrics**: File statistics, coverage analysis, and cross-analyzer insights
+- 🌳 **Project Structure Visualization**: ASCII tree with file sizes and ignore markers
+- 🔧 **Modular Design**: Extensible architecture for adding custom analyzers
+
+## 🛠️ Installation
+
+### Quick Start
+
+```bash
+# Clone or navigate to the Devix directory
+cd devix
+
+# Install dependencies
+pip install -e .
+
+# Run analysis on your project
+devix analyze /path/to/your/project
+```
+
+### Installation Methods
+
+#### Method 1: Package Installation
+```bash
+cd devix
+pip install -e .  # Install in development mode
+devix analyze .    # Analyze current directory
+```
+
+#### Method 2: Direct Execution
+```bash
+cd devix
+PYTHONPATH=src python -m devix analyze /path/to/project
+```
+
+#### Method 3: Using Makefile
+```bash
+cd devix
+make run          # Analyze parent directory
+make test         # Run tests
+make lint         # Run linting
+```
+
+## 🎮 Usage
+
+### CLI Commands
+
+#### Main Analysis Command
+```bash
+# Analyze current directory with verbose output
+devix analyze . --verbose
+
+# Analyze specific project path
+devix analyze /path/to/project
+
+# Select specific analyzers
+devix analyze . --analyzers project_scanner,security,quality
+
+# Enable parallel execution (default)
+devix analyze . --parallel
+
+# Set custom output directory
+devix analyze . --output-dir ./reports
+```
+
+#### Configuration Management
+```bash
+# Create default configuration
+devix config create
+
+# Validate existing configuration
+devix config validate
+
+# Show configuration location
+devix config validate --config /path/to/config.yaml
+```
+
+#### Information Commands
+```bash
+# Show version and system info
+devix info
+
+# List available analyzers
+devix info --analyzers
+
+# Validate system setup
+devix info --validate
+```
+
+### Makefile Commands
+
+```bash
+# Development workflow
+make dev          # Full development workflow
+make run          # Analyze parent directory
+make test         # Run tests with coverage
+make lint         # Run code quality checks
+make format       # Format code with black/isort
+
+# Publishing and deployment
+make build        # Build package
+make publish      # Publish to PyPI
+make version      # Show version info
+
+# Docker operations
+make docker-build # Build Docker image
+make docker-run   # Run in Docker container
+```
+
+## ⚙️ Configuration
+
+### Configuration File (`config.yaml`)
+
+```yaml
+# Analyzer settings
+analyzers:
+  enabled: ["project_scanner", "security", "quality", "test", "performance"]
+  parallel_execution: true
+  max_workers: 4
+
+# Reporting configuration
+reporting:
+  formats: ["markdown", "text"]
+  output_directory: "."
+  include_tree_visualization: true
+  include_file_statistics: true
+
+# File filtering
+filtering:
+  use_gitignore: true
+  custom_ignore_patterns:
+    - "*.log"
+    - "node_modules/"
+    - ".pytest_cache/"
+```
+
+### .devixignore File
+
+Create a `.devixignore` file to exclude files/directories from analysis:
+
+```
+# Dependencies
+node_modules/
+__pycache__/
+.venv/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+
+# Logs and temporary files
+logs/
+*.log
+.coverage
+```
+
+## 🔍 Analyzers
+
+### Project Scanner
+- **Purpose**: Analyzes project structure, file statistics, and generates tree visualization
+- **Features**: 
+  - Full and filtered project trees
+  - File type breakdown and statistics
+  - Code fragment extraction
+  - Visual ignore markers (🚫) for excluded files
+
+### Security Analyzer
+- **Purpose**: Identifies security vulnerabilities and risks
+- **Tools**: Bandit, Safety (when available)
+- **Features**:
+  - Static security analysis
+  - Dependency vulnerability scanning
+  - Hardcoded credentials detection
+
+### Quality Analyzer
+- **Purpose**: Evaluates code quality and style
+- **Tools**: Pylint, Flake8, Black, isort, mypy (when available)
+- **Features**:
+  - Code complexity analysis
+  - Style guide compliance
+  - Type checking validation
+
+### Test Analyzer
+- **Purpose**: Analyzes test coverage and quality
+- **Tools**: pytest, coverage.py (when available)
+- **Features**:
+  - Test discovery and execution
+  - Coverage measurement
+  - Test quality assessment
+
+### Performance Analyzer
+- **Purpose**: Identifies performance bottlenecks
+- **Features**:
+  - Runtime profiling
+  - Resource usage analysis
+  - Performance pattern detection
+
+## 📊 Report Features
+
+### Enhanced Reporting
+- **Multiple Formats**: Markdown and text reports with rich formatting
+- **Project Statistics**: Real file counts (analyzed vs skipped)
+- **Tree Visualization**: ASCII project structure with file sizes
+- **Visual Indicators**: 🚫 markers for ignored files and directories
+- **Cross-Analyzer Insights**: Correlations between different analysis results
+
+### Report Contents
+- **Executive Summary**: Health scores and quick metrics
+- **Detailed Analysis**: Per-analyzer results with issues and recommendations
+- **File Statistics**: Comprehensive breakdown by file type and location
+- **Project Structure**: Complete tree view with ignore patterns applied
+- **Actionable Recommendations**: Priority-sorted improvement suggestions
+
+## 🚨 Troubleshooting
+
+### Common Issues
+
+**No files found for analysis**
+- Check your `.devixignore` patterns
+- Ensure project path is correct
+- Verify file permissions
+
+**Missing analyzer tools**
+- Install optional dependencies: `pip install bandit safety pylint`
+- Check tool availability: `devix info --validate`
+
+**Slow performance**
+- Use parallel execution: `--parallel` (default)
+- Reduce analyzer scope: `--analyzers project_scanner,quality`
+- Filter large directories in `.devixignore`
+
+**Import errors**
+- Ensure proper installation: `pip install -e .`
+- Check PYTHONPATH: `export PYTHONPATH=src:$PYTHONPATH`
+- Verify Python version compatibility (3.8+)
+
+## 📝 Example Workflows
+
+### Basic Analysis
+```bash
+# Quick analysis of current directory
+devix analyze . --verbose
+
+# Check reports
+ls devix_report_*.md devix_report_*.txt
+```
+
+### CI/CD Integration
+```bash
+# In your CI pipeline
+devix analyze . --output-dir ./reports
+
+# Check exit code for quality gates
+if [ $? -eq 0 ]; then
+  echo "Analysis passed!"
+else
+  echo "Analysis found issues"
+  exit 1
+fi
+```
+
+### Custom Configuration
+```bash
+# Create and customize config
+devix config create
+# Edit config.yaml as needed
+
+# Run with custom config
+devix analyze . --config ./my-config.yaml
+```
+
+## 🏗️ Architecture
+
+### High-Level Architecture
+
+This diagram illustrates the main components of the Devix platform and their interactions:
+
+```mermaid
+graph TD
+    subgraph User Interface
+        CLI[CLI]
+    end
+
+    subgraph Core System
+        Orchestrator(DevixOrchestrator)
+        ConfigManager[ConfigManager]
+    end
+
+    subgraph Analyzers
+        ProjectScanner[ProjectScanner]
+        SecurityAnalyzer[SecurityAnalyzer]
+        QualityAnalyzer[QualityAnalyzer]
+        TestAnalyzer[TestAnalyzer]
+        PerformanceAnalyzer[PerformanceAnalyzer]
+    end
+
+    subgraph Reporting
+        ReportGenerator[EnhancedReportGenerator]
+        MarkdownFormatter[MarkdownFormatter]
+        TextFormatter[TextFormatter]
+    end
+
+    CLI --> Orchestrator
+    Orchestrator --> ConfigManager
+    Orchestrator --> ProjectScanner
+    Orchestrator --> SecurityAnalyzer
+    Orchestrator --> QualityAnalyzer
+    Orchestrator --> TestAnalyzer
+    Orchestrator --> PerformanceAnalyzer
+    Orchestrator --> ReportGenerator
+    ReportGenerator --> MarkdownFormatter
+    ReportGenerator --> TextFormatter
+```
+
+### Workflow Sequence Diagram
+
+This diagram shows the sequence of operations during a typical analysis run:
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant CLI
+    participant DevixOrchestrator
+    participant Analyzers
+    participant ReportGenerator
+
+    User->>CLI: devix analyze .
+    CLI->>DevixOrchestrator: run_analysis()
+    DevixOrchestrator->>Analyzers: analyze() in parallel
+    Analyzers-->>DevixOrchestrator: Analysis results
+    DevixOrchestrator->>ReportGenerator: generate_reports()
+    ReportGenerator-->>DevixOrchestrator: Report files
+    DevixOrchestrator-->>CLI: Display summary
+    CLI-->>User: Output summary and report paths
+```
+
+### Module Structure
+
+```
+devix/
+├── src/devix/
+│   ├── analysis/          # Analysis modules
+│   │   ├── project_scanner.py
+│   │   ├── security_analyzer.py
+│   │   ├── quality_analyzer.py
+│   │   ├── test_analyzer.py
+│   │   └── performance_analyzer.py
+│   ├── reporting/         # Report generation
+│   │   ├── enhanced_generator.py
+│   │   ├── markdown_formatter.py
+│   │   └── text_formatter.py
+│   ├── cli/              # Command-line interface
+│   ├── config/           # Configuration management
+│   └── core/             # Core orchestration
+├── tests/                # Test suite
+└── docs/                 # Documentation
+```
+
+### Extension Points
+- **Custom Analyzers**: Inherit from `BaseAnalyzer`
+- **Custom Formatters**: Inherit from `BaseFormatter`
+- **Custom Configuration**: Extend `ConfigManager`
+
+## 🤝 Contributing
+
+### Development Setup
+```bash
+# Clone and setup
+git clone <repository>
+cd devix
+pip install -e ".[dev]"
+
+# Run tests
+make test
+
+# Run linting
+make lint
+
+# Format code
+make format
+```
+
+### Adding New Analyzers
+1. Create new analyzer in `src/devix/analysis/`
+2. Inherit from `BaseAnalyzer`
+3. Implement `analyze()` method
+4. Register in `DevixOrchestrator`
+5. Add tests and documentation
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+*Generated by **Devix** - Modular Code Analysis Platform*
