@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: mediamtx_py
+Version: 0.0.1
+Summary: Unofficial Python wrapper of MediaMTX
+Author-email: yt-koike <y.koike.2001code@gmail.com>
+License-Expression: MIT
+Project-URL: Repository, https://github.com/yt-koike/MediaMTX-py
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows :: Windows 11
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML==6.0.2
+Dynamic: license-file
+
+# MediaMTX-py
+
+This is an unofficial Python wrapper for [MediaMTX](https://mediamtx.org/)
+
+# How to use
+
+Execute `pip install git+https://github.com/yt-koike/MediaMTX-py` to install this package.
+
+After installation, you can use MediaMTX like as follows.
+
+```
+from mediamtx import MediaMTX
+mtx = MediaMTX() # In __init__(), the MediaMTX binary will be downloaded
+yaml = mtx.get_yaml() # Get mediamtx.yml
+yaml["paths"][name] = {"source": url}
+mtx.set_yaml(yaml) # Set mediamtx.yml
+mtx.start() # Start MediaMTX on another thread
+mtx.stop() # Stop the MediaMTX on the thread
+```
