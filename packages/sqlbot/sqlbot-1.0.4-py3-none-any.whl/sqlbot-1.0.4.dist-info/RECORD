@@ -1,0 +1,12 @@
+qbot/__init__.py,sha256=XO0ut6nwi-AQXjQ4rFP9tCmfbj2uArnbqb0wRrQslDM,199
+qbot/__version__.py,sha256=dP8Eoz_WlV63Bzj4_FTOyIwGHQNrvglXOJEBj5IG12Y,60
+qbot/conversation_memory.py,sha256=YCHPuC3jE3N4jnhZaW1L8R_KZLQXvvoIH_zqllVilf8,12133
+qbot/llm_integration.py,sha256=QMm2iI-v7t4oIIcp4gdvfStgju8QMw1obWH93UGRCAs,61116
+qbot/locations.py,sha256=wdTLdFS1GUHFIXfIQCIBLe_qcCy2vXlC6PA5nXRvdLg,1083
+qbot/repl.py,sha256=3k0m0K4kGd0-jrrZH2QO-nOYBNFseecbBV2XHropiWg,61133
+sqlbot-1.0.4.dist-info/licenses/LICENSE,sha256=7vxDISui4XjKosfQNOMBu7TrzGhUg82IlSUpHcnGxI0,1069
+sqlbot-1.0.4.dist-info/METADATA,sha256=0gdBPdmeBKDp6SDHhCTdUWSIpmn0t2sBzvb3ZphagrI,14713
+sqlbot-1.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sqlbot-1.0.4.dist-info/entry_points.txt,sha256=Qo4Cp6Zz_qoEUfJaytKwK7uB9vaQ89TaXp018J9xVj0,42
+sqlbot-1.0.4.dist-info/top_level.txt,sha256=3TxCe4UQRqeeV-Aoql1YyLRB3SzIslKrkY4dJCzczI0,5
+sqlbot-1.0.4.dist-info/RECORD,,
