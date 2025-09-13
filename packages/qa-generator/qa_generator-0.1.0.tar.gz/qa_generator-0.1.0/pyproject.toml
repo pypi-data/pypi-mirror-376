@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qa-generator"
+version = "0.1.0"
+description = "A Python package to generate question-answer pairs from plain text"
+authors = [{name = "QA Generator Team"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "nltk>=3.8",
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+]
+llm = [
+    "transformers>=4.20.0",
+    "torch>=1.12.0",
+]
+datasets = [
+    "pandas>=1.3.0",
+    "datasets>=2.0.0",
+    "huggingface_hub>=0.10.0",
+]
+advanced = [
+    "spacy>=3.4.0",
+]
+all = [
+    "transformers>=4.20.0",
+    "torch>=1.12.0",
+    "pandas>=1.3.0",
+    "datasets>=2.0.0",
+    "huggingface_hub>=0.10.0",
+    "spacy>=3.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hemanth/qa-generator"
+Repository = "https://github.com/hemanth/qa-generator"

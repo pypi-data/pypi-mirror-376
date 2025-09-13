@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.py
+qa_generator/__init__.py
+qa_generator/config.py
+qa_generator/dataset_generator.py
+qa_generator/generator.py
+qa_generator/llm_generator.py
+qa_generator/preprocessor.py
+qa_generator.egg-info/PKG-INFO
+qa_generator.egg-info/SOURCES.txt
+qa_generator.egg-info/dependency_links.txt
+qa_generator.egg-info/requires.txt
+qa_generator.egg-info/top_level.txt
