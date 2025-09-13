@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: fts-tool
+Version: 1.1.0b1
+Summary: Peer to peer file and directory transfer system
+Author-email: Terabase Studios <terabasestudios@gmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiofiles==24.1.0
+Requires-Dist: argcomplete==3.6.2
+Requires-Dist: cryptography==45.0.7
+Requires-Dist: psutil==7.0.0
+Requires-Dist: tqdm==4.67.1
+Requires-Dist: prompt_toolkit==3.0.52
+Requires-Dist: argparse-interface==0.2.0
+Dynamic: license-file
