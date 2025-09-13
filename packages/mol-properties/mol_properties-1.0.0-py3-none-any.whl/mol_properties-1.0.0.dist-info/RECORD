@@ -1,0 +1,10 @@
+mol_properties/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mol_properties/__main__.py,sha256=8UB5hfmsolZMtrdW834bEbJSqpddIZJmjNryIXBKQ2o,1169
+mol_properties/calc.py,sha256=puX2iHeUoiowSTS4iKZMFo6yQMyhTQxvMhVxJaQ_RK4,2052
+mol_properties/utils.py,sha256=EcVRsjaeGMaLzJ6FczKtukfY-7hEE3GJX49yl1jaUDI,754
+mol_properties-1.0.0.dist-info/licenses/LICENSE.txt,sha256=kbysvPWsx2SqtOI4tvP6hPXP517wVCUv1wVnbyBsVDQ,1087
+mol_properties-1.0.0.dist-info/METADATA,sha256=s32V7lr79EPSz6MsqOXWG5p3mE4ahLrARDW6HJ79smU,1973
+mol_properties-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mol_properties-1.0.0.dist-info/entry_points.txt,sha256=73wYIc7e2yDKIg_nqfbgyCFBoFHCWl-IfXEwuXjjKUc,64
+mol_properties-1.0.0.dist-info/top_level.txt,sha256=eHuq90EscVx91XXCqIOE7asWM69ltdaqdRIWlw7F8VY,15
+mol_properties-1.0.0.dist-info/RECORD,,
