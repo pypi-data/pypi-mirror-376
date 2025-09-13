@@ -1,0 +1,12 @@
+svgcheck/__init__.py,sha256=W0ShKl6ArbICtVMzOGOIBgcwK_Ij-8HJN7WMXydwHjk,223
+svgcheck/checksvg.py,sha256=_f9-0pmk7jsL4FW0Gb_HpNIdrLE0iON1eJhjNt9Ldvw,12317
+svgcheck/log.py,sha256=r2nqWvscdD8P9alc2KlHSF9bOdfFXHHsF9i9xw_ot7s,4188
+svgcheck/run.py,sha256=w5Mr9TTO4i6-6WQGiURuBS-0PuSCrpRHYklRWAs0zUY,7091
+svgcheck/test.py,sha256=moukud-mTQ5DpSQFlB2dGhCgLlz67CRke3MnxARyYCM,13193
+svgcheck/word_properties.py,sha256=IlwiVWmRQNWW4BLsPj_hwImgyzrFm_psl_83IIippPw,10910
+svgcheck-0.11.0.dist-info/licenses/LICENSE,sha256=XtscjKHlTuCQQQP_4fi53suPKmVWgu9PmgFstdbXocU,1533
+svgcheck-0.11.0.dist-info/METADATA,sha256=XQvUg1EJUwRNr6Qdx-XCjiZp57SOxLwULQSjqE_ddpA,4442
+svgcheck-0.11.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+svgcheck-0.11.0.dist-info/entry_points.txt,sha256=h7pAfp4WGYKtAVZ0CiEgRMFec26GWOA8QLj-b-CtTW0,47
+svgcheck-0.11.0.dist-info/top_level.txt,sha256=u7ZIxPZO5aZnaYVrRQXdorgZiK-LOKMCUEyzfnvcmQI,9
+svgcheck-0.11.0.dist-info/RECORD,,
