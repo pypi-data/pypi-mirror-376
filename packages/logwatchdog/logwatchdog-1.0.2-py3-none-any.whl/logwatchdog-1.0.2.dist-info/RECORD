@@ -1,0 +1,17 @@
+logwatchdog/__init__.py,sha256=Y_Ou7Y-z0-awD57005IPACOrWwxP_lHIAGYh3AqbFE8,908
+logwatchdog/email_service.py,sha256=CmOhgts_m0fDrZ9rMjh7sjZXPhDuIUlnkRVqpQ8n8A4,4036
+logwatchdog/log_config.ini,sha256=yuBQ_XasM7BP9nadG3O6Cn6YQ1DEa-8jK17rhI8njdA,1215
+logwatchdog/log_monitor.py,sha256=HibxSYaGvzTSo8TuD2XztGfs5Xu0RqwRsGJE39phHtg,26919
+logwatchdog/main.py,sha256=U1cnNLERuhZLM4ONim39TzlqhZ8EGX_6azp0Blc-U08,1016
+logwatchdog/notifier.py,sha256=JEdyZVEDcJow8SrzA1PhlJ-xEQFgpKL4H91S7BxTQmY,7083
+logwatchdog/tray_notifier.py,sha256=a3vM4da7z3mbiI6HNoZa-zrRTdOswh3XN50QUjYostU,4611
+logwatchdog/cli/__init__.py,sha256=XQ_-WUYvafW-868TJiuelapMZCcyhHJu68nC66cJIjw,125
+logwatchdog/cli/main.py,sha256=XKFx_LFW4ADgJtpphRU_MBHfrsug4S-TqSb6aGN-eHM,895
+logwatchdog/gui/__init__.py,sha256=VoxeX1esGHPupSUivfA1CoIDC8hVT6pw6H3oAWalHXk,127
+logwatchdog/gui/main.py,sha256=nTeRG2IwM6n87wY-M0hhcO589H_GphKn2opqdKsEQ3Q,556
+logwatchdog-1.0.2.dist-info/licenses/LICENSE,sha256=gVlxxwLno1lregJmr8O7IhcAczI42F4mDjdv1kn96H8,1100
+logwatchdog-1.0.2.dist-info/METADATA,sha256=LJji0NzF99CGlVcF1qiAbq7sUyNDMdY_di5lv4bF258,10290
+logwatchdog-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+logwatchdog-1.0.2.dist-info/entry_points.txt,sha256=LfrYwyrFUDjTa_uFtfttMq8QsXHGEV9WUI67Y3e4hFo,90
+logwatchdog-1.0.2.dist-info/top_level.txt,sha256=-yzSyEFEveqsBUzULHMN8PTJMzW-la99qfDUFegNy0M,12
+logwatchdog-1.0.2.dist-info/RECORD,,
