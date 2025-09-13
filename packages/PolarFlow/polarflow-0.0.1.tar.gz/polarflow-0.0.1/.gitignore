@@ -1,0 +1,14 @@
+**/__pycache__
+.venv
+.vscode
+.idea
+.*_cache
+.coverage
+
+uv.lock
+tmp/
+data/
+
+tmp.py
+
+.polar_logs
