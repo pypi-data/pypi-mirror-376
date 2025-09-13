@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: apkit
+Version: 0.3.0
+Summary: Powerful Toolkit for ActivityPub Implementations.
+Project-URL: Repository, https://github.com/fedi-libs/apkit
+Project-URL: Issues, https://github.com/fedi-libs/apkit/issues
+Project-URL: Changelog, https://github.com/fedi-libs/apkit/blob/main/CHANGELOG.md
+Author-email: AmaseCocoa <cocoa@amase.cc>
+License-File: LICENSE
+Requires-Python: >=3.12
+Requires-Dist: aiohttp>=3.12.15
+Requires-Dist: apmodel>=0.4.1
+Requires-Dist: apsig>=0.5.4
+Requires-Dist: httpx>=0.28.1
+Provides-Extra: redis
+Requires-Dist: redis>=5.0.4; extra == 'redis'
+Provides-Extra: server
+Requires-Dist: fastapi>=0.116.1; extra == 'server'
+Requires-Dist: uvicorn>=0.35.0; extra == 'server'
+Description-Content-Type: text/markdown
+
+# apkit
+> [!WARNING]
+> **apkit is not stable. API changes with no regard for backward compatibility and new releases are sometimes made at short intervals**.
+
+apkit is a modularized ActivityPub framework for Python, inspired by [Fedify](https://fedify.dev/) and [bovine](https://codeberg.org/bovine/bovine).
+## Installation
+
+apkit is avaliable on PyPI.
+```
+  # pip
+  pip install apkit
+
+  # uv
+  uv add apkit
+
+  # PDM
+  pdm add apkit
+```
+    
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Documentation
+[Documentation](https://apkit.kagura.social/docs)
+
