@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: fyp-scrape
+Version: 0.1.1
+Summary: A TikTok FYP scraper that downloads videos.
+Author-email: Adam Bielat <adam.bielat7@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/adambankz/tiktok-scraper
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fyp-scrape"
+version = "0.1.1"
+description = "A TikTok FYP scraper that downloads videos."
+authors = [{ name = "Adam Bielat", email = "adam.bielat7@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["requests"]
+
+[project.urls]
+Homepage = "https://github.com/adambankz/tiktok-scraper"
+
+[tool.setuptools.packages.find]
+include = ["fyp_scrape*"]
