@@ -1,0 +1,2 @@
+[console_scripts]
+ultracompress = ultracompress_module.ultrajson_pro:main_cli
