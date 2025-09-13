@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: accel-mtrng
+Version: 1.0
+Summary: Python bindings for a high-performance C++ random number library
+Author: surya narayan
+Requires-Python: >=3.7

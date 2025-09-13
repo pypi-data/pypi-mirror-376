@@ -1,0 +1,16 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel",
+    "pybind11>=2.10"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accel_mtrng"
+version = "1.0"
+authors = [
+    {name = "surya narayan"},
+]
+description = "Python bindings for a high-performance C++ random number library"
+requires-python = ">=3.7"

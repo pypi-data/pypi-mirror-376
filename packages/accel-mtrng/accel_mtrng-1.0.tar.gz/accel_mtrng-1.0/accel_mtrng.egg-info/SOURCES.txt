@@ -1,0 +1,12 @@
+MANIFEST.in
+bindings.cpp
+main.py
+pyproject.toml
+randomizer.cpp
+randomizer.h
+setup.cfg
+setup.py
+accel_mtrng.egg-info/PKG-INFO
+accel_mtrng.egg-info/SOURCES.txt
+accel_mtrng.egg-info/dependency_links.txt
+accel_mtrng.egg-info/top_level.txt
