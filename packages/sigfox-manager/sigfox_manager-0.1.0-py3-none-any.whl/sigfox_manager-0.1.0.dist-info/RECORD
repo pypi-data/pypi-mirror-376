@@ -1,0 +1,11 @@
+sigfox_manager/__init__.py,sha256=LkoRe7oJGJCFlZaKgCvw_59Nda7teUyES0XJsv_2x4s,1155
+sigfox_manager/sigfox_manager.py,sha256=j8ueaVHj45cnreAhTskLYywxk1-SVX_4KZ1j2T6Q1jc,6955
+sigfox_manager/models/schemas.py,sha256=vpPmUBSgoZ6BfZCay24e6ZnpZTYEmfN1Y5If-rOgcWk,6865
+sigfox_manager/sigfox_manager_exceptions/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sigfox_manager/sigfox_manager_exceptions/sigfox_exceptions.py,sha256=VMgKiCpemmgWBvIuPn6Bm0wu_YH4IZZIE8KzmsKfTyU,926
+sigfox_manager/utils/http_utils.py,sha256=6r7e0NbC7_P0Uwb7MvS4oZ6cIAq8f6nwQ76BX8D3Lvo,1092
+sigfox_manager-0.1.0.dist-info/licenses/LICENSE,sha256=8CgvFRvqm1-vN765WXUYlDyJZhnuVhQXe90eW45bZwI,1085
+sigfox_manager-0.1.0.dist-info/METADATA,sha256=39Xlsvbg-MZoGnSR99A7VAewQrR4-g306s2mkLD90nQ,6433
+sigfox_manager-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sigfox_manager-0.1.0.dist-info/top_level.txt,sha256=JJ9FdllbFHy7EY5aynL36cyn9zpzvxUPGxfaYKjnmHM,15
+sigfox_manager-0.1.0.dist-info/RECORD,,
