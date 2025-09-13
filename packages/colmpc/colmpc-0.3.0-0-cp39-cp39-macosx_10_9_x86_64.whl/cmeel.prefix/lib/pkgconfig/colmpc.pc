@@ -1,0 +1,22 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${pcfiledir}/../..
+libdir=${pcfiledir}/../../lib
+bindir=${pcfiledir}/../../bin
+pkglibdir=${pcfiledir}/../../lib/colmpc
+includedir=${pcfiledir}/../../include
+datarootdir=${pcfiledir}/../../share
+pkgdatarootdir=${pcfiledir}/../../share
+docdir=${pcfiledir}/../../share/doc/colmpc
+doxygendocdir=${pcfiledir}/../../share/doc/colmpc/doxygen-html
+
+Name: colmpc
+Description: Collision avoidance for MPC
+URL: https://github.com/agimus-project/colmpc
+Version: 0.3.0
+Requires: 
+Conflicts: 
+Libs: -L${libdir} 
+Libs.private: 
+Cflags:  -I${includedir}
+
+
