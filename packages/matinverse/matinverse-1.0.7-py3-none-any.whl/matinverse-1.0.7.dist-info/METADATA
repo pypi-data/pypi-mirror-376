@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: matinverse
+Version: 1.0.7
+Summary: Multiphysics Topology Optimization
+Author-email: Giuseppe Romano <romanog@mit.edu>
+License-Expression: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: lineax
+Requires-Dist: equinox
+Requires-Dist: diffrax
+Requires-Dist: optimistix
+Requires-Dist: plotly
+Requires-Dist: nlopt
+Requires-Dist: interpax
+Requires-Dist: msgpack
+Requires-Dist: msgpack-numpy
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Dynamic: license-file
+
+MatInverse is a code for multiphysics Topology optimization written in JAX
+
+To install:
+
+```bash
+
+  pip install matinverse
+
+```
