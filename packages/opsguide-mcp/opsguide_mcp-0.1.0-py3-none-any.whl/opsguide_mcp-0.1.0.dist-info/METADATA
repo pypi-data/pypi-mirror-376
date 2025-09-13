@@ -1,0 +1,192 @@
+Metadata-Version: 2.4
+Name: opsguide-mcp
+Version: 0.1.0
+Summary: MCP Server proxy for Amazon Bedrock AgentCore Runtime
+Author-email: Ekky Armandi <me@ekky.dev>
+License-Expression: MIT
+Keywords: ai,bedrock,mcp,opsguide,proxy
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Requires-Dist: httpx>=0.24.0
+Requires-Dist: mcp>=1.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Description-Content-Type: text/markdown
+
+# OpsGuide MCP Proxy
+
+A Model Context Protocol (MCP) server proxy for OpsGuide's Amazon Bedrock AgentCore Runtime. This package allows you to use your existing Bedrock AgentCore MCP server with Claude Code and other MCP clients that expect stdio communication.
+
+## Overview
+
+This proxy server acts as a bridge between:
+- **MCP clients** (like Claude Code) that communicate via stdio
+- **Amazon Bedrock AgentCore Runtime** that hosts your MCP server via HTTP
+
+```
+Claude Code ↔ uvx opsguide-mcp ↔ HTTP Client ↔ Bedrock AgentCore Runtime ↔ OpsGuide MCP Server
+```
+
+## Features
+
+- **Protocol Bridge**: Converts between stdio (MCP client) and HTTP (Bedrock AgentCore)
+- **Tool Proxying**: Forwards all tool calls to your Bedrock-hosted MCP server
+- **Resource Access**: Proxies resource reading and listing
+- **Prompt Support**: Forwards prompt operations
+- **uvx Compatible**: Easy installation and usage with `uvx`
+- **Environment Configuration**: Uses standard environment variables
+
+## Prerequisites
+
+- Python 3.10 or higher
+- `uv` package manager
+- Amazon Bedrock AgentCore Runtime with deployed MCP server
+- Valid API key and agent ARN
+
+## Installation
+
+### For Claude Code
+
+Add this configuration to your Claude Code MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "opsguide-mcp": {
+      "command": "uvx",
+      "args": ["opsguide-mcp@latest"],
+      "env": {
+        "API_KEY": "your-bearer-token"
+      }
+    }
+  }
+}
+```
+
+### Direct Installation
+
+```bash
+# Install with uvx (recommended)
+uvx opsguide-mcp
+
+# Or install with pip
+pip install opsguide-mcp
+```
+
+## Environment Variables
+
+Only one environment variable is required:
+
+- `API_KEY`: The bearer token for authentication
+
+**Hardcoded Configuration:**
+- `AGENT_ARN`: `arn:aws:bedrock-agentcore:us-east-1:654654574429:runtime/opsguide_mcp_server_example-feNooQ7JbB` 
+- `AWS_REGION`: `us-east-1`
+
+### Example .env file
+
+```env
+API_KEY=eyJraWQiOiI3RG1ZaXlQbnpoUXR6cmRXNmtvWEd5anhaZU9FaitXcHBpck1rcDlvbHFjPSIsImFsZyI6IlJTMjU2In0...
+```
+
+## Usage
+
+### With Claude Code
+
+1. Configure the MCP server in Claude Code settings (see installation section)
+2. Restart Claude Code
+3. Your Bedrock-hosted MCP tools will be available in Claude Code
+
+### Command Line
+
+```bash
+# Run directly
+opsguide-mcp
+
+# Run with uvx
+uvx opsguide-mcp
+
+# Run with environment variable
+API_KEY="your-bearer-token" opsguide-mcp
+```
+
+## How It Works
+
+1. **Startup**: The proxy server reads your environment variables
+2. **Connection**: Establishes HTTP connection to Bedrock AgentCore Runtime
+3. **Discovery**: Lists available tools, resources, and prompts from your MCP server
+4. **Proxying**: Forwards all MCP requests from Claude Code to Bedrock AgentCore
+5. **Response**: Returns results back to Claude Code via stdio
+
+## Troubleshooting
+
+### Common Issues
+
+**Connection Failed**
+- Verify your `API_KEY` is correct and not expired
+- Check that your Bedrock AgentCore runtime is running
+- Ensure you have network access to bedrock-agentcore.us-east-1.amazonaws.com
+
+**No Tools Available**
+- Check that your MCP server is properly deployed in Bedrock AgentCore
+- Verify the runtime is in "DEFAULT" qualifier state
+- Check logs for connection errors
+
+**Authentication Errors**
+- Ensure your API_KEY (bearer token) is valid and not expired
+- Verify the token has permission to invoke the specified runtime
+
+### Debug Mode
+
+Run with debug logging:
+
+```bash
+PYTHONPATH=. python -m bedrock_mcp_proxy.server
+```
+
+## Development
+
+### Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/opsguide-mcp
+cd opsguide-mcp
+
+# Install dependencies
+uv sync
+
+# Run locally
+uv run opsguide-mcp
+```
+
+### Testing
+
+```bash
+# Test the connection
+python test_connection.py
+```
+
+## Security Considerations
+
+- **API Keys**: Store API keys securely using environment variables or secure credential management
+- **Network Access**: The proxy requires outbound HTTPS access to AWS Bedrock AgentCore
+- **Authentication**: Bearer tokens should be rotated regularly
+- **Logging**: Be careful not to log sensitive information
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Support
+
+For issues related to:
+- **This proxy**: Open an issue on this repository
+- **Bedrock AgentCore**: Consult AWS documentation
+- **Claude Code**: Check Claude Code documentation

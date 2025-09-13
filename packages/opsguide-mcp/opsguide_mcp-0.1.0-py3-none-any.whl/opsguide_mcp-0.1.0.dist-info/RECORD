@@ -1,0 +1,7 @@
+bedrock_mcp_proxy/__init__.py,sha256=PoaSUsIladUrEsyscog3jnq4H_rI-8Lkrt4XYkS1Uks,158
+bedrock_mcp_proxy/client.py,sha256=d9mvZiqnX8oU8RYp9RMZWGwy-j3GbhK42UM4F7vf69Y,4043
+bedrock_mcp_proxy/server.py,sha256=jdH5k1FWEMleZ98gMYQFBNwuc0IEOFJbr4p4pRJavCQ,7088
+opsguide_mcp-0.1.0.dist-info/METADATA,sha256=Ark3SNEpkYfFtvFAnojPM7UiV8M2CW9z10aj77WkN14,5107
+opsguide_mcp-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+opsguide_mcp-0.1.0.dist-info/entry_points.txt,sha256=NMKteHvIGpejmkaADKpB0Kx5yuk-GBtLM6PWQOotuvI,62
+opsguide_mcp-0.1.0.dist-info/RECORD,,
