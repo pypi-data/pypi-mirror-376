@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: mhjsmap
+Version: 1.0.11
+Summary: A MCP server for AMap route planning and visualization
+Author-email: yangenhong <2678269796@qq.com>
+License: MIT
+Project-URL: Homepage, https://pypi.org/project/mhjsmap/
+Keywords: MCP,map,visualization,drawing,amap
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: mcp
+Requires-Dist: requests
+
+# mhjsmap
+A MCP server for Amap route planning
+## Installation
+\\\bash
+pip install mhjsmap
+\\\
