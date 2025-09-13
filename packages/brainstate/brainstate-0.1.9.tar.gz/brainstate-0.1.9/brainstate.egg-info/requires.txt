@@ -1,0 +1,8 @@
+jax
+jaxlib
+numpy
+brainunit>=0.1.0
+brainevent
+
+[testing]
+pytest
