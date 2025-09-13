@@ -1,0 +1,10 @@
+Metadata-Version: 2.3
+Name: shinalysis
+Version: 0.1.1
+Summary: This package contains functions that support basic calibration and analysis of interferograms produced using spatial heterodyne interferometers.
+Author: Cole
+Author-email: Cole <cmmeyer@arizona.edu>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# shinalysis
