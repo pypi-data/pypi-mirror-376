@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "manufacturing-forecast"
+description = "A Python package for machine learning and data processing methods for manufacturing forecasting"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Manufacturing Forecast Team", email = "contact@example.com"}]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers", 
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9", 
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+    "scikit-learn>=1.0.0",
+    "pandas>=1.3.0",
+    "xgboost>=1.5.0",
+    "lightgbm>=3.3.0",
+    "shap>=0.40.0",
+    "joblib>=1.0.0",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+catboost = ["catboost>=1.0"]
+dev = [
+    "pytest>=6.0",
+    "black",
+    "isort", 
+    "flake8",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/manufacturing_forecast"
+"Bug Reports" = "https://github.com/yourusername/manufacturing_forecast/issues"
+"Source" = "https://github.com/yourusername/manufacturing_forecast"
+
+[tool.setuptools]
+packages = ["manufacturing_forecast", "manufacturing_forecast.models", "manufacturing_forecast.data"]
+
+[tool.setuptools.dynamic]
+version = {attr = "manufacturing_forecast.__version__"}
