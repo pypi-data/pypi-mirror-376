@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+tests/__init__.py
+tests/test_zippa.py
+zippa.egg-info/PKG-INFO
+zippa.egg-info/SOURCES.txt
+zippa.egg-info/dependency_links.txt
+zippa.egg-info/entry_points.txt
+zippa.egg-info/requires.txt
+zippa.egg-info/top_level.txt
