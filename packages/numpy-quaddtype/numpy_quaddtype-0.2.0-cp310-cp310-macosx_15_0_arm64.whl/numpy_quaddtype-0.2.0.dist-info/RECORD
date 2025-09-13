@@ -1,0 +1,7 @@
+numpy_quaddtype/__init__.py,sha256=njWfTVMx1d6awqZvqo4WJW6jojpW3FHKoaJTuifDQKg,1474
+numpy_quaddtype/_quaddtype_main.cpython-310-darwin.so,sha256=LjnkfY4nm03DPCfBZ_vBbJo9NKWBb7nRGHm7rv-UOU8,969776
+numpy_quaddtype/.dylibs/libomp.dylib,sha256=TetJcKAnscIzkrv0AiLUTjJFKbqUQcEAh-fX8gY5sR8,743584
+numpy_quaddtype-0.2.0.dist-info/RECORD,,
+numpy_quaddtype-0.2.0.dist-info/LICENSE,sha256=R89YvpdHKGUqld_OR6jHwcDC34rEF7bEHy8FHu6wX7E,1538
+numpy_quaddtype-0.2.0.dist-info/WHEEL,sha256=4r7Y2xP6X16bhJnOmdsMK_LtO55O5S8bodEUs8nDQZw,122
+numpy_quaddtype-0.2.0.dist-info/METADATA,sha256=zI0Gb9y2n49dukTAgVAmQNZlZ7o5AS5vnwinHkiXiJU,4653
