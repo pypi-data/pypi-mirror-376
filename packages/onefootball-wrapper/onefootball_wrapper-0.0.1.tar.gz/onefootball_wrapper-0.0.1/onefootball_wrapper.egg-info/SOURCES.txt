@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+onefootball-wrapper/__init__.py
+onefootball-wrapper/api.py
+onefootball_wrapper.egg-info/PKG-INFO
+onefootball_wrapper.egg-info/SOURCES.txt
+onefootball_wrapper.egg-info/dependency_links.txt
+onefootball_wrapper.egg-info/requires.txt
+onefootball_wrapper.egg-info/top_level.txt

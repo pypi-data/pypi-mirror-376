@@ -1,0 +1,162 @@
+Metadata-Version: 2.4
+Name: onefootball-wrapper
+Version: 0.0.1
+Summary: Python API wrapper for OneFootball undocumented API
+Home-page: https://github.com/tommhe14/onefootball-wrapper
+Author: tommhe14
+Author-email: theckley@yahoo.co.uk
+License: MIT
+Project-URL: Bug Reports, https://github.com/tommhe14/cs2api/tonefootball-wrapper
+Project-URL: Source, https://github.com/tommhe14/onefootball-wrapper
+Keywords: transfermarkt tmk tmkt football soccer fotmob sofascore flashscore api wrapper onefootball one football
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# onefootball-wrapper - A OneFootball API Wrapper
+
+A Python wrapper for the OneFootball API, providing easy access to football (soccer) data including players, clubs, competitions, transfers, and more.
+
+[![PyPI Downloads](https://static.pepy.tech/badge/onefootball-wrapper)](https://pepy.tech/projects/onefootball-wrapper)
+
+## Features
+
+- **Player Data**: Transfers, injuries, profiles
+- **Club Data**: Squads, stadiums, transfers
+- **Competition Data**: Tables, participating clubs
+- **Search Functionality**: Players, clubs, leagues
+
+## Installation
+
+```bash
+pip install onefootball-wrapper
+```
+
+## Example usage
+
+```py
+import asyncio
+from onefootball import OneFootball
+
+import json
+
+async def main():
+    async with OneFootball() as of:
+        # Search for players
+        results = await of.search("saka")
+        print(json.dumps(results, indent = 4))
+        
+        # Get team information
+        team = await of.get_team(2)  # Arsenal
+        print(json.dumps(team, indent = 4))
+        
+        # Get today's matches
+        matches = await of.get_today_matches()
+        print(json.dumps(matches, indent = 4))
+
+asyncio.run(main())
+```
+
+## Complete API Reference
+
+### Search Endpoints
+
+| Method | Description | Example |
+|--------|-------------|---------|
+| `search(query: str)` | Search for players, teams, etc. | `search("saka")` |
+| `search_players(query: str)` | Search for players | `search("saka")` |
+| `search_teams(query: str)` | Search for teams | `search_teams("arsenal")` |
+| `search_competitions(query: str)` | Search for competitions | `search_competitions("premier league")` |
+| `search_news(query: str)` | Search for news | `search_news("premier league")` |
+
+### Team Endpoints
+
+| Method | Description | Example |
+|--------|-------------|---------|
+| `get_team(team_id: int)` | Get team data | `get_team(2)` |
+| `get_team_transfers(team_id: int)` | Get team transfers | `get_team_transfers(2)` |
+| `get_team_relevant_items(team_id: int)` | Get team relevant news | `get_team_relevant_items(2)` |
+| `get_team_news(team_id: int)` | Get team news | `get_team_news(2)` |
+| `get_team_season_stats(team_id: int, season_id: int, current_group: int = 1, games_n: int = 5)` | Get team season stats | `get_team_season_stats(2, 43029)` |
+| `get_team_fixtures(team_id: int, since_date: Optional[date] = None)` | Get team fixtures | `get_team_fixtures(2)` |
+| `get_team_next_match(team_id: int)` | Get team next fixture | `get_team_next_match(2)` |
+| `get_team_previous_match(team_id: int, until_date: Optional[str] = None)` | Get team last fixture | `get_team_previous_match(2)` |
+
+
+### Competition Endpoints
+
+| Method | Description | Example |
+|--------|-------------|---------|
+| `get_competition_top_players(competition_id: int)` | Get top players in a competition | `get_competition_top_players(9)` |
+| `get_competition_stats(competition_id: int, season_id: int)` | Get competition statistics | `get_competition_stats(9, 43029)` |
+| `get_competition(competition_id: int)` | Get competition info | `get_competition(9)` |
+| `get_competition_matches(competition_id: int, number_next: int = 1, number_previous: int = 1)` | Get competition matches | `get_competition_matches(9)` |
+| `get_competition_standings(competition_id: int, season_id: int)` | Get competition standings | `get_competition_standings(9, 43029)` |
+| `get_competition_video_news(competition_id: int)` | Get competition video news | `get_competition_video_news(9)` |
+| `get_competition_news(competition_id: int)` | Get competition news | `get_competition_news(9)` |
+| `get_competition_transfers(competition_id: int)` | Get competition transfers | `get_competition_transfers(9)` |
+| `get_competition_matchdays(competition_id: int, season_id: int)` | Get competition matchdays | `get_competition_matchdays(9, 43029)` |
+| `get_all_competitions()` | Get all competitions | `get_all_competitions()` |
+
+
+
+### Match Endpoints
+
+| Method | Description | Example |
+|--------|-------------|---------|
+| `get_match(match_id: int, country: str = "gb")` | Get match information | `get_match(2595592)` |
+| `get_match_news(match_id: int, country: str = "gb")` | Get match news | `get_match_news(2595592)` |
+| `get_match_tv_listings(match_id: int, country: str = "gb")` | Get match TV listings | `get_match_tv_listings(2595592)` |
+| `get_match_widget(match_id: int)` | Get live match widget | `get_match_widget(2595592)` |
+| `get_match_predictions(match_id: int)` | Get match prediction votes | `get_match_predictions(2595592)` |
+| `get_match_odds(match_id: int, bookmaker_id: int = 3)` | Get match odds | `get_match_odds(2595592)` |
+| `get_today_matches()` | Get today's matches | `get_today_matches()` |
+| `get_live_matches()` | Get live matches | `get_live_matches()` |
+| `get_tomorrow_matches()` | Get tomorrow's matches | `get_tomorrow_matches()` |
+| `get_matches_by_date(match_date: date)()` | Get matches by specific date | `get_matches_by_date(date(2025, 9, 14))` |
+
+### Player Endpoints
+
+| Method | Description | Example |
+|--------|-------------|---------|
+| `get_player_transfers(player_id: int)` | Get player transfers | `get_player_transfers(257485)` |
+| `get_player_stats(player_slug: str)` | Get player stats by slug | `get_player_stats("bukayo-saka-257485")` |
+| `get_player_competition_stats(player_slug: str, season_id: int)` | Get player competition stats | `get_player_competition_stats("bukayo-saka-257485", 43072)` |
+| `get_player_news(player_slug: str)` | Get player news by slug | `get_player_competition_stats("get_player_news("bukayo-saka-257485")` |
+
+## Rate Limiting
+
+Be mindful of rate limits when making multiple requests. Consider adding delays between requests if you're making many calls in succession.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Tips and Tricks
+- If a function requires a slug, You have to splice it from the returned URL, for example the player URL as the API does not directly provide that.
