@@ -1,0 +1,11 @@
+mol_properties/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mol_properties/__main__.py,sha256=8UB5hfmsolZMtrdW834bEbJSqpddIZJmjNryIXBKQ2o,1169
+mol_properties/calc.py,sha256=puX2iHeUoiowSTS4iKZMFo6yQMyhTQxvMhVxJaQ_RK4,2052
+mol_properties/utils.py,sha256=EcVRsjaeGMaLzJ6FczKtukfY-7hEE3GJX49yl1jaUDI,754
+mol_properties-1.0.1.dist-info/LICENSE,sha256=XHtauu9xRGrjz3Xy8QBgFCLPPEOs45dxt9Bhk_N8KJg,1087
+mol_properties-1.0.1.dist-info/LICENSE.txt,sha256=kbysvPWsx2SqtOI4tvP6hPXP517wVCUv1wVnbyBsVDQ,1087
+mol_properties-1.0.1.dist-info/METADATA,sha256=dgP0OK3jcd89qPmXVDIEY5xp3CJsf06zOWPr7W3dJv4,2250
+mol_properties-1.0.1.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+mol_properties-1.0.1.dist-info/entry_points.txt,sha256=73wYIc7e2yDKIg_nqfbgyCFBoFHCWl-IfXEwuXjjKUc,64
+mol_properties-1.0.1.dist-info/top_level.txt,sha256=eHuq90EscVx91XXCqIOE7asWM69ltdaqdRIWlw7F8VY,15
+mol_properties-1.0.1.dist-info/RECORD,,
