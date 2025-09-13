@@ -1,0 +1,119 @@
+[project]
+name = "synthgenai"
+version = "2.0.0"
+description = "SynthGenAI - Package for generating Synthetic Datasets."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Bojan Jakimovski - Shekswess", email = "jakimovski_bojan@outlook.com" },
+]
+dependencies = [
+    "boto3==1.40.28",
+    "datasets==4.0.0",
+    "huggingface-hub==0.34.4",
+    "jinja2==3.1.4",
+    "langfuse==3.3.4",
+    "litellm==1.77.0",
+    "loguru==0.7.3",
+    "pydantic==2.11.7",
+    "python-dotenv>=1.1.1",
+    "tqdm==4.67.1",
+    "typer==0.17.4",
+]
+license = { file = "LICENCE.txt" }
+
+[project.scripts]
+synthgenai = "synthgenai.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["I", "E", "F"]
+ignore = ["E501"]
+
+fixable = ["ALL"]
+unfixable = []
+
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ty.rules]
+non-subscriptable = "warn"
+unused-ignore-comment = "warn"
+invalid-argument-type = "warn"
+invalid-parameter-default = "warn"
+unresolved-import = "ignore"
+invalid-assignment = "warn"
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "live: marks tests that make live API calls (deselect with '-m \"not live\"')",
+    "asyncio: marks tests that use asyncio",
+]
+
+
+[dependency-groups]
+dev = [
+    "pre-commit==4.3.0",
+    "pytest==8.4.2",
+    "pytest-asyncio==1.1.0",
+    "pytest-mock==3.14.1",
+    "ruff==0.12.12",
+    "ty==0.0.1a8",
+    "ipykernel==6.29.5",
+]
+docs = [
+    "mkdocs==1.6.1",
+    "mkdocs-git-committers-plugin-2==2.5.0",
+    "mkdocs-git-revision-date-localized-plugin==1.4.7",
+    "mkdocs-material==9.5.49",
+    "mkdocs-minify-plugin==0.8.0",
+]
