@@ -1,0 +1,12 @@
+README
+pyproject.toml
+masquerade/__init__.py
+masquerade/cli.py
+masquerade/masquerade.py
+masquerade_spatial.egg-info/PKG-INFO
+masquerade_spatial.egg-info/SOURCES.txt
+masquerade_spatial.egg-info/dependency_links.txt
+masquerade_spatial.egg-info/entry_points.txt
+masquerade_spatial.egg-info/requires.txt
+masquerade_spatial.egg-info/top_level.txt
+tests/test_masquerade.py
