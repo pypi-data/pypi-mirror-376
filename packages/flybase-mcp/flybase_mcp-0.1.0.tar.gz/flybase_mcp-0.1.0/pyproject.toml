@@ -1,0 +1,19 @@
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flybase-mcp"
+version = "0.1.0"
+description = "MCP server for FlyBase"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.13.1",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"flybase_mcp_server" = ["data/*.csv"]
