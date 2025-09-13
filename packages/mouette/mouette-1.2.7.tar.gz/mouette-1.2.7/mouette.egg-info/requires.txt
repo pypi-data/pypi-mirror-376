@@ -1,0 +1,8 @@
+aenum
+numba
+numpy
+osqp>=1.0.4
+pyminiply
+scipy
+stl-reader
+tqdm
