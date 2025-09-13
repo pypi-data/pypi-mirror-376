@@ -1,0 +1,14 @@
+pysolidarity/__init__.py,sha256=B8sV6ltHWl_BgwZfWpvdLcKcoIS8cXTyLEwAQI_kKKQ,256
+pysolidarity/_version.py,sha256=Pru0BlFBASFCFo7McHdohtKkUtgMPDwbGfyUZlE2_Vw,21
+pysolidarity/client.py,sha256=S93lXRb-g1epqrLRnmX3Q5ZUcRjLAqOcN6cKzsYvPEc,4252
+pysolidarity/errors.py,sha256=fLjwZbQFB3sWHR02i3WGRHfmmMqi7s11AWav5LuqTXQ,1711
+pysolidarity/factory.py,sha256=cD4YSTFuFfjhRdQ8iUqCAS_G_RDchQowZWtqKkOTluU,1554
+pysolidarity/http.py,sha256=b4ykLDv8RoAc1aXpgoZv4DxqZ0_zZeLmfLOUXbLRgOc,829
+pysolidarity/py.typed,sha256=VYL6FcF1AldFSKMfozPAM6rysrZX7Iq4ZvtjMUORC-M,48
+pysolidarity/retry.py,sha256=jpcKBfsgi059YKupiL8cek6NQ7xAi-n47ZryuUZq49k,1698
+pysolidarity/types.py,sha256=M9HyIdMAI5MUuGz92_JMmmy7eoPhMHKOIK-_TgVKL-A,1675
+pysolidarity/resources/__init__.py,sha256=PxU8_PxOMDhJUp79TjeGBzAPh5XXwF17EVQK2hVHGOk,61
+pysolidarity/resources/users.py,sha256=M5qHKKzB3EHDX6nDtXTL2P7xc58QP8VbbCbYbBQwcY0,787
+pysolidarity-0.1.0.dist-info/METADATA,sha256=fL_3DPMdMExRTVaUie_t2vdoCnQNa1pzHf2_CznEFIk,2290
+pysolidarity-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pysolidarity-0.1.0.dist-info/RECORD,,
