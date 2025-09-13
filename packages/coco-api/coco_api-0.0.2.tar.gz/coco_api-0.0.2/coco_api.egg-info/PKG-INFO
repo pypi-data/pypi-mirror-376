@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: coco-api
+Version: 0.0.2
+Summary: A middleware rich backend framework for building APIs.
+Author-email: A S Nandanunni <asnqln@gmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# COCO API
+
+A middleware rich backend framework for building APIs.
+
+## Install
+
+- `pip install coco-api`
+
+## Usage
+
+```python
+from coco_api import CocoAPI
+
+app = CocoAPI()
+
+if __name__ == "__main__":
+    app.run()
+
+```
+
+## Status
+
+Currently under active development.
+
+## Notes
+
+⚠️ Do not use versions below 1.0.0 in production.
