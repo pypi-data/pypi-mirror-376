@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-helper-tools"
+version = "0.1.0"
+description = "LLM utilities and tools"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Tobias Kirsch", email = "tobki4242@gmail.com" }
+]
+dependencies = [
+  "pydantic",
+  "google",
+  "parse_llm_code",
+  "langchain_core",
+  "langchain_community",
+  "langchain_openai",
+  "langchain_anthropic",
+  "langchain_google_genai",
+  "langchain_mistralai",
+  "langchain_ollama",
+  "torch",
+  "sentence_transformers",
+  "pypdf",
+  "bs4"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
