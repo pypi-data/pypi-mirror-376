@@ -1,0 +1,11 @@
+nanoslurm/__init__.py,sha256=QnBo2LQYI81VBQTinoQjBB2Y16cUqRolXdoU0xjSbB8,386
+nanoslurm/cli.py,sha256=F-mi9Dlwl1PURpCwnugKZwnTWV5eY3Dd5GrVD8PSE78,5801
+nanoslurm/defaults.py,sha256=K_yuunkqkL1UUTujHb5EOJNg6l14WFGTTvwDIBxU7GM,1448
+nanoslurm/nanoslurm.py,sha256=UGi6ZYG5CcG5qMFhUuMMEMsh-ClTGAACOTRBI9zNqcE,7599
+nanoslurm/run.sh,sha256=e-nrg8Peo5jZOq5gfZlk0VSo2_dp1_y47BplD0Ebfik,2563
+nanoslurm/tui.py,sha256=DL2b5Vlk8aCR-MgGmBUQUFjyp6TDt6i5CX8zaElpFNA,5116
+nanoslurm-0.1.3.dist-info/METADATA,sha256=aCfya8Bj1rx7BgLdIIKzmTfq2qA9zc7KQjJRmcUdm-I,3236
+nanoslurm-0.1.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+nanoslurm-0.1.3.dist-info/entry_points.txt,sha256=vzu7pKy2P-aUldUnzMNGMmK1btF6g1EPN1F0GK69J_Q,45
+nanoslurm-0.1.3.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+nanoslurm-0.1.3.dist-info/RECORD,,
