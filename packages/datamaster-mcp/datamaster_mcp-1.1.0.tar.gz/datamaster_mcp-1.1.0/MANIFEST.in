@@ -1,0 +1,46 @@
+# 包含主要的包目录
+recursive-include datamaster_mcp *.py
+recursive-include datamaster_mcp *.json
+recursive-include datamaster_mcp *.txt
+
+# Include documentation files
+include README.md
+include CHANGELOG.md
+include VERSION.md
+include LICENSE
+include requirements.txt
+include .env.example
+
+# Include documentation
+include *.md
+
+# Include configuration files
+recursive-include datamaster_mcp/config *.json
+recursive-include datamaster_mcp/config *.py
+
+# Exclude unnecessary files
+exclude .gitignore
+exclude *.pyc
+exclude *.pyo
+exclude *.pyd
+exclude __pycache__
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.so
+recursive-exclude * .DS_Store
+recursive-exclude * .git*
+
+# Exclude development and build files
+exclude .env
+exclude build
+exclude dist
+exclude *.egg-info
+recursive-exclude build *
+recursive-exclude dist *
+recursive-exclude *.egg-info *
+
+# Exclude data and exports directories (runtime generated)
+exclude data
+exclude exports
+recursive-exclude data *
+recursive-exclude exports *
