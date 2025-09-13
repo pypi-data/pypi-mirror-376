@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: weexin
+Version: 1.0.1
+Summary: weexin v1 version
+Author-email: K8sCat <k8scat@gmail.com>
+Requires-Python: <=3.15,>=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tenacity
+Requires-Dist: pywin32
+Requires-Dist: pyperclip
+Requires-Dist: pillow
+Requires-Dist: psutil
+Requires-Dist: colorama
+Requires-Dist: comtypes
+Dynamic: license-file
+
+weexin package
