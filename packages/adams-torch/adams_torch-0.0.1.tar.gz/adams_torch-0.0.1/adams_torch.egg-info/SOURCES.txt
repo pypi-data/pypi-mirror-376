@@ -1,0 +1,15 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+.github/workflows/pypi_publish.yaml
+adams/__init__.py
+adams/_version.py
+adams/adams_zero.py
+adams/py.typed
+adams_torch.egg-info/PKG-INFO
+adams_torch.egg-info/SOURCES.txt
+adams_torch.egg-info/dependency_links.txt
+adams_torch.egg-info/requires.txt
+adams_torch.egg-info/top_level.txt
+assets/adams_pseudocode.png
