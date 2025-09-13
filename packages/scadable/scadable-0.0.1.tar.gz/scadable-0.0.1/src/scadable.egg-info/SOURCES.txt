@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/scadable/__init__.py
+src/scadable.egg-info/PKG-INFO
+src/scadable.egg-info/SOURCES.txt
+src/scadable.egg-info/dependency_links.txt
+src/scadable.egg-info/top_level.txt
