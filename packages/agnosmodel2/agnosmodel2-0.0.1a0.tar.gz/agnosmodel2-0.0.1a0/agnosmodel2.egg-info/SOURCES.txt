@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+agnosmodel2/__init__.py
+agnosmodel2/agnosmodel2.py
+agnosmodel2/plus.py
+agnosmodel2.egg-info/PKG-INFO
+agnosmodel2.egg-info/SOURCES.txt
+agnosmodel2.egg-info/dependency_links.txt
+agnosmodel2.egg-info/not-zip-safe
+agnosmodel2.egg-info/requires.txt
+agnosmodel2.egg-info/top_level.txt
