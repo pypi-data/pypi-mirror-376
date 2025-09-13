@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: ai_assistant_provider
+Version: 0.0.3
+Summary: Sub Module for AI Assistant Project
+Home-page: 
+Author: Arun CS
+Author-email: aruncs31s@proton.com
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: summary
+
+# AI Assistant Provider
+
+Version : 0.0.3
+## Installation
+
+```bash
+pip install ai-assistant-provider
+```
+
