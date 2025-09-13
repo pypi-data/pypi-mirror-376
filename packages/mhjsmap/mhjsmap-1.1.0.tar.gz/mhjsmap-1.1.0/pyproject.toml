@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]  # 添加 setuptools-scm
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mhjsmap"
+version = "1.1.0"
+authors = [
+    { name = "yangenhong", email = "2678269796@qq.com" },
+]
+description = "A MCP server for AMap route planning and visualization"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }  # 修正许可证格式
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "mcp",  # 修正包名，应该是 mcp 而不是 mcp-server
+    "requests",
+]
+keywords = ["MCP", "map", "visualization", "drawing", "amap"]
+urls = { "Homepage" = "https://pypi.org/project/mhjsmap/" }
+
+# 修正入口点 - 指向正确的模块
+[project.scripts]
+mhjsmap = "mhjsmap.mcpmap:run"  # 直接指向 mcpmap 中的 run 函数
+
+# 添加包发现配置
+[tool.setuptools]
+package-dir = { "" = "src" }  # 告诉 setuptools 包在 src 目录下
+packages = { find = { where = ["src"] } }  # 在 src 目录中查找包
+
+# 可选：如果你想要自动版本管理
+[tool.setuptools_scm]  # 需要安装 setuptools-scm

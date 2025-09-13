@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/mhjsmap.egg-info/PKG-INFO
+src/mhjsmap.egg-info/SOURCES.txt
+src/mhjsmap.egg-info/dependency_links.txt
+src/mhjsmap.egg-info/entry_points.txt
+src/mhjsmap.egg-info/requires.txt
+src/mhjsmap.egg-info/top_level.txt
