@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: pkg-deploy
+Version: 1.0.0a1
+Summary: Modern Python Package Deployment Tool
+Author: cw
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: toml
+Requires-Dist: tomlkit
+Requires-Dist: build
+Requires-Dist: twine
+Requires-Dist: Cython
+Requires-Dist: setuptools>=70
+
+# Description
