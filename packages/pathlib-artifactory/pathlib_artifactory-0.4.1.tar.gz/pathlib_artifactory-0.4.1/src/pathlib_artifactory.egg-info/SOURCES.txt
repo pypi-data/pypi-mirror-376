@@ -1,0 +1,10 @@
+LICENSE
+README.rst
+pyproject.toml
+src/pathlib_artifactory.py
+src/pathlib_artifactory.egg-info/PKG-INFO
+src/pathlib_artifactory.egg-info/SOURCES.txt
+src/pathlib_artifactory.egg-info/dependency_links.txt
+src/pathlib_artifactory.egg-info/requires.txt
+src/pathlib_artifactory.egg-info/top_level.txt
+tests/test_uri.py
