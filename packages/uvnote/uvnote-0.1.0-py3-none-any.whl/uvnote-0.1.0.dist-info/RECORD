@@ -1,0 +1,11 @@
+uvnote/__init__.py,sha256=lgYg0p5dT6XgYEZJBJ1KP6VT5pp72vIZPOyzNxQjxXw,94
+uvnote/cache.py,sha256=vzN33Ghmn998U9PrjtfY2OGEVuoLnyOtFdVrOhDp7v0,7535
+uvnote/cli.py,sha256=dV83OHSn3PuujL7iOy_9_WMkledP7uiD2Gr_s6mQLvs,37103
+uvnote/executor.py,sha256=tIbjP5kG4WFU4fJRhUNxdZWQMYKvgqu6j2_eo1fnUw0,20775
+uvnote/generator.py,sha256=UgSXpsNkFOVBtTWkb7x4aIcPDh9J6_hY_mGc0L4YqiI,95193
+uvnote/parser.py,sha256=uNeTUfCg-8MdMdqGjOC0lT0zmOBQSZYQJY1xGS1bdPk,6816
+uvnote/server.py,sha256=9vG5D4z5Hh1vAgGHtlAIv2J3jqZ_wCY80LPkT6tfYv8,3029
+uvnote-0.1.0.dist-info/METADATA,sha256=8Uu7uzmQnqu3vvlzdEAIrElCx70vQGk_z1dLhssiiEo,3796
+uvnote-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+uvnote-0.1.0.dist-info/entry_points.txt,sha256=g6YkqZzSNU45TShoikoAJM-XHfn9nYggeb8wXhvSGPw,43
+uvnote-0.1.0.dist-info/RECORD,,
