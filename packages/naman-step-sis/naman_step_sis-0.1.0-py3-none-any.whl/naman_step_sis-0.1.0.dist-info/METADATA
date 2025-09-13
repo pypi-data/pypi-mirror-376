@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: naman_step_sis
+Version: 0.1.0
+Summary: World's most sus typing effect meme package
+Author: Shreyansh
+Author-email: SumitLigmaBalls6911@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Utilities
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# namanGay
+
+A meme Python package that types text letter by letter with a blinking cursor.
+
+## Example
+
+```python
+import namanGay
+
+namanGay.type_writer("Sumit is Gay and Zade is transgender",
+                     delay=0.25,
+                     pause_after="Sumit is Gay",
+                     pause_time=0.75)
