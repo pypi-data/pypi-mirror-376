@@ -1,0 +1,86 @@
+Metadata-Version: 2.4
+Name: pvops
+Version: 0.7.0
+Summary: pvops is a python library for the analysis of field collected operational data for photovoltaic systems.
+Home-page: https://github.com/sandialabs/pvops
+Author: pvOps Developers
+Maintainer: Thushara Gunda
+Maintainer-email: tgunda@sandia.gov
+License: BSD 3-Clause License
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: scikit-survival
+Requires-Dist: datefinder
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: plotly
+Requires-Dist: gensim
+Requires-Dist: networkx
+Requires-Dist: pvlib
+Requires-Dist: pvanalytics
+Requires-Dist: timezonefinder
+Requires-Dist: tqdm
+Provides-Extra: iv
+Requires-Dist: keras; extra == "iv"
+Requires-Dist: tensorflow; extra == "iv"
+Requires-Dist: pyDOE; extra == "iv"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: doc
+Requires-Dist: sphinx; extra == "doc"
+Requires-Dist: coverage; extra == "doc"
+Requires-Dist: ipykernel; extra == "doc"
+Requires-Dist: nbconvert; extra == "doc"
+Requires-Dist: nbformat; extra == "doc"
+Requires-Dist: nbsphinx; extra == "doc"
+Requires-Dist: nbsphinx-link; extra == "doc"
+Requires-Dist: sphinx-copybutton; extra == "doc"
+Requires-Dist: sphinxcontrib-bibtex; extra == "doc"
+Requires-Dist: sphinx_rtd_theme; extra == "doc"
+Provides-Extra: all
+Requires-Dist: coverage; extra == "all"
+Requires-Dist: ipykernel; extra == "all"
+Requires-Dist: keras; extra == "all"
+Requires-Dist: nbconvert; extra == "all"
+Requires-Dist: nbformat; extra == "all"
+Requires-Dist: nbsphinx; extra == "all"
+Requires-Dist: nbsphinx-link; extra == "all"
+Requires-Dist: pyDOE; extra == "all"
+Requires-Dist: pytest; extra == "all"
+Requires-Dist: sphinx; extra == "all"
+Requires-Dist: sphinx-copybutton; extra == "all"
+Requires-Dist: sphinx_rtd_theme; extra == "all"
+Requires-Dist: sphinxcontrib-bibtex; extra == "all"
+Requires-Dist: tensorflow; extra == "all"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+
+pvops is a python package for PV operators & researchers. It is
+a collection of functions for working with text-based data
+from photovoltaic power systems. The library includes functions for
+processing text data as well as fusion of the text information with
+time series data for visualization of contextual details for data
+analysis.
+
+Documentation: https://pvops.readthedocs.io/en/latest/index.html
+
+Source code: https://github.com/sandialabs/pvOps
+
