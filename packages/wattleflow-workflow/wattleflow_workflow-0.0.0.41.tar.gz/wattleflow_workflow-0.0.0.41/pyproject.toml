@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "src/wattleflow/concrete/_version.py"
+#version_scheme = "post-release"
+#local_scheme = "node-and-date"
+
+[project]
+name = "wattleflow-workflow"
+version = "0.0.0.41"
+description = "Wattleflow Workflow - Data engineering framework."
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "wattleflow", email = "wattleflow@outlook.com" }]
+keywords = ["wattleflow", "workflow", "data", "engineering", "framework", "python", "library", "software engineering"]
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# "pyyaml",
+dependencies = [
+    "cryptography",
+    "wattleflow>=0.0.0.16",
+
+]
+
+[project.urls]
+homepage = "https://github.com/wattleflow/workflow.git"
+repository = "https://github.com/wattleflow/workflow.git"
+documentation = "https://github.com/wattleflow/workflow.git"
+
+[tool.setuptools]
+package-dir = {"" = "src"}  
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
