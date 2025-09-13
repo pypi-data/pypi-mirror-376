@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bgm-toolkit-labour"
+version = "0.1.5"
+description = "Bourdieusian Gravity Model Toolkit – Labour"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+dependencies = ["numpy","pandas","statsmodels"]
+
+[project.scripts]
+bgm-labour = "bgm_labour.cli:main"
+
+[tool.setuptools]
+packages = ["bgm_labour"]
+
+[tool.ruff]
+line-length = 100
+src = ["bgm_labour"]
+
