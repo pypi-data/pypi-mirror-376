@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+softauto/__init__.py
+softauto/autorun.py
+softauto/feature_select.py
+softauto/guards.py
+softauto/model_zoo.py
+softauto/preprocess.py
+softauto/report.py
+softauto.egg-info/PKG-INFO
+softauto.egg-info/SOURCES.txt
+softauto.egg-info/dependency_links.txt
+softauto.egg-info/requires.txt
+softauto.egg-info/top_level.txt
