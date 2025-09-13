@@ -1,0 +1,2 @@
+[console_scripts]
+mol-properties = mol_properties.__main__:main
