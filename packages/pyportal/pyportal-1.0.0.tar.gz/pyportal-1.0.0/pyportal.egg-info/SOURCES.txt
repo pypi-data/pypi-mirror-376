@@ -1,0 +1,9 @@
+README.md
+setup.py
+pyportal/__init__.py
+pyportal/scriptrepo.py
+pyportal.egg-info/PKG-INFO
+pyportal.egg-info/SOURCES.txt
+pyportal.egg-info/dependency_links.txt
+pyportal.egg-info/top_level.txt
+tests/test_pyportal.py
