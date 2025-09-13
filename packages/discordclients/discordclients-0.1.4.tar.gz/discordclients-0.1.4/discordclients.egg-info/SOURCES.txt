@@ -1,0 +1,13 @@
+setup.py
+discordapi/__init__.py
+discordapi/add_reaction.py
+discordapi/discord_client.py
+discordapi/fake_typing.py
+discordapi/message_logger.py
+discordapi/send_message.py
+discordapi/utils.py
+discordclients.egg-info/PKG-INFO
+discordclients.egg-info/SOURCES.txt
+discordclients.egg-info/dependency_links.txt
+discordclients.egg-info/requires.txt
+discordclients.egg-info/top_level.txt
