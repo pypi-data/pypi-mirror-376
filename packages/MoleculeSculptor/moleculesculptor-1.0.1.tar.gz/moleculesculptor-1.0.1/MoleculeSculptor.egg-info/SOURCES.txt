@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+MoleculeSculptor/__init__.py
+MoleculeSculptor.egg-info/PKG-INFO
+MoleculeSculptor.egg-info/SOURCES.txt
+MoleculeSculptor.egg-info/dependency_links.txt
+MoleculeSculptor.egg-info/requires.txt
+MoleculeSculptor.egg-info/top_level.txt
+MoleculeSculptor/src/__init__.py
+MoleculeSculptor/src/functional_group.csv
+MoleculeSculptor/src/sculptor.py
+MoleculeSculptor/src/subgroup.py
+MoleculeSculptor/src/utils.py

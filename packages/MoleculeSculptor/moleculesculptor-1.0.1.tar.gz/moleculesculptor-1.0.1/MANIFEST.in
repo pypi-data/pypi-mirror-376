@@ -1,0 +1,5 @@
+recursive-include MoleculeSculptor *.csv
+recursive-include MoleculeSculptor *.yaml
+recursive-include MoleculeSculptor *.py
+
+
