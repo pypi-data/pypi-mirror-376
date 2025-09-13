@@ -1,0 +1,38 @@
+[project]
+name = "adnus"
+dynamic = ["version"]
+description = "A Python library for Advanced Number Systems (AdNuS), including Bicomplex, Neutrosophic, Hyperreal numbers, reals, Complex, Quaternion, Octonion, Sedenion, Pathion, Chingon, Routon, Voudon."
+authors = [
+    {name = "Mehmet Keçeci", email = "mkececi@yaani.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.3.3,<3.0.0",
+    "hypercomplex==0.3.4"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.2,<9.0.0"
+]
+build = [
+    "setuptools>=80.9.0,<81.0.0",
+    "cython>=3.1.3,<4.0.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = {find = {where = ["src"]}}
+
+[tool.setuptools.dynamic]
+version = {attr = "adnus._version.__version__"}
+
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel",
+    "setuptools_scm>=6.2"  # Dynamic versioning için gerekli
+]
+build-backend = "setuptools.build_meta"
