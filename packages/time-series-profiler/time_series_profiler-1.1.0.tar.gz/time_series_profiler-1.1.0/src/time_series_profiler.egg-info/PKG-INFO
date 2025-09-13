@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: time-series-profiler
+Version: 1.1.0
+Summary: A clean adapter-pattern library for profiling time-series data
+Author: Time Series Profiler Contributors
+Maintainer: Time Series Profiler Contributors
+License-Expression: Apache-2.0
+Project-URL: Homepage, https://github.com/adilsaid/time-series-profiler
+Project-URL: Documentation, https://github.com/adilsaid/time-series-profiler#readme
+Project-URL: Repository, https://github.com/adilsaid/time-series-profiler.git
+Project-URL: Issues, https://github.com/adilsaid/time-series-profiler/issues
+Project-URL: Changelog, https://github.com/adilsaid/time-series-profiler/blob/main/CHANGELOG.md
+Keywords: time-series,profiling,data-analysis,pandas,statistics
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=2.0
+Requires-Dist: numpy>=1.24
+Requires-Dist: jinja2>=3.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: ruff>=0.1.6; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+Requires-Dist: pre-commit>=3.0; extra == "dev"
+Requires-Dist: python-semantic-release>=8.0; extra == "dev"
+Dynamic: license-file
+
+# Time Series Profiler
+
+[![PyPI version](https://badge.fury.io/py/time-series-profiler.svg)](https://badge.fury.io/py/time-series-profiler)
+[![Python versions](https://img.shields.io/pypi/pyversions/time-series-profiler.svg)](https://pypi.org/project/time-series-profiler/)
+[![CI](https://github.com/adilsaid/time-series-profiler/workflows/CI/badge.svg)](https://github.com/adilsaid/time-series-profiler/actions)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Analyze time-series data structure, gaps, and statistical properties.
+
+## Features
+
+- Basic statistics (mean, std, min, max, percentiles)
+- Gap detection and sampling analysis
+- Categorical column profiling
+- Multi-entity data support
+- JSON and HTML output
+
+## Installation
+
+### From PyPI (Recommended)
+```bash
+pip install time-series-profiler
+```
+
+### From Source
+```bash
+git clone https://github.com/adilsaid/time-series-profiler.git
+cd time-series-profiler
+pip install -e .
+```
+
+## Usage
+
+```python
+import pandas as pd
+from tsp import ProfileReport, Config
+
+# With DatetimeIndex
+df = pd.DataFrame({
+    'value': [1.0, 2.5, 3.2, 4.1],
+    'category': ['A', 'B', 'A', 'C']
+}, index=pd.date_range('2023-01-01', periods=4, freq='1H'))
+
+report = ProfileReport(df, Config())
+print(report.to_json())
+
+# With time column and multiple entities
+df = pd.read_csv("data.csv", parse_dates=["time"])
+config = Config(time_col="time", entity_cols=("user_id",))
+report = ProfileReport(df, config)
+
+print(report.to_json())
+html_output = report.to_html()
+```
+
+### Example
+
+```bash
+cd examples
+python quickstart.py
+```
+
+## License
+
+Apache-2.0 - see LICENSE file for details.
