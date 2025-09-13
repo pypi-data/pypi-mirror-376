@@ -1,0 +1,13 @@
+synthetic/__init__.py,sha256=JE8NSRcJf6cWgNz1dtukZHTKl0v_1J94f0hr5gkWBhU,90
+synthetic/commands/__init__.py,sha256=LrCFfPpisMxaubDNMe6hCaA9FFjsWqtxwCORzyX-ooM,186
+synthetic/commands/base.py,sha256=6CkkieVScku5tbG30ZyrpwKV8CsokzEa4UGh1sspZSc,1907
+synthetic/commands/signature.py,sha256=L_rgMlEZqwarZbCUIjB_AOpEn7nUtQMJWrquOpyBbUw,2528
+synthetic/exceptions.py,sha256=ULJXRfzRRaWi8yM51I2t1UIEr2ViYFBV_fZEahxim3U,786
+synthetic/hooks/__init__.py,sha256=-lAl122ICfCYToOk_PT8i5FTd5Ks_AwIZNadUr404W4,183
+synthetic/hooks/base.py,sha256=eYFycWmfvP-CHNb22CGSvgFB9KNlVSrVcLPXGsMkAV4,1126
+synthetic/hooks/command.py,sha256=NkaTbEHcmcw30wj9U4JQCWtLVbl4bxABi4iks-MJ0YY,2578
+synthetic/transformer.py,sha256=dVyhXOOr91VOlANgdjswit8i2abJsPCutG8o8sQmiGA,7721
+synthetic_transformers-0.3.1.dist-info/LICENSE,sha256=MpGiRdID0z2P0gsey5bYhPekVuroG8LtDT5TbFDY91o,1081
+synthetic_transformers-0.3.1.dist-info/METADATA,sha256=nbyemykce5bjylmNfJdJREVeQPquVSvqnhBi622LTLQ,1818
+synthetic_transformers-0.3.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+synthetic_transformers-0.3.1.dist-info/RECORD,,
