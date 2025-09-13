@@ -1,0 +1,8 @@
+[boardfarm]
+booting=boardfarm3.plugins.setup_environment
+core=boardfarm3.plugins.core
+no_reservation=boardfarm3.plugins.no_reservation
+
+[console_scripts]
+boardfarm=boardfarm3.main:main
+
