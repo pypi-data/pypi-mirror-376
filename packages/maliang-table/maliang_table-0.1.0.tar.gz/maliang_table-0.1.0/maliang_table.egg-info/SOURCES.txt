@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+maliang/table/__init__.py
+maliang/table/constants.py
+maliang/table/main.py
+maliang_table.egg-info/PKG-INFO
+maliang_table.egg-info/SOURCES.txt
+maliang_table.egg-info/dependency_links.txt
+maliang_table.egg-info/requires.txt
+maliang_table.egg-info/top_level.txt
