@@ -1,0 +1,13 @@
+README.md
+e2b_clone.py
+pyproject.toml
+setup.py
+test.py
+your_e2b_clone.py
+bettere2b.egg-info/PKG-INFO
+bettere2b.egg-info/SOURCES.txt
+bettere2b.egg-info/dependency_links.txt
+bettere2b.egg-info/entry_points.txt
+bettere2b.egg-info/not-zip-safe
+bettere2b.egg-info/requires.txt
+bettere2b.egg-info/top_level.txt

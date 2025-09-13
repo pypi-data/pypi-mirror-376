@@ -1,0 +1,2 @@
+[console_scripts]
+bettere2b = your_e2b_clone:main
