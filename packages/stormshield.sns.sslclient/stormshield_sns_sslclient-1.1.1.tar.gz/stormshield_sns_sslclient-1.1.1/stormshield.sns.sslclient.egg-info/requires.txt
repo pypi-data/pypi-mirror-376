@@ -1,0 +1,9 @@
+pygments
+requests[socks]
+requests_toolbelt
+colorlog
+defusedxml
+packaging
+
+[:platform_system == "Windows"]
+pyreadline
