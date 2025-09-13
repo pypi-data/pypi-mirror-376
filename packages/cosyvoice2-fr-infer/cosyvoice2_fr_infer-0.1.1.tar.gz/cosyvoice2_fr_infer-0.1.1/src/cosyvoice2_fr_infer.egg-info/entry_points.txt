@@ -1,0 +1,2 @@
+[console_scripts]
+cosy2-tts = cosyvoice2_fr.cli:main
