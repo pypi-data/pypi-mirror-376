@@ -1,0 +1,12 @@
+
+[http]
+requests>=2.0
+aiohttp>=3.8
+
+[plus]
+requests>=2.0
+aiohttp>=3.8
+websockets>=10.0
+
+[ws]
+websockets>=10.0
