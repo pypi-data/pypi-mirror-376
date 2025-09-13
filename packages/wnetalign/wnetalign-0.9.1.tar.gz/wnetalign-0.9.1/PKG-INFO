@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: wnetalign
+Version: 0.9.1
+Summary: Python implementation of spectral alignment using Wasserstein metric
+Author-email: Michał Startek <michal.startek@mimuw.edu.pl>
+Maintainer-email: Michał Startek <michal.startek@mimuw.edu.pl>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/michalsta/wnetalign
+Project-URL: Repository, https://github.com/michalsta/wnetalign.git
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Development Status :: 4 - Beta
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: pylmcf
+Requires-Dist: wnet
+Requires-Dist: numpy
+Dynamic: license-file
