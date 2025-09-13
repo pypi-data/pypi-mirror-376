@@ -1,0 +1,10 @@
+featurestoresdk/__init__.py,sha256=kaeTSS6viutkOgl8M3cTSFW188q-d-T1lJY4CpG1KUE,818
+featurestoresdk/feature_store_sdk.py,sha256=q1oL1MIBBcNXVcbcsioWvNV7L5H4NASQt68jnfu37SM,6196
+featurestoresdk/sdk_exception.py,sha256=JyvDY18WgS8CxLStMVc3im9Tn6psQ0UH5Xu_Wtf9W_k,1071
+featurestoresdk/singleton_manager.py,sha256=W4W5pc4fJY1fXq4e1IvOj98khfyyQs9HVjzUWPZiBpo,3235
+featurestoresdk/config/config.json,sha256=-dfPQbWSCaeyoOOEk9lMgRsO-RhjeyGgSPrTNEGSUPI,203
+featurestoresdk-0.3.1.dist-info/licenses/LICENSES.txt,sha256=J_bmplpBCqUsWzjmCzyPkOjGk3XT1OglivI-We8ouuI,1415
+featurestoresdk-0.3.1.dist-info/METADATA,sha256=uzCgdvYRnHe5Ao0baEOGhBi5cYKkjO-qa5yDflgtYws,1116
+featurestoresdk-0.3.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+featurestoresdk-0.3.1.dist-info/top_level.txt,sha256=wfbRCBPbqt1IrH5DiWpWD-NMmN9RwkZc-B7xyPbuz8w,16
+featurestoresdk-0.3.1.dist-info/RECORD,,
