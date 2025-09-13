@@ -1,0 +1,22 @@
+[project]
+name = "goray"
+description = "Python driver for goray project"
+version = "0.0.1"
+authors = [
+    { name = "WeiminWang", email = "wang0.618@qq.com" }
+]
+dependencies = ["msgpack"]
+
+[project.optional-dependencies]
+ray = [
+    "ray[default]"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["goray*"]
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+

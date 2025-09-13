@@ -1,0 +1,6 @@
+pyproject.toml
+goray.egg-info/PKG-INFO
+goray.egg-info/SOURCES.txt
+goray.egg-info/dependency_links.txt
+goray.egg-info/requires.txt
+goray.egg-info/top_level.txt
