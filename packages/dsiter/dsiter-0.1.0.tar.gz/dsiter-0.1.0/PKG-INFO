@@ -1,0 +1,96 @@
+Metadata-Version: 2.4
+Name: dsiter
+Version: 0.1.0
+Summary: A library for iterating over aggregated datasets from HuggingFace and local CSV files
+License-File: LICENSE
+Requires-Python: >=3.9
+Requires-Dist: datasets>=4.0.0
+Requires-Dist: pyyaml>=6.0
+Description-Content-Type: text/markdown
+
+# dsiter
+
+ds-iter (ds is short for "dataset" and iter for "iteration") is an opinionated, declarative dataset preparation/iteration tool that helps you create an single iterator over many datasets, useful for ML/data engineering tasks.
+
+# Problem
+
+During the training of large-scale machine learning models (especially language models or NLP tasks), we're often working with many different datasets from various sources, with very different shapes and dimensions, sometimes reaching gigabytes of data.
+
+Failure in implementing efficient memory usage within training or data preparation scripts often leads to operating system errors, such as _OOM killed_.
+
+ML/data engineers tend to write custom scripts, often with bespoke pre-processing/post-processing mutations, and sometimes entirely different implementations of the data preparation step across projects. This can lead to reproducibility issues, as different team members using slightly different scripts produce inconsistent results. Additionally, debugging becomes difficult because OOM errors or preprocessing bugs are often non-deterministic and hard to trace.
+
+
+## Usage
+
+### step one: create yaml configuration file
+
+create a yaml file (by default the library looks for `datasets.yaml`) and start adding your Hugginface 🤗 datasets using their `repoId` like below:
+
+> **Example**: See `examples/datasets.yml` for a complete configuration file with various dataset types.
+
+```yaml
+datasets:
+  - path: facebook/recycling_the_web
+```
+
+you can add as many Hugginface 🤗 datasets as you want:
+
+```yaml
+datasets:
+  - path: facebook/recycling_the_web
+  - path: Lk123/InfoSeek
+  - path: ...
+  - path: ...
+```
+
+you can also load your own custom dataset files, supported formats are:
+
+- csv or tsv
+- parquet
+
+just pass the relative/absolute path of the dataset with `path` key.
+
+```yaml
+datasets:
+  - path: ./files/dataset_dump.csv
+  - path: ./files/other_dataset.tsv
+  - path: ./files/other_other_dataset_0001.parquet
+```
+
+for each dataset you can target an array of specific columns to be returned within iterator:
+
+```yaml
+datasets:
+  - path: MathLLMs/MathVision
+    columns:
+      - questions
+
+  - path: community-datasets/farsi_news
+    columns:
+      - title
+      - summary
+```
+
+### step two: python scripting
+
+install the library using pip
+```bash
+pip install dsiter
+```
+
+and then:
+
+> **Example**: See `examples/example.py` for a complete working example.
+
+```python
+from dsiter import DSIterCollection
+
+collection = DSIterCollection()
+
+for row in collection.iter_rows():
+    print(row)
+
+```
+
+Calling iter_rows() lazily streams the dataset's rows through a generator, enabling efficient iteration and processing without loading the entire dataset into memory.

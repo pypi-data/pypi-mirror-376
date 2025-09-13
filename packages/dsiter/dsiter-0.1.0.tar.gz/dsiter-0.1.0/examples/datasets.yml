@@ -1,0 +1,8 @@
+datasets:
+  # - path: fka/awesome-chatgpt-prompts
+  #   columns:
+  #     - prompt
+
+  - path: ./examples/sample_dataset.csv
+    columns:
+      - text
