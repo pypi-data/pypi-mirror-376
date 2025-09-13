@@ -1,0 +1,14 @@
+agrigee_lite/__init__.py,sha256=2-e1AwDAvv89HJoCHba0VrKYMGD_BHmPS_l_GvvxdUU,251
+agrigee_lite/aria2.conf,sha256=qe83sIHxX8rqjJ33WNsFoq6BcnGT6rgtGSxGP691tRg,389
+agrigee_lite/downloader.py,sha256=TuesQWXqvJV3F0UKotxVF2-01LzClNiZTg7PAhhjigA,2708
+agrigee_lite/ee_utils.py,sha256=CEuGWK9F_sTt1AlZy4zYhvvCgFW8AYUpGaHs1Q0N41k,11271
+agrigee_lite/misc.py,sha256=Cuf0PdA8KapD2R1wkLRhhRY6qdq_V0ZbyQXIUgzXIF0,11509
+agrigee_lite/numpy_indices.py,sha256=MMoHdJKdQGR5UTNaWOwmy2AVXASodQP6gJ3kpttse4U,2289
+agrigee_lite/task_manager.py,sha256=13vUj8rlsBqqCcnMAXAe5qBgmYc8H4MgmbxMlTgAbaM,1735
+agrigee_lite/tgui_task_manager.py,sha256=e-o7Vc1h-QgmJMhXzlfCoIa6VahDRQL-XuwiRH5g-WE,813
+agrigee_lite/vegetation_indices.py,sha256=iPHW_YBowumXEu4Ob2x3KtS-3PINMpVcpArR_jyoXz0,954
+agrigee_lite-2.0.2.dist-info/METADATA,sha256=vKxNdYX5kTh3xY-quD7KGr2k-cBN3YUA4-7MZ13GXIM,10941
+agrigee_lite-2.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+agrigee_lite-2.0.2.dist-info/entry_points.txt,sha256=RII7G85nU-uYrs0uKYN8d3KR3k-jDKIFwuHduyZkJAA,63
+agrigee_lite-2.0.2.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+agrigee_lite-2.0.2.dist-info/RECORD,,
