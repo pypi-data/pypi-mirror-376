@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scikit-na"
+dynamic = ["version"]
+description = "Missing Values Analysis for Data Science"
+readme = "README.md"
+requires-python = ">=3.9"
+license.file = "LICENSE"
+authors = [{ name = "Maksim Terpilovskii", email = "maximtrp@gmail.com" }]
+keywords = ["data science", "data analytics", "statistics"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Text Processing :: General",
+]
+urls.homepage = "https://github.com/maximtrp/scikit-na"
+urls.documentation = "https://scikit-na.readthedocs.io/"
+
+dependencies = [
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "statsmodels>=0.12.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "altair>=5.0.0",
+    "ipywidgets>=7.6.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=6.0", "codecov>=2.1.0", "coverage>=5.5"]
+export = ["openpyxl>=3.0.0", "xlsxwriter>=1.4.0"]
+dev = ["black>=22.0", "flake8>=4.0", "mypy>=0.900", "pre-commit>=2.15"]
+all = ["scikit-na[test,export,dev]"]
+
+[tool.setuptools.dynamic]
+version = { attr = "scikit_na.__version__" }
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+python_functions = "test_*"
+testpaths = ["tests"]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+
+[tool.pycodestyle]
+max-line-length = 120
+
+[tool.pydocstyle]
+max-line-length = 120
+
+[tool.flake8]
+ignore = ["E501"]
+max-line-length = 120
+
+[tool.ruff]
+line-length = 120
+select = ["ALL"]
+
