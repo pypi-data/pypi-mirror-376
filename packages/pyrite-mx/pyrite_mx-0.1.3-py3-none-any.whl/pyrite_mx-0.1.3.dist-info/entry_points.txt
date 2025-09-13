@@ -1,0 +1,5 @@
+[console_scripts]
+attract-locate = pyrite.tools.shell.attract_locate:main
+pyrite-hello = pyrite.pyrite_hello:main
+pyrite-shell = pyrite.tools.shell.pyrite_shell:main
+window-rake = pyrite.tools.shell.window_rake:main
