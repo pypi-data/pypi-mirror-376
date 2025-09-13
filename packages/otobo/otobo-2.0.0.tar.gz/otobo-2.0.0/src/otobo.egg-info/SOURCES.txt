@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/otobo/__init__.py
+src/otobo/otobo_client.py
+src/otobo/otobo_errors.py
+src/otobo.egg-info/PKG-INFO
+src/otobo.egg-info/SOURCES.txt
+src/otobo.egg-info/dependency_links.txt
+src/otobo.egg-info/requires.txt
+src/otobo.egg-info/top_level.txt
+tests/test_client.py
