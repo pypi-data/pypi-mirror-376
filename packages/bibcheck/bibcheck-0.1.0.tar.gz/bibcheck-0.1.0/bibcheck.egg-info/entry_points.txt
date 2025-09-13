@@ -1,0 +1,2 @@
+[console_scripts]
+bibcheck = bibcheck.bibcheck:main

@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+bibcheck/__init__.py
+bibcheck/bibcheck.py
+bibcheck.egg-info/PKG-INFO
+bibcheck.egg-info/SOURCES.txt
+bibcheck.egg-info/dependency_links.txt
+bibcheck.egg-info/entry_points.txt
+bibcheck.egg-info/requires.txt
+bibcheck.egg-info/top_level.txt
