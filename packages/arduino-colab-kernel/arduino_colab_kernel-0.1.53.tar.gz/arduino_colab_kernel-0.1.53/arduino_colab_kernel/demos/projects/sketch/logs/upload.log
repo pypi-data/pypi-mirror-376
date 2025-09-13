@@ -1,0 +1,81 @@
+
+================================================================================
+OK | G:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\tools\arduino-cli.exe upload g:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\demos\projects\sketch -p COM5 -b arduino:avr:uno
+
+[STDOUT]
+New upload port: COM5 (serial)
+
+================================================================================
+OK | G:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\tools\arduino-cli.exe upload g:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\demos\projects\sketch -p COM5 -b arduino:avr:uno
+
+[STDOUT]
+New upload port: COM5 (serial)
+
+================================================================================
+OK | G:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\tools\arduino-cli.exe upload g:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\demos\projects\sketch -p COM5 -b arduino:avr:uno
+
+[STDOUT]
+New upload port: COM5 (serial)
+
+================================================================================
+OK | G:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\tools\arduino-cli.exe upload g:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\demos\projects\sketch -p COM5 -b arduino:avr:uno
+
+[STDOUT]
+New upload port: COM5 (serial)
+
+================================================================================
+OK | G:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\tools\arduino-cli.exe upload g:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\demos\projects\sketch -p COM5 -b arduino:avr:uno
+
+[STDOUT]
+New upload port: COM5 (serial)
+
+================================================================================
+OK | G:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\tools\arduino-cli.exe upload g:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\demos\projects\sketch -p COM5 -b arduino:avr:uno
+
+[STDOUT]
+New upload port: COM5 (serial)
+
+================================================================================
+OK | G:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\tools\arduino-cli.exe upload g:\Můj disk\Projekty\ArduinoColab\colab\arduino_colab_kernel\demos\projects\sketch -p COM5 -b arduino:avr:uno
+
+[STDOUT]
+New upload port: COM5 (serial)
+
+================================================================================
+FAIL | 
+
+[STDOUT]
+Sketch uses 946 bytes (2%) of program storage space. Maximum is 32256 bytes.
+Global variables use 9 bytes (0%) of dynamic memory, leaving 2039 bytes for local variables. Maximum is 2048 bytes.
+
+================================================================================
+FAIL | 
+
+[STDOUT]
+New upload port: COM3 (serial)
+
+================================================================================
+FAIL | 
+
+[STDOUT]
+Sketch uses 946 bytes (2%) of program storage space. Maximum is 32256 bytes.
+Global variables use 9 bytes (0%) of dynamic memory, leaving 2039 bytes for local variables. Maximum is 2048 bytes.
+
+================================================================================
+FAIL | 
+
+[STDOUT]
+New upload port: COM3 (serial)
+
+================================================================================
+FAIL | 
+
+[STDOUT]
+Sketch uses 2234 bytes (6%) of program storage space. Maximum is 32256 bytes.
+Global variables use 190 bytes (9%) of dynamic memory, leaving 1858 bytes for local variables. Maximum is 2048 bytes.
+
+================================================================================
+FAIL | 
+
+[STDOUT]
+New upload port: COM3 (serial)

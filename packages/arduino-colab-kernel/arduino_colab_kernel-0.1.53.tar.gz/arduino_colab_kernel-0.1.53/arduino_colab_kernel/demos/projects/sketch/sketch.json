@@ -1,0 +1,29 @@
+{
+    "project_name": "sketch",
+    "project_dir": "h:\\Můj disk\\Projekty\\ArduinoProject\\ArduinoColab\\colab\\arduino_colab_kernel\\demos\\projects\\sketch",
+    "ino_file": "h:\\Můj disk\\Projekty\\ArduinoProject\\ArduinoColab\\colab\\arduino_colab_kernel\\demos\\projects\\sketch\\sketch.ino",
+    "board": {
+        "name": "uno",
+        "fqbn": "arduino:avr:uno",
+        "port": "COM3",
+        "serial": {
+            "port": "COM3",
+            "baudrate": 115200,
+            "timeout": 0.1,
+            "encoding": "utf-8",
+            "autostrip": true
+        }
+    },
+    "code": {
+        "globals": {
+            "1": "int t = 0; // Timer counter"
+        },
+        "setup": {
+            "1": "Serial.begin(115200);"
+        },
+        "loop": {
+            "1": "t++; // Increment timer counter\nSerial.println(t); // Print timer counter to serial monitor"
+        },
+        "functions": {}
+    }
+}
