@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+mypackage/__init__.py
+mypackage/fun.py
+zackpkgx.egg-info/PKG-INFO
+zackpkgx.egg-info/SOURCES.txt
+zackpkgx.egg-info/dependency_links.txt
+zackpkgx.egg-info/top_level.txt
