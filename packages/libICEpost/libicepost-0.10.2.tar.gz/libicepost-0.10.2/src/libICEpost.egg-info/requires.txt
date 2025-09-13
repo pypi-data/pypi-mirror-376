@@ -1,0 +1,9 @@
+chempy
+tqdm
+colorama
+pandas
+bidict
+cantera
+numpy
+cachetools
+foamlib>=1.3.5
