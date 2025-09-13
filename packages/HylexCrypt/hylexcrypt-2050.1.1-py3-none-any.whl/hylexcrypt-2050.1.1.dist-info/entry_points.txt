@@ -1,0 +1,3 @@
+[console_scripts]
+hylexC = hylexcrypt.cli:main
+hylexcrypt = hylexcrypt.cli:main
