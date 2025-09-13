@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm>=6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "HylexCrypt"
+version = "2050.1.1"
+description = "HylexCrypt - The Ultimate 2050 - stego + crypto CLI tool"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  {name = "Deepak P S , Nithin S", email = "deepakkrishnark@gmail.com"}
+]
+maintainers = [
+  {name = "TwinCiphers", email = "twinciphers@gmail.com"}
+]
+license = {text = "Apache-2.0"}
+keywords = [
+  "steganography",
+  "cryptography",
+  "security",
+  "encryption",
+  "LSB",
+  "image-processing",
+  "audio-processing",
+  "argon2",
+  "chacha20",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Security :: Cryptography",
+  "Topic :: Security",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: System :: Archiving",
+  "Topic :: Utilities",
+]
+
+dependencies = [
+  "numpy>=1.21.0",
+  "Pillow>=9.0.0",
+  "cryptography>=40.0.0",
+  "argon2-cffi>=21.0.0",
+]
+
+[project.optional-dependencies]
+dct = ["scipy"]
+fec = ["reedsolo"]
+audio = ["soundfile"]
+ui = ["colorama"]
+monitor = ["psutil"]
+
+[project.urls]
+homepage = "https://github.com/TwinCiphers/HylexCrypt-TU2050"
+documentation = "https://hackmd.io/@hylexcrypt-tu2050/SkRnM51ogl"
+repository = "https://github.com/TwinCiphers/HylexCrypt-TU2050"
+bug_tracker = "https://github.com/TwinCiphers/HylexCrypt-TU2050/issues"
+changelog = "https://github.com/TwinCiphers/HylexCrypt-TU2050/blob/main/changelog.md"
+
+[project.scripts]
+hylexcrypt = "hylexcrypt.cli:main"
+hylexC = "hylexcrypt.cli:main"
+
+[tool.setuptools]
+packages = ["hylexcrypt"]
+
+[tool.setuptools.package-data]
+hylexcrypt = ["py.typed", "*.txt", "*.md"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["*.pyc", "__pycache__", "*.pyo"]
+
+# (the rest of your tooling configs can be copied exactly from your original)
+
