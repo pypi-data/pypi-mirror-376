@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/subprocess_logger/__init__.py
+src/subprocess_logger/subprocess_logger.py
+src/subprocess_logger.egg-info/PKG-INFO
+src/subprocess_logger.egg-info/SOURCES.txt
+src/subprocess_logger.egg-info/dependency_links.txt
+src/subprocess_logger.egg-info/top_level.txt
+tests/test_subprocess_logger.py
