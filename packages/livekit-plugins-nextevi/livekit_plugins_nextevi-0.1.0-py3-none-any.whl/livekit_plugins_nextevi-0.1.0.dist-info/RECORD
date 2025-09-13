@@ -1,0 +1,12 @@
+livekit_nextevi/__init__.py,sha256=PoDtCORas3mSBldHrGwYd3KDgGrw-wEeltWd8H7HxlU,1641
+livekit_nextevi/nextevi_stt.py,sha256=c-lItDDyJalGqixYVB2qgVRqvgRAZANGZA4cFrRjLnM,5423
+livekit_nextevi/version.py,sha256=Pru0BlFBASFCFo7McHdohtKkUtgMPDwbGfyUZlE2_Vw,21
+livekit_nextevi/realtime/__init__.py,sha256=twVsrOImLN52aqHARL-8xyTHacEHvOagNUGc_X8sdLM,663
+livekit_nextevi/realtime/auth.py,sha256=GgvsltTsO0mjmM0peycYlEbXlOO4N5wgG7UnhCGqFOU,17415
+livekit_nextevi/realtime/config.py,sha256=sQYlDUirtqBe2BgSWux4afyCCrmoRSgJ5-IC30sKqZg,16833
+livekit_nextevi/realtime/nextevi_realtime_model.py,sha256=hbYQ_ReLd0bTSfPVlvyXJi0qctauBSJp47KuwUwuWQM,19314
+livekit_nextevi/realtime/nextevi_websocket_client.py,sha256=Yc2BDD6P_bF-wF8CWOkZgfobhBQ6bj03yDqg8iZ_o-c,19461
+livekit_plugins_nextevi-0.1.0.dist-info/METADATA,sha256=sW9A822aVm9LfQcV20aBUUu_LP3OLprfckfcKeV1rqU,8351
+livekit_plugins_nextevi-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+livekit_plugins_nextevi-0.1.0.dist-info/entry_points.txt,sha256=AoybAICL8B7l31HKowy8xJeDWC7MfmAqmFrMJAd8iJE,44
+livekit_plugins_nextevi-0.1.0.dist-info/RECORD,,

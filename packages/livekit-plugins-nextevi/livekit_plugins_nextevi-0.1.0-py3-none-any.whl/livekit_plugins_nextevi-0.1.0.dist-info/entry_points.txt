@@ -1,0 +1,2 @@
+[livekit.plugins]
+nextevi = livekit_nextevi
