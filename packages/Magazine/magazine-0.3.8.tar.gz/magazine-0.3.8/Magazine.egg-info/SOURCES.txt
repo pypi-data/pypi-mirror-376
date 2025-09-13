@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+Magazine.egg-info/PKG-INFO
+Magazine.egg-info/SOURCES.txt
+Magazine.egg-info/dependency_links.txt
+Magazine.egg-info/requires.txt
+Magazine.egg-info/top_level.txt
+magazine/__init__.py
+magazine/io.py
+magazine/magazine.py
+magazine/publish.py
