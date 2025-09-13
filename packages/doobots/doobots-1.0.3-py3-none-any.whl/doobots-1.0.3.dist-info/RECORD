@@ -1,0 +1,13 @@
+doobots/__init__.py,sha256=a0agUkh4Df6lRXfX5uS0d00shQJ-s6J8_JfOCHjQg3Y,135
+doobots/base_message.py,sha256=seLTO53qfgRHTqb0IB5vyp_5XcC-ZIFHtwbaCtH0qxI,951
+doobots/file.py,sha256=eq9nYW9eY_OCbqNs946JpxZYetuZoWrTSpqULXRYXMs,148
+doobots/local_runner.py,sha256=XfNBmB6k7NkZnZp7Eq7kFw6tQm7yVeLalQwKTsNX7T8,2697
+doobots/packager.py,sha256=55jdRrtec5rzmeueQ0B6OHwke4Nza11scy7iMIJx0dg,1224
+doobots/request.py,sha256=dP-kI6tmBJlEdFyubMutEwE8PprUKwpq2ql4T1vUcG4,180
+doobots/response.py,sha256=ZHeJYXiwsMMyKLbwUAA96XsIBEggVJq07GqPv94Gew8,1735
+doobots/utils.py,sha256=_B3QUXGzaVFfJyHThqhkIdUrg-bzaR3K7AAk3i6CTaw,248
+doobots-1.0.3.dist-info/METADATA,sha256=Yij94re31vfiE_d5vjtUbXDQfTYtWfH9WdMBUB8vNrc,946
+doobots-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+doobots-1.0.3.dist-info/entry_points.txt,sha256=ump-uIFerArI0hjh7EWXsQtwu6SjmzlSIEjTaNbC264,98
+doobots-1.0.3.dist-info/top_level.txt,sha256=6hIw0Ixuy80q7S3akAet8yNlQ-gIGomVXVVaHJYBT4k,8
+doobots-1.0.3.dist-info/RECORD,,
