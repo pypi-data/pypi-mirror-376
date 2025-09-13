@@ -1,0 +1,8 @@
+LICENSE
+README.md
+kinematicsolvermethods.py
+pyproject.toml
+kinematicsolver.egg-info/PKG-INFO
+kinematicsolver.egg-info/SOURCES.txt
+kinematicsolver.egg-info/dependency_links.txt
+kinematicsolver.egg-info/top_level.txt
