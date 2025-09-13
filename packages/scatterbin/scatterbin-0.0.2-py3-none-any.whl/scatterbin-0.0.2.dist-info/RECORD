@@ -1,0 +1,10 @@
+scatterbin-0.0.2.dist-info/licenses/LICENSE,sha256=kMvIiQ8Waf3Yk6Hb9ZnPCt2HBVqbBXXRBUzVVb8sBbY,1301
+src/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/scatterbin.py,sha256=QJDjO8-cxKxSK8szShXs-5Uh6whDsShgmEXO974wHBo,11839
+src/scatterbin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/scatterbin/demos.py,sha256=LUxTf6w4a2yIQtqynzBc8K9PWAIkLgkAjPSR_vGlQFw,1352
+src/scatterbin/scatterbin.py,sha256=QJDjO8-cxKxSK8szShXs-5Uh6whDsShgmEXO974wHBo,11839
+scatterbin-0.0.2.dist-info/METADATA,sha256=USNbF2QgnQmn3GfVQR6I6s4JHgqjZlA9sM6SnqqfO9c,4663
+scatterbin-0.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scatterbin-0.0.2.dist-info/top_level.txt,sha256=74rtVfumQlgAPzR5_2CgYN24MB0XARCg0t-gzk6gTrM,4
+scatterbin-0.0.2.dist-info/RECORD,,
