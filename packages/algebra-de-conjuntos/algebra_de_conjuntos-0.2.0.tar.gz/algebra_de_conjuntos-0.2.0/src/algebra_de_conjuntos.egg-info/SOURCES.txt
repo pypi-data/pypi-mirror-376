@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/algebra_de_conjuntos.egg-info/PKG-INFO
+src/algebra_de_conjuntos.egg-info/SOURCES.txt
+src/algebra_de_conjuntos.egg-info/dependency_links.txt
+src/algebra_de_conjuntos.egg-info/requires.txt
+src/algebra_de_conjuntos.egg-info/top_level.txt
+src/aos/CompoundSet.py
+src/aos/FloatSet.py
+src/aos/__init__.py
+src/aos/constants.py
+src/aos/operations.py
+tests/test_complex_operations.py
+tests/test_float_set.py
+tests/test_set_intersection.py
+tests/test_set_union.py

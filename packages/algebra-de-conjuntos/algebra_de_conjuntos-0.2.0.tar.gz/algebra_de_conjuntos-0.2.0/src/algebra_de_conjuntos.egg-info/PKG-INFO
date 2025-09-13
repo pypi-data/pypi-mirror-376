@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: algebra-de-conjuntos
+Version: 0.2.0
+Summary: Python package to do Sets operations like Union, Intersections and comparisons.
+Project-URL: Homepage, https://github.com/edwarhman/algebra-de-conjuntos
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: colorama==0.4.6
+Requires-Dist: contourpy==1.3.2
+Requires-Dist: cycler==0.12.1
+Requires-Dist: fonttools==4.57.0
+Requires-Dist: iniconfig==2.1.0
+Requires-Dist: kiwisolver==1.4.8
+Requires-Dist: matplotlib==3.10.1
+Requires-Dist: mpmath==1.3.0
+Requires-Dist: numpy==2.2.5
+Requires-Dist: packaging==25.0
+Requires-Dist: pillow==11.2.1
+Requires-Dist: pluggy==1.5.0
+Requires-Dist: pyparsing==3.2.3
+Requires-Dist: pytest==8.3.5
+Requires-Dist: pytest-cov>=6.2.1
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: six==1.17.0
+Requires-Dist: sympy==1.13.3
+
+# Algebra of Sets
