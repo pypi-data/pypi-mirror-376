@@ -1,0 +1,14 @@
+idol/__init__.py,sha256=rD6DZabDqYsl1k2igfPd8sCUEefBWzl8Zrmjvk47Nos,418
+idol/cli.py,sha256=g2yuZZd0Nrd8Jv4bbtmXFMXezuclqOu21LWvsE1xPSA,8237
+idol/freezer.py,sha256=B6io7OAprJy_N3DXAmGs5DkN8fFR0TwbQHATQ8Qm2Yc,8703
+idol/harvester.py,sha256=_aQ7I0uyFZ_NNVsM2urSSdUdWrvAIBGthnxltlq5rvg,9658
+idol/heuristics.py,sha256=za7xJPUdasr1ejPZhyC_6XiuZr2TAsKEELXUT-XoLm8,10565
+idol/models.py,sha256=1D86O_0TfwTH9XdJHpQXqVjqYnv3-MIt7b-rjOI1x9E,1778
+idol/reviewer.py,sha256=yqDwRtlGi8gpcoJVBh65M1RrWLGJ5iFcsWfE1PkgBts,7230
+idol/utils.py,sha256=zt9te0hgGGeXvJGWUp9uPWfWXlQ8wphDYZFCqshh5IQ,3513
+idol_cli-0.1.0.dist-info/licenses/LICENSE,sha256=jTpDekoRtExbvUH_yvpVZM6Hu48yxGg2uFtuFurrJ2A,1073
+idol_cli-0.1.0.dist-info/METADATA,sha256=dTDpC_eTjwQK3mUgCAfqr6RRPDQHO9FHhyrKX215xg0,7278
+idol_cli-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+idol_cli-0.1.0.dist-info/entry_points.txt,sha256=30QpBX0bGZRh_kHHEgaSMjZno_-UgvLgXkQNAAGjz9c,38
+idol_cli-0.1.0.dist-info/top_level.txt,sha256=RAEILub3nUG1uJecGbOysez0ZqqNG0y9VGpesAuRgEE,5
+idol_cli-0.1.0.dist-info/RECORD,,

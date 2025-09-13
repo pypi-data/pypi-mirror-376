@@ -1,0 +1,2 @@
+[console_scripts]
+idol = idol.cli:cli
