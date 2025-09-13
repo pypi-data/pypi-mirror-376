@@ -1,0 +1,11 @@
+README.md
+disc.text
+pyproject.toml
+requirements.txt
+.github/workflows/python-puplish.yml
+ahmtrY618/__init__.py
+ahmtrY618/calc.py
+ahmtr_N618.egg-info/PKG-INFO
+ahmtr_N618.egg-info/SOURCES.txt
+ahmtr_N618.egg-info/dependency_links.txt
+ahmtr_N618.egg-info/top_level.txt
