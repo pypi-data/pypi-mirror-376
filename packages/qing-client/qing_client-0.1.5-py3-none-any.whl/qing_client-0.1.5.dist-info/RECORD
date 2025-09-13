@@ -1,0 +1,11 @@
+qingclient/_version.py,sha256=rdxBMYpwzYxiWk08QbPLHSAxHoDfeKWwyaJIAM0lSic,704
+qingclient/auth_service.py,sha256=ZknbdPnrmg2uIR0ku8kIPTrpVSBAaV3biVJsezNuJTc,1195
+qingclient/base_client.py,sha256=0bODMXY2CAh6o5stKqgV6dReSMVkQNcF2vB_EtNkP8k,6327
+qingclient/init.py,sha256=VgXtbYaO6Z78OEzI19jDAKvpFnGM3EXvDoEt9wjOzvw,690
+qingclient/msg_service.py,sha256=PkdiRSil9fSNX27_8WD375o0P6GaLT49XbjwZd6oJfw,748
+qingclient/token_service.py,sha256=bfNR0AfSVaX08eunorFpWh86x4_fySsWiip2hWmSUxI,1571
+qingclient/user_service.py,sha256=OwG74fasxoNxpdfKStLOTgYSEwnf3epQx3fM83YmV-M,2048
+qing_client-0.1.5.dist-info/METADATA,sha256=do8xRWnWf0PmMKEgqu7Z0XljYYDlkblAd9okPpFMHxw,960
+qing_client-0.1.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qing_client-0.1.5.dist-info/top_level.txt,sha256=SGfL-bWcudzBovNNebgs55YYtD0uAIeYLr0ed3n5pY8,11
+qing_client-0.1.5.dist-info/RECORD,,
