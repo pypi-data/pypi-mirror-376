@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: vachanatts
+Version: 0.0.1
+Requires-Dist: pythainlp
+Requires-Dist: ssg
+Requires-Dist: onnxruntime
+Dynamic: requires-dist
