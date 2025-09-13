@@ -1,0 +1,86 @@
+- project:
+    templates:
+      - openstack-python3-jobs
+      - check-requirements
+      - publish-openstack-docs-pti
+      - release-notes-jobs-python3
+    check:
+      jobs:
+        - bifrost-tox-linters
+        - bifrost-integration-dhcp-centos-10
+        - bifrost-integration-dibipa-debian-centos-10
+        - bifrost-integration-tinyipa-centos-10
+        - bifrost-integration-tinyipa-ubuntu-noble
+        - bifrost-integration-tinyipa-ubuntu-jammy
+        - bifrost-integration-tinyipa-keystone-centos-10
+        - bifrost-integration-tinyipa-keystone-ubuntu-noble
+        - bifrost-integration-tinyipa-keystone-ubuntu-jammy
+        - bifrost-integration-tinyipa-debian-bookworm
+        - bifrost-integration-redfish-vmedia-uefi-ubuntu-noble
+        - bifrost-integration-redfish-vmedia-uefi-ubuntu-jammy
+        - bifrost-integration-redfish-vmedia-uefi-debian-bookworm
+        - bifrost-integration-inspector-centos-10
+        - bifrost-integration-inspector-ubuntu-jammy
+        - bifrost-upgrade-ubuntu-jammy
+        - bifrost-upgrade-keystone-ubuntu-noble
+        # Non-voting jobs
+        - bifrost-slurp-upgrade-ubuntu-jammy:
+            voting: false
+        - bifrost-integration-redfish-pxe-uefi-ubuntu-noble:
+            voting: false
+        - bifrost-integration-dhcp-ubuntu-jammy:
+            voting: false
+        - bifrost-integration-dibipa-debian-ubuntu-jammy:
+            voting: false
+        # TODO(priteau): Can be made voting by backporting
+        # https://review.opendev.org/c/openstack/bifrost/+/958853
+        - bifrost-upgrade-keystone-centos-10:
+            voting: false
+        - bifrost-cli-ubuntu-jammy:
+            voting: false
+        - bifrost-collections-src:
+            voting: false
+            required-projects: &bifrost_collections_required_projects
+              - openstack/ansible-collections-openstack
+        - bifrost-keystone-collections-src:
+            voting: false
+            required-projects: *bifrost_collections_required_projects
+        - kolla-ansible-ubuntu-bifrost:
+            voting: false
+            # NOTE(yoctozepto): to override from job definition
+            files: .*
+            irrelevant-files:
+              - ^.*\.rst$
+              - ^bifrost/tests/.*$
+              - ^api-ref/.*$
+              - ^doc/.*$
+              - ^releasenotes/.*$
+              - ^setup.cfg$
+              - ^test-requirements.txt$
+              - ^tools/.*$
+              - ^tox.ini$
+
+        - bifrost-tox-codespell:
+            voting: false
+    gate:
+      jobs:
+        - bifrost-tox-linters
+        - bifrost-integration-dhcp-centos-10
+        - bifrost-integration-dibipa-debian-centos-10
+        - bifrost-integration-tinyipa-centos-10
+        - bifrost-integration-tinyipa-ubuntu-noble
+        - bifrost-integration-tinyipa-ubuntu-jammy
+        - bifrost-integration-tinyipa-keystone-centos-10
+        - bifrost-integration-tinyipa-keystone-ubuntu-noble
+        - bifrost-integration-tinyipa-keystone-ubuntu-jammy
+        - bifrost-integration-tinyipa-debian-bookworm
+        - bifrost-integration-redfish-vmedia-uefi-ubuntu-noble
+        - bifrost-integration-redfish-vmedia-uefi-ubuntu-jammy
+        - bifrost-integration-redfish-vmedia-uefi-debian-bookworm
+        - bifrost-integration-inspector-centos-10
+        - bifrost-integration-inspector-ubuntu-jammy
+        - bifrost-upgrade-ubuntu-jammy
+        - bifrost-upgrade-keystone-ubuntu-noble
+    experimental:
+      jobs:
+        - bifrost-benchmark-ironic
