@@ -1,0 +1,2 @@
+[console_scripts]
+Gradus = gradus.cli:main
