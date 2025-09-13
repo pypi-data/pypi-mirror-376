@@ -1,0 +1,19 @@
+# D3 Identity Service Python Client - Dependencies
+cryptography>=41.0.0      # Ed25519 and AES-GCM cryptographic operations
+PyJWT>=2.8.0              # JWT operations with Ed25519 support
+etcd3>=0.12.0             # etcd client for distributed configuration
+aiohttp>=3.9.0            # Async HTTP client operations
+pydantic>=2.5.0           # Data validation and settings management
+asyncio>=3.4.3            # Async programming support
+redis>=5.0.0              # Redis integration for caching
+python-dateutil>=2.8.0    # Enhanced date/time parsing
+typing-extensions>=4.0.0  # Enhanced typing support
+dataclasses-json>=0.6.0   # JSON serialization for dataclasses
+
+# Development dependencies
+pytest>=7.0.0             # Testing framework
+pytest-asyncio>=0.21.0    # Async test support
+pytest-mock>=3.10.0       # Mock support for tests
+black>=23.0.0             # Code formatting
+isort>=5.12.0             # Import sorting
+mypy>=1.0.0               # Type checking
