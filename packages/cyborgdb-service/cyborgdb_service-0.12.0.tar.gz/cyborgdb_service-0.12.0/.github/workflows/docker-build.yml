@@ -1,0 +1,656 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: ["main"]
+    tags:
+      - "v*"
+  workflow_dispatch:  # Allow manual triggering
+
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: cyborginc/cyborgdb-service
+
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    
+    # Use prod environment for production releases to access endpoint config
+    environment:
+      name: ${{ (github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v') && !endsWith(github.ref, '-staging')) && 'prod' || 'dev' }}
+    
+    permissions:
+      contents: read
+      packages: write
+    
+    outputs:
+      version: ${{ steps.version.outputs.VERSION }}
+      image-tags: ${{ steps.meta.outputs.tags }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up QEMU for multi-platform builds
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        if: false  # Disabled - Docker Hub login moved to separate job
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: cyborginc/cyborgdb-service
+          tags: |
+            # Branch-based tags
+            type=ref,event=branch,suffix=-dev
+            type=ref,event=pr,prefix=pr-
+            # Tag-based versioning
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            # Latest tag for stable releases only
+            type=raw,value=latest,enable={{is_default_branch}},priority=100
+            # Add staging suffix for staging releases
+            type=semver,pattern={{version}}-staging,enable=${{ endsWith(github.ref, '-staging') }}
+          labels: |
+            org.opencontainers.image.title=CyborgDB Service
+            org.opencontainers.image.description=CyborgDB service with sentence transformers and CPU-optimized PyTorch
+            org.opencontainers.image.vendor=CyborgDB
+            org.opencontainers.image.url=https://github.com/${{ github.repository }}
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.documentation=https://github.com/${{ github.repository }}#readme
+
+      - name: Get version for Docker build
+        id: version
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            VERSION=${GITHUB_REF_NAME#v}  # Strip the 'v' prefix if present
+          else
+            # For branches/PRs, use git describe or short SHA
+            if git describe --tags --exact-match HEAD 2>/dev/null; then
+              VERSION=$(git describe --tags --exact-match HEAD | sed 's/^v//')
+            else
+              VERSION=$(git describe --tags --always --dirty 2>/dev/null || git rev-parse --short HEAD)
+            fi
+          fi
+          
+          # Convert to PEP 440 format
+          CLEAN_VERSION=$(echo "$VERSION" | sed 's/-staging/.dev0/g' | sed 's/-dev/.dev0/g')
+          
+          echo "VERSION=$CLEAN_VERSION" >> $GITHUB_OUTPUT
+          echo "Building Docker image with version: $CLEAN_VERSION"
+
+      - name: Update endpoint URLs
+        env:
+          PACKAGE_ENDPOINT: ${{ vars.PACKAGE_ENDPOINT }}
+        run: |
+          if [ -z "$PACKAGE_ENDPOINT" ]; then
+            echo "Error: PACKAGE_ENDPOINT is not set"
+            exit 1
+          fi
+          echo "Setting package endpoint to $PACKAGE_ENDPOINT"
+
+          sed -i'' -e "s|DEFAULT_PACKAGE_ENDPOINT = \".*\"|DEFAULT_PACKAGE_ENDPOINT = \"$PACKAGE_ENDPOINT\"|" cyborgdb_service/utils/endpoints.py
+
+          echo "Updated DEFAULT_PACKAGE_ENDPOINT in cyborgdb_service/utils/endpoints.py:"
+          cat cyborgdb_service/utils/endpoints.py | grep DEFAULT_PACKAGE_ENDPOINT
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        id: build
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64  # Added ARM64 support
+          push: false  # Never push in build job - moved to separate publish job
+          load: false  # Cannot load multi-platform images - disabled for multi-arch
+          build-args: |
+            GIT_VERSION=${{ steps.version.outputs.VERSION }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          outputs: type=image,name=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }},push=false
+
+      # Build single-platform images for artifact creation
+      - name: Build AMD64 image for artifact
+        uses: docker/build-push-action@v5
+        id: build-amd64
+        with:
+          context: .
+          platforms: linux/amd64
+          push: false
+          load: true  # Load only the AMD64 image for artifact creation
+          build-args: |
+            GIT_VERSION=${{ steps.version.outputs.VERSION }}
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.version.outputs.VERSION }}-amd64
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+
+      - name: Build ARM64 image for artifact
+        uses: docker/build-push-action@v5
+        id: build-arm64
+        with:
+          context: .
+          platforms: linux/arm64
+          push: false
+          load: false  # Cannot load ARM64 on AMD64 runner
+          build-args: |
+            GIT_VERSION=${{ steps.version.outputs.VERSION }}
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.version.outputs.VERSION }}-arm64
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          outputs: type=docker,dest=/tmp/cyborgdb-service-arm64.tar
+
+      - name: Save Docker images as artifacts
+        if: always()  # Always save artifact, even for PRs
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          
+          # Debug: Show available images
+          echo "=== DEBUG: Available Docker images ==="
+          docker images --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}\t{{.ID}}"
+          echo "======================================="
+          
+          # Save AMD64 image (using the correct tag without registry prefix)
+          AMD64_TAG="${{ env.IMAGE_NAME }}:${VERSION}-amd64"
+          echo "Saving AMD64 Docker image with tag: $AMD64_TAG"
+          
+          if docker images -q "$AMD64_TAG" | grep -q .; then
+            docker save "$AMD64_TAG" | gzip > cyborgdb-service-${VERSION}-amd64-docker.tar.gz
+            echo "✅ AMD64 image saved successfully"
+          else
+            echo "❌ Error: AMD64 image $AMD64_TAG not found"
+            echo "Available images:"
+            docker images --format "{{.Repository}}:{{.Tag}}"
+            exit 1
+          fi
+          
+          # Compress ARM64 image (already exported)
+          echo "Compressing ARM64 Docker image..."
+          if [ -f "/tmp/cyborgdb-service-arm64.tar" ]; then
+            gzip /tmp/cyborgdb-service-arm64.tar
+            mv /tmp/cyborgdb-service-arm64.tar.gz cyborgdb-service-${VERSION}-arm64-docker.tar.gz
+            echo "✅ ARM64 image compressed successfully"
+          else
+            echo "❌ Error: ARM64 tar file not found at /tmp/cyborgdb-service-arm64.tar"
+            ls -la /tmp/cyborgdb-service-*
+            exit 1
+          fi
+          
+          # Create metadata file
+          cat > docker-image-info.json << EOF
+          {
+            "image_name": "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}",
+            "version": "$VERSION",
+            "build_date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "git_ref": "${{ github.ref }}",
+            "git_sha": "${{ github.sha }}",
+            "platforms": ["linux/amd64", "linux/arm64"],
+            "usage": {
+              "pull_multiarch": "docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${VERSION}",
+              "load_amd64": "docker load < cyborgdb-service-${VERSION}-amd64-docker.tar.gz",
+              "load_arm64": "docker load < cyborgdb-service-${VERSION}-arm64-docker.tar.gz",
+              "run": "docker run -p 8000:8000 -e CYBORGDB_API_KEY=your-key -e CYBORGDB_DB_TYPE=redis -e CYBORGDB_CONNECTION_STRING=host:localhost,port:6379,db:0 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${VERSION}"
+            }
+          }
+          EOF
+          
+          echo "Docker image sizes:"
+          ls -lh cyborgdb-service-${VERSION}-*-docker.tar.gz
+
+      - name: Upload Docker image artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyborgdb-service-docker-${{ steps.version.outputs.VERSION }}
+          path: |
+            cyborgdb-service-${{ steps.version.outputs.VERSION }}-amd64-docker.tar.gz
+            cyborgdb-service-${{ steps.version.outputs.VERSION }}-arm64-docker.tar.gz
+            docker-image-info.json
+          retention-days: 30
+
+      - name: Generate Docker usage instructions
+        if: github.ref_type == 'tag'
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          IMAGE_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${VERSION}"
+          
+          echo "## Multi-Architecture Docker Image Built Successfully! 🐳" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Image:** \`${IMAGE_TAG}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** \`${VERSION}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Platforms:** \`linux/amd64\`, \`linux/arm64\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Quick Start" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "docker run -p 8000:8000 \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_API_KEY=\"your-api-key\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_DB_TYPE=\"redis\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  -e CYBORGDB_CONNECTION_STRING=\"host:localhost,port:6379,db:0\" \\" >> $GITHUB_STEP_SUMMARY
+          echo "  ${IMAGE_TAG}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Available Tags" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.meta.outputs.tags }}" | sed 's/^/- `/' | sed 's/$/`/' >> $GITHUB_STEP_SUMMARY
+
+      - name: Test Docker image (AMD64 only)
+        run: |
+          # Test that the AMD64 image builds and shows help when missing env vars
+          echo "Testing AMD64 Docker image..."
+          IMAGE_TAG="${{ env.IMAGE_NAME }}:${{ steps.version.outputs.VERSION }}-amd64"
+          
+          # Test that container shows error message for missing env vars
+          if docker run --rm $IMAGE_TAG 2>&1 | grep -q "Required environment variables are missing"; then
+            echo "Docker image test passed - shows proper error for missing env vars"
+          else
+            echo "Docker image test failed - does not show expected error message"
+            exit 1
+          fi
+
+      - name: Image size and details
+        run: |
+          IMAGE_TAG="${{ env.IMAGE_NAME }}:${{ steps.version.outputs.VERSION }}-amd64"
+          echo "Image Details:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          docker images $IMAGE_TAG --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}\t{{.CreatedAt}}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+
+  publish-to-dockerhub:
+    runs-on: ubuntu-latest
+    needs: [build-docker]
+    if: |
+      github.ref_type == 'tag' && 
+      startsWith(github.ref, 'refs/tags/v') && 
+      !endsWith(github.ref, '-staging') &&
+      github.event_name != 'pull_request'
+    environment:
+      name: prod
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up QEMU for multi-platform builds
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract metadata for publishing
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: cyborginc/cyborgdb-service
+          tags: |
+            # Tag-based versioning for production only
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            # Latest tag for stable releases only
+            type=raw,value=latest,priority=100
+
+      - name: Get version for publishing
+        id: version
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}  # Strip the 'v' prefix if present
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Publishing multi-architecture Docker image with version: $VERSION"
+
+      - name: Update endpoint URLs for production
+        env:
+          PACKAGE_ENDPOINT: ${{ vars.PACKAGE_ENDPOINT }}
+        run: |
+          if [ -z "$PACKAGE_ENDPOINT" ]; then
+            echo "Error: PACKAGE_ENDPOINT is not set"
+            exit 1
+          fi
+          echo "Setting package endpoint to $PACKAGE_ENDPOINT"
+          sed -i'' -e "s|DEFAULT_PACKAGE_ENDPOINT = \".*\"|DEFAULT_PACKAGE_ENDPOINT = \"$PACKAGE_ENDPOINT\"|" cyborgdb_service/utils/endpoints.py
+
+      - name: Build and push multi-architecture image to Docker Hub
+        uses: docker/build-push-action@v5
+        id: build-push
+        continue-on-error: true
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64  # Multi-architecture build
+          push: true
+          build-args: |
+            GIT_VERSION=${{ steps.version.outputs.VERSION }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: |
+            org.opencontainers.image.title=CyborgDB Service
+            org.opencontainers.image.description=CyborgDB service with sentence transformers and CPU-optimized PyTorch
+            org.opencontainers.image.vendor=CyborgDB
+            org.opencontainers.image.url=https://github.com/${{ github.repository }}
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.documentation=https://github.com/${{ github.repository }}#readme
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          # Disable problematic features that can cause push issues
+          provenance: false
+          sbom: false
+
+      - name: Check push result and retry if needed
+        if: always()
+        run: |
+          if [ "${{ steps.build-push.outcome }}" == "failure" ]; then
+            echo "❌ Initial multi-arch push failed, attempting retry..."
+            
+            # For multi-arch, we need to build and push each architecture separately
+            echo "🏗️ Building and pushing AMD64 image..."
+            docker buildx build \
+              --platform linux/amd64 \
+              --build-arg GIT_VERSION=${{ steps.version.outputs.VERSION }} \
+              --tag cyborginc/cyborgdb-service:${{ steps.version.outputs.VERSION }}-amd64 \
+              --push \
+              .
+            
+            echo "🏗️ Building and pushing ARM64 image..."
+            docker buildx build \
+              --platform linux/arm64 \
+              --build-arg GIT_VERSION=${{ steps.version.outputs.VERSION }} \
+              --tag cyborginc/cyborgdb-service:${{ steps.version.outputs.VERSION }}-arm64 \
+              --push \
+              .
+            
+            echo "🔗 Creating multi-arch manifest..."
+            # Create and push manifest list for multi-arch support
+            TAGS="${{ steps.meta.outputs.tags }}"
+            for tag in $TAGS; do
+              echo "📤 Creating manifest for $tag..."
+              docker buildx imagetools create \
+                --tag $tag \
+                cyborginc/cyborgdb-service:${{ steps.version.outputs.VERSION }}-amd64 \
+                cyborginc/cyborgdb-service:${{ steps.version.outputs.VERSION }}-arm64
+            done
+            
+            echo "🎉 Alternative multi-arch push method completed"
+          else
+            echo "✅ Initial multi-arch push succeeded!"
+          fi
+
+      - name: Update Docker Hub README
+        continue-on-error: true
+        run: |
+          # Check if DOCKER-README.md exists
+          if [ ! -f "./DOCKER-README.md" ]; then
+            echo "❌ DOCKER-README.md not found, skipping README update"
+            exit 0
+          fi
+          
+          echo "📄 Found DOCKER-README.md, updating Docker Hub..."
+          
+          # Install jq if not available
+          which jq || (apt-get update && apt-get install -y jq)
+          
+          # Get JWT token from Docker Hub
+          echo "🔑 Authenticating with Docker Hub..."
+          TOKEN_RESPONSE=$(curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -d "{\"username\":\"${{ vars.DOCKERHUB_USERNAME }}\",\"password\":\"${{ secrets.DOCKERHUB_TOKEN }}\"}" \
+            https://hub.docker.com/v2/users/login/)
+          
+          TOKEN=$(echo "$TOKEN_RESPONSE" | jq -r .token)
+          
+          if [ "$TOKEN" = "null" ] || [ -z "$TOKEN" ]; then
+            echo "❌ Failed to authenticate with Docker Hub"
+            echo "Response: $TOKEN_RESPONSE"
+            exit 1
+          fi
+          
+          echo "✅ Successfully authenticated with Docker Hub"
+          
+          # Read README content and prepare JSON payload
+          README_CONTENT=$(cat ./DOCKER-README.md | jq -Rs .)
+          SHORT_DESC="CyborgDB service with sentence transformers and CPU-optimized PyTorch (AMD64 & ARM64)"
+          
+          # Update repository description
+          echo "📝 Updating Docker Hub repository description..."
+          UPDATE_RESPONSE=$(curl -s -X PATCH \
+            -H "Authorization: JWT $TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"full_description\":$README_CONTENT,\"description\":\"$SHORT_DESC\"}" \
+            https://hub.docker.com/v2/repositories/cyborginc/cyborgdb-service/)
+          
+          # Check if update was successful
+          if echo "$UPDATE_RESPONSE" | jq -e '.name' > /dev/null 2>&1; then
+            echo "✅ Successfully updated Docker Hub README and description"
+            echo "Repository: https://hub.docker.com/r/cyborginc/cyborgdb-service"
+          else
+            echo "❌ Failed to update Docker Hub README"
+            echo "Response: $UPDATE_RESPONSE"
+            
+            # Try alternative endpoint (sometimes the API endpoints differ)
+            echo "🔄 Trying alternative API endpoint..."
+            ALT_RESPONSE=$(curl -s -X PATCH \
+              -H "Authorization: JWT $TOKEN" \
+              -H "Content-Type: application/json" \
+              -d "{\"full_description\":$README_CONTENT}" \
+              https://hub.docker.com/v2/repositories/cyborginc/cyborgdb-service/)
+            
+            if echo "$ALT_RESPONSE" | jq -e '.name' > /dev/null 2>&1; then
+              echo "✅ Successfully updated README via alternative endpoint"
+            else
+              echo "❌ Both API endpoints failed"
+              echo "Alternative response: $ALT_RESPONSE"
+              exit 1
+            fi
+          fi
+
+      # Fallback: Use the peter-evans action as backup
+      - name: Backup Docker Hub README Update
+        if: failure()
+        uses: peter-evans/dockerhub-description@v4
+        continue-on-error: true
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: cyborginc/cyborgdb-service
+          short-description: "CyborgDB service with sentence transformers and CPU-optimized PyTorch (AMD64 & ARM64)"
+          readme-filepath: ./DOCKER-README.md
+
+      - name: README Update Summary
+        if: always()
+        run: |
+          echo "## Docker Hub README Update 📄" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f "./DOCKER-README.md" ]; then
+            echo "✅ **DOCKER-README.md found**" >> $GITHUB_STEP_SUMMARY
+            echo "📊 **File size**: $(wc -c < ./DOCKER-README.md) bytes" >> $GITHUB_STEP_SUMMARY
+            echo "📝 **Lines**: $(wc -l < ./DOCKER-README.md)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Repository**: https://hub.docker.com/r/cyborginc/cyborgdb-service" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **DOCKER-README.md not found**" >> $GITHUB_STEP_SUMMARY
+            echo "Expected location: \`./DOCKER-README.md\`" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  create_release_artifacts:
+    needs: [build-docker]
+    runs-on: ubuntu-latest
+    if: github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v')
+    environment:
+      name: ${{ endsWith(github.ref, '-staging') && 'staging' || 'prod' }}
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download Docker image artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: cyborgdb-service-docker-${{ needs.build-docker.outputs.version }}
+          path: docker-artifacts
+
+      - name: Create Docker usage instructions
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          DOCKER_IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}"
+          
+          cat > DOCKER-USAGE.md << EOF
+          # CyborgDB Service Docker Image - v${VERSION} (Multi-Architecture)
+          
+          This image supports both **AMD64** and **ARM64** architectures, including Apple Silicon Macs!
+          
+          ## Quick Start
+          
+          ### Option 1: Pull from Docker Hub (Recommended)
+          Docker will automatically pull the correct architecture for your system:
+          \`\`\`bash
+          docker pull ${DOCKER_IMAGE}:${VERSION}
+          docker run -p 8000:8000 \\
+            -e CYBORGDB_API_KEY="your-api-key" \\
+            -e CYBORGDB_DB_TYPE="redis" \\
+            -e CYBORGDB_CONNECTION_STRING="host:localhost,port:6379,db:0" \\
+            ${DOCKER_IMAGE}:${VERSION}
+          \`\`\`
+          
+          ### Option 2: Load from downloaded tar.gz files
+          
+          #### For AMD64 systems (Intel/AMD processors):
+          \`\`\`bash
+          # Extract and load the AMD64 image
+          gunzip cyborgdb-service-${VERSION}-amd64-docker.tar.gz
+          docker load < cyborgdb-service-${VERSION}-amd64-docker.tar
+          
+          # Run the loaded image
+          docker run -p 8000:8000 \\
+            -e CYBORGDB_API_KEY="your-api-key" \\
+            -e CYBORGDB_DB_TYPE="redis" \\
+            -e CYBORGDB_CONNECTION_STRING="host:localhost,port:6379,db:0" \\
+            ${DOCKER_IMAGE}:${VERSION}
+          \`\`\`
+          
+          #### For ARM64 systems (Apple Silicon, ARM servers):
+          \`\`\`bash
+          # Extract and load the ARM64 image
+          gunzip cyborgdb-service-${VERSION}-arm64-docker.tar.gz
+          docker load < cyborgdb-service-${VERSION}-arm64-docker.tar
+          
+          # Run the loaded image
+          docker run -p 8000:8000 \\
+            -e CYBORGDB_API_KEY="your-api-key" \\
+            -e CYBORGDB_DB_TYPE="redis" \\
+            -e CYBORGDB_CONNECTION_STRING="host:localhost,port:6379,db:0" \\
+            ${DOCKER_IMAGE}:${VERSION}
+          \`\`\`
+          
+          ### Option 3: Docker Compose (Multi-Architecture)
+          \`\`\`yaml
+          version: '3.8'
+          services:
+            cyborgdb-service:
+              image: ${DOCKER_IMAGE}:${VERSION}
+              ports:
+                - "8000:8000"
+              environment:
+                - CYBORGDB_API_KEY=your-api-key-here
+                - CYBORGDB_DB_TYPE=redis
+                - CYBORGDB_CONNECTION_STRING=host:redis,port:6379,db:0
+              depends_on:
+                - redis
+            redis:
+              image: redis:7-alpine
+              ports:
+                - "6379:6379"
+          \`\`\`
+          
+          ## Supported Architectures
+          
+          | Architecture | Status | Use Case |
+          |--------------|--------|----------|
+          | \`linux/amd64\` | ✅ Supported | Intel/AMD servers, most cloud instances |
+          | \`linux/arm64\` | ✅ Supported | Apple Silicon Macs, ARM servers, Raspberry Pi 4+ |
+          
+          ## Environment Variables
+          
+          | Variable | Description | Example | Required |
+          |----------|-------------|---------|----------|
+          | \`CYBORGDB_API_KEY\` | Your CyborgDB API key | \`cyborg_abc123...\` | ✅ |
+          | \`CYBORGDB_DB_TYPE\` | Database type | \`redis\` | ✅ |
+          | \`CYBORGDB_CONNECTION_STRING\` | Database connection | \`host:localhost,port:6379,db:0\` | ✅ |
+          
+          ## Health Check
+          
+          Once running, verify the service:
+          \`\`\`bash
+          curl http://localhost:8000/v1/health
+          open http://localhost:8000/docs
+          \`\`\`
+          
+          ## Image Details
+          - **Platforms**: linux/amd64, linux/arm64
+          - **Base**: continuumio/miniconda3:latest
+          - **Python**: 3.12
+          - **PyTorch**: CPU-optimized
+          - **Size**: ~1.8GB (AMD64), ~1.9GB (ARM64)
+          
+          ## Architecture Detection
+          
+          To verify which architecture you're running:
+          \`\`\`bash
+          docker run --rm ${DOCKER_IMAGE}:${VERSION} uname -m
+          # Returns: x86_64 (AMD64) or aarch64 (ARM64)
+          \`\`\`
+          EOF
+
+      - name: Create combined release archive
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          
+          # Create release directory
+          mkdir -p release-v${VERSION}
+          
+          # Copy Docker artifacts
+          cp docker-artifacts/* release-v${VERSION}/
+          cp DOCKER-USAGE.md release-v${VERSION}/
+          
+          # Create combined archive
+          zip -r cyborgdb-service-v${VERSION}-complete.zip release-v${VERSION}/
+          
+          echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            cyborgdb-service-v${{ env.RELEASE_VERSION }}-complete.zip
+            docker-artifacts/cyborgdb-service-${{ env.RELEASE_VERSION }}-amd64-docker.tar.gz
+            docker-artifacts/cyborgdb-service-${{ env.RELEASE_VERSION }}-arm64-docker.tar.gz
+            docker-artifacts/docker-image-info.json
+            DOCKER-USAGE.md
+          body_path: DOCKER-USAGE.md
+          generate_release_notes: true
+          draft: false
+          tag_name: ${{ github.ref_name }}
+          prerelease: ${{ endsWith(github.ref, '-staging') }}
