@@ -1,0 +1,3 @@
+Metadata-Version: 2.1
+Name: spark_submit_k8s_pod_operator
+Version: 1.0.2

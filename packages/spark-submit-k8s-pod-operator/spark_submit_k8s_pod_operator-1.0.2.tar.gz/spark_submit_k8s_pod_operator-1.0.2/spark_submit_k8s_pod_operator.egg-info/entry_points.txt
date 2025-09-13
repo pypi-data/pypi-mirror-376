@@ -1,0 +1,2 @@
+[console_scripts]
+spark-submit-k8s-pod-operator = spark_submit_k8s_pod_operator:hello
