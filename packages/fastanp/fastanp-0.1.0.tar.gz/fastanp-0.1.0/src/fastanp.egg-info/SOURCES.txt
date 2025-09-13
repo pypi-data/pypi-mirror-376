@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/fastanp/__init__.py
+src/fastanp/hello.py
+src/fastanp.egg-info/PKG-INFO
+src/fastanp.egg-info/SOURCES.txt
+src/fastanp.egg-info/dependency_links.txt
+src/fastanp.egg-info/entry_points.txt
+src/fastanp.egg-info/top_level.txt
+src/fastanp/cli/__init__.py
+src/fastanp/cli/config_manager.py
+src/fastanp/cli/main.py
