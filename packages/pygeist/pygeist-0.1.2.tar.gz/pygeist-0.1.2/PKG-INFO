@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: pygeist
+Version: 0.1.2
+Summary: Pygeist server package
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# Pygeist
+Pygeist is a Python module that abstracts the application protocol `Zeitgeist`.
+
+## Protocol
+See [here](https://github.com/mateogall0/zeitgeist_core) to look into the core implementation of the protocol.
