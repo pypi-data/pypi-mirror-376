@@ -1,0 +1,9 @@
+swchp2pcom/__init__.py,sha256=zR0I3LAJ0nLNQI_zbgLSUu4Cqkl9OQYrvy6yS6r_RgY,109
+swchp2pcom/factory.py,sha256=2QgE9FU7u53jr7Lyu8suBuVbuyFeYBXPLk8pKJQpLWE,11403
+swchp2pcom/message_types.py,sha256=YT-cbvpRbaXwA0Zd0UpcI-R-ZcwNGA6dxAONQtCSpT4,2153
+swchp2pcom/node.py,sha256=JTbiqIow1vnYeK37SqDtmT6E3xv7_qG8zp7CbZaB5d0,11836
+swchp2pcom/peers.py,sha256=bEbjNnjo1oDVSGzHKyoxEtE7OOEpXb_DrVDAql34ZjY,11598
+swchp2pcom/swchpeer.py,sha256=IFB0-W_MIrLsCEWeum-LMy5w-6BsZW-nGaWvaQLA4aY,40113
+swchp2pcom-0.4.1.dist-info/METADATA,sha256=c7N3sIVpKj36lQaU5__C3330lhO5ZXv6hhHChiJUv1I,11634
+swchp2pcom-0.4.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+swchp2pcom-0.4.1.dist-info/RECORD,,
