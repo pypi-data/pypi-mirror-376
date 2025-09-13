@@ -1,0 +1,3 @@
+[console_scripts]
+doobots-package = doobots.packager:main
+doobots-run = doobots.local_runner:main
