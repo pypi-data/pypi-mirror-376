@@ -1,0 +1,15 @@
+wawebpy/__init__.py,sha256=mX9jJystwlQN2Fp2QrZ0QZUMDDcaA3JirxxVg1eOVzk,108
+wawebpy/_client.py,sha256=O6L8QB1UJ3bCp1K32bsgpydYXseLzEt7l-u_7tkmrqs,5500
+wawebpy/exceptions.py,sha256=efFeM4Wd4yRgwPEg7jSpct-YsTwcaPy5qjhVz7Fe7_U,509
+wawebpy/structures/__init__.py,sha256=8xeDLgtCjmjaeDYOx5GOlUKRVt6BY5YhgkFNV5E6-0E,111
+wawebpy/structures/_eventemitter.py,sha256=cF2cbHsrfdQ-WRQ90WsIhF3rEI8uAuBJETU4pvpk9FY,1484
+wawebpy/structures/_message.py,sha256=yPXUWgGUEiSzy3VYbt1HeA5LWGLxZQ4t9Lrc4Dq8a24,51
+wawebpy/structures/auth/__init__.py,sha256=jxuUgEmfJtCrS4YuS8ORvqeGlJohnW0YEesBs-Lxw2E,209
+wawebpy/structures/auth/_baseauth.py,sha256=tQrvipQsy_gBfhXHX3KH_3s9fksjInENAnxI3K56uCU,2524
+wawebpy/structures/auth/_legacysessionauth.py,sha256=qLYez0kAUb6BvgvCQda-gFmS2gBXiUamLgJoKwv-q9E,653
+wawebpy/structures/auth/_localauth.py,sha256=p-05lYdqiRsFmoD2B-Zom-q_9qjUeGO3NUoTIcUfQgI,640
+wawebpy/structures/auth/_noauth.py,sha256=XcNUTNgeU-XsB_D3giWHVncKgfAW2fxlxwtSLkbLQzs,767
+wawebpy-0.0.1.dist-info/LICENSE,sha256=0fEEfmiarcazjREDDjUr9Y87fsgBaiBRyQWTMinpR0Y,11542
+wawebpy-0.0.1.dist-info/METADATA,sha256=qIN_C1GKaU4OKKSFh6zt9D4NWoK0XaKFBIeT8Gc19ng,2465
+wawebpy-0.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+wawebpy-0.0.1.dist-info/RECORD,,
