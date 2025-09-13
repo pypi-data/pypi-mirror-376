@@ -1,0 +1,11 @@
+Metadata-Version: 2.3
+Name: lsy-testcase-to-xmind-mcp
+Version: 0.1.3
+Summary: Add your description here
+Author: 郦士元
+Author-email: 郦士元 <shiyuan.li@xiaobao100.com>
+Requires-Dist: mcp>=1.14.0
+Requires-Dist: xmind>=1.2.0
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
