@@ -1,0 +1,106 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "masquerade-spatial"
+dynamic = ["version"]
+authors = [
+    {name = "Eduardo Esteva", email = "Eduardo.Esteva@nyulangone.org"},
+]
+description = "Spatial image analysis and mask generation for microscopy data"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+keywords = [
+    "spatial-biology",
+    "microscopy",
+    "image-processing",
+    "masks",
+    "tiff",
+    "biomarkers",
+    "clustering",
+]
+dependencies = [
+    "imagecodecs>=2021.11.20",
+    "scikit-image>=0.19.0",
+    "pandas>=1.3.0",
+    "numpy>=1.20.0",
+    "matplotlib>=3.5.0",
+    "tifffile>=2021.11.2",
+    "scipy>=1.7.0",
+    "tqdm>=4.60.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "isort>=5.0",
+    "mypy>=0.910",
+]
+docs = [
+    "sphinx>=4.0",
+    "sphinx-rtd-theme>=1.0",
+]
+
+[project.scripts]
+masquerade-cli = "masquerade.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/e-esteva/masquerade"
+Documentation = "https://masquerade.readthedocs.io/"
+Repository = "https://github.com/e-esteva/masquerade.git"
+"Bug Tracker" = "https://github.com/e-esteva/masquerade/issues"
+
+[tool.setuptools]
+packages = ["masquerade"]
+
+[tool.setuptools.dynamic]
+version = {attr = "masquerade.__version__"}
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["masquerade"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = [
+    "tests",
+]
