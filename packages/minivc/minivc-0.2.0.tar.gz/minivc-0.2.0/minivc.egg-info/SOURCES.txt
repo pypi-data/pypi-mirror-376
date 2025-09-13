@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+minivc/__init__.py
+minivc/cli.py
+minivc/core.py
+minivc/ignore.py
+minivc.egg-info/PKG-INFO
+minivc.egg-info/SOURCES.txt
+minivc.egg-info/dependency_links.txt
+minivc.egg-info/entry_points.txt
+minivc.egg-info/top_level.txt

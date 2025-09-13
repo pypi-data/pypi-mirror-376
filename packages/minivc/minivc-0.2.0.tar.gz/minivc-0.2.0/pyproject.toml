@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minivc"
+version = "0.2.0"  # bump since you added new commands (status/diff/branch/checkout/merge)
+description = "A minimal, Git-like version control tool (CLI, stdlib only)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Bhanuja Karumuru", email = "bhanukarumuru@gmail.com" }]
+keywords = ["git", "version-control", "vcs", "cli", "learning"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Version Control",
+  "Operating System :: OS Independent",
+]
+
+[project.scripts]
+minivc = "minivc.cli:main"
+
+[tool.setuptools]
+packages = ["minivc"]  # avoid picking up demo/, tests/, etc.
+
+[tool.setuptools.package-data]
+minivc = []
+
+# Optional but nice: ruff/mypy config if you add them
+[tool.ruff]
+line-length = 100
+
