@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: scalexi_llm
+Version: 0.1.0
+Author: scalex_innovation
+Requires-Dist: openai
+Requires-Dist: anthropic
+Requires-Dist: google-genai
+Requires-Dist: groq
+Requires-Dist: pymupdf
+Requires-Dist: xai-sdk
+Requires-Dist: python-docx
+Requires-Dist: pydantic
+Requires-Dist: python-dotenv
+Requires-Dist: exa_py
+Dynamic: author
+Dynamic: requires-dist
