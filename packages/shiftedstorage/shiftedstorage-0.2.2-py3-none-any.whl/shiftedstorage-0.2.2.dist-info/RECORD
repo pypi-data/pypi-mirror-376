@@ -1,0 +1,8 @@
+shiftedstorage/__init__.py,sha256=MTGgwEix0YldXkzS7M4OO8EM6__fdggm4JPl6mwZMBs,47
+shiftedstorage/cli.py,sha256=HM25bwGvx6BNeEQDmwZHdNkG5Oegz2omO0PfegIpQzI,3462
+shiftedstorage/compose.py,sha256=FDmMn_YXyKES6kY-VHxrLCTlQVmYc9QYEynfwPL44MQ,7485
+shiftedstorage/compose.yml,sha256=bRx0fy1dzLW08Jb4mCoSj2hKWVlLUck1Ao884bPFqrM,1198
+shiftedstorage-0.2.2.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+shiftedstorage-0.2.2.dist-info/entry_points.txt,sha256=LlamWeUadSXH-jjIbr8J6Z72ZAzeObp2ulk0fDzs-kg,55
+shiftedstorage-0.2.2.dist-info/METADATA,sha256=6hMSNEQMRyCZSLIvfqcIcmaOpEJ5FsZJ3plzcaJEuWg,9621
+shiftedstorage-0.2.2.dist-info/RECORD,,
