@@ -1,0 +1,9 @@
+quadfitmodule.cp311-win_amd64.pyd,sha256=BMgmbLXlvmUIlUYMNM6Ia-4qhVuAjH3wiVnyFiJvBkg,46080
+quadfit/__init__.py,sha256=HVDmqQE_024NJFAaqSUAc43aYwIfcab7X9P54KxreHc,42
+quadfit/quadfit.py,sha256=ucw1S3CzJWP_VxlmSGcvTV-2Dg7YI_DJcZhIlcT6LDE,11898
+quadfit/quadfitmodule.c,sha256=2pX1vuib-6nA1cqMWxVDycIOCINo3BW2xpzjc1uszew,48203
+quadfit-1.1.0.dist-info/licenses/LICENSE,sha256=Rl7eMmETaMukecNuHyaGkQqI2pC2uSMVzLM75pqJh4s,1128
+quadfit-1.1.0.dist-info/METADATA,sha256=NdvC2Ezo-jQy5HxK-CsUMywh1R0m13EotWanAglvUqs,10586
+quadfit-1.1.0.dist-info/WHEEL,sha256=JLOMsP7F5qtkAkINx5UnzbFguf8CqZeraV8o04b0I8I,101
+quadfit-1.1.0.dist-info/top_level.txt,sha256=lXioHHVu6EgyAJc4nNpEsweLOlgGn87QziAjZvzforg,8
+quadfit-1.1.0.dist-info/RECORD,,
