@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/snapfront_coherence/__init__.py
+src/snapfront_coherence/client.py
+src/snapfront_coherence/errors.py
+src/snapfront_coherence.egg-info/PKG-INFO
+src/snapfront_coherence.egg-info/SOURCES.txt
+src/snapfront_coherence.egg-info/dependency_links.txt
+src/snapfront_coherence.egg-info/requires.txt
+src/snapfront_coherence.egg-info/top_level.txt
+tests/test_client_unit.py
+tests/test_integration_local.py
