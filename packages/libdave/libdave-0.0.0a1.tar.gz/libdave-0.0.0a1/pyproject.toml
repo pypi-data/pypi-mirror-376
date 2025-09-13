@@ -1,0 +1,11 @@
+["build-system"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = 'libdave'
+description = "coming soon"
+version = "0.0.0a1"
+authors = [
+    {name='arielle', email='me@arielle.codes' },
+]
