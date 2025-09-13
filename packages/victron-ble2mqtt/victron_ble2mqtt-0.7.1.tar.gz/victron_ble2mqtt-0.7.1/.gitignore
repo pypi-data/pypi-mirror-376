@@ -1,0 +1,16 @@
+.*
+*.egg-info
+__pycache__
+/dist/
+/build/
+/coverage.*
+*.orig
+
+!.github
+!.run
+!.editorconfig
+!.flake8
+!.gitignore
+!.pre-commit-config.yaml
+!.pre-commit-hooks.yaml
+!.gitkeep
