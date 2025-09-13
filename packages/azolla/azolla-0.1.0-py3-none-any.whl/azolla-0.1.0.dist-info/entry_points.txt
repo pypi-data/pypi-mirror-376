@@ -1,0 +1,2 @@
+[console_scripts]
+azolla-worker = azolla.cli:worker_main_sync
