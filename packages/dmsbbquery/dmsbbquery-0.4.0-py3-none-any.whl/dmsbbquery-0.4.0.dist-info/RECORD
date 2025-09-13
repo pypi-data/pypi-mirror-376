@@ -1,0 +1,13 @@
+dmsbbquery/__init__.py,sha256=VHGJyqSZmq-NzLILMeOqg4bbfTw3qDYxVvGeUm1k3aw,415
+dmsbbquery/businesspartnerdata.py,sha256=taooiMhTBg0WV5BQ9VJFumAiR4cXPYtVYtl4hGQi4Y8,7159
+dmsbbquery/dmsbb.config,sha256=O_H_JQXO-61iocWT4UlCMWlC8WsbQgmLI8NsMNVWunw,139
+dmsbbquery/dmsbbquery.py,sha256=ssk3MMKuZKIpmVEjtKa1tgpv-UZSIDlLUUCVrnKDFkE,5629
+dmsbbquery/dummyinterface.py,sha256=3_jiAucNUe3yvMo1sHku6R4eTSzVOhNBF6ZLhf67abo,1598
+dmsbbquery/getstock.py,sha256=UqvtTsHoHMZeAimIPhdtF5m3FqUi5vL4i6RDFmVXcQM,6129
+dmsbbquery/shopdata.py,sha256=u9Z7RsPZk9wwTFiotR6ZC8riVCLnJB2rq5KnzzNXgIM,6163
+dmsbbquery/workshoporder.py,sha256=SeoECAW6DIMZ5JG4MLMHT9jNyId5LRhwnskhpnfzR0M,5503
+dmsbbquery-0.4.0.dist-info/METADATA,sha256=F9XCHDAaQq7xAoZXdIga4OZyhKcVS7Ie7AotK_V_cn4,11679
+dmsbbquery-0.4.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+dmsbbquery-0.4.0.dist-info/entry_points.txt,sha256=RhiFjYVVr-ZZ2Xui6bkXjSFnNilNADrn35yVIZfVWTo,54
+dmsbbquery-0.4.0.dist-info/licenses/LICENSE,sha256=WHogjE5rPrJhmaLo6YQ3mpq3JqvpmsfeI7RXx7juRtk,1077
+dmsbbquery-0.4.0.dist-info/RECORD,,
