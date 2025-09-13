@@ -1,0 +1,13 @@
+neurosift/TemporaryDirectory.py,sha256=JW-wbVGRc4Z9SchJi64NVNHOv02Oman4-p2GIp7qKyw,1538
+neurosift/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+neurosift/cli.py,sha256=1GqPMq6ooI_aSXvXhFDpNe22CDnM846fCgRBgPuuX4U,4104
+neurosift/codecs/MP4AVCCodec.py,sha256=z4_OuLJHioE0C1sFfk050FntPsLXROoUJRDYI9vTkAY,3155
+neurosift/codecs/__init__.py,sha256=fpr-RwWRO2RQRkZCfgNRt6TBFiTyL5dw4UYWMUbeq88,51
+neurosift/local-file-access-js/README.md,sha256=POWz8hueTLhGrYFph_HZFjUd8gouzvQ1MDXzwjU41ZM,1673
+neurosift/local-file-access-js/package.json,sha256=aiNuBMKul0DB14ffMhpRUluKnnwCWlIgVxpYCx9W2fg,422
+neurosift/local-file-access-js/src/index.js,sha256=zRObmhch8c3svfHBHIe9FyPv-wet_mmCABGZQ3UhG6w,3087
+neurosift-0.2.15.dist-info/METADATA,sha256=ibJsRC84vMZ5DaHZG_vdIrq-MiDz-uBIsbV9zev2Cig,1993
+neurosift-0.2.15.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+neurosift-0.2.15.dist-info/entry_points.txt,sha256=4oMGKQ_BZkfzFYlqEjU6lThy3Kua_b9tWN-IHW4PDZM,54
+neurosift-0.2.15.dist-info/top_level.txt,sha256=1Y0yybpsnPUcJHuupOlYTKLRTgkuTwzhsLTTIMvHDP0,10
+neurosift-0.2.15.dist-info/RECORD,,
