@@ -1,0 +1,17 @@
+name: PlasMAAG 
+channels:
+  - pytorch
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python==3.11.2
+  - pip
+  - pip:
+      - -e ..
+  - snakemake==8.27.1
+  - samtools==1.18
+  - blast==2.15.0
+  - networkx==3.4.2
+  - pysam==0.22.1
+  - biopython==1.85
