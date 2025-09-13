@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: keelet
+Version: 0.0.1
+Project-URL: Documentation, https://github.com/keelet/keelet#readme
+Project-URL: Issues, https://github.com/keelet/keelet/issues
+Project-URL: Source, https://github.com/keelet/keelet
+License-Expression: Apache-2.0
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# keelet
+
+[![PyPI - Version](https://img.shields.io/pypi/v/keelet.svg)](https://pypi.org/project/keelet)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/keelet.svg)](https://pypi.org/project/keelet)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install keelet
+```
+
+## License
+
+`keelet` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.
