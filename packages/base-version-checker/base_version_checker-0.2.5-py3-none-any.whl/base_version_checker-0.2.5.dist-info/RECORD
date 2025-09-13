@@ -1,0 +1,12 @@
+base_version_checker-0.2.5.dist-info/licenses/LICENSE,sha256=g6Tt4-cXhwZ1J17yL4hMvhiQkAHY8Z4ZXm8KMZ6xt-k,1069
+version_checker/Readme.md,sha256=KsOGktb-hiodzRiC7G0WoenJWCr93VruoR9YQ-t2D-c,3018
+version_checker/__init__.py,sha256=urvhu4wO10oxcbPa4ei0f6wBnXl-v6PazLTSsV7pl-o,65
+version_checker/bumpversion_cfg_example.txt,sha256=O5-rR82L4axsNgZxIF0PFzD3t3TdaBupsqwSVdW96vY,1308
+version_checker/cli.py,sha256=FheS_pUcQ7lG-WnVDV6eDbRvH_hWhd3D0ZrEDUBihtQ,5416
+version_checker/constants.py,sha256=uooYW8nhRFBlpTslhzruWzl6S9Mw1VOjqfxSvvIw72M,1405
+version_checker/utils.py,sha256=xIwfCDhHvwLMTVWVEyvO8g6KOCLakJr7nPt6fpUeT74,11288
+base_version_checker-0.2.5.dist-info/METADATA,sha256=x7oHYwfVu_4gf0vo8fZm8gyX7ShZh-hXxG1Rl206rtQ,4360
+base_version_checker-0.2.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+base_version_checker-0.2.5.dist-info/entry_points.txt,sha256=bfTb6R7oXHRft3G8iNuUNjZxcElg_tFWGkAzE5h6-e4,61
+base_version_checker-0.2.5.dist-info/top_level.txt,sha256=I8z7t2m9snpSnJRRlUkCd7LoEwjc2Ydd03ArP1OPyK4,16
+base_version_checker-0.2.5.dist-info/RECORD,,
