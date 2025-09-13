@@ -1,0 +1,3 @@
+[console_scripts]
+context-engine = context_engine_mcp.install:main
+context-engine-mcp = context_engine_mcp.__main__:main
