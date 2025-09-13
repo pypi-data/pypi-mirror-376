@@ -1,0 +1,15 @@
+redcamel/__init__.py,sha256=6bywZYCSTlDejwQcpJU32h9nczOSsH5FrT5ARR2MIyk,692
+redcamel/icon.png,sha256=xhKA61JyiaorPCtijwLMD6SQmMs6RSOT8MjX9x_fNj4,1199
+redcamel/remi_calculator.py,sha256=-zxatF-QL63kXqr_Rev6h4dMOvgjYtIzuBgPOzy2aWI,10634
+redcamel/remi_gui.py,sha256=gX8LGtGZWFrxN-Z-2ivd5rxEQdeUUQxnxmgGvGweb8E,76152
+redcamel/remi_particles.py,sha256=c6KKx7pH_pNQK5DAjefT-2My9loF-yTNDqgln2QFcxU,7185
+redcamel/units.py,sha256=aSfE-gJp-_vmPJmkd1_iC55qI3xd_YhOiG6yfxP7tfQ,827
+redcamel-0.1.7.dist-info/licenses/CITATION.cff,sha256=o3SqSzTA1zvz9BfvvgdodY5-qlmNiC893NTLL9eINT8,962
+redcamel-0.1.7.dist-info/licenses/LICENSES/CC-BY-4.0.txt,sha256=1VdTnfaOdxzB7tzJHRP3D8qTDlCNEe7cr6SxXbSeN0Q,17023
+redcamel-0.1.7.dist-info/licenses/LICENSES/CC0-1.0.txt,sha256=ogEPNDSH0_dhiv_lT3ifVIdgIzHAqNA_SemnxUfPBJk,7048
+redcamel-0.1.7.dist-info/licenses/LICENSES/GPL-3.0-or-later.txt,sha256=-5gWaMGKJ54oX8TYP7oeg2zITdTapzyWl9PP0tispuA,34674
+redcamel-0.1.7.dist-info/licenses/REUSE.toml,sha256=s6GcP7V7u6VFhwckVwnCcp61bXfsWk-_RL9uQg94iB0,634
+redcamel-0.1.7.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+redcamel-0.1.7.dist-info/entry_points.txt,sha256=Qa4sL6e-tl5yb5BaxNG4u_a4zsWt_8ikMbpOV0jmNCE,53
+redcamel-0.1.7.dist-info/METADATA,sha256=doukTjsgIj-6F5pXmYkkkx10VoSJ_35RB-Xbs2pEvnc,5705
+redcamel-0.1.7.dist-info/RECORD,,
