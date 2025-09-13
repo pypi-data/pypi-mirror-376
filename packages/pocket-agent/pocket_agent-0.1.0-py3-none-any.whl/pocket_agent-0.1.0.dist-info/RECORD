@@ -1,0 +1,9 @@
+pocket_agent/__init__.py,sha256=qF0Nif9Yuu_9C-vlboi0bqTncVYRzG92ffXHmcQTdtw,222
+pocket_agent/agent.py,sha256=WWg8YfDN3CN-BHZKuC1H6a6I0yIphY14L60eXcK99kY,13124
+pocket_agent/client.py,sha256=Zi4Iz53iyL3qbhvyn1HizG-conYNJFLoFgBl3jObvrM,8636
+pocket_agent/utils/console_formatter.py,sha256=P1Uzruubp-yOzL-AOOcrzF92WJWfYglU-WCDG7a0kIE,3444
+pocket_agent/utils/logger.py,sha256=jtKSwFS_JEhfbDNRSR9toeFl55weatohjd9bgHL3Q5Y,1416
+pocket_agent-0.1.0.dist-info/METADATA,sha256=Y6bGOfUdfaJfCnFQiipOxfM3NFEcIsbK6yj-qM8eskI,12903
+pocket_agent-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pocket_agent-0.1.0.dist-info/licenses/LICENSE,sha256=sEjWwVK55YReQcOoD3Whu8--1aQ77t_xXG113wTSBuI,1093
+pocket_agent-0.1.0.dist-info/RECORD,,
