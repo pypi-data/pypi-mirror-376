@@ -1,0 +1,232 @@
+Metadata-Version: 2.4
+Name: siiha-sdk
+Version: 0.1.9
+Summary: SIIHA SDK — Natural language → Google Calendar create-event with dedupe
+Author: Debby Yeh
+License: MIT
+Project-URL: Homepage, https://github.com/HUEI-JYUN-DEBBY-YEH/siiha-gemini-multiagent-ver2.git
+Project-URL: Source, https://github.com/HUEI-JYUN-DEBBY-YEH/siiha-gemini-multiagent-ver2.git
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: google-api-python-client>=2.132.0
+Requires-Dist: google-auth-oauthlib>=1.2.0
+Requires-Dist: python-dateutil>=2.9.0
+Requires-Dist: pytz>=2024.1
+Provides-Extra: dev
+Requires-Dist: build>=1.2.2; extra == "dev"
+Requires-Dist: twine>=5.0.0; extra == "dev"
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Dynamic: license-file
+
+# SIIHA - SDK
+
+## What is SIIHA SDK?
+SIIHA is a micro-resilience assistant that blends **emotional awareness × suggestion maps × workspace tools**.  
+**SIIHA SDK v0.1.9** exposes focused capabilities:
+- **Parse natural language → structured event** (`parse_event`, beta)
+- **Create Google Calendar events** (`create_calendar_event`) with **built-in dedupe**  
+It’s designed for local OAuth, terminal-first workflows, and consistent behavior across CLI / UI integrations.
+ 
+
+---
+
+## Features (v0.1.9)
+
+### 🗓️ Google Calendar – Create Event
+- zh/EN **natural-language parsing** for dates/times, location, attendees.
+- **Cross-day** handling (e.g., `晚上11點到凌晨1點`).
+- **Absolute dates** (`2025-09-30`, `2025/09/30`, `09/30/2025`, `Sep 30 2025`) and **AM/PM / zh-AMPM**.
+- Location markers `地點：/location:`、`at ...`（時間片段不會被當成地點）；
+  attendees extraction & dedupe; description pass-through.
+
+### 🧠 Parser (beta) `parse_event(text, tz='Asia/Taipei')`
+**Supported input families (examples reflect current test suite):**
+- **Now / Later**:  
+  EN `now + 90 min`, `90 minutes from now`, `90 minutes later`；  
+  ZH `現在+90分鐘`, `一個半小時後`, `現在+1.5小時`  
+  → `start=now`, `duration` from hint，flags `lock:now_or_bucket` / `lock:now_plus` / `lock:later_hint`
+- **Relative day + time / range**:  
+  `tomorrow 10`, `tomorrow 10:00-10:30`, `tomorrow 10PM`, `明天早上10點`，  
+  `in 2 days 10AM`, `two weeks later 9am`, `後天晚上七點`  
+  → first rewrite to concrete date (flag `rewrite:relative+time`)
+- **Absolute date + time / range**:  
+  `2025-09-30 14:00`, `Sep 30 2025 2PM`, `Sep 30 2025 14:00-15:00`,  
+  `8/16 9-11`, `Sep 30 2025 23:00-01:00`, `2025-09-30 11:30PM–2025-10-01 12:30AM`,  
+  zh with date: `2025/9/30 上午9點-10點`, `Sep 30 2025 下午3點`
+- **Bucket words**:  
+  `later this morning/evening`, `noon/中午`, `midnight/午夜`, `evening meeting tomorrow`
+- **This/Next weekday**:  
+  `next week Monday 10am`, `next Tuesday 10AM / next Tue 10:00 / next Tue at 10`, `下週二 10:00`
+- **All-day**:  
+  Date-only like `Sep 30 2025` → all-day window (flags `lock:all_day`, `all_day`)
+- **Meta fields**:  
+  `location: ...` / `地點：...`、`invite ...` / `attendees: ...`、`duration 45 minutes` / `for 45 mins`、`title:` / `標題：`
+
+**Intentional non-coverage (by design in v0.1.9):**
+- `明早九點`（#33）、`早上開會`（#42）→ ambiguous; parser returns `start=None,end=None` instead of guessing.
+
+**Other behaviors**
+- Auto **roll to next day** when a “today-only time” has already passed (with a short grace window).  
+  `now/later` family anchors to **now** (no roll).
+- Returns flags (e.g., `rolled_to_next_day`) and a heuristic `confidence`.
+
+### 🔁 Idempotent creation (dedupe)
+A newly created event is considered a duplicate iff:
+1) the start instant matches an existing event (RFC3339-equivalent across timezones), and  
+2) the **normalized** title matches (trim, collapse whitespace & commas, case-fold).  
+Location / attendees differences do **not** affect dedupe.
+
+### 🧩 Configurable
+`DEFAULT_TIMEZONE`, `DEFAULT_CALENDAR_ID`, `GOOGLE_SEND_UPDATES`.
+
+---
+
+## Example (natural input)
+Meet with Marketing team tomorrow 3PM, location: HQ Meeting Room 2, attendees: debby@example.com
+
+---
+
+## Quickstart
+
+### 0) Prerequisite
+```bash
+python --version           # >= 3.10 (3.11 recommended)
+python -m pip install -U pip
+python -m pip install -U build twine pytest
+
+```
+
+### 1)  OAuth setup (Desktop app)
+1. In Google Cloud Console, create OAuth 2.0 Client (Desktop).
+2. Download the client secrets as `credentials.json` and place it at the project root.
+3. Run a one-time bootstrap to generate `token.json` (also kept at root):
+```bash
+python quickstart.py
+
+```
+#### Required scopes (minimum):
+- https://www.googleapis.com/auth/calendar.events
+- (or the broader) https://www.googleapis.com/auth/calendar
+Keep credentials.json and token.json private. They are in .gitignore by default.
+
+### 2) Install (editable for development)
+```bash
+cd C:\Users\(YOURFOLDER)\siiha-sdk
+python -m build                 # (optional) build wheel & sdist into dist/
+python -m pip install -e .      # recommended for local dev
+
+```
+
+---
+
+## Usage
+A) Parse → Create (minimal)
+```python
+from siiha_sdk.calendar import parse_event, create_calendar_event
+
+text = "下個月 5號 下午3點到4點 和Joshua討論 OAuth，地點：Teams，邀請 debby@example.com
+"
+parsed = parse_event(text, tz="Asia/Taipei")
+# parsed keys: title, body, location, attendees, start, end, timeZone, confidence, flags
+
+res = create_calendar_event(
+  title = parsed["title"],
+  start_iso = parsed["start"],
+  end_iso = parsed["end"],
+  location = parsed["location"] or None,
+  attendees = parsed["attendees"],
+  description= parsed["body"] or None,
+  timezone = parsed["timeZone"],
+  dedupe = True,
+)
+print(res) # {'ok': True, 'eventId': ..., 'deduped': False/True, ...}
+```
+
+B) Relative “now” examples
+```python
+from siiha_sdk.calendar import parse_event
+for s in [
+    "now + 90 min",
+    "90 minutes from now",
+    "現在+90分鐘",
+    "一個半小時後",
+]:
+    print(s, "=>", parse_event(s, tz="Asia/Taipei"))
+```
+
+C) Target a test calendar (avoid polluting primary)
+- Set environment variable SIIHA_TEST_CALENDAR_ID=your_test_calendar_id or
+- Override in code:
+```bash
+from siiha_sdk import config
+config.DEFAULT_CALENDAR_ID = "your_test_calendar_id"
+```
+
+---
+
+## Dedupe behavior
+A newly created event is considered a duplicate iff:
+1. the start instant matches an existing event (RFC3339-equivalent across timezones), and
+2 the normalized title matches (trim, whitespace collapse, comma normalization, case-fold).
+
+Location / attendees differences do not affect dedupe.
+
+---
+
+## Tests
+Parser smoke test
+```bash
+python tests/quickstart_create_event.py
+```
+
+Dedupe scenarios (creates events)
+```bash
+# (optional) direct events to a test calendar
+# PowerShell:
+$env:SIIHA_TEST_CALENDAR_ID="your_test_calendar_id"
+# Bash:
+export SIIHA_TEST_CALENDAR_ID=your_test_calendar_id
+
+python tests/dedupe_scenarios.py
+```
+
+(Tip) You can tag test events by passing description="#SDK_TEST" to create_calendar_event(...) and clean them later via a small script.
+
+---
+
+## Configuration
+These live in siiha_sdk/config.py:
+- DEFAULT_TIMEZONE = "Asia/Taipei"
+- DEFAULT_CALENDAR_ID = "primary"
+- GOOGLE_SEND_UPDATES = "all" (Google will email updates to attendees)
+
+Override at runtime:
+```bash
+from siiha_sdk import config
+config.DEFAULT_TIMEZONE = "Asia/Tokyo"
+config.DEFAULT_CALENDAR_ID = "your_cal_id"
+config.GOOGLE_SEND_UPDATES = "none"  # or "externalOnly" / "all"
+```
+
+---
+
+## Known limitations
+- Recurrence, reminders, and conferenceData (Meet links) are not supported yet.
+- Language coverage is focused on common zh/EN patterns; other languages/phrases may need extensions.
+- Description is optional and not auto-generated (except when you pass one).
+- Dedupe checks only within the same local day window at creation time.
+- confidence is a heuristic guidance score.
+- Intentional gaps (v0.1.9): sentences `明早九點`,`早上開會` are not within the scope of this version.
+---
+
+## Security
+- Do not commit `credentials.json` or `token.json`.
+- Use a test calendar for automated tests.
+- Principle of least privilege for your Google account.
+
+---
+
+## Versioning & License
+- Versioning: SemVer (MAJOR.MINOR.PATCH). Current: v0.1.9.
+- License: MIT (see LICENSE).
