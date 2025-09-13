@@ -1,0 +1,203 @@
+# Python Utility Functions Library
+
+A collection of utility functions for common programming tasks including input validation, array/matrix operations, string processing, and mathematical calculations.
+
+## Overview
+
+This library provides a set of utility functions designed to help with:
+- Safe user input validation and collection
+- Array and matrix manipulation
+- String and character operations
+- Mathematical computations
+- Data structure searches
+
+## Functions Reference
+
+### Input Validation Functions
+
+#### `saisir_n(bi, bs)`
+Prompts the user to input an integer within a specified range.
+- **Parameters:**
+  - `bi` (int): Lower bound (inclusive)
+  - `bs` (int): Upper bound (inclusive)
+- **Returns:** Valid integer within the range [bi, bs]
+- **Usage:** `number = saisir_n(1, 100)  # Get integer between 1 and 100`
+
+#### `saisir_f(bi, bs)`
+Prompts the user to input a float within a specified range.
+- **Parameters:**
+  - `bi` (float): Lower bound (inclusive)
+  - `bs` (float): Upper bound (inclusive)
+- **Returns:** Valid float within the range [bi, bs]
+- **Usage:** `decimal = saisir_f(0.0, 10.0)  # Get float between 0.0 and 10.0`
+
+#### `saisir_ch()`
+Prompts the user to input a string containing only alphabetic characters.
+- **Returns:** Valid alphabetic string (whitespace stripped)
+- **Usage:** `name = saisir_ch()  # Get alphabetic string`
+
+### Array Operations
+
+#### `remplir_t(n, t)`
+Fills an array with integer values from user input.
+- **Parameters:**
+  - `n` (int): Number of elements to fill
+  - `t` (list): Array to fill (modified in place)
+
+#### `remplir_t_f(n, t)`
+Fills an array with float values from user input.
+- **Parameters:**
+  - `n` (int): Number of elements to fill
+  - `t` (list): Array to fill (modified in place)
+
+#### `remplir_t_ch(n, t)`
+Fills an array with string values from user input.
+- **Parameters:**
+  - `n` (int): Number of elements to fill
+  - `t` (list): Array to fill (modified in place)
+
+#### `afficher_t(n, t)`
+Displays array elements with their indices.
+- **Parameters:**
+  - `n` (int): Number of elements to display
+  - `t` (list): Array/list to display
+
+### Matrix Operations
+
+#### `remplir_m(m, n)`
+Fills a square matrix with integer values from user input.
+- **Parameters:**
+  - `m` (2D array): Matrix to fill (modified in place)
+  - `n` (int): Size of the square matrix (n x n)
+
+#### `remplir_m_f(m, n)`
+Fills a square matrix with float values from user input.
+- **Parameters:**
+  - `m` (2D array): Matrix to fill (modified in place)
+  - `n` (int): Size of the square matrix (n x n)
+
+#### `remplir_m_ch(m, n)`
+Fills a square matrix with string values from user input.
+- **Parameters:**
+  - `m` (numpy.ndarray): Matrix to fill (modified in place)
+  - `n` (int): Size of the square matrix (n x n)
+
+#### `afficher_m(m, n)`
+Displays a square matrix with indices.
+- **Parameters:**
+  - `m` (2D array): Matrix to display
+  - `n` (int): Size of the square matrix (n x n)
+
+### Search Functions
+
+#### `existance_t(t, n, x)`
+Checks if a value exists in an array.
+- **Parameters:**
+  - `t` (list): Array to search in
+  - `n` (int): Number of elements to check
+  - `x`: Value to search for
+- **Returns:** True if value exists, False otherwise
+
+#### `existance_ch(c, ch)`
+Checks if a character exists in a string.
+- **Parameters:**
+  - `c` (str): Character to search for
+  - `ch` (str): String to search in
+- **Returns:** True if character exists, False otherwise
+
+#### `existance_int(c, x)`
+Checks if a digit exists in an integer.
+- **Parameters:**
+  - `c` (int): Digit to search for
+  - `x` (int): Integer to search in
+- **Returns:** True if digit exists, False otherwise
+
+### Mathematical Functions
+
+#### `pgcd(a, b)`
+Calculates the Greatest Common Divisor (PGCD) using the Euclidean algorithm.
+- **Parameters:**
+  - `a` (int): First integer
+  - `b` (int): Second integer
+- **Returns:** Greatest Common Divisor of a and b
+
+#### `puissance(a, b)`
+Calculates a raised to the power of b using iterative multiplication.
+- **Parameters:**
+  - `a` (int/float): Base number
+  - `b` (int): Exponent
+- **Returns:** Result of a^b
+- **Note:** Handles negative exponents and zero cases
+
+#### `sommechiffre(ch)`
+Calculates the sum of all digits in a string representation of a number.
+- **Parameters:**
+  - `ch` (str): String containing digits
+- **Returns:** Sum of all digits
+
+### String Processing Functions
+
+#### `palindrom(ch)`
+Checks if a string is a palindrome.
+- **Parameters:**
+  - `ch` (str): String to check
+- **Returns:** True if string is a palindrome, False otherwise
+
+## Usage Examples
+
+```python
+# Input validation example
+age = saisir_n(0, 150)  # Get age between 0 and 150
+height = saisir_f(0.0, 3.0)  # Get height between 0.0 and 3.0 meters
+name = saisir_ch()  # Get alphabetic name
+
+# Array operations example
+import numpy as np
+arr = [0] * 5
+remplir_t(5, arr)  # Fill array with user input
+afficher_t(5, arr)  # Display the array
+
+# Matrix operations example
+matrix = np.zeros((3, 3), dtype=int)
+remplir_m(matrix, 3)  # Fill 3x3 matrix
+afficher_m(matrix, 3)  # Display the matrix
+
+# Search examples
+found = existance_t([1, 2, 3, 4, 5], 5, 3)  # Returns True
+char_exists = existance_ch('a', "hello")  # Returns False
+digit_exists = existance_int(5, 12345)  # Returns True
+
+# Mathematical operations
+gcd_result = pgcd(48, 18)  # Returns 6
+power_result = puissance(2, 8)  # Returns 256
+digit_sum = sommechiffre("12345")  # Returns 15
+
+# String processing
+is_palindrome = palindrom("racecar")  # Returns True
+```
+
+## Known Issues
+
+1. **saisir_f function**: Missing `.strip()` in the validation loop
+2. **Matrix functions**: Use NumPy-style indexing, ensure NumPy is installed
+3. **Search functions**: Could be optimized with early return for better performance
+
+## Requirements
+
+- Python 3.x
+- NumPy (for matrix operations)
+
+## Installation
+
+1. Save the functions to a Python file (e.g., `utils.py`)
+2. Install NumPy if using matrix functions: `pip install numpy`
+3. Import the functions you need: `from utils import saisir_n, afficher_t`
+
+
+## Contributing
+
+Feel free to submit issues and enhancement requests. When contributing:
+1. Follow the existing code style
+2. Add appropriate documentation
+3. Test your changes thoroughly
+4. Consider adding English translations for broader accessibility
