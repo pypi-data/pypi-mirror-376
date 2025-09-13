@@ -1,0 +1,15 @@
+pkg_deploy/__init__.py,sha256=5cUY8Nwff_hV6o67Mqjd0P-YVerJ6Kp0DEdumN51SEI,58
+pkg_deploy/build.c,sha256=tUy7LU32f8DvwPzkLtw1CW-QWSoV36_A2eSbbY7RrW4,714714
+pkg_deploy/build.cp312-win_amd64.pyd,sha256=1mf2A2Jq9qXRrHEwyrGL4FU1F1aF8hQOMzh0AZOXYlc,110080
+pkg_deploy/deploy.c,sha256=ydSfFy1c3Px0_usJfc2ARm_n_v1MYs658tITK6pLDvE,771158
+pkg_deploy/deploy.cp312-win_amd64.pyd,sha256=rtC2sGCrJ8OunBGiwpgDGmsKnRlNswB57gi0pg9rCwE,123904
+pkg_deploy/upload.c,sha256=72y5OW0u3u1m78BZrZwFAV7zi_6QElIl21bYQifHlYc,446467
+pkg_deploy/upload.cp312-win_amd64.pyd,sha256=xYmDz33SUCj9xSw4DDpjmWFi8C6a2SgutZA3slZXu04,59392
+pkg_deploy/utils.c,sha256=6o9VyoeULUeIUzeCxJJiZJ9GIlsE-IZODoBBFAp5kag,620534
+pkg_deploy/utils.cp312-win_amd64.pyd,sha256=l-_fnII9aG0A3hAwfArFlMkSX-jFqwilnHdjnSlJkSE,95744
+pkg_deploy/version_managment.c,sha256=27FMxvRG4lhSAnAbZM0FWM5W0kA34z4QIRI7B7eNKVI,497216
+pkg_deploy/version_managment.cp312-win_amd64.pyd,sha256=zmMZ-72ZAqQTBP5ztqeI0lThFVmMdiOx54tSyJWSTs8,67072
+pkg_deploy-1.0.1.dist-info/METADATA,sha256=ZlFsdRFivTyd4c9GE_R40W4cOGyiqUhpGfJYejCBXr8,369
+pkg_deploy-1.0.1.dist-info/WHEEL,sha256=8UP9x9puWI0P1V_d7K2oMTBqfeLNm21CTzZ_Ptr0NXU,101
+pkg_deploy-1.0.1.dist-info/top_level.txt,sha256=-yi8c2TJ5e9J3QATUf7_dRfmJp2gzHR_VvnEc7QgFM0,11
+pkg_deploy-1.0.1.dist-info/RECORD,,
