@@ -1,0 +1,25 @@
+"""
+Browser Managers Package - Specialized management components
+"""
+
+from ..stealth import StealthManager
+from .profile import ProfileManager
+from .logger_bridge import BrowserLoggerBridge, create_browser_logger_bridge
+from .cookies import CookieManager
+from .captcha import CaptchaDetector
+from .page_wait_manager import PageWaitManager
+from .script_manager import ScriptManager
+from .data_extraction_manager import DataExtractionManager
+
+
+__all__ = [
+    "StealthManager",
+    "ProfileManager",
+    "BrowserLoggerBridge",
+    "create_browser_logger_bridge",
+    "CookieManager",
+    "CaptchaDetector",
+    "PageWaitManager",
+    "ScriptManager",
+    "DataExtractionManager",
+]
