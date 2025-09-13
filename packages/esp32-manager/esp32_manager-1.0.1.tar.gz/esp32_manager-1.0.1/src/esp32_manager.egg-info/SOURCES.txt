@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/esp32_manager/__init__.py
+src/esp32_manager/cli.py
+src/esp32_manager.egg-info/PKG-INFO
+src/esp32_manager.egg-info/SOURCES.txt
+src/esp32_manager.egg-info/dependency_links.txt
+src/esp32_manager.egg-info/entry_points.txt
+src/esp32_manager.egg-info/requires.txt
+src/esp32_manager.egg-info/top_level.txt
