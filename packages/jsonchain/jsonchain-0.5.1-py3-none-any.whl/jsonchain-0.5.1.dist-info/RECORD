@@ -1,0 +1,10 @@
+jsonchain/__init__.py,sha256=g3xh1yqiRV1T9DfNbAvB85FxNN-tcJW8x2zMMOL2Y0g,439
+jsonchain/envelope.py,sha256=rj0liaR2PmmBBeM2Vd6VHjhKFN_qLO9PODtuFeuZpbE,3974
+jsonchain/io.py,sha256=HoX2jsamt8d-0t3bSVc9m8CAr7j0F7xSUA6lpm94bW0,575
+jsonchain/tables.py,sha256=zfF-aLsUBD2UoCYvZSWWYwWXMpBu3azmMd8-UEyO7uc,5800
+jsonchain/tree.py,sha256=tEqU163V_EW2o-h6WUT6wvDTguyIvEPOkBbb9abD_Tg,9527
+jsonchain-0.5.1.dist-info/entry_points.txt,sha256=wgKUBdBpyMOWJ8cgPBhXNyOY9tAd4phhZiQSBGdfWsI,44
+jsonchain-0.5.1.dist-info/licenses/LICENSE,sha256=UOZ1F5fFDe3XXvG4oNnkL1-Ecun7zpHzRxjp-XsMeAo,11324
+jsonchain-0.5.1.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+jsonchain-0.5.1.dist-info/METADATA,sha256=Kzc-1XbR-30KMEeTE_Yd0gjCluPB9P4oPZmM7NkMoYg,455
+jsonchain-0.5.1.dist-info/RECORD,,
