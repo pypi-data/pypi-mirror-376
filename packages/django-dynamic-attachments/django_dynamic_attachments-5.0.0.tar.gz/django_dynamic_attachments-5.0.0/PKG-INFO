@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: django-dynamic-attachments
+Version: 5.0.0
+Summary: A Django application for handling file uploads and attaching them to arbitrary models.
+Project-URL: Homepage, https://github.com/imsweb/django-dynamic-attachments
+Author-email: Dan Watson <watsond@imsweb.com>
+Maintainer-email: Brad Rutten <ruttenb@imsweb.com>, Jacob Tomlinson <tomlinsonj@imsweb.com>
+License-Expression: BSD-2-Clause
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Utilities
+Requires-Dist: pyclamd
+Requires-Dist: python-magic-bin; platform_system == 'Windows'
+Requires-Dist: python-magic; platform_system != 'Windows'
+Provides-Extra: bootstrap
+Requires-Dist: ims-bootstrap<6.0,>=5.0; extra == 'bootstrap'
+Description-Content-Type: text/markdown
+
+Documentation
+=============
+
+To build the documentation, go into the docs directory and type:
+
+    make html
+
+The documentation will be built with an index of docs/_build/index.html

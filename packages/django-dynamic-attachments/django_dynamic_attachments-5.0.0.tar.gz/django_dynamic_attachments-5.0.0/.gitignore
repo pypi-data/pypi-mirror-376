@@ -1,0 +1,12 @@
+*.pyc
+.settings
+.project
+.pydevproject
+docs/_build/
+pybin
+coverage_html
+.idea/
+build
+dist
+*.egg-info
+.DS_Store
