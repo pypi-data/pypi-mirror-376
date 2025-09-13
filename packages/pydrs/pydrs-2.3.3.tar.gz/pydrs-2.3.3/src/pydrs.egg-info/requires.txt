@@ -1,0 +1,13 @@
+
+[dev]
+bandit==1.8.6
+black==25.1.0
+flake8==7.3.0
+flake8-bandit==4.1.1
+flake8-bugbear==24.12.12
+flake8-implicit-str-concat==0.5.0
+mypy==1.18.1
+mypy-extensions==1.1.0
+pyflakes==3.4.0
+types-setuptools
+pytest==8.3.5
