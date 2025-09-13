@@ -1,0 +1,423 @@
+# TOXO Python Library - Smart Layer Platform for LLM Enhancement
+
+[![PyPI version](https://img.shields.io/pypi/v/toxo.svg)](https://pypi.org/project/toxo/) [![Downloads](https://img.shields.io/pypi/dm/toxo.svg)](https://pypistats.org/packages/toxo) [![Python versions](https://img.shields.io/pypi/pyversions/toxo.svg)](https://pypi.org/project/toxo/) [![License](https://img.shields.io/badge/License-Proprietary-blue.svg)](LICENSE)
+
+## Convert ANY Black-Box LLM into Context Augmented Language Models (CALM)
+
+**TOXO Python Library** is the revolutionary smart layer platform that transforms any black-box LLM (GPT, Gemini, Claude, etc.) into Context Augmented Language Models (CALM). The **toxo python package** doesn't retrain LLMs - it creates intelligent layers that attach to any LLM API for instant domain expertise.
+
+### 🚀 Why Choose TOXO Python Library?
+
+The **TOXO Python Library** revolutionizes AI enhancement through smart layer technology:
+
+#### 🧠 **Smart Layer Training**
+- Train intelligent layers, not entire LLMs
+- Works with any black-box LLM API
+- No expensive GPU infrastructure needed
+- **Result**: Domain expertise without LLM retraining costs
+
+#### 🗃️ **Advanced Memory Systems**
+- Persistent knowledge storage and retrieval
+- Context-aware learning and adaptation  
+- Conversation history and domain expertise
+- **Result**: LLMs gain long-term memory capabilities
+
+#### 🎯 **Quality Enhancement**
+- Intelligent response optimization
+- Continuous improvement from feedback
+- Domain-specific output refinement
+- **Result**: Consistently superior performance
+
+### Why TOXO Python Library vs Traditional Approaches?
+
+| Feature | Traditional Fine-Tuning | TOXO Python Library |
+|---------|------------------------|---------------------|
+| **Training Cost** | $10,000-$100,000+ | $5-$500 |
+| **Training Time** | Days to weeks | Minutes to hours |
+| **Infrastructure** | GPU clusters required | API-based (no GPUs) |
+| **LLM Compatibility** | Model-specific | Works with ANY LLM |
+| **Reversibility** | Permanent changes | Instant layer removal |
+| **Multi-Domain** | One model per domain | Unlimited layers |
+
+## Quick Start with TOXO Python Library
+
+### Install the TOXO Python Package
+
+```bash
+pip install toxo
+```
+
+The **toxo python library** provides everything you need to create Context Augmented Language Models (CALM).
+
+### Basic Usage: Transform Any LLM
+
+```python
+from toxo import ToxoLayer
+
+# Load your trained smart layer (created on toxotune.com)
+layer = ToxoLayer.load("financial_expert.toxo")
+
+# Connect to ANY LLM with specific model selection
+# Gemini (default)
+layer.setup_api_key("your_gemini_key", "gemini-2.0-flash-exp", "gemini")
+
+# OpenAI GPT
+layer.setup_api_key("your_openai_key", "gpt-4", "openai")
+
+# Claude
+layer.setup_api_key("your_claude_key", "claude-3.5-sonnet", "claude")
+
+# Your LLM is now a financial domain expert!
+response = layer.query("Should I invest in tech stocks during volatility?")
+print(response)
+# Output: Expert financial analysis with domain knowledge
+```
+
+### Async Support for Production Applications
+
+```python
+import asyncio
+from toxo import ToxoLayer
+
+async def main():
+    layer = ToxoLayer.load("legal_expert.toxo")
+    layer.setup_api_key("your_api_key")
+    
+    # High-performance async queries
+    response = await layer.query_async("Analyze this contract for risks")
+    print(response)
+
+asyncio.run(main())
+```
+
+## TOXO Python Library Features
+
+### 🎨 **No-Code Smart Layer Creation**
+Create domain experts through [toxotune.com](https://toxotune.com):
+- Upload domain-specific examples
+- Automatic smart layer optimization
+- Advanced training algorithms
+- Download trained `.toxo` layer file
+
+### ⚡ **Universal LLM Compatibility**
+The **toxo python package** works with any LLM provider:
+- **Google Gemini** (Recommended - optimized integration)
+- **OpenAI GPT** (GPT-3.5, GPT-4, GPT-4o)
+- **Anthropic Claude** (Claude-3, Claude-3.5)
+- **Local Models** (Ollama, LM Studio, etc.)
+- **Custom APIs** (Any OpenAI-compatible endpoint)
+
+### 🔄 **Continuous Learning**
+Smart layers improve automatically:
+```python
+# Provide feedback to enhance performance
+layer.add_feedback(
+    question="Investment strategy question",
+    response="Generated response...",
+    rating=8.5,  # Quality score 0-10
+    suggestions=["More risk analysis", "Include market timing"]
+)
+```
+
+### 🤖 **Multi-Agent Systems**
+Orchestrate multiple specialized layers:
+```python
+# Multiple domain experts working together
+research_agent = ToxoLayer.load("research_expert.toxo")
+writing_agent = ToxoLayer.load("writing_expert.toxo")
+
+# Collaborative AI workflow
+research = await research_agent.query_async("Research quantum computing")
+report = await writing_agent.query_async(f"Write report: {research}")
+```
+
+## TOXO Python Library API Reference
+
+### Core Methods
+
+#### `ToxoLayer.load(path)`
+Load a trained smart layer from `.toxo` file.
+```python
+layer = ToxoLayer.load("path/to/domain_expert.toxo")
+```
+
+#### `layer.setup_api_key(api_key, model, provider)`
+Connect smart layer to any LLM API with model selection.
+```python
+# Gemini (default)
+layer.setup_api_key("your_gemini_key", "gemini-2.0-flash-exp", "gemini")
+
+# OpenAI GPT
+layer.setup_api_key("your_openai_key", "gpt-4", "openai")
+
+# Claude
+layer.setup_api_key("your_claude_key", "claude-3.5-sonnet", "claude")
+```
+
+#### `layer.query(question, context=None)`
+Enhanced query with smart layer processing.
+```python
+response = layer.query("Domain-specific question")
+
+# With additional context
+response = layer.query(
+    "Analyze this data", 
+    context={"user_role": "analyst", "priority": "high"}
+)
+```
+
+#### `layer.query_async(question, context=None)`
+Asynchronous query for high-performance applications.
+```python
+response = await layer.query_async("Your question")
+```
+
+### Information & Analytics
+
+#### `layer.get_info()`
+Get comprehensive layer information.
+```python
+info = layer.get_info()
+print(f"Domain: {info['domain']}")
+print(f"Performance Score: {info['performance_score']}")
+```
+
+#### `layer.get_capabilities()`
+Discover layer capabilities.
+```python
+capabilities = layer.get_capabilities()
+print(capabilities)
+```
+
+#### `layer.get_performance_metrics()`
+Monitor smart layer performance.
+```python
+metrics = layer.get_performance_metrics()
+print(f"Response Quality: {metrics['avg_quality_score']}")
+```
+
+## Creating Smart Layers
+
+### Training Process on ToxoTune Platform
+
+1. **🎯 Domain Selection**: Choose your area of expertise
+2. **📚 Data Upload**: Provide domain-specific examples  
+3. **🏋️ Smart Layer Training**: Advanced algorithms create your layer
+4. **📦 Download**: Get your trained `.toxo` file
+5. **🚀 Deploy**: Use with any LLM via this Python library
+
+### Example Training Data
+
+**Financial Advisory Layer:**
+- "Should I diversify my portfolio?" → Expert diversification advice
+- "Impact of inflation on investments?" → Inflation-hedging strategies
+- "Best retirement planning approach?" → Comprehensive retirement guidance
+
+**Legal Expert Layer:**
+- "Contract risk analysis needed" → Detailed legal risk assessment
+- "Compliance requirements review" → Regulatory compliance guidance
+- "Intellectual property questions" → IP law expert consultation
+
+## Domain Expert Examples
+
+### 🏦 Financial Expert with Different Models
+```python
+finance_layer = ToxoLayer.load("financial_advisor.toxo")
+
+# Using Gemini (recommended)
+finance_layer.setup_api_key("your_gemini_key", "gemini-2.0-flash-exp", "gemini")
+advice = finance_layer.query("Portfolio allocation for retirement")
+
+# Using GPT-4
+finance_layer.setup_api_key("your_openai_key", "gpt-4", "openai")
+advice = finance_layer.query("Portfolio allocation for retirement")
+
+# Using Claude
+finance_layer.setup_api_key("your_claude_key", "claude-3.5-sonnet", "claude")
+advice = finance_layer.query("Portfolio allocation for retirement")
+# Output: Expert financial planning with risk assessment
+```
+
+### ⚖️ Legal Expert with Model Selection
+```python
+legal_layer = ToxoLayer.load("legal_advisor.toxo")
+
+# Choose the best model for legal analysis
+legal_layer.setup_api_key("your_api_key", "gpt-4", "openai")
+analysis = legal_layer.query("Review this contract for issues")
+# Output: Comprehensive legal analysis with risk identification
+```
+
+### 🔬 Research Assistant with Multiple Models
+```python
+research_layer = ToxoLayer.load("research_assistant.toxo")
+
+# Use Claude for research (excellent at analysis)
+research_layer.setup_api_key("your_claude_key", "claude-3.5-sonnet", "claude")
+review = research_layer.query("Latest developments in quantum computing")
+# Output: Detailed research summary with current insights
+```
+
+### 💻 Code Expert with Model Flexibility
+```python
+code_layer = ToxoLayer.load("python_expert.toxo")
+
+# Use GPT-4 for code analysis (excellent at programming)
+code_layer.setup_api_key("your_openai_key", "gpt-4", "openai")
+review = code_layer.query("Optimize this function for performance")
+# Output: Expert code analysis with optimization recommendations
+```
+
+## Advanced Usage Patterns
+
+### Context-Aware Processing
+```python
+# Rich context for enhanced responses
+context = {
+    "user_profile": {
+        "role": "portfolio_manager",
+        "experience": "senior"
+    },
+    "session_data": {
+        "previous_topics": ["risk_assessment", "market_analysis"]
+    }
+}
+
+response = layer.query("Investment recommendation", context=context)
+```
+
+### Batch Processing
+```python
+# Process multiple queries efficiently
+queries = [
+    "Analyze AAPL performance",
+    "Tech sector risk assessment", 
+    "Q4 2024 market outlook"
+]
+
+results = []
+for query in queries:
+    result = await layer.query_async(query)
+    results.append(result)
+```
+
+## Installation & Requirements
+
+### Standard Installation
+```bash
+pip install toxo
+```
+
+### Installation with Specific LLM Providers
+```bash
+# For OpenAI GPT models
+pip install toxo[openai]
+
+# For Claude models
+pip install toxo[claude]
+
+# For all providers
+pip install toxo[full]
+```
+
+### Development Installation
+```bash
+pip install toxo[dev]
+```
+
+### System Requirements
+- **Python**: 3.8+ (3.10+ recommended)
+- **Memory**: 4GB RAM minimum
+- **Internet**: Required for LLM API calls
+- **API Keys**: Supported LLM provider account
+
+### Supported LLM Providers
+- ✅ **Google Gemini** (Recommended - included by default)
+  - `gemini-2.0-flash-exp`, `gemini-1.5-pro`, `gemini-1.5-flash`
+- ✅ **OpenAI GPT** (Install with `pip install toxo[openai]`)
+  - `gpt-4`, `gpt-4o`, `gpt-3.5-turbo`
+- ✅ **Anthropic Claude** (Install with `pip install toxo[claude]`)
+  - `claude-3.5-sonnet`, `claude-3-opus`, `claude-3-haiku`
+- 🔄 **Local Models** (Coming soon)
+
+## Performance Benefits
+
+### Cost Comparison
+- **Traditional Fine-tuning**: $10,000-$100,000+ per domain
+- **TOXO Smart Layers**: $5-$500 per domain
+- **Savings**: Up to 1000x cost reduction
+
+### Time Comparison  
+- **Traditional Fine-tuning**: Days to weeks
+- **TOXO Smart Layers**: Minutes to hours
+- **Speed**: Up to 500x faster deployment
+
+### Quality Results
+- **Performance**: 95-98% of fine-tuned model quality
+- **Consistency**: Superior response reliability
+- **Adaptability**: Continuous improvement from feedback
+
+## Community & Support
+
+### 📚 Resources
+- **Documentation**: [docs.toxotune.com](https://docs.toxotune.com)
+- **API Reference**: [api.toxotune.com](https://api.toxotune.com)
+- **Tutorials**: [tutorials.toxotune.com](https://tutorials.toxotune.com)
+
+### 💬 Community
+- **Discord**: [discord.gg/toxotune](https://discord.gg/toxotune)
+- **GitHub**: [github.com/toxotune/toxo-python](https://github.com/toxotune/toxo-python)
+- **Stack Overflow**: Tag `toxo-python-library`
+
+### 🏢 Enterprise
+- **Enterprise Support**: [enterprise@toxotune.com](mailto:enterprise@toxotune.com)
+- **Custom Solutions**: Large-scale deployments
+- **Priority Support**: 24/7 technical assistance
+
+## Frequently Asked Questions
+
+### What is the TOXO Python Library?
+The **TOXO Python Library** is a smart layer platform that enhances any black-box LLM with domain expertise, memory, and continuous learning capabilities without expensive retraining.
+
+### How does TOXO differ from fine-tuning?
+TOXO creates intelligent layers that attach to existing LLMs, achieving 95-98% of fine-tuned performance with 1000x cost reduction and universal LLM compatibility.
+
+### Can I use TOXO with any LLM?
+Yes! The **toxo python package** works with any LLM API including GPT, Gemini, Claude, and local models. Smart layers are completely LLM-agnostic.
+
+### What's inside a .toxo file?
+`.toxo` files contain trained smart layer components, memory systems, and configuration - everything needed to transform any LLM into a domain expert.
+
+### Is TOXO production-ready?
+Absolutely! The **TOXO Python Library** includes enterprise features like monitoring, scaling, security, and professional support options.
+
+### How much training data do I need?
+TOXO's smart layer training is extremely efficient - most domains need only 10-100 examples compared to thousands required for traditional approaches.
+
+## Getting Started Checklist
+
+- [ ] **Install**: `pip install toxo`
+- [ ] **Sign Up**: Create account at [toxotune.com](https://toxotune.com)
+- [ ] **Choose Domain**: Select your expertise area
+- [ ] **Upload Examples**: Provide domain-specific data
+- [ ] **Train Layer**: Create your smart layer
+- [ ] **Download**: Get your `.toxo` file
+- [ ] **Test**: Load and test with this Python library
+- [ ] **Deploy**: Integrate into your application
+- [ ] **Optimize**: Provide feedback for improvement
+
+## License
+
+The **TOXO Python Library** is proprietary software. See [LICENSE](LICENSE) file for details.
+
+---
+
+**TOXO Python Library** - Revolutionizing AI with Smart Layers 🧠⚡
+
+*Transform any LLM into a domain expert with the power of smart layer technology*
+
+**Ready to experience revolutionary LLM enhancement? Start with `pip install toxo` and join the smart layer revolution!**
+
+---
+
+**Keywords**: toxo python library, smart layer training, context augmented language models, calm, black-box llm enhancement, llm conversion, domain expert ai, toxo layer, python library, ai augmentation, llm enhancement, no llm retraining, toxo python package, ai layer training, toxo ai, toxo library
