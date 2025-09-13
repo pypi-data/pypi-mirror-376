@@ -1,0 +1,7 @@
+README.md
+setup.py
+nansen.egg-info/PKG-INFO
+nansen.egg-info/SOURCES.txt
+nansen.egg-info/dependency_links.txt
+nansen.egg-info/requires.txt
+nansen.egg-info/top_level.txt
