@@ -1,0 +1,10 @@
+[project]
+name = "fast-tg-logger"
+version = "0.1.0"
+description = "Logging errors with subsequent sending to the telegram channel for FastAPI"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.11.7",
+]
