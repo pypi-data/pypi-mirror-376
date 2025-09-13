@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+masbench/cli.py
+masbench.egg-info/PKG-INFO
+masbench.egg-info/SOURCES.txt
+masbench.egg-info/dependency_links.txt
+masbench.egg-info/entry_points.txt
+masbench.egg-info/requires.txt
+masbench.egg-info/top_level.txt

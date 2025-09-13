@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: masbench
+Version: 0.1.0
+Summary: A benchmark for Multi-Agent Systems.
+Author-email: Cornelius Emde <cornelius.emde@cs.ox.ac.uk>
+Project-URL: Homepage, https://github.com/cemde/MASBench
+Project-URL: Bug Tracker, https://github.com/cemde/MASBench/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pytest>=8.4.2
+Requires-Dist: ruff>=0.13.0
+Requires-Dist: ty>=0.0.1a20
+Dynamic: license-file
+
+# MASBench
+
+Multi-Agent System Benchmark
+
+A super amazing simple MAS Benchmark library is coming. Stay Tuned!
