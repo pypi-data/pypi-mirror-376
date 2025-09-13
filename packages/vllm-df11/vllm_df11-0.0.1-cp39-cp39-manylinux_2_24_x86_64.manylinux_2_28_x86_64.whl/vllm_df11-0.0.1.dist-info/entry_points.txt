@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+df11 = vllm_df11.plugin:register
