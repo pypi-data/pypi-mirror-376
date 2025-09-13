@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+quadfit.egg-info/PKG-INFO
+quadfit.egg-info/SOURCES.txt
+quadfit.egg-info/dependency_links.txt
+quadfit.egg-info/requires.txt
+quadfit.egg-info/top_level.txt
+quadrilateral_fitter/__init__.py
+quadrilateral_fitter/_line.py
+quadrilateral_fitter/quadfitmodule.c
+quadrilateral_fitter/quadrilateral_fitter.py
