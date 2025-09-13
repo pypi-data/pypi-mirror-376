@@ -1,0 +1,8 @@
+gg_cli/__init__.py,sha256=QqnYGoKDbII2omRCh7GzUwHXO870oTxcdJPK-oYpqLA,223
+gg_cli/file.py,sha256=x_Nng9CKINSFD3q8DJI3fNvJS0wo1DLSUhwllNNhhcE,1446
+gg_cli/gg_main.py,sha256=xFDo9prqmbiP2eaJUhPX9-qUK-k7QNt8hif-P60DIIc,13928
+gg_cli/llm.py,sha256=bBLXv6KIitFC5XuX6fXvIWJuuhYhq-6Pw6zbZPJDEV8,14982
+gg_cli-0.1.2.dist-info/METADATA,sha256=nyq-3YtuM2GYxTsmWdAtj0krgeo5nn3llllI6ZPimu8,3707
+gg_cli-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gg_cli-0.1.2.dist-info/entry_points.txt,sha256=33F-C4kwHQlwM7dn48h0lPk2WPV6IhSWyEFclhdSPAw,43
+gg_cli-0.1.2.dist-info/RECORD,,
