@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+mol_properties/__init__.py
+mol_properties/__main__.py
+mol_properties/calc.py
+mol_properties/utils.py
+mol_properties.egg-info/PKG-INFO
+mol_properties.egg-info/SOURCES.txt
+mol_properties.egg-info/dependency_links.txt
+mol_properties.egg-info/entry_points.txt
+mol_properties.egg-info/requires.txt
+mol_properties.egg-info/top_level.txt
