@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/ynab_amazon_categorizer/__init__.py
+src/ynab_amazon_categorizer/__main__.py
+src/ynab_amazon_categorizer/cli.py
+src/ynab_amazon_categorizer.egg-info/PKG-INFO
+src/ynab_amazon_categorizer.egg-info/SOURCES.txt
+src/ynab_amazon_categorizer.egg-info/dependency_links.txt
+src/ynab_amazon_categorizer.egg-info/entry_points.txt
+src/ynab_amazon_categorizer.egg-info/requires.txt
+src/ynab_amazon_categorizer.egg-info/top_level.txt
