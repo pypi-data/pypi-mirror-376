@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=69", "wheel", "build>=1.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snapfront-coherence"
+version = "0.2.7"
+description = "Snapfront Coherence Python SDK: WCT_phi and coherence-band client with retries, timeouts, and typed errors."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Snapfront", email = "support@snapfront.dev" }]
+keywords = ["snapfront", "coherence", "sdk", "client", "ai"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Typing :: Typed"
+]
+dependencies = [
+  "requests>=2.31.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Snapfront/snapfront-coherence-python#readme"
+Issues = "https://github.com/Snapfront/snapfront-coherence-python/issues"
+Source = "https://github.com/Snapfront/snapfront-coherence-python"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["snapfront_coherence*"]
