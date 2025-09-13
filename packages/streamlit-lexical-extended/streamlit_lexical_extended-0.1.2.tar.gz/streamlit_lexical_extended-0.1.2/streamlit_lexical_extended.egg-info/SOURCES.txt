@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+streamlit_lexical_extended/__init__.py
+streamlit_lexical_extended/example.py
+streamlit_lexical_extended/example2.py
+streamlit_lexical_extended/test_formatting.py
+streamlit_lexical_extended/test_table_menu.py
+streamlit_lexical_extended.egg-info/PKG-INFO
+streamlit_lexical_extended.egg-info/SOURCES.txt
+streamlit_lexical_extended.egg-info/dependency_links.txt
+streamlit_lexical_extended.egg-info/requires.txt
+streamlit_lexical_extended.egg-info/top_level.txt
