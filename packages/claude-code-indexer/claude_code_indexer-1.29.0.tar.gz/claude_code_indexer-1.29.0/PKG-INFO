@@ -1,0 +1,199 @@
+Metadata-Version: 2.4
+Name: claude-code-indexer
+Version: 1.29.0
+Summary: Multi-language code indexing with graph database, supports Python/JavaScript/TypeScript/Java/AutoIt, auto-ignores node_modules/.git, respects .gitignore, multi-keyword search, MCP for Claude Desktop, automated installation
+Author-email: Tony Nguyen <tony@startupascent.net>
+Maintainer-email: Tony Nguyen <tony@startupascent.net>
+License: MIT
+Project-URL: Homepage, https://github.com/tuannx/claude-prompts/tree/main/claude_code_indexer
+Project-URL: Documentation, https://github.com/tuannx/claude-prompts/tree/main/claude_code_indexer/README.md
+Project-URL: Repository, https://github.com/tuannx/claude-prompts.git
+Project-URL: Issues, https://github.com/tuannx/claude-prompts/issues
+Project-URL: Changelog, https://github.com/tuannx/claude-prompts/blob/main/claude_code_indexer/CHANGELOG.md
+Keywords: code-indexing,graph-database,ensmallen,claude,code-analysis,ast,development-tools
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Text Processing :: Indexing
+Classifier: Topic :: Software Development :: Version Control :: Git
+Classifier: Environment :: Console
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ensmallen>=0.8.0
+Requires-Dist: networkx>=3.0
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: numpy>=1.22.0
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: packaging>=23.0
+Requires-Dist: apsw>=3.40.0
+Requires-Dist: psutil>=5.9.0
+Requires-Dist: javalang>=0.13.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.4.2; extra == "dev"
+Requires-Dist: pytest-cov>=7.0; extra == "dev"
+Requires-Dist: pytest-xdist>=3.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-bdd>=6.0; extra == "dev"
+Requires-Dist: black>=23.0; extra == "dev"
+Requires-Dist: ruff>=0.13.0; extra == "dev"
+Requires-Dist: mypy>=1.17.1; extra == "dev"
+Requires-Dist: twine>=6.2.0; extra == "dev"
+Requires-Dist: build>=1.3.0; extra == "dev"
+Requires-Dist: bandit[toml]>=1.7.0; extra == "dev"
+Requires-Dist: safety>=3.6.0; extra == "dev"
+Requires-Dist: pip-audit>=2.9.0; extra == "dev"
+Provides-Extra: mcp
+Requires-Dist: mcp>=1.13.0; extra == "mcp"
+Requires-Dist: fastmcp>=2.12.0; extra == "mcp"
+Requires-Dist: httpx>=0.25.0; extra == "mcp"
+Requires-Dist: pydantic<3.0,>=2.11.0; extra == "mcp"
+Requires-Dist: websockets>=11.0; extra == "mcp"
+Requires-Dist: aiohttp>=3.9.0; extra == "mcp"
+Dynamic: license-file
+
+# Claude Code Indexer
+
+[![PyPI version](https://badge.fury.io/py/claude-code-indexer.svg)](https://badge.fury.io/py/claude-code-indexer)
+[![Python](https://img.shields.io/pypi/pyversions/claude-code-indexer.svg)](https://pypi.org/project/claude-code-indexer/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 🚀 Quick Install with VS Code
+
+[![Install with PIP in VS Code](https://img.shields.io/badge/VS_Code-PIP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=claude-code-indexer&config=%7B%22command%22%3A%22python%22%2C%22args%22%3A%5B%22-m%22%2C%22claude_code_indexer.mcp_server%22%5D%7D)
+[![Install with PIP in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-PIP-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=claude-code-indexer&config=%7B%22command%22%3A%22python%22%2C%22args%22%3A%5B%22-m%22%2C%22claude_code_indexer.mcp_server%22%5D%7D&quality=insiders)
+
+## 📖 Description
+
+Multi-language code indexing with graph database, supports Python/JavaScript/TypeScript/Java/AutoIt, auto-ignores node_modules/.git, respects .gitignore, multi-keyword search, MCP for Claude Desktop, automated installation.
+
+## 🎯 Features
+
+- **Multi-language Support**: Python, JavaScript, TypeScript, Java, AutoIt
+- **Graph Database**: Advanced code relationship mapping using Ensmallen
+- **Smart Ignoring**: Automatically respects .gitignore and skips node_modules/.git
+- **Fast Search**: Multi-keyword search with FTS5 full-text search
+- **MCP Integration**: Seamless integration with Claude Desktop/VS Code
+- **Performance**: ~50 files/sec with caching enabled
+- **AI Enhancement**: Optional AI-powered metadata generation
+
+## 📦 Installation
+
+### Via pip (Recommended)
+```bash
+pip install claude-code-indexer
+```
+
+### Via VS Code MCP
+Click one of the badges above to automatically configure Claude Code Indexer as an MCP server in VS Code.
+
+### Manual MCP Setup
+```bash
+# Install the package
+pip install claude-code-indexer
+
+# Setup MCP integration
+cci mcp install
+```
+
+## 🚀 Quick Start
+
+```bash
+# Initialize project
+cci init
+
+# Index codebase
+cci index .
+
+# Search code
+cci search "authentication"
+
+# Find important components
+cci query --important
+
+# Get insights
+cci insights
+```
+
+## 📊 Commands
+
+### Core Commands
+- `cci init` - Initialize project with CLAUDE.md and database
+- `cci index [path]` - Index source code into graph database
+- `cci stats` - Show project statistics
+
+### Query Commands
+- `cci query [--important] [--type TYPE] [--limit N]` - Query indexed entities
+- `cci search <keywords>` - Full-text search across codebase
+- `cci critical [--limit N]` - Find most critical components
+
+### Analysis Commands
+- `cci insights` - Architectural analysis and health check
+- `cci enhanced [filters]` - Query AI-enhanced metadata
+- `cci enhance . [--limit N]` - Add AI-powered metadata (requires API)
+
+### State Management
+- `cci state capture` - Save codebase snapshot
+- `cci state diff` - Show changes since last capture
+- `cci state tasks` - List development task history
+
+### MCP Integration
+- `cci mcp install` - Setup MCP server for Claude
+- `cci mcp-daemon [start|stop|status]` - Background service management
+
+## 🔧 MCP Server Configuration
+
+When installed via VS Code badges or manual MCP setup, the server provides these tools:
+
+### Available MCP Tools
+- `index_codebase` - Index project code
+- `search_code` - Search codebase with keywords
+- `query_important_code` - Find critical components
+- `get_project_stats` - Get project statistics
+- `get_codebase_insights` - Health and architecture analysis
+- `enhance_metadata` - Add AI-powered metadata
+- `store_llm_memory` - Store analysis insights
+- `store_coding_pattern` - Save reusable patterns
+- `store_best_practice` - Document best practices
+
+## 📈 Performance
+
+| Operation | First Run | With Cache | Notes |
+|-----------|-----------|------------|-------|
+| init      | 1-2s      | N/A        | One-time |
+| index     | 5-10s     | 0.5-1s     | 95%+ cache hit |
+| query     | 0.1-0.5s  | 0.05s      | Database query |
+| search    | 0.2-1s    | 0.1s       | Full-text search |
+
+## ⚠️ Security
+
+- **Never index sensitive data** (API keys, tokens, credentials)
+- Check for .env files: `find . -name "*.env"`
+- Add sensitive files to .gitignore
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome at [GitHub](https://github.com/tuannx/claude-prompts).
+
+## 📄 License
+
+MIT License - see LICENSE file for details.
+
+## 🔗 Links
+
+- [Homepage](https://github.com/tuannx/claude-prompts/tree/main/claude_code_indexer)
+- [Documentation](https://github.com/tuannx/claude-prompts/tree/main/claude_code_indexer/README.md)
+- [Issues](https://github.com/tuannx/claude-prompts/issues)
+- [PyPI](https://pypi.org/project/claude-code-indexer/)
