@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: packetdb
+Version: 0.0.1
+Summary: A data science-native database for packet analysis
+Home-page: https://github.com/packetdb/packetdb
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: summary
+
+PacketDB: High-performance packet database with automatic ML feature extraction. Coming soon.
