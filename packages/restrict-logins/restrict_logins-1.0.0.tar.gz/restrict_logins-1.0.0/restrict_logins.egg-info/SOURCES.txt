@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+migrations/0001_initial.py
+migrations/__init__.py
+restrict_logins.egg-info/PKG-INFO
+restrict_logins.egg-info/SOURCES.txt
+restrict_logins.egg-info/dependency_links.txt
+restrict_logins.egg-info/requires.txt
+restrict_logins.egg-info/top_level.txt
