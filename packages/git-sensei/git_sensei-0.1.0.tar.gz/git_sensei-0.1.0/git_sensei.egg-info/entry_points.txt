@@ -1,0 +1,2 @@
+[console_scripts]
+git-sensei = git_sensei.cli:app
