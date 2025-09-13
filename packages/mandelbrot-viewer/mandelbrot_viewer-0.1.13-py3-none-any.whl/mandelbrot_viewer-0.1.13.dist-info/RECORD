@@ -1,0 +1,12 @@
+mandelbrot_viewer/__init__.py,sha256=bhCweKrIPioifwFDM7oRLLApmfLNuusjCcGqbFC0DBo,150
+mandelbrot_viewer/mandelbrot_calculator.py,sha256=LdZUZbBOdr0NW3VOxSfh8rvTA-zSu_D9EJsoCo4_MTk,1220
+mandelbrot_viewer/mandelbrot_viewer_main.py,sha256=juljtbOkisTG81O6M70ZgoxAcqtlr0vC3yCfdtMbOZE,30738
+mandelbrot_viewer/mandelbrotwiever.kv,sha256=JA9TxkKs83c9B-WG83IzGNQy-OdSWFfidB9DsiIacnc,2434
+mandelbrot_viewer/remote_server.py,sha256=iPf5SWsXnUJrJYVuMocj4LhcuoOKzMVx_e8GzCwk5fs,9173
+mandelbrot_viewer/shared_memory_handler.py,sha256=gLc5T9PaU8meUvmH9XQWCNp1CJPl8uD-JzH8KLLtgNc,2427
+mandelbrot_viewer/ti_bigfloat_compute_server.py,sha256=FQG31kzUKjbyqmxr3dlpYtRxDT_805BQpV5v7JI8CUE,8442
+mandelbrot_viewer-0.1.13.dist-info/METADATA,sha256=C6NYCx9f_EgxDwJTphS9PrhAiovu9XNS7tXYfXkLK5s,2793
+mandelbrot_viewer-0.1.13.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mandelbrot_viewer-0.1.13.dist-info/entry_points.txt,sha256=Kp4XUt_KDC-J6pVujYU1J2gNPlYpomgD_yyEisFbms0,233
+mandelbrot_viewer-0.1.13.dist-info/top_level.txt,sha256=DKcQdwiM3HBJ9x7uYC-HjzV_6mChU3CiCQPQvYCSm1o,18
+mandelbrot_viewer-0.1.13.dist-info/RECORD,,
