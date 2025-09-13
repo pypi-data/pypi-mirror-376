@@ -1,0 +1,2 @@
+[console_scripts]
+branch-cleaner = branch_cleaner:main
