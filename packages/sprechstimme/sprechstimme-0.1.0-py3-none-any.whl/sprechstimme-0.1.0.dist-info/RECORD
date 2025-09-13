@@ -1,0 +1,11 @@
+sprechstimme/__init__.py,sha256=Qq-uMnJ79HWm0o7F3YuyEm88DTBS2hcFcKkN12d7W_4,135
+sprechstimme/core.py,sha256=FD0xn8DBZrDcm6OkOWf7y4UZorFQ8oOhqZrOkOBRCsg,1445
+sprechstimme/filters.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sprechstimme/playback.py,sha256=mCryiPpTT8QWUkpBOAgbTzCJJPwVph3c9vFMAkOKx_A,382
+sprechstimme/track.py,sha256=LrVfisoHACSI2whuQRVcEK8GDAqwCTVEGFgkuo4Ujnc,1272
+sprechstimme/waves.py,sha256=THk72NbEVie_2t4z37i3XBAIPDdbkQ46_KHajkgvB4Q,479
+sprechstimme-0.1.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+sprechstimme-0.1.0.dist-info/METADATA,sha256=vAdWSb-v6cpA2vyX7uz3huTxoQ5_0imk_XeU22jjn2Y,466
+sprechstimme-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sprechstimme-0.1.0.dist-info/top_level.txt,sha256=gZW0idSQTEdio5EWvPsMo1d1r2inod1cOzBS7I44NzE,13
+sprechstimme-0.1.0.dist-info/RECORD,,
