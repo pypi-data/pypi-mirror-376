@@ -1,0 +1,59 @@
+[project]
+name = "roamkit-marko-fenced-divs"
+version = "1.0.0"
+description = "Fenced divs extension for Marko"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "marko>=2.2.0",
+]
+keywords = [
+  "markdown marko fenced",
+]
+license = "MIT"
+license-files = [ "LICENSE" ]
+maintainers = [
+  { name = "Kevin Wetzels", email = "kevin@roam.be" },
+]
+authors = [
+  { name = "Kevin Wetzels", email = "kevin@roam.be" },
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+#urls.Changelog = "https://github.com/roam/roamkit-marko-fenced-divs/blob/main/CHANGELOG.md"
+urls.Repository = "https://github.com/roam/roamkit-marko-fenced-divs"
+
+
+[tool.uv.build-backend]
+module-name = "roamkit.marko.fenced_divs"
+
+[build-system]
+requires = ["uv_build>=0.8.15,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+test = [
+  "pytest",
+  "pytest-randomly",
+]
+
+[tool.pyproject-fmt]
+max_supported_python = "3.14"
+
+[tool.pytest.ini_options]
+addopts = """\
+    --strict-config
+    --strict-markers
+    """
+xfail_strict = true
