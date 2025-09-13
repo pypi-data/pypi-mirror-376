@@ -1,0 +1,9 @@
+README.md
+setup.py
+tnsa_api_text/__init__.py
+tnsa_api_text/client.py
+tnsa_api_text.egg-info/PKG-INFO
+tnsa_api_text.egg-info/SOURCES.txt
+tnsa_api_text.egg-info/dependency_links.txt
+tnsa_api_text.egg-info/requires.txt
+tnsa_api_text.egg-info/top_level.txt
