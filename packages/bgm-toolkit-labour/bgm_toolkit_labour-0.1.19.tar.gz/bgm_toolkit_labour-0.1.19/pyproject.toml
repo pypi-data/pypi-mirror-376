@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bgm-toolkit-labour"
+version = "0.1.19"
+description = "Labour add-ons for BGM Toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["bgm-toolkit-pro>=0.2.14"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["bgm_labour*"]
