@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+VirecFremwork.egg-info/PKG-INFO
+VirecFremwork.egg-info/SOURCES.txt
+VirecFremwork.egg-info/dependency_links.txt
+VirecFremwork.egg-info/not-zip-safe
+VirecFremwork.egg-info/top_level.txt
+Virec_publish/Common_function.cp38-win_amd64.pyd
+Virec_publish/__init__.c
+Virec_publish/__init__.cp38-win_amd64.pyd
+Virec_publish/__init__.py
+Virec_publish/configuration.cp38-win_amd64.pyd
