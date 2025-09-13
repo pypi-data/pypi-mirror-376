@@ -1,0 +1,11 @@
+ltc_client/__init__.py,sha256=1XhIU1VA1nuHdQqzS5rALJonnInbEX3Yvm6QWBcs450,496
+ltc_client/api.py,sha256=bP9zfAJ056Gvl1AOmaW0aKeA9u_7LlC7NTavq2AvhFc,12647
+ltc_client/helpers.py,sha256=dI2iwNU9HfzRNlthWaOTD3UoMsYe4V_inB1xHwmZ7yc,18443
+ltc_client/job.py,sha256=hBz86Ufnl0KjVlOy4cpLtRo1T0arS_qO14bDGwWlxps,6219
+ltc_client/material.py,sha256=06FSlgccry4CXpTMebmedk-HA0EwesB7N9s7R357UR0,3169
+ltc_client/winding_api.py,sha256=AmWPTpLXa-SGBHRpWl9L4gtx-uPyUbhgn1qoJb0Mq8o,3280
+ltc_client/worker.py,sha256=G4hkfKtAA2LLAhpsUMU8rkaEFjIF4_0OuzJhhI1KP_4,12974
+ltc_client-0.2.38.dist-info/LICENSE,sha256=6FI84lhOZjx9kM3ONhtFRogycpzPHXThbabNM6P7V38,1081
+ltc_client-0.2.38.dist-info/METADATA,sha256=_QthuZn4oR6dhRGl3Ch6lrg1YqfLxkXb2YCNoZOOWsw,2382
+ltc_client-0.2.38.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+ltc_client-0.2.38.dist-info/RECORD,,
