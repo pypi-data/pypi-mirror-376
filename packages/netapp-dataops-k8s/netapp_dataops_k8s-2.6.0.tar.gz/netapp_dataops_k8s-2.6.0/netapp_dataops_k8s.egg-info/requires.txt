@@ -1,0 +1,6 @@
+notebook<7.0.0
+pandas
+numpy>=1.22.0
+tabulate
+kubernetes
+fastmcp
