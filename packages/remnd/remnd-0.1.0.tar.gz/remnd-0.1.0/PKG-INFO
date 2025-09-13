@@ -1,0 +1,68 @@
+Metadata-Version: 2.3
+Name: remnd
+Version: 0.1.0
+Summary: A python CLI reminder tool.
+License: MIT License
+         
+         Copyright (c) 2025 Benjamin Walker
+         
+         Permission is hereby granted, free of charge, to any person obtaining a copy
+         of this software and associated documentation files (the "Software"), to deal
+         in the Software without restriction, including without limitation the rights
+         to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+         copies of the Software, and to permit persons to whom the Software is
+         furnished to do so, subject to the following conditions:
+         
+         The above copyright notice and this permission notice shall be included in all
+         copies or substantial portions of the Software.
+         
+         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+         IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+         FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+         AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+         SOFTWARE.
+Keywords: reminder,cli,notifications
+Author: Benjamin Walker
+Author-email: mail@benwalker.co.uk
+Requires-Python: >=3.8
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Utilities
+Classifier: Topic :: Office/Business :: Scheduling
+Project-URL: Homepage, http://www.github.com/Benjamin-Walker/remnd
+Description-Content-Type: text/markdown
+
+# remnd
+
+A tiny python CLI reminder app with desktop notifications.  
+Built for Linux with `systemd` + `notify-send`.
+
+---
+
+## Features
+
+- Add reminders due after a duration (`10m`, `1h30m`, `2d`, …) or at a specific time (`14:30`, `2024-12-31 23:59`, …).
+- Desktop toast notifications when reminders are due.
+- Auto-repeat reminders (every X minutes/hours/days/weeks/months).
+- Mark reminders complete; repeating ones roll forward automatically.
+- Background timers via `systemd`:
+  - **Minute timer** → checks for newly due reminders.
+  - **Daily re-notify** → reminds again every 24h until done.
+  - **Login catch-up** → shows all overdue reminders at login.
+- Simple `sqlite3` backend stored under `~/.local/state/remnd/`.
+
+
