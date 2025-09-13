@@ -1,0 +1,24 @@
+# Include only package code and essential metadata; exclude reference/spec files
+
+global-exclude *.py[cod] __pycache__ *.so *.dylib .DS_Store
+
+# Include the Python packages
+graft mallsense_sdk
+include mallsense_sdk/py.typed
+
+# Keep top-level project metadata
+include pyproject.toml
+include README.md
+
+# Exclude reference/spec and large assets from sdist
+exclude bills_api.yaml
+exclude dashboard_api.pdf
+exclude core_sdk.pdf
+exclude extended_metrics.xlsx
+
+# Do not ship CI, tests, scripts, or docs in the distribution
+prune .github
+prune tests
+prune scripts
+prune docs
+prune examples
