@@ -1,0 +1,2 @@
+[console_scripts]
+testpackage-hello = testpackage_hello:hello
