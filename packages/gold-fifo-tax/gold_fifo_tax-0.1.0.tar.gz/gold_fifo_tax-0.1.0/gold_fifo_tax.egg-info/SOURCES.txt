@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+gold_fifo_tax/__init__.py
+gold_fifo_tax/cli.py
+gold_fifo_tax/core.py
+gold_fifo_tax.egg-info/PKG-INFO
+gold_fifo_tax.egg-info/SOURCES.txt
+gold_fifo_tax.egg-info/dependency_links.txt
+gold_fifo_tax.egg-info/entry_points.txt
+gold_fifo_tax.egg-info/requires.txt
+gold_fifo_tax.egg-info/top_level.txt
+tests/test_fifo.py

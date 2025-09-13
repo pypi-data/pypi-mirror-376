@@ -1,0 +1,2 @@
+[console_scripts]
+gold-fifo = gold_fifo_tax.pipeline:run_fifo_pipeline

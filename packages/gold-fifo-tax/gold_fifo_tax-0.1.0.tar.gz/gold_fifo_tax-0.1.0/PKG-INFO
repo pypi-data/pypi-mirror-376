@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: gold-fifo-tax
+Version: 0.1.0
+Summary: FIFO-based capital gains calculator for gold and similar assets with CII indexation (India).
+Author-email: sksSourav <sourav.insa+pip@gmail.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: openpyxl
+Dynamic: license-file
+
+# Gold FIFO Tax Calculator 🇮🇳
+
+A Python package to calculate **capital gains on gold (or similar assets) in India** using **FIFO matching** and **CII indexation**.
