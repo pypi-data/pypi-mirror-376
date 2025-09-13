@@ -1,0 +1,425 @@
+---
+setup:
+  argnames: ["name", "src", "path", "expected"]
+  test_args: ["path", "expected"]
+params:
+  - name: div with one paragraph
+    src: <div><p>Hello World!</p></div>
+    tests:
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "0/plaintext"
+        expected: Hello World!
+      - path: "len:0/value"
+        expected: 1
+      - path: "0/value/0/type"
+        expected: p
+      - path: "0/value/0/children/0/text"
+        expected: Hello World!
+
+  - name: div with two paragraphs
+    src: <div><p>Hello</p> <p>World!</p></div>
+    tests:
+      - path: "len:"
+        expected: 3
+      - path: "0/@type"
+        expected: slate
+      - path: "0/plaintext"
+        expected: Hello
+      - path: "0/value/0/type"
+        expected: p
+      - path: "0/value/0/children/0/text"
+        expected: Hello
+      - path: "1/@type"
+        expected: slate
+      - path: "1/plaintext"
+        expected: ""
+      - path: "1/value/0/type"
+        expected: p
+      - path: "1/value/0/children/0/text"
+        expected: " "
+      - path: "2/@type"
+        expected: slate
+      - path: "2/plaintext"
+        expected: World!
+      - path: "2/value/0/type"
+        expected: p
+      - path: "2/value/0/children/0/text"
+        expected: World!
+
+  - name: div with two spans
+    src: <div><span>Olaa</span> <span>World!</span></div>
+    tests:
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "0/plaintext"
+        expected: Olaa World!
+      - path: "0/value/0/type"
+        expected: p
+      - path: "len:0/value/0/children"
+        expected: 1
+      - path: "0/value/0/children/0/text"
+        expected: Olaa World!
+
+  - name: Paragraph with two spans
+    src: <p><span>Olaa</span> <span>World!</span></p>
+    tests:
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "0/plaintext"
+        expected: Olaa World!
+      - path: "0/value/0/type"
+        expected: p
+      - path: "len:0/value/0/children"
+        expected: 1
+      - path: "0/value/0/children/0/text"
+        expected: Olaa World!
+
+  - name: Paragraph with image
+    src: <p><span>Olaa</span> <span>World!</span><img src="https://plone.org/news/item" title="A Picture" alt="Picture of a person" class="lazy-load"></p>
+    tests:
+      - path: "len:"
+        expected: 2
+      - path: "0/@type"
+        expected: slate
+      - path: "0/plaintext"
+        expected: Olaa World!
+      - path: "0/value/0/type"
+        expected: p
+      - path: "len:0/value/0/children"
+        expected: 1
+      - path: "0/value/0/children/0/text"
+        expected: Olaa World!
+
+  - name: Header with image
+    src: <h2><img class="image-left" src="resolveuid/ae57038455c04d05b56aa2bebbb62844" /></h2><p> </p><p>Das BMF hat die Rundschreiben (sog. Verfahrenshinweise) für die Haushaltsaufstellung 2022 (2. Regierungsentwurf) sowie für 2023 bekanntgegeben. Die Rundschreiben sowie synoptische Gegenüberstellungen der Aufstellungsschreiben für die Haushalte 2022 und 2023 finden Sie in den Fachinformationen des PG I 2 (<a class="internal-link" href="resolveuid/2315012e3b114dfeb093bfed26a90e61" target="_self" title="mehr Informationen">Bundeshaushalt 2022</a> und <a class="internal-link" href="resolveuid/971e3d2c598f4ab58ecd6bbc2cc64a05" target="_self" title="mehr Informationen">Bundeshaushalt 2023</a>).</p>
+    tests:
+      - path: "len:"
+        expected: 2
+      - path: "0/@type"
+        expected: image
+
+  - name: Parsing html with images nested in h2
+    src: >
+      <div>
+        <h2 id="chrissy"><img src="https://plone.org/foundation/meetings/membership/2019-membership-meeting/nominations/img4_08594.jpg/@@images/7a07f0e5-0fd7-4366-a32d-6b033c8dfce7.jpeg" title="Chrissy Wainwright 2019" alt="Chrissy Wainwright 2019" class="image-right">Chrissy Wainwright</h2>
+        <p><strong>President</strong>, (Springdale, Arkansas, USA)</p>
+        <p>Chrissy started at Six Feet Up as a front-end developer building Plone themes and has since moved to the back-end doing Python development and Plone migrations. She has given talks and training classes at many Plone Symposia and Conferences. This is her seventh term on the board, second as President.</p>
+        <hr>
+        <h2 id="erico"><img src="https://plone.org/foundation/board/github.jpg/@@images/1135c449-bf22-4011-b128-ab50c62e03b1.jpeg" title="ericof" alt="ericof" class="image-right">Érico Andrei</h2>
+        <p><strong>Vice President</strong>, (Berlin, DE)</p>
+        <p>Érico Andrei worked for more than 10 years with content management projects using Plone. During that period he co-founded Simples Consultoria, hosted 2 Plone Symposiums, co-organized a Plone Conference and in 2011 he was PythonBrasil (local Pycon) chair. Currently CTO for a German startup. He still uses Plone and Python every day. This is Érico's sixth term on the board.</p>
+        <hr>
+      </div>
+    tests:
+      - path: "len:"
+        expected: 10
+      - path: "0/@type"
+        expected: image
+      - path: "0/align"
+        expected: right
+      - path: "1/plaintext"
+        expected: 'Chrissy Wainwright'
+      - path: "1/@type"
+        expected: slate
+      - path: "1/value/0/type"
+        expected: h2
+      - path: "1/value/0/children/0/text"
+        expected: Chrissy Wainwright
+
+  - name: Parsing html with definition lists
+    src: >
+      <div>
+        <dl>
+        <dt>Problem A1: Injection</dt>
+        <dd>How Plone handles this: This is usually found in connections with databases as SQL Injection. As Plone does not use a SQL based database this is not possible. The database that Plone uses is not vulnerable to injection as it uses a binary format that cannot have user data inserted.</dd>
+        <dt>Problem A2: Broken Authentication and Session Management</dt>
+        <dd>How Plone handles this: Plone authenticates users in its own database using a SSHA hash of their password. Using its modular authentication system Plone can also authenticate users against common authentication systems such as LDAP and SQL as well as any other system for which a plugin is available (Gmail, OpenID, etc.). After authentication, Plone creates a session using a SHA-256 hash of a secret stored on the server, the userid and the current time. This is based on the Apache auth_tkt cookie format, but with a more secure hash function. Secrets can be refreshed on a regular basis to add extra security where needed.</dd>
+        <dt>Problem A3: Cross Site Scripting (XSS)</dt>
+        <dd>How Plone handles this: Plone has strong filtering in place to make sure that no potentially malicious code can ever be entered into the system. All content that is inserted is stripped of malicious tags like <code>&lt;script&gt;</code>, <code>&lt;embed&gt;</code> and <code>&lt;object&gt;</code>, as well as removing all <code>&lt;form&gt;</code> related tags, stopping users from impersonating any kind of HTTP POST requests. On an infrastructure level, the template language used to create pages in Plone quotes all HTML by default, effectively preventing cross site scripting.</dd>
+        </dl>
+      </div>
+    tests:
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "0/value/0/type"
+        expected: dl
+      - path: "len:0/value/0/children"
+        expected: 6
+
+  - name: Parsing html with nested divs
+    src: >
+      <div>
+        <p><strong>The Plone Conference 2021 will be held as an online event on October 23 - 31, 2021. <br></strong></p>
+        <p>The platform for this virtual event is <a href="https://loudswarm.com/" title="LoudSwarm">LoudSwarm</a>.</p>
+        <p>The conference website can be found at <a href="https://2021.ploneconf.org/" title="Ploneconf 2021">https://2021.ploneconf.org/</a></p>
+        <div class="intro-preliminary">
+        <div>
+          <p>Conference information (subject due to change):</p>
+          <ul>
+            <li>Training</li>
+            <li>4 days of talks + 1 of open spaces -</li>
+            <li>Sprint</li>
+          </ul>
+        </div>
+        </div>
+        <div class="cooked">
+          <h3><strong>Important dates</strong></h3>
+          <ul>
+            <li><strong>Call for papers: Now open - <a href="https://docs.google.com/forms/d/1PAZwkO7GDNnSJLr_V6hvTCy6zK4j4PgxnTZDwuOQI1E/viewform?edit_requested=true" title="Submit talks">submit your talk now</a>!</strong></li>
+            <li>Early bird registrations: <strong><a href="https://tickets.ploneconf.org/" title="Tickets">Get your tickets now</a></strong>!</li>
+            <li>Regular registrations:&nbsp;To be announced</li>
+          </ul>
+        </div>
+        <p><strong>&nbsp;</strong></p>
+        <p><strong>Follow Plone and Plone Conference on Twitter <a href="https://twitter.com/plone" title="Plone Twitter">@plone</a> and <a href="https://twitter.com/ploneconf" title="Twitter">@ploneconf</a> and hastag #ploneconf2021</strong></p>
+        <p><strong>Stay tuned for more information! </strong></p>
+      </div>
+    tests:
+      - path: "len:"
+        expected: 8
+      - path: "0/@type"
+        expected: slate
+      - path: "0/value/0/type"
+        expected: p
+      - path: "0/value/0/children/0/type"
+        expected: strong
+      - path: "0/value/0/children/0/children/0/text"
+        expected: "The Plone Conference 2021 will be held as an online event on October 23 - 31, 2021. "
+      - path: "len:3/value"
+        expected: 7
+      - path: "3/value/0/type"
+        expected: p
+      - path: "3/value/1/type"
+        expected: p
+      - path: "3/value/2/type"
+        expected: p
+      - path: "3/value/3/type"
+        expected: p
+      - path: "3/value/4/type"
+        expected: ul
+      - path: "3/value/5/type"
+        expected: p
+      - path: "3/value/6/type"
+        expected: p
+
+  - name: Parsing unwrapped text
+    src: 'text with an <b>inline element</b> and more text'
+    tests:
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "0/value/0/type"
+        expected: p
+      - path: "len:0/value/0/children"
+        expected: 3
+      - path: "0/value/0/children/0/text"
+        expected: 'text with an '
+      - path: "0/value/0/children/1/type"
+        expected: strong
+      - path: "0/value/0/children/2/text"
+        expected: " and more text"
+
+
+  - name: Paragraph with image without src
+    src: '<p><b>inline element</b><img class="image-right"></p>'
+    tests:
+      - path: "type:"
+        expected: list
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "0/value/0/type"
+        expected: p
+
+  - name: Complex html with nested image inside a paragraph
+    src: |
+      <h2>Apresentação</h2>
+      <hr />
+      <p><span><br /></span></p>
+      <p>O Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB) é uma autarquia federal vinculada à Secretaria de Educação Profissional e Tecnológica (SETEC) do Ministério da Educação e Cultura (MEC). Referência em ensino profissional na Paraíba, o IFPB conta com 24 unidades distribuídas em todo o Estado, entre Campus e Campus Avançado. Os Campi Avançados são vinculados à Reitoria, que tem sede na capital paraibana.</p>
+      <div><iframe src="https://www.youtube.com/embed/Rehh4KAw6F8" width="300" height="240" allowfullscreen="" frameborder="0" style=""></iframe></div>
+      <div></div>
+      <div>
+      <p>As unidades em funcionamento com denominação de Campus são: Cabedelo, Cajazeiras, Campina Grande, Catolé do Rocha, Esperança, Guarabira, Itabaiana, Itaporanga, João Pessoa, Mamanguape, Monteiro, Patos, Picuí, Princesa Isabel, Queimadas, Santa Luzia, Santa Rita, Sapé e Sousa. Os Campi Avançados são: Cabedelo Centro, João Pessoa Mangabeira, Soledade, Areia e Pedras de Fogo.<br /> <br /> O IFPB conta, ainda, com um Polo de Inovação credenciado à Empresa Brasileira de Pesquisa e Inovação Industrial (EMBRAPII). Sua sede está localizada em João Pessoa e atua na área de Sistemas para Automação em Manufatura.<br /> <br /> O IFPB oferece diversos cursos presenciais e a distância, nas modalidades integrado ao ensino médio, subsequente, superior e pós-graduação (stricto sensu e lato sensu), além de cursos de Formação Inicial e Continuada. Todos gratuitos. A instituição conta ainda com diversos programas de Pesquisa, Extensão e Inovação, envolvendo estudantes, servidores e colaboradores.</p>
+      <br />
+      <p> <span>Nossa Missão</span></p>
+      <hr />
+      <p> </p>
+      <p>Ofertar a educação profissional, tecnológica e humanística em todos os seus níveis e modalidades por meio do Ensino, da Pesquisa e da Extensão, na perspectiva de contribuir na formação de cidadãos para atuarem no mundo do trabalho e na construção de uma sociedade inclusiva, justa, sustentável e democrática.</p>
+      <p><span><br /></span></p>
+      <h2><span>Visão</span></h2>
+      <hr />
+      <p> </p>
+      <p class=" "><span>Ser uma instituição de excelência na promoção do desenvolvimento profissional, tecnológico e humanístico de forma ética e sustentável beneficiando a sociedade, alinhado às regionalidades em que está inserido.</span></p>
+      <h2></h2>
+      <h2>Valores</h2>
+      <hr />
+      <p> </p>
+      <h3><span>Ética</span></h3>
+      <p>Requisito básico orientador das ações institucionais;</p>
+      <h3>Desenvolvimento Humano</h3>
+      <p>Fomentar o desenvolvimento humano, buscando sua integração à sociedade por meio do exercício da cidadania, promovendo o seu bem-estar social;</p>
+      <h3>Inovação</h3>
+      <p>Buscar soluções para as demandas apresentadas;</p>
+      <h3>Qualidade e Excelência</h3>
+      <p>Promover a melhoria contínua dos serviços prestados</p>
+      <h3>Transparência</h3>
+      <p>Disponibilizar mecanismos de acompanhamento e de publicização das ações da gestão, aproximando a administração da comunidade;</p>
+      <h3>Respeito</h3>
+      <p>Ter atenção com alunos, servidores e público em geral;</p>
+      <h3>Compromisso Social e Ambiental</h3>
+      <p>Participa efetivamente das ações sociais e ambientais, cumprindo seu papel social de agente transformador da sociedade e promotor da sustentabilidade.<span> </span></p>
+      <h3>Documentos Institucionais</h3>
+      <ul>
+      <li><span><a class="internal-link" href="resolveuid/b615160fda994b2a9d1ccc8da402d391" target="_self" title="">Acesse os principais documentos institucionais</a></span></li>
+      </ul>
+      <div><span><br /></span></div>
+      <h3><span>Vídeo Institucional</span></h3>
+      <p> </p>
+      <iframe src="https://www.youtube.com/embed/1v-huvt1_-I" title="YouTube video player" width="560" height="315" allowfullscreen="" frameborder="0" style=""></iframe>
+      <h2>Sobre a Reitora</h2>
+      <hr />
+      <p><span> </span></p>
+      <h3>Mary Roberta Meira Marinho</h3>
+      <p> <img class="image-left" src="resolveuid/fa6db4f888e945818c521a0d37aeba29/@@images/image/preview" /></p>
+      <p>A Reitora do IFPB é doutora em Engenharia de Processos pela Universidade Federal de Campina Grande (UFCG), mestre em Engenharia de Produção e Especialista em Agente de Inovação Tecnológica na Universidade Federal da Paraíba (UFPB), Graduada em Engenharia Mecânica (UFPB) e Técnica em Mecânica na Escola Técnica Federal da Paraíba (ETFPB).</p>
+      <p>Ela ingressou no IFPB, no ano de 1994 como professora substituta e, posteriormente, foi efetivada como concursada em 1995, em João Pessoa.</p>
+      <p>Mary Roberta possui quase três décadas de experiência em gestão acadêmica e administrativa e já ocupou diversas funções públicas, entre as quais Coordenadora de Curso, Diretora de Desenvolvimento do Ensino do campus Campina Grande do IFPB e Pró-Reitora de Ensino do Instituto Federal da Paraíba.</p>
+      </div>
+    tests:
+      - path: "len:"
+        expected: 8
+      - path: "0/@type"
+        expected: "slate"
+      - path: "1/@type"
+        expected: "slate"
+      - path: "2/@type"
+        expected: "slate"
+      - path: "3/@type"
+        expected: "video"
+      - path: "4/@type"
+        expected: "slate"
+      - path: "5/@type"
+        expected: "video"
+      - path: "6/@type"
+        expected: "image"
+      - path: "7/@type"
+        expected: "slate"
+
+  - name: List of link items
+    src: |
+      <div id="content-core">
+      <div class="" id="parent-fieldname-text-fab8d9b335e247b6b690eba4e02720c8">
+      <ul class="listTypeSquare">
+      <li><a title="mehr Informationen" href="https://site.foo.bar/barfoo/bezuege-1/besoldung" class="internal-link" target="_self"></a><a title="mehr Informationen" href="https://site.foo.bar/barfoo/bezuege-1/besoldung" class="internal-link" target="_self">Besoldung</a></li>
+      <li><a title="mehr Informationen" href="https://site.foo.bar/barfoo/bezuege-1/entgelt" class="internal-link" target="_self">Entgelt</a></li>
+      <li><a title="mehr Informationen" href="https://site.foo.bar/leistungspraemien" class="internal-link" target="_self">Leistungsprämien</a></li>
+      <li><a title="mehr Informationen" href="https://site.foo.bar/barfoo/altersteilzeit-1" class="internal-link" target="_self">Versorgung/Altersgeld</a></li>
+      <li><a title="öffnet Datei im neuen Fenster (pdf)" href="https://site.foo.bar/barfoo/steuerhinweise-bezuege" class="internal-link" target="_blank">Steuerhinweise für Empfängerinnen und Empfänger von Amts-, Besoldungs- und Tarifbezügen</a></li>
+      <li><a title="öffnet Datei im neuen Fenster (pdf)" href="https://site.foo.bar/barfoo/information-zum-zustaendigkeitswechsel-in-der-kindergeldbearbeitung" class="internal-link" target="_blank">Information zum Zuständigkeitswechsel in der Kindergeldbearbeitung</a></li>
+      <li><span><a title="öffnet Datei im neuen Fenster (pdf)" href="https://site.foo.bar/barfoo/kundeninformation-zum-jahreswechsel-informationen-fuer-beschaeftigte-und-arbeitgeber" class="internal-link" target="_blank">Kundeninformation zum Jahreswechsel – Informationen des Fachbereichs Personalkostenbetreuung des Bundesverwaltungsamts für Beschäftigte und Arbeitgeber</a></span></li>
+      <li><span><span><a title="öffnet Datei im neuen Fenster (pdf)" href="https://site.foo.bar/barfoo/kundeninformation-berechnung-der-beitraege-zur-sozialen-pflegeversicherung-im-rahmen-der-mitgliedschaft-in-einer-gesetzlichen-krankenkasse-fuer-zeiten-ab-dem-01-07-2023-hinweise-zur-beruecksichtigung-von-kindern" class="internal-link" target="_blank">Kundeninformation - Berechnung der Beiträge zur sozialen Pflegeversicherung im Rahmen der Mitgliedschaft in einer gesetzlichen Krankenkasse für Zeiten ab dem 01.07.2023</a></span></span></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      </div>
+      </div>
+    tests:
+      - path: "type:"
+        expected: list
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "0/value/0/type"
+        expected: ul
+      - path: "len:0/value/0/children"
+        expected: 8
+
+  - name: Paragraph with image as first element
+    src: <p><img src="/image/258ebebc-3733-4c0a-bc19-8b70f2cd6b7e.png" alt="" class="image-left" title="">Some text</p>
+    tests:
+      - path: "type:"
+        expected: list
+      - path: "len:"
+        expected: 2
+      - path: "0/@type"
+        expected: image
+      - path: "1/@type"
+        expected: slate
+
+  - name: Paragraph with line break
+    src: <p>Hello there<br>Mr. John</p>
+    tests:
+      - path: "type:"
+        expected: list
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: slate
+      - path: "len:0/value/0/children"
+        expected: 1
+      - path: "0/value/0/children/0/text"
+        expected: "Hello there\nMr. John"
+
+  - name: Empty unordered lists should be removed from the structure
+    src: |
+      <p><span><img class="image-inline" src="resolveuid/02a0346be72447dba39e905b413d9bc9" /></span></p>
+      <p>&nbsp;</p>
+      <ul class="listTypeSquare"></ul>
+      <p>&nbsp;</p>
+      <ul class="listTypeSquare"></ul>
+      <p>&nbsp;</p>
+
+    tests:
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: 'image'
+      - path: "0/url"
+        expected: 'resolveuid/02a0346be72447dba39e905b413d9bc9'
+
+  - name: Nested unordered lists should be preserved
+    src: |
+      <ul class="listTypeSquare">
+        <li><span>Item 1</span></li>
+        <li><span>Item 2</span></li>
+        <ul>
+          <li><span>Item 2.1</span></li>
+          <li><span>Item 2.2</span></li>
+          <ul>
+            <li><span>Item 2.2.1</span></li>
+            <li><span>Item 2.2.2</span></li>
+          </ul>
+        </ul>
+      </ul>
+
+    tests:
+      - path: "len:"
+        expected: 1
+      - path: "0/@type"
+        expected: 'slate'
+      - path: "len:0/value"
+        expected: 1
+      - path: "0/value/0/type"
+        expected: 'ul'
+      - path: "len:0/value/0/children"
+        expected: 3
+      - path: "0/value/0/children/2/type"
+        expected: 'ul'
+      - path: "len:0/value/0/children/2/children"
+        expected: 3

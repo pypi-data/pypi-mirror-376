@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="collective.html2blocks Reference" name="description" />
+<meta content="collective.html2blocks Reference" property="og:description" />
+<meta content="collective.html2blocks Reference" property="og:title" />
+<meta content="Plone, collective.html2blocks, reference" name="keywords" />
+<meta property="og:title" content="collective.html2blocks.services" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://collective.github.io/collective.html2blocks/reference/c_h2b_services.html" />
+<meta property="og:site_name" content="collective.html2blocks Documentation" />
+<meta property="og:description" content="FastAPI application setup for collective.html2blocks services. This module initializes the FastAPI app, includes routers for healthcheck, HTML conversion, and info endpoints, and adds middleware fo..." />
+<meta property="og:image" content="https://collective.github.io/collective.html2blocks/_static/logo.svg" />
+<meta property="og:image:alt" content="collective.html2blocks Documentation" />
+<meta property="og:locale" content="en_US" />
+
+    <title>collective.html2blocks.services &#8212; collective.html2blocks v1.0.0a2.dev0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5349f25f" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/plone-sphinx-theme.css?v=88f4e24d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-httpexample.css?v=02fb0e2f" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=adbc0f41"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/sphinxcontrib-httpexample.js?v=31a81d62"></script>
+    <script src="../_static/scripts/plone-sphinx-theme.js?v=ce3a8c55"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy/reference/c_h2b_services.6f1d950c-c9c3-4907-bb67-e7d8f4cd7fdd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/c_h2b_services';</script>
+    <link rel="canonical" href="https://collective.github.io/collective.html2blocks/reference/c_h2b_services.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within collective.html2blocks v1.0.0a2.dev0"
+          href="../_static/opensearch.xml"/>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="collective.html2blocks.utils" href="c_h2b_utils.html" />
+    <link rel="prev" title="collective.html2blocks.registry" href="c_h2b_registry.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search"
+         aria-label="Search"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">collective.html2blocks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../how-to-guides/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-guides/usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-guides/cli.html"><code class="docutils literal notranslate"><span class="pre">html2blocks</span></code> command line application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-guides/new-converter.html">Register a new converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-guides/add-tests.html">Add tests</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="api.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="c_h2b_cli.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.cli</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_h2b_commands.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.commands</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_h2b_converter.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.converter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_h2b_registry.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.registry</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_h2b_utils.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.utils</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation/edit/main/docs/collective.collectivehtml2blocksdocumentation/reference/c_h2b_services.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation/issues/new?title=Issue%20on%20page%20%2Freference/c_h2b_services.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/reference/c_h2b_services.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>collective.html2blocks.services</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.add_process_time_header"><code class="docutils literal notranslate"><span class="pre">add_process_time_header()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-collective.html2blocks.services.healthcheck"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.healthcheck</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.healthcheck.healthcheck"><code class="docutils literal notranslate"><span class="pre">healthcheck()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-collective.html2blocks.services.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.html</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody"><code class="docutils literal notranslate"><span class="pre">HtmlBody</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody.html"><code class="docutils literal notranslate"><span class="pre">HtmlBody.html</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody.converter"><code class="docutils literal notranslate"><span class="pre">HtmlBody.converter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody.model_config"><code class="docutils literal notranslate"><span class="pre">HtmlBody.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody"><code class="docutils literal notranslate"><span class="pre">VoltoBody</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.html"><code class="docutils literal notranslate"><span class="pre">VoltoBody.html</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.default_blocks"><code class="docutils literal notranslate"><span class="pre">VoltoBody.default_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.additional_blocks"><code class="docutils literal notranslate"><span class="pre">VoltoBody.additional_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.model_config"><code class="docutils literal notranslate"><span class="pre">VoltoBody.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.convert_html"><code class="docutils literal notranslate"><span class="pre">convert_html()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.convert_to_volto"><code class="docutils literal notranslate"><span class="pre">convert_to_volto()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-collective.html2blocks.services.info"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.info</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.info.root"><code class="docutils literal notranslate"><span class="pre">root()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-collective.html2blocks.services">
+<span id="collective-html2blocks-services"></span><h1><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services</span></code><a class="headerlink" href="#module-collective.html2blocks.services" title="Link to this heading">#</a></h1>
+<p>FastAPI application setup for <code class="docutils literal notranslate"><span class="pre">collective.html2blocks</span></code> services.</p>
+<p>This module initializes the FastAPI app, includes routers for healthcheck,
+HTML conversion, and info endpoints, and adds middleware for request timing.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collective.html2blocks.services</span><span class="w"> </span><span class="kn">import</span> <span class="n">app</span>
+<span class="c1"># Use with Uvicorn or other ASGI server</span>
+<span class="c1"># uvicorn collective.html2blocks.services:app</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="collective.html2blocks.services.add_process_time_header">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collective.html2blocks.services.</span></span><span class="sig-name descname"><span class="pre">add_process_time_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_next</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/collective/html2blocks/services.html#add_process_time_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#collective.html2blocks.services.add_process_time_header" title="Link to this definition">#</a></dt>
+<dd><p>Middleware to attach <code class="docutils literal notranslate"><span class="pre">X-Process-Time</span></code> header to each response.</p>
+<p>This middleware measures the time taken to process each HTTP request and
+adds the result as an <code class="docutils literal notranslate"><span class="pre">X-Process-Time</span></code> header in the response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>Request</em>) -- The incoming HTTP request.</p></li>
+<li><p><strong>call_next</strong> (<em>Callable</em>) -- The next ASGI handler to call.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The HTTP response with the process time header.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Response<span class="w"> </span>headers<span class="w"> </span>will<span class="w"> </span>include<span class="w"> </span><span class="sb">``</span>X-Process-Time<span class="sb">``</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<section id="module-collective.html2blocks.services.healthcheck">
+<span id="collective-html2blocks-services-healthcheck"></span><h2><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.healthcheck</span></code><a class="headerlink" href="#module-collective.html2blocks.services.healthcheck" title="Link to this heading">#</a></h2>
+<p>Healthcheck service for <code class="docutils literal notranslate"><span class="pre">collective.html2blocks</span></code>.</p>
+<p>Provides a simple endpoint to verify that the API service is running and healthy.</p>
+<p class="rubric">Example</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /ok</span>
+<span class="go">Response: {&quot;status&quot;: &quot;up&quot;}</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="collective.html2blocks.services.healthcheck.healthcheck">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collective.html2blocks.services.healthcheck.</span></span><span class="sig-name descname"><span class="pre">healthcheck</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a></span></span><a class="reference internal" href="../_modules/collective/html2blocks/services/healthcheck.html#healthcheck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#collective.html2blocks.services.healthcheck.healthcheck" title="Link to this definition">#</a></dt>
+<dd><p>Healthcheck endpoint for service status.</p>
+<p>Returns a JSON object indicating the service is up.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Status information, e.g. {&quot;status&quot;: &quot;up&quot;}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://localhost:8000/ok
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{&quot;status&quot;: &quot;up&quot;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-collective.html2blocks.services.html">
+<span id="collective-html2blocks-services-html"></span><h2><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.html</span></code><a class="headerlink" href="#module-collective.html2blocks.services.html" title="Link to this heading">#</a></h2>
+<p>HTML conversion service for <code class="docutils literal notranslate"><span class="pre">collective.html2blocks</span></code>.</p>
+<p>Provides API endpoints for converting HTML content to Volto blocks and block layout
+information. Includes endpoints for both simple block conversion and full Volto layout.</p>
+<p class="rubric">Example</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /html</span>
+<span class="go">POST /volto</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.HtmlBody">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collective.html2blocks.services.html.</span></span><span class="sig-name descname"><span class="pre">HtmlBody</span></span><a class="reference internal" href="../_modules/collective/html2blocks/services/html.html#HtmlBody"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#collective.html2blocks.services.html.HtmlBody" title="Link to this definition">#</a></dt>
+<dd><p>Request body model for HTML to blocks conversion.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.HtmlBody.html">
+<span class="sig-name descname"><span class="pre">html</span></span><a class="headerlink" href="#collective.html2blocks.services.html.HtmlBody.html" title="Link to this definition">#</a></dt>
+<dd><p>The HTML content to convert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.HtmlBody.converter">
+<span class="sig-name descname"><span class="pre">converter</span></span><a class="headerlink" href="#collective.html2blocks.services.html.HtmlBody.converter" title="Link to this definition">#</a></dt>
+<dd><p>The type of conversion to perform (default is <code class="docutils literal notranslate"><span class="pre">slate</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.HtmlBody.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#collective.html2blocks.services.html.HtmlBody.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.VoltoBody">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collective.html2blocks.services.html.</span></span><span class="sig-name descname"><span class="pre">VoltoBody</span></span><a class="reference internal" href="../_modules/collective/html2blocks/services/html.html#VoltoBody"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#collective.html2blocks.services.html.VoltoBody" title="Link to this definition">#</a></dt>
+<dd><p>Request body model for HTML to Volto blocks conversion with layout.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.VoltoBody.html">
+<span class="sig-name descname"><span class="pre">html</span></span><a class="headerlink" href="#collective.html2blocks.services.html.VoltoBody.html" title="Link to this definition">#</a></dt>
+<dd><p>The HTML content to convert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.VoltoBody.default_blocks">
+<span class="sig-name descname"><span class="pre">default_blocks</span></span><a class="headerlink" href="#collective.html2blocks.services.html.VoltoBody.default_blocks" title="Link to this definition">#</a></dt>
+<dd><p>Default blocks to include.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a>[VoltoBlock] | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.VoltoBody.additional_blocks">
+<span class="sig-name descname"><span class="pre">additional_blocks</span></span><a class="headerlink" href="#collective.html2blocks.services.html.VoltoBody.additional_blocks" title="Link to this definition">#</a></dt>
+<dd><p>Additional blocks to include.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a>[VoltoBlock] | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.VoltoBody.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#collective.html2blocks.services.html.VoltoBody.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.convert_html">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collective.html2blocks.services.html.</span></span><span class="sig-name descname"><span class="pre">convert_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#collective.html2blocks.services.html.HtmlBody" title="collective.html2blocks.services.html.HtmlBody"><span class="pre">HtmlBody</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">VoltoBlock</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/collective/html2blocks/services/html.html#convert_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#collective.html2blocks.services.html.convert_html" title="Link to this definition">#</a></dt>
+<dd><p>Convert HTML to blocks.</p>
+<p>Converts the provided HTML content to a list of Volto blocks using the specified
+converter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="#collective.html2blocks.services.html.HtmlBody" title="collective.html2blocks.services.html.HtmlBody"><em>HtmlBody</em></a>) -- Request body containing HTML and converter type.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The converted blocks.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a>[VoltoBlock]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>HTTPException</strong> -- If an unsupported converter is specified.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>/html<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;html&quot;: &quot;&lt;p&gt;Hello&lt;/p&gt;&quot;, &quot;converter&quot;: &quot;slate&quot;}&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="collective.html2blocks.services.html.convert_to_volto">
+<span class="sig-prename descclassname"><span class="pre">collective.html2blocks.services.html.</span></span><span class="sig-name descname"><span class="pre">convert_to_volto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#collective.html2blocks.services.html.VoltoBody" title="collective.html2blocks.services.html.VoltoBody"><span class="pre">VoltoBody</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">VoltoBlocksInfo</span></span></span><a class="reference internal" href="../_modules/collective/html2blocks/services/html.html#convert_to_volto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#collective.html2blocks.services.html.convert_to_volto" title="Link to this definition">#</a></dt>
+<dd><p>Convert HTML to Volto blocks and return blocks information.</p>
+<p>Converts the provided HTML content to a Volto blocks structure, including
+block layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="#collective.html2blocks.services.html.VoltoBody" title="collective.html2blocks.services.html.VoltoBody"><em>VoltoBody</em></a>) -- Request body containing HTML and block lists.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the converted Volto blocks and layout.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>VoltoBlocksInfo</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>/volto<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;html&quot;: &quot;&lt;p&gt;Hello&lt;/p&gt;&quot;}&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-collective.html2blocks.services.info">
+<span id="collective-html2blocks-services-info"></span><h2><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.info</span></code><a class="headerlink" href="#module-collective.html2blocks.services.info" title="Link to this heading">#</a></h2>
+<p>Info service for <code class="docutils literal notranslate"><span class="pre">collective.html2blocks</span></code>.</p>
+<p>Provides the root endpoint with basic information about the API service, including
+its title, description, and version.</p>
+<p class="rubric">Example</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /</span>
+<span class="go">Response: {&quot;title&quot;: &quot;Blocks Conversion Tool&quot;, ...}</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="collective.html2blocks.services.info.root">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collective.html2blocks.services.info.</span></span><span class="sig-name descname"><span class="pre">root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a></span></span><a class="reference internal" href="../_modules/collective/html2blocks/services/info.html#root"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#collective.html2blocks.services.info.root" title="Link to this definition">#</a></dt>
+<dd><p>Root endpoint for the HTML to Blocks service.</p>
+<p>Returns a JSON object with service metadata including title, description,
+and version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Service metadata.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://localhost:8000/
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{&quot;title&quot;: &quot;Blocks Conversion Tool&quot;,</span>
+<span class="go">&quot;description&quot;: &quot;Convert HTML to blocks for use in Volto.&quot;,</span>
+<span class="go">&quot;version&quot;: &quot;...&quot;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="c_h2b_registry.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.registry</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="c_h2b_utils.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.utils</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.add_process_time_header"><code class="docutils literal notranslate"><span class="pre">add_process_time_header()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-collective.html2blocks.services.healthcheck"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.healthcheck</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.healthcheck.healthcheck"><code class="docutils literal notranslate"><span class="pre">healthcheck()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-collective.html2blocks.services.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.html</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody"><code class="docutils literal notranslate"><span class="pre">HtmlBody</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody.html"><code class="docutils literal notranslate"><span class="pre">HtmlBody.html</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody.converter"><code class="docutils literal notranslate"><span class="pre">HtmlBody.converter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.HtmlBody.model_config"><code class="docutils literal notranslate"><span class="pre">HtmlBody.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody"><code class="docutils literal notranslate"><span class="pre">VoltoBody</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.html"><code class="docutils literal notranslate"><span class="pre">VoltoBody.html</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.default_blocks"><code class="docutils literal notranslate"><span class="pre">VoltoBody.default_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.additional_blocks"><code class="docutils literal notranslate"><span class="pre">VoltoBody.additional_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.VoltoBody.model_config"><code class="docutils literal notranslate"><span class="pre">VoltoBody.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.convert_html"><code class="docutils literal notranslate"><span class="pre">convert_html()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.html.convert_to_volto"><code class="docutils literal notranslate"><span class="pre">convert_to_volto()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-collective.html2blocks.services.info"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services.info</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collective.html2blocks.services.info.root"><code class="docutils literal notranslate"><span class="pre">root()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Érico Andrei
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+            
+          
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/collective/collectivehtml2blocksdocumentation" title="GitHub" class="nav-link custom-fancy-css" rel="noopener me" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

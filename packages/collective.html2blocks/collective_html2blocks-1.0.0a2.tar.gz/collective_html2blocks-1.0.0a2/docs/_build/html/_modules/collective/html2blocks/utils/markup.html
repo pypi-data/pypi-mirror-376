@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>collective.html2blocks.utils.markup &#8212; collective.html2blocks v1.4.3</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=5349f25f" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/plone-sphinx-theme.css?v=88f4e24d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-httpexample.css?v=02fb0e2f" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=fe2dbf16"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/sphinxcontrib-httpexample.js?v=31a81d62"></script>
+    <script src="../../../../_static/scripts/plone-sphinx-theme.js?v=ce3a8c55"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/collective/html2blocks/utils/markup';</script>
+    <link rel="canonical" href="https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io/_modules/collective/html2blocks/utils/markup.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within collective.html2blocks v1.4.3"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search"
+         aria-label="Search"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">collective.html2blocks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/index.html">Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/cli.html"><code class="docutils literal notranslate"><span class="pre">html2blocks</span></code> command line application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/new-converter.html">Register a new converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/add-tests.html">Add tests</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../reference/api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_cli.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.cli</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_commands.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.commands</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_converter.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.converter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_registry.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.registry</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_services.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_utils.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.utils</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation/issues/new?title=Issue%20on%20page%20%2F_modules/collective/html2blocks/utils/markup.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for collective.html2blocks.utils.markup</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">HTML markup utilities for ``collective.html2blocks``.</span>
+
+<span class="sd">This module provides functions for parsing, normalizing, and extracting</span>
+<span class="sd">information from HTML markup, including grouping inline elements, filtering,</span>
+<span class="sd">normalizing, and extracting table and style information.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from collective.html2blocks.utils import markup</span>
+<span class="sd">        soup = markup.parse_source(&#39;&lt;p&gt;Hello &lt;b&gt;world&lt;/b&gt;&lt;/p&gt;&#39;)</span>
+<span class="sd">        children = markup.all_children(soup)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.inline</span><span class="w"> </span><span class="kn">import</span> <span class="n">ALLOW_EMPTY_ELEMENTS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.inline</span><span class="w"> </span><span class="kn">import</span> <span class="n">INLINE_ELEMENTS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4.element</span><span class="w"> </span><span class="kn">import</span> <span class="n">Comment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4.element</span><span class="w"> </span><span class="kn">import</span> <span class="n">NavigableString</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4.element</span><span class="w"> </span><span class="kn">import</span> <span class="n">PageElement</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collective.html2blocks._types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tag</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_group_inline_elements</span><span class="p">(</span><span class="n">soup</span><span class="p">:</span> <span class="n">BeautifulSoup</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BeautifulSoup</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Group inline elements into paragraphs in the soup.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        soup (BeautifulSoup): The soup to process.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        BeautifulSoup: The modified soup with inline elements grouped.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wrapper</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">inline_element</span> <span class="o">:=</span> <span class="n">is_inline</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">wrapper</span><span class="p">:</span>
+                <span class="n">wrapper</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+                <span class="n">element</span><span class="o">.</span><span class="n">insert_before</span><span class="p">(</span><span class="n">wrapper</span><span class="p">)</span>
+            <span class="n">wrapper</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">extract</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">inline_element</span> <span class="ow">and</span> <span class="n">wrapper</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">:</span>
+                <span class="n">wrapper</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+            <span class="n">wrapper</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">soup</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_filter_children</span><span class="p">(</span><span class="n">soup</span><span class="p">:</span> <span class="n">BeautifulSoup</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BeautifulSoup</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Filter out comments and empty elements from the soup.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        soup (BeautifulSoup): The soup to process.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        BeautifulSoup: The filtered soup.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Comment</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">NavigableString</span><span class="p">)</span> <span class="ow">and</span> <span class="n">child</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">):</span>
+            <span class="n">child</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Tag</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;div&quot;</span>
+    <span class="p">):</span>
+        <span class="c1"># If there is only a wraping div, return its children</span>
+        <span class="n">new_soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+        <span class="n">internal_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">internal_</span><span class="p">:</span>
+            <span class="n">child</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+            <span class="n">new_soup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">_filter_children</span><span class="p">(</span><span class="n">new_soup</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">soup</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_normalize_html</span><span class="p">(</span><span class="n">soup</span><span class="p">:</span> <span class="n">BeautifulSoup</span><span class="p">,</span> <span class="n">block_level_tags</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">()):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normalize HTML by simplifying, removing empty tags, and wrapping paragraphs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        soup (BeautifulSoup): The soup to normalize.</span>
+<span class="sd">        block_level_tags (Iterable[str], optional): Block-level tags to wrap.</span>
+<span class="sd">                                                    Defaults to ``()``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        BeautifulSoup: The normalized soup.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_recursively_simplify</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+    <span class="n">_remove_empty_tags</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+    <span class="n">_wrap_all_paragraphs</span><span class="p">(</span><span class="n">soup</span><span class="p">,</span> <span class="n">block_level_tags</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">soup</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_recursively_simplify</span><span class="p">(</span><span class="n">tag</span><span class="p">:</span> <span class="n">Tag</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Recursively simplify nested tags with identical names and attributes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tag (Tag): The tag to simplify.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">children</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Tag</span><span class="p">):</span>
+            <span class="n">_recursively_simplify</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Tag</span><span class="p">):</span>
+        <span class="n">child</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">tag</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="n">tag</span><span class="o">.</span><span class="n">attrs</span> <span class="o">==</span> <span class="n">child</span><span class="o">.</span><span class="n">attrs</span><span class="p">:</span>
+            <span class="n">tag</span><span class="o">.</span><span class="n">replace_with</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+            <span class="n">_recursively_simplify</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="is_empty">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.is_empty">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="n">tag</span><span class="p">:</span> <span class="n">Tag</span> <span class="o">|</span> <span class="n">NavigableString</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a tag or string is empty (not allowed or has no content).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tag (Tag | NavigableString): The tag or string to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if empty, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">NavigableString</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">tag</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">tag</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ALLOW_EMPTY_ELEMENTS</span>
+        <span class="ow">and</span> <span class="ow">not</span> <span class="n">tag</span><span class="o">.</span><span class="n">contents</span>
+        <span class="ow">and</span> <span class="ow">not</span> <span class="n">tag</span><span class="o">.</span><span class="n">string</span>
+        <span class="ow">and</span> <span class="ow">not</span> <span class="n">tag</span><span class="o">.</span><span class="n">attrs</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="is_ignorable">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.is_ignorable">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_ignorable</span><span class="p">(</span><span class="n">el</span><span class="p">:</span> <span class="n">PageElement</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if an element is ignorable (empty string or allowed empty tag).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        el (PageElement): The element to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if ignorable, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">NavigableString</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">el</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="ow">or</span> <span class="p">(</span>
+        <span class="nb">isinstance</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">Tag</span><span class="p">)</span> <span class="ow">and</span> <span class="n">el</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">ALLOW_EMPTY_ELEMENTS</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_remove_trailing_allowed_empty_recursive</span><span class="p">(</span><span class="n">tag</span><span class="p">:</span> <span class="n">Tag</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove trailing allowed empty elements recursively from a tag.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tag (Tag): The tag to process.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: The contents after removal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">tag</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Tag</span><span class="p">):</span>
+            <span class="n">_remove_trailing_allowed_empty_recursive</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">NavigableString</span><span class="p">)</span> <span class="ow">and</span> <span class="n">child</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">child</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+
+    <span class="n">contents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">(</span>
+        <span class="n">contents</span>
+        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Tag</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">contents</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">ALLOW_EMPTY_ELEMENTS</span>
+    <span class="p">):</span>
+        <span class="n">contents</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+        <span class="n">contents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">contents</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_remove_empty_tags</span><span class="p">(</span><span class="n">soup</span><span class="p">:</span> <span class="n">BeautifulSoup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove all empty tags from the soup, except allowed empty elements.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        soup (BeautifulSoup): The soup to process.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Remove all empty tags (excluding allowed empty elements)</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">Tag</span> <span class="o">|</span> <span class="n">NavigableString</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
+            <span class="n">element</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+
+    <span class="c1"># Clean up paragraphs</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Tag</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">contents</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">PageElement</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Tag</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+
+        <span class="c1"># Remove ignorable leading content</span>
+        <span class="k">while</span> <span class="n">contents</span> <span class="ow">and</span> <span class="n">is_ignorable</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+            <span class="n">contents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Tag</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+
+        <span class="n">contents</span> <span class="o">=</span> <span class="n">_remove_trailing_allowed_empty_recursive</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+        <span class="c1"># Remove paragraph if now empty</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">contents</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">is_ignorable</span><span class="p">(</span><span class="n">c</span><span class="p">)):</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_wrap_all_paragraphs</span><span class="p">(</span><span class="n">soup</span><span class="p">:</span> <span class="n">BeautifulSoup</span><span class="p">,</span> <span class="n">block_level_tags</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wrap all paragraphs in the soup, splitting as needed by block-level tags.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        soup (BeautifulSoup): The soup to process.</span>
+<span class="sd">        block_level_tags (Iterable[str]): Block-level tags to split by.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">p_tag</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p_tag</span><span class="p">,</span> <span class="n">Tag</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">new_elements</span> <span class="o">=</span> <span class="n">_split_paragraph</span><span class="p">(</span><span class="n">p_tag</span><span class="p">,</span> <span class="n">block_level_tags</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_elements</span><span class="p">:</span>
+            <span class="n">p_tag</span><span class="o">.</span><span class="n">insert_after</span><span class="p">(</span><span class="o">*</span><span class="n">new_elements</span><span class="p">)</span>
+            <span class="n">p_tag</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_root_soup</span><span class="p">(</span><span class="n">tag</span><span class="p">:</span> <span class="n">Tag</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BeautifulSoup</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the root BeautifulSoup object for a tag.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tag (Tag): The tag to find the root for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        BeautifulSoup: The root soup object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">tag</span>
+    <span class="k">while</span> <span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">BeautifulSoup</span><span class="p">):</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
+    <span class="k">if</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Could not find root BeautifulSoup object&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parent</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_split_paragraph</span><span class="p">(</span><span class="n">p_tag</span><span class="p">:</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">block_level_tags</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Tag</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Split a paragraph tag into multiple paragraphs by block-level tags.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p_tag (Tag): The paragraph tag to split.</span>
+<span class="sd">        block_level_tags (Iterable[str]): Block-level tags to split by.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[Tag]: List of new paragraph tags.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">_get_root_soup</span><span class="p">(</span><span class="n">p_tag</span><span class="p">)</span>
+    <span class="n">new_elements</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Tag</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">buffer</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Tag</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">flush_buffer</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">buffer</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">buffer</span><span class="p">:</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">new_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+            <span class="n">buffer</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">p_tag</span><span class="o">.</span><span class="n">contents</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Tag</span><span class="p">)</span> <span class="ow">and</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">block_level_tags</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;img&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">flush_buffer</span><span class="p">()</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+            <span class="n">new_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">buffer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+    <span class="n">flush_buffer</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">new_elements</span>
+
+
+<div class="viewcode-block" id="parse_source">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.parse_source">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_source</span><span class="p">(</span>
+    <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">filter_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">group</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">normalize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">block_level_tags</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tag</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse HTML source and return a normalized soup object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source (str): The HTML source to parse.</span>
+<span class="sd">        filter_ (bool, optional): Whether to filter children. Defaults to ``True``.</span>
+<span class="sd">        group (bool, optional): Whether to group inline elements. Defaults to ``True``.</span>
+<span class="sd">        normalize (bool, optional): Whether to normalize HTML. Defaults to ``True``.</span>
+<span class="sd">        block_level_tags (Iterable[str], optional): Block-level tags. Defaults to ``()``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tag: The parsed and normalized soup object.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            soup = parse_source(&quot;&lt;p&gt;Hello &lt;b&gt;world&lt;/b&gt;&lt;/p&gt;&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Remove linebreaks from the end of the source</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">normalize</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">_normalize_html</span><span class="p">(</span><span class="n">soup</span><span class="p">,</span> <span class="n">block_level_tags</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">filter_</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">_filter_children</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">group</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">_group_inline_elements</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">soup</span></div>
+
+
+
+<div class="viewcode-block" id="all_children">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.all_children">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_children</span><span class="p">(</span>
+    <span class="n">element</span><span class="p">:</span> <span class="n">PageElement</span> <span class="o">|</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">allow_tags</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PageElement</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a list of all children of an element, optionally filtered by tag names.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        element (PageElement | Tag): The element to get children from.</span>
+<span class="sd">        allow_tags (list[str], optional): List of tag names to include.</span>
+<span class="sd">                                          Defaults to ``None``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[PageElement]: List of child elements.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">raw_children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">PageElement</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s2">&quot;children&quot;</span><span class="p">,</span> <span class="p">[]))</span>
+    <span class="k">if</span> <span class="n">allow_tags</span><span class="p">:</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">child</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">raw_children</span>
+            <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">in</span> <span class="n">allow_tags</span>
+        <span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="n">raw_children</span>
+    <span class="k">return</span> <span class="n">children</span></div>
+
+
+
+<div class="viewcode-block" id="styles">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.styles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">styles</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="n">Tag</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse style attributes from an element into a dictionary.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        element (Tag): The element to parse styles from.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary of style properties.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">styles</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">raw_styles</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;style&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">raw_item</span> <span class="ow">in</span> <span class="n">raw_styles</span><span class="p">:</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">raw_item</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># Malformed style info</span>
+            <span class="k">continue</span>
+        <span class="n">styles</span><span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">styles</span></div>
+
+
+
+<div class="viewcode-block" id="css_classes">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.css_classes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">css_classes</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="n">Tag</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a list of CSS classes from an element.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        element (Tag): The element to get classes from.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[str]: List of CSS class names.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">attr</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">attr</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">attr</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="is_inline">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.is_inline">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_inline</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="n">PageElement</span><span class="p">,</span> <span class="n">include_span</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if an element is considered inline.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        element (PageElement): The element to check.</span>
+<span class="sd">        include_span (bool, optional): Whether to treat span as inline.</span>
+<span class="sd">                                       Defaults to ``False``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if inline, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">NavigableString</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">Tag</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="n">include_span</span> <span class="ow">and</span> <span class="n">element</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;span&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">element</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">INLINE_ELEMENTS</span></div>
+
+
+
+<div class="viewcode-block" id="extract_rows_and_possible_blocks">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.extract_rows_and_possible_blocks">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_rows_and_possible_blocks</span><span class="p">(</span>
+    <span class="n">table_element</span><span class="p">:</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">tags_to_extract</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">Tag</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Tag</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract rows and possible blocks from a table element.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        table_element (Tag): The table element to process.</span>
+<span class="sd">        tags_to_extract (list[str]): List of tag names to extract.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple[list[tuple[Tag, bool]], list[Tag]]: Rows and extracted blocks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">unbound_elements</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">tag_name</span> <span class="ow">in</span> <span class="n">tags_to_extract</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">table_element</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag_name</span><span class="p">):</span>
+            <span class="n">unbound_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">extract</span><span class="p">())</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">table_element</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">):</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">parent</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">Tag</span><span class="p">):</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">el</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;thead&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">rows</span><span class="p">,</span> <span class="n">unbound_elements</span></div>
+
+
+
+<div class="viewcode-block" id="table_cell_type">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.table_cell_type">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">table_cell_type</span><span class="p">(</span><span class="n">cell</span><span class="p">:</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">is_header</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the type of a table cell (``header`` or ``data``).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cell (Tag): The table cell element.</span>
+<span class="sd">        is_header (bool, optional): Whether the cell is a header. Defaults to ``False``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: ``header`` or ``data``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_header</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;header&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;data&quot;</span> <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;td&quot;</span> <span class="k">else</span> <span class="s2">&quot;header&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="extract_plaintext">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.extract_plaintext">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_plaintext</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="n">Tag</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract plaintext from an element, handling lists specially.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        element (Tag): The element to extract text from.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The extracted plaintext.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">tag_name</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">if</span> <span class="n">tag_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ol&quot;</span><span class="p">,</span> <span class="s2">&quot;ul&quot;</span><span class="p">):</span>
+        <span class="n">plaintext</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">children</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">plaintext</span></div>
+
+
+
+<div class="viewcode-block" id="url_from_iframe">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.url_from_iframe">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">url_from_iframe</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="n">Tag</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse an iframe element and return its ``src`` URL.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        element (Tag): The iframe element.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The ``src`` URL of the iframe.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">src</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;iframe&quot;</span><span class="p">:</span>
+        <span class="n">src</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">src</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="cleanse_url">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.markup.cleanse_url">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cleanse_url</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clean up a URL by decoding HTML entities and normalizing.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        url (str): The URL to clean.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The cleansed URL.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">raw_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&amp;amp;&quot;</span><span class="p">,</span> <span class="s2">&quot;&amp;&quot;</span><span class="p">)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">raw_url</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parsed</span><span class="o">.</span><span class="n">geturl</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Érico Andrei
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+            
+          
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/collective/collectivehtml2blocksdocumentation" title="GitHub" class="nav-link custom-fancy-css" rel="noopener me" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

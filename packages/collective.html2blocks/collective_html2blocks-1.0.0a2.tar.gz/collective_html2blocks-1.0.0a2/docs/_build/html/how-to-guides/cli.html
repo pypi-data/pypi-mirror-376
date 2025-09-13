@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to use the {term}`CLI` for collective.html2blocks, including commands, options, and server endpoints." name="description" />
+<meta content="Guide to using the {term}`CLI` and block converters in collective.html2blocks." property="og:description" />
+<meta content="How to use the CLI | collective.html2blocks" property="og:title" />
+<meta content="Plone, collective.html2blocks, {term}`CLI`, {term}`Typer`, {term}`Uvicorn`, {term}`OpenAPI`, block converter, Volto, migration, guide" name="keywords" />
+<meta property="og:title" content="html2blocks command line application" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://collective.github.io/collective.html2blocks/how-to-guides/cli.html" />
+<meta property="og:site_name" content="collective.html2blocks Documentation" />
+<meta property="og:description" content="Installing collective.html2blocks in your project will provide you with a new CLI application named html2blocks. You can either: locate the Python virtual environment used by your project (usually ..." />
+<meta property="og:image" content="https://collective.github.io/collective.html2blocks/_static/logo.svg" />
+<meta property="og:image:alt" content="collective.html2blocks Documentation" />
+<meta property="og:locale" content="en_US" />
+
+    <title>html2blocks command line application &#8212; collective.html2blocks v1.0.0a2.dev0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5349f25f" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/plone-sphinx-theme.css?v=88f4e24d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-httpexample.css?v=02fb0e2f" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=adbc0f41"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/sphinxcontrib-httpexample.js?v=31a81d62"></script>
+    <script src="../_static/scripts/plone-sphinx-theme.js?v=ce3a8c55"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy/how-to-guides/cli.a510cb15-38ca-41d1-a93c-f0a4c4bbeaf4.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'how-to-guides/cli';</script>
+    <link rel="canonical" href="https://collective.github.io/collective.html2blocks/how-to-guides/cli.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within collective.html2blocks v1.0.0a2.dev0"
+          href="../_static/opensearch.xml"/>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Register a new converter" href="new-converter.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search"
+         aria-label="Search"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">collective.html2blocks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to guides</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">html2blocks</span></code> command line application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new-converter.html">Register a new converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-tests.html">Add tests</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/c_h2b_cli.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.cli</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/c_h2b_commands.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.commands</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/c_h2b_converter.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.converter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/c_h2b_registry.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.registry</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/c_h2b_services.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/c_h2b_utils.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.utils</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation/edit/main/docs/collective.collectivehtml2blocksdocumentation/how-to-guides/cli.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation/issues/new?title=Issue%20on%20page%20%2Fhow-to-guides/cli.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/how-to-guides/cli.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>html2blocks command line application</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-help">Application help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#info"><code class="docutils literal notranslate"><span class="pre">info</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert"><code class="docutils literal notranslate"><span class="pre">convert</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server"><code class="docutils literal notranslate"><span class="pre">server</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="html2blocks-command-line-application">
+<h1><code class="docutils literal notranslate"><span class="pre">html2blocks</span></code> command line application<a class="headerlink" href="#html2blocks-command-line-application" title="Link to this heading">#</a></h1>
+<p>Installing <code class="docutils literal notranslate"><span class="pre">collective.html2blocks</span></code> in your project will provide you with a new <a class="reference internal" href="../glossary.html#term-CLI"><span class="xref std std-term">CLI</span></a> application named <code class="docutils literal notranslate"><span class="pre">html2blocks</span></code>.</p>
+<p>You can either:</p>
+<ol class="arabic simple">
+<li><p>locate the Python virtual environment used by your project (usually present in the <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder of your backend codebase) and run <code class="docutils literal notranslate"><span class="pre">.venv/bin/html2blocks</span></code>, or</p></li>
+<li><p>if your project uses <code class="docutils literal notranslate"><span class="pre">uv</span></code>, then run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">html2blocks</span></code>, and <code class="docutils literal notranslate"><span class="pre">uv</span></code> will correctly initiate this <a class="reference internal" href="../glossary.html#term-CLI"><span class="xref std std-term">CLI</span></a> application.</p></li>
+</ol>
+<p>All examples here will showcase <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">html2blocks</span></code> for the sake of simplicity.</p>
+<section id="application-help">
+<h2>Application help<a class="headerlink" href="#application-help" title="Link to this heading">#</a></h2>
+<p>After running <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">html2blocks</span></code>, you'll be presented with a list of options and commands available in the tool, powered by <a class="reference internal" href="../glossary.html#term-Typer"><span class="xref std std-term">Typer</span></a>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: html2blocks [OPTIONS] COMMAND [ARGS]...</span>
+
+<span class="go"> Main CLI callback for collective.html2blocks.</span>
+
+<span class="go"> This function is invoked when the CLI is run without a subcommand. It displays a welcome message and help information</span>
+<span class="go"> for available commands.</span>
+<span class="go"> Args:     ctx (typer.Context): Typer context object.</span>
+<span class="go"> Example::</span>
+<span class="gp"> $ </span>uv<span class="w"> </span>run<span class="w"> </span>html2blocks<span class="w">     </span>Welcome<span class="w"> </span>to<span class="w"> </span>collective.html2blocks.
+
+<span class="go">╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────╮</span>
+<span class="go">│ --install-completion          Install completion for the current shell.                                             │</span>
+<span class="go">│ --show-completion             Show completion for the current shell, to copy it or customize the installation.      │</span>
+<span class="go">│ --help                        Show this message and exit.                                                           │</span>
+<span class="go">╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+<span class="go">╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────────────────────╮</span>
+<span class="go">│ convert   Convert a HTML file to Volto blocks JSON.                                                                 │</span>
+<span class="go">│ info      Show information about the collective.html2blocks tool and its registrations.                             │</span>
+<span class="go">│ server    Run the HTML to Blocks API service.                                                                       │</span>
+<span class="go">╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+</pre></div>
+</div>
+</section>
+<section id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">html2blocks</span></code> application provides three commands: <code class="docutils literal notranslate"><span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">convert</span></code>, and <code class="docutils literal notranslate"><span class="pre">server</span></code>.</p>
+<section id="info">
+<h3><code class="docutils literal notranslate"><span class="pre">info</span></code><a class="headerlink" href="#info" title="Link to this heading">#</a></h3>
+<p>This command displays information about the <code class="docutils literal notranslate"><span class="pre">collective.html2blocks</span></code> package and all converter <a class="reference internal" href="../glossary.html#term-Registration"><span class="xref std std-term">Registration</span></a>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>html2blocks<span class="w"> </span>info
+</pre></div>
+</div>
+<p>will display:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>collective.html2blocks<span class="w"> </span>-<span class="w"> </span><span class="m">1</span>.0.0a0
+
+<span class="gp">#</span><span class="c1"># Block Converters</span>
+<span class="go"> - iframe: collective.html2blocks.blocks.iframe.iframe_block</span>
+<span class="go"> - img: collective.html2blocks.blocks.image.image_block</span>
+<span class="go"> - table: collective.html2blocks.blocks.table.table_block</span>
+<span class="go"> - video: collective.html2blocks.blocks.video.video_block</span>
+<span class="go"> - *: collective.html2blocks.blocks.slate.slate_block</span>
+
+<span class="gp">#</span><span class="c1"># Element Converters</span>
+<span class="go"> - br: collective.html2blocks.blocks.slate.parser._br_</span>
+<span class="go"> - hr: collective.html2blocks.blocks.slate.parser._hr_</span>
+<span class="go"> - body: collective.html2blocks.blocks.slate.parser._body_</span>
+<span class="go"> - h1: collective.html2blocks.blocks.slate.parser._header_</span>
+<span class="go"> - h2: collective.html2blocks.blocks.slate.parser._header_</span>
+<span class="go"> - h3: collective.html2blocks.blocks.slate.parser._header_</span>
+<span class="go"> - h4: collective.html2blocks.blocks.slate.parser._header_</span>
+<span class="go"> - h5: collective.html2blocks.blocks.slate.parser._header_</span>
+<span class="go"> - h6: collective.html2blocks.blocks.slate.parser._header_</span>
+<span class="go"> - b: collective.html2blocks.blocks.slate.parser._strong_</span>
+<span class="go"> - strong: collective.html2blocks.blocks.slate.parser._strong_</span>
+<span class="go"> - code: collective.html2blocks.blocks.slate.parser._code_</span>
+<span class="go"> - div: collective.html2blocks.blocks.slate.parser._div_</span>
+<span class="go"> - pre: collective.html2blocks.blocks.slate.parser._pre_</span>
+<span class="go"> - a: collective.html2blocks.blocks.slate.parser._link_</span>
+<span class="go"> - span: collective.html2blocks.blocks.slate.parser._span_</span>
+<span class="go"> - blockquote: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - p: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - sub: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - sup: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - u: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - ol: collective.html2blocks.blocks.slate.parser._ol_</span>
+<span class="go"> - li: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - dt: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - dd: collective.html2blocks.blocks.slate.parser._block_</span>
+<span class="go"> - ul: collective.html2blocks.blocks.slate.parser._ul_</span>
+<span class="go"> - dl: collective.html2blocks.blocks.slate.parser._dl_</span>
+<span class="go"> - del: collective.html2blocks.blocks.slate.parser._s_</span>
+<span class="go"> - s: collective.html2blocks.blocks.slate.parser._s_</span>
+<span class="go"> - em: collective.html2blocks.blocks.slate.parser._em_</span>
+<span class="go"> - i: collective.html2blocks.blocks.slate.parser._em_</span>
+</pre></div>
+</div>
+<p>Of course, if in your project you did register additional converters, they should be displayed in here as well.</p>
+</section>
+</section>
+<section id="convert">
+<h2><code class="docutils literal notranslate"><span class="pre">convert</span></code><a class="headerlink" href="#convert" title="Link to this heading">#</a></h2>
+<p>This command reads the HTML file at <code class="docutils literal notranslate"><span class="pre">SRC</span></code>, converts its contents to a JSON representing Volto block information (containing the <code class="docutils literal notranslate"><span class="pre">{term}</span></code>blocks<code class="docutils literal notranslate"><span class="pre">and</span></code><a class="reference internal" href="../glossary.html#term-blocks_layout"><span class="xref std std-term">blocks_layout</span></a> keys) using the package's <a class="reference internal" href="../glossary.html#term-Converter"><span class="xref std std-term">Converter</span></a>, and writes the result as JSON to <code class="docutils literal notranslate"><span class="pre">DST</span></code>.</p>
+<p>Example usage, having a file named <code class="file docutils literal notranslate"><span class="pre">input.html</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>World!<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>you can run this command with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>html2blocks<span class="w"> </span>convert<span class="w"> </span>input.html<span class="w"> </span>output.json
+</pre></div>
+</div>
+<p>This will create a new file named <code class="file docutils literal notranslate"><span class="pre">output.json</span></code> with the following contents:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;blocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;bc1eaf92-05f9-4dba-b28d-1996373f0076&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;plaintext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello &quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strong&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="nt">&quot;children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;World!&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">              </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;blocks_layout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;bc1eaf92-05f9-4dba-b28d-1996373f0076&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="server">
+<h2><code class="docutils literal notranslate"><span class="pre">server</span></code><a class="headerlink" href="#server" title="Link to this heading">#</a></h2>
+<p>This command starts a <a class="reference internal" href="../glossary.html#term-Uvicorn"><span class="xref std std-term">Uvicorn</span></a> server hosting the FastAPI app for converting HTML to Volto blocks. You can customize the host, port, and enable reload for development.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--host</span></code></p></td>
+<td><p>Address to run the server</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--port</span></code></p></td>
+<td><p>Port number to be used</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8000</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--reload</span></code> or <code class="docutils literal notranslate"><span class="pre">--no-reload</span></code></p></td>
+<td><p>Used during development, indicates if the server should look for changes in its codebase.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--no-reload</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
+<td><p>Show the help for the command</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>So, to run the server on a specific port, for example <code class="docutils literal notranslate"><span class="pre">8090</span></code>, you should run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>html2blocks<span class="w"> </span>server<span class="w"> </span>--port<span class="w"> </span><span class="m">8090</span>
+</pre></div>
+</div>
+<p>and you should see:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Starting HTML to Blocks service at http://127.0.0.1:8090</span>
+<span class="go">INFO:     Started server process [94408]</span>
+<span class="go">INFO:     Waiting for application startup.</span>
+<span class="go">INFO:     Application startup complete.</span>
+<span class="go">INFO:     Uvicorn running on http://127.0.0.1:8090 (Press CTRL+C to quit)</span>
+</pre></div>
+</div>
+<p>The server provides an <a class="reference internal" href="../glossary.html#term-OpenAPI"><span class="xref std std-term">OpenAPI</span></a> documentation endpoint located at <code class="docutils literal notranslate"><span class="pre">http://&lt;address&gt;:&lt;port&gt;/docs</span></code> where you can check all available endpoints, and even try it out.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="usage.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Usage</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="new-converter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Register a new converter</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-help">Application help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#info"><code class="docutils literal notranslate"><span class="pre">info</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert"><code class="docutils literal notranslate"><span class="pre">convert</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server"><code class="docutils literal notranslate"><span class="pre">server</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Érico Andrei
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+            
+          
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/collective/collectivehtml2blocksdocumentation" title="GitHub" class="nav-link custom-fancy-css" rel="noopener me" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

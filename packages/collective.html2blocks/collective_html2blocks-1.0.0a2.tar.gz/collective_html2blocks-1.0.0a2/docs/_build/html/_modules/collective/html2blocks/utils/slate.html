@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>collective.html2blocks.utils.slate &#8212; collective.html2blocks v1.4.3</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=5349f25f" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/plone-sphinx-theme.css?v=88f4e24d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-httpexample.css?v=02fb0e2f" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=fe2dbf16"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/sphinxcontrib-httpexample.js?v=31a81d62"></script>
+    <script src="../../../../_static/scripts/plone-sphinx-theme.js?v=ce3a8c55"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/collective/html2blocks/utils/slate';</script>
+    <link rel="canonical" href="https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io/_modules/collective/html2blocks/utils/slate.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within collective.html2blocks v1.4.3"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search"
+         aria-label="Search"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">collective.html2blocks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/index.html">Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/cli.html"><code class="docutils literal notranslate"><span class="pre">html2blocks</span></code> command line application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/new-converter.html">Register a new converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-guides/add-tests.html">Add tests</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../reference/api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_cli.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.cli</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_commands.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.commands</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_converter.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.converter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_registry.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.registry</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_services.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.services</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/c_h2b_utils.html"><code class="docutils literal notranslate"><span class="pre">collective.html2blocks.utils</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/collective/collectivehtml2blocksdocumentation/issues/new?title=Issue%20on%20page%20%2F_modules/collective/html2blocks/utils/slate.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for collective.html2blocks.utils.slate</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Slate block utilities for ``collective.html2blocks``.</span>
+
+<span class="sd">This module provides functions for manipulating Slate block items, including</span>
+<span class="sd">wrapping, flattening, grouping, and normalizing block structures for Volto.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from collective.html2blocks.utils import slate</span>
+<span class="sd">        block = slate.wrap_text(&#39;Hello world&#39;)</span>
+<span class="sd">        paragraph = slate.wrap_paragraph([block])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.inline</span><span class="w"> </span><span class="kn">import</span> <span class="n">INLINE_ELEMENTS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collective.html2blocks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_types</span> <span class="k">as</span> <span class="n">t</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">random</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+
+<div class="viewcode-block" id="is_inline">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.is_inline">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_inline</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span> <span class="o">|</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a block or string is considered inline.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value (SlateBlockItem | str): The value to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if inline, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">INLINE_ELEMENTS</span></div>
+
+
+
+<div class="viewcode-block" id="wrap_text">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.wrap_text">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wrap_text</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wrap a string value into a SlateBlockItem with text.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value (str): The string to wrap.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SlateBlockItem: The wrapped text block.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. code-block:: pycon</span>
+
+<span class="sd">            &gt;&gt;&gt; wrap_text(&#39;Hello&#39;)</span>
+<span class="sd">            {&#39;text&#39;: &#39;Hello&#39;}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span></div>
+
+
+
+<div class="viewcode-block" id="wrap_paragraph">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.wrap_paragraph">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wrap_paragraph</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wrap a list of SlateBlockItems into a paragraph block.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value (list[SlateBlockItem]): The children to wrap.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SlateBlockItem: The paragraph block.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. code-block:: pycon</span>
+
+<span class="sd">            &gt;&gt;&gt; wrap_paragraph([{&#39;text&#39;: &#39;Hello&#39;}])</span>
+<span class="sd">            {&#39;type&#39;: &#39;p&#39;, &#39;children&#39;: [{&#39;text&#39;: &#39;Hello&#39;}]}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;p&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;children&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="is_simple_text">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.is_simple_text">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_simple_text</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a SlateBlockItem is simple text (only has ``text`` key).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (SlateBlockItem): The block to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if simple text, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">keys</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">}</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_group_top_level</span><span class="p">(</span>
+    <span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Group top-level items for wrapping based on inline status.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        items (list[SlateBlockItem]): The items to group.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[tuple[list[SlateBlockItem], bool]]: Groups and wrap flags.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">flags</span> <span class="o">=</span> <span class="p">[</span><span class="n">is_inline</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_simple_text</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">last_flag</span> <span class="o">=</span> <span class="n">flags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+        <span class="n">last_flag</span> <span class="o">=</span> <span class="n">flags</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">flags</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">last_flag</span><span class="p">:</span>
+            <span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">current_group</span><span class="p">,</span> <span class="n">last_flag</span><span class="p">))</span>
+            <span class="n">current_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">current_group</span><span class="p">,</span> <span class="n">last_flag</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">groups</span>
+
+
+<div class="viewcode-block" id="process_top_level_items">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.process_top_level_items">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_top_level_items</span><span class="p">(</span>
+    <span class="n">raw_value</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Process and wrap top-level items as paragraphs where needed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        raw_value (list[SlateBlockItem]): The items to process.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[SlateBlockItem]: The processed items.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">raw_value</span> <span class="o">=</span> <span class="n">raw_value</span> <span class="ow">or</span> <span class="p">[]</span>
+    <span class="c1"># Remove empty or null items</span>
+    <span class="n">raw_value</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">raw_value</span> <span class="k">if</span> <span class="n">item</span><span class="p">]</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">groupped</span> <span class="o">=</span> <span class="n">_group_top_level</span><span class="p">(</span><span class="n">raw_value</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">should_wrap</span> <span class="ow">in</span> <span class="n">groupped</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">should_wrap</span><span class="p">:</span>
+            <span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wrap_paragraph</span><span class="p">(</span><span class="n">group</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span></div>
+
+
+
+<div class="viewcode-block" id="remove_empty_text">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.remove_empty_text">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_empty_text</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove empty text blocks from a list of SlateBlockItems.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value (list[SlateBlockItem]): The items to filter.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[SlateBlockItem]: The filtered items.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">new_value</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_simple_text</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="k">continue</span>
+        <span class="n">new_value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_value</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_just_children</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a SlateBlockItem only has ``children``.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (SlateBlockItem): The block to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if only ``children``, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">keys</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;children&quot;</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="flatten_children">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.flatten_children">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flatten_children</span><span class="p">(</span>
+    <span class="n">raw_block_children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span> <span class="o">|</span> <span class="nb">list</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Flatten nested children lists into a single list of SlateBlockItems.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        raw_block_children (list[SlateBlockItem | list]): The children to flatten.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[SlateBlockItem]: The flattened list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">block_children</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">raw_block_children</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">block_children</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">block</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">elif</span> <span class="n">_just_children</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
+            <span class="n">children</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;children&quot;</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+                <span class="n">block_children</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">children</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">block_children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">block_children</span></div>
+
+
+
+<div class="viewcode-block" id="group_text_blocks">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.group_text_blocks">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">group_text_blocks</span><span class="p">(</span><span class="n">block_children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Group consecutive text blocks, preserving whitespace.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        block_children (list[SlateBlockItem]): The blocks to group.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[SlateBlockItem]: The grouped blocks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">text_block</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">flatten_children</span><span class="p">(</span><span class="n">block_children</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">is_text_block</span> <span class="o">=</span> <span class="n">is_simple_text</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_text_block</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">text_block</span><span class="p">:</span>
+            <span class="n">text_block</span> <span class="o">=</span> <span class="n">block</span>
+        <span class="k">elif</span> <span class="n">is_text_block</span> <span class="ow">and</span> <span class="n">text_block</span><span class="p">:</span>
+            <span class="c1"># Preserve whitespaces</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+                <span class="n">cur_text</span> <span class="o">=</span> <span class="n">text_block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">cur_text</span><span class="p">:</span>
+                    <span class="n">text_block</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cur_text</span><span class="si">}{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">text_block</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_text_block</span><span class="p">:</span>
+            <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_block</span><span class="p">)</span>
+            <span class="n">text_block</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">text_block</span><span class="p">:</span>
+        <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_block</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">blocks</span></div>
+
+
+
+<div class="viewcode-block" id="has_internal_block">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.has_internal_block">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">has_internal_block</span><span class="p">(</span><span class="n">block_children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if any child is an inline block.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        block_children (list[SlateBlockItem]): The children to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if any child is inline, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">block_children</span><span class="p">:</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">status</span> <span class="ow">or</span> <span class="n">is_inline</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">status</span></div>
+
+
+
+<div class="viewcode-block" id="normalize_block_nodes">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.normalize_block_nodes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_block_nodes</span><span class="p">(</span><span class="n">block_children</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;span&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normalize block nodes, avoiding nested similar tags.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        block_children (list): The block nodes to normalize.</span>
+<span class="sd">        tag_name (str, optional): The tag name to use. Defaults to ``span``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: The normalized nodes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Avoid nesting similar tags</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">group_inline_nodes</span><span class="p">(</span><span class="n">block_children</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">):</span>
+        <span class="n">node_children</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;children&quot;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node_children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nodes</span></div>
+
+
+
+<div class="viewcode-block" id="group_inline_nodes">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.group_inline_nodes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">group_inline_nodes</span><span class="p">(</span><span class="n">block_children</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;span&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Group inline nodes together under a common tag.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        block_children (list): The nodes to group.</span>
+<span class="sd">        tag_name (str, optional): The tag name to use. Defaults to ``span``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: The grouped nodes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">inline_nodes</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">block_children</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_inline</span><span class="p">(</span><span class="n">child</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">inline_nodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">inline_nodes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">tag_name</span><span class="p">,</span> <span class="s2">&quot;children&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">child</span><span class="p">]}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">inline_nodes</span><span class="p">[</span><span class="s2">&quot;children&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">inline_nodes</span><span class="p">:</span>
+                <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inline_nodes</span><span class="p">)</span>
+            <span class="n">inline_nodes</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">inline_nodes</span><span class="p">:</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inline_nodes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nodes</span></div>
+
+
+
+<div class="viewcode-block" id="process_children">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.process_children">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_children</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ensure block children are not empty; add empty text if needed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        block (SlateBlockItem): The block to process.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SlateBlockItem: The processed block.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;children&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[]:</span>
+        <span class="n">block</span><span class="p">[</span><span class="s2">&quot;children&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">wrap_text</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">block</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_id</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a random string ID for table blocks.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The generated ID.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">id_</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp2</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span>  <span class="c1"># noQA: S311</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">id_</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<div class="viewcode-block" id="table">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">table</span><span class="p">(</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span> <span class="o">|</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">css_classes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">hide_headers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Construct a table block from rows and CSS classes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        rows (list[dict | str]): The table rows.</span>
+<span class="sd">        css_classes (list[str]): CSS classes for styling.</span>
+<span class="sd">        hide_headers (bool, optional): Whether to hide headers. Defaults to ``False``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: The table block.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;basic&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;celled&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;compact&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;fixed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;inverted&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;rows&quot;</span><span class="p">:</span> <span class="n">rows</span><span class="p">,</span>
+        <span class="s2">&quot;striped&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;hideHeaders&quot;</span><span class="p">:</span> <span class="n">hide_headers</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="s2">&quot;ui&quot;</span> <span class="ow">in</span> <span class="n">css_classes</span> <span class="ow">and</span> <span class="s2">&quot;table&quot;</span> <span class="ow">in</span> <span class="n">css_classes</span><span class="p">:</span>
+        <span class="n">styles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span> <span class="s2">&quot;celled&quot;</span><span class="p">,</span> <span class="s2">&quot;compact&quot;</span><span class="p">,</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span> <span class="s2">&quot;striped&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">styles</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">css_classes</span><span class="p">:</span>
+                <span class="n">table</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">table</span></div>
+
+
+
+<div class="viewcode-block" id="table_row">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.table_row">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">table_row</span><span class="p">(</span><span class="n">cells</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Construct a table row block from cells.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cells (list[SlateBlockItem]): The row cells.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SlateBlockItem: The table row block.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">_get_id</span><span class="p">(),</span>
+        <span class="s2">&quot;cells&quot;</span><span class="p">:</span> <span class="n">cells</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="table_cell">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.table_cell">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">table_cell</span><span class="p">(</span><span class="n">cell_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Construct a table cell block.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cell_type (str): The cell type (``header`` or ``data``).</span>
+<span class="sd">        value (SlateBlockItem): The cell value.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SlateBlockItem: The table cell block.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">_get_id</span><span class="p">(),</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">cell_type</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="invalid_subblock">
+<a class="viewcode-back" href="../../../../reference/c_h2b_utils.html#collective.html2blocks.utils.slate.invalid_subblock">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">invalid_subblock</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">SlateBlockItem</span> <span class="o">|</span> <span class="n">t</span><span class="o">.</span><span class="n">VoltoBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a block should not be a child of a Slate block.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        block (SlateBlockItem | VoltoBlock): The block to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: ``True`` if invalid, ``False`` otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">type_</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;@type&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">type_</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Érico Andrei
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+            
+          
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/collective/collectivehtml2blocksdocumentation" title="GitHub" class="nav-link custom-fancy-css" rel="noopener me" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
