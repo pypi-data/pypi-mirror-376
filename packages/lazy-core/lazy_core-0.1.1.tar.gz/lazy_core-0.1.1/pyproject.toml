@@ -1,0 +1,52 @@
+[project]
+name = "lazy_core"
+dynamic = []
+description = "Lazy-Core is the core module of the Lazy framework family."
+authors = [
+    { name="wrl96", email="ruilin.wang96@gmail.com" }
+]
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.9"
+version = "0.1.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
+
+[tool.poetry-dynamic-versioning]
+enable = false
+vcs = "git"
+style = "pep440"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.13.0"
+mypy = "^1.18.1"
+pytest = "^8.4.2"
+pytest-cov = "^7.0.0"
+pre-commit = "^4.3.0"
+
+[tool.poetry.dependencies]
+pydantic = "^2.11.7"
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=lazy_core --cov-branch --cov-report=xml --cov-report=term-missing --cov-fail-under=95"
+
+[tool.coverage.run]
+branch = true
+source = ["lazy_core"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+fail_under = 95
+
+[tool.mypy]
+python_version = "3.13"
+mypy_path = ["src"]
+plugins = ["pydantic.mypy"]

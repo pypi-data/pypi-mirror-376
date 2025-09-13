@@ -1,0 +1,118 @@
+Metadata-Version: 2.3
+Name: lazy_core
+Version: 0.1.1
+Summary: Lazy-Core is the core module of the Lazy framework family.
+License: MIT License
+         
+         Copyright (c) 2025 wrl96
+         
+         Permission is hereby granted, free of charge, to any person obtaining a copy
+         of this software and associated documentation files (the "Software"), to deal
+         in the Software without restriction, including without limitation the rights
+         to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+         copies of the Software, and to permit persons to whom the Software is
+         furnished to do so, subject to the following conditions:
+         
+         The above copyright notice and this permission notice shall be included in all
+         copies or substantial portions of the Software.
+         
+         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+         IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+         FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+         AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+         SOFTWARE.
+Author: wrl96
+Author-email: ruilin.wang96@gmail.com
+Requires-Python: >=3.9
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: pydantic (>=2.11.7,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Lazy-Core
+
+[![PyPI](https://img.shields.io/pypi/v/lazy-core.svg)](https://pypi.org/project/lazy-core/)
+[![CI](https://github.com/wrl96/lazy-core/actions/workflows/ci.yml/badge.svg)](https://github.com/wrl96/lazy-core/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/wrl96/lazy-core/branch/master/graph/badge.svg)](https://codecov.io/gh/wrl96/lazy-core)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+[中文文档](README_zh.md) | English
+
+Lazy Family: [Lazy-Flask](https://github.com/wrl96/lazy-flask) | [Lazy-Django](https://github.com/wrl96/lazy-django) | [Lazy-FastAPI](https://github.com/wrl96/lazy-fastapi)
+
+---
+
+**Lazy-Core** is the core module of the `Lazy` framework family.
+It provides modular registration, a unified request/response schema, middleware support, and consistent exception handling.
+
+---
+
+## Table of Contents
+- [Installation (as a dependency)](#installation-as-a-dependency)
+- [Module Overview](#module-overview)
+- [Testing](#testing)
+- [Code Style & Typing](#code-style--typing)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Installation (as a dependency)
+
+It’s recommended to declare `lazy-core` as a dependency in your upper-layer framework/library. End users usually don’t need to install it directly.
+
+```toml
+# pyproject.toml
+[tool.poetry.dependencies]
+lazy-core = "^0.1.0"
+```
+
+Or install with pip:
+```bash
+pip install lazy-core
+```
+
+## Module Overview
+- `LazyApp`：The core application class responsible for module management.
+- `Module`：A modular unit that manages middleware and event handlers.
+- `APIRequest`：A unified API request schema.
+- `APIResponse`：A unified API response schema.
+- `APIError`：A unified API error payload.
+- `APIException`：The base exception for API errors.
+- `Middleware`：Base class for middleware, supporting pre- and post-processing of requests.
+- `LazyJSONEncoder`：JSON encoder tailored for the Lazy framework.
+
+## Testing
+
+This project ships with `pytest` and `coverage` reporting. Run all tests and generate an HTML report:
+
+```bash
+poetry run pytest --cov=lazy_core --cov-report=html
+```
+
+The coverage report will be available at `htmlcov/index.html`.
+
+## Code Style & Typing
+
+- Ruff (lint & auto-fix): `poetry run ruff check . --fix`
+- MyPy (type checking): `poetry run mypy src/ tests/`
+- pre-commit (run all hooks): `poetry run pre-commit run --all-files`
+
+## Contributing
+
+Issues and PRs are welcome! Please ensure:
+- All lint/type/tests pass
+- New features include corresponding tests
+- The PR description is clear about the change
+
+## License
+
+This project is licensed under the MIT License.
+
