@@ -1,0 +1,84 @@
+Metadata-Version: 2.4
+Name: petrifyml
+Version: 2.0.0
+Summary: Convert volatile trained machine-learning algorithms to preservable formats. Concretely:
+Author-email: Andy Buckley <andy.buckley@glasgow.ac.uk>, Louie Corpe <l.corpe@cern.ch>, Martin Habedank <martin.habedank@cern.ch>, Tomasz Procter <tomasz.procter@cern.ch>
+Project-URL: Homepage, https://gitlab.com/hepcedar/petrifyml/
+Project-URL: Bug Tracker, https://gitlab.com/hepcedar/petrifyml/-/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Code Generators
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: sklbdt
+Requires-Dist: scikit-learn; extra == "sklbdt"
+Requires-Dist: joblib; extra == "sklbdt"
+Requires-Dist: pandas; extra == "sklbdt"
+Provides-Extra: lwtnn
+Requires-Dist: numpy; extra == "lwtnn"
+Requires-Dist: onnx; extra == "lwtnn"
+Provides-Extra: tmvabdt
+Requires-Dist: numpy; extra == "tmvabdt"
+Provides-Extra: tmvamlp
+Requires-Dist: numpy; extra == "tmvamlp"
+Requires-Dist: pandas; extra == "tmvamlp"
+Requires-Dist: tensorflow>=2.13.0; extra == "tmvamlp"
+Requires-Dist: tf_keras; extra == "tmvamlp"
+Requires-Dist: tf2onnx>=1.12; extra == "tmvamlp"
+Provides-Extra: mvautils
+Requires-Dist: numpy; extra == "mvautils"
+Requires-Dist: onnx>=1.16.0; extra == "mvautils"
+Requires-Dist: uproot; extra == "mvautils"
+Provides-Extra: dev
+Requires-Dist: joblib; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: numpy; extra == "dev"
+Requires-Dist: pandas; extra == "dev"
+Requires-Dist: pyyaml; extra == "dev"
+Requires-Dist: onnx>=1.16.0; extra == "dev"
+Requires-Dist: onnxruntime>1.22.0; extra == "dev"
+Requires-Dist: scikit-learn; extra == "dev"
+Requires-Dist: tensorflow>=2.13.0; extra == "dev"
+Requires-Dist: tf_keras; extra == "dev"
+Requires-Dist: tf2onnx>=1.12; extra == "dev"
+Requires-Dist: uproot; extra == "dev"
+Dynamic: license-file
+
+![](petrified-forest.jpg)
+
+> "They took all the trees, and put em in a tree museum...
+>  And they charged the people a dollar and a half to see them"
+>    — Joni Mitchell, "Big Yellow Taxi"
+
+Boosted decision trees are widely used in HEP, particularly in data analyses for
+making complex, multivariate nested cuts to separate signal events from background ones.
+
+While powerful, the complexity of their training makes BDT (and therefore
+analysis) preservation troublesome: BDTs get stored in different formats, which
+may not be forwards-compatible with future versions of their framework
+libraries. So now we start talking about dragging around Docker containers just
+to make sure the right _version_ of the right framework is used. Plus those
+libraries have to be included in any user code, adding unwelcome dependencies
+and complexity, and perhaps even being incompatible with the target language
+(e.g. applying a BDT from a Python framework in a C++ application).
+
+This is ridiculous, because BDTs are actually absurdly simple objects. The
+framework complexity is needed for training, but not for execution. This package
+provideds a set of utilities for converting sklearn and TMVA boosted decision
+trees, for either classification or regression, from their custom formats to
+vanilla C++ and Python code that has _no_ dependencies, can be safely used
+forever without risk of format or framework breaking-changes, and by virtue of
+being static code can execute more quickly and with less memory overhead than
+the original form.
+Recently, support for lightweightNNs, TMVA multilayer perceptrons, and MVAUtils lgbm and xgboost has been added.
+
+In summary, this package contains several scripts written to convert BDTs and Neural Nets
+from various formats common in HEP to long-lived formats (either plain-text
+code or ONNX files). The individual scripts are described in [a detailed readme](petrifyml/readme.md).
