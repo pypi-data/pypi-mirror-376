@@ -1,0 +1,10 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aos/CompoundSet.py,sha256=JR1Qvup5KLpAqx1ucEVAzRppKttOP3LCIY6vvDZXvew,4652
+aos/FloatSet.py,sha256=szSClbAxJDCYtbZlGoTLz7vxkHGqy_nfGRR51gRJo_8,1524
+aos/__init__.py,sha256=GTd8SvxzZBG3sRob_Wo_ArJ7M8I-QTNSY8rG-gs-Jo8,504
+aos/constants.py,sha256=O8lZ_NlzPNpcGWOfUQSdn6buWN5NjfY2gJBY9Aex4qg,131
+aos/operations.py,sha256=AZ6sjoKg_3jEfmzyj-ZfJNF01NBYB-hPi8gdjRgXcC8,393
+algebra_de_conjuntos-0.2.0.dist-info/METADATA,sha256=fMgYX8o5UEz3ksjlY6JTwlk9YGZIVg1fqqLoFe8SxuQ,875
+algebra_de_conjuntos-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+algebra_de_conjuntos-0.2.0.dist-info/top_level.txt,sha256=voDISgbGEER7LBwHbtWix-iFtphxMPTQxub3xLwsLig,13
+algebra_de_conjuntos-0.2.0.dist-info/RECORD,,
