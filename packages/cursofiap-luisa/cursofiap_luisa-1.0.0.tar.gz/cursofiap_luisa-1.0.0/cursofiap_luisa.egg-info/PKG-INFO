@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: cursofiap-luisa
+Version: 1.0.0
+Summary: Descricao da sua lib cursofiap
+Home-page: https://github.com/luisaoliveira1/cursofiap
+Author: Luisa Sousa
+Author-email: luisa.sousa@example.com
+License: MIT
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: summary
+
+# Curso FIAP
+A simples library to demonstrate my knowledge
+
+# Commands 
+pip install setuptools wheel twine
+
+## Licença
+Distribuído sob a licença MIT
