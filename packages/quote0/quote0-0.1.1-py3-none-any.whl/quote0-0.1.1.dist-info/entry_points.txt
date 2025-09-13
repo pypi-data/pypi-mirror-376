@@ -1,0 +1,2 @@
+[console_scripts]
+quote0 = quote0.cli:main
