@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/fastapi-oidc-jwks/__init__.py
+src/fastapi-oidc-jwks/dependency.py
+src/fastapi-oidc-jwks/middleware.py
+src/fastapi_oidc_jwks.egg-info/PKG-INFO
+src/fastapi_oidc_jwks.egg-info/SOURCES.txt
+src/fastapi_oidc_jwks.egg-info/dependency_links.txt
+src/fastapi_oidc_jwks.egg-info/top_level.txt
