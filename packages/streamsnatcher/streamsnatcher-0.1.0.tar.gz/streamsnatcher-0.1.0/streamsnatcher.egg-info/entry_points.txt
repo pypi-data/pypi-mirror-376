@@ -1,0 +1,2 @@
+[console_scripts]
+streamsnatcher = streamsnatcher.cli:main
