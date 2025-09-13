@@ -1,0 +1,7 @@
+brewinglib/cli/__init__.py,sha256=lE3wEq0StRtMSwYdSdErehgnBiaJkViuW4hx1eaR-u4,1534
+brewinglib/cli/cli.py,sha256=gPUFyrKOSSV5QHg903pSGHBYWRVG2WDBcqXvI7qMqG8,2174
+brewinglib/cli/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+brewinglib/cli/testing.py,sha256=8b4sHGphVov7LEb2Eyw4mGtzEZoFMEEPQ9zJwK04df4,697
+brewinglib_cli-0.0.1.dist-info/METADATA,sha256=_txEQlAy0vjfEUsbZC3XeIu0UajNd9VgjlpfSI1rurk,603
+brewinglib_cli-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+brewinglib_cli-0.0.1.dist-info/RECORD,,
