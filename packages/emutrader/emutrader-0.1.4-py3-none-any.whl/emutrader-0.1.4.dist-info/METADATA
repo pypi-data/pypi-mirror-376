@@ -1,0 +1,426 @@
+Metadata-Version: 2.4
+Name: emutrader
+Version: 0.1.4
+Summary: A Python library for quantitative trading simulation and backtesting
+Home-page: https://gitee.com/xledoo/emutrader
+Author: xledoo
+Author-email: xledoo <xledoo@gmail.com>
+Maintainer-email: xledoo <xledoo@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2024 EmuTrader
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://gitee.com/xledoo/emutrader
+Project-URL: Documentation, https://emutrader.readthedocs.io/
+Project-URL: Repository, https://gitee.com/xledoo/emutrader.git
+Project-URL: Bug Tracker, https://gitee.com/xledoo/emutrader/issues
+Keywords: quantitative trading,backtesting,simulation,finance,algorithmic trading
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: loguru>=0.6.0
+Requires-Dist: typing-extensions>=4.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx-rtd-theme; extra == "docs"
+Requires-Dist: myst-parser; extra == "docs"
+Provides-Extra: analysis
+Requires-Dist: matplotlib>=3.5.0; extra == "analysis"
+Requires-Dist: scipy>=1.7.0; extra == "analysis"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+<<<<<<< HEAD
+# EmuTrader
+
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI version](https://badge.fury.io/py/emutrader.svg)](https://badge.fury.io/py/emutrader)
+
+**EmuTrader** 是一个专为量化交易设计的Python独立账户管理库，提供强大的模拟交易和回测功能。提供100%兼容JoinQuant API的统一接口，通过模拟真实的交易环境，帮助交易者和开发者测试交易策略，而无需承担实际资金风险。支持多平台部署和高性能数据持久化。
+
+
+## ✨ 核心特性
+
+- 🔄 **JoinQuant完全兼容** - 现有策略零修改迁移，API 100%兼容
+- 🏗️ **适配器架构** - 统一接口支持QMT、聚宽等多平台无缝集成  
+- 💾 **数据持久化** - SQLite可靠存储 + 智能缓存优化
+- ⚡ **高性能优化** - LRU缓存 + 批量操作，查询响应 < 10ms
+- 🔧 **多账户类型** - STOCK/FUTURE/CREDIT/OPTION等完整支持
+- 🛡️ **线程安全** - 支持多策略并发运行
+- 📊 **风险管理** - 内置风险控制和性能追踪
+
+## 主要特性
+
+- 🎯 **模拟交易环境** - 完全模拟真实交易场景
+- 📊 **策略回测** - 支持历史数据回测分析
+- 💰 **资金管理** - 灵活的账户资金管理
+- 📈 **实时监控** - 实时跟踪交易表现
+- 🔧 **易于扩展** - 模块化设计，便于自定义扩展
+- 📝 **详细日志** - 完整的交易记录和日志
+
+## 快速开始
+
+### 安装
+
+# EmuTrader - 专业的量化交易账户管理库
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](tests/)
+
+**EmuTrader** 是一个专为量化交易设计的Python账户管理库，专注于提供高性能的账户状态管理和实时盈亏计算功能。项目核心特色是**100%兼容JoinQuant API**，为QSM等策略系统提供强大的账户管理能力。
+
+## 🎯 重新定位：专业账户管理库
+
+### ✅ 为策略系统服务
+- **专注账户管理**：Portfolio、SubPortfolio、Position状态管理
+- **实时盈亏计算**：基于tick数据的内存实时计算
+- **QSM集成接口**：价格更新、交易执行、数据持久化
+- **JQ API兼容**：`context.portfolio` = EmuTrader的Portfolio对象
+
+### 🚀 高性能架构
+- **内存计算**：价格更新和盈亏计算在内存中完成，目标响应时间 < 10ms
+- **批量操作**：支持批量价格更新，减少函数调用开销
+- **数据闭环**：DB加载 → 内存实时更新 → 定期保存
+- **轻量级设计**：内存占用 < 50MB
+
+### 📊 完整的账户体系
+- **股票账户** (STOCK)：A股标准交易
+- **期货账户** (FUTURE)：期货合约交易  
+- **信用账户** (CREDIT)：融资融券
+- **金融期货** (INDEX_FUTURE)：股指期货
+
+## 🏗️ 新架构设计
+
+### 核心定位
+```
+QSM策略系统                    EmuTrader账户管理库
+├── StrategyContext           ├── AccountContext
+│   ├── current_dt           │   ├── portfolio (投资组合)
+│   ├── run_params           │   └── subportfolios (子账户)  
+│   └── emutrader ────────────┼── EmuTrader主类
+├── 行情数据管理               │   ├── 价格更新接口
+├── 策略逻辑                  │   ├── 交易执行接口
+└── 交易决策                  │   └── 数据持久化接口
+                             └── Portfolio/Position核心对象
+```
+
+### 数据流设计
+```
+1. 初始化: DB → EmuTrader.load_from_db() → 内存账户状态
+2. 运行时: QSM推送tick → update_market_price() → 实时盈亏计算  
+3. 交易时: QSM策略决策 → execute_trade() → 账户状态更新
+4. 持久化: 内存状态 → save_to_db() → DB文件更新
+```
+
+## 🚀 快速开始
+
+### 安装
+```bash
+pip install emutrader
+```
+### QSM策略系统集成
+```python
+from emutrader import get_jq_account
+
+# 1. QSM创建EmuTrader实例
+emutrader = get_jq_account("my_strategy", 100000)
+emutrader.load_from_db("account.db")  # 从DB加载初始状态
+
+# 2. QSM创建自己的策略上下文
+class QSMStrategyContext:
+    def __init__(self, emutrader):
+        self.current_dt = datetime.now()  # QSM管理时间
+        self.run_params = {}              # QSM管理策略参数
+        self._emutrader = emutrader       # 引用账户管理器
+    
+    @property
+    def portfolio(self):
+        """QSM的context.portfolio = EmuTrader的Portfolio对象"""
+        return self._emutrader.get_portfolio()
+    
+    @property
+    def subportfolios(self):
+        """QSM的context.subportfolios = EmuTrader的SubPortfolio列表"""
+        return self._emutrader.get_subportfolios()
+
+# 3. QSM运行时集成
+context = QSMStrategyContext(emutrader)
+
+# 订阅行情
+securities = emutrader.get_all_securities()  # ['000001.SZ', '000002.SZ']
+market_data.subscribe(securities)
+
+# 处理tick数据
+def on_tick(security, price):
+    emutrader.update_market_price(security, price)  # 实时更新价格
+
+# 策略交易
+def qsm_order_shares(security, amount):
+    price = get_current_price(security)  # QSM获取价格
+    return emutrader.execute_trade(security, amount, price)
+
+# 定期保存
+emutrader.save_to_db()  # QSM控制保存时机
+```
+
+### 100% JoinQuant兼容使用
+```python
+from emutrader import get_jq_account, order_shares, order_target_percent
+
+# 现有JQ策略代码无需修改
+context = get_jq_account("my_strategy", 100000, "STOCK")
+
+# context实际是EmuTrader实例，但提供JQ兼容接口
+print(f"总资产: {context.portfolio.total_value}")
+print(f"可用资金: {context.portfolio.available_cash}")
+print(f"持仓市值: {context.portfolio.market_value}")
+
+# 交易API保持不变
+order_shares('000001.SZ', 1000)
+order_target_percent('600519.SH', 0.3)
+
+# 查看持仓
+for security, position in context.portfolio.positions.items():
+    if position.total_amount > 0:
+        print(f"{security}: {position.total_amount}股, 市值: {position.value:.2f}")
+```
+
+### 子账户管理
+```python
+from emutrader import set_subportfolios, SubPortfolioConfig, transfer_cash
+
+# 设置子账户
+set_subportfolios([
+    SubPortfolioConfig(cash=400000, type='stock'),
+    SubPortfolioConfig(cash=300000, type='futures'),
+])
+
+# 访问子账户
+for i, sub in enumerate(context.subportfolios):
+    print(f"子账户{i}: 资金={sub.available_cash}, 市值={sub.market_value}")
+
+# 子账户资金转移
+transfer_cash(from_pindex=1, to_pindex=0, cash=50000)
+```
+
+## 🔌 QSM集成接口详解
+
+### 账户数据访问
+```python
+# Portfolio对象访问（QSM的context.portfolio）
+portfolio = emutrader.get_portfolio()
+print(f"总资产: {portfolio.total_value}")
+print(f"可用资金: {portfolio.available_cash}")
+print(f"持仓市值: {portfolio.market_value}")
+print(f"收益率: {portfolio.returns}")
+
+# SubPortfolio列表访问（QSM的context.subportfolios）
+subportfolios = emutrader.get_subportfolios()
+for sub in subportfolios:
+    print(f"子账户类型: {sub.type}, 资金: {sub.available_cash}")
+```
+
+### 价格数据推送
+```python
+# 单个价格更新
+emutrader.update_market_price('000001.SZ', 12.5)
+
+# 批量价格更新（高性能）
+price_data = {
+    '000001.SZ': 12.5,
+    '000002.SZ': 8.3,
+    '600519.SH': 1580.0
+}
+emutrader.batch_update_prices(price_data)
+
+# 获取需要订阅的证券列表
+securities = emutrader.get_all_securities()
+print(f"需要订阅行情: {securities}")
+```
+
+### 交易执行
+```python
+# 主账户交易
+success = emutrader.execute_trade('000001.SZ', 1000, 12.5)  # 买入1000股
+
+# 指定子账户交易
+success = emutrader.execute_trade('000001.SZ', 1000, 12.5, subportfolio_index=0)
+
+# 子账户资金转移
+success = emutrader.transfer_cash(from_index=1, to_index=0, amount=50000)
+```
+
+### 数据持久化
+```python
+# 从数据库加载账户状态（QSM初始化时）
+success = emutrader.load_from_db("accounts.db")
+
+# 保存账户状态到数据库（QSM定期调用）
+success = emutrader.save_to_db("accounts.db")
+
+# 获取账户完整信息（用于监控和调试）
+info = emutrader.get_account_info()
+print(info)
+```
+
+## 📋 API 参考
+
+### EmuTrader主类接口
+
+#### 账户数据访问
+- `get_portfolio()` → Portfolio对象
+- `get_subportfolios()` → List[SubPortfolio]
+- `get_subportfolio(index)` → SubPortfolio
+- `get_account_info()` → Dict[账户信息]
+
+#### QSM集成接口
+- `update_market_price(security, price, timestamp)` - 更新单个价格
+- `batch_update_prices(price_data, timestamp)` - 批量更新价格
+- `get_all_securities()` → List[str] - 获取持仓证券列表
+- `execute_trade(security, amount, price, subportfolio_index)` → bool - 执行交易
+- `transfer_cash(from_index, to_index, amount)` → bool - 资金转移
+
+#### 数据持久化
+- `load_from_db(db_path)` → bool - 从数据库加载
+- `save_to_db(db_path)` → bool - 保存到数据库
+
+### JoinQuant兼容API
+
+#### 核心函数
+- `get_jq_account(strategy_name, initial_cash, account_type)` → EmuTrader
+- `set_subportfolios(configs)` - 设置子账户
+- `transfer_cash(from_pindex, to_pindex, cash)` → bool
+
+#### 交易函数
+- `order_shares(security, amount, price=None)` → Order
+- `order_value(security, value, price=None)` → Order
+- `order_target_percent(security, percent)` → Order
+
+## 📊 性能指标
+
+| 指标 | 目标值 | 实现状态 |
+|------|--------|----------|
+| 价格更新响应时间 | < 5ms | ✅ 内存操作 |
+| 盈亏计算时间 | < 10ms | ✅ 实时计算 |
+| 交易执行时间 | < 50ms | ✅ 账户状态更新 |
+| 批量价格更新 | > 1000/s | ✅ 批量操作优化 |
+| 内存占用 | < 50MB | ✅ 轻量级设计 |
+| 数据库保存 | < 100ms | ✅ SQLite优化 |
+
+## 🧪 测试
+
+```bash
+# 安装测试依赖
+pip install -e ".[dev]"
+
+# 运行所有测试
+pytest
+
+# 运行覆盖率测试
+pytest --cov=emutrader --cov-report=html
+
+# 运行特定测试
+pytest tests/test_jq_compatibility.py
+```
+
+## 🗺️ 重构历程
+
+### ✅ v1.0.0 - 架构重构完成
+- **重新定位**：从策略框架重构为专业账户管理库
+- **QSM集成**：提供完整的策略系统集成接口
+- **职责分离**：EmuTrader专注账户，QSM专注策略
+- **性能优化**：内存实时计算 + 定期批量保存
+
+### 🔄 v1.1.0 - 规划中
+- 数据库性能优化和高级查询支持
+- 更多交易品种和复杂订单类型
+- 账户状态监控和告警机制
+- 多策略账户隔离和资源管理
+
+### 📋 v1.2.0 - 未来版本
+- 分布式账户管理支持
+- 实时风险监控系统
+- 账户数据分析和报表
+- 云端部署和集群管理
+
+## 🤝 使用场景
+
+### 1. QSM策略系统
+- **专业集成**：为QSM提供高性能账户管理
+- **实时计算**：tick级别的盈亏实时更新
+- **数据闭环**：完整的账户状态生命周期管理
+
+### 2. JoinQuant策略迁移
+- **零修改迁移**：现有JQ策略直接运行
+- **完整兼容**：所有JQ API函数和对象访问方式
+- **扩展增强**：提供JQ不具备的高级功能
+
+### 3. 多策略管理
+- **账户隔离**：不同策略使用独立的EmuTrader实例
+- **资源共享**：多个策略可以共享行情数据推送
+- **统一管理**：集中的账户状态监控和管理
+
+## 📄 许可证
+
+本项目采用 [MIT 许可证](LICENSE)。
+
+## 📞 支持与联系
+
+- **架构文档**: [docs/ARCHITECTURE_REFACTOR.md](docs/ARCHITECTURE_REFACTOR.md)
+- **问题反馈**: [GitHub Issues](https://github.com/your-username/emutrader/issues)
+- **功能建议**: [GitHub Discussions](https://github.com/your-username/emutrader/discussions)
+
+## 🙏 致谢
+
+- [JoinQuant](https://www.joinquant.com/) - 提供优秀的API设计思路
+- QSM策略系统 - 推动架构重构的重要合作伙伴
+- 所有贡献者和使用者的支持
+
+---
+
+**EmuTrader** - 专业的量化交易账户管理库 🚀
+>>>>>>> 273075473cf8811eb5b4e75fcecbe452b658d2f8
