@@ -1,0 +1,137 @@
+Metadata-Version: 2.4
+Name: xshl-session
+Version: 0.0.1
+Summary: Python Library for XSHL Session
+Home-page: https://github.com/mcode-cc/py-xshl-session
+Author: MCode GmbH
+Author-email: python@xshl.org
+License: GPLv3
+Project-URL: Bug Tracker, https://github.com/mcode-cc/py-xshl-session/issues
+Project-URL: Source Code, https://github.com/mcode-cc/py-xshl-session
+Keywords: Session in JWT
+Platform: Any
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet
+Classifier: Topic :: Communications
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: System :: Networking
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: xshl-target>=0.3.2
+Requires-Dist: authlib>=1.3.0
+Requires-Dist: requests>=2.32.4
+Requires-Dist: aiohttp>=3.12.15
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: platform
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# py-xshl-session
+Session in JWT 
+=======================
+
+[![PyPI version](https://img.shields.io/pypi/v/xshl-session.svg)](https://pypi.org/project/xshl-session/)
+[![Python Version](https://img.shields.io/pypi/pyversions/xshl-session.svg)](https://pypi.org/project/xshl-session/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+Python library for managing JWT/JWE sessions with key management and XSHL Target integration.
+
+- 🇷🇺 Russian version: see `README_RU.md`
+- 📚 Full docs: `docs/index.md` → [Quickstart](docs/quickstart.md), [Guides](docs/guides.md), [API](docs/api.md), [Security](docs/security.md)
+- 🌐 Localized docs (RU): `docs/ru/index.md`
+
+## Features
+
+- 🔐 JWT/JWE support for signing and encryption
+- 🎯 XSHL integration: Target-aware JWKS loading
+- ⚡ Background refresh of JWKS with TTL
+- 🛡️ Extended claims validation via custom `SessionClaims`
+- 📦 JWE serialization/deserialization helpers
+- 🔍 Built-in request tracing
+
+## Constants
+- `DEFAULT_SESSION_VERSION = 1`
+- `DEFAULT_SESSION_EXPIRES = 120`
+- `DEFAULT_UID = "00000000-0000-0000-0000-000000000000"`
+- `DEFAULT_STR = "undef"`
+
+## Quickstart
+
+See `docs/quickstart.md` for a complete guide.
+
+```python
+from xshl.session.keys import Keys
+from xshl.session import Session, ConfigSession
+import uuid
+
+keys = Keys(name="session_name", url="https://example.org/jwks.json")
+config = ConfigSession(
+    keys=keys,
+    app=uuid.uuid4(),
+    audience=["service-api"],
+    header={"alg": "RS256", "kid": "<kid>"},
+    version=1,
+    expires=3600,
+    key=b"<private-key-pem>"
+)
+session = Session(config, "trace-1", "trace-2")
+
+session.sub = "user-123"
+session.aud = "service-api"
+session.scope = ["read", "write"]
+
+jwt_token = session.jwt
+```
+
+Note: `Session.jwt` uses a `JsonDumps` context internally to serialize claims because Authlib JWT encoding does not expose a `default` hook for JSON; see API docs.
+
+JWE helpers:
+
+```python
+protected = {"alg": "RSA-OAEP-256", "enc": "A256GCM", "kid": "<kid>"}
+serialized = session.serialize(b"payload", protected)
+plaintext = session.deserialize(serialized)
+```
+
+## Documentation
+
+- API details in `docs/api.md`
+- Configuration and operational tips in `docs/guides.md`
+- Security recommendations in `docs/security.md`
+
+## License
+
+GPL v3 — see [LICENSE](LICENSE) and [COPYRIGHT](COPYRIGHT).
+
+## Contributing
+
+- Issues and feature requests: open on GitHub
+- Pull requests welcome. Please ensure:
+  1. Tests pass
+  2. Lint/style are respected
+  3. Tests are added for new functionality
+  4. You understand GPL v3 requirements for contributions 
