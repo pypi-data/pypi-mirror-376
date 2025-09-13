@@ -1,0 +1,11 @@
+gpusitter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gpusitter/configs.py,sha256=1CZUBKvjfhfq8KlJZI0OZErifaPqNTeXATpgDsvxxHs,5618
+gpusitter/emails.py,sha256=JXKwVdwfDYDfNCI7yElO70Vjk15skq44pzYLq9cDjC8,1795
+gpusitter/gpu.py,sha256=H8EodFk97dHtrRbLFBwAeayeFIy-jHGPY0YIG0AzhmY,2643
+gpusitter/logger.py,sha256=BiWizZv3hEtORTwk03_Tnd7lRaga-oCqATHInHhiS1U,103
+gpusitter/main.py,sha256=y3nUtCMp6hjEzwRE9axkPSlGr7MowB8FO-V5yzMzu_s,8171
+gpusitter/utils.py,sha256=IPVzmnBFS7eYHdJYP-cSPF71zOII59cY5cWAMCSYwkk,1620
+gpusitter-2.0.1.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+gpusitter-2.0.1.dist-info/entry_points.txt,sha256=zSzGgWbnKu10YYjlwFtPEfdGFcnOhRs_e2EVSjdxZ-Q,47
+gpusitter-2.0.1.dist-info/METADATA,sha256=f6mCfntxex9WOwdQy27f_Y9K_-B6DULGXYTGG8btEcQ,1840
+gpusitter-2.0.1.dist-info/RECORD,,
