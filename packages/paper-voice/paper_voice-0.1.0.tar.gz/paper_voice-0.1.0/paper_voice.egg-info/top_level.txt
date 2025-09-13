@@ -1,0 +1,7 @@
+demos
+dist
+docs
+paper_voice
+streamlit
+tests
+venv

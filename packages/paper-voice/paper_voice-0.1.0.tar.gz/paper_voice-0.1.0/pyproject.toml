@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper_voice"
+version = "0.1.0"
+description = "Convert academic PDFs to spoken audio, handling math, tables and figures"
+readme = "README.md"
+requires-python = ">=3.9,!=3.9.7"
+authors = [
+    {name = "Gaurav Sood", email = "gsood07@gmail.com"}
+]
+dependencies = [
+    "streamlit>=1.30.0",
+    "PyPDF2>=3.0.1",
+    "pyttsx3>=2.90",
+    "regex>=2024.2.2",
+    "pydub>=0.25.1",
+    "openai>=1.0.0",
+    "PyMuPDF>=1.23.0",
+    "requests>=2.31.0"
+]
+
+[project.urls]
+homepage = "https://github.com/gojiplus/paper_voice"
+repository = "https://github.com/gojiplus/paper_voice"
+documentation = "https://gojiplus.github.io/paper_voice"
+
+[tool.setuptools.packages.find]
+where = ["."]
