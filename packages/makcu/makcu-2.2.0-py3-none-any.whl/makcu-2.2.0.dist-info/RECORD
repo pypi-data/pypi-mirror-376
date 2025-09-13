@@ -1,0 +1,17 @@
+makcu/README.md,sha256=FrZkK3T6m42s1D61WN8f7rVMWMbr9nPwMgQaXcYWKzQ,11125
+makcu/__init__.py,sha256=rfBNEd2V5vwfX4dHQzEowF3z0T6CoObYSsKculIgCnI,427
+makcu/__main__.py,sha256=WYf8QKcgMNHh0GP7szXZdnoeExT55Aokkflj-u1IaJc,14030
+makcu/conftest.py,sha256=BqPx6ywYONYGyKH11Bam9aV5zSGXR6odE5Z8hGFrn4U,863
+makcu/connection.py,sha256=LkvzPwT1Er9JblGR8pZRMLTTCBBd6a1F62X_FkLaXEg,20179
+makcu/controller.py,sha256=EBtiScaOU0CV7NmwVdR3CwFpbT5RymdrNveRKo5ehFU,13242
+makcu/enums.py,sha256=1SvIv5IoMIfXyoMAq8I5r_aKMVKjYR-L_hXkFLJ_5mw,119
+makcu/errors.py,sha256=hXdeUCHvbzfqWX3uotG12Xv8EPwWs-5aHQ12xpgwx3Y,229
+makcu/makcu.pyi,sha256=UfbX7774u_a9oyIa1rweWqIRoQxVAjhhHUuukDp3jiA,237
+makcu/mouse.py,sha256=YZQDA5OGQlCxCDu3Huzwp5bjH__9yb867iLSVTYOKP4,8157
+makcu/py.typed,sha256=lI_IPBO6A6a5eY5kRQDNsdSydUb3sFWtcC_ML8FNftU,111
+makcu/test_suite.py,sha256=VkEsloTX8ozprwDhWVJ5GFS5qeIxJxXz47xCcZKNIVY,3889
+makcu-2.2.0.dist-info/licenses/LICENSE,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+makcu-2.2.0.dist-info/METADATA,sha256=_6_IPbDGcLgm5Xb0ES6dB2dpMDb_t99Ju7WvXqidYk0,53836
+makcu-2.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+makcu-2.2.0.dist-info/top_level.txt,sha256=IRO1UVb5LK_ovjau0g4oObyXQqy00tVEE-yF5lPgw1w,6
+makcu-2.2.0.dist-info/RECORD,,
