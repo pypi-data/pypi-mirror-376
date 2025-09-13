@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dmsbbquery"
+version = "0.4.0"
+description = "A Python interface for querying the DMS Backbone system via XML. Provides abstract base classes and concrete implementations to construct, send, and parse XML requests for dealer stock information, order data, business partner data and system availability."
+authors = [
+    { name = "Christian Gaida", email = "crish@mailbox.org" }
+]
+license = "MIT"
+license-files = ["LICEN[SE]E*"]
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["vw", "dms", "dealer management system", "automotive", "xml", "query"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "requests>=2.32.4",
+]
+
+[project.optional-dependencies]
+dev = ["black", "bumpver",]
+
+[project.scripts]
+getstock = "dmsbbquery.getstock:main"
+
+[project.urls]
+"Homepage" = "https://gitlab.com/chgaida/dmsbbquery/"
+
+[tool.hatch.build]
+include = [
+    "dmsbbquery/dmsbb.config"
+]
+packages = [
+    "dmsbbquery",
+]
+
+[tool.bumpver]
+current_version = "0.4.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+tag_message = "{new_version}"
+tag_scope = "default"
+pre_commit_hook = ""
+post_commit_hook = ""
+commit = true
+tag = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+    'version = "{version}"',
+]
+"dmsbbquery/__init__.py" = ["{version}"]
+"README.md" = [
+    "SemVer {version}",
+]
+

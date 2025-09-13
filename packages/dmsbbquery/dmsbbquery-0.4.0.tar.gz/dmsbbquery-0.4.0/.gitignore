@@ -1,0 +1,10 @@
+config.ini
+.gitignore
+*.swp
+__pycache__
+env/
+fluids_overview.sc
+xml_requests
+.pylintrc
+bumb-version.sh
+dist/
