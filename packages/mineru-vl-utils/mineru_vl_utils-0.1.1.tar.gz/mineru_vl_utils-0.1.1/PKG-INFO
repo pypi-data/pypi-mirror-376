@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: mineru_vl_utils
+Version: 0.1.1
+Summary: Utilities for MinerU Vision-Language models
+Author-email: Jin Zhen Jiang <jinzhenjiang@pjlab.org.cn>
+License-Expression: AGPL-3.0
+Project-URL: Homepage, https://github.com/opendatalab/mineru-vl-utils
+Project-URL: Issues, https://github.com/opendatalab/mineru-vl-utils/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: <=3.13,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: httpx
+Requires-Dist: aiofiles
+Requires-Dist: pillow
+Requires-Dist: pydantic
+Provides-Extra: transformers
+Requires-Dist: torch<2.8.0,>=2.6.0; extra == "transformers"
+Requires-Dist: transformers<5.0.0,>=4.51.1; extra == "transformers"
+Requires-Dist: accelerate>=1.5.1; extra == "transformers"
+Provides-Extra: vllm
+Requires-Dist: vllm==0.10.1.1; extra == "vllm"
+Dynamic: license-file
+
+# mineru-vl-utils
+
+## Usage
+
+### Installation
+
+```bash
+pip install mineru-vl-utils
+```
+
+### Code Demo
+
+```python
+from mineru_vl_utils import MinerUClient
+
+```
