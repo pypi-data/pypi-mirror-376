@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: pytest-storage
+Version: 0.1.0
+Summary: Pytest plugin to store test artifacts
+Project-URL: Repository, https://github.com/Nicoretti/pytest-artifacts
+Project-URL: Homepage, https://nicoretti.github.io/pytest-artifacts/
+Project-URL: Documentation, https://nicoretti.github.io/pytest-artifacts/
+Project-URL: Source, https://github.com/Nicoretti/pytest-artifacts
+Project-URL: Issues, https://github.com/Nicoretti/pytest-artifacts/issues
+Author-email: Nicola Coretti <nico.coretti@gmail.com>
+Maintainer-email: Nicola Coretti <nico.coretti@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: artifacts,files,pytest,pytest-plugin
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.11
+Requires-Dist: pytest>=8.4.2
+Description-Content-Type: text/markdown
+
+# pytest-artifacts
+
+Pytest plugin to help store artifacts generated during test runs
+
