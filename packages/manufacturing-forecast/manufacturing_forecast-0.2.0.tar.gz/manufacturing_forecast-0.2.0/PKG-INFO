@@ -1,0 +1,83 @@
+Metadata-Version: 2.4
+Name: manufacturing-forecast
+Version: 0.2.0
+Summary: A Python package for machine learning and data processing methods for manufacturing forecasting
+Home-page: https://github.com/yourusername/manufacturing_forecast
+Author: Manufacturing Forecast Team
+Author-email: Manufacturing Forecast Team <contact@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/manufacturing_forecast
+Project-URL: Bug Reports, https://github.com/yourusername/manufacturing_forecast/issues
+Project-URL: Source, https://github.com/yourusername/manufacturing_forecast
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: xgboost>=1.5.0
+Requires-Dist: lightgbm>=3.3.0
+Requires-Dist: catboost>=1.0.0
+Requires-Dist: shap>=0.40.0
+Requires-Dist: joblib>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.2.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.12.0; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# Manufacturing Forecast Package
+
+A Python package for machine learning and data processing methods for manufacturing forecasting applications.
+
+## Features
+
+- Multiple ML regression models (XGBoost, LightGBM, Random Forest, CatBoost, PLS)
+- Time series data processing utilities
+- Model factory pattern for dynamic model creation
+- Cross-validation with time series splits
+- SHAP explainability support
+- PyPI package structure
+
+## Installation
+
+```bash
+pip install manufacturing-forecast
+```
+
+## Quick Start
+
+```python
+from manufacturing_forecast.models import XGBoostRegression, ModelFactory
+from manufacturing_forecast.data import TimeSeriesProcessor
+
+# Create and train a model
+model = XGBoostRegression()
+model.fit(X_train, y_train)
+
+# Make predictions  
+predictions = model.predict(X_test)
+
+# Process time series data
+processor = TimeSeriesProcessor()
+X, Y = processor.create_lag_lead_matrices(past, target, future, status, lag=10, lead=5)
+```
+
