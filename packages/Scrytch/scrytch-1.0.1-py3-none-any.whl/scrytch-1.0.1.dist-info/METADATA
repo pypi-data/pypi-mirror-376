@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: Scrytch
+Version: 1.0.1
+Summary: A Python project which imitates Scratch game logic
+Author-email: Kian Metzsch <contact@ckm-tech.dev>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/k-metzsch/scrytch
+Project-URL: Issues, https://github.com/k-metzsch/scrytch/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygame>=2.0.0
+Dynamic: license-file
