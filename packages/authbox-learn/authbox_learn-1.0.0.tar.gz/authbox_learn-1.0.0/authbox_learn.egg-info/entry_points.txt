@@ -1,0 +1,2 @@
+[console_scripts]
+mylearn = authbox_learn.main:main
