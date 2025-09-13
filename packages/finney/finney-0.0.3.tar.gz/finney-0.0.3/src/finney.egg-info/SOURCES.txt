@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/cli.py
+src/finney.egg-info/PKG-INFO
+src/finney.egg-info/SOURCES.txt
+src/finney.egg-info/dependency_links.txt
+src/finney.egg-info/entry_points.txt
+src/finney.egg-info/requires.txt
+src/finney.egg-info/top_level.txt
