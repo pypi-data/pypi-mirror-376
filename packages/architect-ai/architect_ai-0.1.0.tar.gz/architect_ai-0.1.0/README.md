@@ -1,0 +1,508 @@
+# Architect AI
+
+A flexible system for orchestrating AI-powered workflows through custom tools and response blueprints. The Architect automatically generates and executes build plans to accomplish user goals by combining available tools.
+
+## Core Concepts
+
+### Tools
+Tools are the building blocks of your system - they perform specific tasks like API calls, data processing, or AI model inference. Each tool defines:
+- Input parameters it accepts
+- Output parameters it produces  
+- When it should be used
+- Whether it can run in parallel with the generation of the build plan (precallable)
+
+### Blueprints
+Blueprints document and store the results of your workflows. They capture the final outputs and provide a structured way to access the results after execution.
+
+### Build Plans
+The Architect generates JSON build plans that specify which tools to run in which order. Tools within the same stage execute in parallel, and later stages can reference outputs from earlier stages using `$ref.stage_1.tool_name.output_param` syntax.
+
+## Quick Start
+
+### 1. Define Your Tools
+
+Create custom tools by inheriting from the `Tool` base class:
+
+```python
+from architect_ai import Tool
+from typing import Dict, Any, Tuple, Optional
+from concurrent.futures import Future
+
+class SearchTool(Tool):
+    @property
+    def tool_name(self) -> str:
+        return "web_search"
+    
+    @property
+    def usage_context(self) -> str:
+        return "When the user needs to search for current information online"
+    
+    @property
+    def purpose(self) -> str:
+        return "Searches the web and returns relevant results"
+    
+    @property
+    def parameter_instructions(self) -> Dict[str, Tuple[str, str]]:
+        return {
+            "query": ("str", "The search query to execute"),
+            "max_results": ("int", "Maximum number of results to return")
+        }
+    
+    @property
+    def output_descriptions(self) -> Dict[str, Tuple[str, str]]:
+        return {
+            "results": ("list", "List of search results"),
+            "total_found": ("int", "Total number of results found")
+        }
+    
+    @property
+    def is_precallable(self) -> bool:
+        return False  # This tool requires user input, so can't be precalled
+    
+    def use(self, parameters: Dict[str, Any], precall_futures: Optional[Dict[str, Future]] = None):
+        query = parameters["query"]
+        max_results = parameters.get("max_results", 10)
+        
+        # Your implementation here
+        results = perform_web_search(query, max_results)
+        
+        return {
+            "results": results,
+            "total_found": len(results)
+        }
+```
+
+### 2. Define Your Blueprints
+
+Create blueprints to capture and document your workflow results:
+
+```python
+from architect_ai import Blueprint
+from typing import Dict, Any, Tuple
+
+class SearchReportBlueprint(Blueprint):
+    def __init__(self):
+        self._parameters = {}
+    
+    @property
+    def blueprint_name(self) -> str:
+        return "search_report"
+    
+    @property
+    def usage_context(self) -> str:
+        return "When documenting search results and analysis"
+    
+    @property
+    def purpose(self) -> str:
+        return "Creates a structured report of search findings"
+    
+    @property
+    def parameter_instructions(self) -> Dict[str, Tuple[str, str]]:
+        return {
+            "query": ("str", "The original search query"),
+            "results": ("list", "The search results found"),
+            "summary": ("str", "Summary of findings")
+        }
+    
+    @property
+    def parameter_to_value_map(self) -> Dict[str, Any]:
+        return self._parameters
+    
+    def fill(self, parameters: Dict[str, Any]) -> None:
+        self._parameters.update(parameters)
+        # Save to database, file, etc.
+        print(f"Search Report Generated: {parameters['query']}")
+```
+
+### 3. Set Up and Use the Architect
+
+```python
+from architect_ai import Architect, ToolBox, BlueprintRack
+from openai import OpenAI
+
+# Initialize components
+toolbox = ToolBox([SearchTool(), AnalysisTool()])
+blueprint_rack = BlueprintRack([SearchReportBlueprint()])
+architect = Architect(
+    openai_client=OpenAI(),
+    model_name="gpt-4",
+    toolbox=toolbox,
+    blueprint_rack=blueprint_rack,
+    max_process_workers=None,  # Use system default (number of CPUs)
+    allowed_process_names=["python", "python3"]  # Security whitelist for process tools
+)
+
+# Generate response
+blueprints, build_plan, stage_outputs = architect.generate_response(
+    customer_request="Search for information about renewable energy trends",
+    conversation_history=[],
+    additional_context_prompt="Focus on recent developments and statistics"
+)
+
+# Access results
+for blueprint in blueprints:
+    print(f"Generated {blueprint.blueprint_name}: {blueprint.parameter_to_value_map}")
+```
+
+## Advanced Features
+
+### Precallable Tools
+
+Precallable tools run automatically in parallel with build plan generation. They're perfect for time intensive NLP tasks. The architect does not fill in their parameters dynamically, instead passing an empty dict:
+
+```python
+class EmbeddingTool(Tool):
+    @property
+    def is_precallable(self) -> bool:
+        return True  # This tool will run before build plan execution
+    
+    def use(self, parameters: Dict[str, Any], precall_futures: Optional[Dict[str, Future]] = None):
+        # This runs in parallel with build plan generation
+        # Expensive embedding computation here
+        return {"embeddings": compute_embeddings()}
+    
+    ...
+```
+
+**Cost-insensitive users should leverage precallable tools** for common NLP tasks like embedding generation, text analysis, or LLM powered data preprocessing. These run in the background while the build plan is being generated, then other tools can fetch their results as needed.
+
+### Accessing Precallable Results
+
+Non-precallable tools can access precallable tool results:
+
+```python
+def use(self, parameters: Dict[str, Any], precall_futures: Optional[Dict[str, Future]] = None):
+    if precall_futures and "embedding_tool" in precall_futures:
+        embeddings = precall_futures["embedding_tool"].result()["embeddings"]
+        # Use the precomputed embeddings
+```
+
+## Configuration Options
+
+### Process Security & Resource Management
+
+The Architect can be configured for security and resource management:
+
+```python
+architect = Architect(
+    openai_client=openai_client,
+    model_name="gpt-4",
+    toolbox=toolbox,
+    blueprint_rack=blueprint_rack,
+    
+    # Process pool configuration
+    max_process_workers=None,  # Default: use number of CPUs
+    # max_process_workers=4,   # Set specific limit
+    
+    # Security: whitelist process names that can be killed
+    allowed_process_names=["python", "python3", "myapp"],  # Allow these
+    # allowed_process_names=[],  # Disable process killing entirely
+    # allowed_process_names=None,  # Allow all processes (default, less secure)
+)
+```
+
+**Security Notes:**
+- `allowed_process_names`: Controls which processes can be terminated by precallable tool cleanup
+- Only processes owned by the current user can be killed (additional safety check)
+- Setting to empty list `[]` disables process killing entirely
+- Setting to `None` (default) allows killing any process owned by current user
+
+**Resource Management:**
+- `max_process_workers`: Controls ProcessPoolExecutor worker count for PROCESS mode tools
+- `None` uses system default (typically number of CPU cores)
+- Set to specific integer to limit concurrent process tools
+
+## PROCESS Tools and Pickling
+
+Tools that declare `ExecutionMode.PROCESS` are executed in a separate process via `ProcessPoolExecutor`. This means the target callable and all arguments must be pickleable (especially on Windows where the "spawn" start method is used).
+
+- What breaks pickling:
+  - Classes/functions defined inside other functions or in `__main__`
+  - Instance attributes like open sockets, file handles, DB connections, event loops, futures/tasks, thread locks, lambdas/closures, or C-objects without pickle support
+  - Non-importable module paths (the worker must be able to `import` your tool class)
+
+- Design contract for PROCESS tools:
+  - Define the tool class at module top level
+  - Keep the instance state “config-only” (primitives/containers). Create clients/resources inside `use()`
+  - If you must hold non-pickleable fields, implement `__getstate__/__setstate__` to drop/recreate them
+
+- Minimal example:
+```python
+from typing import Dict, Any, Tuple
+from architect_ai import Tool, ExecutionMode
+
+class HeavyComputeTool(Tool):
+    @property
+    def execution_mode(self) -> ExecutionMode:
+        return ExecutionMode.PROCESS
+
+    @property
+    def tool_name(self) -> str:
+        return "heavy_compute"
+
+    @property
+    def usage_context(self) -> str:
+        return "CPU-bound batch computation"
+
+    @property
+    def purpose(self) -> str:
+        return "Computes an expensive function in a separate process"
+
+    @property
+    def parameter_instructions(self) -> Dict[str, Tuple[str, str]]:
+        return {"x": ("int", "Input value")}
+
+    @property
+    def output_descriptions(self) -> Dict[str, Tuple[str, str]]:
+        return {"y": ("int", "Computed output")}
+
+    # Optional: ensure clean pickling if you add non-primitive state later
+    def __getstate__(self):
+        return {}
+
+    def __setstate__(self, state):
+        pass
+
+    def use(self, parameters: Dict[str, Any], precallables=None):
+        x = parameters["x"]
+        return {"y": x * x}
+```
+
+Tip: avoid storing loggers/clients on the instance; prefer module-level loggers and construct clients inside `use()`.
+
+## Performance Optimization
+
+### Design for Small Build Plans
+
+**Smaller build plans generate faster.** Design your tools to take as small of inputs as possible so that the LLM will spend minimal time generating output tokens. It is unadvisable to have the model manage large lists of data. Instead, allowing the model to add a delete from an externally managed source through a tool will likely be faster.
+
+
+### Use Tool/Blueprint Subsets
+
+**Only include relevant tools and blueprints for each use case.** This improves both accuracy and speed by:
+- Reducing the complexity of build plan generation
+- Eliminating irrelevant options that might confuse the LLM
+- Allowing for potentially faster tool selection
+
+```python
+# Context-specific toolbox for search tasks
+search_toolbox = ToolBox([SearchTool(), AnalyzeTool(), SummarizeTool()])
+
+# Different toolbox for data processing tasks  
+data_toolbox = ToolBox([DataLoaderTool(), TransformTool(), ExportTool()])
+```
+
+### Stage Organization
+
+Tools in the same stage run in parallel. Organize your build plans to maximize parallelization:
+
+```json
+{
+  "stage_1": {
+    "search_tool": {"query": "renewable energy"},
+    "data_loader": {"source": "energy_db"}
+  },
+  "stage_2": {
+    "analyzer": {
+      "search_data": "$ref.stage_1.search_tool.results",
+      "db_data": "$ref.stage_1.data_loader.data"
+    }
+  }
+}
+```
+
+## Error Handling
+
+The Architect automatically retries failed build plans up to `max_attempts` times. Tools should handle their own exceptions gracefully and return meaningful error information in their outputs.
+
+## Best Practices
+
+1. **Keep tools focused** - Each tool should have a single, clear responsibility
+2. **Use descriptive names** - Tool and parameter names should be self-documenting
+3. **Leverage precallable tools** - For expensive operations that might be needed
+4. **Design for composition** - Tools should work well together
+5. **Context-appropriate subsets** - Only include relevant tools for each use case
+6. **Document thoroughly** - Good descriptions improve AI decision-making
+
+## Example Build Plan Output
+
+```json
+{
+  "stage_1": {
+    "web_search": {
+      "query": "renewable energy trends 2024",
+      "max_results": 20
+    }
+  },
+  "stage_2": {
+    "analyze_results": {
+      "data": "$ref.stage_1.web_search.results"
+    }
+  },
+  "search_report": {
+    "query": "renewable energy trends 2024",
+    "results": "$ref.stage_1.web_search.results",
+    "summary": "$ref.stage_2.analyze_results.summary"
+  }
+}
+```
+
+## Logging Configuration
+
+The Architect AI package uses structured JSON logging throughout all components. Logging is not configured internally - you must set up logging in your application to capture and format the log output.
+
+### Basic Logging Setup
+
+To enable logging with basic console output:
+
+```python
+import logging
+import sys
+
+# Basic setup - logs will be unformatted JSON strings
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stdout,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+```
+
+### Structured JSON Logging Setup
+
+For properly formatted JSON logs, use a JSON formatter. Here's an example using `python-json-logger`:
+
+```bash
+pip install python-json-logger
+```
+
+```python
+import logging
+import sys
+from pythonjsonlogger import jsonlogger
+
+# Create JSON formatter
+json_formatter = jsonlogger.JsonFormatter(
+    fmt='%(asctime)s %(name)s %(levelname)s %(message)s'
+)
+
+# Configure root logger
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+# Create console handler
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setFormatter(json_formatter)
+logger.addHandler(console_handler)
+
+# Optional: Configure specific loggers
+architect_logger = logging.getLogger('architect_ai')
+architect_logger.setLevel(logging.DEBUG)  # More detailed logs
+```
+
+### Advanced Logging Configuration
+
+For production applications, consider more sophisticated logging:
+
+```python
+import logging
+import logging.config
+
+LOGGING_CONFIG = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'json': {
+            '()': 'pythonjsonlogger.jsonlogger.JsonFormatter',
+            'format': '%(asctime)s %(name)s %(levelname)s %(message)s'
+        },
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'INFO',
+            'formatter': 'json',
+            'stream': 'ext://sys.stdout'
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'level': 'DEBUG',
+            'formatter': 'json',
+            'filename': 'architect_ai.log'
+        }
+    },
+    'loggers': {
+        'architect_ai': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file'],
+            'propagate': False
+        },
+        'architect_ai.architect': {
+            'level': 'INFO',  # Core operations
+            'handlers': ['console', 'file'],
+            'propagate': False
+        },
+        'architect_ai.toolbox': {
+            'level': 'WARNING',  # Less verbose for tool management
+            'handlers': ['console', 'file'],
+            'propagate': False
+        },
+        'architect_ai.blueprint_rack': {
+            'level': 'WARNING',  # Less verbose for blueprint management
+            'handlers': ['console', 'file'],
+            'propagate': False
+        }
+    }
+}
+
+logging.config.dictConfig(LOGGING_CONFIG)
+```
+
+### Log Structure
+
+All logs from Architect AI components follow a consistent JSON structure:
+
+```json
+{
+  "asctime": "2024-01-15 10:30:45,123",
+  "name": "architect_ai.architect",
+  "levelname": "INFO",
+  "message": "Build plan executed",
+  "component": "architect",
+  "execution_time_s": 2.45,
+  "total_time_s": 5.67
+}
+```
+
+Common fields across all components:
+- `message`: Human-readable description of the event
+- `component`: Which component generated the log (`architect`, `toolbox`, `blueprint_rack`)
+- Additional contextual fields specific to each operation
+
+### Component-Specific Log Fields
+
+**Architect Component:**
+- `tool_count`, `blueprint_count`: Counts of tools/blueprints
+- `stage_name`: Current execution stage
+- `*_time_s`: Timing information in seconds
+- `error`, `error_type`: Error details when applicable
+
+**ToolBox Component:**
+- `tool_name`: Name of the tool being operated on
+- `is_precallable`: Whether the tool is precallable
+- `available_tools`: List of available tool names
+
+**BlueprintRack Component:**
+- `blueprint_name`: Name of the blueprint being operated on
+- `available_blueprints`: List of available blueprint names
+
+### Performance Considerations
+
+- **Production**: Set log levels appropriately (`INFO` or `WARNING` for most components)
+- **Development**: Use `DEBUG` level for detailed troubleshooting
+- **File logging**: Consider log rotation for long-running applications
+- **Structured parsing**: JSON logs can be easily ingested by log aggregation systems
+
+This system provides a flexible foundation for building AI-powered applications that can automatically orchestrate complex workflows to accomplish user goals.
