@@ -1,0 +1,52 @@
+Metadata-Version: 2.3
+Name: secret_generator
+Version: 0.2.1
+Summary: 
+License: Apache-2.0
+Author: Bakminstof
+Author-email: bakminstof@yandex.ru
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: bcrypt (>=4.3.0,<5.0.0)
+Project-URL: Repository, https://github.com/Bakminstof/secret_generator
+Description-Content-Type: text/markdown
+
+from pathlib import PathInstall
+```bash
+pip install secret_generator
+```
+
+Example:
+
+1) 
+```python
+from secret_generator import generate_secret
+
+print(generate_secret(40))
+``` 
+ore
+```python
+from secret_generator import run_generate_secret
+
+run_generate_secret()
+```
+2) 
+```python
+from pathlib import Path
+from os import getcwd
+
+from secret_generator import generate_htpasswd
+
+
+print(generate_htpasswd("username", "password", Path(getcwd()) / ".htpasswd"))
+``` 
+ore
+```python
+from secret_generator import run_generate_htpasswd
+
+run_generate_htpasswd()
+```
+

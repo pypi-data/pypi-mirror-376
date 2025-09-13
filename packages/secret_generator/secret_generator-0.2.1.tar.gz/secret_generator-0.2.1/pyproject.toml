@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "secret_generator"
+version = "0.2.1"
+description = ""
+authors = ["Bakminstof <bakminstof@yandex.ru>"]
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/Bakminstof/secret_generator"
+
+[[tool.poetry.source]]
+name = "bak-pypi"
+url = "https://bak-pypi:5483/simple"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+bcrypt = "^4.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
