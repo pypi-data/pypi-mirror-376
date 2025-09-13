@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: primapy-uk-modelling-shared
+Version: 0.0.1
+Author: Prima
+Author-email: teampriceless@prima.it
+Requires-Python: >=3.10
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-python
