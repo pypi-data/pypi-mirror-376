@@ -1,0 +1,16 @@
+LICENSES.txt
+README.md
+pyproject.toml
+setup.py
+featurestoresdk/__init__.py
+featurestoresdk/feature_store_sdk.py
+featurestoresdk/sdk_exception.py
+featurestoresdk/singleton_manager.py
+featurestoresdk.egg-info/PKG-INFO
+featurestoresdk.egg-info/SOURCES.txt
+featurestoresdk.egg-info/dependency_links.txt
+featurestoresdk.egg-info/not-zip-safe
+featurestoresdk.egg-info/requires.txt
+featurestoresdk.egg-info/top_level.txt
+featurestoresdk/config/config.json
+test/test_feature_store_sdk.py

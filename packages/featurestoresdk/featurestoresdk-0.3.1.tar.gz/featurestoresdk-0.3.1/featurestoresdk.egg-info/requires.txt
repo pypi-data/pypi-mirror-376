@@ -1,0 +1,9 @@
+pandas
+cassandra-driver==3.25.0
+kubernetes
+
+[test]
+pytest
+coverage
+pytest-cov
+mock
