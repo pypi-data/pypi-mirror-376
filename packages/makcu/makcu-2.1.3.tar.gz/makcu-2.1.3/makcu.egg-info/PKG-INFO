@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: makcu
+Version: 2.1.3
+Summary: Python library for Makcu hardware device control
+Author: SleepyTotem
+Project-URL: Homepage, https://github.com/SleepyTotem/makcu-py-lib
+Project-URL: Bug Reports, https://github.com/SleepyTotem/makcu-py-lib/issues
+Project-URL: Source, https://github.com/SleepyTotem/makcu-py-lib
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pyserial>=3.5
+Requires-Dist: pytest>=7.0
+Requires-Dist: pytest-html>=3.1
+Requires-Dist: build>=0.10
+Requires-Dist: twine>=4.0
+Requires-Dist: rich>=14.0
