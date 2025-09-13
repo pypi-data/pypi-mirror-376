@@ -1,0 +1,396 @@
+Metadata-Version: 2.4
+Name: fetchomatic
+Version: 1.0.0
+Summary: A comprehensive networking framework with semantic methods
+Home-page: https://github.com/Aayushbohora/smartfetchpy
+Author: Aayush Bohora
+Author-email: Aayush Bohora <ab6203200@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/Aayushbohora/smartfetchpy
+Project-URL: Bug Reports, https://github.com/Aayushbohora/smartfetchpy/issues
+Project-URL: Source, https://github.com/Aayushbohora/smartfetchpy
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.0
+Requires-Dist: aiohttp>=3.7.0
+Requires-Dist: websockets>=10.0
+Requires-Dist: PyYAML>=5.4.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.18.0; extra == "dev"
+Requires-Dist: black>=21.0.0; extra == "dev"
+Requires-Dist: isort>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=0.900; extra == "dev"
+Dynamic: license-file
+
+SmartFetch Framework
+A comprehensive, production-ready Python networking framework with semantic methods, protocol detection, and extensive middleware support.
+Features
+🚀 Semantic Network Methods
+
+fetch() → GET requests
+send() → POST requests
+update() → PUT requests
+modify() → PATCH requests
+remove() → DELETE requests
+info() → HEAD requests
+probe() → OPTIONS requests
+
+🌐 Multi-Protocol Support
+
+HTTP/HTTPS - Full-featured with sync/async support
+UDP - Connectionless communication with retries
+WebSocket - Real-time bidirectional communication
+Auto-detection - Automatic protocol detection from URLs
+
+⚡ Async & Sync Support
+
+Complete async/await support for all operations
+Synchronous methods for traditional workflows
+Concurrent request handling with asyncio.gather()
+
+🔧 Advanced HTTP Features
+
+Connection pooling and session management
+Automatic retries with exponential backoff
+Streaming for large downloads/uploads
+Multipart/form-data file uploads
+Proxy support with authentication
+Custom SSL certificate verification
+Automatic JSON/XML/YAML parsing
+Response compression (gzip, deflate, br)
+
+🛡️ Comprehensive Middleware System
+
+Logging - Request/response logging with configurable detail
+Caching - Intelligent response caching with TTL
+Authentication - Bearer, Basic, API Key support
+Rate Limiting - Per-second and per-minute limits
+Metrics - Response time, success rate tracking
+Retry - Automatic retries for failed requests
+Security - SSL verification, security headers
+Compression - Request/response compression
+
+🔍 Smart Features
+
+Automatic content-type detection
+Protocol switching and adaptation
+Smart retries for transient failures
+Response validation and chaining
+URL normalization and validation
+
+🎯 Developer Experience
+
+Fluent API with method chaining
+Builder pattern for configuration
+Context managers for resource management
+Comprehensive error handling
+Debug mode with detailed logging
+Type hints throughout
+
+Installation
+bashpip install requests aiohttp websockets PyYAML
+Quick Start
+Basic Usage
+pythonfrom smartfetch import SmartFetch
+
+# Create client
+sf = SmartFetch()
+
+# Make requests using semantic methods
+response = sf.fetch('https://api.example.com/users/1')
+print(response.json())
+
+# POST data
+data = {'name': 'John', 'email': 'john@example.com'}
+response = sf.send('https://api.example.com/users', data=data)
+
+# Update resource
+response = sf.update('https://api.example.com/users/1', data=data)
+
+# Partially modify
+response = sf.modify('https://api.example.com/users/1', data={'name': 'Jane'})
+
+# Delete resource
+response = sf.remove('https://api.example.com/users/1')
+Async Usage
+pythonimport asyncio
+from smartfetch import SmartFetch
+
+async def main():
+    sf = SmartFetch()
+    
+    # Async requests
+    response = await sf.afetch('https://api.example.com/users/1')
+    data = await response.ajson()
+    
+    # Concurrent requests
+    tasks = [
+        sf.afetch('https://api.example.com/users/1'),
+        sf.afetch('https://api.example.com/users/2'),
+        sf.afetch('https://api.example.com/users/3')
+    ]
+    responses = await asyncio.gather(*tasks)
+
+asyncio.run(main())
+Response Chaining
+python# Chain operations for fluent API
+result = (sf.fetch('https://api.example.com/data')
+           .validate(lambda r: r.status_code == 200)
+           .parse_json()
+           .save_to_file('data.json')
+           .json())
+Configuration
+Builder Pattern
+pythonfrom smartfetch import builder
+from smartfetch.middleware import LoggingMiddleware, CachingMiddleware
+
+sf = (builder()
+      .base_url('https://api.example.com')
+      .timeout(30)
+      .headers({'Authorization': 'Bearer token123'})
+      .middleware(LoggingMiddleware())
+      .middleware(CachingMiddleware(ttl=300))
+      .debug(True)
+      .build())
+Manual Configuration
+pythonfrom smartfetch import SmartFetch
+from smartfetch.middleware import AuthMiddleware
+
+sf = SmartFetch(
+    base_url='https://api.example.com',
+    timeout=30,
+    headers={'User-Agent': 'MyApp/1.0'}
+)
+
+# Add authentication
+auth = AuthMiddleware(auth_type='bearer', token='your-token')
+sf.add_middleware(auth)
+Middleware
+Built-in Middleware
+pythonfrom smartfetch.middleware import (
+    LoggingMiddleware,
+    CachingMiddleware, 
+    AuthMiddleware,
+    RateLimitingMiddleware,
+    MetricsMiddleware,
+    RetryMiddleware
+)
+
+sf = SmartFetch()
+
+# Add logging with request/response bodies
+sf.add_middleware(LoggingMiddleware(
+    log_request_body=True,
+    log_response_body=True,
+    max_body_length=500
+))
+
+# Add caching
+sf.add_middleware(CachingMiddleware(
+    ttl=3600,  # 1 hour
+    max_size=1000
+))
+
+# Add rate limiting
+sf.add_middleware(RateLimitingMiddleware(
+    requests_per_second=10.0,
+    requests_per_minute=600.0
+))
+Custom Middleware
+pythonfrom smartfetch.middleware import BaseMiddleware
+
+class CustomMiddleware(BaseMiddleware):
+    def before_request(self, request_context):
+        # Modify request before sending
+        request_context['headers']['X-Custom'] = 'value'
+        return request_context
+    
+    def after_response(self, response_context):
+        # Process response
+        print(f"Response: {response_context['response'].status_code}")
+        return response_context
+    
+    def on_error(self, error_context):
+        # Handle errors
+        print(f"Error: {error_context['error']}")
+        return error_context
+
+sf.add_middleware(CustomMiddleware())
+Protocol Support
+HTTP/HTTPS
+python# All standard HTTP methods supported
+response = sf.fetch('https://api.example.com/data')  # GET
+response = sf.send('https://api.example.com/data', data=payload)  # POST
+response = sf.update('https://api.example.com/data/1', data=payload)  # PUT
+response = sf.modify('https://api.example.com/data/1', data=patch)  # PATCH
+response = sf.remove('https://api.example.com/data/1')  # DELETE
+response = sf.info('https://api.example.com/data/1')  # HEAD
+response = sf.probe('https://api.example.com/data')  # OPTIONS
+UDP
+python# UDP communication
+response = sf.send('udp://server.example.com:8080', data=b'Hello UDP')
+print(f"Response from {response.raw_response.host}: {response.text()}")
+
+# DNS query example
+dns_response = sf.send('udp://8.8.8.8:53', data=dns_packet)
+WebSocket
+python# WebSocket communication
+response = sf.send('wss://echo.websocket.org', data='Hello WebSocket')
+print(f"Echo response: {response.text()}")
+File Operations
+File Upload
+python# Upload file
+with open('document.pdf', 'rb') as f:
+    response = sf.send('https://api.example.com/upload', 
+                      files={'file': f},
+                      data={'description': 'Important document'})
+File Download
+python# Download file
+response = sf.fetch('https://example.com/large-file.zip', stream=True)
+response.save_to_file('downloaded-file.zip')
+
+# With progress tracking
+def progress_callback(downloaded, total):
+    percent = (downloaded / total) * 100 if total > 0 else 0
+    print(f"Downloaded: {percent:.1f}%")
+
+sf.download_file('https://example.com/file.zip', 
+                'local-file.zip', 
+                progress_callback=progress_callback)
+Error Handling
+pythonfrom smartfetch.exceptions import (
+    SmartFetchError,
+    NetworkError,
+    TimeoutError,
+    RequestFailedError,
+    ValidationError
+)
+
+try:
+    response = sf.fetch('https://api.example.com/data')
+    if not response.ok:
+        print(f"HTTP Error: {response.status_code}")
+        
+except TimeoutError as e:
+    print(f"Request timed out: {e}")
+except NetworkError as e:
+    print(f"Network error: {e}")
+except ValidationError as e:
+    print(f"Validation error: {e}")
+except SmartFetchError as e:
+    print(f"SmartFetch error: {e}")
+Performance & Monitoring
+Metrics Collection
+pythonfrom smartfetch.middleware import MetricsMiddleware
+
+metrics_mw = MetricsMiddleware()
+sf.add_middleware(metrics_mw)
+
+# Make requests...
+
+# Get performance metrics
+metrics = metrics_mw.get_metrics()
+print(f"Total requests: {metrics['total_requests']}")
+print(f"Success rate: {metrics['success_rate']:.2%}")
+print(f"Average response time: {metrics['average_response_time']:.3f}s")
+Connection Pooling
+python# Automatic connection pooling for HTTP
+sf = SmartFetch()
+
+# Multiple requests reuse connections
+for i in range(100):
+    response = sf.fetch(f'https://api.example.com/data/{i}')
+Advanced Features
+Custom Protocol Configuration
+pythonfrom smartfetch.protocols import Protocol
+
+# Configure protocol-specific settings
+sf.configure_protocol(Protocol.HTTP, timeout=60, max_redirects=10)
+sf.configure_protocol(Protocol.UDP, retries=5, buffer_size=16384)
+SSL Certificate Pinning
+pythonfrom smartfetch.middleware import SecurityMiddleware
+
+security_mw = SecurityMiddleware(
+    verify_ssl=True,
+    cert_pinning={'api.example.com': 'sha256:...'}
+)
+sf.add_middleware(security_mw)
+Request/Response Hooks
+pythondef log_request(request_context):
+    print(f"Making request to: {request_context['url']}")
+
+def log_response(response_context):
+    response = response_context['response']
+    print(f"Response: {response.status_code}")
+
+# Add hooks via custom middleware
+Module-Level Convenience
+python# Use module-level functions for quick operations
+from smartfetch import fetch, send, update, modify, remove
+
+# Uses default SmartFetch instance
+response = fetch('https://api.example.com/data')
+result = send('https://api.example.com/data', data={'key': 'value'})
+Testing & Development
+UDP Server for Testing
+pythonfrom smartfetch.udp_client import create_udp_server
+
+def echo_handler(data, addr):
+    return f"Echo: {data.decode()}".encode()
+
+server = create_udp_server('localhost', 8080)
+server.start(echo_handler)  # Blocking
+# Or: await server.astart(echo_handler)  # Non-blocking
+WebSocket Server for Testing
+pythonfrom smartfetch.websocket_client import create_websocket_server
+
+async def main():
+    server = create_websocket_server('localhost', 8765)
+    await server.start()
+    # Server runs until stopped
+
+asyncio.run(main())
+Requirements
+
+Python 3.7+
+requests - HTTP client library
+aiohttp - Async HTTP client
+websockets - WebSocket support
+PyYAML - YAML parsing support
+
+Framework Structure
+smartfetch/
+├── __init__.py          # Main exports and convenience functions
+├── core.py              # SmartFetch class and response wrapper
+├── http_client.py       # HTTP/HTTPS client implementation
+├── udp_client.py        # UDP client implementation
+├── websocket_client.py  # WebSocket client implementation
+├── protocols.py         # Protocol detection and routing
+├── middleware.py        # Middleware system and built-in middleware
+├── utils.py             # Utility functions and helpers
+└── exceptions.py        # Custom exceptions
+License
+MIT License - see LICENSE file for details.
+Contributing
+
+Fork the repository
+Create a feature branch
+Add tests for new functionality
+Ensure all tests pass
+Submit a pull request
+
+Examples
+See examples/ directory for comprehensive usage examples and tutorials.
+
+SmartFetch - Making network programming simple, powerful, and enjoyable! 🚀

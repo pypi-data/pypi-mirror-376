@@ -1,0 +1,2 @@
+[console_scripts]
+fetchomatic = fetchomatic.cli:main

@@ -1,0 +1,15 @@
+fetchomatic/__init__.py,sha256=3Yk87yLeblvos9JjOqZOj0KVen0jZ1IUiDDMdXjPxb4,1800
+fetchomatic/core.py,sha256=G3A2Bjzfep4LYLpLlUttVKaxZreFD02PrDEbtVNUhuY,29835
+fetchomatic/exceptions.py,sha256=G1IjG7SBAoihXsFVSOrCL-XQ7EOTfhNXvpLjge_V9aI,2969
+fetchomatic/http_client.py,sha256=cmVsfcViNRyb9GrXRXQ7EOVX2VDMgboS5VO8A1CDIGU,24898
+fetchomatic/middleware.py,sha256=dHY7Wi_5QIyCpMff6RGSelN62d6eUqdlkuVxfh-QCIo,22438
+fetchomatic/protocols.py,sha256=-Y34Ya7OGs041xK4zpHoI8geeoDa5ue1xJqrPiw7MFM,12612
+fetchomatic/udp_client.py,sha256=JeioOqZ6xznfpdvqtkXZ9JWhOoQASqyZtXySowVgu8U,11915
+fetchomatic/utils.py,sha256=79gRnSN8hEonyc4BNa1rTTl_S499VbdudTXEtLsBOVA,8760
+fetchomatic/websocket_client.py,sha256=OP61avImaIu5zoNT7JFoT8cOZSMcay-lh19uy6nV6ik,19013
+fetchomatic-1.0.0.dist-info/licenses/LICENSE,sha256=h9xd4gGStf5DpcB8bcvPfeFhErVJWkIOkc470oc31g8,1091
+fetchomatic-1.0.0.dist-info/METADATA,sha256=i4ZVuTgDvx_FNvKhsJVigeW2EePjvX2LUHAqRj9ZxE8,12808
+fetchomatic-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fetchomatic-1.0.0.dist-info/entry_points.txt,sha256=p0JdebuayXENomkXBjDehNAvDH6EEplUytcJwOkQncc,53
+fetchomatic-1.0.0.dist-info/top_level.txt,sha256=H0pSr74USofB7FrlAakYFrm6vdpE1Hc9t--J7hq8zqo,12
+fetchomatic-1.0.0.dist-info/RECORD,,
