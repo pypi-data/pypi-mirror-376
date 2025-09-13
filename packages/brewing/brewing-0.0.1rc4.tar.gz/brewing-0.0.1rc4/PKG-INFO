@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: brewing
+Version: 0.0.1rc4
+Summary: A web framework built on sqlachemy and fastapi.
+Author-email: Mike Cowie <24739590+mikemcowie@users.noreply.github.com>
+Requires-Python: >=3.13
+Requires-Dist: brewinglib-cli
