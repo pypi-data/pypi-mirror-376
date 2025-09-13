@@ -1,0 +1,11 @@
+discordapi/__init__.py,sha256=m-NsO-SVQZuOfWJdzy7VF_RhQRtrot0buC4e6iospbM,258
+discordapi/add_reaction.py,sha256=SEznast55x51wltAd33M_Lvff9ZpWpjDrq8Q-B-ek4w,325
+discordapi/discord_client.py,sha256=lVy7jRrX-zl9rSSq5k3vpFc3i53PNX1U2oS2Qyp09F0,2769
+discordapi/fake_typing.py,sha256=Xap9ewd-7TswhXSeMjNb_wQOOQjDhpEiBNOmdkf6sQM,788
+discordapi/message_logger.py,sha256=t48oj3OxegJ7RuenzRc4uP5ZW0vcS1ixtHFpxeRXJ_U,3920
+discordapi/send_message.py,sha256=RC0URfuHhfesuVOE3VZHrJRLBLRwAeiXUlSqKDaH-_M,247
+discordapi/utils.py,sha256=8as2cSHKaSj9H2yAq-7bN-SFTFzxfaPpwuMBJAyyehY,427
+discordclients-0.1.3.dist-info/METADATA,sha256=wdmgLhCwYYSQgR0ppe0pbzGr3avdZl77LBsF0BwdPxw,240
+discordclients-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+discordclients-0.1.3.dist-info/top_level.txt,sha256=THDGY85xfaLbN5TO2t6vQb8BEiQFiBt81bDpgqzz6Zg,11
+discordclients-0.1.3.dist-info/RECORD,,
