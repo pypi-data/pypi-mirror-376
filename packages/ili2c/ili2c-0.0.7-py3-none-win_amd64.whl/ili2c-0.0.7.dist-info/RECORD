@@ -1,0 +1,14 @@
+ili2c/__init__.py,sha256=sRXYbUPGc0vjJUFKdIQzG2GZoRM9o4JRgkcP3YguFLk,29
+ili2c/ili2c.py,sha256=QpiFcYbEfp9Xrx4Nh4A-iv-96-XPN73HLHWGqtHHhac,2032
+ili2c/lib_ext/graal_isolate.h,sha256=LKuNWFIGCDhLZbltJhd6lP26rJ-YRKqFPUhGJLhIpis,5580
+ili2c/lib_ext/graal_isolate_dynamic.h,sha256=gudapipGmwIfj_DefKnMbq03MWykAm9oMr1EN9Kqb-8,5692
+ili2c/lib_ext/libili2c.dll,sha256=VOpUaPFKw1-3QoQFAXn3EDasDp1a-ejq6nqoZCiVnag,28938240
+ili2c/lib_ext/libili2c.h,sha256=D_5OGxmMkKgKki9ZPc79yKPvrH7mOrUvgMWALT5YSHY,346
+ili2c/lib_ext/libili2c.lib,sha256=R6AXtlFqsr_llDU0tnLaXH3YHzokHqCrJBImPlY8Prs,14562
+ili2c/lib_ext/libili2c_dynamic.h,sha256=hYhZowQQ61F5SaSTAjJA0jGg1z4O6V67JNmQBtuRsk0,402
+ili2c/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ili2c/tests/test_ili2c.py,sha256=Wt-p5T5NchcEFM1CuqI5WnlgRvW-EfXM1-F3tZi8zVY,3934
+ili2c-0.0.7.dist-info/METADATA,sha256=v9ewullNMlLYFFnFj7AhBNoPRldfYJ6XvMwem-4XTPU,1542
+ili2c-0.0.7.dist-info/WHEEL,sha256=EsfqhE0qd6WfVs85_gPJMVnnwjseveFUmeew0JBezok,97
+ili2c-0.0.7.dist-info/top_level.txt,sha256=wy66gYIWN3bbuoDMMIDXaCmCFTcFcCgI_vl92lF2feg,6
+ili2c-0.0.7.dist-info/RECORD,,
