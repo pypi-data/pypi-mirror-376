@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: figurex
+Version: 0.2.14
+Summary: Make figures with context managers in python: quicker, simpler, more readable.
+Author-email: Martin Schrön <martin@schroen.eu>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/mschroen/figurex
+Project-URL: Repository, https://github.com/mschroen/figurex
+Project-URL: Issues, https://github.com/mschroen/figurex/issues
+Keywords: plot,matplotlib,cartopy,basemap
+Requires-Python: >3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy<3.0,>=1.20
+Requires-Dist: matplotlib>3.0
+Requires-Dist: neatlogger>=0.1
+Provides-Extra: basemap
+Requires-Dist: basemap>=2.0.0; extra == "basemap"
+Provides-Extra: cartopy
+Requires-Dist: cartopy<1.0.0,>=0.25.0; extra == "cartopy"
+Requires-Dist: scipy<2.0.0,>=1.15.0; extra == "cartopy"
+Provides-Extra: dev
+Requires-Dist: pytest>3.0; extra == "dev"
+Requires-Dist: pandas>2.0; extra == "dev"
