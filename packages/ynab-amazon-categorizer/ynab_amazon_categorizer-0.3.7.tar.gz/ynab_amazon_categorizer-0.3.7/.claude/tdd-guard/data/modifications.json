@@ -1,0 +1,10 @@
+{
+  "session_id": "bffb4a40-5bd7-47b6-b7d2-ce8ec612b0c6",
+  "transcript_path": "C:\\Users\\ksutk\\.claude\\projects\\C--Users-ksutk-projects-ynab-amazon-categorizer\\bffb4a40-5bd7-47b6-b7d2-ce8ec612b0c6.jsonl",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "C:\\Users\\ksutk\\projects\\ynab-amazon-categorizer\\src\\ynab_amazon_categorizer\\__main__.py",
+    "content": "\"\"\"Allow running the package as a module with python -m ynab_amazon_categorizer.\"\"\"\n\nfrom .cli import main\n\nif __name__ == \"__main__\":\n    main()"
+  }
+}
