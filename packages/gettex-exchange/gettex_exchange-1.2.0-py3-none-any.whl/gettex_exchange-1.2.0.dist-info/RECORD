@@ -1,0 +1,7 @@
+gettex_exchange/__init__.py,sha256=6RJZA0sbfDvi11Z3snNUoQ70_5O8V1incvKco4dccsc,25
+gettex_exchange/api.py,sha256=ncoyz-3puBwbT_nPMgji4e-rVuHuAfRwjOt-d92rU6k,8786
+gettex_exchange/stock.py,sha256=Xa66KQL6IzwyspoLvEpnCT7MnvCnqx6jmpzpEZ3Pm3w,9599
+gettex_exchange-1.2.0.dist-info/LICENSE,sha256=jnPr0VRCxDh5BGyusk3cNPqLCU3fAm0xyDLqYJyazcc,1070
+gettex_exchange-1.2.0.dist-info/METADATA,sha256=EEwBSyi9jPgL2b-J1GhuUu5S3AR5gu3pqsm1GrHFOAM,3519
+gettex_exchange-1.2.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+gettex_exchange-1.2.0.dist-info/RECORD,,
