@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: pyrandyos
+Version: 1.1.0a1
+Summary: Library of common functions for Python applications
+Project-URL: Homepage, https://github.com/emanspeaks/pyrandyos
+Project-URL: Issues, https://github.com/emanspeaks/pyrandyos/issues
+Author-email: Randy Eckman <emanspeaks@gmail.com>
+Maintainer-email: Randy Eckman <emanspeaks@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pyside2
+Requires-Dist: pywin32
+Requires-Dist: tqdm
+Requires-Dist: types-pyside2
+Provides-Extra: qdarkstyle
+Requires-Dist: qdarkstyle; extra == 'qdarkstyle'
+Description-Content-Type: text/markdown
+
+# PyRandyOS
+
+Library of common functions for Python applications
+
+## Licenses
+
+### Icons
+
+This repo uses icons taken from other open source icon libraries.  Links to their licensing info are maintained alongside the URLs for the icon fonts in [`pyrandyos/gui/icons/iconfont/sources.py`](pyrandyos/gui/icons/iconfont/sources.py), where the paths to the license files are with respect to the repo root at the given URL.
