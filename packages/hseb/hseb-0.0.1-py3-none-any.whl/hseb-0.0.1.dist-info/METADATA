@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: hseb
+Version: 0.0.1
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: GPU
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.11
+License-File: LICENSE
+Requires-Dist: datasets
+Requires-Dist: typed-argparse
+Requires-Dist: faiss-cpu
+Requires-Dist: docker
+Requires-Dist: pydantic
+Requires-Dist: structlog
+Requires-Dist: qdrant-client
+Requires-Dist: elasticsearch
+Requires-Dist: opensearch-py
+Requires-Dist: psycopg2-binary
+Requires-Dist: redis[hiredis]
+Requires-Dist: weaviate-client
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-skip-slow; extra == "test"
+Requires-Dist: ruff; extra == "test"
+Provides-Extra: gpu
+Requires-Dist: sentence_transformers>=5.0.0; extra == "gpu"
+Dynamic: license-file
