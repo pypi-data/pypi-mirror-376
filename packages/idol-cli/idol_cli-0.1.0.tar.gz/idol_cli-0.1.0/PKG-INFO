@@ -1,0 +1,277 @@
+Metadata-Version: 2.4
+Name: idol-cli
+Version: 0.1.0
+Summary: IDOL - Incremental DAG Optimization for Learning CLI
+Author-email: IDOL Team <idol@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/dongahn/auto-taskopt
+Project-URL: Bug Reports, https://github.com/dongahn/auto-taskopt/issues
+Project-URL: Source, https://github.com/dongahn/auto-taskopt
+Keywords: machine-learning,data-labeling,golden-dataset,cli
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=8.1.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: ijson>=3.2.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Dynamic: license-file
+
+# IDOL - Incremental DAG Optimization for Learning
+
+[![CI](https://github.com/dongahn/auto-taskopt/actions/workflows/ci.yml/badge.svg)](https://github.com/dongahn/auto-taskopt/actions/workflows/ci.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
+
+Transform debug traces into validated golden datasets for ML training pipelines.
+
+## Overview
+
+IDOL is a CLI tool that processes debug trace JSON files to create high-quality labeled datasets through:
+1. **Automatic candidate generation** using task-specific heuristics
+2. **Human review interface** for label validation and correction  
+3. **Dataset freezing** with validation and optional train/holdout splits
+
+## Features
+
+- 🎯 **Deterministic ID generation** ensures idempotent operations
+- 📝 **JSONL format** enables git-friendly diffs and streaming processing
+- ⚡ **Memory-efficient** parsing of large JSON files
+- 🔍 **8 task-specific heuristics** for automatic labeling
+- ✅ **Interactive review** with accept/negate/edit options
+- ❄️ **Dataset validation** before freezing
+- 📊 **Train/holdout splits** for ML evaluation
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd auto-taskopt
+
+# Install dependencies
+pip install -e .
+
+# Or install from requirements
+pip install -r requirements.txt
+```
+
+## Quick Start
+
+```bash
+# 1. Harvest candidates from debug traces
+idol harvest examples/20250912_121325/
+
+# 2. Review candidates for a specific task
+idol review --task gpu_hw_analysis
+
+# 3. Freeze validated dataset
+idol freeze --task gpu_hw_analysis
+
+# Check status
+idol status
+```
+
+## Usage
+
+### Harvest: Generate Candidates
+
+Process debug trace JSON files to extract task executions and generate candidates:
+
+```bash
+# Process a single file
+idol harvest trace.json
+
+# Process all JSON files in a directory
+idol harvest examples/
+
+# Verbose output
+idol harvest examples/ -v
+```
+
+The harvest command:
+- Parses debug traces to extract task executions
+- Generates stable SHA1-based IDs
+- Applies task-specific heuristics for auto-labeling
+- Saves candidates to `rca_gold/candidates/<task>.jsonl`
+
+### Review: Validate Labels
+
+Interactively review and correct auto-generated labels:
+
+```bash
+# Review all pending candidates for a task
+idol review --task gpu_hw_analysis
+
+# Review only first 10 items
+idol review --task logs_analysis --max-items 10
+```
+
+Review options:
+- `[a]` Accept auto label
+- `[n]` Negate (mark as 'no_issue')
+- `[e]` Edit (provide custom JSON)
+- `[s]` Skip
+- `[q]` Quit
+
+### Freeze: Create Final Datasets
+
+Merge candidates and overrides into validated datasets:
+
+```bash
+# Freeze a specific task
+idol freeze --task gpu_hw_analysis
+
+# Freeze all tasks
+idol freeze
+
+# Create train/holdout split (80/20)
+idol freeze --task final_analysis --holdout
+
+# Skip validation
+idol freeze --task network_analysis --no-validate
+```
+
+Output files:
+- `rca_gold/frozen/<task>.json` - Main dataset
+- `rca_gold/frozen/<task>.holdout.json` - Holdout set (if requested)
+
+### Additional Commands
+
+```bash
+# Show current status
+idol status
+
+# Clean all generated data
+idol clean
+```
+
+## Supported Tasks
+
+IDOL supports 8 task types with specialized heuristics:
+
+1. **job_info** - Job success/failure status
+2. **gpu_hw_analysis** - GPU hardware failure detection (XIDs/SXIDs)
+3. **logs_analysis** - Software errors and numerical instability
+4. **health_checks** - System health status
+5. **scheduler_analysis** - Scheduler termination analysis
+6. **network_analysis** - Network/InfiniBand issues
+7. **storage_analysis** - Storage I/O and metadata spikes
+8. **final_analysis** - Root cause determination with confidence
+
+## Data Format
+
+### Candidate Record (JSONL)
+```json
+{
+  "id": "abc123def456",
+  "task": "gpu_hw_analysis",
+  "input": {
+    "job_id": 4824587,
+    "attempt": 0,
+    "key_findings": "XID 48 hardware failure on node-001",
+    "tool_calls": [{"name": "job_summary", "args": {}}]
+  },
+  "auto": {
+    "result": "confirmed_hw_failure",
+    "evidence": "XIDs: [48]"
+  },
+  "status": "pending"
+}
+```
+
+### Frozen Dataset (JSON)
+```json
+[
+  {
+    "id": "abc123def456",
+    "input": {
+      "job_id": 4824587,
+      "attempt": 0,
+      "key_findings": "...",
+      "tool_calls": []
+    },
+    "gold": {
+      "result": "confirmed_hw_failure",
+      "evidence": "Manual verification"
+    }
+  }
+]
+```
+
+## Project Structure
+
+```
+auto-taskopt/
+├── src/idol/
+│   ├── cli.py          # CLI commands
+│   ├── harvester.py    # Candidate generation
+│   ├── reviewer.py     # Human review interface
+│   ├── freezer.py      # Dataset finalization
+│   ├── heuristics.py   # Task-specific rules
+│   ├── models.py       # Data models
+│   └── utils.py        # Utilities
+├── tests/              # Test suite
+├── examples/           # Sample debug traces
+└── rca_gold/          # Generated data
+    ├── candidates/     # JSONL candidates
+    ├── overrides/      # Human corrections
+    └── frozen/         # Final datasets
+```
+
+## Development
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest tests/ -v
+
+# Run with coverage
+pytest tests/ --cov=src/idol --cov-report=term-missing
+
+# Run specific test module
+pytest tests/test_heuristics.py -v
+```
+
+### Code Quality
+
+```bash
+# Lint code
+ruff check src/ --fix
+
+# Type checking
+mypy src/idol/ --strict
+```
+
+## Performance
+
+- **Harvest**: Process 100 traces in <30 seconds
+- **Review**: Display each candidate in <100ms
+- **Freeze**: Validate 10,000 records in <5 seconds
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Add tests for new functionality
+4. Ensure all tests pass
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details
