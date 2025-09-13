@@ -1,0 +1,52 @@
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bayes-ordinal"
+version = "0.1.0"
+description = "A PyMC-based package for Bayesian ordinal regression with comprehensive workflow tools"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Adithyan Annadurai", email = "3004787a@student.gla.ac.uk" },
+]
+keywords = ["bayesian", "ordinal-regression", "pymc", "arviz", "statistics"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = [
+  "numpy==1.26.4",
+  "scipy==1.11.4",
+  "pymc==5.19.0",
+  "arviz==0.19.0",
+  "xarray==2023.12.0",
+  "matplotlib==3.10.5",
+  "pandas==2.3.1",
+  "scikit-learn==1.7.1",
+  "PyYAML==6.0.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/Adithyanpy/bayes-ordinal"
+Repository = "https://github.com/Adithyanpy/bayes-ordinal"
+Issues = "https://github.com/Adithyanpy/bayes-ordinal/issues"
+
+[tool.setuptools]
+packages = ["bayes_ordinal"]
+
+[project.optional-dependencies]
+dev = [
+  "ipykernel==6.30.0",
+  "jupyterlab>=4.1",
+  "pytest>=7.4",
+  "black>=23.9",
+  "pre-commit>=3.4",
+]

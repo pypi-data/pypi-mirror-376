@@ -1,0 +1,11 @@
+include README.md
+include LICENSE
+recursive-include bayes_ordinal *.py
+prune Dataset
+prune examples
+global-exclude *.ipynb
+global-exclude *.png *.jpg *.jpeg *.gif *.svg
+global-exclude *.pkl *.tmp *.temp
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude .DS_Store
