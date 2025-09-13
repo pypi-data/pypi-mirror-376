@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: snowglobe-sdk
+Version: 0.0.1
+Summary: Simulation engine for AI Agents.
+Home-page: https://snowglobe.so
+Author: Snowglobe
+Author-email: hi@snowglobe.so
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/plain
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+Simulation engine for AI Agents.

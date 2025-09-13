@@ -1,0 +1,7 @@
+pyproject.toml
+setup.py
+sdk/__init__.py
+snowglobe_sdk.egg-info/PKG-INFO
+snowglobe_sdk.egg-info/SOURCES.txt
+snowglobe_sdk.egg-info/dependency_links.txt
+snowglobe_sdk.egg-info/top_level.txt
