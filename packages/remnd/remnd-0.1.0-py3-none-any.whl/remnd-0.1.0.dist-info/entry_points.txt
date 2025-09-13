@@ -1,0 +1,3 @@
+[console_scripts]
+remnd=remnd.cli:main
+
