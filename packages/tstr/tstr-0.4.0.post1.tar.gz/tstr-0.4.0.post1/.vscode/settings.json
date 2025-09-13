@@ -1,0 +1,23 @@
+{
+    "cSpell.words": [
+        "dedented",
+        "fetchone",
+        "fstring",
+        "interp",
+        "intp",
+        "intrp",
+        "pytest",
+        "renderable",
+        "repr",
+        "templatelib",
+        "tstr",
+        "tstring",
+        "tstrings"
+    ],
+    "python.analysis.typeCheckingMode": "standard",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
