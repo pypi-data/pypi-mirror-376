@@ -1,0 +1,12 @@
+adieu_discordbot_cogs/__init__.py,sha256=vo_sL4a3O8WpEZ_dph26E52QJt2tNv-SH4c9auLI6D0,511
+adieu_discordbot_cogs/auth_hooks.py,sha256=DoFkROhl65BTcZMLiY84Kb1tviSPakpmUh97BJNel8w,559
+adieu_discordbot_cogs/helper.py,sha256=QOi5vlJS7VZwlTkaTF7eQwsGUDoaUMv24AJ5TYvgvRE,536
+adieu_discordbot_cogs/cogs/about.py,sha256=7Q-BiVN2o1juUnd60KvDRCsxj8CB3XpgdNLGy1AV1qs,3709
+adieu_discordbot_cogs/cogs/admin.py,sha256=oXtm1S7dAcNEp4jqh5aKbWfpM07KdxH6wZ2XwdS5cjs,20943
+adieu_discordbot_cogs/cogs/auth.py,sha256=v3Xi0b1D_7sFKcAacRq8TackzAPr66MExM3yrOkm4KY,2477
+adieu_discordbot_cogs/cogs/members.py,sha256=jpm0JlzgTyVuQtrzXhrzMm14Mj4sjP-p9yng8tiZV8M,12987
+adieu_discordbot_cogs/cogs/migrate.py,sha256=DCnJEX_xvCvLlry13AygZfcbj7xO4mc-PUgcVYWk2wM,2327
+adieu_discordbot_cogs/cogs/recruit_me.py,sha256=1G-Ev2KmwPiv63ddhs0_JsNhKiqhvF1OnogV1KYII64,3415
+adieu_discordbot_cogs-0.0.17.dist-info/METADATA,sha256=AyJe2nUtS-TxmBvcCouUdrZJ9d23X6_HQds0y7E0bHw,1698
+adieu_discordbot_cogs-0.0.17.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+adieu_discordbot_cogs-0.0.17.dist-info/RECORD,,
