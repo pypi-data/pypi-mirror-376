@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+timecat
+timecat.egg-info/PKG-INFO
+timecat.egg-info/SOURCES.txt
+timecat.egg-info/dependency_links.txt
+timecat.egg-info/top_level.txt
