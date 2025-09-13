@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: veryeasyai
+Version: 0.8.0
+Summary: Uma IA simples com suporte a chat, regressão, RNN, pesquisa na web e análise de dados
+Home-page: https://pypi.org/project/veryeasyai/
+Author: Enzo Gabriel Leal Silva
+Author-email: Enzo Gabriel Leal Silva <seuemail@example.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# VeryEasyAI
+
+Uma biblioteca de IA **extremamente simples** para chat, previsões, regressões, redes neurais e busca na internet.
+
+Instalação (local/testing):
+```
+pip install -e .
+```
+
+Exemplo rápido:
+```python
+import veryeasyai as veai
+
+bot = veai.ChatAI()
+bot.treinar(["oi", "qual seu nome?"], ["Oi!", "Eu sou a VeryEasyAI!"])
+print(bot.responder("oi"))
+```
