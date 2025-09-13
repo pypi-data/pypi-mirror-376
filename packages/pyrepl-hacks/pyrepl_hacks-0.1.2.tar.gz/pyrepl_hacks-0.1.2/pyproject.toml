@@ -1,0 +1,41 @@
+[project]
+name = "pyrepl-hacks"
+version = "0.1.2"
+description = "Hacky extensions and helper functions for the new Python REPL."
+readme = "README.md"
+requires-python = ">=3.13,<3.15"
+license = "MIT"
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/treyhunner/pyrepl-hacks#readme"
+Issues = "https://github.com/treyhunner/pyrepl-hacks/issues"
+Source = "https://github.com/treyhunner/pyrepl-hacks"
+
+[dependency-groups]
+test = ["coverage[toml]"]
+lint = ["ruff", "rumdl"]
+dev = ["prek"]
+
+[tool.coverage.run]
+source = ["pyrepl_hacks", "tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+extend-select = [
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "PIE", # flake8-pie
+    "SIM", # flake8-simplify
+    "COM", # flake8-commas
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
