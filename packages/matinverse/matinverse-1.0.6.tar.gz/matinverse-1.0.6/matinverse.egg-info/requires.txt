@@ -1,0 +1,12 @@
+numpy
+lineax
+equinox
+diffrax
+optimistix
+plotly
+nlopt
+interpax
+msgpack
+msgpack-numpy
+matplotlib
+scipy
