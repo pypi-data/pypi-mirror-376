@@ -1,0 +1,12 @@
+Metadata-Version: 2.3
+Name: yasss
+Version: 0.1.1
+Summary: Add your description here
+Author: Luca Braglia
+Author-email: Luca Braglia <lbraglia@gmail.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# yasss, yet another sample size software
+
+or at least this is the idea
