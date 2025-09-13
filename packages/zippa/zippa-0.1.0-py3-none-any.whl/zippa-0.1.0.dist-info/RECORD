@@ -1,0 +1,7 @@
+tests/__init__.py,sha256=c1Rpg5yEK8P7w0eS2H7MovsZDYC8XGMQJLuFCge1u_s,16
+tests/test_zippa.py,sha256=_e7XrdfnkFYoVXsZVxZwMS5nBwlaIxHx1t_Y4478kz8,9323
+zippa-0.1.0.dist-info/METADATA,sha256=ZFdJUVdzxC1VIDG8cUXPAyy9Bab8mffK869c6pl7Kd4,3706
+zippa-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+zippa-0.1.0.dist-info/entry_points.txt,sha256=XGI4rHGl2-oIdmWFai3F8rEMq1EEcKrWaFFArHOCsu0,40
+zippa-0.1.0.dist-info/top_level.txt,sha256=EdW7283x-lr_cbuivW8Ij7ANAP-ZJ9sLtILQseEPxXg,6
+zippa-0.1.0.dist-info/RECORD,,
