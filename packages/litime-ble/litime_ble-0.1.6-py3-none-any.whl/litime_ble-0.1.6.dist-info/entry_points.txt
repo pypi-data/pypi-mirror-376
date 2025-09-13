@@ -1,0 +1,2 @@
+[console_scripts]
+litime-battery = litime_ble.cli:main
