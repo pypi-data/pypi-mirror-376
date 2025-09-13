@@ -1,0 +1,10 @@
+docs/conf.py,sha256=jkpH_TchRJcC_EspKeY1E_rml2ODmIWhWoqvyCPu_ok,1116
+kececinumbers/__init__.py,sha256=cYNs6k2x0-F5Z8S2gvJusrbl0ZUndi3idNyiRmQ_dU8,5908
+kececinumbers/_version.py,sha256=R5FkZAIAPt_1OB7-twVmimKdKI7zBJ5Lcj7eKhBSWLc,453
+kececinumbers/kececinumbers.py,sha256=IDsjKOqnYqH0V9TQAHOYZznxBVSQW7wpsz8GH161BUw,136978
+kececinumbers-0.7.5.dist-info/licenses/LICENSE,sha256=NJZsJEbQuKzxn1mWPWCbRx8jRUqGS22thl8wwuRQJ9c,1071
+tests/test_sample.py,sha256=vwGbEZ6gcEFq60P5Sqrnc_DVw2QFXOSU1vm3GyzQMnc,9628
+kececinumbers-0.7.5.dist-info/METADATA,sha256=wDxBVHqHwc-7qrabLqRswkVc8yN_wo7Jozv2prRlwCE,34982
+kececinumbers-0.7.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+kececinumbers-0.7.5.dist-info/top_level.txt,sha256=ABQEKRH9iYb4sWnFdx7gIx7Hg899YktRkQpbRlSSqwU,25
+kececinumbers-0.7.5.dist-info/RECORD,,
