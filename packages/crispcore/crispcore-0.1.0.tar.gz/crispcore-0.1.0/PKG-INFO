@@ -1,0 +1,13 @@
+Metadata-Version: 2.3
+Name: crispcore
+Version: 0.1.0
+Summary: A crisp Python library
+Author: Alexis Gallagher
+Author-email: Alexis Gallagher <alexis@alexisgallagher.com>
+Requires-Dist: typing-extensions>=4.0.0 ; python_full_version < '3.11'
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+# crispcore
+
+Some helpers to keep your python development crispy!
