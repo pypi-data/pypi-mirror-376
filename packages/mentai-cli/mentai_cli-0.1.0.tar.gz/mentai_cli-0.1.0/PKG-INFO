@@ -1,0 +1,99 @@
+Metadata-Version: 2.4
+Name: mentai-cli
+Version: 0.1.0
+Summary: An automated CLI tool using AI to solve Menti quiz questions.
+Author: Peter Schwips
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Education :: Testing
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fake-useragent>=2.2.0
+Requires-Dist: openai>=1.102.0
+Requires-Dist: platformdirs>=4.4.0
+Requires-Dist: requests>=2.32.5
+Requires-Dist: rich>=14.1.0
+Requires-Dist: toml>=0.10.2
+Requires-Dist: typer>=0.17.4
+Requires-Dist: websocket-client>=1.8.0
+Dynamic: license-file
+
+![Ruff](https://img.shields.io/badge/Ruff-checked-success?logo=ruff&logoColor=white)
+![Pyright](https://img.shields.io/badge/Pyright-checked-success?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iNjAwLjAwMDAwMHB0IiBoZWlnaHQ9IjYwMC4wMDAwMDBwdCIgdmlld0JveD0iMCAwIDYwMC4wMDAwMDAgNjAwLjAwMDAwMCIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgoKPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsNjAwLjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSIKZmlsbD0iI2ZmZmZmZmZmIiBzdHJva2U9Im5vbmUiPgo8cGF0aCBkPSJNMjY0NyA1NjM4IGMtMzMyIC0zNDQgLTk2NiAtMTAyNSAtMTEyMSAtMTIwMyAtMTUyIC0xNzUgLTE3OCAtMjIxCi0yMDYgLTM2OCBsLTEyIC01OCAtMzYxIC0xNzkgYy0zODMgLTE5MCAtNDcwIC0yNDEgLTQ3NSAtMjc3IC00IC0yNSAxMDAgLTQzNQozNTcgLTE0MTAgbDE4MCAtNjgzIDI5MiAtMzc3IGMxNjEgLTIwOCAzMzggLTQzNiAzOTMgLTUwOCAxNTMgLTE5OSAyMjQgLTI4MgoyNjAgLTMwNSBsMzQgLTIwIDEwOCAzOSBjMTI0IDQ0IDU0OCAyMDUgMTI4OSA0ODggbDUxMCAxOTUgMzEwIC00MSBjNDg1IC02NAo1NjQgLTcyIDY1NCAtNjkgbDgzIDMgMTE3IDIzMCBjNjQgMTI3IDE2OSAzMjcgMjMzIDQ0NSBsMTE2IDIxNSAyNiA1MDAgYzQwCjc1MiA3NSAxMzM3IDg3IDE0NTggNiA1OSA5IDExMSA1IDExNCAtMyAzIC03NCAyMSAtMTU4IDQwIC04NCAxOSAtMTU2IDM3Ci0xNTkgNDEgLTMgNCAtNjMgMTc2IC0xMzMgMzgyIGwtMTI3IDM3NSAtOTM3IDQ3MyBjLTUxNSAyNjAgLTEwMDcgNTA2IC0xMDkyCjU0OCBsLTE1NSA3NiAtMTE4IC0xMjR6IG0xMjEgLTk1IGMzMiAtMTM2IDc0IC0zNDkgMTY3IC04MzggbDg1IC00NTAgLTUyIC01MApjLTI5IC0yNyAtMTU2IC0xNDggLTI4MiAtMjY4IC0xMjYgLTExOSAtMjQwIC0yMjAgLTI1MyAtMjIzIC01NyAtMTUgLTY0IDQKLTk4IDI4NiAtMjcgMjE2IC0zOSAyOTQgLTU3IDM3NCAtMTAgNDcgLTExIDQ4IC00MyA0MyAtNDcgLTggLTIyNCAtNzggLTQyNQotMTcwIC0yMTAgLTk1IC00MDcgLTE3NyAtNDI2IC0xNzcgLTE3IDAgLTE4IDQwIC00IDkwIDE2IDU5IDIxNCAyOTQgNjE0IDczMAoyMjQgMjQ0IDcxOSA3NDAgNzM4IDc0MCAxMiAwIDIxIC0yMiAzNiAtODd6IG0tNTQ5IC0xMjA2IGMxOCAtMjIgMzkgLTEzMiA2NgotMzUxIDM2IC0yODggNTMgLTM1NSAxMDQgLTQwMSAzNiAtMzEgODMgLTIzIDI2MyA0OSAxNjIgNjQgMjI4IDgzIDcwMyAyMDUKMzIxIDgyIDI4OCA4MSAzMTggMTMgMzkgLTg3IDExOCAtMjg4IDIzMSAtNTg3IDE0NCAtMzc4IDE2OSAtNDUyIDE2MiAtNDcwCi0xMyAtMzYgLTUxMiAtMjU2IC0xNTkxIC03MDMgLTEwMjUgLTQyNSAtMTQzMCAtNTkxIC0xNDMyIC01ODggLTYgNiAtMzc4CjE0MjQgLTQzMyAxNjUxIC03NCAzMDUgLTk2IDQxMyAtODQgNDI1IDI4IDI4IDE2MzUgNzY5IDE2NzAgNzcwIDYgMCAxNiAtNiAyMwotMTN6IG0yOTI3IC00NjcgYzE0NiAtMzIgMTgyIC00MSAyNTEgLTY2IDM5IC0xNCA0MiAtMTcgMzIgLTM3IC00NCAtODYgLTMwMQotNDg5IC0zMzEgLTUxOSAtNzUgLTc1IC0xMTUgLTc1IC03MjMgMTAgbC00MTAgNTcgLTQ4IDk1IGMtMjYgNTIgLTQ5IDEwOCAtNTAKMTI0IC0yIDI5IDAgMzAgMTAzIDY0IDgzIDI3IDEwMDggMjk3IDEwMzEgMzAxIDMgMSA2OCAtMTMgMTQ1IC0yOXoiLz4KPC9nPgo8L3N2Zz4K)
+![Python Versions](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12%20|%203.13-blue?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue?logo=open-source-initiative&logoColor=white)
+
+
+# Ment**AI**
+An automated CLI tool using AI to solve [Menti](https://www.menti.com/) quiz questions.
+
+### Table of Contents
+<ul style="padding: 0; padding-left:1em; margin: 0;">
+<li >Getting Started</li>
+    <ul style=" padding-left: 2em; margin-bottom: 0">
+        <li><a href="#todo-installation">Installation</a></li>
+        <li><a href="#todo-usage">Usage</a></li>
+    </ul>
+<li>Functionality</li>
+    <ul style=" padding-left: 2em; margin-bottom: 0">
+        <li><a href="#what-this-tool-can-do">What this tool <b>can</b> do</a></li>
+        <li><a href="#what-this-tool-can't-do">What this tool <b>can't</b> do</a></li>
+    </ul>
+<li>Use Cases</li>
+    <ul style=" padding-left: 2em; margin-bottom: 0">
+        <li><a href="#when-to-use-this-tool">When to use this tool</a></li>
+    </ul>
+<li>Other</li>
+    <ul style=" padding-left: 2em; margin-bottom: 0">
+        <li><a href="#disclaimer">Disclaimer</a></li>
+    </ul>
+</ul>
+
+
+
+## TODO: Installation
+
+
+## TODO: Usage
+
+
+## What this tool can do
+
+This tool can handle all slides for "Quiz competitions" which is "Select Answer" (single choice) and "Type Answer" (free text question).
+Please note that "Select Answer" questions can have multiple correct answers. The participant however can only ever pick one.
+
+
+## What this tool can't do
+
+This tool **cannot** handle any slides on Menti that are not of the category "Quiz competitions". This includes slides such as "Word Cloud", "Guess the Number" and "Multiple Choice" which does not give players a score either.<br>
+This tool does not guarantee you a perfect score.<br><br>
+
+![Slide Types](./docs/images/SlideTypes.png)
+
+
+## When to use this tool
+
+This tool can only be used for Menti presentation that use "Quiz competitions" slides.<br>
+As a student / participant, you can use it to automatically solve quizes.<br>
+As a teacher / presenter, you can use it to prepare the quiz to be unsolvable for AI.<br>
+Please make sure to use this tool in a fair manner.
+
+## Disclaimer
+
+MentAI is in no way affilliated with, authorized, maintained or endorsed by Menti or any of its affiliates or subsidiaries. It is an independent and unofficial project. Use it at your own risk.
+
+
+# TODO: Noch Info zu Settings File
