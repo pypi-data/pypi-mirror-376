@@ -1,0 +1,9 @@
+antback/__init__.py,sha256=BOZs3qMC1CHEK3XA4Sq_8phSgY_L_Anu0x9mVkzlRM4,64
+antback/antback.py,sha256=M39GKM_G10CTDyp5a6zdkxiVnRZ5BqNEUduztKr-DrI,22733
+antback/antreport_templ.htm,sha256=Nq-TU0DiAaYUjZdT3QmHRl9-rfXFBezDEMEmfKz3JVI,68624
+antback/cfd.py,sha256=sln16ie2DLRV2YBzvEfS1CrnCfhXllJKbACBNyAHwbw,35082
+antback/comnt.py,sha256=BeVQLMnCVhX39nP3cfMPrIe85bQV8zRTg0pNFw2TFJ0,6931
+antback/utils.py,sha256=sI0BEd9nTJ3V9IfGWON7J_zwRirTbObWgK7DjrUq3Gg,34472
+antback-0.0.5.dist-info/METADATA,sha256=r0nkOwvcnFv7V0YaWrlwb1NcTHh9sOE0QnpF1wio4M8,10687
+antback-0.0.5.dist-info/WHEEL,sha256=tkmg4JIqwd9H8mL30xA7crRmoStyCtGp0VWshokd1Jc,105
+antback-0.0.5.dist-info/RECORD,,
