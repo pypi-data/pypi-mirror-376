@@ -1,0 +1,5 @@
+bleak>=0.22
+
+[test]
+pytest>=8.2
+pytest-asyncio>=1.2
