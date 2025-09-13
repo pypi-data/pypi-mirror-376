@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+ConsoleColorNew/__init__.py
+ConsoleColorNew/main.py
+ConsoleColorNew/private.py
+ConsoleColorNew.egg-info/PKG-INFO
+ConsoleColorNew.egg-info/SOURCES.txt
+ConsoleColorNew.egg-info/dependency_links.txt
+ConsoleColorNew.egg-info/requires.txt
+ConsoleColorNew.egg-info/top_level.txt
