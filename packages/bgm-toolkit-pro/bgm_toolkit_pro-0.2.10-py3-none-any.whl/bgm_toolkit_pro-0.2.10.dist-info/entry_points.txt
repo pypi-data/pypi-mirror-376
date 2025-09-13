@@ -1,0 +1,3 @@
+[console_scripts]
+bgm-pro = bgm_toolkit.cli:main
+bgm-run = bgm_toolkit.cli:main
