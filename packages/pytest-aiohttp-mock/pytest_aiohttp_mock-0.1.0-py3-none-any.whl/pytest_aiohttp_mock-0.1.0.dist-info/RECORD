@@ -1,0 +1,12 @@
+pytest_aiohttp_mock/__init__.py,sha256=QmcOtjIdmoXYTlppHTdsJzwU-5__M39tS6J8l0jwTTQ,2413
+pytest_aiohttp_mock/_aiohttp_mock.py,sha256=pRK5N7RtvcLHTFDsx9lKXVN36uFpKDx4CGHssfagbg4,13348
+pytest_aiohttp_mock/_options.py,sha256=AwLQSVL3vG9wvtPYnFfXOnmv2KnjoAOBCqOSr4_HM0k,725
+pytest_aiohttp_mock/_pretty_print.py,sha256=ujcKI4EkRrXVRASUPX3ymyBhN3lIEFNgMpL3JkO0fpg,1486
+pytest_aiohttp_mock/_request.py,sha256=GmabNAo-m0UbUw_kTdrAx75oSoXHw9s1lmonGWqjWnE,852
+pytest_aiohttp_mock/_request_matcher.py,sha256=XM1qZg9_XfcjL4Aq8kyQngeeMh59K481Dikpjr_g-uU,3853
+pytest_aiohttp_mock/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_aiohttp_mock-0.1.0.dist-info/METADATA,sha256=KQlLkPIZg2O3gjTdi9ymPXdw28KQPWeZgf0O3i5Zxgs,2449
+pytest_aiohttp_mock-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pytest_aiohttp_mock-0.1.0.dist-info/entry_points.txt,sha256=jXU-m9-AMdBNLWn4zwaFF71grJMvCFPrG2xsbLKVMUw,53
+pytest_aiohttp_mock-0.1.0.dist-info/licenses/LICENSE,sha256=olsEsS2hu-nNugTFwP2mX853t6Wm7YtFMhRJ3aAl5uw,1067
+pytest_aiohttp_mock-0.1.0.dist-info/RECORD,,
