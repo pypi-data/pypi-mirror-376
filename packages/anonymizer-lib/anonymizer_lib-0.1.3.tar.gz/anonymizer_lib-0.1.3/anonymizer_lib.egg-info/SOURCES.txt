@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+anonymizer_lib/__init__.py
+anonymizer_lib/anonymizer.py
+anonymizer_lib/config_generator.py
+anonymizer_lib.egg-info/PKG-INFO
+anonymizer_lib.egg-info/SOURCES.txt
+anonymizer_lib.egg-info/dependency_links.txt
+anonymizer_lib.egg-info/top_level.txt

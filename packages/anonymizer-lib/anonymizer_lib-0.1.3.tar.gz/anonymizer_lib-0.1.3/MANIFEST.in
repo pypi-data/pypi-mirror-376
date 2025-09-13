@@ -1,0 +1,2 @@
+include ANONYMYZER_README.md
+recursive-include anonymizer_lib *.md
