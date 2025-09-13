@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: goray
+Version: 0.1.0
+Summary: Python driver for goray project
+Author-email: WeiminWang <wang0.618@qq.com>
+Requires-Dist: msgpack
+Provides-Extra: ray
+Requires-Dist: ray[default]; extra == "ray"
