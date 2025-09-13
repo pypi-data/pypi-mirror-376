@@ -1,0 +1,11 @@
+netlite/__init__.py,sha256=e1fgR4jCgNJNtGIDfQO1U_8fXKVBnjvRIP9cN9H72es,692
+netlite/dataloader_cifar10.py,sha256=tMOqymYZMq7zI_WcAf87-yQRxlm3Qse7ICtCYBIrj5c,3524
+netlite/dataloader_mnist.py,sha256=jsWCThDyYoVke6x6VMOGgRiQ4o3U1e5ZCIkBeqsfMJo,3739
+netlite/layers.py,sha256=003vZ46Ts5QGFSbkKUMml8XD4Wxyy2bKYyWakAjcjdg,10591
+netlite/loss_functions.py,sha256=dhbekjJkjFwIT2fH_lpzcgafpSP5veP4BqdmAqr6Rh0,3080
+netlite/neural_network.py,sha256=ZBAQEAr7VRuOGbkJaIkYOyTVRtdYNvjZEuRSQzK9tJo,1477
+netlite/optimizer.py,sha256=UY4okAYyXO1aW__-OnQLrcRR3k13tQW665__jhBVi0c,5410
+netlite-0.0.4.dist-info/METADATA,sha256=Rh8PzMYPHK2O0SCKcFoJ8ctDoHZh4nntYaNMiGCBxI4,7468
+netlite-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+netlite-0.0.4.dist-info/licenses/LICENSE,sha256=LjPlYOoBQ4yGo5S6qTr_UM2FQ00SbksNIfVGmVwDs4E,1096
+netlite-0.0.4.dist-info/RECORD,,
