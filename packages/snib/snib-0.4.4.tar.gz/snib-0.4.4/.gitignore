@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# IDE / Editor configs
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Project-specific
+junk/
+prompts/
+snibconfig.toml
+
+# mkdocs site
+site/
+
+# coverage reports
+htmlcov/
+.coverage
+
+# dotenv
+.env

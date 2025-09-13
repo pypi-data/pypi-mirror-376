@@ -1,0 +1,34 @@
+name: Clean old GitHub Pages Deployments
+
+on:
+  workflow_dispatch:  # execute manually
+
+permissions:
+  contents: write
+  deployments: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Delete inactive GitHub Pages deployments
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            echo "Fetch all github-pages deployments..."
+            ALL_DEPLOYMENTS=$(gh api -H "Accept: application/vnd.github+json" \
+            /repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages --paginate)
+
+            echo "Get active deployment IDs..."
+            ACTIVE_ID=$(echo "$ALL_DEPLOYMENTS" | jq -r '.[0].id') # newest = active
+
+            echo "Get all deployment IDs except active..." 
+            IDS=$(echo "$ALL_DEPLOYMENTS" | jq -r ".[].id | select(. != $ACTIVE_ID)")
+
+            for id in $IDS; do
+                echo "Deleting deployment ID $id"
+                gh api -X DELETE /repos/${GITHUB_REPOSITORY}/deployments/$id
+            done
