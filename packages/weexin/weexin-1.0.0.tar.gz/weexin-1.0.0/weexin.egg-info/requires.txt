@@ -1,0 +1,7 @@
+tenacity
+pywin32
+pyperclip
+pillow
+psutil
+colorama
+comtypes
