@@ -1,0 +1,3 @@
+[console_scripts]
+zdp-mcp-demo = zdp_mcp_demo:main
+
