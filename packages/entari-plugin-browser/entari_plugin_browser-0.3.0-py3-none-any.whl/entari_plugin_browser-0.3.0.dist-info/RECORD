@@ -1,0 +1,11 @@
+entari_plugin_browser-0.3.0.dist-info/METADATA,sha256=Ynpm7PRoxVyrmlu7eYqA8EzHCzTIDTmSJ60vLueKaQs,2094
+entari_plugin_browser-0.3.0.dist-info/WHEEL,sha256=9P2ygRxDrTJz3gsagc0Z96ukrxjr-LFBGOgv3AuKlCA,90
+entari_plugin_browser-0.3.0.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+entari_plugin_browser-0.3.0.dist-info/licenses/LICENSE,sha256=JOMfrvYE3aMIr_tzbeSY-8BiIB_rLB56wvM-GWkdeBg,1084
+entari_plugin_browser/__init__.py,sha256=xAVW438SZcp5H84XVuWSWOpk89E8TRPqDLdJSWL8Y7o,2407
+entari_plugin_browser/config.py,sha256=0K9WK8aNefjgfewHVb56q23AXHEIvVKH2CEGCl0ki6U,11198
+entari_plugin_browser/installer.py,sha256=Ye2C77YnFstniWMPJccxCnsHTk5gqI8Z6g4FjleJtiU,7833
+entari_plugin_browser/service.py,sha256=ItjXZUZybxuANEWgZTpQ2rrVTRHcV_HR9YL9fsfp-W8,19473
+entari_plugin_browser/signal.py,sha256=QIRwmjrLPFvaEKlwpK_aujNAjMD_SBv9mPPhhAXb5q8,4067
+entari_plugin_browser/utils.py,sha256=fID6hFPXTrNwZsFiTAoa5dLxRn5GbjTo2C1ZI7yxPOQ,1012
+entari_plugin_browser-0.3.0.dist-info/RECORD,,
