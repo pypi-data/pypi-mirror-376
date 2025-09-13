@@ -1,0 +1,195 @@
+# Restrict Logins
+
+[![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Django Version](https://img.shields.io/badge/django-5.2+-green.svg)](https://www.djangoproject.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/yourusername/restrict_logins/actions)
+
+A Django application that restricts concurrent user logins by managing active sessions. This app allows you to limit the number of simultaneous sessions a user can have and provides utilities to manage user sessions effectively.
+
+## Features
+
+- **Session Limiting**: Restrict the number of concurrent logins per user
+- **Custom Session Model**: Extends Django's default session model to store authenticated user ID
+- **Session Management**: Utilities to delete old sessions or all sessions for a user
+- **Flexible Configuration**: Easy to enable/disable features via Django settings
+- **Comprehensive Testing**: Full test coverage for all functionalities
+
+## Installation
+
+1. Install the package using pip:
+```bash
+pip install django-restrict-logins
+```
+
+2. Add `restrict_logins` to your `INSTALLED_APPS` in your Django settings:
+```python
+INSTALLED_APPS = [
+    # ... other apps
+    'restrict_logins',
+]
+```
+
+3. Run migrations to create the necessary database tables:
+```bash
+python manage.py migrate
+```
+
+## Configuration
+
+Add the following settings to your Django `settings.py`:
+
+```python
+# Session configuration
+SESSION_ENGINE = 'restrict_logins.custom_session_store'
+
+# Restrict logins settings
+ALLOW_MAXIMUM_LOGIN_ALLOWED = True  # Enable session limiting
+MAXIMUM_LOGIN_ALLOWED = 3  # Maximum concurrent sessions per user
+
+ALLOW_DELETE_ALL_SESSIONS = True  # Enable session deletion utilities
+```
+
+### Settings Explanation
+
+- `ALLOW_MAXIMUM_LOGIN_ALLOWED`: Enable/disable the maximum login restriction feature
+- `MAXIMUM_LOGIN_ALLOWED`: Maximum number of concurrent sessions allowed per user
+- `ALLOW_DELETE_ALL_SESSIONS`: Enable/disable the ability to delete all sessions for a user
+
+## Usage
+
+### Automatic Session Management
+
+Once configured, the app automatically manages user sessions:
+
+1. When a user logs in and exceeds the maximum allowed sessions, the oldest session is automatically deleted
+2. The custom session store ensures the authenticated user ID is properly stored
+
+### Manual Session Management
+
+You can also manually manage sessions using the provided utilities:
+
+```python
+from restrict_logins.views import delete_old_session, delete_all_sessions
+
+# Delete the oldest session for a user when max sessions is reached
+delete_old_session(user_id=123)
+
+# Delete all active sessions for a user
+delete_all_sessions(user_id=123)
+```
+
+### Custom Session Model
+
+The app provides a custom session model that extends Django's `AbstractBaseSession`:
+
+```python
+from restrict_logins.models import CustomSession
+
+# Query sessions by user
+user_sessions = CustomSession.objects.filter(authuser_id=user_id)
+```
+
+## Testing
+
+Run the test suite to ensure everything is working correctly:
+
+```bash
+python manage.py test restrict_logins
+```
+
+The test suite covers:
+- Custom session model creation
+- Session store functionality
+- Session management utilities
+- Settings validation
+- Edge cases and error handling
+
+## API Reference
+
+### Models
+
+#### CustomSession
+Extends `AbstractBaseSession` with an additional `authuser_id` field to store the authenticated user's ID.
+
+### Functions
+
+#### delete_old_session(user_id: int)
+Deletes the oldest active session for a user when the maximum allowed concurrent logins is reached.
+
+#### delete_all_sessions(user_id: int)
+Deletes all active sessions for the specified user.
+
+### SessionStore
+Custom session store that overrides Django's default database session store to handle user session management.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Make your changes and add tests
+4. Run the test suite: `python manage.py test`
+5. Commit your changes: `git commit -am 'Add some feature'`
+6. Push to the branch: `git push origin feature/your-feature-name`
+7. Submit a pull request
+
+### Development Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/restrict_logins.git
+cd restrict_logins
+```
+
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Run migrations:
+```bash
+python manage.py migrate
+```
+
+5. Run tests:
+```bash
+python manage.py test
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/yourusername/restrict_logins/issues) page
+2. Create a new issue with detailed information
+3. Provide code examples and error messages when possible
+
+## Changelog
+
+### Version 1.0.0
+- Initial release
+- Custom session model with user ID tracking
+- Session limiting functionality
+- Session management utilities
+- Comprehensive test suite
+
+## Authors
+
+- Harshalkumar Ishi - Initial work
+
+## Acknowledgments
+
+- Django Project for the excellent web framework
+- Contributors and the open-source community
