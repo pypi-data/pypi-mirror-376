@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "files-db2"
+version = "0.1"
+authors = [
+  { name="RadoTheProgrammer", email="rrrado15@gmail.com" },
+]
+description = "Create a database of all the items of a directory"
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+  "pandas>=2.2.3",
+  "tqdm>=4.67.1"
+]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["src"]
+sources = ["src"]
