@@ -1,0 +1,437 @@
+Metadata-Version: 2.4
+Name: agnomux2
+Version: 0.0.1a0
+Summary: Lightweight Universal API Router
+Author-email: gauravkg32 <agnosweaver@gmail.com>
+License-Expression: PolyForm-Noncommercial-1.0.0
+Project-URL: Homepage, https://github.com/agnosweaver/agnomux2
+Project-URL: Repository, https://github.com/agnosweaver/agnomux2
+Project-URL: License, https://polyformproject.org/licenses/noncommercial/1.0.0
+Keywords: api,router,transport,parser,template,agnomux
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: plus
+Requires-Dist: requests>=2.0; extra == "plus"
+Requires-Dist: aiohttp>=3.8; extra == "plus"
+Requires-Dist: websockets>=10.0; extra == "plus"
+Provides-Extra: http
+Requires-Dist: requests>=2.0; extra == "http"
+Requires-Dist: aiohttp>=3.8; extra == "http"
+Provides-Extra: ws
+Requires-Dist: websockets>=10.0; extra == "ws"
+Dynamic: license-file
+
+# agnomux2 - Universal API Multiplexer
+
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![License: PolyForm NC](https://img.shields.io/badge/license-PolyForm%20NC-brightgreen)](https://polyformproject.org/licenses/noncommercial/1.0.0)
+
+> **⚠️ Alpha Release** - This is the debut release of agnomux2. While functional, the API may change in future versions.
+
+**Lightweight Universal API Router** - Route requests to any API through configuration instead of hardcoded clients. Works with any data type and transport protocol. Plug in your own transports and parsers as needed.
+
+Part of the Agnosweaver™ project suite.
+
+## 🔥 Why agnomux2?
+
+Tired of maintaining dozens of API client libraries? Frustrated with hardcoded HTTP clients, GraphQL clients, gRPC clients, and custom API wrappers? **agnomux2** eliminates this complexity by providing a single, configurable router for all your API needs.
+
+```python
+# Configure once, route anywhere
+router = Router()
+router.add_endpoint('weather', {
+    'transport': 'http',
+    'parser': 'json',
+    'request_template': {'url': 'https://api.weather.com/{city}'}
+})
+
+router.add_endpoint('payment', {
+    'transport': 'grpc', 
+    'parser': 'protobuf',
+    'request_template': {'service': 'PaymentService'}
+})
+
+# Same interface for different APIs and protocols
+weather = router.route('weather', city="London")
+payment = router.route('payment', amount=100, currency="USD")
+```
+
+## ✨ Features
+
+- **🔄 Transport Agnostic**: HTTP, gRPC, WebSockets, message queues, or any transport protocol
+- **📊 Data Type Agnostic**: Handle JSON, XML, binary, protobuf, or any data format seamlessly
+- **⚙️ Configuration-Driven**: Define endpoints through config instead of hardcoded clients
+- **🏗️ Extensible Architecture**: Bring-your-own transports and parsers
+- **⚡ Sync & Async**: Full support for both synchronous and asynchronous operations
+- **🌊 Streaming Support**: Real-time streaming responses when supported by transports
+- **📦 Minimal Core**: Lightweight router without bloat
+- **🎯 Standardized Responses**: Consistent response format across all endpoints and data types
+- **🔌 Plugin System**: Registry-based component discovery and registration
+- **🛡️ Error Transparency**: Exceptions bubble up naturally - handle errors your way
+
+## 📦 Installation
+
+```bash
+# PyPI
+pip install agnomux2
+
+# GitHub
+pip install git+https://github.com/agnosweaver/agnomux2.git
+```
+
+**Requirements**: Python 3.11 or higher
+
+## 🚀 Quick Start
+
+### 1. Basic Setup
+
+```python
+from agnomux2 import Router, TransportRegistry, ParserRegistry
+
+# Create router
+router = Router()
+```
+
+### 2. Implement Transport & Parser
+
+Since agnomux2 provides the core routing logic, you implement transports and parsers for your specific needs:
+
+```python
+import requests
+import json
+from agnomux2 import BaseTransport, BaseParser, RawResponse
+
+class HTTPTransport(BaseTransport):
+    def send(self, data, **kwargs):
+        response = requests.post(data['url'], json=data.get('payload'))
+        return RawResponse(response.text, response.headers, response.status_code)
+    
+    async def asend(self, data, **kwargs):
+        # Your async HTTP implementation
+        pass
+
+class JSONParser(BaseParser):
+    def parse_request(self, data, template):
+        # Build request from template
+        return {
+            'url': template['url'].format(**data),
+            'payload': data
+        }
+    
+    def parse_response(self, raw_response):
+        return json.loads(raw_response.data)
+    
+    def get_content_type(self, raw_response):
+        return raw_response.headers.get('content-type', 'application/json')
+
+# Register your components
+TransportRegistry.register('http', HTTPTransport)
+ParserRegistry.register('json', JSONParser)
+```
+
+### 3. Configure & Route!
+
+```python
+# Add endpoints
+router.add_endpoint('weather', {
+    'transport': 'http',
+    'parser': 'json',
+    'request_template': {
+        'url': 'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
+    }
+})
+
+router.add_endpoint('users', {
+    'transport': 'http', 
+    'parser': 'json',
+    'request_template': {
+        'url': 'https://jsonplaceholder.typicode.com/users/{user_id}'
+    }
+})
+
+# Route requests
+weather_response = router.route('weather', city="London", api_key="your-key")
+user_response = router.route('users', user_id=1)
+
+print(f"Weather: {weather_response.content}")
+print(f"User: {user_response.content}")
+```
+
+## 🎯 Common Use Cases
+
+### API Gateway Pattern
+```python
+# Route to different backends based on endpoint
+router.add_endpoint('v1/payments', {
+    'transport': 'http',
+    'parser': 'json', 
+    'request_template': {'url': 'https://payments-v1.internal.com/{endpoint}'}
+})
+
+router.add_endpoint('v2/payments', {
+    'transport': 'grpc',
+    'parser': 'protobuf',
+    'request_template': {'service': 'PaymentsV2Service'}
+})
+
+# Same interface, different backend implementations
+old_payment = router.route('v1/payments', endpoint='charge', amount=100)
+new_payment = router.route('v2/payments', amount=100, currency='USD')
+```
+
+### Multi-Protocol Integration
+```python
+# HTTP REST API
+router.add_endpoint('rest_users', {
+    'transport': 'http',
+    'parser': 'json'
+})
+
+# GraphQL API  
+router.add_endpoint('graphql_users', {
+    'transport': 'http',
+    'parser': 'graphql'
+})
+
+# gRPC Service
+router.add_endpoint('grpc_users', {
+    'transport': 'grpc', 
+    'parser': 'protobuf'
+})
+
+# Same application logic, different protocols
+for endpoint in ['rest_users', 'graphql_users', 'grpc_users']:
+    users = router.route(endpoint, query="active_users")
+    process_users(users.content)  # Same processing logic
+```
+
+### Database Abstraction
+```python
+# Route to different databases with same interface
+router.add_endpoint('postgres_users', {
+    'transport': 'sql',
+    'parser': 'json',
+    'request_template': {'query': 'SELECT * FROM users WHERE id = {user_id}'}
+})
+
+router.add_endpoint('mongodb_users', {
+    'transport': 'mongo',
+    'parser': 'bson', 
+    'request_template': {'collection': 'users', 'filter': {'_id': '{user_id}'}}
+})
+
+# Same interface for different databases
+pg_user = router.route('postgres_users', user_id=123)
+mongo_user = router.route('mongodb_users', user_id=123)
+```
+
+### Streaming Data Processing
+```python
+# Stream from any endpoint that supports it
+for chunk in router.route_stream('live_metrics', metric_type='cpu'):
+    print(f"CPU: {chunk.content['value']}%")
+    if chunk.is_final:
+        break
+
+# Handle different streaming data types
+for chunk in router.route_stream('video_feed', camera_id=1):
+    if chunk.content_type == 'video/mp4':
+        process_video_frame(chunk.content)
+```
+
+## 📚 API Reference
+
+### Core Classes
+
+#### `Router`
+Main interface for configuring endpoints and routing requests.
+
+**Methods:**
+- `add_endpoint(name, config)` - Configure a new endpoint
+- `route(endpoint, **data)` - Route request synchronously
+- `aroute(endpoint, **data)` - Route request asynchronously  
+- `route_stream(endpoint, **data)` - Stream from endpoint synchronously
+- `aroute_stream(endpoint, **data)` - Stream from endpoint asynchronously
+
+#### `BaseTransport`
+Abstract base class for transport implementations.
+
+**Must Implement:**
+- `send(data, **kwargs)` - Send data synchronously
+- `asend(data, **kwargs)` - Send data asynchronously
+
+**Optional Override:**
+- `send_stream(data, **kwargs)` - Send with streaming response
+- `asend_stream(data, **kwargs)` - Async send with streaming response
+
+#### `BaseParser`
+Abstract base class for parser implementations.
+
+**Must Implement:**
+- `parse_request(data, template)` - Build request from data and template
+- `parse_response(raw_response)` - Parse transport response
+
+**Optional Override:**
+- `get_content_type(raw_response)` - Extract content type
+- `parse_stream_chunk(raw_chunk)` - Parse streaming chunk
+
+### Data Structures
+
+#### `Response`
+```python
+@dataclass
+class Response:
+    content: Any  # Can be any data type
+    endpoint_name: str
+    content_type: str
+    timestamp: str
+    metadata: Optional[Dict[str, Any]] = None
+```
+
+#### `StreamChunk`
+```python
+@dataclass  
+class StreamChunk:
+    content: Any  # Can be any data type
+    endpoint_name: str
+    content_type: str
+    timestamp: str
+    metadata: Optional[Dict[str, Any]] = None
+    is_final: bool = False
+```
+
+#### `RawResponse`
+```python
+class RawResponse:
+    def __init__(self, data: Any, headers: Optional[Dict] = None, status: Optional[Any] = None):
+        self.data = data
+        self.headers = headers or {}
+        self.status = status
+```
+
+## 🏗️ Architecture
+
+agnomux2 follows a clean, modular architecture with clear separation of concerns:
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌──────────────────┐
+│     Router      │────│    Registry     │────│  BaseTransport   │
+│  (Orchestrator) │    │   (Discovery)   │    │ (Communication)  │
+└─────────────────┘    └─────────────────┘    └──────────────────┘
+         │                       │                      │
+         │              ┌────────┴────────┐             │
+         │              │                 │             │
+         ▼              ▼                 ▼             ▼
+┌─────────────────┐ ┌──────────┐ ┌──────────────┐ ┌──────────────┐
+│  Your App Code  │ │   HTTP   │ │    gRPC      │ │  WebSocket   │
+│                 │ │Transport │ │  Transport   │ │  Transport   │
+└─────────────────┘ └──────────┘ └──────────────┘ └──────────────┘
+                                           │
+                    ┌──────────────────────┼──────────────────────┐
+                    │                      │                      │
+                    ▼                      ▼                      ▼
+            ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+            │     JSON     │    │   Protobuf   │    │     XML      │
+            │   Parser     │    │   Parser     │    │   Parser     │
+            └──────────────┘    └──────────────┘    └──────────────┘
+```
+
+**Key Principles:**
+- **Configuration over Code**: Define endpoints through config, not hardcoded clients
+- **Transport Abstraction**: Same interface works with any protocol
+- **Data Type Flexibility**: Handle any data format through pluggable parsers
+- **Error Transparency**: Transport/parser exceptions bubble up naturally (by design)
+- **Registry Pattern**: Components register themselves for discovery
+
+## ⚡ Advanced Features
+
+### Template Engines
+```python
+from agnomux2 import BaseTemplateEngine, TemplateRegistry
+
+class JinjaTemplateEngine(BaseTemplateEngine):
+    def render_template(self, template, variables):
+        from jinja2 import Template
+        return Template(template).render(**variables)
+
+TemplateRegistry.register('jinja', JinjaTemplateEngine)
+
+# Use in endpoint config
+router.add_endpoint('dynamic_api', {
+    'transport': 'http',
+    'parser': 'json',
+    'template_engine': 'jinja',
+    'request_template': {
+        'url': 'https://api.service.com/{{ endpoint }}/{{ resource_id }}',
+        'headers': {'Authorization': 'Bearer {{ token }}'}
+    }
+})
+```
+
+### Custom Transport Protocols
+```python
+import websocket
+from agnomux2 import BaseTransport
+
+class WebSocketTransport(BaseTransport):
+    def send(self, data, **kwargs):
+        ws = websocket.create_connection(data['url'])
+        ws.send(json.dumps(data['payload']))
+        result = ws.recv()
+        ws.close()
+        return RawResponse(result)
+
+class MessageQueueTransport(BaseTransport):
+    def send(self, data, **kwargs):
+        # Your message queue implementation
+        pass
+```
+
+### Binary Data Handling
+```python
+class ProtobufParser(BaseParser):
+    def parse_request(self, data, template):
+        # Serialize to protobuf
+        message = MyProtoMessage(**data)
+        return {'payload': message.SerializeToString()}
+    
+    def parse_response(self, raw_response):
+        # Deserialize protobuf response
+        message = MyProtoMessage()
+        message.ParseFromString(raw_response.data)
+        return message
+
+    def get_content_type(self, raw_response):
+        return "application/x-protobuf"
+```
+
+## 🤝 Contributing
+
+**Coming Soon**: A dedicated repository for community contributions and ideas is being set up. Stay tuned!
+
+For now, if you have suggestions or find issues, please reach out via email.
+
+## 📄 License
+
+Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
+
+**⚠️ Important**: This license **prohibits commercial use**. If you need to use agnomux2 in a commercial project, please contact [agnosweaver@gmail.com](mailto:agnosweaver@gmail.com) for a commercial license.
+
+## 📞 Contact
+
+- **Email**: [agnosweaver@gmail.com](mailto:agnosweaver@gmail.com)
+- **Project**: Part of the Agnosweaver™ project suite
+- **Repository**: [https://github.com/agnosweaver/agnomux2](https://github.com/agnosweaver/agnomux2)
+
+---
+
+**One interface. Many APIs.**
+
+*agnomux2 keeps it clean and flexible.*
