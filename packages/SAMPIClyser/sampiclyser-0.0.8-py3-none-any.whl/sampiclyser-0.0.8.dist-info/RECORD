@@ -1,0 +1,13 @@
+sampiclyser/__init__.py,sha256=yhY7o2VZ002ZZa3VtCQLlVezkbmsZ-Z_lUBhQipPneA,1566
+sampiclyser/entry_points.py,sha256=GKvLaviEtSRp_UYg5hmvq4qNRl_mNuiQAxY8e8QGKco,16160
+sampiclyser/sampic_convert_script.py,sha256=x5uUPTlbbuC2VZRtj0QIOLhoB4ezhju0wfmXcCVUUBg,7453
+sampiclyser/sampic_decoder.py,sha256=17QDjTx42izGHWRYxf1qKGzdSFoHKkOyOVuvLg51tRc,46935
+sampiclyser/sampic_tools.py,sha256=OoPEFsbG8XBS0STqldFV5G_PaILXxFRJao6DOY6Yuxw,77170
+sampiclyser/sensor_hitmaps.py,sha256=rQwZsIcAgb3vOlCwg3xFMGP9kYT2XtysnkXoLOafqGo,25509
+sampiclyser/utility_entry_points.py,sha256=gZrm_lkPZWPEYLUWd9Tyipb5anYr4EelMMFv2bLCfLw,3492
+sampiclyser-0.0.8.dist-info/METADATA,sha256=TDDONfZG6WI3IXoqHNQwSejADP79pYnpKFvonmNSUtc,1475
+sampiclyser-0.0.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+sampiclyser-0.0.8.dist-info/entry_points.txt,sha256=bthx0ib4mfsQ8Ei2lyEa-jUHa4AvwNne7F70UnO4LZc,241
+sampiclyser-0.0.8.dist-info/licenses/AUTHORS.rst,sha256=wd-I1uBDL1eQw__SKsAjgJFONWF7eiYq5o0jdTF2_vQ,55
+sampiclyser-0.0.8.dist-info/licenses/LICENSE,sha256=hKgggJ-TB0Hz7-57Vd9kzj72CiafjLuQ92wK6-ULU2o,898
+sampiclyser-0.0.8.dist-info/RECORD,,
