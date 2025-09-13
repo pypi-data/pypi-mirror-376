@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mallsense-sdk"
+version = "0.1.0"
+description = "Unified Python SDK for Mallsense (Core, Sales, Bills)"
+readme = "mallsense_sdk/README.md"
+requires-python = ">=3.8"
+authors = [{name = "MallSense", email = "dev@example.com"}]
+dependencies = [
+  "requests>=2.31,<3",
+  "python-dotenv>=1.0,<2",
+  "pytz>=2023.3,<2026",
+  "python-dateutil>=2.8.2,<3",
+  "pandas>=2,<3",
+  "pydantic>=2.3,<3",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["mallsense_sdk*"]
