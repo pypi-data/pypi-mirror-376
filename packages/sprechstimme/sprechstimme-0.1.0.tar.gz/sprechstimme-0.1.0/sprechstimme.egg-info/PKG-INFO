@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: sprechstimme
+Version: 0.1.0
+Summary: A modular Python synthesizer and sequencer
+Author-email: Baptiste Rech <31.lay-season@icloud.com>
+License: MIT
+Project-URL: Homepage, https://github.com/breatn/sprechstimme
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: sounddevice
+Requires-Dist: scipy
+Dynamic: license-file
+
+# Sprechstimme
+Synthesizer creation python library
