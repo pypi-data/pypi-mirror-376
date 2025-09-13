@@ -1,0 +1,14 @@
+cdklabs/cdk_proserve_lib/__init__.py,sha256=GiJyfnLtNUvv8_5SFfBATShd7XsXBl-7ixIjLpDg_Ek,9090
+cdklabs/cdk_proserve_lib/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+cdklabs/cdk_proserve_lib/_jsii/__init__.py,sha256=_Im2fbWjdOWaoN80CKylkt_Boi-NO1Kz8E6vXX1TykM,1467
+cdklabs/cdk_proserve_lib/_jsii/cdk-proserve-lib@0.10.0.jsii.tgz,sha256=nOtYXuG7DpnB3Fs4_fQp3nL6HCjfpLI5cZ9O22eWMUM,2938595
+cdklabs/cdk_proserve_lib/aspects/__init__.py,sha256=zHTCTMyIVjcWtXRDM7AeemHCeTyzebSpvhd1-lQQTZw,95737
+cdklabs/cdk_proserve_lib/constructs/__init__.py,sha256=_TABQkAs6J33s6G-7TfZlGbWGnZHfoZl2e3M6TKUHxA,254821
+cdklabs/cdk_proserve_lib/patterns/__init__.py,sha256=6wYUOimk_SdIosm1iB6xU7Gzg54o-ru9i64grdqf8N8,148037
+cdklabs/cdk_proserve_lib/types/__init__.py,sha256=3IYfyL1Cc7ueedG_zbNSiGEzSNHRwQwN77fEETANyIs,617129
+cdklabs_cdk_proserve_lib-0.10.0.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+cdklabs_cdk_proserve_lib-0.10.0.dist-info/METADATA,sha256=9jotTOrzjUMfdYCUK1020pzlAQJFk3SavuQz82rJd-4,8679
+cdklabs_cdk_proserve_lib-0.10.0.dist-info/NOTICE,sha256=wdCgV04V8-nzYETy5VXDld4JdBQFG7r8nvLiCVa3Mew,84
+cdklabs_cdk_proserve_lib-0.10.0.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+cdklabs_cdk_proserve_lib-0.10.0.dist-info/top_level.txt,sha256=Vs44V5-Co6j_Qx_ucqQGxTOZFFDDj84KkvQ3MpexszY,8
+cdklabs_cdk_proserve_lib-0.10.0.dist-info/RECORD,,
