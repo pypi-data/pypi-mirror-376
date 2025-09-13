@@ -1,0 +1,2 @@
+[console_scripts]
+haveno-client = haveno_client.cli:main
