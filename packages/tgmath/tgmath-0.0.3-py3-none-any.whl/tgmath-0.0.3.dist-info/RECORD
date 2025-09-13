@@ -1,0 +1,9 @@
+tgmath/__init__.py,sha256=AVyTW_JxKT6ivdjPJ7azMDdw1I19VS_us9H-M2tkpdU,1368
+tgmath/_func.py,sha256=M1mDqzljO_AQ5NnXbS_smXOHTWl10_FYm3eJWC5pcVQ,436
+tgmath/_stats.py,sha256=GuqDcCTV8wW4Kwm0FB-BnYU8OYYDT-XPcu_EDKpbkTM,5035
+tgmath/_trig.py,sha256=WQ0uzerfZpWlOR1BtbLCURoYrT7VjPslR_W81mvB-08,1297
+tgmath/_vec.py,sha256=UfCanMZi4V_L2QajgdtUu5IAjja6T1qEl1xOCIZnV3o,11322
+tgmath-0.0.3.dist-info/METADATA,sha256=rniwh9lPXsd1cj8BfPsMdz7ydXTfPU_iCofoUAq9CqE,1323
+tgmath-0.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tgmath-0.0.3.dist-info/licenses/LICENSE,sha256=EgC5dyg2JGD-oMtsWOuc_U-yN4xRTBfxz0QmYhUGkEs,1092
+tgmath-0.0.3.dist-info/RECORD,,
