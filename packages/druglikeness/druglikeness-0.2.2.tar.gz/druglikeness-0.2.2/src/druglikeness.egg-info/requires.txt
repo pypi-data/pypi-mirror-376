@@ -1,0 +1,13 @@
+torch>=1.13.0
+numpy
+rdkit
+gdown
+tqdm
+
+[eval]
+matplotlib
+seaborn
+
+[train]
+lightning
+wandb
