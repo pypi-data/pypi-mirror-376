@@ -1,0 +1,4 @@
+[console_scripts]
+ml-stack-install = stans_ml_stack.cli.install:main
+ml-stack-repair = stans_ml_stack.cli.repair:main
+ml-stack-verify = stans_ml_stack.cli.verify:main
