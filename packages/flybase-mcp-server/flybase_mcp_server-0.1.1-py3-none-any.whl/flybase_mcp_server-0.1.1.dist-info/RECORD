@@ -1,0 +1,9 @@
+flybase_mcp_server/__init__.py,sha256=FDCBUgGvBL5PvHaqncbGn9KdWoOGL-GfOT1Xe61NiX4,93
+flybase_mcp_server/__main__.py,sha256=JCHz-oxhsO32U2dYNT2Wk4eNkAv8oOiEj0wXolS0eaE,3191
+flybase_mcp_server/data/gene_symbols_fbgn_ids.csv,sha256=ruWyaWkw8a7E5XhIb_bUfT8sTFQWblNiNNc_W6L1MPY,693573
+flybase_mcp_server-0.1.1.dist-info/licenses/LICENSE.txt,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+flybase_mcp_server-0.1.1.dist-info/METADATA,sha256=8T6fGBBxVFxvQhKYZHfwgfp-cGBUumqHJXVsmu1fWvM,1779
+flybase_mcp_server-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flybase_mcp_server-0.1.1.dist-info/entry_points.txt,sha256=osjc06zL8SmwzswlZvAl9WbSMTGOKc-jSQClYXgVtcw,72
+flybase_mcp_server-0.1.1.dist-info/top_level.txt,sha256=ijHCk9RHrjHXn-J2OHoLdeGkjnSiXRHicsHAGtFUOD8,19
+flybase_mcp_server-0.1.1.dist-info/RECORD,,
