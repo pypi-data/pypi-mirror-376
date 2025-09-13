@@ -1,0 +1,140 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "water_heater_operation_mode": {
+                "name": "Zasilanie",
+                "state": {
+                    "off": "tryb czuwania"
+                }
+            }
+        },
+        "climate": {
+            "climate_air_conditioner": {
+                "state_attributes": {
+                    "fan_mode": {
+                        "state": {
+                            "auto": "auto",
+                            "high": "wysoki",
+                            "low": "niski",
+                            "slow": "Wolny"
+                        }
+                    }
+                }
+            }
+        },
+        "event": {
+            "notification": {
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "time_to_change_water_filter": "Musisz wymieni\u0107 filtr wody"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "display_light": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "fresh_air_filter": {
+                "state": {
+                    "off": "wy\u0142\u0105czony",
+                    "smart_off": "wy\u0142\u0105czony"
+                }
+            },
+            "hygiene_dry_mode": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "operation_mode": {
+                "state": {
+                    "power_on": "W\u0142\u0105cz zasilanie"
+                }
+            },
+            "operation_mode_for_location": {
+                "state": {
+                    "power_on": "W\u0142\u0105cz zasilanie"
+                }
+            },
+            "wind_angle": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "wind_strength": {
+                "state": {
+                    "slow": "Wolny"
+                }
+            }
+        },
+        "sensor": {
+            "cock_state": {
+                "state": {
+                    "normal": "tryb czuwania"
+                }
+            },
+            "current_job_mode": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "current_job_mode_stick_cleaner": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "current_state": {
+                "state": {
+                    "initial": "tryb czuwania",
+                    "initializing": "tryb czuwania",
+                    "pause": "wstrzymany",
+                    "paused": "wstrzymany",
+                    "power_off": "wy\u0142\u0105czony",
+                    "power_on": "w\u0142\u0105czony",
+                    "standby": "tryb czuwania"
+                }
+            },
+            "current_state_for_location": {
+                "state": {
+                    "initial": "tryb czuwania",
+                    "initializing": "tryb czuwania",
+                    "pause": "wstrzymany",
+                    "paused": "wstrzymany",
+                    "power_off": "wy\u0142\u0105czony",
+                    "power_on": "w\u0142\u0105czony",
+                    "standby": "tryb czuwania"
+                }
+            },
+            "fresh_air_filter": {
+                "state": {
+                    "off": "wy\u0142\u0105czony",
+                    "smart_off": "wy\u0142\u0105czony"
+                }
+            },
+            "rinse_level": {
+                "state": {
+                    "rinselevel_0": "O"
+                }
+            },
+            "sterilizing_state": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "target_temperature": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "target_temperature_for_location": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            }
+        }
+    }
+}

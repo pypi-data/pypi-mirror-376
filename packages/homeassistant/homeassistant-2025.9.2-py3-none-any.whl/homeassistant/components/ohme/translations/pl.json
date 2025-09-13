@@ -1,0 +1,14 @@
+{
+    "entity": {
+        "sensor": {
+            "status": {
+                "state": {
+                    "paused": "wstrzymany"
+                }
+            },
+            "vehicle_battery": {
+                "name": "Akumulator pojazdu"
+            }
+        }
+    }
+}

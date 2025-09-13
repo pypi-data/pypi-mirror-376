@@ -1,0 +1,25 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "assist_in_progress": {
+                "name": "Pomoc w toku"
+            }
+        },
+        "select": {
+            "pipeline": {
+                "name": "Asystent",
+                "state": {
+                    "preferred": "preferowane"
+                }
+            },
+            "vad_sensitivity": {
+                "name": "Wykrywanie zako\u0144czenia m\u00f3wienia",
+                "state": {
+                    "aggressive": "Agresywne",
+                    "default": "Domy\u015blne",
+                    "relaxed": "Rozlu\u017anione"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Harmonogram",
+            "state": {
+                "off": "wy\u0142\u0105czony",
+                "on": "w\u0142\u0105czony"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Zarz\u0105dzane przez UI",
+                    "state": {
+                        "false": "nie",
+                        "true": "tak"
+                    }
+                },
+                "next_event": {
+                    "name": "Nast\u0119pne wydarzenie"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Wczytaj ponownie"
+        }
+    },
+    "title": "Harmonogram"
+}
