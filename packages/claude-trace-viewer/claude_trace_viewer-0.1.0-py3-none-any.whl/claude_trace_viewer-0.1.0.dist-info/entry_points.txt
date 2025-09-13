@@ -1,0 +1,3 @@
+[console_scripts]
+claude-trace-viewer = trace_viewer.__main__:main
+ctv = trace_viewer.__main__:main
