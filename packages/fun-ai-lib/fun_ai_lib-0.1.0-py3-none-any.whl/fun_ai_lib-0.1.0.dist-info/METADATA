@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: fun-ai-lib
+Version: 0.1.0
+Summary: Functional AI library.
+Author-email: Greg Zozulin <gzozulin@gmail.com>
+License: Apache-2.0
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# f-ai
+
+⚠️ Placeholder release — full library coming soon.
