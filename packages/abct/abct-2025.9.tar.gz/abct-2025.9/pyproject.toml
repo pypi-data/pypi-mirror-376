@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abct"
+version = "2025.09"
+description = "Python implementation of the abct"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "torch>=2.0",
+    "numpy>=2.0",
+    "scipy",
+    "pynndescent",
+    "pymanopt",
+    "igraph"
+    ]
+
+[tool.setuptools]
+packages = [
+    "abct",
+    "abct.muma",
+    "abct.loyv",
+    "abct.docstrings"
+    ]
+
+[tool.setuptools.package-data]
+"abct.docstrings" = ["*"]
