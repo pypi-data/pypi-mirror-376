@@ -1,0 +1,219 @@
+# Maniac
+
+LLM-agnostic AI program orchestration with continuous prompt optimization and LoRA fine-tuning across all models.
+
+## Overview
+
+Maniac provides a unified interface for deploying AI programs across any LLM provider or model. Each inference line spawns an **AI Program Container** that continuously optimizes both prompts and LoRA fine-tuning parameters across all models, ensuring optimal performance regardless of which model the Control Plane allocates.
+
+## Quick Start
+
+### Installation
+
+```bash
+pip install maniac
+```
+
+### Basic Usage
+
+```python
+from maniac import Maniac
+
+# Initialize with your preferred provider
+client = Maniac(provider="openai", api_key="your-key")
+# or
+client = Maniac(provider="vertex", project_id="your-project", region="us-east5")
+
+# Customer support ticket analysis
+response = client.responses.create(
+    model="claude-opus-4",
+    input="Customer reports: 'Payment failed but was charged anyway. Order #12345'", 
+    instructions="You are a customer support analyst. Categorize the issue, determine urgency, and suggest resolution steps.",
+    temperature=0.0,
+    max_tokens=1024,
+    task_label="support-ticket-analysis",
+    judge_prompt="You are comparing two customer support analyses for the same ticket. Is response A's categorization and resolution plan at least as accurate and actionable as response B's? Focus on issue identification, urgency assessment, and solution quality."
+)
+
+# Document summarization for compliance
+response = client.chat.completions.create(
+    model="claude-opus-4",
+    messages=[
+        {"role": "system", "content": "You are a compliance officer specializing in financial regulations."},
+        {"role": "user", "content": "Summarize the key compliance risks in this 50-page contract..."}
+    ],
+    temperature=0.0,
+    task_label="compliance-review"
+)
+
+# Stream existing analysis results (bypass inference for batch processing)
+client.chat.completions.stream_create(
+    task_label="document-processing",
+    system_prompt="You are a legal document analyst.",
+    user_prompt="Extract key terms from this vendor agreement...",
+    output="Key terms: Payment net 30, liability cap $1M, termination 90 days notice...",
+    judge_prompt="You are comparing two contract analyses for the same document. Is response A's extraction of key terms at least as complete and accurate as response B's? Focus on identifying all critical terms, payment conditions, and legal obligations."
+)
+```
+
+## Core Concepts
+
+### AI Program Containers
+
+Every inference line creates an AI Program Container that:
+
+- **Continuously optimizes prompts and LoRA adaptations** across all models simultaneously, ensuring each container can deploy optimally on any model (closed-source or open-source)
+- **Maintains unified optimization state** combining prompt engineering and fine-tuning metrics across the entire model ecosystem
+- **Handles seamless model switching** with pre-optimized prompts and LoRA weights ready for any target model
+- **Automatically balances prompt vs LoRA optimization** based on model capabilities (e.g., more LoRA for open-source, more prompt engineering for closed-source)
+
+### Control Plane
+
+The Control Plane allocates containers to LLMs based on:
+
+- **Quality preferences** specified in judge prompts
+- **Cost constraints** configured in the dashboard  
+- **Latency requirements** for real-time vs batch processing
+- **Optimization readiness** - how well each container's prompts and LoRA weights are optimized for each model
+- **Model capabilities** and task compatibility
+
+### Supported Providers
+
+- **OpenAI**: GPT-4o, GPT-4, GPT-3.5, O3-mini (prompt optimization + API-level adaptation)
+- **Anthropic (Vertex AI)**: Claude Opus 4, Claude Sonnet 4 (prompt optimization + structured fine-tuning)
+- **Open-source models**: Llama, Mistral, CodeLlama (unified prompt + LoRA optimization)
+
+## Configuration
+
+### Provider Setup
+
+**OpenAI:**
+```python
+client = Maniac(
+    provider="openai",
+    api_key="sk-...",
+    base_url="https://api.openai.com/v1"  # optional
+)
+```
+
+**Vertex AI:**
+```python
+client = Maniac(
+    provider="vertex",
+    project_id="your-gcp-project",
+    region="us-east5"
+)
+```
+
+### Quality Control
+
+Use judge prompts to specify quality criteria:
+
+```python
+response = client.responses.create(
+    model="claude-opus-4",
+    input="Vendor contract shows $2M annual spend but accounting shows $2.1M. Investigate discrepancy.",
+    instructions="You are a financial auditor. Identify potential causes for the discrepancy and recommend investigation steps.",
+    temperature=0.0,
+    max_tokens=2000,
+    task_label="financial-audit",
+    judge_prompt="You are comparing two financial audit analyses for the same discrepancy. Is response A's identification of root causes and investigation plan at least as thorough and actionable as response B's? Focus on completeness of potential causes and clarity of next steps."
+)
+```
+
+## Dashboard Configuration
+
+Access the Maniac dashboard to configure:
+
+- **Cost preferences**: Set budget limits and cost-per-token thresholds
+- **Latency targets**: Specify response time requirements
+- **Model preferences**: Define fallback hierarchies and quality trade-offs
+- **Container policies**: Configure joint prompt + LoRA optimization schedules and resource limits
+
+## Advanced Features
+
+### Task Labeling
+
+Group related inferences for coordinated prompt and LoRA optimization across all models:
+
+```python
+import concurrent.futures
+
+task_id = "customer-support-analysis"
+
+def process_ticket(ticket_data):
+    return client.responses.create(
+        model="claude-opus-4",
+        input=ticket_data["customer_message"],
+        instructions="You are a customer support analyst. Categorize the issue, assess urgency (Low/Medium/High), and provide resolution steps.",
+        temperature=0.0,
+        max_tokens=1024,
+        task_label=task_id,
+        judge_prompt="You are comparing two customer support analyses for the same ticket. Is response A's categorization, urgency assessment, and resolution plan at least as accurate and helpful as response B's? Focus on accuracy of issue identification and practicality of solutions."
+    )
+
+# Process support tickets concurrently with shared task_label
+with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    results = list(executor.map(process_ticket, support_tickets))
+```
+
+### Streaming
+
+```python
+stream = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Analyze this 10-K filing for competitive risks and revenue projections..."}],
+    stream=True,
+    task_label="financial-analysis"
+)
+
+for chunk in stream:
+    print(chunk.choices[0].delta.content, end="")
+```
+
+### Parameter Reference
+
+**responses.create() parameters:**
+- `model`: Model name (e.g., "claude-opus-4", "gpt-4o")  
+- `input`: Business document, customer inquiry, or data to analyze
+- `instructions`: Domain-specific role and task definition (e.g., "financial auditor", "compliance officer")
+- `temperature`: Randomness (0.0 for consistent analysis, higher for creative tasks)
+- `max_tokens`: Response length limit (1024 for summaries, 4096 for detailed analysis)
+- `task_label`: Groups related business processes for unified optimization
+- `judge_prompt`: Quality standards for business-critical decisions
+
+**stream_create() parameters:**
+- `task_label`: Task identifier for grouping
+- `system_prompt`: System instructions  
+- `user_prompt`: User input
+- `output`: Pre-generated response content
+- `judge_prompt`: Evaluation criteria
+
+## Enterprise Benefits
+
+### Cost Management & Performance Reliability
+- **Automatic cost optimization**: Containers switch between models based on budget constraints while maintaining quality standards
+- **Performance guarantees**: Pre-optimized prompts and LoRA weights ensure consistent output quality regardless of model availability
+- **Vendor risk mitigation**: Single API maintains operations even when specific model providers experience outages or policy changes
+
+### Rapid Model Adoption
+- **Zero-downtime model transitions**: New models automatically receive optimized prompts and fine-tuning from existing container data
+- **Quality-assured deployment**: Judge prompts ensure new models meet established performance benchmarks before production use
+- **Seamless scaling**: Containers handle traffic spikes by intelligently distributing across available models based on latency and cost requirements
+
+### Operational Excellence
+- **Centralized monitoring**: Dashboard provides unified visibility across all models, tasks, and performance metrics
+- **Compliance-ready logging**: Complete audit trail of all inferences, optimizations, and model selections
+- **Enterprise-grade reliability**: Built-in fallback mechanisms and automatic retry logic ensure business continuity
+
+## Best Practices
+
+- **Use task labels** to group related inferences for coordinated prompt + LoRA optimization across the entire model ecosystem
+- **Specify judge prompts** to guide quality-aware model selection and optimization direction
+- **Set appropriate temperature** values (0.0 for deterministic tasks, higher for creative tasks)
+- **Configure fallback models** in the dashboard - containers automatically maintain optimized prompts and LoRA weights for each fallback
+- **Monitor container metrics** to track both prompt engineering and fine-tuning performance across models
+
+## Support
+
+For issues and feature requests, visit the [Maniac documentation portal](https://docs.maniac.ai) or contact support@maniac.ai.
