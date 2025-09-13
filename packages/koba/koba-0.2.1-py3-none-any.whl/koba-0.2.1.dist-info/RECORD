@@ -1,0 +1,11 @@
+koba/__init__.py,sha256=EH-JSd-OK36LwXLQan8rC2FehNool3x6nMofugw43R8,76
+koba/main.py,sha256=u9n-UtdCcTnnc803epFTNeGICnHYgxwQkbrJd1vpJD0,6416
+koba/core/charsets.py,sha256=B_mW5XHK4GyfMLYglgWL1UtQEfs1l5gBn9cVbguvAa0,473
+koba/core/font.py,sha256=YvYHF-ey3UBn6leHJ7JztcTjjzYrXg6jKnlxRwnsuzk,2061
+koba/core/unify.py,sha256=xuxT-4PYyDAYpARO5FNmH1FHMKB-Se_SObTapjMIHIc,5176
+koba-0.2.1.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+koba-0.2.1.dist-info/METADATA,sha256=eEakdtddvAAOrTTtNcV0uWOp4vKvMWSQwd-i_cv5GVY,44567
+koba-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+koba-0.2.1.dist-info/entry_points.txt,sha256=mRiW_yV1k2VhhElpEWi2hJ4Gb17B4t3eFT9AFjylvnE,40
+koba-0.2.1.dist-info/top_level.txt,sha256=ge277iZjZDBLzTykBQaIWkgDaRnJL_5vdqo_z8UICsw,5
+koba-0.2.1.dist-info/RECORD,,
