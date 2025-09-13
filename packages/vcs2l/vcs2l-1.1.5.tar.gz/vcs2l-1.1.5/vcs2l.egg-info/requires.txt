@@ -1,0 +1,14 @@
+PyYAML
+
+[:python_version < "3.7"]
+setuptools
+
+[:python_version < "3.8" and python_version >= "3.7"]
+importlib_metadata
+
+[docs]
+sphinx>=8.2
+sphinx-rtd-theme
+
+[test]
+pytest
