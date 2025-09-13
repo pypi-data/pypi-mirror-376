@@ -1,0 +1,13 @@
+./.gitignore,sha256=Mx1aTj8oY2KtfXKEb8FSA4opZbrgKFjK40QRPp5y-8Q,125
+./.python-version,sha256=e1X45ntWI8S-8_ppEojalDfXnTq6FW3kjUgdsyrH0W0,5
+./PKG-INFO,sha256=erEtg46Pr7pUSRDVoN_jQP0ONk968BvLa2MbTX41p4A,3707
+./README.md,sha256=lZes-gpnTDirjvhrVHpYnxhawlgnCoR9s7S6G2bZ47E,3634
+./file.py,sha256=x_Nng9CKINSFD3q8DJI3fNvJS0wo1DLSUhwllNNhhcE,1446
+./gg_main.py,sha256=WhO5qMRzDSDZ2rh7Wy_0gy19n7SbXECwIrgkocafgJs,13914
+./llm.py,sha256=eoK5TVj_nuUYUO9yJEKyMOhX2teHJGNi0pI92NHhdHo,14896
+./pyproject.toml,sha256=cu9WOnH4FfCHCoqz0kN2UJ4CkBwuCh4JWYVqCM9d7pI,383
+./uv.lock,sha256=_emeDul6bTKN0OI-c2Kt3HL2c5Bru-wEXmQQmWUFwAE,49706
+gg_cli-0.1.0.dist-info/METADATA,sha256=erEtg46Pr7pUSRDVoN_jQP0ONk968BvLa2MbTX41p4A,3707
+gg_cli-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gg_cli-0.1.0.dist-info/entry_points.txt,sha256=JrPnSZ9Qcz0Qh8mbUHMHb4Z9CC-oQfP1axTsfyuzPHw,39
+gg_cli-0.1.0.dist-info/RECORD,,

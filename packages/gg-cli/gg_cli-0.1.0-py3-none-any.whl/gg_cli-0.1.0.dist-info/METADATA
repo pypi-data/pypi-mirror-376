@@ -1,0 +1,173 @@
+Metadata-Version: 2.4
+Name: gg-cli
+Version: 0.1.0
+Summary: Command-line agent
+Requires-Python: >=3.12
+Requires-Dist: appdirs>=1.4.4
+Requires-Dist: openai>=1.102.0
+Requires-Dist: requests>=2.32.5
+Description-Content-Type: text/markdown
+
+# GG CLI - 大模型命令行工具
+
+一个功能强大的命令行大模型工具，支持多种LLM提供商，提供交互式聊天和终端命令执行功能。
+
+## ✨ 特性
+
+- 💬 **交互式聊天**: 提供流畅的命令行聊天体验
+- ⚡ **终端集成**: 内置终端命令执行功能，支持跨平台
+
+## 📦 安装
+
+
+
+### 从PyPI安装（更新中）
+
+```bash
+pip install gg-cli
+```
+
+## 🚀 快速开始
+
+### 1. 首次配置
+
+```bash
+# 添加LLM配置
+gg add
+# 跟随向导完成配置
+# 您需要获取大模型服务商的 url 和 api_key
+
+# 添加完成后，使用list查看配置
+gg list
+```
+
+### 2. 开始聊天
+
+```bash
+# 交互式聊天模式
+gg
+
+# 发送单条消息
+gg "你好，请介绍一下自己"
+```
+
+## 📖 使用指南
+
+### 配置管理
+
+#### 添加配置
+```bash
+gg add
+```
+交互式添加新的LLM配置，包括：
+- **name**: 配置标识名称（可选，默认为当前日期）
+- **api_key**: API密钥（必需）
+- **base_url**: API基础URL（默认：https://api.openai.com/v1）
+- **model**: 模型名称（必需）
+- **temperature**: 温度参数0.0-2.0（默认：0.7）
+
+#### 查看配置
+```bash
+gg list
+```
+显示所有已保存的LLM配置信息。
+
+#### 更新配置
+```bash
+gg update
+```
+交互式更新现有配置（除名称外）。
+
+#### 删除配置
+```bash
+gg delete
+```
+删除指定的LLM配置。
+
+#### 设置默认配置
+```bash
+gg default
+```
+从现有配置中选择一个设为默认LLM。
+
+### 聊天模式
+
+#### 交互式聊天
+```bash
+gg
+```
+启动交互式聊天模式，支持：
+- 连续对话
+- 终端命令执行
+- 多轮对话上下文保持
+
+#### 退出聊天
+在聊天模式中输入以下任一命令退出：
+- `\q` 或 `\quit`
+- `\e` 或 `\exit`
+- `Ctrl+C`
+
+### 终端功能
+
+GG CLI集成了强大的终端功能：
+- **命令执行**: 支持执行系统命令
+- **跨平台**: 自动适配Windows PowerShell、Linux Bash、macOS Zsh
+- **安全确认**: 执行命令前需要用户确认
+- **实时输出**: 实时显示命令执行结果
+- **错误处理**: 完善的错误处理和超时机制
+
+## 🔧 配置说明
+
+### 配置文件位置
+- **Windows**: `%APPDATA%\gg-cli\gg-cli\config.enc`
+- **Linux/macOS**: `~/.config/gg-cli/config.enc`
+
+### 支持的LLM提供商
+
+| 提供商 | Base URL | 示例模型 |
+|--------|----------|----------|
+| OpenAI | https://api.openai.com/v1 | gpt-4, gpt-3.5-turbo |
+| 阿里云通义千问 | https://dashscope.aliyuncs.com/compatible-mode/v1 | qwen-max, qwen-plus |
+| 其他兼容OpenAI API的服务 | 自定义 | 自定义 |
+
+## 📋 系统要求
+
+- Python 3.12+
+- 支持的操作系统：Windows、Linux、macOS
+- 网络连接（用于API调用）
+
+## 🛠️ 开发
+
+### 项目结构
+```
+gg-cli/
+├── gg_main.py      # 主程序入口
+├── llm.py          # LLM核心功能
+├── file.py         # 配置文件管理
+├── pyproject.toml  # 项目配置
+└── README.md       # 说明文档
+```
+
+### 依赖项
+- `openai>=1.102.0`: OpenAI API客户端
+- `requests>=2.32.5`: HTTP请求库
+- `appdirs>=1.4.4`: 跨平台应用目录管理
+
+## 🤝 贡献
+
+欢迎提交Issue和Pull Request！
+
+作者邮箱：241098038@smail.nju.edu.cn
+
+## 📄 许可证
+
+本项目采用MIT许可证。
+
+## 🔗 相关链接
+
+- [OpenAI API文档](https://platform.openai.com/docs)
+- [阿里云通义千问API文档](https://help.aliyun.com/zh/dashscope/)
+
+---
+
+**注意**: 使用前请确保已获得相应LLM提供商的API访问权限。

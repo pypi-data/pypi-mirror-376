@@ -1,0 +1,2 @@
+[console_scripts]
+gg = gg_main:gg_main
