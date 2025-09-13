@@ -1,0 +1,11 @@
+dinamicarslib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dinamicarslib/dataset.py,sha256=88AsB7PDr5HZptpVdvtFLZCPovfUyFlYNRpg5FhfvzQ,4010
+dinamicarslib/earth_engine.py,sha256=eQo5lC32xvmWam_MF5LVyvCdOivysX2hr5J3jYoF4SI,5887
+dinamicarslib/image_processing.py,sha256=vgwr0VvqgcMflSlH3GMVb-_da9KRR8RxSgfWa5BQSVk,9616
+dinamicarslib/utils.py,sha256=4BmlCvR7xOkhuwTZb9PZEcp0hABLjFaeuMsqrW8z0u0,801
+dinamicarslib/vector.py,sha256=gRHZPWWOdjV1ZgZ-Rk8z3YzpFK9zrEZ7t_ZJPjgjx90,4032
+dinamicarslib-0.0.3.dist-info/licenses/LICENSE,sha256=Vi47syRqrfgl2ceSBLMYqxhkdiqUMGItU261nC6CiEI,35145
+dinamicarslib-0.0.3.dist-info/METADATA,sha256=BhbE6SC-sKxroy07LCTzon1Qh9nZKDsIz-nYDiQx53Y,3490
+dinamicarslib-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dinamicarslib-0.0.3.dist-info/top_level.txt,sha256=CYY8cJZzJc5HVdEzi6u3GWmud1acjGPeCZdUKG0SMmU,14
+dinamicarslib-0.0.3.dist-info/RECORD,,
