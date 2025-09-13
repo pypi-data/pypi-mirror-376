@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]  # 构建依赖
+build-backend = "setuptools.build_meta"  # 构建后端
+
+[project]
+name = "mhjsmap"  # 包名，在PyPI上必须唯一
+version = "0.1.0"                  # 版本号，遵循语义化版本控制
+authors = [
+    { name = "yangenhong", email = "2678269796@qq.com" },
+]
+description = "a map"
+readme = "README.md"
+requires-python = ">=3.8"          # 支持的Python版本
+license = { text = "MIT License" } # 许可证
+classifiers = [                    # 分类器，帮助用户发现你的包
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [                   # 你的包的运行时依赖
+    
+]
+
