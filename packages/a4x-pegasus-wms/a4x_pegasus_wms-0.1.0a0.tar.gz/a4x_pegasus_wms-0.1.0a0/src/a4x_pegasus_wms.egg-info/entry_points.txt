@@ -1,0 +1,2 @@
+[wms_plugins]
+pegasus = a4x_pegasus_wms:PegasusWMS

@@ -1,0 +1,15 @@
+COPYRIGHT.md
+LICENSE.md
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/a4x_pegasus_wms/__init__.py
+src/a4x_pegasus_wms/version.py
+src/a4x_pegasus_wms.egg-info/PKG-INFO
+src/a4x_pegasus_wms.egg-info/SOURCES.txt
+src/a4x_pegasus_wms.egg-info/dependency_links.txt
+src/a4x_pegasus_wms.egg-info/entry_points.txt
+src/a4x_pegasus_wms.egg-info/not-zip-safe
+src/a4x_pegasus_wms.egg-info/requires.txt
+src/a4x_pegasus_wms.egg-info/top_level.txt
