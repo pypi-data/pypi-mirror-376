@@ -1,0 +1,7 @@
+README.md
+packetdb.py
+setup.py
+packetdb.egg-info/PKG-INFO
+packetdb.egg-info/SOURCES.txt
+packetdb.egg-info/dependency_links.txt
+packetdb.egg-info/top_level.txt
