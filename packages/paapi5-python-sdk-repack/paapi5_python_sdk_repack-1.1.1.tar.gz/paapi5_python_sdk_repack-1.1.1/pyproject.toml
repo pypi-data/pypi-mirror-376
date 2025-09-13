@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paapi5-python-sdk-repack"   # PyPIの配布名（占有時は後で変更可）
+version = "1.1.1"
+description = "Repackaged Amazon PA-API 5.0 Python SDK; keeps import name 'paapi5_python_sdk'."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "COPYING.txt" }
+authors = [{ name = "Naoki Makino" }]
+keywords = ["amazon", "paapi5", "product advertising api", "sdk"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+]
+
+# 必要に応じて調整（元SDKが追加依存を持つ場合のみ増やす）
+dependencies = [
+  "requests>=2.28",
+  "urllib3>=1.26,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/your/repo"
+Repository = "https://github.com/your/repo"
+Issues = "https://github.com/your/repo/issues"
+
+[tool.setuptools]
+include-package-data = true
+license-files = ["LICENSE*", "COPYING*", "NOTICE*"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["paapi5_python_sdk*"]
