@@ -1,0 +1,1 @@
+vllm_semantic_router_bench

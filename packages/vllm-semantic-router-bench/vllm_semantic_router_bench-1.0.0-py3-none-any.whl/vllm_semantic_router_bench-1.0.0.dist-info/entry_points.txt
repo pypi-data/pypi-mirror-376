@@ -1,0 +1,4 @@
+[console_scripts]
+bench-plot = vllm_semantic_router_bench.bench_plot:main
+router-bench = vllm_semantic_router_bench.router_reason_bench_multi_dataset:main
+vllm-semantic-router-bench = vllm_semantic_router_bench.cli:main
