@@ -1,0 +1,11 @@
+fastapi
+numpy
+
+[tests]
+uvicorn
+pytest
+pytest-asyncio
+aiohttp
+h5pyd
+readerwriterlock
+opencv-python-headless
