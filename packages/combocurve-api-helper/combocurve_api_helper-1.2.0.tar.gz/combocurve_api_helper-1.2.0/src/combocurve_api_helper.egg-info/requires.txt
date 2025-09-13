@@ -1,0 +1,4 @@
+combocurve-api-v1
+more-itertools
+requests
+typing-extensions
