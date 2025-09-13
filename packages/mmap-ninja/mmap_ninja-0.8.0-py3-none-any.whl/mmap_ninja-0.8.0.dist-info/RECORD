@@ -1,0 +1,12 @@
+mmap_ninja/__init__.py,sha256=Arom5nlXB5vP1ZSorsUISUyBS82kJ_pUcea8-9tseYs,403
+mmap_ninja/base.py,sha256=-hZEiJ9Yp3qrAjAPlj8tZAxSXQq4mUBzmHgE7-PM64Q,7312
+mmap_ninja/generic.py,sha256=71m1Fn7a08Oq-OY3eIucUNqkasV4FSOpS96fwNY6Wqs,956
+mmap_ninja/numpy.py,sha256=knKB3mSeuXOIhgwiteDr4UZhxjSqymehLX0i6t6AAE8,6926
+mmap_ninja/ragged.py,sha256=2wYjEoTJMYQjigepCuEYorwzNBKz8ysQs2XloO3uXAU,6670
+mmap_ninja/sorter.py,sha256=cy1ERjlHQik0qqHbwWapEuiFJJY9v8l18glUY9D7NoY,282
+mmap_ninja/string.py,sha256=RhtqagIBVVK-NpMQKIHm1xxj079_kXQKkW7z39YHKz8,4702
+mmap_ninja-0.8.0.dist-info/licenses/LICENSE,sha256=xHIxMshPVIWVLeZtLe8-JxGCqG1xyxMknUxRYTwTSmI,1072
+mmap_ninja-0.8.0.dist-info/METADATA,sha256=_MqjMx6TVD1c4-951M4qqRH2JkcAHDZynd5MEaEfv_Y,13486
+mmap_ninja-0.8.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mmap_ninja-0.8.0.dist-info/top_level.txt,sha256=y8zRRUVfcqWXvQmwYYwZvDFN6vZkRMBmbflRvHWWb88,11
+mmap_ninja-0.8.0.dist-info/RECORD,,
