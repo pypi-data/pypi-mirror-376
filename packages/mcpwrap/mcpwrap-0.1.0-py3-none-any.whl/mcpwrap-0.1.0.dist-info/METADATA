@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: mcpwrap
+Version: 0.1.0
+Summary: Minimal MCP-like library to wrap Python functions as HTTP endpoints.
+Author-email: Your Name <youremail@example.com>
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi
+Requires-Dist: pydantic
+Requires-Dist: uvicorn
+Dynamic: license-file
