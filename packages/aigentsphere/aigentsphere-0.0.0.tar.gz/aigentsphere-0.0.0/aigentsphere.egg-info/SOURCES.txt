@@ -1,0 +1,5 @@
+pyproject.toml
+aigentsphere.egg-info/PKG-INFO
+aigentsphere.egg-info/SOURCES.txt
+aigentsphere.egg-info/dependency_links.txt
+aigentsphere.egg-info/top_level.txt
