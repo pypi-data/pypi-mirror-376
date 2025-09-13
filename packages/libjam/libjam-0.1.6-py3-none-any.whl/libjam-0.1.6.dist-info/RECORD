@@ -1,0 +1,11 @@
+libjam/__init__.py,sha256=PYQOmY4VzSNxwloXJqqyp8kcWFGxWD8Fe8eRVvO_bt4,356
+libjam/captain.py,sha256=XznUnRYQY1s602RLo78FyeudwVqi-BpYERJ1fKUIPBI,8253
+libjam/clipboard.py,sha256=IOdBkAlbsc2PJ0L5mXfKHzXGS0cLzYmmf3rae4G-ZwE,3365
+libjam/drawer.py,sha256=7RRu1dm4a1ch5NZoFJHALDfta4-cRP-KtgB_Auvrc0E,16871
+libjam/flashcard.py,sha256=abE-TfrWfkBSSe3rPCO0sG_BJ_WWgD0d7jgN1H1OV-8,328
+libjam/notebook.py,sha256=hye5fUyNM-KKt4Ad-5QWbbhAmLDy1ThFu6VQdzro9dQ,2040
+libjam/typewriter.py,sha256=wlz_w-_LbssM4SsnoJBdT-7rD6siaXRwN4lMRhyPEbE,7972
+libjam-0.1.6.dist-info/METADATA,sha256=q6ElQcwAY6Qwy8H1uKc57vM0JbRgRyYnzwS4vuoDa9o,2457
+libjam-0.1.6.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+libjam-0.1.6.dist-info/licenses/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+libjam-0.1.6.dist-info/RECORD,,
