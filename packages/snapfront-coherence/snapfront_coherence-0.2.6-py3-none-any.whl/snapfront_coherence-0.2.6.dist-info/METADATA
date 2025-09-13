@@ -1,0 +1,67 @@
+Metadata-Version: 2.4
+Name: snapfront-coherence
+Version: 0.2.6
+Summary: Snapfront Coherence Python SDK: WCT_phi and coherence-band client with retries, timeouts, and typed errors.
+Author-email: Snapfront <support@snapfront.dev>
+License-Expression: MIT
+Project-URL: Homepage, https://snapfront.dev
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.31.0
+
+# Snapfront Coherence — Python SDK
+
+Minimal client for the local Coherence API.
+
+## Install
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+```python
+from snapfront_coherence import Client, RateLimitError
+
+client = Client(api_key="MYSECRETKEY", base_url="http://127.0.0.1:8000")
+res = client.wct_phi([0.8, 1.1, -0.5])
+print(res["wct_phi"], res["band"])
+```
+
+## Mini examples
+
+```python
+from snapfront_coherence import Client
+c = Client(api_key="MYSECRETKEY", base_url="http://127.0.0.1:8000")
+prices = [100, 101, 98, 99, 103, 102]
+rets = [prices[i]-prices[i-1] for i in range(1,len(prices))]
+resp = c.wct_phi(rets)
+print(resp["wct_phi"], resp["band"])
+Client.save_receipt(resp, "logs/example_markets_receipt.json")
+```
+
+```python
+lines = ["alpha", "alpha beta", "alpha beta gamma", "alpha"]
+lengths = list(map(len, lines))
+resp = c.score_series(lengths, mode="absolute", window=None)[0]
+print(resp["wct_phi"], resp["band"])
+```
+
+```python
+temps = [20.0, 20.2, 19.7, 19.8, 20.1, 20.4, 20.0]
+resp_list = c.score_series(temps, mode="relative", window=3)
+print([r["band"] for r in resp_list])
+```
+
+## Receipts
+
+```python
+import json
+payload = {"deltas":[0.8,1.1,-0.5]}
+body_bytes = json.dumps(payload).encode("utf-8")
+resp = client.wct_phi(payload["deltas"])
+ok = Client.verify_hashes(resp, request_bytes=body_bytes,
+                          response_bytes=json.dumps(resp).encode("utf-8"))
+print("receipt ok?", ok)
+```
