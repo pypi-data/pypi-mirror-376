@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/fai/__init__.py
+src/fun_ai_lib.egg-info/PKG-INFO
+src/fun_ai_lib.egg-info/SOURCES.txt
+src/fun_ai_lib.egg-info/dependency_links.txt
+src/fun_ai_lib.egg-info/top_level.txt
