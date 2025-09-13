@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+benchmark_results.png
+pyproject.toml
+requirements.txt
+setup.py
+pandas_slim.egg-info/PKG-INFO
+pandas_slim.egg-info/SOURCES.txt
+pandas_slim.egg-info/dependency_links.txt
+pandas_slim.egg-info/requires.txt
+pandas_slim.egg-info/top_level.txt
+smoldata/__init__.py
+smoldata/core.py
+tests/test_core.py
