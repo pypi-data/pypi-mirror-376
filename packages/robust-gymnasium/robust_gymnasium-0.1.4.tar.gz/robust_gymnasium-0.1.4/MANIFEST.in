@@ -1,0 +1,23 @@
+recursive-include robust_gymnasium/envs/mujoco/assets *.xml *.txt *.csv *.json *.pkl *.npy *.bin *.model *.pt *.onnx
+recursive-include robust_gymnasium/envs/classic_control/assets *.png *.txt *.csv *.json *.pkl *.npy *.bin *.model *.pt *.onnx
+recursive-include robust_gymnasium/envs/phys2d/assets *.png *.txt *.csv *.json *.pkl *.npy *.bin *.model *.pt *.onnx
+recursive-include robust_gymnasium/envs/toy_text/font *.ttf *.txt *.csv *.json *.pkl *.npy *.bin *.model *.pt *.onnx
+recursive-include robust_gymnasium/envs/toy_text/img *.png *.txt *.csv *.json *.pkl *.npy *.bin *.model *.pt *.onnx
+recursive-include robust_gymnasium/ *.png *.txt *.csv *.json *.pkl *.npy *.bin *.model *.pt *.onnx
+recursive-include robust_gymnasium/ *.txt *.csv *.json *.yaml *.yml *.ini *.conf \
+    *.pkl *.npy *.npz *.pickle *.joblib *.bin *.dat *.h5 *.hdf5 \
+    *.png *.jpg *.jpeg *.bmp *.gif *.tiff *.webp *.ico *.svg *.ttf *.otf \
+    *.xml *.mjcf *.urdf *.sdf *.osim *.dae *.obj *.mtl *.stl \
+    *.ply *.pcd *.xyz *.off \
+    *.pth *.pt *.ckpt *.pb *.onnx *.tflite *.weights *.model *.params *.safetensors \
+    *.flax *.msgpack *.ckpt.index *.ckpt.data-* \
+    *.zip *.tar *.tar.gz *.tar.bz2 *.7z \
+    *.log *.csv.gz *.gz *.wav *.jsonl
+include robust_gymnasium/py.typed
+
+
+include README.md
+include LICENSE
+recursive-include your_package_name *.py
+recursive-include your_package_name *.txt *.csv *.json *.pkl *.npy *.bin *.model *.pt *.onnx
+recursive-include your_package_name data/*
