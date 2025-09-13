@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mallsense-sdk"
+version = "0.1.2"
+description = "Unified Python SDK for Mallsense (Core, Sales, Bills)"
+readme = { file = "mallsense_sdk/README.md", content-type = "text/markdown" }
+requires-python = ">=3.8"
+authors = [{name = "MallSense", email = "dev@example.com"}]
+dependencies = [
+  "requests>=2.31,<3",
+  "python-dotenv>=1.0,<2",
+  "pytz>=2023.3,<2026",
+  "python-dateutil>=2.8.2,<3",
+  "pandas>=2,<3",
+  "pydantic>=2.3,<3",
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://gitlab.focustech.xyz/service.head/mallsense-sdk"
+Documentation = "https://gitlab.focustech.xyz/service.head/mallsense-sdk/-/tree/main/docs"
+Source = "https://gitlab.focustech.xyz/service.head/mallsense-sdk"
+Issues = "https://gitlab.focustech.xyz/service.head/mallsense-sdk/-/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["mallsense_sdk*"]
