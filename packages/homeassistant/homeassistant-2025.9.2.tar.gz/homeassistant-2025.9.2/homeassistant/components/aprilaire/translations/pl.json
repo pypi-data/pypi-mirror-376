@@ -1,0 +1,83 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Urz\u0105dzenie jest ju\u017c skonfigurowane"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "port": "Port"
+                }
+            }
+        }
+    },
+    "entity": {
+        "humidifier": {
+            "dehumidifier": {
+                "name": "Osuszacz"
+            },
+            "humidifier": {
+                "name": "Nawil\u017cacz"
+            }
+        },
+        "select": {
+            "air_cleaning_event": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "air_cleaning_mode": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "fresh_air_event": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            },
+            "fresh_air_mode": {
+                "state": {
+                    "off": "wy\u0142\u0105czony"
+                }
+            }
+        },
+        "sensor": {
+            "air_cleaning_status": {
+                "state": {
+                    "idle": "brak aktywno\u015bci",
+                    "off": "wy\u0142\u0105czony",
+                    "on": "w\u0142\u0105czony"
+                }
+            },
+            "dehumidification_status": {
+                "state": {
+                    "idle": "brak aktywno\u015bci",
+                    "off": "wy\u0142\u0105czony",
+                    "on": "w\u0142\u0105czony"
+                }
+            },
+            "fan_status": {
+                "state": {
+                    "off": "wy\u0142\u0105czony",
+                    "on": "w\u0142\u0105czony"
+                }
+            },
+            "humidification_status": {
+                "state": {
+                    "idle": "brak aktywno\u015bci",
+                    "off": "wy\u0142\u0105czony",
+                    "on": "w\u0142\u0105czony"
+                }
+            },
+            "ventilation_status": {
+                "state": {
+                    "idle": "brak aktywno\u015bci",
+                    "off": "wy\u0142\u0105czony",
+                    "on": "w\u0142\u0105czony"
+                }
+            }
+        }
+    }
+}
