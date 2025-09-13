@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+voice_of_python/__init__.py
+voice_of_python/voice_of_python.py
+voice_of_python.egg-info/PKG-INFO
+voice_of_python.egg-info/SOURCES.txt
+voice_of_python.egg-info/dependency_links.txt
+voice_of_python.egg-info/requires.txt
+voice_of_python.egg-info/top_level.txt

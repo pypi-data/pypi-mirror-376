@@ -1,0 +1,6 @@
+vosk
+langid
+pyttsx3
+sounddevice
+numpy
+soundfile
