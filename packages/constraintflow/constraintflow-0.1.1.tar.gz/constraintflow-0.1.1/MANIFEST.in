@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+
+recursive-include src/constraintflow/ast_cflow *.g4 *.interp *.tokens
+recursive-include src/examples *.cf

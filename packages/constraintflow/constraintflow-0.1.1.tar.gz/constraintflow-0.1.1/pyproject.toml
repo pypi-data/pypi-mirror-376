@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "constraintflow"
+version = "0.1.1"
+description = "A DSL and tools for neural network certification"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }  # adjust if different
+authors = [
+    { name = "Avaljot Singh" },
+    { name = "Yasmin Sarita" },
+]
+keywords = ["dsl", "neural networks", "certification", "constraint solving"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "graphviz==0.20.1",
+    "matplotlib==3.10.5",
+    "networkx==3.1",
+    "numpy==2.2.6",
+    "onnx==1.16.2",
+    "torch",
+    "torchvision",
+    "z3-solver==4.12.2.0",
+    "antlr4-python3-runtime==4.9.2",
+    "typer",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[project.scripts]
+constraintflow = "constraintflow.cli:main"
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["constraintflow*","examples"] 
+
+[tool.setuptools.package-data]
+"constraintflow.ast_cflow" = ["*.g4", "*.interp", "*.tokens"]
+examples = ["**/*.cf"] 
