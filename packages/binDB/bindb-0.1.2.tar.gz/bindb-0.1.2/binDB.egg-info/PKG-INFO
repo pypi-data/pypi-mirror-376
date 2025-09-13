@@ -1,0 +1,98 @@
+Metadata-Version: 2.4
+Name: binDB
+Version: 0.1.2
+Summary: A Python library for retrieving BIN (Bank Identification Number) information.
+Author: islamraisul796
+Author-email: islamraisul796@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pycountry
+Requires-Dist: pycountry-convert
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# binDB
+
+A Python library for retrieving BIN (Bank Identification Number) information.
+
+## Installation
+
+You can install `binDB` using pip:
+
+```bash
+pip install binDB
+```
+
+## Usage
+
+```python
+from binDB.smartdb import SmartBinDB
+
+db = SmartBinDB()
+
+# Get BIN information
+bin_info = db.get_bin_info("45717360")
+print(bin_info)
+
+# Get BINs by bank name
+bank_bins = db.get_bins_by_bank("JPMorgan Chase", limit=5)
+print(bank_bins)
+
+# Get BINs by country code
+country_bins = db.get_bins_by_country("US", limit=5)
+print(country_bins)
+
+# Get a limited number of BINs from all countries (randomized)
+random_bins = db.get_bins(limit=10, randomize=True)
+print(random_bins)
+
+# Get a limited number of BINs from a specific country (e.g., 'BD' for Bangladesh)
+bd_bins = db.get_bins(country_code="BD", limit=5)
+print(bd_bins)
+
+# Get total number of unique BINs loaded
+total_bins_count = db.get_total_bins_count()
+print(f"Total unique BINs loaded: {total_bins_count}")
+
+# Get BIN counts per country
+country_bin_counts = db.get_country_bin_counts()
+print(f"BIN counts per country: {country_bin_counts}")
+```
+
+## API Endpoints (if exposed via a web framework)
+
+This library provides core functionality. If you wish to expose this as a web API, you would integrate it with a framework like Flask or FastAPI.
+
+## Data Loading
+
+The library loads its data synchronously upon initialization of the `SmartBinDB` class. For very large datasets, this might introduce a slight delay during object creation.
+
+## Output Fields
+
+The `format_entry` method processes raw BIN data into a standardized dictionary, including the following notable fields:
+- `CardTier`: A concatenated string of `category` and `brand` (e.g., "DEBIT VISA").
+- `Country`: A dictionary containing detailed country information (Alpha-2, Alpha-3, Numeric, Name, Continent).
+- `Luhn`: A boolean field, currently always `True`, indicating that the BINs in the dataset are assumed to be Luhn-valid.
+
+## Data
+
+The library uses JSON files located in the `data/` directory for BIN information.
+
+## Contributing
+
+Feel free to contribute to this project by opening issues or pull requests on GitHub.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
