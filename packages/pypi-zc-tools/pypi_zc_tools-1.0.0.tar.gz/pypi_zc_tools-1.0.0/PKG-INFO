@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: pypi_zc_tools
+Version: 1.0.0
+Summary: 数据生成工具
+Home-page: https://gitee.com/zc_ceshi/pypi_zc_tools
+Author: jochen
+Author-email: 1099560198@qq.com
+License: MIT License
+Platform: all
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Office/Business :: Financial :: Spreadsheet
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=8.0.0
+Requires-Dist: Faker>=8.0.0
+Requires-Dist: openpyxl>=3.0.0
+
+# 自动生成excel数据模型
+
+## 安装
+### pip install pypi_zc_tools
+
+## 使用方法
+### # 生成默认的20行数据
+### pypi-zc-tools
+
+### # 生成指定数量的数据
+### pypi-zc-tools --count 50
+
+### # 指定输出文件名
+### pypi-zc-tools --output my_data.xlsx --count 100
