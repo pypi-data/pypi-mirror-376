@@ -1,0 +1,5 @@
+snakemake_software_deployment_plugin_conda/__init__.py,sha256=zl_qZOmH4qaJ979f5hkNP2WHc3Axd-j9PZR8OayKY-8,14492
+snakemake_software_deployment_plugin_conda/pinfiles.py,sha256=Ak7nfKGpdppnsk5vZxd_wuA80S4XFKWRLnE65GLvGe4,534
+snakemake_software_deployment_plugin_conda-0.3.0.dist-info/METADATA,sha256=tNk3l4FBApriG-JXLuWCWDVLNl8kN2Ww0fKV7xhZwk8,1054
+snakemake_software_deployment_plugin_conda-0.3.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+snakemake_software_deployment_plugin_conda-0.3.0.dist-info/RECORD,,
