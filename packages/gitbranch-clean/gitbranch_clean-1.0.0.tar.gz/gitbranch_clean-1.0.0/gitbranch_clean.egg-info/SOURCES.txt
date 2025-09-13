@@ -1,0 +1,9 @@
+LICENSE
+README.md
+branch_cleaner.py
+setup.py
+gitbranch_clean.egg-info/PKG-INFO
+gitbranch_clean.egg-info/SOURCES.txt
+gitbranch_clean.egg-info/dependency_links.txt
+gitbranch_clean.egg-info/entry_points.txt
+gitbranch_clean.egg-info/top_level.txt

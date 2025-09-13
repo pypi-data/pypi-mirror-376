@@ -1,0 +1,71 @@
+Metadata-Version: 2.4
+Name: gitbranch-clean
+Version: 1.0.0
+Summary: Delete merged git branches. That's it.
+Home-page: https://github.com/yourusername/gitbranch-clean
+Author: Justin Kindrix
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# git-branch-cleaner
+
+Delete merged git branches. That's it.
+
+## Installation
+
+```bash
+pip install git-branch-cleaner
+```
+
+## Usage
+
+Delete local branches merged to main and older than 30 days:
+```bash
+branch-cleaner
+```
+
+Delete branches older than 7 days:
+```bash
+branch-cleaner --days 7
+```
+
+See what would be deleted without actually deleting:
+```bash
+branch-cleaner --dry-run
+```
+
+Include remote branches:
+```bash
+branch-cleaner --remote
+```
+
+Use a different base branch:
+```bash
+branch-cleaner --base develop
+```
+
+## Protected Branches
+
+The following branches are protected and will never be deleted:
+- main
+- master  
+- develop
+- dev
+- staging
+- production
+
+## License
+
+MIT
