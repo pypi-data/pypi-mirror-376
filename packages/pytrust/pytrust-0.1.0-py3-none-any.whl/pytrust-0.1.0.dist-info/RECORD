@@ -1,0 +1,7 @@
+pytrust/__init__.py,sha256=D2EzbcnEYYTxkz6bzl0zwtISpw8VantIQMuZTVo1W3Y,18
+pytrust/cli.py,sha256=05QmdxTtfHs8iKopgAMTgH1WJZr4nQ7DB-3rFS2SZNc,1807
+pytrust/permissions.py,sha256=6O61VI5emGRP_-Q79Gx-y60to-ihOAxdx8A6Isr-NIg,2974
+pytrust-0.1.0.dist-info/entry_points.txt,sha256=Pk_9aSkHm1CPygArPONd7pAhT5zDv0tJINGa0pSJvvQ,44
+pytrust-0.1.0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+pytrust-0.1.0.dist-info/METADATA,sha256=KNuyNMaS7X7EtFtifdeTuuV5XYjq6zNDiwWFjxBoZdg,511
+pytrust-0.1.0.dist-info/RECORD,,

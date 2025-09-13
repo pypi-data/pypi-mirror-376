@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pytrust
+Version: 0.1.0
+Summary: CLI tool to check package permissions.
+Author-email: Martin Thoma <info@martin-thoma.de>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pyyaml
+Requires-Dist: click
+Requires-Dist: importlib-metadata; python_version<'3.8'
+
+# pytrust
+
+A CLI tool to check if a Python package interacts with the file system, reads environment variables, makes web requests, or uses exec. Provide a package name and a permissions YAML file.
+
