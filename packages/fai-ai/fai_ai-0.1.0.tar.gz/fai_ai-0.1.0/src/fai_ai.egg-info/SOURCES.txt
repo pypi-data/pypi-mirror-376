@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/fai/__init__.py
+src/fai_ai.egg-info/PKG-INFO
+src/fai_ai.egg-info/SOURCES.txt
+src/fai_ai.egg-info/dependency_links.txt
+src/fai_ai.egg-info/top_level.txt

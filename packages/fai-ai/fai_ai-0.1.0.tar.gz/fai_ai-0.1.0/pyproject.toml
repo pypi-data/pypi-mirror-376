@@ -1,0 +1,10 @@
+[project]
+name = "fai-ai"
+version = "0.1.0"
+description = "Functional AI library."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+  { name="Greg Zozulin", email="gzozulin@gmail.com" }
+]
+requires-python = ">=3.8"
