@@ -1,0 +1,2 @@
+[console_scripts]
+amicompat-mcp = amicompat_mcp.server:main
