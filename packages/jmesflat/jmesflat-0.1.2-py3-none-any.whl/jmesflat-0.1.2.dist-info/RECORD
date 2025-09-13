@@ -1,0 +1,11 @@
+jmesflat/__init__.py,sha256=YBJCTDiqme-j3T_xkw4FLaLXRHLORDejtZ-Kxznq-cE,812
+jmesflat/_clean.py,sha256=L_Ncb9ZMRcugFZ9iTPr-T0zlnzibL0GquK35DVsFScw,1158
+jmesflat/_flatten.py,sha256=XpGcbHZ9zwB2-mbKCL5_aJjJz4I10vbD3wpRfpvD8dk,3243
+jmesflat/_merge.py,sha256=cS9vT6glDUC9kJVRf_f9Pn71KCrLxBepv2ZNOz5Qzb0,7872
+jmesflat/_unflatten.py,sha256=dWVYf5u4WeDMTkAFaV3A885WxMpOmVZIDE5TltKwwik,4860
+jmesflat/constants.py,sha256=6YBLDpHotyvHqVVSJbfCLbDWGVqMfis29wGz8OzQomI,412
+jmesflat/utils.py,sha256=MUYnsg-_8ab1peeU46NZxcxEsmvlotw0wvi8SGmHuZA,3836
+jmesflat-0.1.2.dist-info/LICENSE,sha256=qkKVGijJJ6hwqicRDIuJ9YGci_WRw9eJY8b3zkisUDA,1086
+jmesflat-0.1.2.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+jmesflat-0.1.2.dist-info/METADATA,sha256=zf6wVelXjuXkv94ZT64VmGPKLUyitETBcKNeIKCnQVM,9569
+jmesflat-0.1.2.dist-info/RECORD,,
