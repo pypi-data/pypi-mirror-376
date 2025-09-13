@@ -1,0 +1,5 @@
+grpcio
+socks
+
+[codegen]
+grpcio-tools

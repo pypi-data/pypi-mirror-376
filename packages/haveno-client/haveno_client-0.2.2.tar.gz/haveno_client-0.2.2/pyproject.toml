@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "haveno-client"
+version = "0.2.2"
+description = "A client for interacting with the Haveno daemon."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "AGPL-3.0-or-later" }
+authors = [ { name = "Kewbit", email = "support@haveno.app" } ]
+keywords = ["haveno", "monero", "p2p", "exchange"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+]
+
+# End-user install dependencies
+dependencies = [
+  "grpcio",
+  "socks",
+]
+
+[project.optional-dependencies]
+codegen = ["grpcio-tools"]
+
+[project.urls]
+Homepage = "https://haveno.app"
+Repository = "https://git.haveno.app/haveno-network/python-haveno-client"
+Issues = "https://git.haveno.app/haveno-network/python-haveno-client/issues"
+Documentation = "https://haveno.app/documentation"
+Changelog = "https://haveno.app/changelog"
+Funding = "https://haveno.app/donate"
+
+[project.scripts]
+haveno-client = "haveno_client.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["haveno_client*"]
+
+[tool.setuptools]
+include-package-data = true
