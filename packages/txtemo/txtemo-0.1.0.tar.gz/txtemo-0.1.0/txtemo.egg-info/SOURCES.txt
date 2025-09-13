@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+txtemo/__init__.py
+txtemo/model.py
+txtemo.egg-info/PKG-INFO
+txtemo.egg-info/SOURCES.txt
+txtemo.egg-info/dependency_links.txt
+txtemo.egg-info/requires.txt
+txtemo.egg-info/top_level.txt
