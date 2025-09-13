@@ -1,0 +1,41 @@
+[project]
+name = "mtest_py"         # <- nombre único en (Test)PyPI
+version = "0.1.4"          # súbelo porque ya generaste 0.1.0
+description = "A Procedure for Multicollinearity Testing using Bootstrap"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"            # <-- evita la deprecation; usa SPDX simple
+authors = [{name = "Víctor Morales-Oñate"}]
+keywords = ["multicollinearity", "bootstrap", "VIF", "Klein", "regression", "statistics"]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10"
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Scientific/Engineering :: Information Analysis"
+]
+
+[project.urls]
+Homepage = "https://github.com/vmoprojs/mtest-py"
+Issues   = "https://github.com/vmoprojs/mtest-py/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "statsmodels>=0.14"]

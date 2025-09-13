@@ -1,0 +1,175 @@
+Metadata-Version: 2.4
+Name: mtest_py
+Version: 0.1.4
+Summary: A Procedure for Multicollinearity Testing using Bootstrap
+Author: Víctor Morales-Oñate
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/vmoprojs/mtest-py
+Project-URL: Issues, https://github.com/vmoprojs/mtest-py/issues
+Keywords: multicollinearity,bootstrap,VIF,Klein,regression,statistics
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: scipy>=1.10
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: statsmodels>=0.14; extra == "dev"
+
+Functions to **detect and quantify multicollinearity** via a **nonparametric pairs bootstrap**.
+
+`MTest` reports achieved significance levels (ASL; bootstrap proportions) for two widely used rules:
+
+- **Klein's rule**: flag multicollinearity if $R^2_j > R^2_g$  
+- **VIF rule**: flag multicollinearity if $\mathrm{VIF}_j$ is large, with $\mathrm{VIF}_j = \dfrac{1}{1 - R^2_j}$
+
+**Reference:** Morales-Oñate & Morales-Oñate (2023). *MTest: a Bootstrap Test for Multicollinearity*. Revista Politécnica, 51(2), 53–62.  
+DOI: https://doi.org/10.33333/rp.vol51n2.05
+
+---
+
+## What MTest does
+
+Given a fitted linear model, `MTest`:
+
+1. Resamples **rows** of the model frame (pairs bootstrap) `nboot` times.  
+2. At each bootstrap replicate, recomputes the **global** $R^2_g$ and the **auxiliary** $R^2_j$
+   (regressing each predictor on the rest), using the **same** expanded design matrix as the original fit.
+   This is robust to `log()`, `I()`, interactions, factors, `poly()`, etc.  
+3. Returns bootstrap distributions and **ASL** (bootstrap proportions) for:
+   - **VIF rule (threshold on $R^2_j$)**:
+     
+$$
+\mathrm{ASL}_{\mathrm{VIF}}(j) = \mathbb{P}\big(R^2_j > c\big)
+$$
+     
+    Example: `valor_vif = 0.90` implies a VIF cutoff of $1 / (1 - 0.90) = 10$.
+
+   - **Klein's rule**:
+     
+$$
+\mathrm{ASL}_{\mathrm{Klein}}(j) = \mathbb{P}\big(R^2_g < R^2_j\big).
+$$
+
+These ASLs are simple **bootstrap proportions** of the corresponding events (no additional parametric assumptions).
+
+---
+
+## Model context
+
+Linear regression model:
+
+$$
+Y_i = \beta_0 + \beta_1 X_{1i} + \cdots + \beta_p X_{pi} + u_i, \quad i=1,\ldots,n.
+$$
+
+Auxiliary regressions (one per predictor):
+
+$$
+X_{ji} = \gamma_0 + \sum_{k \ne j} \gamma_k X_{ki} + e_{ji}, \quad j=1,\ldots,p.
+$$
+
+Let $R^2_g$ be the global $R^2$ and $R^2_j$ the $R^2$ of the $j$-th auxiliary regression.
+
+
+## Installation
+
+```bash
+pip install mtest_py
+```
+
+## Quickstart
+
+### Example 1: Multicollinearity Test (MTest)
+
+```python
+
+import pandas as pd
+from mtest import mtest, mtest_summary
+
+# Load dataset (mtcars equivalent in R)
+url = "https://raw.githubusercontent.com/selva86/datasets/master/mtcars.csv"
+mtcars = pd.read_csv(url)
+
+X = mtcars[["disp", "hp", "wt", "qsec"]]   # predictors
+y = mtcars["mpg"].to_numpy()               # response
+
+# Run MTest
+res = mtest(X, y, n_boot=500, r2_threshold=0.9, seed=123, add_intercept=True)
+
+# Print results
+print("R² global:", res["R2_global"])
+print("VIF:", res["VIF_named"])
+print("p-values VIF rule:", res["p_vif"])
+print("p-values Klein rule:", res["p_klein"])
+
+# Tabular summary
+df_sum = mtest_summary(res, sort_by="VIF")
+print(df_sum)
+
+```
+
+
+### Example 2: Pairwise Kolmogorov–Smirnov Test
+
+```python
+from mtest import pairwise_ks_test, ks_summary
+
+X = mtcars[["disp", "hp", "wt", "qsec"]]
+
+ks_res = pairwise_ks_test(X, alternative="greater")
+summary = ks_summary(ks_res, digits=6)
+
+print(summary["summary_text"])
+```
+
+## API
+
+```python
+mtest(X, y, n_boot=1000, nsam=None, r2_threshold=0.9, seed=None, return_distributions=True)
+```
+- `X`: array-like `(n, p)` predictors. Intercept is **not** added automatically.
+- `y`: array-like `(n,)` response.
+- `n_boot`: bootstrap replicates.
+- `nsam`: bootstrap sample size (default: `n`).
+- `r2_threshold`: threshold **on auxiliary R²** used for VIF rule.
+- `seed`: RNG seed.
+- `return_distributions`: if `True`, returns bootstrap arrays.
+
+**Return**: dict with keys
+- `R2_global`, `R2_aux` (original sample),
+- `VIF` (original sample),
+- `B_R2_global` `(n_boot,)`,
+- `B_R2_aux` `(n_boot, p)`, columns aligned with predictors,
+- `p_vif` (dict), `p_klein` (dict).
+
+## Notes
+
+- For the VIF rule we use `Pr(R²_j > r2_threshold)` — pass `r2_threshold` accordingly.
+- Klein's rule p-value is `Pr(R²_global < R²_j)` across bootstrap replicates.
+- Numerical stability: we use least squares and guard divisions-by-zero.
+
+## Citation
+
+> Morales-Oñate, V., & Morales-Oñate, B. (2023).  
+> *MTest: a Bootstrap Test for Multicollinearity*. Revista Politécnica, 51(2), 53–62.  
+> https://doi.org/10.33333/rp.vol51n2.05
+
+---
+
+## License
+
+MIT (or your package license). Include the corresponding `LICENSE` file in the repo.
+
+---
