@@ -1,0 +1,2 @@
+[console_scripts]
+opsguide-mcp = bedrock_mcp_proxy.server:cli
