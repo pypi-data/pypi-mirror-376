@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-world-test-pkg"
+version = "0.2.0"
+authors = [{name = "Ryan Vaughan", email = "ryan.vaughan@wnco.com"}]
+description = "A simple hello world package for testing PyPI uploads"
+readme = "README.md"
+license = {text = "BSD-3-Clause"}
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.urls]
+Homepage = "https://github.com/ryan33020/hello-world-test-pkg"

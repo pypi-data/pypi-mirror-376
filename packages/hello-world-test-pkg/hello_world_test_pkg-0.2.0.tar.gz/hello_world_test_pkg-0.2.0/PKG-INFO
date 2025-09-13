@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: hello-world-test-pkg
+Version: 0.2.0
+Summary: A simple hello world package for testing PyPI uploads
+Author: Ryan Vaughan
+Author-email: Ryan Vaughan <ryan.vaughan@wnco.com>
+License: BSD-3-Clause
+Project-URL: Homepage, https://github.com/ryan33020/hello-world-test-pkg
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-python
+
+# Hello World Test Package
+
+A simple hello world package for testing PyPI uploads.
+
+## Installation
+
+```bash
+pip install hello-world-test-pkg
+```
+
+## Usage
+
+```python
+from hello_world import hello
+print(hello())
+```
