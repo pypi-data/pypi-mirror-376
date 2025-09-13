@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: pathlib-artifactory
+Version: 0.4.1
+Summary: Backport of pathlib ABCs
+Author-email: Barney Gale <barney.gale@gmail.com>
+License-Expression: GPL-3.0-or-later
+Project-URL: Source code, https://github.com/barneygale/pathlib-artifactory
+Project-URL: Issue tracker, https://github.com/barneygale/pathlib-artifactory/issues
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: pathlib-abc~=0.5.1
+Requires-Dist: requests
+Requires-Dist: requests-seekable~=0.1.0
+Dynamic: license-file
+
+===================
+pathlib-artifactory
+===================
+
+|pypi| |docs|
+
+Python client for Artifactory.
+
+
+.. |pypi| image:: https://img.shields.io/pypi/v/pathlib-artifactory.svg
+    :target: https://pypi.python.org/pypi/pathlib-artifactory
+    :alt: Latest version released on PyPi
+
+.. |docs| image:: https://readthedocs.org/projects/pathlib-artifactory/badge
+    :target: http://pathlib-artifactory.readthedocs.io/en/latest
+    :alt: Documentation
