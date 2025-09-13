@@ -1,0 +1,13 @@
+saxoncpe.cp311-win_amd64.pyd,sha256=ZVAXpWOQBQrwgGDwtv8Zsu0SuG2B-Sld_kFUu2wu9os,678912
+cpp/__init__.py,sha256=gl5WlPvF-v_v4aIC2TIF8naYTvavc72bsd6Ts5X48ag,316
+cpp/include/CythonExceptionHandler.h,sha256=0npYr6EnFVXYz3iVAUDsLt7PlkYKxFJbemMoKAe3UR4,3457
+saxonc/saxonc.cpp,sha256=a8YJcKQItH4OyfIGj8t9TYLq6kxOPsyehqbHDtn-Suw,4068498
+saxonc/__init__.py,sha256=gl5WlPvF-v_v4aIC2TIF8naYTvavc72bsd6Ts5X48ag,316
+saxoncpe-12.9.0.data/platlib/msvcp140-1e57a6df9e3742e31a1c6d9bff81ebee.dll,sha256=Hlem3543QuMaHG2b_4Hr7q6KfeO0WiblB51eHM5UzZg,573008
+saxoncpe-12.9.0.data/platlib/saxonc-core-pe-12a10e3bfdbe8f8ba939be1881d4378d.dll,sha256=EqEOO_2-j4upOb4YgdQ3jfJjia2zjoDys_HTRRboCTg,109293568
+saxoncpe-12.9.0.data/platlib/saxonc-pe-bd8d66db92a4abad21d82c1013beee20.dll,sha256=gVSa5YZHA-OY6TawGfu4vgLuLD0JCr0y2QnMjZvz6XU,204288
+saxoncpe-12.9.0.dist-info/DELVEWHEEL,sha256=nkJ7envmJwK7UcW4Es1S4LTUIBEoLawE1EjBhxdiwmU,512
+saxoncpe-12.9.0.dist-info/METADATA,sha256=GybG4X0G5vSBx_16_tMAso27eV73-fQyCgV5ZIamgD0,6017
+saxoncpe-12.9.0.dist-info/RECORD,,
+saxoncpe-12.9.0.dist-info/top_level.txt,sha256=ZbWEHprZQUe7EVra5eqAIvzs2pp9hc8CPI7OiZUuOHw,20
+saxoncpe-12.9.0.dist-info/WHEEL,sha256=JLOMsP7F5qtkAkINx5UnzbFguf8CqZeraV8o04b0I8I,101
