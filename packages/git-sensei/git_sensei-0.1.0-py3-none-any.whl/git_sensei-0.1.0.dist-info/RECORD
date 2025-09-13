@@ -1,0 +1,14 @@
+git_sensei/__init__.py,sha256=OaDIIoFStlzyK1URj3OXrj6uk0mUTMYbCK0os9X1mUQ,354
+git_sensei/__main__.py,sha256=WGi8K6Y72EqoZbDe2Dzd_aSYDm-rQcxHx33pAHFmpGQ,177
+git_sensei/ai.py,sha256=woeyd6v3ppHAPU4YxwXb6vhQ4KcJUTWdvESK8Ohf3Bk,4584
+git_sensei/cli.py,sha256=-9xcL0ejLMaEzdVohTzRkDUtNaQ1GEAY3N6RAwksBEc,10534
+git_sensei/config.py,sha256=s5QO1UJJPf6HxvIo9mrt8g25YJFTIYwvGlHwEDci-cs,2099
+git_sensei/context.py,sha256=JBSkxKKbeir-a_7kSivL_8ObsAx2PEWrZFOrh6mZgX8,2659
+git_sensei/git_ops.py,sha256=GeAguqbJaVjYQHfOHHUdt2FDsfmsN8EUhpNgKK_rzUk,5821
+git_sensei/safety.py,sha256=1i463Zykm7XrYzotwOW7_UBlaY4iwa4pqCh09JKawTE,6901
+git_sensei-0.1.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+git_sensei-0.1.0.dist-info/METADATA,sha256=JAToR42Ien9_DUQZ6d6XHVSjVgVDXm8BWGhun3fEFws,11255
+git_sensei-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+git_sensei-0.1.0.dist-info/entry_points.txt,sha256=fMs9-wLEN-rFPsv_Rq1HqmCrUNQ7iJDYY01OdjuxkFM,50
+git_sensei-0.1.0.dist-info/top_level.txt,sha256=Evq-1wtqWGp9qinNXvp5aJDJ7IpjBfF_uUpL2_KdsD0,11
+git_sensei-0.1.0.dist-info/RECORD,,
