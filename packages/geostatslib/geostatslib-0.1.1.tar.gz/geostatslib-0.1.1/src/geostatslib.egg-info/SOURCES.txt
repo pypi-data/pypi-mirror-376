@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/geostatslib/__init__.py
+src/geostatslib/io.py
+src/geostatslib.egg-info/PKG-INFO
+src/geostatslib.egg-info/SOURCES.txt
+src/geostatslib.egg-info/dependency_links.txt
+src/geostatslib.egg-info/requires.txt
+src/geostatslib.egg-info/top_level.txt

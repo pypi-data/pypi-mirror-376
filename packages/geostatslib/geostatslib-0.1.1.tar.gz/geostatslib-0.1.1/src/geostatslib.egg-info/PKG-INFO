@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: geostatslib
+Version: 0.1.1
+Summary: A lightweight geostatistics library
+Author-email: MZ Han <hanmz1106@gmail.com>
+Project-URL: Homepage, https://github.com/han1399013493/Geostatslib
+Project-URL: Documentation, https://github.com/han1399013493/Geostatslib/blob/main/README.md
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+
+# geostatslib
+## 一个地质统计学相关工具库

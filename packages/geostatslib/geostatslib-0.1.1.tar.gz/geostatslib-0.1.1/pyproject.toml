@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "geostatslib"
+version = "0.1.1"
+description = "A lightweight geostatistics library"
+readme = "README.md"
+authors = [
+  {name = "MZ Han", email = "hanmz1106@gmail.com"}
+]
+dependencies = [
+  "pandas",
+  "numpy"
+]
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/han1399013493/Geostatslib"
+Documentation = "https://github.com/han1399013493/Geostatslib/blob/main/README.md"
