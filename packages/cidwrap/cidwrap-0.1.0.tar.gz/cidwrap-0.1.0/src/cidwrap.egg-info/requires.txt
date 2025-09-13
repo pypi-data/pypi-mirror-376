@@ -1,0 +1,2 @@
+fastapi>=0.111
+asgi-correlation-id>=4.3

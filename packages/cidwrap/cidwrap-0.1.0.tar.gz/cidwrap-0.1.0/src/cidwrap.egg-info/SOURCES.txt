@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+src/cidwrap/__init__.py
+src/cidwrap/wrap.py
+src/cidwrap.egg-info/PKG-INFO
+src/cidwrap.egg-info/SOURCES.txt
+src/cidwrap.egg-info/dependency_links.txt
+src/cidwrap.egg-info/requires.txt
+src/cidwrap.egg-info/top_level.txt

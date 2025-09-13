@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: cidwrap
+Version: 0.1.0
+Summary: A FastAPI wrapper for logging correlation events
+Author: Lathiesh
+Author-email: lathieshmahendran24@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.111
+Requires-Dist: asgi-correlation-id>=4.3
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# cidwrap
+
+A FastAPI middleware wrapper for logging correlation events with customizable correlation IDs.
+
+## Installation
+
+Install the package via pip:
+
+```bash
+pip install cidwrap
