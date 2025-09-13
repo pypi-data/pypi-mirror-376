@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/ecs_service/__init__.py
+src/ecs_service/ecs_service_stack.py
+src/ecs_service.egg-info/PKG-INFO
+src/ecs_service.egg-info/SOURCES.txt
+src/ecs_service.egg-info/dependency_links.txt
+src/ecs_service.egg-info/not-zip-safe
+src/ecs_service.egg-info/requires.txt
+src/ecs_service.egg-info/top_level.txt
+tests/__init__.py
+tests/test_ecs_service.py
