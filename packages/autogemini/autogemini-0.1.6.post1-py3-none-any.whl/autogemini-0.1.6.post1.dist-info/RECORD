@@ -1,0 +1,11 @@
+autogemini/__init__.py,sha256=VOumbVWKHpYBe6a6bwu7D4A6-m8RV6qULh3QxMMdVL0,1687
+autogemini/__main__.py,sha256=ocTSIrgjgr51WrunFVWdfn1O_uLqnRIqOyOl2pYuI2s,114
+autogemini/auto_stream_processor.py,sha256=1VRwOygh0YkAWTkAx_Az6aBPS_bogaoEjeYm8uHI4Uw,19447
+autogemini/gemini_chat.py,sha256=ZfO_ArNlkvBpxB9lR3-snjplaUYJFBtd-TmGGolUc5w,19498
+autogemini/main.py,sha256=_ntYKSpsq8W9GeGDy96Nq0wGx96VS80E92Z4PQ7bNos,150
+autogemini/template.py,sha256=YytMyWH1hYlQmP6QaX1QOXYsy4zoDVR3iD2zNZT8XWg,12662
+autogemini/tool_code.py,sha256=dlvnZJFwAhzHYE6o6Xt_kPBfx04TRa8ylwoveTfm6jk,14720
+autogemini-0.1.6.post1.dist-info/METADATA,sha256=nppLT0lJ2UwiRbq_8s562ZZPuxDKwJuIxLGPfphcy7Y,2540
+autogemini-0.1.6.post1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+autogemini-0.1.6.post1.dist-info/licenses/LICENSE,sha256=qO-FCriDlkojR2GOGgHeagF-mSAARzsWTE286RetaWM,1103
+autogemini-0.1.6.post1.dist-info/RECORD,,
