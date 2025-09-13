@@ -1,0 +1,2 @@
+[console_scripts]
+minivc = minivc.cli:main

@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: minivc
+Version: 0.2.0
+Summary: A minimal, Git-like version control tool (CLI, stdlib only).
+Author-email: Bhanuja Karumuru <bhanukarumuru@gmail.com>
+Keywords: git,version-control,vcs,cli,learning
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Version Control
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# minivc
+
+Minimal Git-like VCS for learning & demos.
+
+## Install
+```bash
+pipx install minivc
+minivc -h
