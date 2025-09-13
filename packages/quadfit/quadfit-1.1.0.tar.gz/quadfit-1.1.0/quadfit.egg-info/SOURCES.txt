@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+quadfit/__init__.py
+quadfit/quadfit.py
+quadfit/quadfitmodule.c
+quadfit.egg-info/PKG-INFO
+quadfit.egg-info/SOURCES.txt
+quadfit.egg-info/dependency_links.txt
+quadfit.egg-info/requires.txt
+quadfit.egg-info/top_level.txt
