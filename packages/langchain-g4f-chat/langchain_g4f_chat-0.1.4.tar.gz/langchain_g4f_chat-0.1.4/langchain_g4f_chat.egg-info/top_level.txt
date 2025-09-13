@@ -1,0 +1,4 @@
+core
+g4f
+images
+text
