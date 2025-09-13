@@ -1,0 +1,5 @@
+demos
+docs
+paper_voice
+streamlit
+tests
