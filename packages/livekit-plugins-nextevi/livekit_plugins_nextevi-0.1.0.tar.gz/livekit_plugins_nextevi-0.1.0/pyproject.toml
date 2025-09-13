@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "livekit-plugins-nextevi"
+dynamic = ["version"]
+description = "LiveKit Agents plugin for NextEVI voice AI platform with real-time speech-to-speech capabilities"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9.0"
+authors = [{ name = "NextEVI", email = "team@nextevi.com" }]
+keywords = ["webrtc", "realtime", "audio", "video", "livekit", "nextevi", "voice-ai"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "livekit-agents[codecs, images]>=1.2.8",
+    "websockets>=12.0",
+    "aiohttp>=3.8.0",
+    "pydantic>=2.0.0",
+]
+
+
+
+[project.urls]
+Documentation = "https://docs.nextevi.com"
+Website = "https://nextevi.com"
+Source = "https://github.com/nextevi/livekit-nextevi"
+Issues = "https://github.com/nextevi/livekit-nextevi/issues"
+
+[tool.hatch.version]
+path = "src/livekit_nextevi/version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/livekit_nextevi"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src"]
+
+[project.entry-points."livekit.plugins"]
+nextevi = "livekit_nextevi"
