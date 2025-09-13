@@ -1,0 +1,2 @@
+[console_scripts]
+pypi-zc-tools = pypi_zc_tools.create_excel_data:generate_data
