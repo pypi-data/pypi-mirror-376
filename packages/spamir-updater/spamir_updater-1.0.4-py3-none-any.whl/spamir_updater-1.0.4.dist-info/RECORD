@@ -1,0 +1,16 @@
+lib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lib/encryption.py,sha256=CswR5xS0rmRx40FBBmG4UfuxxV7NpO24guE2sN6hNzs,6416
+lib/network.py,sha256=gI8vixIj1kUhaa2hprt7GcLeZSrasbRSHwvt7Y0Y01Q,5343
+lib/updater_client.py,sha256=y2-CzjuiOth1AfYlUHLjz6X3OUC6MuEJ7_9hWDwtUJk,26488
+lib/utils.py,sha256=ncVVz0ULsA4cmwVWXDh8CzGm5qEiRQ92lrXZKfLllUU,5211
+spamir_updater/__init__.py,sha256=Mtu1KGI1WESPxw6BJ2P2R4Vbwhvvsdw3hnYfAD6e2cw,172
+spamir_updater/encryption.py,sha256=CswR5xS0rmRx40FBBmG4UfuxxV7NpO24guE2sN6hNzs,6416
+spamir_updater/network.py,sha256=gI8vixIj1kUhaa2hprt7GcLeZSrasbRSHwvt7Y0Y01Q,5343
+spamir_updater/updater_client.py,sha256=YxOdH6slMkMG-uOp9Dyr77u_yHeGfVoXT-ttDzYUIhI,26271
+spamir_updater/utils.py,sha256=mV-Fy4-DFBwYLobznYjlCHbuiA2lRaSs6KXcuFMkhZk,3357
+spamir_updater-1.0.4.dist-info/LICENSE,sha256=ZOGjhyO-c7swSAAeIFNNo_RDDHq3KC5Wqq0j0TSNBVo,1062
+spamir_updater-1.0.4.dist-info/METADATA,sha256=TmSTWDubwE_zBogku1VtBLFbk_gZrFpzrXTchh6OmlA,1092
+spamir_updater-1.0.4.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+spamir_updater-1.0.4.dist-info/entry_points.txt,sha256=_CdzFJUOIv_9iK8AWF1sUJsBZwgtFLVE_lRy3sPFwU8,65
+spamir_updater-1.0.4.dist-info/top_level.txt,sha256=fuWrqYxT_NFw9lUqx5ZICUgkaNH_syaji7UXSMm1tSQ,19
+spamir_updater-1.0.4.dist-info/RECORD,,
