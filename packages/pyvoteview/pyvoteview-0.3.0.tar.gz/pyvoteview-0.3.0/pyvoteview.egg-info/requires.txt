@@ -1,0 +1,1 @@
+polars[pandas,pyarrow]==1.33.1
