@@ -1,0 +1,19 @@
+# 核心依赖 - 账户管理系统基础依赖
+numpy>=1.21.0
+pandas>=1.3.0
+
+# 配置和日志
+pyyaml>=6.0
+loguru>=0.6.0
+
+# 类型检查
+typing-extensions>=4.0.0
+
+# 测试框架
+pytest>=6.0.0
+pytest-cov>=3.0.0
+
+# 可选依赖（用户根据需要安装）
+# matplotlib>=3.5.0    # 可视化（可选）
+# scipy>=1.7.0         # 科学计算（可选）
+# 注意：数据获取建议用户单独安装 akshare、yfinance、tushare 等
