@@ -1,0 +1,6 @@
+setup.py
+primapy_uk_modelling_shared/__init__.py
+primapy_uk_modelling_shared.egg-info/PKG-INFO
+primapy_uk_modelling_shared.egg-info/SOURCES.txt
+primapy_uk_modelling_shared.egg-info/dependency_links.txt
+primapy_uk_modelling_shared.egg-info/top_level.txt
