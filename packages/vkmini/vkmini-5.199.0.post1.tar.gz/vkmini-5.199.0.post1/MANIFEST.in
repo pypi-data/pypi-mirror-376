@@ -1,0 +1,3 @@
+include vkmini/py.typed
+include vkmini/types/*
+include vkmini/*.pyi
