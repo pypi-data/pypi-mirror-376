@@ -1,0 +1,7 @@
+[project]
+name = "fourtytwo"
+version = "1.11"
+description = "A test  Python package"
+
+[project.scripts]
+mycommand = "fourtytwo:main"
