@@ -1,0 +1,13 @@
+ili2c/__init__.py,sha256=sRXYbUPGc0vjJUFKdIQzG2GZoRM9o4JRgkcP3YguFLk,29
+ili2c/ili2c.py,sha256=Szxmol9_IRY3Y1ENnLrCbCmQ8qi5wcvH39HeafhRkhY,1978
+ili2c/lib_ext/graal_isolate.h,sha256=tFtjcdcWFjc4ca72TkMEv7YNQ93lr6MxuZthrOpg_-I,5426
+ili2c/lib_ext/graal_isolate_dynamic.h,sha256=a0u1ax-vCeGCc9IBbU2DXNph_CalqFC_HxMEsbwm88s,5538
+ili2c/lib_ext/libili2c.dylib,sha256=6q9YEZINmvbsDZ6zJYq2IGIuD69Idtnu7oIk_ogdEdM,28122160
+ili2c/lib_ext/libili2c.h,sha256=J9l5wy5zmflIK35RPq__numst6lDluSi0qsqqBG_LY0,326
+ili2c/lib_ext/libili2c_dynamic.h,sha256=9rCTeJB5_DSuyWPijhWQwBh9zisqdece3dIIRzPZAwA,382
+ili2c/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ili2c/tests/test_ili2c.py,sha256=ELL7N_VTXESl-sCcMfwdWr2KiDSgUU2HYqkZUN-5W_U,3842
+ili2c-0.0.7.dist-info/METADATA,sha256=8D4LddyixiEPpWB6ZIdpe9Wx1KLo-eOEaBMm10Y1rK4,1475
+ili2c-0.0.7.dist-info/WHEEL,sha256=he7TPtPhxPqNtr2vhv4k2gN2Wp1oNT9eF4kbdTF5DvA,106
+ili2c-0.0.7.dist-info/top_level.txt,sha256=wy66gYIWN3bbuoDMMIDXaCmCFTcFcCgI_vl92lF2feg,6
+ili2c-0.0.7.dist-info/RECORD,,
