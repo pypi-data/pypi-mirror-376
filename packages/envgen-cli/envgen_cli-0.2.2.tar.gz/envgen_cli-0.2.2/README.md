@@ -1,0 +1,146 @@
+
+envgen-cli — Smart .env File Generator
+
+A smart .env file generator based on a .env.example template. Automatically creates secure secrets, provides an interactive colorized terminal interface, and supports optional encryption using dotenv-vault.
+
+[![PyPI Version](https://img.shields.io/pypi/v/envgen-cli.svg?color=blue)](https://pypi.org/project/envgen-cli/)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/envgen-cli.svg)](https://pypi.org/project/envgen-cli/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/pypi/dm/envgen-cli)](https://pypi.org/project/envgen-cli/)
+
+Say goodbye to manually copying, pasting, or guessing environment variable values. Let envgen-cli handle the tedious work while you focus on writing code.
+
+Demonstration
+
+Watch the demo video here:
+https://ibb.co/JSXRVsb
+
+Key Features
+
+Interactive Interface: Stylish, color-coded terminal user interface (TUI).
+Auto-generated Secrets: Creates strong random passwords for fields like DB_PASS, SECRET_KEY, API_KEY, and more.
+Security First: Optional encryption through dotenv-vault for safe team collaboration.
+Zero Configuration: No config needed — just run envgen inside your project directory.
+Production Ready: Well-tested and type-safe for production environments.
+Lightweight: Minimal dependencies.
+## Installation
+
+Bash
+
+pip install envgen-cli
+
+After installation, follow these three simple steps
+
+Step 1 Create a .env.example in your project
+
+Create a template file with the keys you need
+
+Bash
+
+cat > .env.example <<EOF
+DB_HOST=localhost
+DB_NAME=
+DB_USER=postgres
+DB_PASS=
+SECRET_KEY=
+DEBUG=true
+EOF
+
+Step 2 Run envgen to generate your .env file
+
+Bash
+
+envgen --auto-generate --force
+
+You will be prompted to enter values for empty fields.  
+For sensitive fields (like DBPASS, SECRETKEY), a strong generated password will be suggested.  
+Press Enter to accept it, or type your own value.
+
+Step 3 Use your new .env file
+
+That's it! Your .env is ready. Start your app — it will automatically read the environment variables from this file.
+
+Tip for first-time users Run this quick demo in an empty folder to see how it works
+
+Bash
+
+mkdir demo-envgen && cd demo-envgen
+echo -e "API_KEY=\nDB_NAME=\nSECRET_KEY=" > .env.example
+envgen --auto-generate --force
+
+Example
+
+Assume you have a .env.example file like this
+
+text
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=app_user
+DB_PASS=
+SECRET_KEY=
+API_ENDPOINT=https://api.example.com
+
+After running envgen --auto-generate, you will get an interactive prompt for each empty field. For DBPASS and SECRETKEY, the tool will suggest generated values.
+
+The resulting .env file will look something like this
+
+text
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=app_user
+DB_PASS=Ahngaey7aezee2Oo
+SECRET_KEY=!hz$@vz9x4%f&s#l+0vqo@%d&e^p$*a@
+API_ENDPOINT=https://api.example.com
+
+When to use --force (and when not to)
+
+Use --force when
+
+- You are testing or developing and want a clean start every time.
+- You are giving a demo and need predictable output.
+- You changed your .env.example and want to regenerate the .env file from scratch.
+
+Bash
+
+envgen --auto-generate --force
+
+Do NOT use --force when
+
+- You are in a team project — others may have custom settings in their .env file.
+- You are in a production or staging environment — never overwrite live configs!
+- You have already configured your .env file manually — you will lose your changes!
+
+Safe mode recommended for most cases
+
+Bash
+
+envgen --auto-generate
+
+In this mode, the utility will not overwrite an existing .env file.
+
+Think of it like this
+
+--force = "I know what I'm doing — overwrite everything!"  
+No --force = "Be careful — if a config exists, leave it alone."
+
+Available Commands & Options
+
+text
+
+envgen [OPTIONS]
+
+Options
+
+- -a, --auto-generate Enable automatic generation of values for empty/secret fields
+- -f, --force Force overwrite of an existing .env file
+- --help Show this help message and exit
+
+Development and Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request on GitHub.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

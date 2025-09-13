@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+envgen/__init__.py
+envgen/cli.py
+envgen/core.py
+envgen_cli.egg-info/PKG-INFO
+envgen_cli.egg-info/SOURCES.txt
+envgen_cli.egg-info/dependency_links.txt
+envgen_cli.egg-info/entry_points.txt
+envgen_cli.egg-info/requires.txt
+envgen_cli.egg-info/top_level.txt
+tests/test_core.py
