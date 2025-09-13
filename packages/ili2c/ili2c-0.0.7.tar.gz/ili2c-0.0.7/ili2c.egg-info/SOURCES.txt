@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+ili2c/__init__.py
+ili2c/ili2c.py
+ili2c.egg-info/PKG-INFO
+ili2c.egg-info/SOURCES.txt
+ili2c.egg-info/dependency_links.txt
+ili2c.egg-info/requires.txt
+ili2c.egg-info/top_level.txt
+ili2c/tests/__init__.py
+ili2c/tests/test_ili2c.py
