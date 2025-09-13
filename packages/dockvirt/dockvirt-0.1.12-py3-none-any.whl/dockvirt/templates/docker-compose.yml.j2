@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  reverse-proxy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+    depends_on:
+      - {{ app_name }}
+  {{ app_name }}:
+    image: {{ app_image }}
+    restart: unless-stopped
+    networks:
+      - web
+volumes:
+  caddy_data:
+  caddy_config:
+networks:
+  web:
+    external: false
