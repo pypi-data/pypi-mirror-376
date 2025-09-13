@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/vibegit/__init__.py
+src/vibegit/server.py
+src/vibegit/store.py
+src/vibegit_mcp.egg-info/PKG-INFO
+src/vibegit_mcp.egg-info/SOURCES.txt
+src/vibegit_mcp.egg-info/dependency_links.txt
+src/vibegit_mcp.egg-info/entry_points.txt
+src/vibegit_mcp.egg-info/requires.txt
+src/vibegit_mcp.egg-info/top_level.txt
