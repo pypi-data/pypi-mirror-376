@@ -1,0 +1,15 @@
+onpanda/__info__.py,sha256=hi_UEQGunfovUXgmK5XaOI8rAVt7Avda3HrgMQ_xRNQ,569
+onpanda/__init__.py,sha256=pPgj5fgO6XOB2Gbz4CirTrZumZd9DvAgz6eF3aVUlrE,440
+onpanda/correcting_sft_utils.py,sha256=3xDBYc6wyHE0GDvCpHPrOOdiQHCFkhDIhwNT0OpRr2w,23176
+onpanda/onpanda.py,sha256=UMuHZP2ReJXvBiMkBWmKfyRCaXpkyFDGg-AkrDz--ik,2104
+onpanda/parser.py,sha256=cZ31ifewF2yyHaUi7AKyNTKo4-_pKjTH7krNfD241-I,22630
+onpanda/test_utils.py,sha256=1rnCKJTvJMRhKb-4T0ax2bcFW-vyiGO6sSoZT0mZzgE,521
+onpanda/token_level_supervision_utils.py,sha256=7mEUXz93b6ZMNloXzoTRviXvK-haZLRASdzoq95BZow,10892
+onpanda/arena/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+onpanda/arena/panda_battle.py,sha256=W1M6YDfEOut3wd0DZkXDAomySZfXrQ4h-oJenuzDDM4,2587
+onpanda/server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+onpanda/server/main.py,sha256=azfagaeYLzgNzeMxYPg6FhGRzRSqzmr_imj5OcFbZKc,462
+onpanda-0.0.8.dist-info/METADATA,sha256=9hNoCMbStXpsN2WU-Sc6WbH0n4QpM74tZmk8oNK6Evc,935
+onpanda-0.0.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+onpanda-0.0.8.dist-info/top_level.txt,sha256=M11e17CYvHhlOIPb0-2qhDNQoonhj8EdXeOo5OXcfLU,8
+onpanda-0.0.8.dist-info/RECORD,,
