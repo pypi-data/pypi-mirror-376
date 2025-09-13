@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+nameparser/__init__.pyi
+nameparser/py.typed
+types_nameparser.egg-info/PKG-INFO
+types_nameparser.egg-info/SOURCES.txt
+types_nameparser.egg-info/dependency_links.txt
+types_nameparser.egg-info/top_level.txt
