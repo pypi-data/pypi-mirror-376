@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: Mo_Adly
+Version: 0.0.2
+Summary: library to print hello in my package
+Author: MoAdly
+Author-email: aboismaelh@gmail.com
+Keywords: python,MoAdly,Hello
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: summary
+
+A package that allows to build simple streams video
