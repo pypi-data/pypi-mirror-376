@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokencrush-langchain"
+version = "0.1.0"
+description = "LangChain Runnable client for TokenCrush prompt optimization API (/v1/crush)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "TokenCrush", email = "support@tokencrush.ai" }]
+keywords = ["langchain", "token", "prompt", "optimization", "tokencrush"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = [
+  "httpx>=0.27",
+  "pydantic>=2.7",
+  "langchain-core>=0.2.0"
+]
+
+[project.urls]
+Homepage = "https://tokencrush.ai"
+Repository = "https://github.com/tokencrush/langchain"
+Issues = "https://github.com/tokencrush/langchain/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "build>=1.2.1",
+]
+
+
