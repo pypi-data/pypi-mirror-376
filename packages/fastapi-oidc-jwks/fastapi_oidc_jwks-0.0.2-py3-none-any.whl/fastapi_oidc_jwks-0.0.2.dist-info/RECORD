@@ -1,0 +1,8 @@
+fastapi_oidc_jwks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastapi_oidc_jwks/dependency.py,sha256=YYiypHRWLxDEywFFoN4SEq7co0I8tTdr48asx-rZPL0,1374
+fastapi_oidc_jwks/middleware.py,sha256=m1cyVWNAuuHybxr9s6YV-wxAbk63ZvFUCzi2hearqjw,1992
+fastapi_oidc_jwks-0.0.2.dist-info/licenses/LICENSE,sha256=hR_354-zhnU2NNRrJ0JSQq6rsGSBkxpB9Uo6gX4JlXk,1073
+fastapi_oidc_jwks-0.0.2.dist-info/METADATA,sha256=_PUlWhcDopjTlpAMLkzMdN-sopqFZhU_5OXKiYvOnKE,680
+fastapi_oidc_jwks-0.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastapi_oidc_jwks-0.0.2.dist-info/top_level.txt,sha256=o1c-44WrbsN94jKvuHTjGyuZsMMJlkSeQyYCgoDtGTM,18
+fastapi_oidc_jwks-0.0.2.dist-info/RECORD,,
