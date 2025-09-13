@@ -1,0 +1,10 @@
+click>=7.0
+
+[test]
+pynwb>=2.0.0
+h5py>=3.0.0
+
+[video]
+opencv-python>=4.0
+numcodecs>=0.10
+numpy
