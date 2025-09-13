@@ -1,0 +1,2 @@
+[console_scripts]
+graphomotor = graphomotor.__main__:run_main
