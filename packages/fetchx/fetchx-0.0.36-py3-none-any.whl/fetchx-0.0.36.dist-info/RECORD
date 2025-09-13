@@ -1,0 +1,14 @@
+fetchx/__init__.py,sha256=ZCNu8enQXMZ1nz3gHCX0phBiQwkjnb7sU-EIKjrIugk,335
+fetchx/_call.py,sha256=K4aKJXaE89AxjxYii3Vmo6D-FloPv45FMzTUjLtLPG4,22059
+fetchx/command.py,sha256=qfUawOPYZ0TUWz5saV-OrWu0FSvTc-GjqBBGTCZa0vM,30566
+fetchx/common.py,sha256=dyjaDCs-CYztJaZw_MmmLyuhbSezDgCIMIuFsHhNgkg,37500
+fetchx/fetchx.py,sha256=Kml84Uv0OZ8wVgJG_iF7kvXtIl1ECmn8cD40R2h33ac,13904
+fetchx/generaltypes.py,sha256=WWeH3CKdSVWGO3phgg6o9MO91nOFqtGHR4KIoHjqIaE,355
+fetchx/ioutils.py,sha256=3l1YmU-x9u1WKCgC4s-OTMVkUHqurprIK0FZPu1mOaE,9508
+fetchx/init/__init__.py,sha256=MAOZs9pewy_8hh7xm4Wz1OS4fekaYTSB5IZKTtDZg2s,88
+fetchx/init/init.py,sha256=exhyASE86MyvX_BddATWaF9icLmDroB76XYUggWGM4I,3335
+fetchx/init/init_files.py,sha256=ULXm0X2Dux0L4_3P4azxtN-W0Kd6S9UUq9RMCX0kjtg,60793
+fetchx-0.0.36.dist-info/METADATA,sha256=mb2dNVwuVDGcEdxKDLyyDDx3ZR6xzec6M_5szH3rR3o,3601
+fetchx-0.0.36.dist-info/WHEEL,sha256=v8slff5hmCpvciQ3G55d2d1CnOBupjDFJHDE2dUb1Ao,97
+fetchx-0.0.36.dist-info/top_level.txt,sha256=_WiuKW9xGAvLBQimBUV5UYtpRRwUiAb3vModK07847o,7
+fetchx-0.0.36.dist-info/RECORD,,
