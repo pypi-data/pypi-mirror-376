@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maniac"
+version = "0.1.2"
+authors = [
+  { name="Roshan Prabhakar", email="roshan@maniaclabs.xyz" },
+]
+description = "LLM wrapper, for telemetry and internal model routing"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.25.0",
+    "supabase>=2.0.0",
+]
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: OS Independent",
+]
+license = "GPL-3.0"
+license-files = ["LICEN[CS]E*"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["maniac*"]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.exclude-package-data]
+"*" = ["tests*", "test_*", "*_test.py"]
+
+[dependency-groups]
+dev = [
+    "build>=1.3.0",
+    "twine>=6.2.0",
+]
+
+[project.urls]
+Homepage = "http://www.maniaclabs.xyz/"
