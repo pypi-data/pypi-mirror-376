@@ -1,0 +1,2 @@
+[console_scripts]
+ctxzz = ctxzz.__main__:main
