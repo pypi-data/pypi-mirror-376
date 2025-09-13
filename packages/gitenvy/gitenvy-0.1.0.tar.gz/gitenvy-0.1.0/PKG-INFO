@@ -1,0 +1,23 @@
+Metadata-Version: 2.3
+Name: gitenvy
+Version: 0.1.0
+Summary: A library to manage encrypted .env files with Git as a single source of truth
+License: MIT
+Keywords: gitenv,encryption,git,secrets,gitenvy
+Author: Swapnil Sawant
+Author-email: swapnil.ravi10@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: click (>=8.1,<9.0)
+Requires-Dist: cryptography (>=41.0,<42.0)
+Requires-Dist: gitpython (>=3.1,<4.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Project-URL: Homepage, https://github.com/swapnilravi10/gitenvy
+Project-URL: Repository, https://github.com/swapnilravi10/gitenvy
