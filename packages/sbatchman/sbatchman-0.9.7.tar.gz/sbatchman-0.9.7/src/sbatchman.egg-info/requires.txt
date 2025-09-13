@@ -1,0 +1,6 @@
+typer
+textual
+rich
+PyYAML
+platformdirs
+pandas
