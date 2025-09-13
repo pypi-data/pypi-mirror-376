@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: Taelcore
+Version: 1.2.0
+Summary: Dimension reduction with best linear combination for optimal reduction of embeddings (Taelcore)
+Home-page: https://github.com/MorillaLab/Taelcore
+Author: Ian MORILLA
+Author-email: ian.morilla@math.univ-paris13.fr
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary

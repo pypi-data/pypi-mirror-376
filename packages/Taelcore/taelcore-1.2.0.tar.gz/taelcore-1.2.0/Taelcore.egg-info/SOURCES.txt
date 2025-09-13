@@ -1,0 +1,8 @@
+setup.py
+Taelcore.egg-info/PKG-INFO
+Taelcore.egg-info/SOURCES.txt
+Taelcore.egg-info/dependency_links.txt
+Taelcore.egg-info/top_level.txt
+taelcore/__init__.py
+taelcore/taelcore.py
+test/__init__.py
