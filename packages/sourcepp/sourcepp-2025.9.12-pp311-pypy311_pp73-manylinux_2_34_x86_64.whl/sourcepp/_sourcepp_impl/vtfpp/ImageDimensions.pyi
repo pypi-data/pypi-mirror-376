@@ -1,0 +1,6 @@
+import sourcepp._sourcepp_impl.vtfpp
+
+
+def get_mip_dim(mip: int, dim: int) -> int: ...
+
+def get_recommended_mip_count_for_dims(format: sourcepp._sourcepp_impl.vtfpp.ImageFormat, width: int, height: int) -> int: ...
