@@ -1,0 +1,2 @@
+[console_scripts]
+mhjsmap = mhjsmap.mcpmap:run
