@@ -1,0 +1,11 @@
+treerequests/__init__.py,sha256=VC8y65YLheCETSZpS8jDFixdcQqY2pL-ksa_MTgzy7o,257
+treerequests/args.py,sha256=Fin3nGENMWjWT2Vu55ZOK872EE4jQ4u9qA4LvsVkXAc,7749
+treerequests/logger.py,sha256=sO0uGa0yekiXaUBCYgVjrbOf321TCDul4nW-OittuOI,1357
+treerequests/session.py,sha256=DbAGMBe9RSSgpCY7VtZHm3tHl1NuMxATsBbSiBYqThA,13978
+treerequests/tree.py,sha256=YN8F51cb-YNFpOD1X4W32nx6MOy3ig8keOQktmJ0zhg,1442
+treerequests/useragents.py,sha256=t5ScwbDdNKS-PnbYvyTeX8WD_B-_lB99zeLxRt-ptTo,32178
+treerequests-0.0.11.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+treerequests-0.0.11.dist-info/METADATA,sha256=fGDnREgtr5MAMPyyDMMmVkPP8DUZJ0Ti9e3EdE3QLJ0,14993
+treerequests-0.0.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+treerequests-0.0.11.dist-info/top_level.txt,sha256=cZMsr_iATv5p9LMt1hxkA75S5sicxZMmSPdDlNdg5Zw,13
+treerequests-0.0.11.dist-info/RECORD,,
