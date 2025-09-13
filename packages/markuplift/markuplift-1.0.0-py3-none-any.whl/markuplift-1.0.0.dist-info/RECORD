@@ -1,0 +1,9 @@
+markuplift/__init__.py,sha256=vOOOuSsWUyTdvd5BcoU4KncjkPw3mFpSTsGyBHta0Gs,222
+markuplift/__main__.py,sha256=bAz4Jlo19g-akoao1ntBZCeQnbi-imKPQqcnZUdefGw,5433
+markuplift/cli.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+markuplift/formatter.py,sha256=IFXGfEMf8okFQyI5V9QkoSn5rd9pINw0eWGryQNbI4A,29108
+markuplift/utilities.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+markuplift-1.0.0.dist-info/METADATA,sha256=xeHDxVasyA3Q5gNOyIAsTCyRtBA0671oW2Sff6NYV2w,345
+markuplift-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+markuplift-1.0.0.dist-info/top_level.txt,sha256=kGc5-UC2LEWeaE-P3LUcaXxnt18lf2m6PL_8dnnlPDc,11
+markuplift-1.0.0.dist-info/RECORD,,
