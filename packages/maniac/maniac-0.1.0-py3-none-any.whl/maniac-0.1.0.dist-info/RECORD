@@ -1,0 +1,16 @@
+maniac/__init__.py,sha256=qo5S0OQVnhz6SUyT7-dXEWIv7zeD_we-nkSKo7F4ZLs,277
+maniac/client.py,sha256=NWpfWg2tWcNuj_1w3XT4j-oFMbPZTJmcQMBEc0608PA,1436
+maniac/metadata.py,sha256=lFvS-bDwgIkEPNetHIov69MUo7tdyDKtyNIA3T084iE,1173
+maniac/inference/__init__.py,sha256=BTjVSNwAUEJXjJ73CnVRgQ-l8xEDwMVUsIb18PYrPGY,107
+maniac/inference/chat.py,sha256=_FPzBeldzssE3vEfeVNUmmtlXmki7xPfYu3xo7JuTxo,5830
+maniac/inference/client.py,sha256=U3s5Wx3DRdZ5LtpCKU5eoWU60PB23B-E_EWZpvFXHdA,860
+maniac/inference/parse.py,sha256=IVNSJPaKc4tPC0wEsVFLhD5UaiV5lnK9X90gzdBJ0Uk,4583
+maniac/interfaces/__init__.py,sha256=BNyDZ_qVa8oMfrasfJh737cDiE0pNdIF9GbWqnZgN2I,251
+maniac/interfaces/structs.py,sha256=XqWaDl953YJ-g476Au1tuIo7C8FyHlskJdPi66vwkHA,1733
+maniac/post_train/__init__.py,sha256=1c1Uen4r6C_YEuO3XlkLRDvb9RDJ0Jl7YGHZdPrHKKc,135
+maniac/post_train/post_train.py,sha256=pCbXZyZrWPhfOhLoFvN8IebR58aopm1xMVpheTjzhNM,9234
+maniac-0.1.0.dist-info/licenses/LICENSE,sha256=5X8cMguM-HmKfS_4Om-eBqM6A1hfbgZf6pfx2G24QFI,35150
+maniac-0.1.0.dist-info/METADATA,sha256=noJnR6aPy2f3EZwPo25VZ3q-UrBKO14RhkRzMTn9kI0,10072
+maniac-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+maniac-0.1.0.dist-info/top_level.txt,sha256=yCM1dx09HxGe9fRyFeVLisxwuZ8J1vYdQ2REXm1oHDM,7
+maniac-0.1.0.dist-info/RECORD,,
