@@ -1,0 +1,8 @@
+[console_scripts]
+petrify-lightweightnn-to-onnx = petrifyml.lightweightnn_to_onnx:main_wrapper
+petrify-mvautilslgbm-to-onnx = petrifyml.mvautils_lgbm_to_onnx:main_wrapper
+petrify-mvautilsxgboost-to-onnx = petrifyml.mvautils_xgboost_to_onnx:main_wrapper
+petrify-sklbdt-to-cpp = petrifyml.sklbdt_to_cpp:main_wrapper
+petrify-tmvabdt-to-cpp = petrifyml.tmvabdt:main_wrapper_cpp
+petrify-tmvabdt-to-py = petrifyml.tmvabdt:main_wrapper_py
+petrify-tmvamlp-to-onnx = petrifyml.tmvamlp_to_onnx:main_wrapper

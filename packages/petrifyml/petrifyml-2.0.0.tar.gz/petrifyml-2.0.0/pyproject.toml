@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "petrifyml"
+version = "2.0.0"
+authors = [
+  { name="Andy Buckley", email="andy.buckley@glasgow.ac.uk" },
+  { name="Louie Corpe", email="l.corpe@cern.ch" },
+  { name="Martin Habedank", email="martin.habedank@cern.ch" },
+  { name="Tomasz Procter", email="tomasz.procter@cern.ch" },
+]
+description = """Convert volatile trained machine-learning algorithms to preservable formats. Concretely:
+- Scikit-learn and TMVA boosted decision trees (BDTs) to dependency-free C++ or Python
+- MVAUtils lgbm and xgboost BDTs, TMVA MLPs, and lightweightNN (LWTNN) to ONNX"""
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Topic :: Software Development :: Code Generators",
+]
+
+[project.optional-dependencies]
+sklbdt = [
+  "scikit-learn",
+  "joblib",
+  "pandas"
+]
+lwtnn = [
+  "numpy",
+  "onnx"
+]
+tmvabdt = [
+  "numpy"
+]
+tmvamlp = [
+  "numpy",
+  "pandas",
+  "tensorflow>=2.13.0",
+  "tf_keras",
+  "tf2onnx>=1.12"
+]
+mvautils = [
+  "numpy",
+  "onnx>=1.16.0",
+  "uproot"
+]
+dev = [
+  "joblib",
+  "pytest",
+  "pytest-cov",
+  "coverage",
+  "numpy",
+  "pandas",
+  "pyyaml",
+  "onnx>=1.16.0",
+  "onnxruntime>1.22.0",
+  "scikit-learn",
+  "tensorflow>=2.13.0",
+  "tf_keras",
+  "tf2onnx>=1.12",
+  "uproot",
+]
+
+[tool.setuptools]
+packages = ["petrifyml"]
+
+[project.urls]
+"Homepage" = "https://gitlab.com/hepcedar/petrifyml/"
+"Bug Tracker" = "https://gitlab.com/hepcedar/petrifyml/-/issues"
+
+[project.scripts]
+petrify-tmvabdt-to-cpp = "petrifyml.tmvabdt:main_wrapper_cpp"
+petrify-tmvabdt-to-py = "petrifyml.tmvabdt:main_wrapper_py"
+petrify-sklbdt-to-cpp = "petrifyml.sklbdt_to_cpp:main_wrapper"
+petrify-tmvamlp-to-onnx = "petrifyml.tmvamlp_to_onnx:main_wrapper"
+petrify-lightweightnn-to-onnx = "petrifyml.lightweightnn_to_onnx:main_wrapper"
+petrify-mvautilsxgboost-to-onnx = "petrifyml.mvautils_xgboost_to_onnx:main_wrapper"
+petrify-mvautilslgbm-to-onnx = "petrifyml.mvautils_lgbm_to_onnx:main_wrapper"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+markers = [
+  "root_test: tests that depend on root (run in different container)",
+  "deps: group marker for all installation dependency validation",
+  "deps_lwtnn: installation dependency validation for [lwtnn]",
+  "deps_mvautils: installation dependency validation for [mvautils]",
+  "deps_tmvabdt: installation dependency validation for [tmvabdt]",
+  "deps_tmvamlp: installation dependency validation for [tmvamlp]",
+  "deps_sklbdt: installation dependency validation for [sklbdt]",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["petrifyml"]
+patch = ["subprocess"]
