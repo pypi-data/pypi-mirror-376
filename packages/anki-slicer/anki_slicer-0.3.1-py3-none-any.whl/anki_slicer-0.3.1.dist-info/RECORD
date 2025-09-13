@@ -1,0 +1,17 @@
+anki_slicer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anki_slicer/__main__.py,sha256=p9QxpQmN_EGjMoSZnt1UBcRc-Oc5LuHDut4iNwulIj8,254
+anki_slicer/ankiconnect.py,sha256=i9_mpjUceTMFOAyFsnRhqFdrgr1wWr1tER_yyPLs-ik,2554
+anki_slicer/config.py,sha256=T9JM1AYXlFvnaBomsu5eSSeY044fkHAMXo9or8PE8o0,597
+anki_slicer/exporter.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anki_slicer/main.py,sha256=ayon1ZPbV84cIAqp2YXTyh3kB7hpvi0fbL0vBua-m8E,216
+anki_slicer/player.py,sha256=fWoNtJsXPXO4ToLufkWwjaQ_xA5zpqPcIbUrwHjHwTg,26469
+anki_slicer/segment_adjuster.py,sha256=uLG01F_vOsmpXmO4DwBIi3oeSAQ5kMpC50HmAKvduNw,6052
+anki_slicer/slicer.py,sha256=XLvQpq6MWcbWpPmxUu9t4NRT-5wSaYhcqcNhgDmQHhk,1636
+anki_slicer/subs.py,sha256=A-643qhmLoT1YVIIATs5hcuBenWAWXVeLeGoE19dyTQ,4031
+anki_slicer/ui.py,sha256=4tEQuc8iHCIeDuq2nX_IM7hhYs4C8rJN_PJxAfn1o9w,4706
+anki_slicer-0.3.1.dist-info/licenses/LICENSE,sha256=DLityVEIUBMM0A-c9aW7L5fUXGtfvUmeK845OLpXxKc,1074
+anki_slicer-0.3.1.dist-info/METADATA,sha256=QVsEJh8Nr3OHUXKqwKgJDFjhjo1-6pIb4s5Qat9k_j4,3693
+anki_slicer-0.3.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+anki_slicer-0.3.1.dist-info/entry_points.txt,sha256=8PxaEpRXbgUD5pJmRxTGUdPz3E1yRnyi20znRuBShXs,54
+anki_slicer-0.3.1.dist-info/top_level.txt,sha256=Vnd7kRDD6Eq-ltyo3qhTE19NqpUz4Gj-SA80xfD_ViQ,12
+anki_slicer-0.3.1.dist-info/RECORD,,
