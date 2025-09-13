@@ -1,0 +1,9 @@
+Metadata-Version: 2.3
+Name: trantor
+Version: 0.1.0
+Summary: Project trantor
+Author: Cody
+Author-email: Cody <cody@dkdc.dev>
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
