@@ -1,0 +1,410 @@
+# RNBRW
+
+[![PyPI version](https://badge.fury.io/py/rnbrw.svg)](https://pypi.org/project/rnbrw/)
+
+**RNBRW** (Renewal Non-Backtracking Random Walks) is a Python package for estimating edge-level importance in networks using random walks that restart upon cycle closure. These weights can be used to improve community detection algorithms like Louvain.
+
+Based on:
+
+> **Moradi, B.**, **Shakeri, H.**, **Poggi-Corradini, P.**, & **Higgins, M.**  
+> *A new method for incorporating network cyclic structures to improve community detection*  
+> [arXiv:1805.07484](https://arxiv.org/abs/1805.07484)
+
+
+## Installation
+
+```bash
+pip install rnbrw
+```
+
+## Quick Start
+
+```python
+import networkx as nx
+from rnbrw import compute_weights
+
+# Load a graph
+G = nx.karate_club_graph()
+
+# Compute RNBRW weights
+G = compute_weights(G, nsim=100, n_jobs=4)
+
+# View edge weights
+weights = [G[u][v]['ret_n'] for u, v in list(G.edges())[:3]]
+print(f"Edge weights: {weights}")
+```
+
+## Basic Usage
+
+### Computing Edge Weights
+
+```python
+import networkx as nx
+from rnbrw import compute_weights
+
+# Create or load your graph
+G = nx.karate_club_graph()
+
+# Compute RNBRW weights (recommended: nsim ≈ number of edges)
+G = compute_weights(
+    G, 
+    nsim=G.number_of_edges(),  # Number of random walks
+    n_jobs=4,                  # Parallel processing
+    seed=42                    # Reproducibility
+)
+
+# Access edge weights
+for u, v in list(G.edges())[:5]:
+    print(f"Edge ({u},{v}): raw={G[u][v]['ret']}, normalized={G[u][v]['ret_n']}")
+```
+
+### Community Detection with RNBRW
+
+```python
+from rnbrw.community import detect_communities_louvain
+
+# Detect communities using RNBRW weights
+partition = detect_communities_louvain(G, weight_attr='ret_n')
+
+print(f"Found {len(set(partition.values()))} communities")
+print(f"Modularity: {nx.community.modularity(G, partition.values(), weight='ret_n')}")
+```
+
+## Advanced Features
+
+### Different Modes
+
+```python
+# Mode "E": Paper-faithful approach (4m total walks)
+G = compute_weights(G, mode="E", n_jobs=4)
+
+# Mode "sample": Scalable approach with custom walk count
+G = compute_weights(G, mode="sample", nsim=1000, n_jobs=4)
+```
+
+### CSR Backend for Large Graphs
+
+```python
+# Convert to CSR format for better performance
+indptr, indices, edge_lookup, edge_list, n, m = rnbrw.graph_to_csr(G)
+
+# Compute weights using CSR backend
+weights = compute_weights(
+    indptr=indptr,
+    indices=indices,
+    edge_lookup=edge_lookup,
+    edge_list=edge_list,
+    m=m,
+    backend="csr",
+    n_jobs=4
+)
+```
+
+## HPC Usage
+
+RNBRW is designed for High-Performance Computing environments where you need to process very large networks (100M+ edges) across multiple compute nodes.
+
+### Step 1: Prepare CSR Graph Data
+
+First, convert your graph to CSR format and save it for reuse across all HPC jobs:
+
+```python
+import networkx as nx
+import numpy as np
+import pickle
+import rnbrw
+
+# Load your large graph
+G = nx.read_gpickle("large_network.gpickle")
+
+# Convert to CSR format
+indptr, indices, edge_lookup, edge_list, n, m = rnbrw.graph_to_csr(G)
+
+# Save CSR arrays (fast binary format)
+np.savez_compressed("graph_csr.npz", 
+                   indptr=indptr, 
+                   indices=indices, 
+                   edge_list=edge_list, 
+                   n=n, m=m)
+
+# Save edge lookup dictionary
+with open("edge_lookup.pkl", "wb") as f:
+    pickle.dump(edge_lookup, f)
+
+print(f"Prepared CSR data for graph with {n} nodes and {m} edges")
+```
+
+### Step 2: HPC Job Array Setup
+
+#### Option A: Single Walk Per Job (Simple Arrays)
+
+**SLURM script (`rnbrw_array.sh`):**
+```bash
+#!/bin/bash
+#SBATCH --job-name=rnbrw
+#SBATCH --output=logs/rnbrw_%A_%a.out
+#SBATCH --error=logs/rnbrw_%A_%a.err
+#SBATCH --array=0-99              # 100 jobs
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=4G
+#SBATCH --time=00:30:00
+
+module load python/3.9
+source activate rnbrw-env
+
+python run_single_walk.py $SLURM_ARRAY_TASK_ID
+```
+
+**Python script (`run_single_walk.py`):**
+```python
+import sys
+import numpy as np
+import pickle
+import rnbrw
+
+# Get job ID from command line
+job_id = int(sys.argv[1])
+seed = 1000 + job_id
+
+# Load CSR data
+csr_data = np.load("graph_csr.npz")
+indptr = csr_data["indptr"]
+indices = csr_data["indices"]
+edge_list = csr_data["edge_list"]
+m = int(csr_data["m"])
+
+with open("edge_lookup.pkl", "rb") as f:
+    edge_lookup = pickle.load(f)
+
+# Run single walk
+T = rnbrw.walk_hole_csr(indptr, indices, edge_lookup, edge_list, m, S=1, seed=seed)
+
+# Save result
+np.save(f"results/T_job_{job_id}.npy", T)
+print(f"Job {job_id} completed: {T.sum()} total hits")
+```
+
+#### Option B: Batch Walks Per Job (Higher Throughput)
+
+**SLURM script for batched jobs:**
+```bash
+#!/bin/bash
+#SBATCH --job-name=rnbrw_batch
+#SBATCH --output=logs/batch_%A_%a.out
+#SBATCH --error=logs/batch_%A_%a.err
+#SBATCH --array=0-19              # 20 jobs
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=8G
+#SBATCH --time=02:00:00
+
+module load python/3.9
+source activate rnbrw-env
+
+python run_batch_walks.py $SLURM_ARRAY_TASK_ID
+```
+
+**Python script (`run_batch_walks.py`):**
+```python
+import sys
+import numpy as np
+import pickle
+import rnbrw
+
+job_id = int(sys.argv[1])
+walks_per_job = 500  # Adjust based on your needs
+base_seed = 10000
+
+# Load CSR data once
+csr_data = np.load("graph_csr.npz")
+indptr = csr_data["indptr"]
+indices = csr_data["indices"]
+edge_list = csr_data["edge_list"]
+m = int(csr_data["m"])
+
+with open("edge_lookup.pkl", "rb") as f:
+    edge_lookup = pickle.load(f)
+
+# Generate seeds for this job
+seeds = [base_seed + job_id * walks_per_job + i for i in range(walks_per_job)]
+
+# Accumulate walks
+T_total = np.zeros(m, dtype=int)
+for seed in seeds:
+    T = rnbrw.walk_hole_csr(indptr, indices, edge_lookup, edge_list, m, S=1, seed=seed)
+    T_total += T
+
+# Save accumulated result
+np.save(f"results/T_batch_{job_id}.npy", T_total)
+print(f"Batch job {job_id} completed: {walks_per_job} walks, {T_total.sum()} total hits")
+```
+
+### Step 3: Submit Jobs
+
+```bash
+# Create results directory
+mkdir -p logs results
+
+# Submit job array
+sbatch rnbrw_array.sh
+
+# Monitor progress
+squeue -u $USER
+```
+
+### Step 4: Aggregate Results
+
+After all jobs complete, combine the results:
+
+```python
+import numpy as np
+import glob
+
+# Aggregate all partial results
+result_files = glob.glob("results/T_*.npy")
+print(f"Found {len(result_files)} result files")
+
+T_total = np.zeros_like(np.load(result_files[0]))
+for file in result_files:
+    T_partial = np.load(file)
+    T_total += T_partial
+
+# Save final aggregated counts
+np.save("T_final.npy", T_total)
+print(f"Total walks completed: {T_total.sum()}")
+print(f"Edges with hits: {np.count_nonzero(T_total)}")
+```
+
+### Step 5: Apply Weights to Graph
+
+```python
+import networkx as nx
+import numpy as np
+
+# Load original graph and final walk counts
+G = nx.read_gpickle("large_network.gpickle")
+T_total = np.load("T_final.npy")
+
+# Add enumeration to edges (if not already done)
+for i, (u, v) in enumerate(G.edges()):
+    G[u][v]['enum'] = i
+
+# Assign RNBRW weights
+total_hits = T_total.sum()
+for u, v in G.edges():
+    enum_id = G[u][v]['enum']
+    G[u][v]['ret'] = T_total[enum_id]
+    G[u][v]['ret_n'] = T_total[enum_id] / total_hits
+
+# Save weighted graph
+nx.write_gpickle(G, "large_network_weighted.gpickle")
+print("RNBRW weights applied to graph")
+```
+
+### HPC Performance Tips
+
+1. **Memory Management**: For graphs with 100M+ edges, use the CSR backend exclusively
+2. **Job Sizing**: Balance between job overhead and compute time (aim for 10-60 minutes per job)
+3. **Storage**: Use compressed formats (`np.savez_compressed`) for large edge lists
+4. **Monitoring**: Track progress with simple logging in each job
+5. **Fault Tolerance**: Save intermediate results frequently
+
+## API Reference
+
+### `compute_weights()`
+
+Main function for computing RNBRW edge weights.
+
+```python
+compute_weights(
+    G=None,                    # NetworkX graph (required for backend="nx")
+    indptr=None,               # CSR row pointers (required for backend="csr")
+    indices=None,              # CSR column indices (required for backend="csr")
+    edge_lookup=None,          # Edge ID mapping (required for backend="csr")
+    edge_list=None,            # Edge list array (required for backend="csr")
+    m=None,                    # Number of edges (required for backend="csr")
+    nsim=None,                 # Number of walks (default: m × factor)
+    seed=None,                 # Random seed
+    factor=1.0,                # Multiplier for default nsim
+    n_jobs=1,                  # Parallel jobs (-1 = all CPUs)
+    init_weight=0.0001,        # Initial edge weights
+    mode="E",                  # "E" or "sample"
+    backend="nx",              # "nx" or "csr"
+    validate=False             # Validate CSR mapping
+)
+```
+
+**Parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `G` | `networkx.Graph` | `None` | Input graph (required if `backend="nx"`) |
+| `nsim` | `int` | `None` | Number of random walks (defaults to `m × factor`) |
+| `mode` | `str` | `"E"` | `"E"` = 4m walks, `"sample"` = nsim × 2 walks |
+| `backend` | `str` | `"nx"` | `"nx"` for NetworkX, `"csr"` for sparse arrays |
+| `n_jobs` | `int` | `1` | Parallel jobs (`-1` uses all CPUs) |
+| `seed` | `int` | `None` | Random seed for reproducibility |
+
+**Returns:**
+- NetworkX backend: Graph with `'ret'` and `'ret_n'` edge attributes
+- CSR backend: Dictionary `{edge_id: normalized_weight}`
+
+### Helper Functions
+
+```python
+# Convert NetworkX graph to CSR format
+graph_to_csr(G)
+
+# Validate CSR mapping consistency  
+validate_csr_mapping(edge_lookup, edge_list, m)
+
+# Convert edge weights to edge dictionary
+weights_to_edge_dict(weights, edge_list)
+
+# Detect communities using weighted Louvain
+detect_communities_louvain(G, weight_attr='ret_n')
+
+#Convert CSR backend weights to edge tuple format.
+weights_to_edge_dict()`
+
+
+# After computing weights with CSR backend
+weights = compute_weights(..., backend="csr")  # Returns {edge_id: weight}
+
+# Convert to edge tuple format for easier use
+edge_weights = weights_to_edge_dict(weights, edge_list)
+# Returns {(u,v): weight}
+
+# Now you can easily look up weights by edge
+weight_of_edge_01 = edge_weights[(0, 1)]
+```
+## Performance Guidelines
+
+- **Small graphs** (< 10K edges): Use NetworkX backend with `n_jobs=4`
+- **Medium graphs** (10K - 1M edges): Use NetworkX backend with `n_jobs=-1` 
+- **Large graphs** (1M+ edges): Use CSR backend locally or HPC
+- **Very large graphs** (100M+ edges): Use HPC with job arrays
+
+**Recommended `nsim` values:**
+- Development/testing: `nsim = m // 10` (10% of edges)
+- Production: `nsim = m` (equal to number of edges)
+- High precision: `nsim = 2 * m` (twice the number of edges)
+
+## Citation
+
+If you use this package in your research, please cite:
+
+```bibtex
+@article{moradi2018new,
+  title={A new method for incorporating network cyclic structures to improve community detection},
+  author={Moradi, Behnaz and Shakeri, Heman and Poggi-Corradini, Pietro and Higgins, Michael},
+  journal={arXiv preprint arXiv:1805.07484},
+  year={2018}
+}
+```
+
+
+
+
+
