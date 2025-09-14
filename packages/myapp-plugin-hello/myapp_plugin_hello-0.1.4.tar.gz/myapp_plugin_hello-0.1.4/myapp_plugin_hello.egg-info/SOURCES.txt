@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+myapp_plugin_hello/__init__.py
+myapp_plugin_hello/plugin.py
+myapp_plugin_hello.egg-info/PKG-INFO
+myapp_plugin_hello.egg-info/SOURCES.txt
+myapp_plugin_hello.egg-info/dependency_links.txt
+myapp_plugin_hello.egg-info/entry_points.txt
+myapp_plugin_hello.egg-info/requires.txt
+myapp_plugin_hello.egg-info/top_level.txt
