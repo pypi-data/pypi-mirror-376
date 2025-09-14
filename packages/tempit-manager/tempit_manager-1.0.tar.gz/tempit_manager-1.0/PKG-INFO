@@ -1,0 +1,78 @@
+Metadata-Version: 2.3
+Name: tempit-manager
+Version: 1.0
+Summary: Manage and jump into temporary working directories
+Author: Idir Oura
+Author-email: idir.oura@protonmail.com
+Requires-Python: >=3.10,<3.14
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: flake8 (>=7.3.0,<8.0.0)
+Requires-Dist: humanize
+Requires-Dist: mypy (>=1.18.1,<2.0.0)
+Requires-Dist: pylint (>=3.3.8,<4.0.0)
+Requires-Dist: pytest (>=8.4.2,<9.0.0)
+Requires-Dist: ruff (>=0.13.0,<0.14.0)
+Requires-Dist: tabulate
+Requires-Dist: termcolor
+Description-Content-Type: text/markdown
+
+# Tempit - Temporary Directory Manager
+
+Tempit is a command-line utility and shell helper that lets you create, track, and jump to temporary directories without losing them.
+## Features
+
+- Create temporary directories with optional prefixes.
+- List tracked directories with size, creation time, age, and file counts.
+- Jump to a directory by its number.
+- Remove individual directories or clean them all.
+- Works via shell integration.
+
+## Installation
+
+### Using pip
+
+```bash
+pip install tempit-manager
+```
+
+### Shell integration
+
+Add the following line to your shell startup file (`~/.bashrc` or `~/.zshrc`):
+
+```bash
+# Bash
+eval "$(tempit --init bash)"
+
+# Zsh
+eval "$(tempit --init zsh)"
+```
+
+## Usage
+
+### CLI commands
+
+```bash
+tempit --create [prefix]
+tempit --list
+tempit --remove <number>
+tempit --clean-all
+```
+
+### Aliases (after shell init)
+
+| Alias | Description |
+|-------|-------------|
+| `tempc [prefix]` | Create a new temporary directory and cd into it |
+| `tempg <number>` | Jump to a directory by its number |
+| `templ` | List tracked temporary directories |
+| `temprm <number>` | Remove a tracked temporary directory by its number |
+| `tempclean` | Remove all tracked temporary directories |
+
+## License
+
+[MIT](LICENSE)
+

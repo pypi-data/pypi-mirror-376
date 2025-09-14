@@ -1,0 +1,30 @@
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "tempit-manager"
+version = "1.0"
+description = "Manage and jump into temporary working directories"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+authors = [{ name = "Idir Oura", email = "idir.oura@protonmail.com" }]
+dependencies = [
+    "humanize",
+    "tabulate",
+    "termcolor",
+    "pytest (>=8.4.2,<9.0.0)",
+    "flake8 (>=7.3.0,<8.0.0)",
+    "ruff (>=0.13.0,<0.14.0)",
+    "mypy (>=1.18.1,<2.0.0)",
+    "pylint (>=3.3.8,<4.0.0)"
+]
+
+[project.scripts]
+tempit = "tempit.cli:main"
+
+[tool.poetry]
+packages = [{ include = "tempit" }]
+include = [
+  { path = "tempit/shell/init.sh" }
+]
