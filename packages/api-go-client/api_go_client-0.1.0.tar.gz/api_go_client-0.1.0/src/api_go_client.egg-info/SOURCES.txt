@@ -1,0 +1,11 @@
+setup.py
+src/api_go/__init__.py
+src/api_go/client.py
+src/api_go/decorators.py
+src/api_go/exceptions.py
+src/api_go/utils.py
+src/api_go_client.egg-info/PKG-INFO
+src/api_go_client.egg-info/SOURCES.txt
+src/api_go_client.egg-info/dependency_links.txt
+src/api_go_client.egg-info/requires.txt
+src/api_go_client.egg-info/top_level.txt
