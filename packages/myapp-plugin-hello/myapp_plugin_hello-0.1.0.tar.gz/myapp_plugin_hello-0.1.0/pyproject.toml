@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myapp-plugin-hello"
+version = "0.1.0"
+description = "MyApp的Hello插件"
+dependencies = ["myapp"]
+
+# 关键：定义entry points
+[project.entry-points."myapp.plugins"]
+hello = "myapp_plugin_hello.plugin:HelloPlugin"
