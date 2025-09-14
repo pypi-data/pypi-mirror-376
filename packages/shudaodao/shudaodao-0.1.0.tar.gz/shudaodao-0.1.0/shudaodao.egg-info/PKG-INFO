@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: shudaodao
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: <3.11,>=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: aiosqlite>=0.21.0
+Requires-Dist: asyncpg>=0.30.0
+Requires-Dist: chromadb>=1.0.15
+Requires-Dist: cython>=3.1.2
+Requires-Dist: fastapi>=0.115.12
+Requires-Dist: greenlet>=3.2.4
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: modelscope>=1.29.1
+Requires-Dist: mypy>=1.17.1
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: passlib>=1.7.4
+Requires-Dist: psycopg2-binary>=2.9.10
+Requires-Dist: pydantic[email]>=2.11.7
+Requires-Dist: pypdf2>=3.0.1
+Requires-Dist: pytest>=8.4.1
+Requires-Dist: python-docx>=1.2.0
+Requires-Dist: python-jose[cryptography]>=3.5.0
+Requires-Dist: python-multipart>=0.0.20
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: redis>=6.4.0
+Requires-Dist: sentence-transformers>=5.0.0
+Requires-Dist: setuptools>=80.9.0
+Requires-Dist: sqlalchemy>=2.0.43
+Requires-Dist: sqlmodel>=0.0.24
+Requires-Dist: starlette>=0.46.2
+Requires-Dist: torch>=2.7.0
+Requires-Dist: transformers>=4.56.0
+Requires-Dist: uvicorn>=0.34.3
+
+# 一、注意事项
+
+## 1. 资源 根目录
+- 目录 web 标记为  **资源根目录**
+
+## 2. 源代码 根目录
+- 所有 src 目录 需要标记为 **源代码根目录**
+  - src
+  - packages/****/src
+
+## 3. 默认目录
+- 配置都在目录 **config** 
+- 模型文件目录 **models**
+- 本地数据库目录 **database**
+
+
