@@ -1,0 +1,16 @@
+README.md
+setup.py
+scrappify/__init__.py
+scrappify/cli.py
+scrappify/exceptions.py
+scrappify/patterns.py
+scrappify.egg-info/PKG-INFO
+scrappify.egg-info/SOURCES.txt
+scrappify.egg-info/dependency_links.txt
+scrappify.egg-info/entry_points.txt
+scrappify.egg-info/requires.txt
+scrappify.egg-info/top_level.txt
+scrappify/core/__init__.py
+scrappify/core/downloader.py
+scrappify/core/scraper.py
+scrappify/core/utils.py
