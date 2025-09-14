@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: mx-process-manager
+Version: 1.0.1
+Summary: This is a tool that provides a GUI to manage processes and process trees.
+Author: DarkLee
+Author-email: darklee@tenonx.com
+Requires-Python: >=3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: ming-formatter (>=0.1.1,<0.2.0)
+Requires-Dist: psutil (>=7.0.0,<8.0.0)
+Requires-Dist: pyqt6 (>=6.9.1,<7.0.0)
+Description-Content-Type: text/markdown
+
+# Usage
+
+This is a GUI-based process manager that allows you to view system processes in both list and tree formats. Easily monitor, explore, and manage running processes with an intuitive graphical interface.
+``` bash
+mx-process-manager
+```
+
+![Example](https://raw.githubusercontent.com/darklee/process/refs/heads/master/assets/test.png)
+
+
