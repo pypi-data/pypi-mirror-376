@@ -1,0 +1,52 @@
+
+# Palo Alto EDL Deduplicator
+
+팔로알토 방화벽에 연동된 외부 동적 리스트(EDLs)의 중복을 제거하여 리소스 낭비를 줄이고, 운영 효율성을 개선할 수 있는 라이브러리입니다.
+
+### 설치
+
+```bash
+pip install paloalto-edl-deduplicator
+```
+
+### 임포트
+
+```python
+from paloalto_edl_deduplicator import *
+```
+
+### 메소드
+복잡한 프로그래밍이 필요 없습니다.
+Palo Alto EDL Deduplicator 라이브러리를 사용하여 단 한 줄의 코드로 모든 설정을 완료하세요!
+
+```python
+paloalto_edl_deduplicator(path, minutes)
+```
+
+- path: 단일 EDL 파일 또는 여러 EDL 파일이 들어 있는 디렉터리 경로 지정
+  > 디렉터리 경로를 지정할 경우 하위 디렉터리까지 재귀적으로 EDLs을 탐색합니다.
+- minutes: 스케줄 생성을 위한 작업 반복 주기 설정
+  > 반복 주기는 분 단위로 지정할 수 있으며, 생략 시 기본 10분으로 적용됩니다.
+
+### 예제
+```python
+paloalto_edl_deduplicator(my_EDL_dir, 60) # 60분 주기로 my_EDL_dir 디렉터리와 그 하위 디렉터리에 존재하는 모든 EDL 파일 대상으로 각 파일 내부의 중복 데이터 제거
+```
+### 셸 스크립트 출력
+파이썬 실행 환경이 구축되지 않은 리눅스 계열 서버를 위한 셸 스크립트를 제공합니다.
+
+```python
+create_shell_script('deduplicator.sh')
+```
+### 셸 스크립트 사용 방법
+
+```bash
+chmod +x deduplicate.sh # 실행 권한 부여: 스크립트를 실행 가능한 파일로 만듭니다.
+./deduplicate.sh my_file.txt # 단일 파일: 파일명에 띄어쓰기가 있다면 따옴표로 묶습니다.
+./deduplicate.sh my_dir # 디렉터리: 해당 디렉토리와 그 하위의 모든 파일을 처리합니다.
+```
+
+### 주의사항
+스케줄 주기는 작업(job)을 처리하는데 걸리는 시간보다 크게 설정해야 합니다.
+- 자원 경합(Race Condition): 만약 여러 작업이 동일한 파일에 쓰거나, 같은 데이터베이스에 접근하려 한다면 데이터가 손상되거나 충돌이 발생할 수 있습니다.
+-  과부하(Overload): job이 시스템 자원을 많이 사용한다면, 여러 작업이 동시에 실행되면서 CPU와 메모리가 100%에 가까운 수준으로 치솟아 시스템 전체가 느려지거나 멈출 수 있습니다.

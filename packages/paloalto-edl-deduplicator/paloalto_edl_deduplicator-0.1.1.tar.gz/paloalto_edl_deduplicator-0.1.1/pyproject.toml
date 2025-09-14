@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paloalto_edl_deduplicator"
+version = "0.1.1"
+authors = [
+  { name="JHS", email="llaseine@sk.com" },
+]
+description = "A Python package for deduplicating IP addresses and URLs in External Dynamic Lists (EDLs) used with Palo Alto firewalls"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "schedule"
+]
+
+[project.urls]
+Homepage = "https://www.paloaltonetworks.co.kr"
+Issues = "https://www.paloaltonetworks.co.kr"
