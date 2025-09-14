@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lightpads"
+version = "0.0.1"
+description = "Python client library for controlling Lightpads™ interactive play systems — set colors, detect pad hits, and build custom games."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Mark Jennings", email = "mark@playerverse.co.uk" }]
+keywords = ["lightpads", "interactive", "hardware", "games", "sdk"]
+
+[tool.setuptools.packages.find]
+include = ["lightpads*"]
