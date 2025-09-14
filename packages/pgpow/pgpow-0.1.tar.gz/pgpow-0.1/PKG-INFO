@@ -1,0 +1,66 @@
+Metadata-Version: 2.3
+Name: pgpow
+Version: 0.1
+Summary: A command line toolkit for working with PostgreSQL.
+Author: Rob Young
+License: Apache-2.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: SQL
+Classifier: Topic :: Database
+Requires-Dist: click
+Requires-Dist: pytest ; extra == 'test'
+Requires-Python: >=3.10
+Project-URL: CI, https://github.com/robyoung/pgpow/actions
+Project-URL: Changelog, https://github.com/robyoung/pgpow/releases
+Project-URL: Homepage, https://github.com/robyoung/pgpow
+Project-URL: Issues, https://github.com/robyoung/pgpow/issues
+Provides-Extra: test
+Description-Content-Type: text/markdown
+
+# pgpow
+
+[![PyPI](https://img.shields.io/pypi/v/pgpow.svg)](https://pypi.org/project/pgpow/)
+[![Changelog](https://img.shields.io/github/v/release/robyoung/pgpow?include_prereleases&label=changelog)](https://github.com/robyoung/pgpow/releases)
+[![Tests](https://github.com/robyoung/pgpow/actions/workflows/test.yml/badge.svg)](https://github.com/robyoung/pgpow/actions/workflows/test.yml)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/robyoung/pgpow/blob/master/LICENSE)
+
+A command line toolkit for working with PostgreSQL.
+
+## Installation
+
+Install this tool using `pip`:
+```bash
+pip install pgpow
+```
+
+You can install completions for your shell using the [click instructions](https://click.palletsprojects.com/en/stable/shell-completion/).
+
+## Usage
+
+For help, run:
+```bash
+pgpow --help
+```
+
+## Development
+
+To contribute to this tool, first checkout the code. Then create a new virtual environment:
+```bash
+cd pgpow
+python -m venv venv
+source venv/bin/activate
+```
+Now install the dependencies and test dependencies:
+```bash
+pip install -e '.[test]'
+```
+To run the tests:
+```bash
+python -m pytest
+```
