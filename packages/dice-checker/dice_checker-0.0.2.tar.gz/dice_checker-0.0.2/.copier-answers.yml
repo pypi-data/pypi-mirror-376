@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier. Do not edit manually.
+_commit: v0.2.18
+_src_path: gh:jlevy/simple-modern-uv
+package_author_email: renaud.guillon@gmail.com
+package_author_name: Renaud Guillon
+package_description: Simple dice manipulation library allowing to compute probabilities
+    of complex dice rolls
+package_github_org: rguillon
+package_module: dicer
+package_name: dicer

@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: dice-checker
+Version: 0.0.2
+Summary: Simple dice manipulation library allowing to compute probabilities of complex dice rolls
+Project-URL: Repository, https://github.com/rguillon/dicer
+Author-email: Renaud Guillon <renaud.guillon@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: <4.0,>=3.11
+Description-Content-Type: text/markdown
+
+# dice-checker
+
+[![Release](https://img.shields.io/github/v/release/rguillon/dice-checker)](https://img.shields.io/github/v/release/rguillon/dice-checker)
+[![Build status](https://img.shields.io/github/actions/workflow/status/rguillon/dice-checker/ci.yml?branch=main)](https://github.com/rguillon/dice-checker/actions/workflows/ci.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/rguillon/dice-checker/branch/main/graph/badge.svg)](https://codecov.io/gh/rguillon/dice-checker)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/rguillon/dice-checker)](https://img.shields.io/github/commit-activity/m/rguillon/dice-checker)
+[![License](https://img.shields.io/github/license/rguillon/dice-checker)](https://img.shields.io/github/license/rguillon/dice-checker)
+
+A simple library to compute probabilities with dice rolls.
