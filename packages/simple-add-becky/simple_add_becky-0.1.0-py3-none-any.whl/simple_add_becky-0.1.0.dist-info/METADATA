@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: simple_add_becky
+Version: 0.1.0
+Summary: A simple example package that adds two numbers.
+Author: Rebecca Koleth
+Author-email: Rebecca Koleth <rebeccakoleth@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# simple_add_tesfahiwet
+
+A simple example Python package that provides a function to add two numbers.
+
+## Installation
+
+```bash
+pip install simple_add_tesfahiwet
+```
+
+## Usage
+
+```python
+from simple_add import add_numbers
+
+print(add_numbers(2, 3))  # Output: 5
+```
