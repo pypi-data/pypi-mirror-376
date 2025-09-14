@@ -1,0 +1,4 @@
+argparse
+pymupdf
+pytesseract
+pillow

@@ -1,0 +1,26 @@
+[project]
+name = "searchallpdf"
+version = "0.2.0"
+description = "Search for terms in all pdf in current and sub folders."
+readme = "README.md"
+authors = [
+    { name = "Géry Casiez", email = "gery.casiez@gmail.com" }
+]
+license = "MIT"
+requires-python = ">=3.0"
+dependencies = [
+    "argparse",
+    "pymupdf",
+    "pytesseract",
+    "pillow"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/casiez/searchallpdf"
+
+[project.scripts]
+searchallpdf = "searchallpdf:main"

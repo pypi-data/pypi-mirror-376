@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+searchallpdf.py
+searchallpdf.egg-info/PKG-INFO
+searchallpdf.egg-info/SOURCES.txt
+searchallpdf.egg-info/dependency_links.txt
+searchallpdf.egg-info/entry_points.txt
+searchallpdf.egg-info/requires.txt
+searchallpdf.egg-info/top_level.txt
