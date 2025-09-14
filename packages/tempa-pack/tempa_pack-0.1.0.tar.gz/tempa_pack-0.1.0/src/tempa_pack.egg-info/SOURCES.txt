@@ -1,0 +1,7 @@
+pyproject.toml
+src/tempa-pack/__init__.py
+src/tempa-pack/main.py
+src/tempa_pack.egg-info/PKG-INFO
+src/tempa_pack.egg-info/SOURCES.txt
+src/tempa_pack.egg-info/dependency_links.txt
+src/tempa_pack.egg-info/top_level.txt

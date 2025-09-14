@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tempa-pack"  # must be unique on PyPI
+version = "0.1.0"
+description = "A simple example package"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [
+  {name = "tempa", email = "admin@google.com"},
+]
+
+[project.urls]
+Homepage = "https://github.com/torvalds/linux"
+Issues = "https://github.com/torvalds/linux/issues"
