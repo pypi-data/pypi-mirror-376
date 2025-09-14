@@ -1,0 +1,34 @@
+{
+  "name": "@thiagovt-dev/xodex-cli",
+  "version": "0.2.1",
+  "description": "CLI wrapper em Node.js para o Xodex (Python), permitindo instalação e execução do Xodex via npm de forma simples.",
+  "bin": {
+    "xodex": "index.js"
+  },
+  "files": ["index.js", "README.md"],
+  "license": "MIT",
+  "author": "Thiago Vasconcelos Teixeira",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagovt-dev/xodex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thiagovt-dev/xodex/issues"
+  },
+  "homepage": "https://github.com/thiagovt-dev/xodex#readme",
+  "keywords": [
+    "xodex",
+    "cli",
+    "python",
+    "wrapper",
+    "automation",
+    "ai",
+    "developer-tools",
+    "machine-learning",
+    "workflow",
+    "openai",
+    "deepseek",
+    "gemini"
+  ],
+  "engines": { "node": ">=18" }
+}
