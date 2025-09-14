@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=42", "setuptools_scm[toml]>=3.4"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "prem/_dist_ver.py"
+write_to_template = "__version__ = '{version}'\n"
+
+[tool.setuptools.packages.find]
+exclude = ["tests"]
+
+[project.urls]
+repository = "https://github.com/casperdcl/prem"
+
+[project]
+name = "prem"
+dynamic = ["version"]
+maintainers = [{name = "Casper da Costa-Luis", email = "casper.dcl@physics.org"}]
+description = "Pipe remedy"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MPL-2.0"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3 :: Only"]
+dependencies = ["argopt", "shtab"]
+
+[project.scripts]
+prem = "prem.__main__:cli"
+
+[tool.flake8]
+max_line_length = 120
+exclude = [".git", "__pycache__", "build", "dist", ".eggs"]
+ignore = ["E261"]
+
+[tool.yapf]
+spaces_before_comment = [15, 20]
+arithmetic_precedence_indication = true
+allow_split_before_dict_value = false
+coalesce_brackets = true
+column_limit = 120
+each_dict_entry_on_separate_line = false
+space_between_ending_comma_and_closing_bracket = false
+split_before_named_assigns = false
+split_before_closing_bracket = false
+blank_line_before_nested_class_or_def = false
+
+[tool.isort]
+line_length = 120
+multi_line_output = 4
+known_first_party = ["prem", "tests"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+log_level = "INFO"
+python_files = ["test_*.py"]
+testpaths = ["tests"]
+addopts = "-v --tb=short -rxs -W=error --durations=0 --durations-min=0.1"
+
+[tool.coverage.run]
+branch = true
+include = ["prem/*"]
+relative_files = true
+disable_warnings = ["include-ignored"]
+[tool.coverage.report]
+show_missing = true

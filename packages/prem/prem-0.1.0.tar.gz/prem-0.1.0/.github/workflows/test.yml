@@ -1,0 +1,47 @@
+name: Test
+on:
+  push:
+  pull_request:
+  schedule: [{cron: '4 3 1 * *'}]  # M H d m w (monthly at 3:04)
+jobs:
+  test:
+    if: github.event_name != 'pull_request' || !contains('OWNER,MEMBER,COLLABORATOR', github.event.pull_request.author_association)
+    name: py${{ matrix.python }}
+    runs-on: ubuntu-${{ matrix.python == 3.7 && '22.04' || 'latest' }}
+    strategy:
+      matrix:
+        python: [3.7, 3.13]
+    steps:
+    - uses: actions/checkout@v4
+      with: {fetch-depth: 0}
+    - uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python }}
+    - run: pip install -U -e . pytest-cov
+    - run: pytest --cov=prem --cov-report=xml --cov-report=term
+    - uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions: {contents: write, id-token: write}
+    steps:
+    - uses: actions/checkout@v4
+      with: {fetch-depth: 0}
+    - uses: actions/setup-python@v5
+      with: {python-version: '3.x'}
+    - id: dist
+      uses: casperdcl/deploy-pypi@v2
+      with:
+        build: true
+        upload: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags') }}
+    - if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+      name: Release
+      run: |
+        changelog=$(git log --pretty='format:%d%n- %s%n%b---' $(git tag --sort=v:refname | tail -n2 | head -n1)..HEAD)
+        tag="${GITHUB_REF#refs/tags/}"
+        gh release create --title "prem $tag stable" --draft --notes "$changelog" "$tag" dist/${{ steps.dist.outputs.whl }} dist/${{ steps.dist.outputs.whl_asc }}
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
