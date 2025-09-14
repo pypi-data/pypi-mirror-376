@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: anubis-solver
+Version: 0.1.1
+Summary: Solver for anti-bot challenges (Anubis / canine.tools style)
+Author-email: huzpsb <noreply@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/huzpsb/anubis_solver_pypi
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# anubis-solver
+
+Solve Anubis Web AI Firewall challenges.  
+[Anubis](https://github.com/TecharoHQ/anubis)
+
+## Install
+```bash
+pip install anubis-solver
+```
+
+## Use
+
+```python
+import requests
+from anubis_solver import solve
+
+cookie = solve("https://fabulous.systems/")
+print(cookie)
+
+content = requests.get("https://fabulous.systems/", headers={"Cookie": cookie}, verify=False).text
+print(content)
+```
+
