@@ -1,0 +1,17 @@
+flozz_daily_mix/__init__.py,sha256=d1D8EJdTDSHtkfz3Ueew9bKtO5Aw9b7s4Eev7x5TFGQ,94
+flozz_daily_mix/__main__.py,sha256=5EL3HpUkjP-3Ru2JMSL7Bd_pzIr6nIorhTxOoYor2y8,15657
+flozz_daily_mix/cli.py,sha256=HA_oJKAb81gpqrLMWWa8KJHVPj9kMzUPVH9JH3McuyQ,3293
+flozz_daily_mix/config.py,sha256=4l0KB1wJyk9zm9twaZ90RxWPtGGmhvXjyyA0IMmqPyY,2844
+flozz_daily_mix/db.py,sha256=u-3KfJpRv-fs7KI4mTSE11BQM9IaZJHWuoceXR0Q9Cc,16203
+flozz_daily_mix/helpers.py,sha256=hi7RBOM-3jsAAQx0Rl5_iPCrt0x7LRyM07_M6dxlmoc,1837
+flozz_daily_mix/musicbrainz_db.py,sha256=3-hpMz3sAiohw93SnDH9_ygdXOltrO4JsfT0SIVNmBE,4853
+flozz_daily_mix/playlist.py,sha256=EKq8_EuxtBVcFQAxfKUmUyu_M6CEx_Xt6b_A8HUdqJs,13528
+flozz_daily_mix/subsonic.py,sha256=b6QOgnJv8D1aldjdpxYS_GjEt_ibUuDtvzyLYVpUK4E,8407
+flozz_daily_mix/data/musicbrainz_db/genre,sha256=nEYCYZ4WTvzHrF4jX3Gc1xipDfTiq9H-ZvQciODsRtE,170861
+flozz_daily_mix/data/musicbrainz_db/genre_alias,sha256=59mB2HDlbqWl49h9p8IYbKupZ0oLMOf-LJ8BEEquZKE,83977
+flozz_daily_mix/data/musicbrainz_db/l_genre_genre,sha256=D7aGzOn-FelZFLUZojTlB_x_VgrdQHYZQ1NbTGKQ5i0,175695
+flozz_daily_mix-0.5.1.dist-info/entry_points.txt,sha256=c9FD-icoe3otCMZoKl049QznVW4eG65AcbZogI_GCuc,65
+flozz_daily_mix-0.5.1.dist-info/licenses/COPYING,sha256=DZak_2itbUtvHzD3E7GNUYSRK6jdOJ-GqncQ2weavLA,34523
+flozz_daily_mix-0.5.1.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+flozz_daily_mix-0.5.1.dist-info/METADATA,sha256=TdJGkU2CYRkzyOAVlpa02AXQ1Bynp7MtCjZGTqF4m2Y,16401
+flozz_daily_mix-0.5.1.dist-info/RECORD,,
