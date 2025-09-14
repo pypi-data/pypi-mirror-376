@@ -1,0 +1,37 @@
+Metadata-Version: 2.3
+Name: zipstream-ai
+Version: 0.1.2
+Summary: Stream and query zipped datasets using LLMs
+License: MIT
+Author: Pranav Nitin Motarwar
+Author-email: pranavmotarwar@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: google-generativeai (>=0.4.1,<0.5.0)
+Requires-Dist: openai (>=1.10.0,<2.0.0)
+Requires-Dist: pandas (>=2.0,<3.0)
+Requires-Dist: pillow (>=10.0.0,<11.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: typer (>=0.9.0,<0.10.0)
+Description-Content-Type: text/markdown
+
+# zipstream-ai
+
+Stream and query zipped datasets using LLMs — without extracting the archive.
+
+## 🚀 Features
+- Stream `.zip` or `.tar.gz` files
+- Parse CSV, JSON, TXT, images
+- Ask LLMs questions (OpenAI GPT)
+
+## 📦 Install
+
+```bash
+pip install zipstream-ai
