@@ -1,0 +1,55 @@
+Metadata-Version: 2.4
+Name: pycode-info
+Version: 0.1.6
+Summary: A tool to analyze Python code complexity and style.
+Author-email: Justus <justus.d2025@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Justus
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: homepage, https://github.com/justusdecker/pycode-info
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flake8
+Requires-Dist: flake8-json
+Dynamic: license-file
+
+# Pycode-Info
+
+
+## Code Statistics
+
+### Language Percentage
+<img width="1100" height="225" alt="fancystuff" src="https://github.com/user-attachments/assets/65f29165-e20f-4347-b14e-157c24024935" />
+
+### Cyclomatic Complexity Viewer
+<img width="985" height="751" alt="overly_complex" src="https://github.com/user-attachments/assets/e9917cfb-7da3-4658-9d2c-07b7d25a37cd" />
+
+
+
+## Upcoming
+
+- Logical Lines: Only lines are counted that contains code
+- Comment Lines: Only lines are counter that contains comments
+-hotspot gatherer: gets the most edited files
+- Added / Removed lines
+- cyclomatic complexity viewer
