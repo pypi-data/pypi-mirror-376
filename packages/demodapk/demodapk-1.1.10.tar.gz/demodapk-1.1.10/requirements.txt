@@ -1,0 +1,5 @@
+art
+rich
+rich-argparse
+platformdirs
+inquirer
