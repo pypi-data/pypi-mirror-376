@@ -1,0 +1,17 @@
+ci_starter/__init__.py,sha256=saSvP3QYIvKhl6r9dJq_Nwc72zsacQK1v9EOJLUh7jw,741
+ci_starter/assets/toml/semantic-release.toml,sha256=rN-iErCUy4jOSEr3kqKx94cHKiVxTFIPPdcerctfFhc,1911
+ci_starter/assets/workflows/build.yml,sha256=3r4PmBAa8JtqDee5iwtuEQaR-mvM5mV-aYrMym6bCto,3094
+ci_starter/assets/workflows/continuous_delivery.yml,sha256=42GykwFiED3KcXRa683YmII9IAvt5VGByu6-fs5kUpU,6012
+ci_starter/assets/workflows/release.yml,sha256=jXfq2yD4z11D7viDMNaFYuzhY58komsT2YjAeoDYAu8,3111
+ci_starter/assets/workflows/test-e2e.yml,sha256=1-0WSspfmCvKvHl6E6vcD6fqUW3NIsM_23vFzFjKLnA,2088
+ci_starter/cli/__init__.py,sha256=XRnoFJBe8napOYupDVxwFhVBgYOz-07uNfF1iRe6tQY,1717
+ci_starter/cli/callbacks.py,sha256=3PYY8yIDkGjwP7l9WeTG8m3RaX-eoR4OE_zaBrb-NxY,1532
+ci_starter/cli/validations.py,sha256=FS_5yoaCbIW06utDV8p-vRW8k7SC4K3AnC2anv5MpJk,733
+ci_starter/errors.py,sha256=xja0rkAx3RzUIuxEMjuQloOyuKxb-94x8Lsw0m1DX2w,171
+ci_starter/git_helpers.py,sha256=zcQTSuhkDvIWVr_NP9KazY_uL7s0CqBjUTmCtU7D9ic,529
+ci_starter/helpers.py,sha256=IyfVWNqZsu1i1NeAuZDX-DrvoVgrRtPom0ruES-3-ys,716
+ci_starter/logging_conf.py,sha256=eIMoPoJhi6k8CHwM6YkOGpg0oY9mF_CjnkUti088uOg,3604
+ci_starter-0.3.1.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+ci_starter-0.3.1.dist-info/entry_points.txt,sha256=5u0pfo0bScYqwmA1qPRc3wfwkuUzJ30mIekfE-SiWBY,49
+ci_starter-0.3.1.dist-info/METADATA,sha256=uuogn5f1tzzZ270XqUDS5c_yiJpYkokqwcBd0_z26TI,2895
+ci_starter-0.3.1.dist-info/RECORD,,
