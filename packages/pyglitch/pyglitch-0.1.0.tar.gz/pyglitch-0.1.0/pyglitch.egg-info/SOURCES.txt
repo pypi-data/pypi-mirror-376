@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+pyglitch.egg-info/PKG-INFO
+pyglitch.egg-info/SOURCES.txt
+pyglitch.egg-info/dependency_links.txt
+pyglitch.egg-info/top_level.txt
