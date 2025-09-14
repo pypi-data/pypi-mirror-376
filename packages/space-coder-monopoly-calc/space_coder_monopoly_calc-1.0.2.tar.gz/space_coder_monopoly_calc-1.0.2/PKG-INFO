@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: space_-_coder-monopoly-calc
+Version: 1.0.2
+Summary: A simple calculator to keep track of you monopoly money
+Author-email: Madhav Garg <gargm0325@wrdsb.ca>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: tabulate
+
+# Calculator!!!
+
+To run, simply install the package, `pip install space-coder-monopoly-calc` and then run `python3 -m calc`.
+
+If it fails, you should see if the error mentions installing python from the microsoft store. If so, you should try running `python.exe -m calc` or installing python from the microsoft store, and trying again.
+
+To install from the Microsoft Store, open the store, search python, and install 'python 3.13' or you can try going here: https://apps.microsoft.com/detail/9PNRBTZXMB4Z?hl=en-us&gl=CA&ocid=pdpshare. Click 'view in store' and then install it.
