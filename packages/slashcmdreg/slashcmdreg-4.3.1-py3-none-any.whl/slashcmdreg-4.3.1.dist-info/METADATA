@@ -1,0 +1,77 @@
+Metadata-Version: 2.4
+Name: slashcmdreg
+Version: 4.3.1
+Summary: Modular slash command registry for Discord bots written in Python
+Author: TrianglumDev
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: discord.py
+
+# slashcmdreg
+
+A lightweight command registry for Discord.py bots using slash commands. Designed for modularity, simplicity, and zero boilerplate.
+
+## Installation
+
+Install directly from PyPI:
+
+```bash
+pip install slashcmdreg
+```
+
+Overview
+
+slashcmdreg allows you to define Discord slash commands as standalone Python files, each containing a setup() function that returns a SlashCommand object. The registry dynamically loads and syncs them with your bot.
+
+Example Command
+
+Create a file ping.py in your command folder:
+
+````python
+from slashcmdreg import SlashCommand
+import discord
+
+def setup():
+    async def callback(interaction: discord.Interaction):
+        await interaction.response.send_message("pong")
+    return SlashCommand("ping", "Replies with pong", callback)
+
+```
+Bot Integration
+
+import discord
+from discord.ext import commands
+from slashcmdreg import load_commands
+
+bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
+
+@bot.event
+async def on_ready():
+    commands_loaded = load_commands(path="commands", package="commands")
+    for cmd in commands_loaded:
+        bot.tree.add_command(
+            discord.app_commands.Command(
+                name=cmd.name,
+                description=cmd.description,
+                callback=cmd.callback
+            )
+        )
+    await bot.tree.sync()
+    print(f"Synced {len(commands_loaded)} commands")
+
+bot.run("YOUR_TOKEN")
+
+
+Command Requirements
+
+Each command file must:
+
+- Be placed in the specified folder (commands folder)
+- Contain a setup() function
+- Return a SlashCommand object with:
+- name: command name
+- description: command description
+- callback: async function with type-hinted parameters
+License
+MIT License
