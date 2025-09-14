@@ -1,0 +1,8 @@
+README.md
+main.py
+pyproject.toml
+goldens_rule.egg-info/PKG-INFO
+goldens_rule.egg-info/SOURCES.txt
+goldens_rule.egg-info/dependency_links.txt
+goldens_rule.egg-info/requires.txt
+goldens_rule.egg-info/top_level.txt
