@@ -1,0 +1,2 @@
+[console_scripts]
+youtube-mcp-server = youtube_mcp_server:main
