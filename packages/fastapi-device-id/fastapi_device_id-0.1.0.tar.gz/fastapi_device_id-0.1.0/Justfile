@@ -1,0 +1,139 @@
+# FastAPI Device ID - Development Commands
+# Install just: https://github.com/casey/just
+
+# Show available commands
+default:
+    @just --list
+
+# Install package in development mode
+install:
+    pip install -e ".[dev]"
+
+# Install package with docs dependencies
+install-docs:
+    pip install -e ".[dev,docs]"
+
+# Run tests
+test *args="":
+    pytest {{args}}
+
+# Run tests with coverage
+test-cov:
+    pytest --cov=fastapi_device_id --cov-report=html --cov-report=term-missing
+
+# Run tests in watch mode
+test-watch:
+    pytest-watch --runner "pytest --no-cov"
+
+# Format code with black
+format:
+    black src tests examples
+
+# Lint with ruff
+lint:
+    ruff check src tests examples
+
+# Fix linting issues
+lint-fix:
+    ruff check --fix src tests examples
+
+# Type check with mypy
+type-check:
+    mypy src
+
+# Run all code quality checks
+check: lint type-check
+    @echo "All checks passed!"
+
+# Format and fix all issues
+fix: format lint-fix
+    @echo "Code formatted and linted!"
+
+# Build the package
+build:
+    python -m build
+
+# Clean build artifacts
+clean:
+    rm -rf build/ dist/ *.egg-info/
+    find . -type d -name __pycache__ -exec rm -rf {} +
+    find . -type f -name "*.pyc" -delete
+    rm -rf .coverage htmlcov/ .pytest_cache/
+
+# Serve documentation locally
+docs-serve:
+    mkdocs serve
+
+# Build documentation
+docs-build:
+    mkdocs build
+
+# Run example applications (basic, advanced, analytics)
+example name="basic":
+    #!/usr/bin/env bash
+    case "{{name}}" in
+        "basic") python examples/basic_usage.py ;;
+        "advanced") python examples/advanced_config.py ;;
+        "analytics") python examples/analytics_demo.py ;;
+        *) echo "Available examples: basic, advanced, analytics" && exit 1 ;;
+    esac
+
+# Install pre-commit hooks
+precommit-install:
+    pre-commit install
+
+# Run pre-commit on all files
+precommit:
+    pre-commit run --all-files
+
+# Bump version using bumpversion (patch, minor, major, or custom args)
+bump *args="patch":
+    @echo "Bumping version with: {{args}}"
+    bumpversion {{args}}
+    @echo "Version bumped and tagged. Push with: git push origin main --tags"
+
+# Release a specific version using bumpversion
+release version:
+    @echo "Releasing version {{version}}..."
+    bumpversion --new-version={{version}} patch
+    @echo "Version {{version}} tagged. Push with: git push origin main --tags"
+
+# Show current version
+version:
+    @grep '^current_version' .bumpversion.cfg | cut -d' ' -f3
+
+# Full development setup
+setup: install precommit-install
+    @echo "Development environment ready!"
+
+# Full CI pipeline (format, lint, type-check, test)
+ci: format check test
+    @echo "CI pipeline completed successfully!"
+
+# Quick development check (no formatting, just validation)
+quick-check: lint-fix type-check test
+    @echo "Quick check completed!"
+
+# Publish to PyPI (requires clean build and passing tests)
+publish: clean ci build
+    @echo "Publishing to PyPI..."
+    @echo "Checking for clean git state..."
+    @git diff --exit-code || (echo "❌ Uncommitted changes detected. Commit before publishing." && exit 1)
+    @git diff --cached --exit-code || (echo "❌ Staged changes detected. Commit before publishing." && exit 1)
+    @echo "✅ Git state is clean"
+    @echo "Uploading to PyPI..."
+    python -m twine upload dist/*
+    @echo "🎉 Successfully published to PyPI!"
+    @echo "Install with: pip install fastapi-device-id"
+
+# Publish to Test PyPI for validation
+publish-test: clean ci build
+    @echo "Publishing to Test PyPI..."
+    @echo "Checking for clean git state..."
+    @git diff --exit-code || (echo "❌ Uncommitted changes detected. Commit before publishing." && exit 1)  
+    @git diff --cached --exit-code || (echo "❌ Staged changes detected. Commit before publishing." && exit 1)
+    @echo "✅ Git state is clean"
+    @echo "Uploading to Test PyPI..."
+    python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    @echo "🎉 Successfully published to Test PyPI!"
+    @echo "Test install with: pip install -i https://test.pypi.org/simple/ fastapi-device-id"

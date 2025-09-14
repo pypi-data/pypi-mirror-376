@@ -1,0 +1,594 @@
+Metadata-Version: 2.4
+Name: fastapi-device-id
+Version: 0.1.0
+Summary: Drop-in device tracking for FastAPI - persistent IDs without user accounts
+Project-URL: Homepage, https://github.com/ideatives/fastapi-device-id
+Project-URL: Repository, https://github.com/ideatives/fastapi-device-id
+Project-URL: Documentation, https://github.com/ideatives/fastapi-device-id
+Project-URL: Bug Tracker, https://github.com/ideatives/fastapi-device-id/issues
+Author-email: Ideatives <info@ideatives.com>
+Maintainer-email: Ideatives <info@ideatives.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: a-b-testing,analytics,anonymous-tracking,cookie,device-tracking,fastapi,middleware,rate-limiting,session-management,starlette,uuid,web-analytics
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: FastAPI
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Internet :: WWW/HTTP :: Session
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Monitoring
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Requires-Dist: fastapi>=0.68.0
+Requires-Dist: starlette>=0.14.0
+Provides-Extra: crypto
+Requires-Dist: cryptography>=3.4.0; extra == 'crypto'
+Provides-Extra: dev
+Requires-Dist: black>=22.0.0; extra == 'dev'
+Requires-Dist: bumpversion>=0.6.0; extra == 'dev'
+Requires-Dist: httpx>=0.23.0; extra == 'dev'
+Requires-Dist: mypy>=1.0.0; extra == 'dev'
+Requires-Dist: pre-commit>=2.20.0; extra == 'dev'
+Requires-Dist: pytest-asyncio>=0.21.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Requires-Dist: ruff>=0.1.0; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: mkdocs-material>=8.0.0; extra == 'docs'
+Requires-Dist: mkdocs>=1.4.0; extra == 'docs'
+Requires-Dist: mkdocstrings[python]>=0.19.0; extra == 'docs'
+Provides-Extra: jwt
+Requires-Dist: pyjwt>=2.4.0; extra == 'jwt'
+Description-Content-Type: text/markdown
+
+# FastAPI Device ID
+
+[![PyPI version](https://badge.fury.io/py/fastapi-device-id.svg)](https://pypi.org/project/fastapi-device-id/)
+[![Python versions](https://img.shields.io/pypi/pyversions/fastapi-device-id.svg)](https://pypi.org/project/fastapi-device-id/)
+[![Tests](https://github.com/ideatives/fastapi-device-id/workflows/CI/badge.svg)](https://github.com/ideatives/fastapi-device-id/actions)
+[![License](https://img.shields.io/github/license/darwinmonroy/fastapi-device-id.svg)](https://github.com/ideatives/fastapi-device-id/blob/main/LICENSE)
+
+> **Track devices across sessions without user registration. Perfect for analytics, rate limiting, and A/B testing.**
+
+Drop-in device tracking for FastAPI apps. Get persistent device IDs without user accounts, databases, or privacy concerns.
+
+## Why FastAPI Device ID?
+
+### The Problem
+Modern web applications often need to:
+- **Track user behavior** across sessions without requiring login
+- **Implement rate limiting** per device to prevent abuse
+- **Provide consistent A/B testing** experiences
+- **Analyze usage patterns** and user journeys
+- **Differentiate between devices** for security or UX purposes
+
+Traditional solutions are either too complex (full user accounts), privacy-invasive (fingerprinting), or unreliable (IP addresses change, shared networks).
+
+### The Solution
+FastAPI Device ID provides a **privacy-friendly middle ground**:
+
+✅ **No personal data required** - Just a unique identifier per browser  
+✅ **Persistent across sessions** - Survives browser restarts  
+✅ **Secure by default** - HTTP-only cookies with CSRF protection  
+✅ **Scalable** - Works across multiple server instances  
+✅ **Compliant** - Respects user privacy, no tracking across domains  
+
+### When to Use
+Perfect for applications that need:
+- **Anonymous analytics** without user accounts
+- **Rate limiting** by device rather than IP
+- **Session continuity** across page reloads
+- **A/B testing** with consistent user experiences
+- **Fraud prevention** through device recognition
+- **Usage quotas** for anonymous API access
+
+### When NOT to Use
+Consider alternatives if you need:
+- **Cross-domain tracking** (this is single-domain only)
+- **User authentication** (use proper auth systems instead)
+- **Long-term user identification** (users can clear cookies)
+- **Foolproof uniqueness** (sophisticated users can bypass)
+
+## Features
+
+- 🔒 **Secure by default**: HTTP-only, secure, and SameSite cookies
+- 🆔 **Modern UUID**: Uses UUID7 (time-ordered) with UUID4 fallback for older Python versions
+- 📦 **Zero dependencies**: Only requires FastAPI/Starlette (which you already have)
+- ⚙️ **Highly configurable**: Customize cookie names, expiration, and security settings
+- 🪶 **Lightweight**: Minimal overhead with pluggable architecture
+- 🔧 **Type safe**: Full type hints with dependency injection support
+- 🔌 **Pluggable**: Custom ID generators and security strategies
+- 🛡️ **Multiple security strategies**: Plaintext, JWT, and AES encryption support
+- ⚡ **Performance optimized**: Constant-time comparisons and efficient encoding
+- 🌐 **Production ready**: Distributed deployment support with consistent encryption
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install fastapi-device-id
+```
+
+**In production in 2 minutes:**
+1. Add the middleware: `app.add_middleware(DeviceMiddleware)`
+2. Use the dependency: `async def handler(device_id: DeviceId):`
+3. Start tracking: `analytics.track(device_id, event)`
+
+### Basic Usage
+
+```python
+from fastapi import FastAPI
+from fastapi_device_id import DeviceMiddleware, DeviceId
+
+app = FastAPI()
+
+# Add the middleware
+app.add_middleware(DeviceMiddleware)
+
+@app.get("/")
+async def read_root(device_id: DeviceId):
+    # This device_id is automatically persistent across browser sessions
+    # No database setup required!
+    return {"message": f"Welcome back, device {device_id}"}
+
+@app.get("/analytics")
+async def track_visit(device_id: DeviceId):
+    # Log analytics, track user behavior, etc.
+    print(f"Device {device_id} visited /analytics")
+    return {"status": "visit tracked"}
+```
+
+### Custom Configuration
+
+```python
+from fastapi import FastAPI
+from fastapi_device_id import DeviceMiddleware
+
+app = FastAPI()
+
+# Customize the middleware
+app.add_middleware(
+    DeviceMiddleware,
+    cookie_name="my_device_id",              # Custom cookie name
+    cookie_max_age=30 * 24 * 60 * 60,        # 30 days instead of 1 year
+    cookie_secure=False,                      # Allow HTTP in development
+    cookie_samesite="strict",                 # Stricter cookie policy
+)
+```
+
+### Custom ID Generator
+
+```python
+import secrets
+from fastapi import FastAPI
+from fastapi_device_id import DeviceMiddleware
+
+def custom_id_generator() -> str:
+    """Generate a custom device ID."""
+    return f"device_{secrets.token_hex(16)}"
+
+app = FastAPI()
+app.add_middleware(
+    DeviceMiddleware,
+    id_generator=custom_id_generator,
+)
+```
+
+### Security Strategies
+
+FastAPI Device ID supports multiple security strategies for device ID storage:
+
+#### Plaintext Strategy (Default)
+
+```python
+from fastapi_device_id import DeviceMiddleware, PlaintextStrategy
+
+app.add_middleware(
+    DeviceMiddleware,
+    security_strategy=PlaintextStrategy(),
+)
+```
+
+#### JWT Strategy
+
+Provides tamper detection with cryptographic signatures:
+
+```python
+from fastapi_device_id import DeviceMiddleware, JWTStrategy
+
+# JWT with signature verification
+app.add_middleware(
+    DeviceMiddleware,
+    security_strategy=JWTStrategy(
+        secret="your-secret-key",
+        algorithm="HS256",
+        expiration_hours=24  # Optional expiration
+    ),
+)
+```
+
+#### Encrypted Strategy
+
+Provides confidentiality - device ID is hidden from client:
+
+```python
+from fastapi_device_id import DeviceMiddleware, EncryptedStrategy
+
+# AES encryption with Fernet (recommended)
+app.add_middleware(
+    DeviceMiddleware,
+    security_strategy=EncryptedStrategy(
+        key="your-encryption-key",
+        algorithm="fernet"  # or "aes-256-gcm", "aes-128-gcm"
+    ),
+)
+
+# Production example with environment variable
+import os
+app.add_middleware(
+    DeviceMiddleware,
+    security_strategy=EncryptedStrategy(
+        key=os.environ["DEVICE_ID_ENCRYPTION_KEY"],
+        algorithm="fernet"
+    ),
+)
+```
+
+#### Security Strategy Comparison
+
+| Strategy | Confidentiality | Integrity | Performance | Use Case |
+|----------|----------------|-----------|-------------|----------|
+| Plaintext | ❌ | ❌ | ⚡ Fastest | Development, non-sensitive |
+| JWT | ❌ | ✅ | 🟨 Medium | Tamper detection needed |
+| Encrypted | ✅ | ✅ | 🟨 Medium | Production, sensitive data |
+
+## API Reference
+
+### DeviceMiddleware
+
+The main middleware class that handles device identification.
+
+#### Parameters
+
+- **`cookie_name`** (`str`, default: `"device_id"`): Name of the cookie to store the device ID
+- **`cookie_max_age`** (`int`, default: `365 * 24 * 60 * 60`): Cookie expiration time in seconds (1 year)
+- **`cookie_expires`** (`str | None`, default: `None`): Cookie expiration date string
+- **`cookie_path`** (`str`, default: `"/"`): Cookie path
+- **`cookie_domain`** (`str | None`, default: `None`): Cookie domain
+- **`cookie_secure`** (`bool`, default: `True`): Whether the cookie should only be sent over HTTPS
+- **`cookie_httponly`** (`bool`, default: `True`): Whether the cookie should be inaccessible to JavaScript
+- **`cookie_samesite`** (`str`, default: `"lax"`): SameSite policy (`"strict"`, `"lax"`, or `"none"`)
+- **`id_generator`** (`Callable[[], str]`, default: `default_id_generator`): Function to generate device IDs
+- **`security_strategy`** (`DeviceIDSecurityStrategy`, default: `PlaintextStrategy()`): Security strategy for encoding device IDs
+
+### DeviceId Type
+
+A FastAPI dependency that extracts the device ID from the request:
+
+```python
+from fastapi_device_id import DeviceId
+
+@app.get("/my-endpoint")
+async def my_handler(device_id: DeviceId):
+    # device_id is automatically extracted and typed as str
+    return {"device_id": device_id}
+```
+
+### get_device_id Function
+
+Direct function to extract device ID from a request:
+
+```python
+from fastapi import Request
+from fastapi_device_id import get_device_id
+
+@app.get("/manual")
+async def manual_extraction(request: Request):
+    device_id = get_device_id(request)
+    return {"device_id": device_id}
+```
+
+### compare_device_ids Function
+
+Secure constant-time comparison of device IDs to prevent timing attacks:
+
+```python
+from fastapi_device_id import compare_device_ids
+
+@app.get("/secure-compare")
+async def secure_comparison(device_id: DeviceId, stored_id: str):
+    # ❌ VULNERABLE to timing attacks
+    # if device_id == stored_id:
+    
+    # ✅ SECURE constant-time comparison
+    if compare_device_ids(device_id, stored_id):
+        return {"access": "granted"}
+    return {"access": "denied"}
+```
+
+## Performance
+
+- **Zero dependencies** beyond FastAPI/Starlette
+- **<1ms overhead** per request
+- **Memory efficient**: No server-side storage required
+- **Scales horizontally**: Stateless design works across instances
+- **Cookie-based**: Works with CDNs and load balancers
+
+## Use Cases
+
+### Analytics and Tracking
+
+```python
+@app.get("/track-page-view")
+async def track_page_view(device_id: DeviceId, page: str):
+    # Store page view with device ID
+    analytics.track_page_view(device_id, page)
+    return {"status": "tracked"}
+```
+
+### A/B Testing
+
+```python
+@app.get("/feature")
+async def get_feature_flag(device_id: DeviceId):
+    # Consistent A/B testing based on device ID
+    variant = "A" if int(device_id.replace("-", ""), 16) % 2 else "B"
+    return {"variant": variant}
+```
+
+### Rate Limiting
+
+```python
+from collections import defaultdict
+from time import time
+
+rate_limits = defaultdict(list)
+
+@app.get("/api/data")
+async def get_data(device_id: DeviceId):
+    now = time()
+    device_requests = rate_limits[device_id]
+    
+    # Clean old requests (1 hour window)
+    device_requests[:] = [req_time for req_time in device_requests if now - req_time < 3600]
+    
+    if len(device_requests) >= 100:  # 100 requests per hour
+        return {"error": "Rate limit exceeded"}
+    
+    device_requests.append(now)
+    return {"data": "your data here"}
+```
+
+## Common Patterns
+
+### Anonymous User Analytics
+
+```python
+from fastapi_device_id import DeviceId
+import logging
+
+analytics_logger = logging.getLogger("analytics")
+
+@app.get("/page/{page_name}")
+async def track_page_view(page_name: str, device_id: DeviceId):
+    analytics_logger.info(f"Device {device_id} viewed {page_name}")
+    return {"content": f"Welcome to {page_name}"}
+
+@app.post("/event")
+async def track_custom_event(event: dict, device_id: DeviceId):
+    event["device_id"] = device_id
+    analytics_logger.info(f"Custom event: {event}")
+    return {"status": "tracked"}
+```
+
+### Shopping Cart Persistence
+
+```python
+from typing import Dict, List
+carts: Dict[str, List[dict]] = {}
+
+@app.post("/cart/add")
+async def add_to_cart(item: dict, device_id: DeviceId):
+    if device_id not in carts:
+        carts[device_id] = []
+    carts[device_id].append(item)
+    return {"cart_size": len(carts[device_id])}
+
+@app.get("/cart")
+async def get_cart(device_id: DeviceId):
+    return {"items": carts.get(device_id, [])}
+```
+
+### Feature Flag Management
+
+```python
+import hashlib
+
+@app.get("/feature/{feature_name}")
+async def get_feature_flag(feature_name: str, device_id: DeviceId):
+    # Consistent feature assignment based on device ID
+    hash_input = f"{feature_name}:{device_id}"
+    hash_value = int(hashlib.md5(hash_input.encode()).hexdigest()[:8], 16)
+    
+    enabled = hash_value % 100 < 50  # 50% rollout
+    return {"feature": feature_name, "enabled": enabled}
+```
+
+## Configuration Examples
+
+### Development Setup
+
+```python
+# Relaxed settings for local development
+app.add_middleware(
+    DeviceMiddleware,
+    cookie_secure=False,      # Allow HTTP
+    cookie_samesite="lax",    # Relaxed policy
+    security_strategy=PlaintextStrategy(),  # No encryption overhead
+)
+```
+
+### Production Setup
+
+```python
+import os
+from fastapi_device_id import EncryptedStrategy
+
+# Strict security for production
+app.add_middleware(
+    DeviceMiddleware,
+    cookie_secure=True,       # HTTPS only
+    cookie_httponly=True,     # No JavaScript access
+    cookie_samesite="strict", # Strict policy
+    security_strategy=EncryptedStrategy(
+        key=os.environ["DEVICE_ID_ENCRYPTION_KEY"],
+        algorithm="fernet"
+    ),
+)
+```
+
+### Short-lived Sessions with JWT
+
+```python
+from fastapi_device_id import JWTStrategy
+
+# JWT tokens that expire after 24 hours
+app.add_middleware(
+    DeviceMiddleware,
+    security_strategy=JWTStrategy(
+        secret="your-jwt-secret",
+        expiration_hours=24
+    ),
+)
+```
+
+### High-Security Setup
+
+```python
+import os
+from fastapi_device_id import EncryptedStrategy
+
+# Maximum security configuration
+app.add_middleware(
+    DeviceMiddleware,
+    cookie_secure=True,
+    cookie_httponly=True,
+    cookie_samesite="strict",
+    cookie_max_age=7 * 24 * 60 * 60,  # 1 week
+    security_strategy=EncryptedStrategy(
+        key=os.environ["DEVICE_ID_ENCRYPTION_KEY"],
+        algorithm="aes-256-gcm",  # Strong encryption
+        iterations=200000,  # Higher security
+    ),
+)
+```
+
+## Requirements
+
+- Python 3.8+
+- FastAPI 0.68.0+
+- Starlette 0.14.0+
+
+### Optional Dependencies
+
+For JWT strategy support:
+```bash
+pip install "fastapi-device-id[jwt]"
+```
+
+For encryption strategy support:
+```bash
+pip install "fastapi-device-id[crypto]"
+```
+
+For development:
+```bash
+pip install "fastapi-device-id[dev]"
+```
+
+For all features:
+```bash
+pip install "fastapi-device-id[jwt,crypto,dev]"
+```
+
+## Production Checklist
+
+Before deploying to production, ensure:
+
+- [ ] **Security Strategy**: Use `EncryptedStrategy` or `JWTStrategy` instead of `PlaintextStrategy`
+- [ ] **Environment Variables**: Store encryption keys in `os.environ`, never in code
+- [ ] **Cookie Security**: Set `cookie_secure=True` for HTTPS-only cookies
+- [ ] **SameSite Policy**: Use `cookie_samesite="strict"` for maximum security
+- [ ] **Key Rotation**: Plan for periodic encryption key rotation
+- [ ] **Monitoring**: Log device ID operations for debugging
+- [ ] **Privacy Policy**: Update your privacy policy to mention device tracking
+- [ ] **GDPR Compliance**: Implement cookie consent if required in your jurisdiction
+
+### Example Production Configuration
+
+```python
+import os
+from fastapi_device_id import DeviceMiddleware, EncryptedStrategy
+
+app.add_middleware(
+    DeviceMiddleware,
+    cookie_secure=True,
+    cookie_httponly=True,
+    cookie_samesite="strict",
+    security_strategy=EncryptedStrategy(
+        key=os.environ["DEVICE_ID_ENCRYPTION_KEY"],
+        algorithm="fernet"
+    ),
+)
+```
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/ideatives/fastapi-device-id.git
+cd fastapi-device-id
+
+# Install development dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Format code
+black src tests
+ruff --fix src tests
+
+# Type checking
+mypy src
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
+
+## Security
+
+For security issues, please see our [Security Policy](SECURITY.md).
