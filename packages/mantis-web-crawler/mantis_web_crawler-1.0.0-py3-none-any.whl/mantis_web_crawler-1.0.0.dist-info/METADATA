@@ -1,0 +1,168 @@
+Metadata-Version: 2.4
+Name: mantis-web-crawler
+Version: 1.0.0
+Summary: Automated web accessibility and UI bug detection tool with AI-powered analysis
+Home-page: https://github.com/yourusername/mantis
+Author: Mantis Team
+Author-email: Mantis Team <mantis-team@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/mantis
+Project-URL: Repository, https://github.com/yourusername/mantis
+Project-URL: Bug Reports, https://github.com/yourusername/mantis/issues
+Project-URL: Documentation, https://github.com/yourusername/mantis#readme
+Project-URL: Source Code, https://github.com/yourusername/mantis
+Keywords: web-crawler,accessibility,ui-testing,bug-detection,playwright,automation,testing,wcag,ai-analysis
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: playwright>=1.40.0
+Requires-Dist: flask>=2.0.0
+Requires-Dist: flask-socketio>=5.0.0
+Requires-Dist: beautifulsoup4>=4.9.0
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: asyncio-mqtt>=0.11.0
+Requires-Dist: requests>=2.25.0
+Requires-Dist: lxml>=4.6.0
+Requires-Dist: python-socketio[client]>=5.0.0
+Requires-Dist: cohere>=5.11.0
+Requires-Dist: axe-playwright-python>=0.1.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.18.0; extra == "dev"
+Requires-Dist: black>=21.0.0; extra == "dev"
+Requires-Dist: flake8>=3.9.0; extra == "dev"
+Requires-Dist: mypy>=0.910; extra == "dev"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# Mantis Web Crawler
+
+🕷️ **Mantis** is a powerful web accessibility and UI bug detection tool that crawls websites to discover issues before they reach production.
+
+*Originally created for Hack The North 2025*
+
+## Features
+
+- 🔍 **Comprehensive Web Crawling**: Deep crawl of websites with configurable depth and page limits
+- ♿ **Accessibility Testing**: Automated detection of accessibility violations
+- 🎨 **Visual Layout Analysis**: Detection of UI layout bugs and visual inconsistencies  
+- 📊 **Real-time Dashboard**: Live monitoring of crawl progress with WebSocket updates
+- 📋 **Detailed Reporting**: JSON reports with bug details, evidence, and recommendations
+- 🚀 **Easy CLI Interface**: Simple command-line tool for quick scans
+
+## Installation
+
+### From GitHub (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/mantis.git
+cd mantis
+
+# Install the package
+pip install -e .
+
+# Install Playwright browsers (required)
+playwright install
+```
+
+### From PyPI (when published)
+
+```bash
+pip install mantis-web-crawler
+playwright install
+```
+
+## Quick Start
+
+After installation, you can run Mantis directly from anywhere:
+
+```bash
+# Basic crawl
+mantis run https://example.com
+
+# Advanced options
+mantis run https://example.com --max-depth 2 --max-pages 25
+mantis run https://example.com --output my_report.json --verbose
+mantis run https://example.com --dashboard  # Launch with live dashboard
+```
+
+## Usage Examples
+
+### Basic Website Scan
+```bash
+mantis run https://example.com
+```
+
+### Deep Crawl with Custom Limits
+```bash
+mantis run https://example.com --max-depth 3 --max-pages 50
+```
+
+### Generate Custom Report
+```bash
+mantis run https://example.com --output accessibility_report.json --verbose
+```
+
+### Launch with Real-time Dashboard
+```bash
+mantis run https://example.com --dashboard
+```
+
+## Command Line Options
+
+- `url`: Starting URL to crawl (required)
+- `--max-depth`: Maximum crawl depth (default: 3)
+- `--max-pages`: Maximum number of pages to crawl (default: 10)
+- `--output`: Output file for JSON report (optional)
+- `--verbose`: Enable verbose logging
+- `--dashboard`: Launch real-time monitoring dashboard
+
+## Requirements
+
+- Python 3.8+
+- Playwright browsers (automatically installed with `playwright install`)
+
+## Development
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/mantis.git
+cd mantis
+
+# Install in development mode
+pip install -e .[dev]
+
+# Install pre-commit hooks
+pre-commit install
+
+# Run tests
+pytest
+```
+
+## Contributing
+
+We welcome contributions! Please see our contributing guidelines for more details.
+
+## License
+
+MIT License - see LICENSE file for details.
