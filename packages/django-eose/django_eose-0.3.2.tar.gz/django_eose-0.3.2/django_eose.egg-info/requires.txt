@@ -1,0 +1,11 @@
+Django>=5.2.6
+sqlparse>=0.5.3
+asgiref>=3.9.1
+psutil>=7.0.0
+cffi>=2.0.0
+cryptography>=45.0.7
+pycparser>=2.23
+
+[dev]
+setuptools>=80.9.0
+wheel>=0.45.1
