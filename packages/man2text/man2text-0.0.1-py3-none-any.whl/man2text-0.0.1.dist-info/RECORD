@@ -1,0 +1,13 @@
+man2text/_version.py,sha256=sXLh7g3KC4QCFxcZGBTpG2scR7hmmBsMjq6LqRptkRg,22
+man2text/cli.py,sha256=AjVuskBzetgdYeJbG93K5gN9UIYzzd0iwrPOX9vI_4s,1747
+man2text/core.py,sha256=pzclj1U7ZP2ivfetKgE0hDUntJaxxFho7Gz8cPDzJTo,3995
+man2text/discover.py,sha256=GXFvhWTowfn6iWkUXDY3imoYuLMwMDawP83Pyku_rM4,3519
+man2text/init.py,sha256=rvIkf0TKTeXNnL3FPJrPy4EEgSr8Oc0AlIksf_Jjjng,130
+man2text/main.py,sha256=Sg3agUNOBkXVMmCeG8I7cTOLGiDgsWqny8PbgLFZ_Eo,65
+man2text/render.py,sha256=iArPbSJ73ywnVY0Ruc09OIgCuRvfk7xTy4UmWq16HnY,4202
+man2text/utils.py,sha256=4lyPM4wzVSmSwk7YQvP2PIm7O6hLPTBJRTWgWQcNhdo,477
+man2text-0.0.1.dist-info/METADATA,sha256=qSt9MJLNEiJ3OK3C36lDiLm1LJ2Yh-u8iSr9jJ4d7eE,1865
+man2text-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+man2text-0.0.1.dist-info/entry_points.txt,sha256=wFcmiGJt0jrgcqTP1W7TSIkpgF0CsRiJ5B42bItLctk,47
+man2text-0.0.1.dist-info/top_level.txt,sha256=EN47rtiif1pb1Dr5kyl_0gK7Pq5yxuNiF1jH_UnETrs,9
+man2text-0.0.1.dist-info/RECORD,,
