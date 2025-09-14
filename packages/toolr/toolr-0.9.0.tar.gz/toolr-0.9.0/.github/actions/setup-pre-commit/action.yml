@@ -1,0 +1,63 @@
+name: setup-pre-commit
+description: Setup 'pre-commit'
+
+inputs:
+  version:
+    description: Pre-commit version to install
+    default: "4.3.0"
+  rust-toolchain:
+    required: true
+    description: Rust toolchain to install
+    default: stable
+  rust-components:
+    required: true
+    description: Rust components to install
+    default: clippy,rustfmt
+
+
+runs:
+  using: composite
+
+  steps:
+    - name: Setup pre-commit home
+      shell: bash
+      id: setup-pre-commit-home
+      run: |
+        PRE_COMMIT_HOME=${{ github.workspace }}/.cache/pre-commit
+        echo "pre-commit-home=${PRE_COMMIT_HOME}" >> "$GITHUB_OUTPUT"
+        echo "PRE_COMMIT_HOME=${PRE_COMMIT_HOME}" >> "$GITHUB_ENV"
+
+    - name: Setup Rust Toolchain
+      uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        toolchain: ${{ inputs.rust-toolchain }}
+        components: ${{ inputs.rust-components }}
+
+    - name: Install pre-commit
+      shell: bash
+      run: |
+        pip install pre-commit==${{ inputs.version }}
+
+    - name: Get Python version checksum
+      id: python-version-checksum
+      shell: bash
+      run: |
+        echo "version-sha256sum=$(python --version --version | sha256sum | cut -d ' ' -f1)" >> "$GITHUB_OUTPUT"
+
+    - name: Get pre-commit version checksum
+      id: pre-commit-version-checksum
+      shell: bash
+      run: |
+        echo "version-sha256sum=$(pre-commit --version | sha256sum | cut -d ' ' -f1)" >> "$GITHUB_OUTPUT"
+
+    - name: Set up cache
+      uses: actions/cache@v4
+      with:
+        path: ${{ steps.setup-pre-commit-home.outputs.pre-commit-home }}
+        key: >-
+          pre-commit-home|${{ runner.os }}|${{ steps.python-version-checksum.outputs.version-sha256sum }}|${{ steps.pre-commit-version-checksum.outputs.version-sha256sum }}|${{ hashFiles('.pre-commit-config.yaml') }}
+
+    - name: Install pre-commit hooks
+      shell: bash
+      run: |
+        pre-commit install --install-hooks
