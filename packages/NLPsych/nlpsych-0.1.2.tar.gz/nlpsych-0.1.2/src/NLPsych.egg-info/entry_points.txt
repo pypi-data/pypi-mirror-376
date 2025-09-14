@@ -1,0 +1,2 @@
+[console_scripts]
+nlpsych-app = nlpsych_app.launch:main
