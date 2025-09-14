@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+prometheus_xmpp/__init__.py
+prometheus_xmpp/__main__.py
+prometheus_xmpp_alerts.egg-info/PKG-INFO
+prometheus_xmpp_alerts.egg-info/SOURCES.txt
+prometheus_xmpp_alerts.egg-info/dependency_links.txt
+prometheus_xmpp_alerts.egg-info/entry_points.txt
+prometheus_xmpp_alerts.egg-info/requires.txt
+prometheus_xmpp_alerts.egg-info/top_level.txt
+tests/test_main.py
