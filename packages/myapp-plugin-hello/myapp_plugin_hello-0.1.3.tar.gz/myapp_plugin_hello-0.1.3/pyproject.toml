@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myapp-plugin-hello"
+version = "0.1.3"
+description = "MyApp的Hello插件 - 一个简单的问候插件"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["my-app-core"]
+authors = [
+    {name = "Sans", email = "your.email@example.com"},
+]
+
+# 使用下划线代替连字符
+[project.entry-points."myapp.plugins"]
+calculator = "myapp_plugin_hello.plugin:HelloPlugin"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/myapp-plugin-hello"

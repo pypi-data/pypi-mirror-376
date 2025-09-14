@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: myapp-plugin-hello
+Version: 0.1.3
+Summary: MyApp的Hello插件 - 一个简单的问候插件
+Author-email: Sans <your.email@example.com>
+Project-URL: Homepage, https://github.com/yourusername/myapp-plugin-hello
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: my-app-core
+Dynamic: license-file
+
+\# MyApp Plugin Hello
+
+
+
+这是一个简单的MyApp插件，提供基本的问候功能。
+
+
+
+\## 安装
+
+
+
+```bash
+
+pip install myapp-plugin-hello
+
+使用
+
+安装后，运行：
+
+bash
+
+复制
+
+myapp
+
+插件会自动被加载和使用。
+
+开发
+
+这是一个示例插件，展示了如何为MyApp创建插件。
+
+许可证
+
+MIT License
+
+复制
+
+
+
+\### 5. 构建插件包
+
+
+
+在插件目录中运行：
+
+
+
+```bash
+
+cd myapp-plugin-hello/
+
+python -m build
+
+你应该会看到：
+
+Successfully built myapp\_plugin\_hello-0.1.0-py3-none-any.whl
+
