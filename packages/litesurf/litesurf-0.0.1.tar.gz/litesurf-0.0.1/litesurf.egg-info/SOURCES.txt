@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+litesurf/__init__.py
+litesurf/cli.py
+litesurf/litesurf.py
+litesurf.egg-info/PKG-INFO
+litesurf.egg-info/SOURCES.txt
+litesurf.egg-info/dependency_links.txt
+litesurf.egg-info/entry_points.txt
+litesurf.egg-info/requires.txt
+litesurf.egg-info/top_level.txt
+tests/test_browser.py
