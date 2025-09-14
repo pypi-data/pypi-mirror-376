@@ -1,0 +1,5 @@
+ca_certificates/__init__.py,sha256=nMbc3tkMIZM1-KPU1wTskcLuHkMTmCxCocpYdMzNnxA,93
+r_irkernel-1.9.12.dist-info/METADATA,sha256=6dS34KvWIfHdwe7nmK6IpNVcn87Yh-oLc6l6eKjOBAM,264
+r_irkernel-1.9.12.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+r_irkernel-1.9.12.dist-info/top_level.txt,sha256=FqvvAtXKQ3wx5C5dhtGES3NnNV52ftAi9Fz8iOMMAIY,16
+r_irkernel-1.9.12.dist-info/RECORD,,

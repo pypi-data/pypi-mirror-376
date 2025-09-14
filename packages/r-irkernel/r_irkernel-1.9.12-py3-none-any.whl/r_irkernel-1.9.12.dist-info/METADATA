@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: r-irkernel
+Version: 1.9.12
+Summary: Dummy r-irkernel package for PyPI
+Author-email: Your Name <you@example.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# r-irkernel\nA dummy Python package version of r-irkernel.
