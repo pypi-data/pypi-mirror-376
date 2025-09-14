@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+myapp_plugin_calculator/__init__.py
+myapp_plugin_calculator/interactive_myapp.py
+myapp_plugin_calculator/plugin.py
+myapp_plugin_calculator.egg-info/PKG-INFO
+myapp_plugin_calculator.egg-info/SOURCES.txt
+myapp_plugin_calculator.egg-info/dependency_links.txt
+myapp_plugin_calculator.egg-info/entry_points.txt
+myapp_plugin_calculator.egg-info/requires.txt
+myapp_plugin_calculator.egg-info/top_level.txt
