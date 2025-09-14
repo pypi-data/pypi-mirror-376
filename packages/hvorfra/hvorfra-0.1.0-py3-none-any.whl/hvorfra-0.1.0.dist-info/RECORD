@@ -1,0 +1,12 @@
+hvorfra/__init__.py,sha256=jhMMDa_hsNP_t3zB3n-G28Hq5TEvJZ2ZHu3BCokJwpY,1056
+hvorfra/assignment.py,sha256=8UAAbmAqrwW-B8sOZMjzQENerHcXRlMPUFX9-daxiQM,2844
+hvorfra/ast.py,sha256=mVZDfBawYUoSpWZxRpulgQt5OUwc5jPyA2kzkxyQbNE,1888
+hvorfra/highlevel.py,sha256=kQNip1cH4w3yKqBpP2B7NK763ACgCaKyxTN6hp81tDQ,2975
+hvorfra/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hvorfra/scope.py,sha256=2H330Qhh6jHr095CIOEYhddS-ZglFUq9MNxgFPW9PUA,448
+hvorfra/stack.py,sha256=-QnffkikZBn-9i6Ot9jhXwKcFxhi1nROO0YF2mTOFQ0,688
+hvorfra/types.py,sha256=BWQQI-aaDFZZ57zqUsjQnu0cyyyEMVXuZuI8XMLO6kg,418
+hvorfra-0.1.0.dist-info/METADATA,sha256=LVSKH3oFOFZNwH-bkeoQfDGRJS88FUEI6IP6xClwzx4,1057
+hvorfra-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+hvorfra-0.1.0.dist-info/licenses/LICENSE,sha256=gfc-c0CeRLWl4I2l6uWzne3PVkF_gRbJ2qLy1cTvD_Y,1071
+hvorfra-0.1.0.dist-info/RECORD,,

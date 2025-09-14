@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: hvorfra
+Version: 0.1.0
+Summary: A python package for inspecting the caller.
+Author-email: Jesper Nielsen <jespernielsen1982+hvorfra@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: <4,>=3.12
+Description-Content-Type: text/markdown
+
+# hvorfra
+
+A python library for inspecting the caller.
+
+## Minimal example
+
+```python
+from hvorfra import assignment_name
+
+
+def f() -> int:
+    target = assignment_name()
+    print(f"The result of this function is going to be assigned to: '{target}'.")
+    return 42
+
+
+some_variable_name = f()
+some_other_variable_name = f()
+```
+
+prints
+
+```
+The result of this function is going to be assigned to: 'some_variable_name'.
+The result of this function is going to be assigned to: 'some_other_variable_name'.
+```
