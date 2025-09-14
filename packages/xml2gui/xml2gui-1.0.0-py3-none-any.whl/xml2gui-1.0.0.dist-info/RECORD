@@ -1,0 +1,10 @@
+xml2gui/__init__.py,sha256=gglz4PuM3pKfAcTzP1QXR7lTDZ3SBnOAfmW2ITmUFg0,718
+xml2gui/compiler.py,sha256=RZVoo6xyGPe_mbyg8aTGbtVDG6Q3hP8gkCTiKNcqt9E,3989
+xml2gui/generator.py,sha256=06WmB98-qJ2aMKLs78UDElSBqx5khRTn4PTGOf8hWbM,24417
+xml2gui/parser.py,sha256=D9dgLNL_nIlVp_IuNPcGzkmfL0meAhw35xsgzOSLy34,11889
+xml2gui-1.0.0.dist-info/LICENSE-SCL,sha256=uvCv9p5gIeVsg3N_FCd_euGxCJpyU2WBxdSXEo8r9Ec,1450
+xml2gui-1.0.0.dist-info/METADATA,sha256=3g5NT4JW3O1wcZtPBlXkIdEp563mL9guW2N6A5vZpRQ,7163
+xml2gui-1.0.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+xml2gui-1.0.0.dist-info/entry_points.txt,sha256=9T6AONoAZBWsp0TYxbvzf2BSlpSGsndHULdA8BkZ_2A,48
+xml2gui-1.0.0.dist-info/top_level.txt,sha256=jyIsobUUwir0INT0gYUOSvQHvW4aZAAq4M42Qtf5vAs,8
+xml2gui-1.0.0.dist-info/RECORD,,
