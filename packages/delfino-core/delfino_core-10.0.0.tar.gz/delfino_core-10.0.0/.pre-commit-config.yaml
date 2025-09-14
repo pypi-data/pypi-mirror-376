@@ -1,0 +1,11 @@
+# See https://pre-commit.com/ for usage and config
+repos:
+- repo: local
+  hooks:
+  # Specify folders explicitly to avoid running on `commands`, which is a symlink to `src/commands`
+  - id: lint_format
+    name: Linting and formatting
+    stages: [pre-commit]
+    language: system
+    entry: bash -c "export PYTHONPATH=src; uv run delfino ruff -f src -f tests"
+    pass_filenames: false
