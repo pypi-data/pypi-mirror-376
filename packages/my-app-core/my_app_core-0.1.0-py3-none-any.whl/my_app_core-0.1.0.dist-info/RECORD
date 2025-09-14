@@ -1,0 +1,10 @@
+my_app_core-0.1.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+myapp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+myapp/core.py,sha256=Yn_QP6CZ2N4CUEZVyqIReiZlyyHmqUBtA6zRMejmZvA,606
+myapp/plugin_base.py,sha256=sHejDNe9GvvivfvlHJX9vcGm1vsifoZ0yrNtVj2cWSg,318
+myapp/plugin_manager.py,sha256=z1d4r1_ny_XBvd7aluj9E820nLF_9HANAVDJMIQ6M5s,1304
+my_app_core-0.1.0.dist-info/METADATA,sha256=RyLjLZDRgyLi1ASGDt4mNSKo2HAna70tI1yuhySmZR8,142
+my_app_core-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+my_app_core-0.1.0.dist-info/entry_points.txt,sha256=ejnQhPx0BemEmLXU0qJns68VbvlhhU8vM_7usTqyxVQ,42
+my_app_core-0.1.0.dist-info/top_level.txt,sha256=mpTy47xfkgdU0oEqsofUDZ-1ddd-Dv0ct-TjiFec8Ks,6
+my_app_core-0.1.0.dist-info/RECORD,,
