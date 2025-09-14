@@ -1,0 +1,12 @@
+videolab/__init__.py,sha256=vbpTSDvr6c3mfRCxpbnRt4wmgNcbVgzUz5gE4XpXcrs,770
+videolab/cli.py,sha256=AQlLgPNBoD5KS8lP41lW-wFIa8kPbPdwS2shbIV5Z1w,1712
+videolab/commands/__init__.py,sha256=B8FJxj-kBUL7y_BK-O9-dLp1ksBq4BVHx82ng5WcAZA,1093
+videolab/commands/env.py,sha256=g-hKixKFjh-bSoVOzUWWzIYG4Qn9hMQqhTrgwaqbL9w,1231
+videolab/commands/scrub.py,sha256=v3PKbYStYo66tWon29QphE27ptDf02LIBppAeAUwfWY,2889
+videolab/commands/watermark.py,sha256=n5q5L0ydQcmdA_3GoHTRZqQgtqYfJ6qOoeI5s7nz1-A,3196
+videolab-0.2.1.dist-info/licenses/LICENSE.md,sha256=-6xCnK53I6CTqhH-KSABJNgr0hluAE6eF9PTtOauEZY,33330
+videolab-0.2.1.dist-info/METADATA,sha256=P7GglaRsOyjdBl5KhMNWbW2vkWdAyYguCo-XJe9kgxU,1347
+videolab-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+videolab-0.2.1.dist-info/entry_points.txt,sha256=zJFb9XMX5l9GVnU7YHKMCiGE8M1ANq13heaAZRtYXeQ,47
+videolab-0.2.1.dist-info/top_level.txt,sha256=6ClYi42h55vqSMDkyxihMkNCEuVUj_ZsrJcrQfaq4FM,9
+videolab-0.2.1.dist-info/RECORD,,
