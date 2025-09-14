@@ -1,0 +1,53 @@
+name: Publish Python Package
+
+on:
+  release:
+    types:
+      - published
+
+permissions:
+  contents: read
+
+jobs:
+  build-sdist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build package
+        run: |
+          pipx run maturin sdist --out dist
+          pipx run twine check dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pypi-files-sdist
+          path: dist
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build package
+        run: |
+          pipx run maturin build --release --out dist
+          pipx run twine check dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pypi-files-linux
+          path: dist
+
+  publish:
+    needs: [build-sdist, build-linux]
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          pattern: pypi-files-*
+          path: dist
+          merge-multiple: true
+      - name: Debug information
+        run: ls -lah dist/
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
