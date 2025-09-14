@@ -1,0 +1,3 @@
+[console_scripts]
+webpilot=webpilot.cli:main
+
