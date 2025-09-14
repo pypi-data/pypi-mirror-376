@@ -1,0 +1,2 @@
+[console_scripts]
+ymd-render = ymd.cli:main
