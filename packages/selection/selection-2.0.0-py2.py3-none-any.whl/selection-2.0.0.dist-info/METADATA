@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: selection
+Version: 2.0.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: six
+Requires-Dist: lxml ; platform_system != "Windows"
+Requires-Dist: typing-extensions ; python_version <= "2.7"
+Provides-Extra: pyquery
+Requires-Dist: pyquery (<=1.4.1) ; (python_version < "3.0") and extra == 'pyquery'
+Requires-Dist: pyquery ; (python_version >= "3.0") and extra == 'pyquery'
+
+UNKNOWN
+
+
