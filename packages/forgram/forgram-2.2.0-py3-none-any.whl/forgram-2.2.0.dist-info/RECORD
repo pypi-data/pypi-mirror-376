@@ -1,0 +1,10 @@
+forgram/__init__.py,sha256=Vc4PHQRypQ5ZBfRffCKZ5SHCL093ItmmDcjALoKLM8w,532
+forgram/bot.py,sha256=eKty69mgudviaPGGx7UZMmlq7oVImMHgdt2SzAfJsnw,51615
+forgram/exceptions.py,sha256=9Llye0AiDPTwGJwlc-R4KHHNl_YipJYlZQfjXyStiO8,229
+forgram/models.py,sha256=JANkNHdBJq4R0guTqy8Kam_1E_55sLtkxpmWK6KgWng,5401
+forgram/storage.py,sha256=7yuN2V_2LtRuMguINnUu7lDZXA-XDu5AEVlJkd5hkk4,1290
+forgram-2.2.0.dist-info/licenses/LICENSE,sha256=Y1c19LVWC5fLHsyq8JuTKQcD1Ljjr8Yc2wDFPhPJtTU,1098
+forgram-2.2.0.dist-info/METADATA,sha256=MxjzLLlkPIFTskJAy-DQQXUU9xA38SNV_DIiySgptMQ,3739
+forgram-2.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+forgram-2.2.0.dist-info/top_level.txt,sha256=AotaGKnXkb8AHC309FnYccEpGPLn57kzXkViDmYHZZ8,8
+forgram-2.2.0.dist-info/RECORD,,
