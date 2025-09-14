@@ -1,0 +1,33 @@
+# python
+__pycache__/
+*.py[cod]
+
+# build
+.Python
+build/
+dist/
+*.egg-info/
+
+# miscelleanous
+.DS_Store
+
+# development
+.idea/*
+.vscode
+
+# Testing
+.pytest_cache/
+output/
+
+# Environment
+*.env*
+!.env.template
+.venv
+.venv*/
+.python-version
+.python-venv
+
+# Credentials
+*private*.json
+!private.template.json
+*token*.json
