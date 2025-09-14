@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slashcmdreg"
+version = "4.3.1"
+description = "Modular slash command registry for Discord bots written in Python"
+authors = [{ name = "TrianglumDev" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["discord.py"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

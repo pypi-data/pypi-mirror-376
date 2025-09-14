@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/slashcmdreg/__init__.py
+src/slashcmdreg/command.py
+src/slashcmdreg/exceptions.py
+src/slashcmdreg/registry.py
+src/slashcmdreg/utils.py
+src/slashcmdreg.egg-info/PKG-INFO
+src/slashcmdreg.egg-info/SOURCES.txt
+src/slashcmdreg.egg-info/dependency_links.txt
+src/slashcmdreg.egg-info/requires.txt
+src/slashcmdreg.egg-info/top_level.txt
