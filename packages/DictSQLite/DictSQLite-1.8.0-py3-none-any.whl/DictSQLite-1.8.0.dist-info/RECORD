@@ -1,0 +1,10 @@
+dictsqlite/__init__.py,sha256=umi7QBfCSYBTDLT6g7RmFQPViCIvcjO7tyAQiQpRFco,569
+dictsqlite/main.py,sha256=AA-WRIwNNPkSBDCQ53yLu3CmfS_tNe39Qmg9Vvxr4yA,28458
+dictsqlite/modules/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dictsqlite/modules/crypto.py,sha256=ySwoepNNNQMlZ2CLAjWoTR8XhfWgFzK-QY1HN8Mq04w,6793
+dictsqlite/modules/utils.py,sha256=HburmMJypqzzwkkgDBQ7I7bPRve6Z1QgONQJ34IwPkk,6372
+DictSQLite-1.8.0.dist-info/LICENSE,sha256=PKJLu6vJu-itNGGPuWex7DIEDzbvi06_dfwE-CRhH9M,1097
+DictSQLite-1.8.0.dist-info/METADATA,sha256=sjaLEYIcf1WVkxKvn1tNCXLb-QqxbOeCE44l9ykD7ko,2494
+DictSQLite-1.8.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+DictSQLite-1.8.0.dist-info/top_level.txt,sha256=BOURePGvkhHLIAxgUuj_KB40xSXgRxkZgG4jbwpHHUY,11
+DictSQLite-1.8.0.dist-info/RECORD,,
