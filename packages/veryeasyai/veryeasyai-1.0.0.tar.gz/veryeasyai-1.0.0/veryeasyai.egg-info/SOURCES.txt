@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.cfg
+veryeasyai.egg-info/PKG-INFO
+veryeasyai.egg-info/SOURCES.txt
+veryeasyai.egg-info/dependency_links.txt
+veryeasyai.egg-info/requires.txt
+veryeasyai.egg-info/top_level.txt
