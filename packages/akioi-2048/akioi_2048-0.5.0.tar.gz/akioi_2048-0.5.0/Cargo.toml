@@ -1,0 +1,21 @@
+[package]
+name = "akioi-2048"
+edition = "2024"
+license = "MIT"
+readme = "README.md"
+
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+
+[features]
+default = []
+python-bindings = ["pyo3/extension-module", "pyo3/abi3-py38"]
+
+
+[dependencies]
+pyo3 = { version = "0.26.0", default-features = false, features = [
+  "macros",
+], optional = true }
+ak_engine = { package = "akioi-2048", version = "0.5.0" }

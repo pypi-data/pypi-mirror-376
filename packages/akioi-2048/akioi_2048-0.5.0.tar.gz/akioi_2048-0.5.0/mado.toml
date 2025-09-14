@@ -1,0 +1,4 @@
+[lint.md007]
+indent = 2
+[lint.md013]
+line-length = 100
