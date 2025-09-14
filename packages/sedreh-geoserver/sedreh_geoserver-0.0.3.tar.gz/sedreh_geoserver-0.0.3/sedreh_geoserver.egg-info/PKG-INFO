@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: sedreh-geoserver
+Version: 0.0.3
+Summary: geoserver customize for sedreh satellite
+Home-page: UNKNOWN
+Author: Sedreh-Corporation
+Author-email: sedrehgroup@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# This is custom sedreh geoserver
+This is custom sedreh geoserver
+
