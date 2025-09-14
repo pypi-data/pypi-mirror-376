@@ -1,0 +1,10 @@
+litellm
+python-dotenv
+rich
+
+[url]
+html2text
+
+[voice]
+SpeechRecognition
+pyttsx3
