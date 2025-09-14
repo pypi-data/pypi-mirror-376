@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/mongodb_connect/__init__.py
+src/mongodb_connect/mongo_crud.py
+src/testpackage_shashi.egg-info/PKG-INFO
+src/testpackage_shashi.egg-info/SOURCES.txt
+src/testpackage_shashi.egg-info/dependency_links.txt
+src/testpackage_shashi.egg-info/requires.txt
+src/testpackage_shashi.egg-info/top_level.txt
