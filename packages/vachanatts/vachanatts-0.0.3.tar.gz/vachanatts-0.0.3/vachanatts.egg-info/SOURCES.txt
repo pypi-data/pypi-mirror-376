@@ -1,0 +1,16 @@
+README.md
+setup.py
+vachanatts.egg-info/PKG-INFO
+vachanatts.egg-info/SOURCES.txt
+vachanatts.egg-info/dependency_links.txt
+vachanatts.egg-info/requires.txt
+vachanatts.egg-info/top_level.txt
+vachanatts1/TH_G2P.py
+vachanatts1/__init__.py
+vachanatts1/config.py
+vachanatts1/en2th.py
+vachanatts1/main.py
+vachanatts1/phoneme_ids.py
+vachanatts1/text_cleaner.py
+vachanatts1/th_phonemizer.py
+vachanatts1/voice.py
