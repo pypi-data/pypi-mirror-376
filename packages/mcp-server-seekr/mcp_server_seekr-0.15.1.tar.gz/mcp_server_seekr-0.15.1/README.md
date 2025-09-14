@@ -1,0 +1,466 @@
+# MCP Seekr Server
+
+A production-ready Model Context Protocol (MCP) server that provides web search and content extraction capabilities via the Seekr API.
+
+## 📋 Requirements
+
+- **Python 3.10+**: This MCP server requires Python 3.10 or higher to run
+
+## ✨ Features
+
+- **Web Search**: Search Google and Wikipedia with advanced filtering
+- **Content Extraction**: Extract clean text content from any webpage
+- **Input Validation**: Comprehensive validation for URLs and search queries
+- **Rate Limiting**: Built-in protection against API abuse (100 calls/minute)
+- **Health Monitoring**: Health check endpoint for monitoring
+- **Environment Configuration**: Configurable via environment variables
+- **Production Ready**: Comprehensive error handling and logging
+- **MCP Compatible**: Works with all MCP-enabled AI clients
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/seekr-sh/mcp-server-seekr.git
+cd mcp-seekr
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Optional: Create and configure .env file
+cp .env.example .env
+```
+
+### Running the Server
+
+```bash
+# Start the server (for development)
+python seekr.py
+
+# Or after installation
+mcp-server-seekr
+```
+
+The server runs with stdio transport for MCP client compatibility.
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```bash
+# Seekr API Configuration
+SEEKR_BASE_URL=https://engine.seekr.sh
+SEEKR_API_KEY=your_api_key_here
+SEEKR_TIMEOUT=30
+SEEKR_MAX_RETRIES=3
+
+# Rate Limiting
+MAX_CALLS_PER_MINUTE=100
+
+# Logging
+LOG_LEVEL=INFO
+
+# Server Configuration (optional)
+PORT=8000
+HOST=127.0.0.1
+```
+
+**Note**: You can also set these as environment variables directly instead of using a `.env` file. The application will automatically load from `.env` if it exists, or fall back to system environment variables.
+
+### MCP Client Configuration
+
+#### For Claude Desktop
+
+Add to your Claude Desktop config file:
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "seekr": {
+      "command": "uvx",
+      "args": ["mcp-server-seekr"],
+      "env": {
+        "SEEKR_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+#### Alternative configuration (using Python directly):
+```json
+{
+  "mcpServers": {
+    "seekr": {
+      "command": "python3",
+      "args": ["/path/to/mcp-seekr/seekr.py"],
+      "env": {
+        "SEEKR_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+This server uses stdio transport for MCP compatibility.
+
+## 🛠️ Tools
+
+### seekr_query
+Search the web using Google.
+
+**Parameters:**
+- `query` (string, required): Search query (max 500 characters)
+- `num` (integer, optional): Number of results 1-50 (default: 10)
+
+**Example:**
+```json
+{
+  "query": "latest AI developments 2024",
+  "num": 5
+}
+```
+
+### seekr_prism
+Extract text content from a webpage URL.
+
+**Parameters:**
+- `url` (string, required): Valid HTTP/HTTPS URL to extract content from
+
+**Example:**
+```json
+{
+  "url": "https://example.com/article"
+}
+```
+  "status": "healthy",
+  "timestamp": 1694598000.123,
+  "version": "1.0.0",
+  "services": {
+    "seekr_api": "healthy"
+  }
+}
+```
+- **Robust Error Handling**: Automatic retries and detailed error reporting
+- **Type Safety**: Full TypedDict definitions for reliable API interactions
+
+## 📋 Installation
+
+### Prerequisites
+
+- Python 3.10 or higher
+- pip package manager
+
+### Using pip
+
+```bash
+# Install from source
+git clone <your-repo-url>
+cd mcp-server-seekr
+pip install -e .
+```
+
+### Development Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd mcp-server-seekr
+
+# Install with development dependencies
+pip install -e ".[dev]"
+```
+
+## ⚙️ Configuration
+
+### For Claude Desktop
+
+Add the following to your Claude Desktop configuration file:
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "seekr": {
+      "command": "seekr-mcp",
+      "env": {
+        "SEEKR_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### Environment Variables (Optional)
+
+Create a `.env` file in your project root:
+
+```env
+# Seekr API Configuration (if needed in future)
+SEEKR_BASE_URL=https://seekr.dfs.im
+SEEKR_TIMEOUT=30
+SEEKR_MAX_RETRIES=3
+```
+
+## 🎯 Usage Examples
+
+### When to Use the Tools
+
+**Use `seekr_search` when you need:**
+- Current information, recent news, or developments that may have changed since your last training data
+- Real-time web search results from Google or Wikipedia
+- Localized content in different languages and regions
+- Advanced search operators (site-specific, file types, date ranges, etc.)
+
+**Use `seekr_fetch` when you need:**
+- To read the actual content of a webpage or article
+- Clean text extraction from websites you can't access directly
+- Analyzing web page content or online documents
+
+### Basic Web Search
+
+```python
+# Current news and recent developments
+{
+  "name": "seekr_search",
+  "arguments": {
+    "query": "latest developments in quantum computing 2024",
+    "engine": "google",
+    "language": "en",
+    "num": 10,
+    "time_range": "month"
+  }
+}
+
+# Localized search in Portuguese
+{
+  "name": "seekr_search", 
+  "arguments": {
+    "query": "notícias sobre inteligência artificial no Brasil",
+    "engine": "google",
+    "language": "pt",
+    "region": "BR",
+    "num": 5
+  }
+}
+```
+
+### Advanced Search with Operators
+
+```python
+# Search specific sites for technical documentation
+{
+  "name": "seekr_search",
+  "arguments": {
+    "query": "machine learning tutorial",
+    "site": "github.com",
+    "filetype": "pdf",
+    "intitle": "guide",
+    "num": 20
+  }
+}
+
+# News search with time filter
+{
+  "name": "seekr_search",
+  "arguments": {
+    "query": "climate change solutions",
+    "search_type": "news",
+    "time_range": "week",
+    "language": "en"
+  }
+}
+```
+
+### Web Content Extraction
+
+```python
+# Extract article content
+{
+  "name": "seekr_fetch",
+  "arguments": {
+    "url": "https://example.com/article",
+    "language": "en"
+  }
+}
+
+# Extract Portuguese content
+{
+  "name": "seekr_fetch",
+  "arguments": {
+    "url": "https://example.com/artigo",
+    "language": "pt"
+  }
+}
+```
+```
+
+### Web Scraping
+
+The `seekr_fetch` tool provides clean content extraction:
+
+```python
+{
+  "url": "https://example.com/article",
+  "language": "en"
+}
+```
+
+## 🔧 API Reference
+
+### seekr_search Tool
+
+Performs web searches using Seekr API with support for Google and Wikipedia.
+
+**Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `query` | string | Yes | Search query string |
+| `engine` | string | No | Search engine: "google" (default) or "wikipedia" |
+| `language` | string | No | Language code (ISO 639-1, e.g., "en", "es") |
+| `region` | string | No | Region code (ISO 3166-1 alpha-2, e.g., "US", "GB") |
+| `safe_search` | integer | No | Safe search level: 0=off, 1=medium, 2=high |
+| `time_range` | string | No | Time filter: "day", "week", "month", "year" |
+| `page` | integer | No | Page number (1-based, default: 1) |
+| `search_type` | string | No | Search type: "web", "images", "videos", "news" |
+| `num` | integer | No | Number of results (max 100 for Google, 50 for Wikipedia) |
+
+**Advanced Search Operators:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `site` | string | Limit results to specific domain |
+| `filetype` | string | Limit to specific file types |
+| `inurl` | string | Search for pages with word in URL |
+| `intitle` | string | Search for pages with word in title |
+| `exact` | string | Exact phrase match |
+| `exclude` | string | Terms to exclude (comma-separated) |
+| `or_terms` | string | Alternative terms (comma-separated) |
+
+### seekr_fetch Tool
+
+Scrapes and extracts clean text content from web pages.
+
+**Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `url` | string | Yes | URL of the webpage to scrape |
+| `language` | string | No | Language code for content extraction |
+
+## 🏗️ Architecture
+
+```
+mcp-server-seekr/
+├── src/mcp_server_seekr/
+│   ├── __init__.py
+│   ├── main.py              # MCP server implementation
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── seekr_client.py  # Seekr API client
+│   ├── tools/
+│   │   ├── __init__.py
+│   │   └── search_tool.py   # Search tools implementation
+│   └── types/
+│       ├── __init__.py
+│       └── seekr.py         # Type definitions
+├── pyproject.toml           # Project configuration
+├── requirements.txt         # Dependencies
+└── README.md               # This file
+```
+
+### Components
+
+- **SeekrClient**: HTTP client for Seekr API with retry logic and error handling
+- **SeekrSearchTools**: Business logic layer that handles search and fetch operations
+- **Main Server**: MCP server implementation with tool registration and request handling
+- **Type Definitions**: Comprehensive TypedDict definitions for type safety
+
+## 🚨 Error Handling
+
+The server implements comprehensive error handling:
+
+- **Validation Errors**: Missing required parameters
+- **API Errors**: Seekr API failures with detailed error messages  
+- **Network Errors**: Connection issues with automatic retries
+- **Timeout Handling**: Configurable request timeouts
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+# Install test dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run with coverage
+pytest --cov=mcp_server_seekr
+
+# Run specific test file
+pytest tests/test_seekr_client.py
+```
+
+## 🚀 Development
+
+### Setting up Development Environment
+
+```bash
+# Clone and install in development mode
+git clone <your-repo-url>
+cd mcp-server-seekr
+pip install -e ".[dev]"
+
+# Run formatting
+black src/
+ruff check src/
+
+# Run type checking
+mypy src/
+```
+
+### Project Structure Guidelines
+
+- Use TypedDict for all API request/response types
+- Implement proper error handling with detailed error messages
+- Add logging for debugging and monitoring
+- Follow async/await patterns for all I/O operations
+- Include comprehensive docstrings for all public methods
+
+## 📄 License
+
+MIT License - see LICENSE file for details.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new functionality
+5. Ensure all tests pass
+6. Submit a pull request
+
+## 📞 Support
+
+For issues and questions:
+- Open an issue on GitHub
+- Check existing issues for solutions
+- Review the Seekr API documentation
+
+## 🔗 Related Projects
+
+- [MCP TypeScript Server](../mcp-server-serper/) - Original Serper-based implementation
+- [Seekr API](https://seekr.dfs.im) - The underlying search API
+- [Model Context Protocol](https://github.com/modelcontextprotocol/python-sdk) - MCP Python SDK
