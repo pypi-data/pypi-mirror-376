@@ -1,0 +1,184 @@
+Metadata-Version: 2.4
+Name: clean-transcribe
+Version: 1.0.0
+Summary: A simple CLI to transcribe Youtube videos or local audio/video files and produce easy-to-use transcripts for analysis, reading, or subtitles.
+Home-page: https://github.com/itsmevictor/clean-transcribe
+Author: Victor Kreitmann
+Author-email: victor.kreitmann@gmail.com
+Project-URL: Bug Reports, https://github.com/itsmevictor/clean-transcribe/issues
+Project-URL: Source, https://github.com/itsmevictor/clean-transcribe
+Keywords: youtube transcription whisper ai cleaning subtitles srt vtt
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: yt-dlp>=2023.12.30
+Requires-Dist: openai-whisper>=20231117
+Requires-Dist: click>=8.1.7
+Requires-Dist: click-option-group>=0.5.6
+Requires-Dist: pydub>=0.25.1
+Requires-Dist: ffmpeg-python>=0.2.0
+Requires-Dist: tqdm>=4.66.1
+Requires-Dist: llm>=0.13.0
+Requires-Dist: llm-gemini>=0.1.0
+Requires-Dist: openai>=1.0.0
+Requires-Dist: requests>=2.25.0
+Requires-Dist: mistral-common>=1.8.1
+Requires-Dist: timm
+Requires-Dist: librosa
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Clean Transcriber
+
+A command-line tool to turn any YouTube video, local audio or video file into a clean, readable text transcript. It uses the transcription model of your choice (local or API-based) for transcription and your preferred LLM to automatically clean and reformat the output.
+
+## Features
+
+1. **Multiple input formats**: Supports various audio and video formats for flexible usage (e.g., YouTube URL, `.mp3`, `.wav`, `.m4a`, `.opus`, `.mp4`, `.mkv`, `.mov`).
+2. **Multiple output format**: Generate clean transcripts in TXT, SRT, or VTT formats.
+3. **Flexible transcription models**: Choose from various local (Whisper, Voxtral) and API-based (OpenAI, Mistral) models for different use cases.
+5. **LLM-powered cleaning** that removes filler words, fixes grammar, and organizes content into readable paragraphs.   
+6. **Wide LLM support** - use Gemini, ChatGPT, Claude or any other (local) LLM for cleaning.
+
+## Quick Start
+
+```bash
+# Transcribe a YouTube video
+clean-transcribe "https://www.youtube.com/watch?v=VIDEO_ID"
+
+# Transcribe a local video file
+clean-transcribe "/path/to/your/video.mp4"
+
+# Transcribe a specific segment of a video
+clean-transcribe "https://www.youtube.com/watch?v=VIDEO_ID" --start "1:30" --end "2:30"
+
+# Create clean subtitles from a video
+clean-transcribe "https://www.youtube.com/watch?v=VIDEO_ID" -f srt -o subtitles.srt
+```
+
+## Installation
+
+**Option 1: Clone and run**
+```bash
+git clone https://github.com/itsmevictor/clean-transcribe
+cd clean-transcribe
+pip install -r requirements.txt
+clean-transcribe "path/to/your/audio.mp3"
+```
+
+**Option 2: Install as package**
+```bash
+git clone https://github.com/itsmevictor/clean-transcribe
+cd clean-transcribe
+pip install -e .
+clean-transcribe "https://www.youtube.com/watch?v=dQw4w9WgXcQ"   
+```
+
+## Usage Examples
+
+**Transcribe a YouTube video:**
+```bash
+clean-transcribe "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+```
+
+**Transcribe a local audio file:**
+```bash
+clean-transcribe "path/to/your/audio.mp3" -o "transcript.txt"
+```
+
+**Transcribe a specific segment:**
+```bash
+clean-transcribe "https://www.youtube.com/watch?v=dQw4w9WgXcQ" --start "00:01:30" --end "00:02:30"
+```
+
+**Create clean subtitles from a video:**
+```bash
+clean-transcribe "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -f srt
+```
+
+**High-quality lecture transcription from a local file:**
+```bash
+clean-transcribe "lecture.wav" \
+    -m whisper-large \
+    --llm-model gemini-2.0-flash-exp \
+    --cleaning-style lecture \
+    --save-raw
+```
+
+## Configuration
+
+### Key Options
+- `--format, -f`: Output format (txt, srt, vtt)
+- `--model, -m`: Transcription model (whisper-tiny, whisper-base, whisper-small, whisper-medium, whisper-large, whisper-turbo, whisper-1-api, gpt-4o-transcribe-api, gpt-4o-mini-transcribe-api, voxtral-mini-api, voxtral-small-api, voxtral-mini-local, voxtral-small-local)
+- `--start`: Start time for transcription (e.g., "1:30")
+- `--end`: End time for transcription (e.g., "2:30")
+- `--transcription-prompt`: Custom prompt for Whisper to guide transcription
+- `--llm-model`: LLM for cleaning (gemini-2.0-flash-exp, gpt-4o-mini, etc.)
+- `--cleaning-style`: presentation, conversation, or lecture
+- `--save-raw`: Keep both raw and cleaned versions
+- `--no-clean`: Skip AI cleaning
+
+## LLM-Powered Cleaning Setup
+
+### Quick Setup (Recommended)
+```bash
+# Install and configure Gemini (fast + cost-effective)
+llm install llm-gemini
+llm keys set gemini
+# Enter your Gemini API key when prompted
+
+# Or use any other LLM provider
+
+# OpenAI
+llm keys set openai
+
+# Anthropic Claude  
+llm install llm-claude-3
+llm keys set claude
+```
+
+*Uses Simon Willison's excellent [llm package](https://github.com/simonw/llm) for provider flexibility.*
+
+### Cleaning Process
+
+**What it does:**
+- Removes filler words (um, uh, so, like, you know, etc.)
+- Fixes grammar and punctuation errors  
+- Organizes content into logical paragraphs
+- Maintains original meaning and context
+
+**Cleaning styles:**
+- **presentation**: Professional tone, organized paragraphs
+- **conversation**: Natural flow, minimal cleanup
+- **lecture**: Educational format, clear sections for notes
+
+*Note: SRT/VTT preserve timing while cleaning text content.*
+
+## Feedback
+
+I'd love to hear your feedback! If you encounter any issues, have suggestions for new features, or just want to share your experience, please don't hesitate to [open an issue](https://github.com/itsmevictor/clean-transcribe/issues).
