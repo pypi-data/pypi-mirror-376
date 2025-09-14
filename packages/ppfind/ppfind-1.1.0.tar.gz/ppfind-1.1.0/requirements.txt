@@ -1,0 +1,6 @@
+pandas
+requests
+arxiv
+google-search-results
+tqdm
+openpyxl
