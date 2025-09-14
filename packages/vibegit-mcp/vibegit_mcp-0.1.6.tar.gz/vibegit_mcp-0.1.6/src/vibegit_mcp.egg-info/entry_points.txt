@@ -1,0 +1,2 @@
+[console_scripts]
+vibegit-mcp = vibegit.server:main
