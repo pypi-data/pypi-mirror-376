@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=77.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "txtanim"
+version = "1.0.2"
+description = "Terminal text animations for Python."
+requires-python = ">=3.6"
+dependencies = ["pyfiglet>=0.8.post1"]
+readme = "README.md"  
