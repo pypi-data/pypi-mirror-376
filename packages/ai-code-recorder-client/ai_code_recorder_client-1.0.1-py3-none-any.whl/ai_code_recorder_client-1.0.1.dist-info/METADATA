@@ -1,0 +1,128 @@
+Metadata-Version: 2.4
+Name: ai-code-recorder-client
+Version: 1.0.1
+Summary: AI代码记录器 MCP 客户端 - 通过 MCP 协议记录 AI 生成的代码片段
+Project-URL: Homepage, https://github.com/ai-code-team/ai-code-recorder
+Project-URL: Repository, https://github.com/ai-code-team/ai-code-recorder
+Project-URL: Issues, https://github.com/ai-code-team/ai-code-recorder/issues
+Project-URL: Documentation, https://github.com/ai-code-team/ai-code-recorder/blob/main/README.md
+Author-email: AI Code Recorder Team <contact@aicodeteam.com>
+Maintainer-email: AI Code Recorder Team <contact@aicodeteam.com>
+License: MIT
+License-File: LICENSE
+Keywords: ai,code,cursor,development,mcp,recorder
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Requires-Dist: fastmcp>=0.1.0
+Requires-Dist: requests>=2.31.0
+Description-Content-Type: text/markdown
+
+# AI代码记录器客户端
+
+AI代码记录器的客户端，运行在本地，获取Git信息并与远程服务器通信。
+
+## 一、快速开始
+
+### 1. 安装客户端
+
+**从 PyPI 安装（推荐）：**
+
+```bash
+# 直接安装发布版本
+pip install ai-code-recorder-client
+```
+
+**从源码安装（开发用）：**
+
+```bash
+# 克隆仓库并进入客户端目录
+git clone <repository-url>
+cd ai-code-recorder/client
+
+# 安装开发版本
+pip install -e .
+```
+
+### 2. 配置 Cursor
+
+编辑 `~/.cursor/mcp.json`：
+
+```json
+{
+  "mcpServers": {
+    "ai-code-recorder": {
+      "command": "uvx",
+      "args": ["ai-code-recorder-client"]
+    }
+  }
+}
+```
+
+### 3. 使用
+
+1. 重启 Cursor
+2. 在 Cursor 中输入：`ai-code-recorder init`
+3. 开始使用 AI 生成代码，会自动记录
+
+## 二、开发和发布
+
+### 1. 本地开发
+
+如果要参与开发或使用最新功能：
+
+```bash
+# 克隆仓库并进入客户端目录
+git clone <repository-url>
+cd ai-code-recorder/client
+
+# 安装开发依赖
+pip install -e .
+```
+
+### 2. 发布到 PyPI
+
+#### 发布前准备
+
+1. **安装必要工具**
+```bash
+pip install build twine
+```
+
+2. **配置 PyPI API Token**
+- 访问 [PyPI Token 管理页面](https://pypi.org/manage/account/token/)
+- 创建新的 API token，作用域选择 "Entire account" 或特定项目
+- 设置环境变量：
+```bash
+export PYPI_API_TOKEN="pypi-your-token-here"
+```
+
+#### 一键发布
+
+```bash
+# 在客户端目录中执行
+./release.sh
+```
+
+脚本会自动执行所有发布步骤：
+- ✅ 清理旧构建文件
+- ✅ 运行测试  
+- ✅ 构建包文件
+- ✅ 检查包质量
+- ✅ 测试本地安装
+- ✅ 询问是否发布到 PyPI
+- ✅ 自动发布（如果选择是）
+
+#### 发布后验证
+
+访问 PyPI 页面确认：https://pypi.org/project/ai-code-recorder-client/
