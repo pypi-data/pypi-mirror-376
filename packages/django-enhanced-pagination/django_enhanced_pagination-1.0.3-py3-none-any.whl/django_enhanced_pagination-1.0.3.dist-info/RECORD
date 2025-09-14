@@ -1,0 +1,13 @@
+django_enhanced_pagination/__init__.py,sha256=O_24Eb7CCd3NVWq2n13IW2Qa3JmvGoUHHOQENWUoOOk,450
+django_enhanced_pagination/pagination/__init__.py,sha256=mobCHL4y87H_jx8ENQ5EfgPBXv-H7-Kj_BddDFXQq1I,111
+django_enhanced_pagination/pagination/mixins.py,sha256=DEBlFhcRgr4ONSTwXO2wMqg3E_pRP3JD-KsrRd-RqUE,649
+django_enhanced_pagination/pagination/models.py,sha256=zOyjhuv6ReNQaebCQxlBwmPQsHEFpxycLVZeIsE6PGA,21
+django_enhanced_pagination/pagination/paginator.py,sha256=OZIKMDiWgOk2kudQjamZ9v_dn_eqQK5cor4G8xraNTQ,8123
+django_enhanced_pagination/pagination/tests.py,sha256=dUdVs0K_8nA4AGPafeXwwl7Ijfk4mQU_MGeUW-G0qj0,6430
+django_enhanced_pagination/pagination/templates/pure_pagination/pagination-bootstrap.html,sha256=2npDzk85RvnJEMH0X80ii6O5JwvJNE3mCYt-IXNiF84,2399
+django_enhanced_pagination/pagination/templates/pure_pagination/pagination.html,sha256=WJYNDPy7GDpRrPOTFE05cDwOZxkJOuPnzTc4UgLollU,948
+django_enhanced_pagination-1.0.3.dist-info/licenses/LICENSE,sha256=7luCs-MfN84pRuLO3fUq0wVjfYs2HLXw8AIij0TqGVE,1533
+django_enhanced_pagination-1.0.3.dist-info/METADATA,sha256=UT8B1LAauY4wVMsML45Vzd0PYD06jNoyy4WAUnlP4A4,3798
+django_enhanced_pagination-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_enhanced_pagination-1.0.3.dist-info/top_level.txt,sha256=5wWs_ws0VlEqwb7-qJaXw88j8o8UppBA9RQnA_dwozM,27
+django_enhanced_pagination-1.0.3.dist-info/RECORD,,
