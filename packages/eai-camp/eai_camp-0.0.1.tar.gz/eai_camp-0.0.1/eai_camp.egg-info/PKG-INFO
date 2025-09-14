@@ -1,0 +1,167 @@
+Metadata-Version: 2.4
+Name: eai-camp
+Version: 0.0.1
+Summary: Enterprise AI Agent Compliance & Audit Management Platform
+Home-page: https://github.com/yourusername/eai-camp
+Author: EAI-CAMP Development Team
+Author-email: EAI-CAMP Development Team <support@eai-camp.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/eai-camp
+Project-URL: Repository, https://github.com/yourusername/eai-camp
+Project-URL: Documentation, https://eai-camp.readthedocs.io/
+Project-URL: Issues, https://github.com/yourusername/eai-camp/issues
+Keywords: ai,compliance,audit,enterprise,agents,governance
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit>=1.28.0
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: plotly>=5.0.0
+Requires-Dist: pyjwt>=2.8.0
+Requires-Dist: bcrypt>=4.0.0
+Requires-Dist: sqlalchemy>=2.0.0
+Requires-Dist: asyncio-mqtt>=0.13.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: cryptography>=41.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pre-commit>=2.20.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=5.0.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.0.0; extra == "docs"
+Requires-Dist: myst-parser>=0.18.0; extra == "docs"
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# EAI-CAMP: Enterprise AI Agent Compliance & Audit Management Platform
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+**EAI-CAMP** is a comprehensive enterprise platform that addresses the critical gap between AI agent deployment and regulatory compliance. Unlike existing solutions that focus on either AI orchestration or compliance monitoring separately, EAI-CAMP provides a unified ecosystem for enterprises to develop, deploy, test, audit, and continuously monitor AI agents while ensuring full compliance with global regulatory frameworks.
+
+## 🚀 Key Features
+
+### Phase 1 Features (Current)
+- **Agent Orchestration**: Register, start, stop, pause, and resume AI agents
+- **Compliance Engine**: Real-time compliance checking against GDPR, HIPAA, SOX, and other frameworks
+- **Audit Management**: Blockchain-style immutable audit trails with integrity verification
+- **Interactive UI**: Streamlit-based dashboard for monitoring and management
+- **Enterprise-Ready**: Multi-tenant architecture with role-based access control
+
+### Supported Compliance Frameworks
+- **GDPR** (General Data Protection Regulation)
+- **HIPAA** (Health Insurance Portability and Accountability Act)
+- **SOX** (Sarbanes-Oxley Act)
+- **PCI-DSS** (Payment Card Industry Data Security Standard)
+- **CCPA** (California Consumer Privacy Act)
+- **ISO 27001** (Information Security Management)
+
+## 📦 Installation
+
+### From PyPI (After publishing)
+```bash
+pip install eai-camp
+```
+
+### From Source (Development)
+```bash
+git clone https://github.com/yourusername/eai-camp.git
+cd eai-camp
+pip install -e .
+```
+
+### For Development
+```bash
+git clone https://github.com/yourusername/eai-camp.git
+cd eai-camp
+pip install -e ".[dev]"
+```
+
+## 🏃 Quick Start
+
+### 1. Launch the UI
+```bash
+streamlit run eai_camp/ui/app.py
+```
+
+### 2. Programmatic Usage
+```python
+import asyncio
+from eai_camp.core.agent_orchestrator import AgentOrchestrator
+from eai_camp.core.compliance_engine import ComplianceEngine
+from eai_camp.agents.compliance_agent import ComplianceAgent
+from eai_camp.agents.base_agent import AgentConfig
+
+async def main():
+    # Initialize core components
+    orchestrator = AgentOrchestrator()
+    compliance_engine = ComplianceEngine()
+    
+    # Create and register a compliance agent
+    config = AgentConfig(
+        name="My Compliance Agent",
+        description="Monitors compliance across systems"
+    )
+    
+    agent = ComplianceAgent(config, compliance_engine)
+    
+    agent_id = await orchestrator.register_agent(
+        agent=agent,
+        name=config.name,
+        owner="admin",
+        tags=["compliance", "monitoring"]
+    )
+    
+    # Start the agent
+    await orchestrator.start_agent(agent_id)
+    print(f"Agent {agent_id} is now running!")
+    
+    # Stop after demo
+    await asyncio.sleep(5)
+    await orchestrator.stop_agent(agent_id)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## 🧪 Testing
+
+### Run All Tests
+```bash
+pytest
+```
+
+### Run with Coverage
+```bash
+pytest --cov=eai_camp --cov-report=html
+```
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+---
+
+**EAI-CAMP** - Bridging the gap between AI innovation and regulatory compliance.

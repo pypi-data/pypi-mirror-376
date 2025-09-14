@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include requirements*.txt
+include *.toml
+recursive-include eai_camp/data *.json *.yml *.yaml
+recursive-include eai_camp/templates *.html
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

@@ -1,0 +1,3 @@
+[console_scripts]
+eai-camp = eai_camp.cli:main
+eai-camp-ui = eai_camp.ui.app:main
