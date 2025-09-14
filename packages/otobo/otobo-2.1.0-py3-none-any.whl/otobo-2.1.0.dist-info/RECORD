@@ -1,0 +1,16 @@
+otobo/__init__.py,sha256=gY3u9GC3o9Zova9BSVK_mH-v62WEeTL3E69q4R0vdFA,767
+otobo/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+otobo/client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+otobo/client/otobo_client.py,sha256=rV0aUTe2s_9-Nfj26Sk_GumzkT-iD309g-Kisqd8JrQ,8532
+otobo/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+otobo/models/client_config_models.py,sha256=YQLajhFCZ5E5TRE3RIN90sKrFXIPTSGwvX6V-POHchk,2164
+otobo/models/request_models.py,sha256=vkxAY27InmUG0U3EdppQIsmKkiHXPgMPlE-WKgpUwrg,4413
+otobo/models/response_models.py,sha256=xhmwd9lC7Gt8wjfHtnXsJCTeefjt6GNaFlLtgrXqiYY,752
+otobo/models/ticket_models.py,sha256=0Jj-yslOaswGi2CKLfG2Bz40kbrkbTi9mFMUMN_v_C4,3608
+otobo/util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+otobo/util/otobo_errors.py,sha256=Tx9wN6nPPSQ9mnrJzMcVi5QIAsByvZnxrNethcYt8uc,622
+otobo/util/webservice_config.py,sha256=8QWW1cVdqm1LAdltEHiZdmDX1EKlsiPM4hnS5_0isjY,1426
+otobo-2.1.0.dist-info/METADATA,sha256=cnjKHTOy13LTRcRyfprsQSXcG2yT0dnCu3hzAV06xWA,8093
+otobo-2.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+otobo-2.1.0.dist-info/top_level.txt,sha256=zDIYhYVpst0pG2GUP6WXGNNT2aW0RAyzNAX2o6ETJx8,6
+otobo-2.1.0.dist-info/RECORD,,
