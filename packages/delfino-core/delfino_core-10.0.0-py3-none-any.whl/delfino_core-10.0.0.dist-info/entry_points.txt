@@ -1,0 +1,2 @@
+[delfino.plugin]
+delfino-core = delfino_core.commands

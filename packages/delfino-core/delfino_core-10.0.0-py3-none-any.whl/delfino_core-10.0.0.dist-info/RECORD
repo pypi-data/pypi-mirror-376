@@ -1,0 +1,12 @@
+delfino_core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+delfino_core/backports.py,sha256=Brv7wx7KwYMHSPeRwBpp_YUEMXUswXaX7HNrra0Hljo,293
+delfino_core/changelog_urls.yaml,sha256=SYXD4y1hF1nOoDkB8_vVMD78W91bKkrCmjJq7R9FD6Q,1198
+delfino_core/config.py,sha256=EdBQ31DfsqQXcwSvSIC8YxviCFQMIfrxCzcpQoG4zAk,2813
+delfino_core/spinner.py,sha256=2KqUiOzgRKE3LUeUBj-26n6y77DKxch5RiUJ_L7x2s0,3302
+delfino_core/utils.py,sha256=BL2a4DevmHx_S23I7xgPVnO6XX2gtYQ8crK5zRBVfo8,2986
+delfino_core/vcs_tools.py,sha256=Q2pohFmo6dkiEDQoJC-BSeSSE4fczmFP89Y9xbIdqPs,4742
+delfino_core-10.0.0.dist-info/METADATA,sha256=5H9PCqTq6OphGFw2EZ2DZE9EhYBCCDXyHyXP56lARsI,8385
+delfino_core-10.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+delfino_core-10.0.0.dist-info/entry_points.txt,sha256=rDC0DpGKK253HlQrv5G-KBM6qFO6WAEcZWqtcAJ-788,54
+delfino_core-10.0.0.dist-info/licenses/LICENSE.md,sha256=hmcNCgaABlLZxaQKrzU71JJUF6D6mWJ0WX0_hfac2g4,1078
+delfino_core-10.0.0.dist-info/RECORD,,
