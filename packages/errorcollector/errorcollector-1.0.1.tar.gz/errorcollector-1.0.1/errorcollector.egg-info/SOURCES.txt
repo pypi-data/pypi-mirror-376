@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+errorcollector/__init__.py
+errorcollector/error_collector.py
+errorcollector/py.typed
+errorcollector.egg-info/PKG-INFO
+errorcollector.egg-info/SOURCES.txt
+errorcollector.egg-info/dependency_links.txt
+errorcollector.egg-info/not-zip-safe
+errorcollector.egg-info/top_level.txt
+tests/test_error_collector.py
