@@ -1,0 +1,9 @@
+sekaibot/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sekaibot/adapter/cqhttp/__init__.py,sha256=ynwOq3F0yCwxvQiv9x40U7U6zgIWMDJl0vDAtfHQYGk,15317
+sekaibot/adapter/cqhttp/config.py,sha256=sU5V_B3Qs1sQPG3L_0Z-WMKu53l59NJp6xB61lbdDLI,928
+sekaibot/adapter/cqhttp/event.py,sha256=gIMOUlENJEsh6DJD098-1Jv7OdT8fL4xXMHHnxQRbNQ,14060
+sekaibot/adapter/cqhttp/exceptions.py,sha256=GMpHIYF4nl1Dq42SPiRxw58OKM418FwtZ3gMMmrr3Zw,931
+sekaibot/adapter/cqhttp/message.py,sha256=xX2lfg1tHnhJpbcvr2ZCQjfiJUvaXVmjftdz_cqjtT0,7300
+sekaibot_adapter_cqhttp-0.1.2.dist-info/METADATA,sha256=WKloXofRX68pVSHkucfG25ONTXXkOMYyVfJCOKWIAS0,697
+sekaibot_adapter_cqhttp-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+sekaibot_adapter_cqhttp-0.1.2.dist-info/RECORD,,
