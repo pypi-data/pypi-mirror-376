@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: mini-gpr
+Version: 0.0.0
+Summary: a minimal reference implementation of gaussian process regression in pure numpy
+Author-email: John Gardner <gardner.john97+dphil@gmail.com>
+Requires-Python: >=3.11
+Requires-Dist: jaxtyping>=0.3.2
+Requires-Dist: matplotlib>=3.10.3
+Requires-Dist: numpy>=2.3.0
+Description-Content-Type: text/markdown
+
+<div align="center">
+
+# `mini-gpr`
+
+[![Tests](https://github.com/jla-gardner/mini-gpr/actions/workflows/tests.yaml/badge.svg?branch=main)](https://github.com/jla-gardner/mini-gpr/actions/workflows/tests.yaml)
+[![codecov](https://codecov.io/gh/jla-gardner/mini-gpr/branch/main/graph/badge.svg)](https://codecov.io/gh/jla-gardner/mini-gpr)
+[![PyPI](https://img.shields.io/pypi/v/mini-gpr)](https://pypi.org/project/mini-gpr/)
+
+
+<img src="docs/_static/1d-gpr.gif" alt="1D GPR" width="400">
+
+</div>
+
+
+
+## planned future work
+- optimise sparse point locations
+- implement the "Fully Independent Training Conditional" (FITC) approximation
