@@ -1,0 +1,7 @@
+myapp_plugin_hello/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+myapp_plugin_hello/plugin.py,sha256=6ht8KA6p-aVL5lwJFueCk_FsK2r3wRCDHpl9OtLPH4o,268
+myapp_plugin_hello-0.1.0.dist-info/METADATA,sha256=lGzY6OVhsooCnx0YhNn6tiZuyfBzdv3Q1-OP376EHN4,117
+myapp_plugin_hello-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+myapp_plugin_hello-0.1.0.dist-info/entry_points.txt,sha256=7G61FJ4i2Osny3Xzh8TXSNyM0kr4PwY7IsLaNgK-iQs,62
+myapp_plugin_hello-0.1.0.dist-info/top_level.txt,sha256=VuIj7_bkNFcGaTS2ussFNq__t84PhBEdpoIfysWvID0,19
+myapp_plugin_hello-0.1.0.dist-info/RECORD,,
