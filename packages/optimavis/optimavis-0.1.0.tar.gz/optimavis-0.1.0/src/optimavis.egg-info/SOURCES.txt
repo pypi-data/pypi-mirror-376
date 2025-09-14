@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/optima-vis/models/gif_properties.py
+src/optima-vis/models/video_properties.py
+src/optima-vis/services/animation_generator/optimizer_animation_generator.py
+src/optima-vis/services/plot_generator/loss_contour_generator.py
+src/optima-vis/services/plot_generator/optimizer_plot_generator.py
+src/optimavis.egg-info/PKG-INFO
+src/optimavis.egg-info/SOURCES.txt
+src/optimavis.egg-info/dependency_links.txt
+src/optimavis.egg-info/requires.txt
+src/optimavis.egg-info/top_level.txt
+tests/test_contour_generator.py
+tests/test_optimizer_animation_generator.py
+tests/test_optimizer_plot_generator.py
