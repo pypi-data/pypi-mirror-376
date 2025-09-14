@@ -1,0 +1,14 @@
+*~
+.venv/
+__pycache__/
+dist/index.html
+dist/project-*
+dist/project_*
+tests/.mypy_cache
+tests/.venv
+tests/dist/dummy*
+tests/dist/project*
+tests/dist/index.html
+tests/src/**/.venv
+tests/src/**/dist
+tests/src/**/pyproject.toml
