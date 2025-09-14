@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SiphoAI"
+version = "1.0.1"
+authors = [
+    {name = "NiqueWrld", email = "niquewrld@outlook.com"},
+]
+description = "AI-powered voice command assistant for desktop automation"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Desktop Environment",
+    "Topic :: Home Automation", 
+    "Topic :: System :: Systems Administration",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+]
+keywords = [
+    "voice assistant",
+    "desktop automation", 
+    "ai assistant",
+    "voice commands",
+    "home automation",
+    "productivity",
+    "flask api",
+    "openai",
+]
+dependencies = [
+    "flask>=2.3.3",
+    "flask-cors>=4.0.0",
+    "python-dotenv",
+    "openai", 
+    "pillow",
+    "requests",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8", 
+    "mypy",
+]
+voice = [
+    "SpeechRecognition",
+    "pyttsx3",
+    "pyaudio",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/siphoai"
+"Bug Reports" = "https://github.com/yourusername/siphoai/issues"
+"Source" = "https://github.com/yourusername/siphoai"
+"Documentation" = "https://github.com/yourusername/siphoai#readme"
+
+[project.scripts]
+siphoai = "siphoai.cli:main"
+
+[tool.setuptools]
+packages = ["siphoai", "siphoai.utils"]
+
+[tool.setuptools.package-data]
+siphoai = ["data/*.json", "data/*.txt"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
