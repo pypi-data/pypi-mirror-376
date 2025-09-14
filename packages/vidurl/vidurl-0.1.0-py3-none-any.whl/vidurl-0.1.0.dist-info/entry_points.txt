@@ -1,0 +1,2 @@
+[console_scripts]
+vidurl = vidurl.__main__:main

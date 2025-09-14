@@ -1,0 +1,13 @@
+vidurl/__init__.py,sha256=wdHiwwnI470lilWyeLtgjit3WIPQzEJ2qiOjNzUjlGU,709
+vidurl/__main__.py,sha256=iRRBfYcNrGSqEBc-nzhRkh8jZiPATVqGpyKSQIdhjh0,153
+vidurl/cli.py,sha256=twNNV9iEcD5eA-4VXhk4Q0tvSJ3_ryzv6wzRgQj2VF0,6628
+vidurl/config.py,sha256=qlFkG3AxMoQu6eeQ72j0faEvZZN4cfvJweeWThRfH9U,1389
+vidurl/exceptions.py,sha256=xZg7BIJL9hHw4kyj_fKui491cZSOZXL80CadZa0mKuE,578
+vidurl/extractor.py,sha256=3ccFLvZfJ-SiEvNVtqKCU3KCIrWGjmHrtze-VwzsEi8,27355
+vidurl/utils.py,sha256=xLtEJm3RYEmHWAUECoXtkOWrueRnlJGQ7q7CDPUiUwo,1926
+vidurl-0.1.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+vidurl-0.1.0.dist-info/METADATA,sha256=9t1ykTwjp1wlgUPMSNi-kvJMU34siL_6LYImLVCJvC8,7379
+vidurl-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+vidurl-0.1.0.dist-info/entry_points.txt,sha256=U0dCPVMrJ9ILkuDoJsHdKu1SWwxBFSVzdmxGlqcAs5U,48
+vidurl-0.1.0.dist-info/top_level.txt,sha256=MeWssO2zOXWN1u9rz6DvU2mSeRIGQjwZlJgO5cxCCO4,7
+vidurl-0.1.0.dist-info/RECORD,,
