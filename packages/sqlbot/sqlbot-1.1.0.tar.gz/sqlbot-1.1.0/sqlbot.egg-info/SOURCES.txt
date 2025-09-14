@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+sqlbot/__init__.py
+sqlbot/__version__.py
+sqlbot/conversation_memory.py
+sqlbot/llm_integration.py
+sqlbot/locations.py
+sqlbot/repl.py
+sqlbot.egg-info/PKG-INFO
+sqlbot.egg-info/SOURCES.txt
+sqlbot.egg-info/dependency_links.txt
+sqlbot.egg-info/entry_points.txt
+sqlbot.egg-info/requires.txt
+sqlbot.egg-info/top_level.txt
