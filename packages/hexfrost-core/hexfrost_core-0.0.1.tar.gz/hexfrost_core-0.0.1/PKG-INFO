@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: hexfrost-core
+Version: 0.0.1
+Summary: This is the core library for the Hexfrost project, providing essential functionalities and tools for building and managing applications.
+Author-Email: Kaziamov <kaziamov@outlook.com>
+Requires-Python: <4.0,>=3.9
+Requires-Dist: cryptography>=44.0.3
+Requires-Dist: fastapi>=0.115.12
+Requires-Dist: pre-commit>=4.2.0
+Requires-Dist: psycopg2-binary>=2.9.10
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: sqlalchemy>=2.0.40
+Requires-Dist: sqlalchemy-utils>=0.41.2
+Description-Content-Type: text/markdown
+
+# hexfrost-core
+
+# About
+
+This is the core library for the Hexfrost project, providing essential functionalities and tools for building and managing applications.
