@@ -1,0 +1,14 @@
+siphoai/__init__.py,sha256=MkO_d1_qvtVgGIxRfNMqFkJezUl_8wEbiX-CZBdodl8,560
+siphoai/__main__.py,sha256=1OW-89-BVwkA1LPjdXzQtZr4-QFk8aqkJ5EKjfQMTXA,169
+siphoai/app.py,sha256=GkaMEkWVqnqDp73APBYxfazk4J2EIS_Wwsmsr55yKYU,27264
+siphoai/cli.py,sha256=17p5y-BZJ8stc6y0lXxAgWV0gXHiGoMbua46LlK7HQY,4152
+siphoai/data/commands.json,sha256=2LKRQsU-dCS9yUmDH-vry6RofAl_aDe4oHlC1aJgzuc,12532
+siphoai/utils/__init__.py,sha256=_PoSy3Mja1Y2Jd8uE7h1SaWkeSaBkGmDx_p78I0uE8g,173
+siphoai/utils/command_manager.py,sha256=txs-s5pqA4vP9jnViX4jZBQ8j86OEtC5ZiKBVMJM3-w,12020
+siphoai/utils/system_checker.py,sha256=9dApOrdzEgzjHYzeWQJqgJP8qRzD-OZSJGdI_bzB3ns,11767
+siphoai-1.0.2.dist-info/licenses/LICENSE,sha256=HlmOEsW-vtKQ_7dzB0B_Mg96E2PzyX5jl7b7u8eKArE,1097
+siphoai-1.0.2.dist-info/METADATA,sha256=5y9go-c3FEBLms1tryZVngI33vAvRPWfmpJ3F419StU,13633
+siphoai-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+siphoai-1.0.2.dist-info/entry_points.txt,sha256=Uv-007YVo1i_-B1fohAJwXYvsUQsPd3qiq4YFNfJtt4,45
+siphoai-1.0.2.dist-info/top_level.txt,sha256=50AIoksY4cHkLq9CTHFPVapzpo8ye3CDWjAytrI7u6U,8
+siphoai-1.0.2.dist-info/RECORD,,
