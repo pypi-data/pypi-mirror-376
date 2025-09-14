@@ -1,0 +1,2 @@
+[console_scripts]
+smlr = smlr.cli:cli
