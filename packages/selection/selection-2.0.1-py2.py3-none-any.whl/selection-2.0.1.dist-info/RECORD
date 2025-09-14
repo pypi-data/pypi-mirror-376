@@ -1,0 +1,11 @@
+selection/__init__.py,SHA256=KIVjrT282MRWxn0-eucAU06TZKrtg89IITUyBjNkbx0,312
+selection/backend_lxml.py,SHA256=yUVI9-eb5YxKlwurBheTxzkW3CeOZb5bnbRkuqP34-c,3107
+selection/backend_pyquery.py,SHA256=6u7HKoN7YeGrEU-CjlIz1NkqZLVl_8BFm0VeUJbW9nk,684
+selection/base.py,SHA256=3PS25qS9wZ9FhdeIhaOa1UGv_rC5eLHtwOndNNwCVxM,9487
+selection/const.py,SHA256=Ock14t9YxAo11OorqInjk6wGrqgvbPXR2L7wzI6vOgk,21
+selection/errors.py,SHA256=ct9UzxeeAGZWSu-Ylug-KoQQUzm4TxI0xXjjSLxmSsg,89
+selection/util.py,SHA256=iIdvx2WRNj2UASDOAAZWsvYTq_o33QrCXS21yx4d1qM,4445
+selection-2.0.1.dist-info/METADATA,SHA256=zyaVbmfWMgVbndxjSeIYRymWgTrBWZStxDW3l0fWlZM,445
+selection-2.0.1.dist-info/WHEEL,SHA256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+selection-2.0.1.dist-info/top_level.txt,SHA256=eqXcXt97mEEn5L0RS7w8Hcxzu3t7uIDwIIGukhki--k,10
+selection-2.0.1.dist-info/RECORD,,
