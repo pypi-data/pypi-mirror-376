@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bilibili-video-mcp"
+version = "0.1.0"
+description = "MCP server for downloading and extracting content from Bilibili videos"
+authors = [
+    {name = "yzfly", email = "yz.liu.me@gmail.com"}
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+keywords = ["mcp", "bilibili", "video", "asr", "subtitle", "server"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Communications :: Chat",
+]
+dependencies = [
+    "fastmcp>=2.0.0",
+    "requests>=2.25.0",
+    "ffmpeg-python>=0.2.0",
+    "tqdm>=4.60.0",
+    "openai>=1.0.0",
+    "you-get>=0.4.1650",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "flake8>=4.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yzfly/bilibili-video-mcp"
+Repository = "https://github.com/yzfly/bilibili-video-mcp"
+Issues = "https://github.com/yzfly/bilibili-video-mcp/issues"
+
+[project.scripts]
+bilibili-video-mcp-server = "bilibili_video_mcp.bilibili_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+show_error_codes = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

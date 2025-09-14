@@ -1,0 +1,14 @@
+CLAUDE.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/server.py
+src/bilibili_video_mcp/__init__.py
+src/bilibili_video_mcp/bilibili_server.py
+src/bilibili_video_mcp.egg-info/PKG-INFO
+src/bilibili_video_mcp.egg-info/SOURCES.txt
+src/bilibili_video_mcp.egg-info/dependency_links.txt
+src/bilibili_video_mcp.egg-info/entry_points.txt
+src/bilibili_video_mcp.egg-info/requires.txt
+src/bilibili_video_mcp.egg-info/top_level.txt

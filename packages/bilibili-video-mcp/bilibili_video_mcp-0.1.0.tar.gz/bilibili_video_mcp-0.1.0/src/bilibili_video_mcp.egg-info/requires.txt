@@ -1,0 +1,14 @@
+fastmcp>=2.0.0
+requests>=2.25.0
+ffmpeg-python>=0.2.0
+tqdm>=4.60.0
+openai>=1.0.0
+you-get>=0.4.1650
+
+[dev]
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=22.0.0
+isort>=5.10.0
+flake8>=4.0.0
+mypy>=1.0.0
