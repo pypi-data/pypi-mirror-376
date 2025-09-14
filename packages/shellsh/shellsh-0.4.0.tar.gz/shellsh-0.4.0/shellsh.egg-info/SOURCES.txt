@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+shellsh/__init__.py
+shellsh/shellsh.py
+shellsh.egg-info/PKG-INFO
+shellsh.egg-info/SOURCES.txt
+shellsh.egg-info/dependency_links.txt
+shellsh.egg-info/top_level.txt
