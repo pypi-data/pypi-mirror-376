@@ -1,0 +1,174 @@
+# Forgram - Advanced Telegram Bot Framework
+
+**Production-ready Python library for building powerful Telegram bots**
+
+[![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Code Style](https://img.shields.io/badge/Code%20Style-Black-black)](https://black.readthedocs.io)
+
+## 🚀 Why Forgram?
+
+Forgram exceeds aiogram and other libraries with enterprise-grade features:
+
+- 🛡️ **Advanced Security** - Built-in anti-spam, rate limiting, request validation
+- 📊 **Analytics System** - Detailed statistics and monitoring out of the box  
+- 🗄️ **Multiple Storage** - Memory, File, SQLite, Redis backends with migration support
+- 🌐 **Webhook Support** - Flask, FastAPI, aiohttp integration with security features
+- 👨‍💼 **Admin Panel** - Web-based administration with user management
+- ⚡ **High Performance** - Connection pooling, async/await, optimized for scale
+- 🎯 **Smart Filters** - Logical operators, regex support, custom filter chains
+- 🔧 **Middleware Pipeline** - Extensible request/response processing
+
+## 📦 Quick Start
+
+### Installation
+
+```bash
+pip install forgram
+```
+
+### Basic Bot
+
+```python
+from forgram import Bot, Message
+from forgram.filters import CommandFilter, MessageFilter
+
+bot = Bot("YOUR_BOT_TOKEN")
+
+@bot.on_message(CommandFilter('start'))
+async def start_command(message: Message):
+    await message.reply("👋 Hello! I'm powered by Forgram!")
+
+@bot.on_message(MessageFilter.text)
+async def echo_handler(message: Message):
+    await message.reply(f"You said: {message.text}")
+
+# Start bot
+await bot.start_polling()
+```
+
+### Advanced Features
+
+```python
+from forgram import Bot, AnalyticsCollector
+from forgram.middleware import RateLimitMiddleware, AntiSpamMiddleware
+from forgram.storage import FileStorage
+from forgram.admin import BotAdmin
+
+# Create bot with advanced features
+bot = Bot("YOUR_TOKEN")
+storage = FileStorage('bot_data.json')
+analytics = AnalyticsCollector(storage)
+admin = BotAdmin(bot, storage)
+
+# Add middleware
+bot.middleware_manager.add_middleware(RateLimitMiddleware(max_requests=10, window=60))
+bot.middleware_manager.add_middleware(AntiSpamMiddleware())
+
+# Analytics tracking
+from forgram.analytics import analytics_middleware
+bot.middleware_manager.add_middleware(analytics_middleware(analytics))
+
+@bot.on_message(CommandFilter('stats'))
+async def show_stats(message: Message):
+    stats = analytics.get_overview_stats()
+    await message.reply(f"📊 Messages: {stats['total_messages']}")
+```
+
+### Webhook Setup
+
+```python
+from forgram.webhook import FlaskWebhookHandler
+
+webhook_handler = FlaskWebhookHandler(bot)
+webhook_handler.setup_webhook(
+    webhook_url="https://yourdomain.com/webhook",
+    port=8080
+)
+webhook_handler.run()
+```
+
+## 🏗️ Architecture
+
+### Core Components
+
+- **Bot** - Main bot class with polling and webhook support
+- **Message/User/Chat** - Enhanced Telegram types with utility methods
+- **Filters** - Advanced filtering system with logical operators
+- **Middleware** - Request/response processing pipeline
+- **Storage** - Persistent data storage with multiple backends
+- **Analytics** - Built-in statistics and monitoring
+- **Admin** - Administrative tools and web panel
+- **Webhook** - Production-ready webhook handlers
+
+### Advanced Types
+
+```python
+from forgram.advanced_types import Message
+
+# Enhanced message with utility methods
+@bot.on_message()
+async def handler(message: Message):
+    # Rich message properties
+    if message.is_command:
+        command = message.command  # Command without '/'
+        args = message.command_args  # List of arguments
+    
+    # User utilities
+    if message.user.is_premium:
+        await message.reply("Premium user detected!")
+    
+    # Chat utilities  
+    if message.chat.is_group:
+        member_count = await message.chat.get_members_count()
+```
+
+## 📊 Performance
+
+Forgram is built for production with:
+
+- **Connection Pooling** - Efficient HTTP client with connection reuse
+- **Request Batching** - Automatic request optimization
+- **Memory Management** - Optimized data structures and caching
+- **Async/Await** - Full asynchronous support throughout
+- **Error Recovery** - Robust error handling and retry logic
+
+## 🛡️ Security
+
+Built-in security features:
+
+- **Rate Limiting** - Configurable per-user request limits
+- **Anti-Spam** - Advanced spam detection and prevention
+- **Input Validation** - Automatic sanitization of user input
+- **Webhook Security** - IP whitelisting and signature verification
+- **Admin Protection** - Role-based access control
+
+## 📚 Documentation
+
+- [Quick Start Guide](docs/quickstart.md)
+- [API Reference](docs/api.md)
+- [Examples](examples/)
+- [Deployment Guide](docs/deployment.md)
+
+## 🤝 Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🏆 Comparison
+
+| Feature | Forgram | aiogram | python-telegram-bot |
+|---------|---------|---------|---------------------|
+| Built-in Analytics | ✅ | ❌ | ❌ |
+| Multiple Storage | ✅ | Partial | ❌ |
+| Admin Panel | ✅ | ❌ | ❌ |
+| Advanced Middleware | ✅ | ✅ | Partial |
+| Webhook Security | ✅ | Basic | Basic |
+| Production Ready | ✅ | ✅ | ✅ |
+
+---
+
+**Forgram** - Build better bots, faster. 🚀
