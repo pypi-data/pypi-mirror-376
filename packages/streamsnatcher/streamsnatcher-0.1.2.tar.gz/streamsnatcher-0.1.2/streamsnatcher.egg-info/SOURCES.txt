@@ -1,0 +1,17 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+streamsnatcher/__init__.py
+streamsnatcher/cli.py
+streamsnatcher/core.py
+streamsnatcher.egg-info/PKG-INFO
+streamsnatcher.egg-info/SOURCES.txt
+streamsnatcher.egg-info/dependency_links.txt
+streamsnatcher.egg-info/entry_points.txt
+streamsnatcher.egg-info/top_level.txt
+streamsnatcher/FreeResources/FreeResources/__init__.py
+streamsnatcher/FreeResources/tests/test_basic.py
+streamsnatcher/streamsnatcher/streamsnatcher/__init__.py
+streamsnatcher/streamsnatcher/tests/test_basic.py
+tests/test_basic.py
