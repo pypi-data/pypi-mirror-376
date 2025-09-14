@@ -1,0 +1,9 @@
+optima-vis/models/gif_properties.py,sha256=skgYsyLuw9ec-2IKFTKCdHaLnKOK86zFMqsgl8XiL8A,128
+optima-vis/models/video_properties.py,sha256=B8GDtN7_2hJRAGhAQLID-isvYYlmbWa0E9xhpJHi-_A,154
+optima-vis/services/animation_generator/optimizer_animation_generator.py,sha256=SoS9X8aFQQRIcRw8SwifLw0-ummosugwbzSgbvKnzLQ,2747
+optima-vis/services/plot_generator/loss_contour_generator.py,sha256=DQE5sp9IB85KROpAfYKd9Aye7-2GYlAruLt2ULicLlQ,2842
+optima-vis/services/plot_generator/optimizer_plot_generator.py,sha256=XdiRX8v24TSGlBFs2Uq-DrhDOEkphFJqsYnetkD7RRM,1217
+optimavis-0.1.0.dist-info/METADATA,sha256=4GmNa9U7qeOTyu49WYZS0RnsGAcfwGRK99Zu3LdnOno,538
+optimavis-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+optimavis-0.1.0.dist-info/top_level.txt,sha256=Mu4hFNQMO8p71Krq6D4DLxFf8e-UkTuNSG_S536trKM,11
+optimavis-0.1.0.dist-info/RECORD,,
