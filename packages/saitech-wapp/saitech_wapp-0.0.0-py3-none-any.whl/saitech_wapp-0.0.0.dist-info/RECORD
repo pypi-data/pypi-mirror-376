@@ -1,0 +1,9 @@
+saitech_wapp-0.0.0.dist-info/licenses/LICENSE,sha256=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U,3
+wapp/__init__.py,sha256=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U,3
+wapp/core.py,sha256=1P7SS0MgwA3SULBDlahLtrntB3RRbGPVr1543pylFpc,8003
+wapp/endpoint_base.py,sha256=pNqUki58Ryvu0DjdWyorbZMgJZCRtJQhXHSDJAiY-bU,1636
+wapp/migrate.py,sha256=uXStCr6RgokEAS-3wygLzp1UNaAMDuMelbiFjTNI4VQ,2969
+saitech_wapp-0.0.0.dist-info/METADATA,sha256=BfpJhJ_7Yw2otO876PBOptXHJR0K17v5bkJJN5Yf2GQ,3742
+saitech_wapp-0.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+saitech_wapp-0.0.0.dist-info/top_level.txt,sha256=JKqosKdktH_ibETLrylTKRbgFR4Lvkknr49ivGKqKdQ,5
+saitech_wapp-0.0.0.dist-info/RECORD,,
