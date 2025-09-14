@@ -1,0 +1,7 @@
+pynitors/__init__.py,sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,0
+pynitors/main.py,sha256=ea1012e8a609b313dc5e2da1f3da7001afd739f06605509936dea49d2cf1f158,1795
+pynitors/py.typed,sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,0
+pynitors-0.1.0.dist-info/WHEEL,sha256=76443c98c0efcfdd1191eac5fa1d8223dba1c474dbd47676674a255e7ca48770,79
+pynitors-0.1.0.dist-info/entry_points.txt,sha256=d13e0386058dc83d1a5f7a74326f5b0fffcaf4e6f4aa345f28a91ff451b13d27,48
+pynitors-0.1.0.dist-info/METADATA,sha256=02a9f546ba82bad2dd79e37843c1151abcb515c5add80f28ba4794e51aff6086,815
+pynitors-0.1.0.dist-info/RECORD,,

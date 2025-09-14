@@ -1,0 +1,3 @@
+[console_scripts]
+pynitors = pynitors.main:app
+
