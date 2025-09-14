@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dictstruct"
+version = "0.0.7"
+description = "A msgspec.Struct implementation compatible with the standard dictionary API"
+authors = ["BobTheBuidler <bobthebuidlerdefi@gmail.com>"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.14"
+msgspec = [
+    {version = ">=0.19.0", markers = "python_version >= '3.13'"},
+    {version = ">=0.18.5", markers = "python_version < '3.13'"}
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
