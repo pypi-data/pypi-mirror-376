@@ -1,0 +1,22 @@
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "filetype-py"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+version = "1.0.0"
+description = "Python package for getting identifying file types, based on Rust's file_type crate."
+readme = "README.md"
+
+[project.urls]
+Repository = "https://github.com/IoIxD/filetype_py"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "file_type"

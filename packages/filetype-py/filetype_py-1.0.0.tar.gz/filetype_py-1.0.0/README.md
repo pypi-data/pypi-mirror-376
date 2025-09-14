@@ -1,0 +1,32 @@
+# filetype_py
+
+This is a quick and dirty Python package for identifying file types, based on Rust's [file_type](https://docs.rs/file_type/latest/file_type/) crate.
+
+It is not to be confused with [filetype](https://pypi.org/project/filetype/), a package written in pure Python, and it's possible you may want something written in that instead. I made this before I realized that package existed, but I'm continuing to upload it because the Rust library supports more types then the python version (upwards of 10,000+).
+
+# Usage
+
+```py
+import file_type
+import sys
+
+if(len(sys.argv)) <= 1:
+    print(sys.argv[0]+" <filetype>")
+    exit(0)
+
+# Get the file type information about the given file
+file = file_type.filetype_from_file(sys.argv[1])
+# There is also filetype_from_bytes, filetype_from_media_type, and filetype_from_extension
+
+# Print what the file type is, as a human readable string
+print("Name:", file.name())
+
+# Print the ID of the file type, corresponding to the table at https://github.com/theseus-rs/file-type/blob/main/FILETYPES.md
+print("ID:", file.id())
+
+# Print the extension(s) that this file type usually has.
+print("Extensions:", file.extensions())
+
+# Print the 'source type' of the file. This is what provided the information the library uses to determine the file, i.e. ICANN or Wikidata.
+print("Source Type:", file.source_type())
+```
