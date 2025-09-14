@@ -1,0 +1,13 @@
+pyamtrack/__init__.py,sha256=e_ugWi6ZxT2qzaDdDRmRd9W3FR4F4bLuBc6apLr_USA,1318
+pyamtrack/_core.cpython-312-x86_64-linux-gnu.so,sha256=OY1eFEDi64aVJII0yOpeGFZcT3L1483FPEHMt6Lp3ww,60681
+pyamtrack/_version.py,sha256=scS3C-Ay5fHpAkdUBeec6WfadHojXK38fmcJGoHAZjU,722
+pyamtrack/converters.cpython-312-x86_64-linux-gnu.so,sha256=B828DQLrJViqHj-l-qW7rkqhSPWdssBsjdX_0TEjLEQ,120057
+pyamtrack/libamtrack.so,sha256=zbXebAk0NjUbO_wAkole22rTEqweOajR-1U3kKCScms,1539345
+pyamtrack/materials.cpython-312-x86_64-linux-gnu.so,sha256=f5Vk6vtigpOEpkiIZj9jpd_Nwzv0zmTBDD0GwvUjrE4,157673
+pyamtrack/stopping.cpython-312-x86_64-linux-gnu.so,sha256=kjQVrKTJ0BfMIbeh55rzaGJJHXyeOfsBtQB_mWS_b9M,142569
+pyamtrack.libs/libgsl-dda41ce5.so.28.0.0,sha256=MCFighqFE7SFXSNWIineV0NRfAygX92xnKI15zJFfxQ,16144337
+pyamtrack.libs/libgslcblas-a4a19f55.so.0.0.0,sha256=aLyth16DFNDdszQ6ooXg3LQIQTKNaKNw-qhaYLVfpHs,1391761
+pyamtrack-0.14.1a9.dist-info/METADATA,sha256=NOXn5cFEEaBdmS2tWlll-k65Z7JCne0NBdtFA-xofz8,2798
+pyamtrack-0.14.1a9.dist-info/WHEEL,sha256=4urR6ZCFdGcmx_6YU27bybqYclFZJqfh9Pi_cu3-_F8,157
+pyamtrack-0.14.1a9.dist-info/RECORD,,
+pyamtrack-0.14.1a9.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
