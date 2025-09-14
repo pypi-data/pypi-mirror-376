@@ -1,0 +1,2 @@
+[console_scripts]
+litesurf = litesurf.cli:cli
