@@ -1,0 +1,10 @@
+src/AnalysisWeb/__init__.py,sha256=jY3af91drN5DE-Tc78-NZe21joNYrSdj0_zFwmPpRT8,19323
+src/AnalysisWeb/app.py,sha256=CTw2JrdEL2nwnSvAG8rxOExGyd0FKx7hG7UoXh6qH0k,3496
+src/AnalysisWeb/static/higgs_pot.jpg,sha256=waxxJkw58XTj79w4gJP_v7RJFtdI9_HrmZWM3G8oFsA,39061
+src/AnalysisWeb/static/results_data.csv,sha256=LdUeuR1zGHNgLyaOEBzrbo8EYoYMx90D5F_TVJY_-NI,151
+src/AnalysisWeb/static/style.css,sha256=qw2UhnceuUoxxXSYQgz3fkJIdBUoHQxaf83VjezlCSU,11052
+src/AnalysisWeb/templates/index.html,sha256=iuULui02oM0i8FwSpIKECYlYZjE8_mevrOG7EdaJZgk,13412
+analysisweb-0.0.2.dist-info/METADATA,sha256=xmC-BOZnKquESxlSG_60NUTHmmGGArsvDWSk9H-UVxg,2407
+analysisweb-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+analysisweb-0.0.2.dist-info/licenses/LICENSE,sha256=xn-ZW0wJ_-nlfBj4BLBK760Yxu5nozS5pKe7f-KaQ1U,1089
+analysisweb-0.0.2.dist-info/RECORD,,
