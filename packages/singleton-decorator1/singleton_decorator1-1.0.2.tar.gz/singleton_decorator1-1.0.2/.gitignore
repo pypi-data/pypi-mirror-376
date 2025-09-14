@@ -1,0 +1,13 @@
+*.pyc
+.venv
+**/.venv
+.python-version
+**/__pycache__/*
+**/.directory
+.directory
+*/.ipynb_checkpoints/*
+src/*.egg-info/*
+/dist
+**/dist
+*~
+\#*\#

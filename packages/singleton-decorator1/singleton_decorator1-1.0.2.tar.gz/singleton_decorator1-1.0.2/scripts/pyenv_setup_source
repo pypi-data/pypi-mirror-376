@@ -1,0 +1,23 @@
+# -*- mode: Shell-script; sh_shell: "bash"; -*-
+# Usage:
+#
+#   source pyenv_setup_source
+#
+#   to make pyenv commands available in your script
+
+if [[ -e "./scripts/add_to_path.sh" ]] ; then
+	eval $(./scripts/add_to_path.sh)
+fi
+
+export PYENV_ROOT=~/.pyenv
+
+[[ -d $PYENV_ROOT ]] || export PYENV_ROOT=$($(find "${HOME}" -path '*/.local/share/containers/*' -prune -o -executable -name  pyenv -path  '*/bin/*'  -print) root)
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+   eval "$(pyenv init - bash)"
+fi
+if pyenv virtualenvs 1>/dev/null 2>&1  ; then
+   eval "$(pyenv virtualenv-init -)"
+fi
+
+eval $(clean_path.py)

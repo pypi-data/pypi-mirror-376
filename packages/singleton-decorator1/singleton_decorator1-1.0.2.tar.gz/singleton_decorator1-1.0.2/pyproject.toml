@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling", "hatch-build-scripts"]
+build-backend = "hatchling.build"
+
+[project]
+name = "singleton-decorator1"
+description = "Singleton decorator which is: thread-safe, copy safe, mypy compliant, not wrapped class"
+authors = [{name = "Doug Sojourner", email = "doug@sojournings.org"}, {name = "Editor 82 of wiki.python.org"}, ]
+readme = "README.md"
+requires-python = ">=3.7,<4.0"
+license = { text = "GNU General Public License v3 (GPLv3)" }
+version = "1.0.2"
+
+dependencies = ['project-version-finder >= 0.3.0']
+
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+	"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+	"Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8", 
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+	"Typing :: Typed",
+]
+
+keywords = ["decorator", "singleton", "threadsafe", "testable", "copy safe", "verified", "testable", "typed", ]
+
+[dependency-groups]
+all = [
+	"virtualenv",
+	]
+test = [
+	"mypy>=0.942",
+	"pytest>=7.4.4",
+	"black>=24.4.0; python_version >= '3.8'",
+	"black; python_version < '3.8'",
+	]
+build = [
+	  "hatchling",
+	  ]
+local-source = ["simple503", "simpleindex", ]
+self = ["singleton-decorator1=1.0.2"]
+
+[project.urls]
+repository = "https://codeberg.org/Sojournings/singleton-decorator.git"
+issues =  "https://codeberg.org/Sojournings/singleton-decorator/issues"
+
+[tool.mypy]
+files = "."
+ignore_missing_imports = false
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_unreachable = true
+
+[tool.black]
+line_length = 100
+
+# siginificantly speed up pytest
+[tool.pytest.ini_options]
+testpaths = [ "tests"]
+
