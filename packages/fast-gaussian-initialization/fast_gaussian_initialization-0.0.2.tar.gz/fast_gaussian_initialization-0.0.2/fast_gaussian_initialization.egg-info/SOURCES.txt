@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+fast_gaussian_initialization.egg-info/PKG-INFO
+fast_gaussian_initialization.egg-info/SOURCES.txt
+fast_gaussian_initialization.egg-info/dependency_links.txt
+fast_gaussian_initialization.egg-info/requires.txt
+fast_gaussian_initialization.egg-info/top_level.txt
+fastgi/__init__.py
+fastgi/config.py
+fastgi/core.py
+fastgi/io.py
+fastgi/render.py
+fastgi/viz.py
