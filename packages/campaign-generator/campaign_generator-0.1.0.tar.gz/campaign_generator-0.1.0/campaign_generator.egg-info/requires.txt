@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+requests
+torch
+torchvision
+torchaudio
+python-multipart
+google-news-feed
+
+[:platform_system != "Darwin"]
+faster-whisper
+
+[:platform_system == "Darwin"]
+whisper-mps
