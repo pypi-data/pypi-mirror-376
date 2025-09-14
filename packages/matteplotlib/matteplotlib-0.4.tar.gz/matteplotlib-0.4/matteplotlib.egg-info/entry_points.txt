@@ -1,0 +1,4 @@
+[console_scripts]
+ml-index = matplotib:ml_index
+test-hello = matplotib:hello
+
