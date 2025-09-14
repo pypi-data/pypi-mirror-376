@@ -1,0 +1,12 @@
+remoteinfra/__init__.py,sha256=SBUg6CGdn6AYCV10LvmyrrUXVOx2GpxI38AVIFd0jDI,90
+remoteinfra/dashboard.py,sha256=j1dggxr6Y8XdtSXLJuA-9Mr6Wc7d6XU4lGSkTPtv0c8,208729
+remoteinfra/remoteinfra.py,sha256=eM4Wher_etHz8jI2OJFPyjvAtLYhdksvGVeAdStbHOw,120420
+remoteinfra/UI/index.html,sha256=gDIcpEImCVWgyAPIvGdG_otcoOwy6Ep-2PEmbLUb9uc,144127
+remoteinfra/UI/script.js,sha256=m3SBMJTgu1hpOTKXyZx-84x9HkzoN5_90i6AFpf8zM4,340180
+remoteinfra/UI/styles.css,sha256=pMULtDikX8tk9i3aaj4kxxAqQmQSOUM4K6zinMV-sFk,105967
+remoteinfra/utils.py,sha256=0CXH_LDRIkjIxrfQoA8A7_p-DQBPT73qZn2c6OA4TOw,871
+remoteinfra-1.0.1.dist-info/entry_points.txt,sha256=O7GU3KBfol7KM94mhjtDkrrfUBQNmK70_JkT1s277ik,60
+remoteinfra-1.0.1.dist-info/LICENSE,sha256=Qqeq7p6Em3zER6rJftbo0bKrtidu3ckgwN1goVaqAvU,1091
+remoteinfra-1.0.1.dist-info/METADATA,sha256=z2XqqVSYCy-2XCT0_DR4HtUnXLZJ0_doEMtMq6Vot9E,16881
+remoteinfra-1.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+remoteinfra-1.0.1.dist-info/RECORD,,
