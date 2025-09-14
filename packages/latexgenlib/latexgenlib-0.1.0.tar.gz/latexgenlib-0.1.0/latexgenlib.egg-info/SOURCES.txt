@@ -1,0 +1,6 @@
+latex_generator.py
+pyproject.toml
+latexgenlib.egg-info/PKG-INFO
+latexgenlib.egg-info/SOURCES.txt
+latexgenlib.egg-info/dependency_links.txt
+latexgenlib.egg-info/top_level.txt
