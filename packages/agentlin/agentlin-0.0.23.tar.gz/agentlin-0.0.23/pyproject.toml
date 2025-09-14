@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "agentlin"
+version = "0.0.23"
+description = "General Agent Framework by LinXueyuan"
+authors = ["LinXueyuanStdio <23211526+LinXueyuanStdio@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+agentlin = "agentlin.__main__:app"
+agent-eval = "agentlin.evaluation.__main__:app"
+
+[tool.poetry.dependencies]
+openai = "*"
+python-dotenv = "*"
+loguru = "*"
+xlin = "*"
+deeplin = "*"
+streamlit = "^1.46.0"
+streamlit-markdown = "*"
+sseclient = "*"
+typer = "*"
+fastapi = "*"
+uvicorn = "*"
+holidays = "*"
+omegaconf = "*"
+
+# environments
+stevedore = "*"
+datasets = "*"
+
+# plotting and visualization
+plotly = "*"
+kaleido = "*"
+Pillow = "*"
+
+# For file search
+ripgrep-python = "*"
+
+# For indicator
+ta = "*"
+
+# For memory management
+aio-pika = "*"  # RabbitMQ client for RPC message queue
+# MemoryOS = "*"
+# qdrant-client = "*"
+# chonkie = "*"
+# sglang = "*"
+# verl = "*"
+
+# [tool.poetry.optional-dependencies]
+# agentops = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
