@@ -1,0 +1,11 @@
+fast_gaussian_initialization-0.0.1.dist-info/licenses/LICENSE,sha256=gicFKI98BnEHv6za37lur52N6QePaZ_2TInzYn7XWxg,1085
+fastgi/__init__.py,sha256=2AdgVXV80lhPqoh98FuAhh-VH0v7RiebaPGEPSDnc-I,328
+fastgi/config.py,sha256=-DN1A1cF4w1NptUlCwZy_pKf6qBgMiyiE_gx2444_vY,1174
+fastgi/core.py,sha256=yObX7v4Q3_zPJxMglZEKa6TQUNSWNe9DKALUJlwRwJE,8714
+fastgi/io.py,sha256=0J1vBDKDDwMLM14xv1esU73Vvqo6gMSdEBgCwPq14Ew,5472
+fastgi/render.py,sha256=4e1ZbS--xKx5XMMxeN5jYCBf1C-RqXu1G20TlBdJi3I,5428
+fastgi/viz.py,sha256=uNPJzxzSDkQNuQqeLEHpVs5h6ufMZGPX9Dj6FleeXKc,1537
+fast_gaussian_initialization-0.0.1.dist-info/METADATA,sha256=mvrscA7ovV9SU-yV1xHjdthoS3Q0XBeipi8akXrA8GY,791
+fast_gaussian_initialization-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fast_gaussian_initialization-0.0.1.dist-info/top_level.txt,sha256=rq4xLsbBGokKLVRxduJ_vGNyT8R4_YU3DqLho9zoqjE,7
+fast_gaussian_initialization-0.0.1.dist-info/RECORD,,
