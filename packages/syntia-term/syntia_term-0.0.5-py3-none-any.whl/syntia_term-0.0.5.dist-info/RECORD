@@ -1,0 +1,14 @@
+syntia_term/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+syntia_term/app.py,sha256=n4TSVPHZIrH_mIpxb3kLRx_X-zVsNgfRS_xwa349aOo,7023
+syntia_term/run.py,sha256=AbduVL4rain15t0AkP61_OKZlPRu1gQO-GNTcyk1ZJU,398
+syntia_term/components/__init__.py,sha256=7Dpi6ZTkaa_0WtfWPd3f5WREHg6tas0xod3bSTZ5BXs,462
+syntia_term/components/horizontal_splitter.py,sha256=8mn89NSb4h60DyAH1SVShC_-H2Ed_xR0XM7pOhTUIqc,1545
+syntia_term/components/tabbed_right_panel.py,sha256=RRRF_E3ZNMd3QyOxQ76n3YG5H8uWYvdtVoA-DUiN6I4,12523
+syntia_term/components/tabbed_text_area.py,sha256=vjEcxeo7wWDWmJU2NLPf4b5TGi2dZq970PG7sAWKooI,7889
+syntia_term/components/terminal.py,sha256=hUBRsq9tbnq64Dclf2RinSwa960-s7FMB2f89TE5ANo,16769
+syntia_term/components/vertical_splitter.py,sha256=Xf9NafBsW2MVhNurLyHRFfo70fzEI6wueK49ATU9-4M,1520
+syntia_term-0.0.5.dist-info/METADATA,sha256=qg9H_tBsG9lTwMzYJrI09xqO6zIB7EOtqJoEZTkX7NU,3720
+syntia_term-0.0.5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+syntia_term-0.0.5.dist-info/entry_points.txt,sha256=8U0ZHCT1o_DdteFDPYWpqKmT9SIHmc5TLBsNj5BBA_Q,59
+syntia_term-0.0.5.dist-info/licenses/LICENSE,sha256=qyH0UYP_nKMK8d9-8ROcrnWvMjse4c4TBBIlX7GKH2o,1071
+syntia_term-0.0.5.dist-info/RECORD,,
