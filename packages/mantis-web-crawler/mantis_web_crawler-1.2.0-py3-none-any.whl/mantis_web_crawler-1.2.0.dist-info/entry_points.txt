@@ -1,0 +1,2 @@
+[console_scripts]
+mantis = orchestrator.cli:cli_main
