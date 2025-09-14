@@ -1,0 +1,15 @@
+__pycache__
+.mypy_cache
+.ruff_cache
+.pytest_cache
+.venv
+.cursorignore
+.env
+.vscode
+.idea
+.mcpregistry*
+auth.toml
+dist
+output
+site/
+examples/output
