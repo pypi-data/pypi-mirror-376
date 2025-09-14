@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+forgram/__init__.py
+forgram/bot.py
+forgram/exceptions.py
+forgram/models.py
+forgram/storage.py
+forgram.egg-info/PKG-INFO
+forgram.egg-info/SOURCES.txt
+forgram.egg-info/dependency_links.txt
+forgram.egg-info/requires.txt
+forgram.egg-info/top_level.txt

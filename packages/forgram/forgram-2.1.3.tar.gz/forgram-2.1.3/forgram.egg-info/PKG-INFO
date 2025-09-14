@@ -1,0 +1,102 @@
+Metadata-Version: 2.4
+Name: forgram
+Version: 2.1.3
+Summary: Простая и быстрая библиотека для Telegram ботов
+Author: Forgram Team
+License: MIT License
+        
+        Copyright (c) 2025 Forgram Contributors
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/yourusername/forgram
+Project-URL: Documentation, https://github.com/yourusername/forgram/blob/main/README.md
+Project-URL: Repository, https://github.com/yourusername/forgram.git
+Project-URL: Bug Tracker, https://github.com/yourusername/forgram/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Communications :: Chat
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.8.0
+Dynamic: license-file
+
+# Forgram
+
+Простая и удобная библиотека для создания Telegram ботов на Python.
+
+## Установка
+
+```bash
+pip install forgram
+```
+
+## Пример использования
+
+```python
+import asyncio
+from forgram import Bot
+
+bot = Bot("YOUR_BOT_TOKEN")
+
+@bot.message_handler(commands=['start'])
+async def start_handler(message):
+    await message.reply("Привет! Это бот на Forgram")
+
+@bot.message_handler()
+async def echo_handler(message):
+    if message.text:
+        await message.reply(f"Вы написали: {message.text}")
+
+async def main():
+    await bot.polling()
+
+asyncio.run(main())
+```
+
+## Основные возможности
+
+- Простой и понятный API
+- Поддержка асинхронности
+- Встроенная система состояний
+- Middleware для обработки запросов
+- Различные типы хранилищ данных
+- Поддержка webhook
+- Система аналитики
+
+## Документация
+
+Полная документация находится в папке `docs/`
+
+## Лицензия
+
+MIT License
+
+## Автор
+
+Forgram Team
