@@ -1,0 +1,7 @@
+click
+pyyaml
+
+[dev]
+pytest
+build
+twine
