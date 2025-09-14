@@ -1,0 +1,6 @@
+[console_scripts]
+codex = agents.providers.codex:main
+gemini = agents.providers.gemini:main
+glm = agents.providers.glm:main
+qwen = agents.providers.qwen:main
+sonnet = agents.providers.sonnet:main
