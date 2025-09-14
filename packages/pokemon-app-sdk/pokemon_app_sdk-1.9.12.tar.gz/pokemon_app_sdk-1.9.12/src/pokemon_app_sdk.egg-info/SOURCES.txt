@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+src/ca_certificates/__init__.py
+src/pokemon_app_sdk.egg-info/PKG-INFO
+src/pokemon_app_sdk.egg-info/SOURCES.txt
+src/pokemon_app_sdk.egg-info/dependency_links.txt
+src/pokemon_app_sdk.egg-info/top_level.txt

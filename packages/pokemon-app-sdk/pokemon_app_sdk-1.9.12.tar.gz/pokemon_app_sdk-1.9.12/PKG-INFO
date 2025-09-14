@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: pokemon_app_sdk
+Version: 1.9.12
+Summary: Dummy pokemon_app_sdk package for PyPI
+Author-email: Your Name <you@example.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# pokemon_app_sdk\nA dummy Python package version of pokemon_app_sdk.
