@@ -1,0 +1,3 @@
+[console_scripts]
+echotest=echotest.cli:start
+
