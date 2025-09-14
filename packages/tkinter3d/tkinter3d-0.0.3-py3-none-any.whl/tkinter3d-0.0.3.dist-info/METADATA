@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: tkinter3d
+Version: 0.0.3
+Summary: a tkinter extention for 3d displaying
+Home-page: https://github.com/MatthewKim12/tkinter3d
+Author: MatthewKim12
+Author-email: kimdjn12@gmail.com
+Project-URL: Source Code, https://github.com/MatthewKim12/tkinter3d/tree/main/code
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# tkinter3d
+a tkinter extension for 3d displaying
+
+# installation
+windows:
+
+py -m pip install tkinter3d
+
+unix&mac:
+
+python3 -m pip install tkinter3d
