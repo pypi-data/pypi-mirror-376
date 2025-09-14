@@ -1,0 +1,90 @@
+[project]
+name = "chuk-virtual-shell"
+version = "0.1.5"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3>=1.40.28",
+    "chuk-mcp>=0.5.2",
+    "chuk-sessions>=0.1.0",
+    "chuk-virtual-fs>=0.1.11",
+    "pydantic>=2.11.7",
+    "pyyaml>=6.0.1",
+    "trio>=0.31.0",
+]
+
+[project.scripts]
+chuk-virtual-shell = "chuk_virtual_shell.main:main"
+virtual-shell = "chuk_virtual_shell.main:main"
+sandbox-cli = "chuk_virtual_shell.cli.sandbox_cli:main"
+
+[project.optional-dependencies]
+boto3 = [
+    "chuk-virtual-shell",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13.0",
+    "pytest-asyncio>=1.1.0",
+    "pytest-cov>=6.0.0",
+    "pytest>=8.4.2",
+    "ruff>=0.8.0",
+    "trio>=0.31.0",
+    "twine>=6.0.0",
+    "types-pyyaml>=6.0.12.20250822",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "chuk_virtual_shell",
+]
+
+[tool.uv.sources.chuk-virtual-shell]
+workspace = true
+
+[tool.ruff.lint]
+ignore = [
+    "E402",
+]
+
+[tool.coverage.run]
+source = [
+    "chuk_virtual_shell",
+]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+    "*/main.py",
+    "*/pyodide_main.py",
+    "*/sandbox_manager.py",
+    "*/sandbox_manager_demo.py",
+    "*/telnet_server.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if __name__ == .__main__.:",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+    "except ImportError:",
+    "@abstractmethod",
+]
+precision = 2
+skip_covered = false
+show_missing = true
+
+[tool.coverage.html]
+directory = "htmlcov"
