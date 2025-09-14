@@ -1,0 +1,11 @@
+Metadata-Version: 2.3
+Name: dtouch
+Version: 0.1.1rc0
+Summary: Add your description here
+Author: dyotak
+Author-email: dyotak <dyotak10@gmail.com>
+Requires-Dist: argparse>=1.4.0
+Requires-Dist: pathlib>=1.0.1
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
