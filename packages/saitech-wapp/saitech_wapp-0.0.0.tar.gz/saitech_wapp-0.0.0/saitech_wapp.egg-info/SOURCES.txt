@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+saitech_wapp.egg-info/PKG-INFO
+saitech_wapp.egg-info/SOURCES.txt
+saitech_wapp.egg-info/dependency_links.txt
+saitech_wapp.egg-info/requires.txt
+saitech_wapp.egg-info/top_level.txt
+wapp/__init__.py
+wapp/core.py
+wapp/endpoint_base.py
+wapp/migrate.py
