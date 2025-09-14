@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: xwolfapi
+Version: 1.0.0
+Summary: Python API for WOLF (Palringo) Chat Platform
+Author: Converted from wolf.js
+License: MIT
+Project-URL: Homepage, https://github.com/converted/xwolfapi
+Project-URL: Bug Reports, https://github.com/converted/xwolfapi/issues
+Project-URL: Source, https://github.com/converted/xwolfapi
+Keywords: wolf,palringo,chat,bot,api,websocket
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: aiofiles>=24.1.0
+Requires-Dist: pytest-asyncio>=1.2.0
+Requires-Dist: pytest>=8.4.2
+Requires-Dist: python-dotenv>=1.1.1
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: requests>=2.32.5
+Requires-Dist: setuptools>=80.9.0
+Requires-Dist: twine>=6.2.0
+Requires-Dist: typing-extensions>=4.15.0
+Requires-Dist: websocket-client>=1.8.0
+Requires-Dist: build>=1.3.0
