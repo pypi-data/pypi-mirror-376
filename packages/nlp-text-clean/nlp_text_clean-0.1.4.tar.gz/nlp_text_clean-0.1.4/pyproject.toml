@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nlp-text-clean"
+version = "0.1.4"
+description = "A simple and configurable text preprocessing library for NLP tasks."
+readme = "README.md"
+license = "MIT"
+authors = [
+  { name = "Santhosh Bora", email = "borasanthosh921@gmail.com" }
+]
+keywords = ["nlp", "text-cleaning", "preprocessing", "stopwords", "lemmatization"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Text Processing :: Linguistic"
+]
+requires-python = ">=3.8"
+
+dependencies = [
+  "nltk>=3.8"
+]
+
+[project.optional-dependencies]
+nlp = ["spacy>=3.0"]
+
+[project.urls]
+Homepage = "https://github.com/santhoshreddybora/nlp-text-clean"
+"Bug Tracker" = "https://github.com/santhoshreddybora/nlp-text-clean/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nlp_text_clean*"]
