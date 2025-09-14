@@ -1,0 +1,9 @@
+starch/__init__.py,sha256=wiiyzFRKg8zGyonTEpnS5SMDnjpqrDaM4m2VyQ8i8so,1983
+starch/config.py,sha256=vQTAyq_fES0mcLCMOdv-wOBtCwQ969T6xwa8EnwHJAc,7902
+starch/constants.py,sha256=s7yp8MHkC4a8bjiucetWeX3xUMaFqnym9lcueY6Vnj8,1422
+starch/formatter.py,sha256=a0UxfB0zRhqavaOqn_PNia6PlHcn6gUFwl7ReZSVU5Q,37490
+starch-0.1.0a8.dist-info/METADATA,sha256=OCDbLuNP1e_ARKq6f73BTOfR7KRITBQ9m3LJ169xXew,380
+starch-0.1.0a8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+starch-0.1.0a8.dist-info/entry_points.txt,sha256=ZeTKHeGY2QX-W57vOV2_DCrWe7Fl0RP4SGxklevQaIk,48
+starch-0.1.0a8.dist-info/licenses/LICENSE,sha256=3HbqfawuLNHP_iDyEqlg5DkDVD6PLzmLJqwzngYpk1w,1067
+starch-0.1.0a8.dist-info/RECORD,,
