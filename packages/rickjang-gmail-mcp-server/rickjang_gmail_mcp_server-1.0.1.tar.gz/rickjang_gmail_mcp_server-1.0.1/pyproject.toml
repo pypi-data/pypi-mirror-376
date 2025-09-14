@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rickjang-gmail-mcp-server"
+version = "1.0.1"
+description = "A resilient MCP server built with fastMCP for sending emails through Gmail's SMTP server using AI agents"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Rick Jang", email = "rickjang@example.com"}
+]
+keywords = ["mcp", "gmail", "email", "smtp", "ai", "agent"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Email",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "fastmcp",
+    "python-dotenv",
+    "httpx",
+    "requests",
+    "fastapi",
+    "uvicorn",
+]
+
+[project.urls]
+Homepage = "https://github.com/rickjang/Gmail-mcp-server"
+Repository = "https://github.com/rickjang/Gmail-mcp-server"
+Issues = "https://github.com/rickjang/Gmail-mcp-server/issues"
+
+[project.scripts]
+rickjang-gmail-mcp-server = "gmail_mcp_server.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gmail_mcp_server*"]
+
+[tool.setuptools.package-data]
+gmail_mcp_server = ["*.txt", "*.md"]
