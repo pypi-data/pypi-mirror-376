@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+platega.egg-info/PKG-INFO
+platega.egg-info/SOURCES.txt
+platega.egg-info/dependency_links.txt
+platega.egg-info/requires.txt
+platega.egg-info/top_level.txt
