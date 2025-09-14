@@ -1,0 +1,4 @@
+[console_scripts]
+multi-provider-rag = rag_assistant.qa:main
+multi-provider-rag-clear = rag_assistant.clear_vectorstore:main
+multi-provider-rag-ingest = rag_assistant.ingest:main
