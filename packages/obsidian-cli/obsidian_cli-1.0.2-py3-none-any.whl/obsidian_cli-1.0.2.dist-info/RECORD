@@ -1,0 +1,12 @@
+obsidian_cli/__init__.py,sha256=jeF-Klpos9K51rDnhSPp3A2n29lapwItKmQP9IKRDrk,257
+obsidian_cli/__main__.py,sha256=lwPuQKFCc-tURFclxGliE-KG-_7oS2iQQQXcPr3ERvg,87
+obsidian_cli/cli/__init__.py,sha256=ThL61TfbPqGx-jXogqv1tTa4rXpRjIJOFDZl3Sjeft0,4618
+obsidian_cli/cli/autocomplete.py,sha256=X-fbKIiIq-klJ8cVYGrH5gewe30AqMRMdC_some2cNQ,3054
+obsidian_cli/cli/templates.py,sha256=Hod6tx8cusZfr5Wbmhy_mKC5uGaEVYwySiwC-g4q5eo,1429
+obsidian_cli/obsidian.py,sha256=0U0CkjAYp9eKhW1SbheGd407xeHUE4LoZ--whojVHac,3078
+obsidian_cli/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+obsidian_cli/vault_templates.py,sha256=R-XXbAkpy9w_pLKaksSxsO5U4jVUWRVhG-i-XBW-OR4,2982
+obsidian_cli-1.0.2.dist-info/WHEEL,sha256=4n27za1eEkOnA7dNjN6C5-O2rUiw6iapszm14Uj-Qmk,79
+obsidian_cli-1.0.2.dist-info/entry_points.txt,sha256=Bo65kad_f58YvxoXg4QoCPZ-RFu77CxXK0VxOa5ckLU,56
+obsidian_cli-1.0.2.dist-info/METADATA,sha256=80Scsyziqm3yXTy0bW8inLyRYppicicAECPxXtrJK6k,1916
+obsidian_cli-1.0.2.dist-info/RECORD,,

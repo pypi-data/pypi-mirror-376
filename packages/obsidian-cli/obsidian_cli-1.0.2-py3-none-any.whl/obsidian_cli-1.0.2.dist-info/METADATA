@@ -1,0 +1,55 @@
+Metadata-Version: 2.3
+Name: obsidian-cli
+Version: 1.0.2
+Summary: Command line utility to interact with Obsidian, providing much needed features.
+Author: Bip901
+Author-email: Bip901 <74911767+Bip901@users.noreply.github.com>
+Classifier: Topic :: Text Processing :: Markup :: Markdown
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Typing :: Typed
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: platformdirs>=4.4.0
+Requires-Dist: pydantic>=2.11.7
+Requires-Dist: tabulate>=0.9.0
+Requires-Dist: typer>=0.17.4
+Requires-Python: >=3.11
+Project-URL: Homepage, https://github.com/Bip901/obsidian-cli
+Description-Content-Type: text/markdown
+
+# Obsidian CLI
+
+[![PyPI Package](https://img.shields.io/pypi/v/obsidian-cli.svg)](https://pypi.org/project/obsidian-cli)
+
+Command line utility to interact with Obsidian. Notable features:
+
+* List Obsidian vaults (`obsidian ls -l`)
+* Open folders as vaults from the command line (`obsidian open {PATH}`)
+* Create vaults from templates (`obsidian new {PATH}`)
+    * You can share vault settings (e.g. keybindings) with the template via hardlinks, so when you edit the template keybindings, it affects all vaults
+* Customize the new vault template and create new vaults (`obsidian template edit`)
+
+## Installation and Usage
+
+Python 3.11 or newer required.
+
+```shell
+uv tool install obsidian-cli
+obsidian --install-completion
+obsidian --help
+```
+
+This package can also be used as a Python API for Obsidian:
+
+```python
+from obsidian_cli import ObsidianConfig, open_vault
+from pathlib import Path
+
+print(ObsidianConfig.load())
+
+open_vault(Path(R"C:\example-vault"))
+```
