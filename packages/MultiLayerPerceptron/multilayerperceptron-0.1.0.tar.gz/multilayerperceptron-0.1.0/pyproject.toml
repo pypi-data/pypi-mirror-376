@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "MultiLayerPerceptron"
+version = "0.1.0"
+description = "Implementación desde cero de un Perceptrón Multicapa en Python, sin librerías externas, con backpropagation y soporte para múltiples capas."
+readme = "README.md"
+authors = [
+    { name="Asher", email="ashergarciaortiz@gmail.com" }
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+dependencies = []
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/AsherGarciaO/MultiLayerPerceptron/"
