@@ -1,0 +1,9 @@
+respectify/__init__.py,sha256=Y3EJOfeL0006kOtClz-tApHY6ux4MZnmZGwjZQ4-NmU,1635
+respectify/_base.py,sha256=l4LxsEzuE5mOByZNC_izvGrWs6WKj0WorAe95-_ucW0,4788
+respectify/client.py,sha256=sy5y9um1a-uQ-HL7Sodie7rfOOYoiEMRVTF7uCAbqtw,11372
+respectify/client_async.py,sha256=5UqM2rqluD9gzBHODHnBvbybUSQ--8vqYc36QyNe04M,11564
+respectify/exceptions.py,sha256=QH_do56MWP30NXvYIZPUcb8FIMKnT9VxbT0tNyP-65M,2909
+respectify/schemas.py,sha256=05Qaw9e7PJ7cGvynLOc_pctdPtBwCrmg29fZKUr8Ppw,8086
+respectify-0.1.0.dist-info/METADATA,sha256=APxmagsA9fy_aKg7kL7AzVeJjHThlBsAuwgTDy8bcx4,9325
+respectify-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+respectify-0.1.0.dist-info/RECORD,,
