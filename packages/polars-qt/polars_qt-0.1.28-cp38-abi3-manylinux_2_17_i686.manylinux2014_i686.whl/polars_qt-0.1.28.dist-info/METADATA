@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: polars-qt
+Version: 0.1.28
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: polars>=0.20.16
+License-File: LICENSE
+Author-email: Teamon9161 <teamon9161@163.com>
+Requires-Python: >=3.8
