@@ -1,0 +1,210 @@
+import base64
+import io
+import os
+import uuid
+import wave
+from typing import Annotated
+
+from google import genai
+from google.genai import types
+from loguru import logger
+from PIL import Image
+
+from universal_mcp.applications.application import APIApplication
+from universal_mcp.applications.file_system.app import FileSystemApp
+from universal_mcp.integrations import Integration
+
+
+class GoogleGeminiApp(APIApplication):
+    def __init__(self, integration: Integration = None, **kwargs) -> None:
+        super().__init__(name="google_gemini", integration=integration, **kwargs)
+        self._genai_client = None
+
+    @property
+    def genai_client(self) -> genai.Client:
+        if self._genai_client is not None:
+            return self._genai_client
+        credentials = self.integration.get_credentials()
+        api_key = (
+            credentials.get("api_key")
+            or credentials.get("API_KEY")
+            or credentials.get("apiKey")
+        )
+        if not api_key:
+            raise ValueError("API key not found in integration credentials")
+        self._genai_client = genai.Client(api_key=api_key)
+        return self._genai_client
+
+    async def generate_text(
+        self,
+        prompt: Annotated[str, "The prompt to generate text from"],
+        model: str = "gemini-2.5-flash",
+    ) -> str:
+        """Generates text using the Google Gemini model.
+
+        Args:
+            prompt (str): The prompt to generate text from.
+            model (str, optional): The Gemini model to use for text generation. Defaults to "gemini-2.5-flash".
+
+        Returns:
+            str: The generated text response from the Gemini model.
+
+        Raises:
+            ValueError: If the API key is not found in the integration credentials.
+            Exception: If the underlying client or API call fails.
+
+        Example:
+            response = app.generate_text("Tell me a joke.")
+
+        Tags:
+            important
+        """
+        response = self.genai_client.models.generate_content(
+            contents=prompt, model=model
+        )
+        return response.text
+
+    async def generate_image(
+        self,
+        prompt: Annotated[str, "The prompt to generate image from"],
+        image: Annotated[str, "The reference image path"] | None = None,
+        model: str = "gemini-2.5-flash-image-preview",
+    ) -> list:
+        """
+        Generates an image using the Google Gemini model and returns a list of results.
+        Each result is a dict with either 'text' or 'image_bytes' (raw image data).
+
+        Args:
+            prompt (str): The prompt to generate image from.
+            image (str, optional): The reference image path url.
+            model (str, optional): The Gemini model to use for image generation. Defaults to "gemini-2.5-flash-image-preview".
+
+
+        Returns:
+            list: A list of dicts, each containing either 'text' or 'image_bytes'.
+
+        Tags:
+            important
+        """
+        # The Gemini API is synchronous, so run in a thread
+        contents = [prompt]
+        if image:
+            if image.startswith(("http://", "https://")):
+                import requests
+
+                response = requests.get(image)
+                response.raise_for_status()
+                image = Image.open(io.BytesIO(response.content))
+            else:
+                image = Image.open(image)
+            contents.append(image)
+        response = self.genai_client.models.generate_content(
+            model=model,
+            contents=contents,
+        )
+        candidate = response.candidates[0]
+        text = ""
+        for part in candidate.content.parts:
+            if part.text is not None:
+                text += part.text
+            elif part.inline_data is not None:
+                # Return the raw image bytes
+                image_bytes = part.inline_data.data
+
+                img_base64 = base64.b64encode(image_bytes).decode("utf-8")
+
+                file_name = f"{uuid.uuid4()}.png"
+
+                return {
+                    "type": "image",
+                    "data": img_base64,
+                    "mime_type": "image/png",
+                    "file_name": file_name,
+                    "text": text,
+                }
+
+    async def generate_audio(
+        self,
+        prompt: Annotated[str, "The prompt to generate audio from"],
+        model: str = "gemini-2.5-flash-preview-tts",
+    ) -> str:
+        """Generates audio using the Google Gemini model and returns the uploaded audio URL.
+
+        Args:
+            prompt (str): The prompt to generate audio from.
+            model (str, optional): The Gemini model to use for audio generation. Defaults to "gemini-2.5-flash-preview-tts".
+
+        Returns:
+            str: The URL of the uploaded audio file.
+
+        Tags:
+            important
+        """
+
+        # Set up the wave file to save the output:
+        def wave_file(filename, pcm, channels=1, rate=24000, sample_width=2):
+            with wave.open(filename, "wb") as wf:
+                wf.setnchannels(channels)
+                wf.setsampwidth(sample_width)
+                wf.setframerate(rate)
+                wf.writeframes(pcm)
+
+        response = self.genai_client.models.generate_content(
+            model=model,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_modalities=["AUDIO"],
+                speech_config=types.SpeechConfig(
+                    voice_config=types.VoiceConfig(
+                        prebuilt_voice_config=types.PrebuiltVoiceConfig(
+                            voice_name="Kore",
+                        )
+                    )
+                ),
+            ),
+        )
+
+        data = response.candidates[0].content.parts[0].inline_data.data
+
+        file_name = f"{uuid.uuid4()}.wav"
+        wave_file(file_name, data)
+
+        # read the file
+        with open(file_name, "rb") as f:
+            data = f.read()
+
+        # delete the file
+        os.remove(file_name)
+
+        # Convert to base64
+        import base64
+
+        audio_base64 = base64.b64encode(data).decode("utf-8")
+
+        return {
+            "type": "audio",
+            "data": audio_base64,
+            "mime_type": "audio/wav",
+            "file_name": file_name,
+        }
+
+    def list_tools(self):
+        return [
+            self.generate_text,
+            self.generate_image,
+            self.generate_audio,
+        ]
+
+
+async def test_google_gemini():
+    app = GoogleGeminiApp()
+    result = await app.generate_image(
+        "A beautiful women potrait with red green hair color"
+    )
+    print(result)
+
+
+if __name__ == "__main__":
+    import asyncio
+
+    asyncio.run(test_google_gemini())
