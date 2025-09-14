@@ -1,0 +1,71 @@
+[project]
+name = "Cirilla"
+version = "0.1.0"
+description = "Crilla is a simple way to introduce optimized single-GPU training into your project"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "attn-gym>=0.0.4",
+    "bitsandbytes>=0.46.1",
+    "datasets>=4.0.0",
+    "fandom-py>=0.2.1",
+    "fuzzywuzzy>=0.18.0",
+    "huggingface-hub>=0.33.4",
+    "kernels>=0.8.0",
+    "megablocks[all]>=0.10.0",
+    "ollama>=0.5.3",
+    "openai>=1.90.0",
+    "progress-table>=3.1.2",
+    "pydantic>=2.11.7",
+    "python-levenshtein>=0.27.1",
+    "reasoning-gym>=0.1.23",
+    "rich>=14.1.0",
+    "sentencepiece>=0.2.0",
+    "span-marker>=1.7.0",
+    "tokenizers>=0.21.2",
+    "torch>=2.7.0",
+    "torchao>=0.12.0",
+    "torchvision>=0.22.0",
+    "transformers>=4.53.2",
+    "vllm>=0.9.2",
+]
+
+[project.optional-dependencies]
+cu128 = [
+    "nvidia-cublas-cu12==12.8.3.14 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cuda-cupti-cu12==12.8.57 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cuda-nvrtc-cu12==12.8.61 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cuda-runtime-cu12==12.8.57 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cudnn-cu12==9.7.1.26 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cufft-cu12==11.3.3.41 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cufile-cu12==1.13.0.11 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-curand-cu12==10.3.9.55 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cusolver-cu12==11.7.2.55 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cusparse-cu12==12.5.7.53 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-cusparselt-cu12==0.6.3 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-nccl-cu12==2.26.2 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-nvjitlink-cu12==12.8.61 ; sys_platform == 'linux' or sys_platform == 'win32'",
+    "nvidia-nvtx-cu12==12.8.55 ; sys_platform == 'linux' or sys_platform == 'win32'"
+]
+
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.setuptools]
+packages = ["LLM_pieces", "Cirilla_model", "attention-gym.attn_gym", "synth_data"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
