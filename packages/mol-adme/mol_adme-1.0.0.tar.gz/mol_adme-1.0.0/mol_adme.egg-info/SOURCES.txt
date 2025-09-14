@@ -1,0 +1,10 @@
+README.md
+mol_adme.py
+pyproject.toml
+setup.py
+mol_adme.egg-info/PKG-INFO
+mol_adme.egg-info/SOURCES.txt
+mol_adme.egg-info/dependency_links.txt
+mol_adme.egg-info/entry_points.txt
+mol_adme.egg-info/requires.txt
+mol_adme.egg-info/top_level.txt
