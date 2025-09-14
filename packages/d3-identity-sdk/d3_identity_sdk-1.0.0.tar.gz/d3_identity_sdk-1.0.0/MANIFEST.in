@@ -1,0 +1,25 @@
+# Include important non-Python files
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+
+# Include package data
+recursive-include d3_identity_client *.py
+recursive-include d3_identity_client *.json
+recursive-include d3_identity_client *.yaml
+recursive-include d3_identity_client *.yml
+
+# Exclude development and test files
+exclude .gitignore
+exclude .env*
+exclude tox.ini
+exclude .travis.yml
+exclude .github
+recursive-exclude tests *
+recursive-exclude examples *
+recursive-exclude docs *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.so
+recursive-exclude * .DS_Store
