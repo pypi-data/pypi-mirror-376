@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+emoji_getter/__init__.py
+emoji_getter.egg-info/PKG-INFO
+emoji_getter.egg-info/SOURCES.txt
+emoji_getter.egg-info/dependency_links.txt
+emoji_getter.egg-info/top_level.txt
