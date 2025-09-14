@@ -1,0 +1,10 @@
+bm25_chroma/__init__.py,sha256=gPMrghpIpyjgqVmM_hLvkPlcG2-mAtumjftLi-VwYR0,183
+bm25_chroma/bm25.py,sha256=DGZJAHYbcYWHvI4pRnq5dyVgVaOzxB9eRidDG0Kqnoc,9660
+bm25_chroma/hybrid_retriever.py,sha256=Pn9BOUH9xT6-5iZA97ZtFs54Ve8AMl5vG42gkxR5XiY,12478
+bm25_chroma-0.2.1.dist-info/licenses/LICENSE,sha256=8CgvFRvqm1-vN765WXUYlDyJZhnuVhQXe90eW45bZwI,1085
+tests/__init__.py,sha256=sNGbUOvaxQ62VeWuodJKqq0szvg92tKEOWuh_tQ3Fs8,15
+tests/test_examples.py,sha256=rX4s_GjQ-amxG-MoM2hX3hq3vvz-V0wnjfT6Nr7mqn0,4098
+bm25_chroma-0.2.1.dist-info/METADATA,sha256=EpFlDSWb_6FdQ9vBSUxkId0t_Y-a_MW2kxUEUbX0uAo,4877
+bm25_chroma-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bm25_chroma-0.2.1.dist-info/top_level.txt,sha256=Qu4FXSt6Zv1a70xYPIaNQAEfmLy2qEXatwQ5pj0jw5Q,18
+bm25_chroma-0.2.1.dist-info/RECORD,,
