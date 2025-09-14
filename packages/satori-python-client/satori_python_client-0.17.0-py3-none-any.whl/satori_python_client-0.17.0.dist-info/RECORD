@@ -1,0 +1,15 @@
+.mina/client.toml,sha256=30NRl4T4KgtblTNsGAZoKJkkeMqa-Ql8Rq_UHisj2PE,966
+satori/client/__init__.py,sha256=31Ox78iiSQ2jjWwGwe-sHpAmskz54eIvZpGp0_gJ7uU,13167
+satori/client/account.py,sha256=0DBuTveOWGl3xA5xMOkDlh_n6yvppF1jeW3yuAsT4h8,2528
+satori/client/account.pyi,sha256=TYaQUbW-KJ7pfXX8_gjG624CLDfIF2mgegQgL-Sz5IA,18005
+satori/client/config.py,sha256=gPqFD37as1K8lvy5VHWWYK-6AZMSqEWB-TaY-UU6Vs0,1700
+satori/client/network/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+satori/client/network/base.py,sha256=0ajEhclVpVch-HMWLknoicexNe_keWW0dbLtboAtdtE,817
+satori/client/network/util.py,sha256=5jG3Zy3BNxN0yPTnn0KZ4WsRAgJjoUJ6yu2emKdsi34,1215
+satori/client/network/webhook.py,sha256=PEzMlIu1dsyyFZMryNO6v5K7aIeBehybjw4FTSF5nJ0,5299
+satori/client/network/websocket.py,sha256=qSiX00PVcos7nwVZHiSeH8qXSmO4BkfMNX9IVSkbn0E,8307
+satori/client/protocol.py,sha256=YTelbyVqXdt5teLhTmOyNNHYrAKSFKZwb5x3u9Glzt0,27519
+satori_python_client-0.17.0.dist-info/METADATA,sha256=dZWWqsMev-RUVJvmT6-QrVOzzMqo_qKA6Zl8fk3R7vQ,4799
+satori_python_client-0.17.0.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+satori_python_client-0.17.0.dist-info/licenses/LICENSE,sha256=2EDswKd1M1648judap8BEEwp3Jz6IpfFP2wYVdU0Y2o,1069
+satori_python_client-0.17.0.dist-info/RECORD,,
