@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# This script generates network installation files
+# for all hosts.
+#
+
+VERBOSE=
+
+while getopts "hv" opt; do
+    case $opt in
+        h)
+            echo "$(basename $0) [-h] [-v]"
+	    exit 0
+	    ;;
+        v)
+            VERBOSE="--verbose"
+	    ;;
+        *)
+	    echo "invalid option"
+            exit 1
+	    ;;
+    esac
+done
+shift $((OPTIND-1))
+
+if [ ! -d hosts ]; then
+    echo No hosts directory found
+    exit 1
+fi
+
+python3 -m puffmatic ${VERBOSE} mirror --once
+
+for host in hosts/*; do
+     python3 -m puffmatic ${VERBOSE} disklabel --host-dir="${host}"
+done
+
+for host in hosts/*; do
+    python3 -m puffmatic ${VERBOSE} response --host-dir="${host}"
+done
+
+for host in hosts/*; do
+    python3 -m puffmatic ${VERBOSE} host-site-set --host-dir="${host}"
+done
+
+python3 -m puffmatic ${VERBOSE} site-set --site-dir=site
