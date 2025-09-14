@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: DenoEngine
+Version: 0.3.0
+Summary: Tam özellikli 3D engine (FPS/TPS + 2D HUD + Physics)
+Requires-Python: >=3.8
+Requires-Dist: PyOpenGL
+Requires-Dist: glfw
+Requires-Dist: PyOpenGL_accelerate
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
