@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+py_template_expander/__init__.py
+py_template_expander.egg-info/PKG-INFO
+py_template_expander.egg-info/SOURCES.txt
+py_template_expander.egg-info/dependency_links.txt
+py_template_expander.egg-info/top_level.txt
