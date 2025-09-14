@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+kinematicsolver/__init__.py
+kinematicsolver/kinematicsolvermethods.py
+kinematicsolver.egg-info/PKG-INFO
+kinematicsolver.egg-info/SOURCES.txt
+kinematicsolver.egg-info/dependency_links.txt
+kinematicsolver.egg-info/top_level.txt
+tests/test.py
