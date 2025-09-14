@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: dltlint
+Version: 0.0.1
+Summary: Linter for Databricks DLT pipelines
+Project-URL: Homepage, https://github.com/dan1elt0m/dltlint
+Project-URL: Issues, https://github.com/dan1elt0m/dltlint/issues
+Requires-Python: >=3.11
+Requires-Dist: pydantic>=2
+Requires-Dist: pyyaml>=6
+Requires-Dist: tomli>=2.2
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Requires-Dist: pytest-cov; extra == 'dev'
+Requires-Dist: ruff==0.13.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# dltlint
+
+Lint Databricks **Lakeflow (DLT)** pipeline YAML/JSON files.
+
+## Config (pyproject.toml)
+
+```toml
+[tool.dltlint]
+fail_on = "warning"                       # default: "error"
+ignore = ["DLT010", "DLT400"]             # suppress specific rules
+require = ["catalog", "schema"]           # fields that must be present
+inline_disable_token = "dltlint: disable" # comment token (see below)
+
+[tool.dltlint.severity_overrides]
+DLT400 = "info"
+```
+
+## Inline suppressions
+Add a comment anywhere in a file to suppress rules for that file:
+```yaml
+# dltlint: disable=DLT010,DLT400
+resources:
+  pipelines:
+    my_pipe:
+      name: n
+      catalog: c
+      schema: s
+```
+
+Line-scoped suppressions require YAML line tracking and are not supported yet.
