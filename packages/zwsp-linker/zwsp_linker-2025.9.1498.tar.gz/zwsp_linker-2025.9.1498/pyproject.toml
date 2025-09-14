@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zwsp_linker"
+version = "2025.9.1498"
+description = "# init.py import re   def safelink_zwsp(text: str) -> str:     \"\"\"     Insert zero-width spaces into URLs to prevent auto-linking and allow…"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" },
+]
+license = { file = "LICENSE" }
+dependencies = [
+
+]
+
+[project.urls]
+Repository = "https://pypi.org/project/zwsp_linker/"

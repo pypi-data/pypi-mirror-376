@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+zwsp_linker/__init__.py
+zwsp_linker.egg-info/PKG-INFO
+zwsp_linker.egg-info/SOURCES.txt
+zwsp_linker.egg-info/dependency_links.txt
+zwsp_linker.egg-info/top_level.txt
