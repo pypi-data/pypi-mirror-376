@@ -1,0 +1,14 @@
+examples/simple_demo.py,sha256=xkRe7TQe-1452RHZVxi7ANe7y00J4TxRlV60tf_nqz8,170
+test_cad/first_model.py,sha256=0OpGRq6TNbL9ppurCCrVL2tRw3b3mtx1zZPM0qcZ-rw,201
+topax/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+topax/_app.py,sha256=DndRF8jYRazztetY5i9ZDsVyORaq_s7DWrxnUFSRohg,10785
+topax/_builders.py,sha256=_4NgRhCCoBLFwmy5-gDFqKkIgtM56Xz_fMkN7h0gkPw,5872
+topax/_utils.py,sha256=_PUnmIPDpjqfzzbxcWfSXcRltK6PKUzBag7NoLCdsu4,2452
+topax/ops.py,sha256=1T66JD6Tf5FTzcIFZ35dJnNuJRxCvQ6YUJ8xGIphNmg,5471
+topax/sdfs.py,sha256=QaO7wD5u2N_x6FkmcxRuAYCEl-R97qc5DmbBtUtaOBs,3422
+topax-0.0.1.dist-info/licenses/LICENSE,sha256=ILBn-G3jdarm2w8oOrLmXeJNU3czuJvVhDLBASWdhM8,34522
+topax-0.0.1.dist-info/METADATA,sha256=c4mnVHKf2K7kKtI2qMjCe_2XjQhtpw-7zRVZ04-UF3k,3026
+topax-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+topax-0.0.1.dist-info/entry_points.txt,sha256=dHw1U99zOI_G6-WF6q8HHE4CTbrAFJjXx8wS2MreztQ,42
+topax-0.0.1.dist-info/top_level.txt,sha256=30debOq7KzdpGZbGyOLM4cxp85M8lZqCdXdj9Ec8h0E,24
+topax-0.0.1.dist-info/RECORD,,
