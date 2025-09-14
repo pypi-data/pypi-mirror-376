@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: leanpy
+Version: 0.0.1
+Summary: Lean Manufacturing + Python
+Home-page: https://gitee.com/benxuu/lean-py
+Author: Ben Xu
+Author-email: benxuu@163.com
+Maintainer-email: Ben Xu <benxuu@163.com>
+License-Expression: MIT
+Project-URL: Source, https://gitee.com/benxuu/lean-py
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy>=1.19.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# LeanPy
+
+LeanPy is a Python package for Lean Manufucturing.
+
+It aims to make the process of developement AI applications quick and fun
+while also preventing any frustration caused by the inability to
+implement an intended data science API.
+
+功能特点：
+
+- 支持数据清洗
+- 支持数据检测
+- 支持数据填充
+- 支持深度学习
+
+
+## Donate
+
+支付宝：benxuu@163.com
+
+## Contributing
+
+ 
