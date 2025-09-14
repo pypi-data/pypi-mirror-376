@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: py-archons
+Version: 0.3.0
+Summary: A simple Python package with get_names, get_cities, and get_countries functions
+Author-email: Bruno <bruno@example.com>
+License-Expression: MIT
+Keywords: python,package,names
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# py-archons
+
+A simple Python package that provides `get_names` and `get_cities` functions.
+
+## Installation
+
+```bash
+pip install py-archons
+```
+
+## Usage
+
+```python
+from py_archons import get_names, get_cities
+
+names = get_names()
+print(names)  # Output: ["guapo", "bandida"]
+
+cities = get_cities()
+print(cities)  # Output: ["new york", "london"]
+```
+
+## Development
+
+To install in development mode:
+
+```bash
+pip install -e .
+```
+
+## Building for PyPI
+
+```bash
+pip install build twine
+python -m build
+python -m twine upload dist/*
+```
+
+## License
+
+MIT License
