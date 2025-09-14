@@ -1,0 +1,13 @@
+myDL/__init__.py,sha256=A_xUjz-m4b99Vnkcj1zhJlLjBoBYZ5dAZvzW_6_GT9U,50
+myDL/version.py,sha256=PVAxzzCsgrDHkt6qO4xASFaTgO-aygumdpOMYLxwgIA,24
+myDL/Fonts/kaiu.ttf,sha256=3Ri_fEIE9GnqN-A98Zx9OYwpZDZIlhkYBU0if_gSj9E,5180940
+myDL/ts/GRU_attention.py,sha256=hzUCv3GqSqxGeJjP__xF3HH1sKEnq_uE6Tt8SrCx_k8,24300
+myDL/ts/GRU_attention_LR.py,sha256=8nZmjZ39yzrflaFxYRuc8g9VL8q27qr6gcETWMC6Igk,24753
+myDL/ts/GRU_attention_cv.py,sha256=Ij_ryLbV2sylbiwKf5Lr4Ci3oQg-QShBJ6gMnTBEdBw,22670
+myDL/ts/GRU_attention_cv2.py,sha256=o2bFIDODrkB5nek7x1bkFAsJuBoD8RjbxYEsOwI3muw,21547
+myDL/ts/__init__.py,sha256=d7RdSeQQU89AvCbWUCmMDioHRhQR3YuN-z3TbpOyE7Q,60
+myDL-0.0.18.dist-info/LICENSE,sha256=U1A6ym8HMsms40wu4iERxCzdWXVut-GluIddiuXNC6M,1545
+myDL-0.0.18.dist-info/METADATA,sha256=mXZwfxF99lwjxKu2Zg_SFS2UeCguZ0J4hdO4LbO_ePI,616
+myDL-0.0.18.dist-info/WHEEL,sha256=GV9aMThwP_4oNCtvEC2ec3qUYutgWeAzklro_0m4WJQ,91
+myDL-0.0.18.dist-info/top_level.txt,sha256=WXYD4upTeiYtPLSnW-_ncKZIZkAa9in0U68f5MjRydo,5
+myDL-0.0.18.dist-info/RECORD,,
