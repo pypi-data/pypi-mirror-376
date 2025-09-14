@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include pyproject.toml
+recursive-include src/ibgateway_api_client *.json
+recursive-include src/ibgateway_api_client *.ini
+recursive-include src/ibgateway_api_client *.env*
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .git*

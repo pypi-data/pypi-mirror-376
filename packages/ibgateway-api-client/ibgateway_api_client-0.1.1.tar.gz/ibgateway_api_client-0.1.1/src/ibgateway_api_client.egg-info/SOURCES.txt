@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/ibgateway_api_client/__init__.py
+src/ibgateway_api_client/k3s_live_client.py
+src/ibgateway_api_client/k3s_paper_client.py
+src/ibgateway_api_client/test_connection.py
+src/ibgateway_api_client.egg-info/PKG-INFO
+src/ibgateway_api_client.egg-info/SOURCES.txt
+src/ibgateway_api_client.egg-info/dependency_links.txt
+src/ibgateway_api_client.egg-info/entry_points.txt
+src/ibgateway_api_client.egg-info/not-zip-safe
+src/ibgateway_api_client.egg-info/requires.txt
+src/ibgateway_api_client.egg-info/top_level.txt
+tests/test_clients.py
