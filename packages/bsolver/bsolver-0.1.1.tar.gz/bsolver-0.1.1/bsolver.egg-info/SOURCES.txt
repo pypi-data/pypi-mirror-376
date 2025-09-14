@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+bsolver/__init__.py
+bsolver/arbre.py
+bsolver.egg-info/PKG-INFO
+bsolver.egg-info/SOURCES.txt
+bsolver.egg-info/dependency_links.txt
+bsolver.egg-info/top_level.txt
+tests/test_arbre_unit.py
+tests/test_implies.py
+tests/test_performance.py
+tests/test_solve_minimals.py
