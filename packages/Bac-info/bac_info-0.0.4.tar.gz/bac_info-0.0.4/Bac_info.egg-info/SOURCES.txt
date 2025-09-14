@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+BBI/__init__.py
+BBI/core.py
+Bac_info.egg-info/PKG-INFO
+Bac_info.egg-info/SOURCES.txt
+Bac_info.egg-info/dependency_links.txt
+Bac_info.egg-info/top_level.txt
