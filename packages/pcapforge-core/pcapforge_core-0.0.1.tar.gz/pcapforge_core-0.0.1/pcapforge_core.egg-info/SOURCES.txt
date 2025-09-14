@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+pcapforge_core/__init__.py
+pcapforge_core.egg-info/PKG-INFO
+pcapforge_core.egg-info/SOURCES.txt
+pcapforge_core.egg-info/dependency_links.txt
+pcapforge_core.egg-info/top_level.txt
