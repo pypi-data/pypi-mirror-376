@@ -1,0 +1,2 @@
+[console_scripts]
+siphoai = siphoai.cli:main

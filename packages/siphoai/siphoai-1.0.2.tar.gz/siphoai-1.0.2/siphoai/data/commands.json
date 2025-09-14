@@ -1,0 +1,321 @@
+{
+  "web_commands": [
+    {
+      "triggers": ["open youtube", "youtube", "go to youtube", "launch youtube", "start youtube", "youtube website"],
+      "action": "web_open",
+      "url": "https://www.youtube.com",
+      "response": "Opening YouTube"
+    },
+    {
+      "triggers": ["open google", "google", "go to google", "google search", "search google", "google website"],
+      "action": "web_open",
+      "url": "https://www.google.com",
+      "response": "Opening Google"
+    },
+    {
+      "triggers": ["open facebook", "facebook"],
+      "action": "web_open",
+      "url": "https://www.facebook.com",
+      "response": "Opening Facebook"
+    },
+    {
+      "triggers": ["open twitter", "twitter"],
+      "action": "web_open",
+      "url": "https://www.twitter.com",
+      "response": "Opening Twitter"
+    },
+    {
+      "triggers": ["open instagram", "instagram"],
+      "action": "web_open",
+      "url": "https://www.instagram.com",
+      "response": "Opening Instagram"
+    },
+    {
+      "triggers": ["open linkedin", "linkedin"],
+      "action": "web_open",
+      "url": "https://www.linkedin.com",
+      "response": "Opening LinkedIn"
+    },
+    {
+      "triggers": ["open github", "github"],
+      "action": "web_open",
+      "url": "https://www.github.com",
+      "response": "Opening GitHub"
+    },
+    {
+      "triggers": ["open netflix", "netflix"],
+      "action": "web_open",
+      "url": "https://www.netflix.com",
+      "response": "Opening Netflix"
+    }
+  ],
+  "application_commands": [
+    {
+      "triggers": ["open notepad", "notepad"],
+      "action": "run_application",
+      "command": ["notepad.exe"],
+      "response": "Opening Notepad"
+    },
+    {
+      "triggers": ["open calculator", "calculator", "calc"],
+      "action": "run_application",
+      "command": ["calc.exe"],
+      "response": "Opening Calculator"
+    },
+    {
+      "triggers": ["open file explorer", "open explorer", "file explorer", "explorer"],
+      "action": "run_application",
+      "command": ["explorer.exe"],
+      "response": "Opening File Explorer"
+    },
+    {
+      "triggers": ["open command prompt", "open cmd", "command prompt", "cmd"],
+      "action": "run_application",
+      "command": ["cmd.exe", "/c", "start", "cmd.exe"],
+      "response": "Opening new Command Prompt window"
+    },
+    {
+      "triggers": ["open paint", "paint"],
+      "action": "run_application",
+      "command": ["mspaint.exe"],
+      "response": "Opening Paint"
+    },
+    {
+      "triggers": ["open task manager", "task manager"],
+      "action": "run_application",
+      "command": ["taskmgr.exe"],
+      "response": "Opening Task Manager"
+    },
+    {
+      "triggers": ["open control panel", "control panel"],
+      "action": "run_application",
+      "command": ["control.exe"],
+      "response": "Opening Control Panel"
+    },
+    {
+      "triggers": ["open settings", "settings"],
+      "action": "run_application",
+      "command": ["ms-settings:"],
+      "response": "Opening Settings"
+    }
+  ],
+  "system_commands": [
+    {
+      "triggers": ["minimize all", "show desktop", "minimize everything", "hide all windows", "minimize all windows", "clear desktop", "go to desktop", "show the desktop", "hide all apps", "minimize apps", "get to desktop", "desktop view"],
+      "action": "system_command",
+      "command": ["powershell", "-command", "$shell = New-Object -ComObject Shell.Application; $shell.MinimizeAll()"],
+      "response": "Minimizing all windows"
+    },
+    {
+      "triggers": ["shutdown computer", "shutdown", "shut down", "shut down computer", "turn off computer", "power off", "power down", "shut it down", "turn off the computer", "power off the computer", "shut down the system", "turn off system", "power down computer"],
+      "action": "system_command",
+      "command": ["shutdown", "/s", "/t", "30"],
+      "response": "Shutting down the computer in 30 seconds. Say cancel to stop.",
+      "requires_confirmation": true,
+      "confirmation_message": "Are you sure you want to shutdown the computer? This will close all programs and shut down Windows."
+    },
+    {
+      "triggers": ["restart computer", "restart", "reboot", "reboot computer", "restart the computer", "reboot the computer", "restart system", "reboot system", "restart the system", "reboot the system"],
+      "action": "system_command",
+      "command": ["shutdown", "/r", "/t", "30"],
+      "response": "Restarting the computer in 30 seconds. Say cancel to stop.",
+      "requires_confirmation": true,
+      "confirmation_message": "Are you sure you want to restart the computer? This will close all programs and restart Windows."
+    },
+    {
+      "triggers": ["cancel shutdown", "cancel restart"],
+      "action": "system_command",
+      "command": ["shutdown", "/a"],
+      "response": "Cancelling shutdown or restart"
+    },
+    {
+      "triggers": ["lock computer", "lock screen"],
+      "action": "system_command",
+      "command": ["rundll32.exe", "user32.dll,LockWorkStation"],
+      "response": "Locking the computer",
+      "requires_confirmation": true,
+      "confirmation_message": "Are you sure you want to lock the computer? You will need to enter your password to unlock it."
+    },
+    {
+      "triggers": ["sleep computer", "sleep"],
+      "action": "system_command",
+      "command": ["rundll32.exe", "powrprof.dll,SetSuspendState", "0,1,0"],
+      "response": "Putting computer to sleep",
+      "requires_confirmation": true,
+      "confirmation_message": "Are you sure you want to put the computer to sleep? All running programs will be suspended."
+    }
+  ],
+  "volume_commands": [
+    {
+      "triggers": ["volume up", "increase volume"],
+      "action": "volume_control",
+      "command": ["nircmd.exe", "changesysvolume", "5000"],
+      "response": "Increasing volume",
+      "requires_third_party": {
+        "app_name": "NirCmd",
+        "executable": "nircmd.exe",
+        "download_url": "https://www.nirsoft.net/utils/nircmd.html",
+        "install_instructions": "Download NirCmd from the website and place nircmd.exe in your Windows directory or the same folder as this application.",
+        "alternative_message": "Volume control requires NirCmd utility."
+      }
+    },
+    {
+      "triggers": ["volume down", "decrease volume"],
+      "action": "volume_control",
+      "command": ["nircmd.exe", "changesysvolume", "-5000"],
+      "response": "Decreasing volume",
+      "requires_third_party": {
+        "app_name": "NirCmd",
+        "executable": "nircmd.exe",
+        "download_url": "https://www.nirsoft.net/utils/nircmd.html",
+        "install_instructions": "Download NirCmd from the website and place nircmd.exe in your Windows directory or the same folder as this application.",
+        "alternative_message": "Volume control requires NirCmd utility."
+      }
+    },
+    {
+      "triggers": ["mute", "unmute"],
+      "action": "volume_control",
+      "command": ["nircmd.exe", "mutesysvolume", "2"],
+      "response": "Toggling mute",
+      "requires_third_party": {
+        "app_name": "NirCmd",
+        "executable": "nircmd.exe",
+        "download_url": "https://www.nirsoft.net/utils/nircmd.html",
+        "install_instructions": "Download NirCmd from the website and place nircmd.exe in your Windows directory or the same folder as this application.",
+        "alternative_message": "Volume control requires NirCmd utility."
+      }
+    }
+  ],
+  "information_commands": [
+    {
+      "triggers": ["what time is it", "current time", "time"],
+      "action": "get_time",
+      "response": "The current time is"
+    },
+    {
+      "triggers": ["what date is it", "current date", "date", "today"],
+      "action": "get_date",
+      "response": "Today's date is"
+    }
+  ],
+  "search_commands": [
+    {
+      "triggers": ["search for"],
+      "action": "web_search",
+      "response": "Searching for"
+    }
+  ],
+  "utility_commands": [
+    {
+      "triggers": ["help", "what can you do"],
+      "action": "show_help",
+      "response": "Here are some things I can do"
+    },
+    {
+      "triggers": ["stop listening", "exit", "quit"],
+      "action": "exit_app",
+      "response": "Goodbye!"
+    }
+  ],
+  "media_commands": [
+    {
+      "triggers": ["open music player", "music player"],
+      "action": "run_application",
+      "command": ["wmplayer.exe"],
+      "response": "Opening Windows Media Player"
+    },
+    {
+      "triggers": ["open photos", "photos"],
+      "action": "run_application",
+      "command": ["ms-photos:"],
+      "response": "Opening Photos app"
+    }
+  ],
+  "development_commands": [
+    {
+      "triggers": ["open visual studio code", "open vscode", "vscode"],
+      "action": "run_application",
+      "command": ["code"],
+      "response": "Opening Visual Studio Code",
+      "requires_third_party": {
+        "app_name": "Visual Studio Code",
+        "executable": "code",
+        "download_url": "https://code.visualstudio.com/",
+        "install_instructions": "Download and install Visual Studio Code from the official website. Make sure to add it to your PATH during installation.",
+        "alternative_message": "Visual Studio Code is not installed or not in PATH."
+      }
+    },
+    {
+      "triggers": ["open powershell", "powershell"],
+      "action": "run_application",
+      "command": ["powershell.exe"],
+      "response": "Opening PowerShell"
+    }
+  ],
+  "third_party_apps": [
+    {
+      "triggers": ["open discord", "discord"],
+      "action": "run_application",
+      "command": ["C:\\Users\\%USERNAME%\\AppData\\Local\\Discord\\Discord.exe"],
+      "response": "Opening Discord",
+      "requires_third_party": {
+        "app_name": "Discord",
+        "executable": "C:\\Users\\%USERNAME%\\AppData\\Local\\Discord\\Discord.exe",
+        "download_url": "https://discord.com/download",
+        "install_instructions": "Download and install Discord from the official website.",
+        "alternative_message": "Discord is not installed."
+      }
+    },
+    {
+      "triggers": ["open spotify", "spotify"],
+      "action": "run_application",
+      "command": ["C:\\Users\\%USERNAME%\\AppData\\Roaming\\Spotify\\Spotify.exe"],
+      "response": "Opening Spotify",
+      "requires_third_party": {
+        "app_name": "Spotify",
+        "executable": "C:\\Users\\%USERNAME%\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "download_url": "https://www.spotify.com/download/",
+        "install_instructions": "Download and install Spotify from the official website.",
+        "alternative_message": "Spotify is not installed."
+      }
+    },
+    {
+      "triggers": ["open chrome", "google chrome", "chrome"],
+      "action": "run_application",
+      "command": ["C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"],
+      "response": "Opening Google Chrome",
+      "requires_third_party": {
+        "app_name": "Google Chrome",
+        "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "download_url": "https://www.google.com/chrome/",
+        "install_instructions": "Download and install Google Chrome from the official website.",
+        "alternative_message": "Google Chrome is not installed."
+      }
+    },
+    {
+      "triggers": ["open firefox", "firefox"],
+      "action": "run_application",
+      "command": ["C:\\Program Files\\Mozilla Firefox\\firefox.exe"],
+      "response": "Opening Firefox",
+      "requires_third_party": {
+        "app_name": "Mozilla Firefox",
+        "executable": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+        "download_url": "https://www.mozilla.org/firefox/",
+        "install_instructions": "Download and install Mozilla Firefox from the official website.",
+        "alternative_message": "Mozilla Firefox is not installed."
+      }
+    }
+  ],
+  "vision_commands": [
+    {
+      "triggers": ["what's on my screen", "describe my screen", "analyze screen", "screenshot analysis", "what am I looking at", "explain my screen"],
+      "action": "analyze_screen",
+      "response": "Taking screenshot and analyzing what's on your screen"
+    },
+    {
+      "triggers": ["take screenshot", "capture screen", "screenshot", "save screen"],
+      "action": "take_screenshot", 
+      "response": "Taking and saving screenshot"
+    }
+  ]
+}
