@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myapp-plugin-calculator"
+version = "0.4.3"
+description = "MyApp的高级科学计算器插件 - 反向更新"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["my-app-core"]
+authors = [
+    {name = "Sans", email = "2890517374@qq.com"},
+]
+
+[project.entry-points."myapp.plugins"]
+calculator = "myapp_plugin_calculator.plugin:CalculatorPlugin"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/myapp-plugin-calculator"
