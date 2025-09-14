@@ -1,0 +1,11 @@
+cachebox-5.0.2.dist-info/METADATA,sha256=Re0xFbyt9_gzmzicFYp1ABrB9hBX62nxuPdkXmah28Y,27501
+cachebox-5.0.2.dist-info/WHEEL,sha256=jg7aJwQlrpxkH3keOLNI3kksE7N1njH4KKM0HJnywrU,107
+cachebox-5.0.2.dist-info/licenses/LICENSE,sha256=4oH8nU-rNZ9h5tbh6MoPVPFgtYDqsPXlAr2QnhnxQ4Q,1064
+cachebox.libs/libgcc_s-98a1ef30.so.1,sha256=XOVRhHznCIpbSdhFoozhla-OfRqBtXftKPQ4cSMKjrs,433441
+cachebox/__init__.py,sha256=I93y-hLQKXsEIlmd0KAZ6CVfDqKqcWFvyiJdDsMUcvI,647
+cachebox/_cachebox.py,sha256=hCZLh1DRMHvD5Crqcrsffy0pFRmc9fToTxHmUJDFK5Q,70522
+cachebox/_core.cpython-310-x86_64-linux-gnu.so,sha256=k3Mq7iIDXZFIe1J8o57Cbc7YajbEj5Ah6g1gV1IVAUw,797625
+cachebox/_core.pyi,sha256=qVl1rXUfzAzxy5FrH35Bv7RTp4gvXbaoZ-oMTDe4zTY,2842
+cachebox/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cachebox/utils.py,sha256=tHl21N5dW1HDpscwfkvre3-LeBJo8GiZ9ixYBn9KkGk,16804
+cachebox-5.0.2.dist-info/RECORD,,
