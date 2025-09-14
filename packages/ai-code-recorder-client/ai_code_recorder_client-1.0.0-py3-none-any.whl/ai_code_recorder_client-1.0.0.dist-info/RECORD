@@ -1,0 +1,10 @@
+ai_code_recorder_client/__init__.py,sha256=U2ECRVBHSM_ofysVuexQmv5CsNCfawVxIhesERYIgjc,61
+ai_code_recorder_client/__main__.py,sha256=tpvwc5liQPqIooufh17gM8ywXWE0M3SzRmjx5_vNOpM,232
+ai_code_recorder_client/api_client.py,sha256=QfsBRaYpz9N8X8w--DohQ6eWhvQ3eK6taHeeQwa1Ro0,2709
+ai_code_recorder_client/git_utils.py,sha256=VUXgMvo19iJlcecmE57ZEOROcsQ-hfKPJ08kTJZtO6E,3374
+ai_code_recorder_client/mcp_tools.py,sha256=aqyXdk4YKg1vnDn6qqsGcdAGHp9KKYXieb0w0BjWUC8,8022
+ai_code_recorder_client-1.0.0.dist-info/METADATA,sha256=yx3Oc3DztO_4YI62zPVruouGWEvsybdbUDWuBH0KIF8,2371
+ai_code_recorder_client-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ai_code_recorder_client-1.0.0.dist-info/entry_points.txt,sha256=EgBq6wcuO4dftIWeFB3bRh1plMjMcYPbMUUFsk3Ug20,82
+ai_code_recorder_client-1.0.0.dist-info/licenses/LICENSE,sha256=kD32FuA3rW5cWzU79VCthq5w6-Yn8iutToyWT_hKlUk,1078
+ai_code_recorder_client-1.0.0.dist-info/RECORD,,
