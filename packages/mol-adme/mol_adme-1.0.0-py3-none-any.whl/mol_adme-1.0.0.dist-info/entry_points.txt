@@ -1,0 +1,2 @@
+[console_scripts]
+mol-adme = mol_adme:main
