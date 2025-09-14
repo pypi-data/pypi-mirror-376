@@ -1,0 +1,13 @@
+fastcore
+pandas
+scipy
+numpy
+requests
+psycopg2-binary
+wrds
+estout
+pandasmore
+thefuzz
+python-Levenshtein
+
+[dev]
