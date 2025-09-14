@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: sekaibot-adapter-onebot
+Version: 0.1.0
+Summary: OneBot V12 adapter for SekaiBot.
+Project-URL: Repository, https://github.com/sekaibot-dev/sekaibot
+Author-email: Kotodama <2682064633@qq.com>
+License: MIT
+Keywords: bot,chatbot,coolq,cqhttp,qq,qqbot
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: Robot Framework
+Classifier: Framework :: Robot Framework :: Library
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Communications :: Chat
+Requires-Python: <4,>=3.11
+Requires-Dist: sekaibot==0.1.0
