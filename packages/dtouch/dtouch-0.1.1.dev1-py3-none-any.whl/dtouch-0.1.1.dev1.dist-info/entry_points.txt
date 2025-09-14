@@ -1,0 +1,3 @@
+[console_scripts]
+dtouch = dtouch.__main__:main
+
