@@ -1,0 +1,52 @@
+from typing import Any, Iterable, List, Optional, Tuple, Type, overload
+from typing import Literal as _Literal  # avoid polluting public namespace
+
+Bounds = Tuple[float, float, float, float]
+Point = Tuple[float, float]
+
+class Item:
+    id: int
+    x: float
+    y: float
+    @property
+    def obj(self) -> Any | None: ...
+
+class QuadTree:
+    # Expose the raw native class for power users
+    NativeQuadTree: Type
+
+    def __init__(
+        self,
+        bounds: Bounds,
+        capacity: int,
+        *,
+        max_depth: Optional[int] = ...,
+        track_objects: bool = ...,
+        start_id: int = ...,
+    ) -> None: ...
+
+    # Inserts
+    def insert(self, xy: Point, *, id: Optional[int] = ..., obj: Any = ...) -> int: ...
+    def insert_many_points(self, points: Iterable[Point]) -> int: ...
+    def insert_many(self, items: Iterable[Tuple[Point, Any]]) -> int: ...
+    def attach(self, id: int, obj: Any) -> None: ...
+
+    # Queries
+    @overload
+    def query(self, rect: Bounds, *, as_items: _Literal[False] = ...) -> List[Tuple[int, float, float]]: ...
+    @overload
+    def query(self, rect: Bounds, *, as_items: _Literal[True]) -> List[Item]: ...
+
+    @overload
+    def nearest_neighbor(self, xy: Point, *, as_item: _Literal[False] = ...) -> Optional[Tuple[int, float, float]]: ...
+    @overload
+    def nearest_neighbor(self, xy: Point, *, as_item: _Literal[True]) -> Optional[Item]: ...
+
+    @overload
+    def nearest_neighbors(self, xy: Point, k: int, *, as_items: _Literal[False] = ...) -> List[Tuple[int, float, float]]: ...
+    @overload
+    def nearest_neighbors(self, xy: Point, k: int, *, as_items: _Literal[True]) -> List[Item]: ...
+
+    # Misc
+    def get(self, id: int) -> Any | None: ...
+    def __len__(self) -> int: ...
