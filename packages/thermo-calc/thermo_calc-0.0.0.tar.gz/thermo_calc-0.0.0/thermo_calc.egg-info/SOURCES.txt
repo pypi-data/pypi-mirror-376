@@ -1,0 +1,8 @@
+LICENSE
+README.md
+main.py
+pyproject.toml
+thermo_calc.egg-info/PKG-INFO
+thermo_calc.egg-info/SOURCES.txt
+thermo_calc.egg-info/dependency_links.txt
+thermo_calc.egg-info/top_level.txt
