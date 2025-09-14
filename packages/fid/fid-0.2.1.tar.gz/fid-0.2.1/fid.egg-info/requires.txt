@@ -1,0 +1,8 @@
+typer
+rich
+pydantic-ai
+readchar
+textual
+
+[pre-commit]
+pre-commit
