@@ -1,0 +1,2 @@
+[console_scripts]
+scrappify = scrappify.cli:main

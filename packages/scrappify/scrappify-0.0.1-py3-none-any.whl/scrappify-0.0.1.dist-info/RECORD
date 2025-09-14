@@ -1,0 +1,13 @@
+scrappify/__init__.py,sha256=mUWb0gTmtljf6n0qtzioB0pRWofQFh-mu2rs93Z-gn0,302
+scrappify/cli.py,sha256=q1nFspslaB5E8As8_MsBh2ao7LJ3O7VyCGeH3j9i9hY,3048
+scrappify/exceptions.py,sha256=fvWD5e_pksJwrz2AO0rUY-YunqqKCm__FtEbZaOS9LI,144
+scrappify/patterns.py,sha256=d59VjaLB_5FUbs0EBfFFhSjgcrWw0OsfVFEs_gTw9aU,929
+scrappify/core/__init__.py,sha256=n1Gfzv0WgNyJywN6K-KS2CGIuN7i7pPJb2qOjMVvkdQ,126
+scrappify/core/downloader.py,sha256=_Pd5KMf_OCBlTdhnvsnx3cAHhm7P2WLs4yi9Sk26U6k,2922
+scrappify/core/scraper.py,sha256=0np9ATe8mvLAs9dWpfyedDkIpp5j61Xql2ca0kHsQU4,1999
+scrappify/core/utils.py,sha256=sjN-Gy4cvA5ct3ffhI-Bwsf8jvN8CwxY0uaOCHYSMbk,1913
+scrappify-0.0.1.dist-info/METADATA,sha256=P2gL3xEeYka2grEiJEqjNoz7Ot_vzpjBbsrh0LtYZfs,5959
+scrappify-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scrappify-0.0.1.dist-info/entry_points.txt,sha256=SN0Jn2mz9WpEPj_QqhRT0WIF3bL4mkDTFB_zzAAdM-8,49
+scrappify-0.0.1.dist-info/top_level.txt,sha256=0wyhv8RiJdOT_tWx1hJffPEOsD9Uih6son6Vo-9Dlk8,10
+scrappify-0.0.1.dist-info/RECORD,,
