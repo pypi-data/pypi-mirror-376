@@ -1,0 +1,12 @@
+auto_chart_patterns/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auto_chart_patterns/chart_pattern.py,sha256=dlqbdM8tdQCBA4y1jDjHHFu1sdgZCLgp94HFqpoHbkg,7348
+auto_chart_patterns/flag_pennant_patterns.py,sha256=23SyOjWvOif3linkpcXk0j3F8JZzZL2WGEjRRhyoGH8,11489
+auto_chart_patterns/line.py,sha256=3GxjgVKGIqOqOXFhL1XiW5fnOLt1VfJ3bVq6fDK21zQ,3088
+auto_chart_patterns/reversal_patterns.py,sha256=UwdQ4sQfZ4mX3yyslbatjeeLDV-AleGQa9XTZSWcpPs,13803
+auto_chart_patterns/rsi_div_patterns.py,sha256=IaarULKZ-k7ohJVcpHbUVJvFqMfLxYKFF7LgLRmGboU,8254
+auto_chart_patterns/trendline_patterns.py,sha256=4p9_1sTt_bHFXkC3D4f1G0p2OgkFJr-uHR7QBvQpaF8,31838
+auto_chart_patterns/zigzag.py,sha256=muBivWhO1lEWbQevT2LKujy08JlhI9QICyKjk2s3jUs,11255
+auto_chart_patterns-0.2.9.dist-info/METADATA,sha256=Qatn4uNsMN0zsR_4K4DVNzDfHPtHk0lPme_1693HUGU,676
+auto_chart_patterns-0.2.9.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+auto_chart_patterns-0.2.9.dist-info/licenses/LICENSE,sha256=1YoFL1mg5DVYt9jUfKKxbE98PX8YjvrPoIGhHx4RV8w,1061
+auto_chart_patterns-0.2.9.dist-info/RECORD,,
