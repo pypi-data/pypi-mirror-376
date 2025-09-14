@@ -1,0 +1,13 @@
+EMGFlow/__init__.py,sha256=6RwH5Y3-W47_fOC13GzkI6UhbpMJ90uAHLSgDc0vFcs,147
+EMGFlow/access_files.py,sha256=JB82x6zcb6NYlSTZdHEi6LGo8DYmNbk_KxuaqPCxP0Y,9678
+EMGFlow/extract_features.py,sha256=WW02FB92St6O5ei5fhdN9vb37XS-tmTiEt_o9VWIBvM,43402
+EMGFlow/plot_signals.py,sha256=8XYLY62UblfSoE1X2zqTmUvFH2OqBZTHKepO0lgoK8M,7842
+EMGFlow/preprocess_signals.py,sha256=DXavXUXTdYzPFzF9gN6WxFws2hbiHrS9-rbeiTyI0R0,95241
+EMGFlow/data/sample_data_01.csv,sha256=BzYMpGUatsXhccowtFNTe_rUo9gmbF1zxdwaBZl9qjY,653537
+EMGFlow/data/sample_data_02.csv,sha256=-NV86jhIb4djs1zYF_SDweWdFbJaoMFqW1-b9zJlOUo,644057
+EMGFlow/data/sample_data_03.csv,sha256=map2CH4KV_eu4ZuISPMFlO4KQ4tPlznvYSQyOEWj4VI,638270
+EMGFlow/data/sample_data_04.csv,sha256=ZXfXEwsG9CTj_xctM1mxLxnllPvdxt4hNUQUIYuw5zc,752576
+emgflow-1.1.0.dist-info/METADATA,sha256=V4cA1OkJGSMpWixoYDIOaEDd51l9VNotn3US1u6ZyJU,6218
+emgflow-1.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+emgflow-1.1.0.dist-info/licenses/LICENSE,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+emgflow-1.1.0.dist-info/RECORD,,
