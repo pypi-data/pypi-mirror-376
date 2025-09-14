@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+japanese_date_input/__init__.py
+streamlit_japanese_date_input.egg-info/PKG-INFO
+streamlit_japanese_date_input.egg-info/SOURCES.txt
+streamlit_japanese_date_input.egg-info/dependency_links.txt
+streamlit_japanese_date_input.egg-info/requires.txt
+streamlit_japanese_date_input.egg-info/top_level.txt
