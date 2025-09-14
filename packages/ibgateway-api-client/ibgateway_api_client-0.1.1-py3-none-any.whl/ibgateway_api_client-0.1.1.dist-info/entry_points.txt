@@ -1,0 +1,3 @@
+[console_scripts]
+ibgateway-test-live = ibgateway_api_client.test_connection:main
+ibgateway-test-paper = ibgateway_api_client.test_connection:main

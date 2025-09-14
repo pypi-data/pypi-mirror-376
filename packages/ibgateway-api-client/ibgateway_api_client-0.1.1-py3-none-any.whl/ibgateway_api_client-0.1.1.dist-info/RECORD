@@ -1,0 +1,10 @@
+ibgateway_api_client/__init__.py,sha256=_wq8QQFS5BPsLA4B1fbdRHipB80k-o5Qw7tQUVhFgmw,536
+ibgateway_api_client/k3s_live_client.py,sha256=9SbiOyioDho83RXEc1yB1E0PStWKngDhS2DcOQUaYpU,5790
+ibgateway_api_client/k3s_paper_client.py,sha256=bQH4B1AM0rp9cZAPJoUyd66bMJNBZZLPg3G_IbNSPh4,5658
+ibgateway_api_client/test_connection.py,sha256=ywKbhaRgN6nOLPAOiWVPZApXz8SlzbVU0R4Sw_8E12s,4184
+ibgateway_api_client-0.1.1.dist-info/licenses/LICENSE,sha256=1w2BbnveYawtoPMf_3Tct5ahvMnyjIsm81X2K2DJCZg,1064
+ibgateway_api_client-0.1.1.dist-info/METADATA,sha256=VsDWvRTkdxb5Bvtk6v4WC5gWB5IyQ1gVoph_W_p0EOo,7052
+ibgateway_api_client-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ibgateway_api_client-0.1.1.dist-info/entry_points.txt,sha256=uVqCdy38cPRK1NitnRmUKvf6RBgt_Unvz44-gaN7Gzo,147
+ibgateway_api_client-0.1.1.dist-info/top_level.txt,sha256=vRQ5YCf91T6Za2qkocfi-1vRsdfPc7tNRCcKDuRl9Ig,21
+ibgateway_api_client-0.1.1.dist-info/RECORD,,
