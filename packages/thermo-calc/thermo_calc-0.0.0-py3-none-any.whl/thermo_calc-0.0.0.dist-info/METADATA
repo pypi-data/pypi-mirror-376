@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: thermo-calc
+Version: 0.0.0
+Summary: Python wrapper for thermo-calc
+Author-email: Peter Pak <ppak10@gmail.com>
+Project-URL: Homepage, https://github.com/ppak10/thermocalc
+Project-URL: Issues, https://github.com/ppak10/thermo-calc/issues
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# thermocalc
+Wrapper around Thermocalc's TC-Python SDK
