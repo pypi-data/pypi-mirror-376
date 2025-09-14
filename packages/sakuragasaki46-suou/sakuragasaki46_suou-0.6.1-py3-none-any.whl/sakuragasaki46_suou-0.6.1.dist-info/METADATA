@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: sakuragasaki46_suou
+Version: 0.6.1
+Author: Sakuragasaki46
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: suou==0.6.1
+
+moved to [suou](https://pypi.org/project/suou)
