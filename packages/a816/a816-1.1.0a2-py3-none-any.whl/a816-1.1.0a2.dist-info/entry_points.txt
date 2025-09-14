@@ -1,0 +1,4 @@
+[console_scripts]
+a816 = a816.cli:cli_main
+a816-lsp-server = a816.lsp.server:lsp_main
+x816 = a816.cli:cli_main
