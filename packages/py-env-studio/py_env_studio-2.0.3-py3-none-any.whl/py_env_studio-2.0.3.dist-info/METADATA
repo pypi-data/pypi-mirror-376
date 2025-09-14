@@ -1,0 +1,253 @@
+Metadata-Version: 2.4
+Name: py-env-studio
+Version: 2.0.3
+Summary: A cross-platform GUI and CLI tool for managing Python virtual environments and packages. Features include environment creation, activation, package installation, requirements management, updates, deletion, and export.
+Author-email: Py Env Studio Team <contact.shaikh.wasim@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 pyenvstudio
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/pyenvstudio/py-env-studio
+Project-URL: Issues, https://github.com/pyenvstudio/py-env-studio/issues
+Keywords: python,virtualenv,venv,conda,environment-manager,package-manager,dependency-manager,requirements.txt,pip,python-packages,python-gui,cli,virtual-environment-gui,pyenv,python-env,python-environment-manager,pip-gui,pip-manager,python-security,vulnerability-scanner,python-tool,cross-platform,IDE
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: customtkinter>=5.2.2
+Requires-Dist: Pillow>=11.3.0
+Requires-Dist: matplotlib>=3.10.5
+Requires-Dist: cvss>=3.6
+Requires-Dist: Requests
+Requires-Dist: pip
+Requires-Dist: setuptools
+Requires-Dist: wheel
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Provides-Extra: gui
+Requires-Dist: Pillow; extra == "gui"
+Dynamic: license-file
+
+<p align="center">
+  <img src="https://github.com/pyenvstudio/py-env-studio/blob/main/py_env_studio/ui/static/icons/pes-icon-default.png?raw=true" alt="Py Env Studio Logo" width="150">
+</p>
+
+# 🐍🏠 Py Env Studio  
+
+[![PyPI Version](https://img.shields.io/pypi/v/py-env-studio.svg?logo=pypi&logoColor=white)](https://pypi.org/project/py-env-studio/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/py-env-studio.svg?logo=python&logoColor=yellow)](https://pypi.org/project/py-env-studio/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/pyenvstudio/py-env-studio/blob/main/LICENSE)
+![Total Downloads](https://static.pepy.tech/badge/py-env-studio)
+![Monthly Downloads](https://static.pepy.tech/badge/py-env-studio/month)
+![Weekly Downloads](https://static.pepy.tech/badge/py-env-studio/week)
+[![Documentation Status](https://readthedocs.org/projects/py-env-studio/badge/?version=latest)](https://py-env-studio.readthedocs.io/en/latest/?badge=latest)
+[![GitHub Stars](https://img.shields.io/github/stars/pyenvstudio/py-env-studio?style=flat&logo=github)](https://github.com/pyenvstudio/py-env-studio/stargazers)
+[![Open Issues](https://img.shields.io/github/issues/pyenvstudio/py-env-studio?logo=github)](https://github.com/pyenvstudio/py-env-studio/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/pyenvstudio/py-env-studio?logo=git)](https://github.com/pyenvstudio/py-env-studio/commits/main)
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue?logo=python)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/pyenvstudio/py-env-studio/pulls)
+[![Telegram](https://img.shields.io/badge/Join%20Community-Telegram-2CA5E0?logo=telegram&logoColor=white)](https://t.me/pyenvstudio)
+
+**Py Env Studio** is a cross-platform **Graphical Environment & Package Manager for Python** that makes managing virtual environments and packages effortless without using the command line.
+
+Perfect for:  
+- ✅ Python beginners who want simplicity  
+- ✅ Data scientists setting up ML/DL stacks  
+- ✅ Developers managing Django, Flask, FastAPI projects  
+- ✅ Teams who need **secure, isolated environments**  
+
+---
+
+## 🌟 GUI Key Features
+
+- ➕ Create and delete virtual environments
+>Easily set up new virtual environments or remove unused ones with a single click, without touching the command line.
+
+- ⚡ One click environment activation
+> Instantly activate environments directly from the GUI, eliminating the need to type activation commands manually.
+
+- 📁 Open environment at a specific location (choose working directory)
+> Launch the environment’s working directory in your file explorer to quickly access project files and scripts.
+
+- 🔷 Integrated launch: CMD, VSCode, PyCharm (Beta)
+> Open your environment directly in your preferred editor or terminal, streamlining your workflow.
+
+- 🛡️ Environment Vulnerability Scanner with Insights Dashboard
+> Scan environments for known security vulnerabilities in installed packages.  
+  Generate insightful reports with risk levels, recommended updates, and a dashboard overview to keep your projects secure.
+
+
+- 🔍 Search environments instantly
+> Use the built-in search bar to quickly locate any environment, even in large collections.
+
+- ✏️ Rename environments
+> Quickly rename environments to maintain clarity and organization in your workspace.
+
+- 🕑 View recent used location for each environment
+> Track where each environment was last accessed, making it easy to jump back into active projects.
+
+- 📏 See environment size details
+> View the size of each environment to identify heavy setups and manage disk space effectively.
+
+- 💫 Visual management of all environments
+> Manage all your environments through a clean, organized, and user-friendly interface with minimal clutter.
+
+- 📦 Package Management
+> Install, update, and uninstall packages visually without typing a single command.
+
+- 🚚📄 Export or import requirements
+> Import dependencies from a requirements file or export your current setup with just a click.
+
+## ☕ Support  
+
+If you find **Py Env Studio** helpful, consider supporting me:  
+
+<a href="https://www.buymeacoffee.com/wasimshaikh" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="45" width="170">
+</a>
+
+---
+
+📥 Install via PyPI:
+
+    pip install py-env-studio
+
+
+## 🖥️ Launch the GUI (Recommended)
+
+    py-env-studio
+
+<p align="center">
+  <img src="https://github.com/pyenvstudio/py-env-studio/blob/main/screenshots/1.environment-screen.PNG?raw=true" alt="Environment Screen" width="400">
+  <img src="https://github.com/pyenvstudio/py-env-studio/blob/main/screenshots/2.0.package-screen.PNG?raw=true" alt="Package Screen" width="400"><br>
+  <img src="https://github.com/pyenvstudio/py-env-studio/blob/main/screenshots/1.2.1_vulneribility_scan_report.PNG?raw=true" alt="Package Screen" width="400">
+  <img src="https://github.com/pyenvstudio/py-env-studio/blob/main/screenshots/1.2.2_vulneribility_scan_report.PNG?raw=true" alt="Package Screen" width="400">
+</p>
+
+### Command-Line Options (For Advanced Users)
+###### Create environment
+    py-env-studio --create <environment name>
+
+###### Create environment and upgrade pip
+    py-env-studio --create <environment name> --upgrade-pip
+
+###### Delete environment
+    py-env-studio --delete <environment name>
+
+###### List all environments
+    py-env-studio --list
+
+###### Activate environment (prints activation command)
+    py-env-studio --activate <environment name>
+
+###### Install package
+    py-env-studio --install <environment name>,numpy
+
+###### Uninstall package
+    py-env-studio --uninstall <environment name>,numpy
+
+###### Export requirements to file
+    py-env-studio --export <environment name>,requirements.txt
+
+###### Import requirements from file
+py-env-studio --import-reqs <environment name>,requirements.txt
+
+
+🔑 Activating Environments
+Manually activate your environment after creation:
+
+Windows:
+
+    .\envs\<environment name>\Scripts\activate
+
+Linux/macOS:
+
+    source envs/<environment name>/bin/activate
+
+
+**📁 Project Structure**
+
+    py-env-studio/
+    ├── __init__.py
+    ├──resources
+    ├── core/
+    │   ├── __init__.py
+    │   ├── env_manager.py
+    │   └── pip_tools.py
+    ├── utils/
+    │   ├── __init__.py
+    │   ├── handlers.py
+    │   └── vulneribility_scanner.py
+    │   └── vulneribility_insights.py  
+    ├── ui/
+    │   ├── __init__.py
+    │   └── main_window.py
+    └── static/
+        └── icons/
+    ├── main.py
+    ├── config.ini
+    ├── requirements.txt
+    ├── README.md
+    └── pyproject.toml
+
+**🚀 Roadmap**
+
+🏙️ Multiple Python based Environements 
+
+🔍 Global package search
+
+⬆️ One-click upgrade of all packages
+
+📝 Package version locking
+
+🐳 Dockerized version
+
+
+**🤝 Contributing**
+We welcome contributions!
+Feel free to fork the repository, raise issues, or submit pull requests.
+
+**⚖️ License**
+This project is licensed under the MIT License.
+
+Py Env Studio — Simplifying Python environment management for everyone with built-in security scanner.
+
+> ⭐ Star this repo if you find it useful! | 💬 Join us on Telegram
+
+---
