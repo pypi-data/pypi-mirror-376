@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipho AI - Voice Command Assistant</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            500: '#667eea',
+                            600: '#5a67d8',
+                            700: '#4c51bf',
+                            900: '#2d3748'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            min-height: 100vh;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+            color: #94a3b8;
+        }
+        .tab-button:hover {
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .tab-button.active {
+            color: #60a5fa;
+            background: #334155;
+        }
+        .tab-content {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .log-entry {
+            transition: all 0.2s ease;
+        }
+        .log-entry:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen">
+    <!-- Compact Linear Header -->
+    <header class="w-full mb-8 animate-fade-in">
+        <div class="bg-slate-800 border-b border-slate-700 py-4 px-6">
+            <div class="max-w-8xl mx-auto">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <!-- Logo and Title -->
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-16 h-16 rounded-full flex items-center justify-center shadow-lg p-3">
+                                <img src="/static/icon.svg" alt="Sipho AI Logo" class="w-full h-full object-contain">
+                            </div>
+                            <div class="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full animate-pulse-slow border-2 border-white"></div>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                                Sipho AI
+                            </h1>
+                            <p class="text-sm text-gray-300">Voice Command Assistant</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Status and Features -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow mr-2"></div>
+                            <span class="text-green-300 font-medium text-sm">
+                                <i class="fas fa-server mr-1"></i>
+                                Server Active
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 text-xs">
+                            <div class="flex items-center bg-slate-700 px-2 py-1 rounded-full">
+                                <i class="fas fa-microphone text-blue-300 mr-1"></i>
+                                <span>Voice</span>
+                            </div>
+                            <div class="flex items-center bg-slate-700 px-2 py-1 rounded-full">
+                                <i class="fas fa-robot text-purple-300 mr-1"></i>
+                                <span>AI</span>
+                            </div>
+                            <div class="flex items-center bg-slate-700 px-2 py-1 rounded-full">
+                                <i class="fas fa-mobile-alt text-green-300 mr-1"></i>
+                                <span>Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-8xl mx-auto px-4 md:px-8">
+
+        <!-- Main Content Grid -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <!-- Mobile Access Card -->
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 animate-slide-up">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-mobile-alt text-2xl mr-3 text-blue-300"></i>
+                    <h3 class="text-2xl font-bold">Mobile Access</h3>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-gray-200 mb-6">Scan this QR code to access from your mobile device:</p>
+                    
+                    <div class="bg-white rounded-2xl p-6 inline-block mb-6 shadow-2xl">
+                        <img id="qr-image" src="" alt="QR Code" class="w-48 h-48 mx-auto">
+                    </div>
+                    
+                    <div class="space-y-3 text-left bg-slate-700 rounded-xl p-4 mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-link text-green-300 mr-2 w-5"></i>
+                            <span class="font-semibold">Server URL:</span>
+                        </div>
+                        <code id="server-url" class="text-green-300 text-sm block pl-7 font-mono break-all"></code>
+                        
+                        <div class="flex items-center mt-3">
+                            <i class="fas fa-network-wired text-blue-300 mr-2 w-5"></i>
+                            <span class="font-semibold">Local IP:</span>
+                            <span id="local-ip" class="ml-2 text-blue-300"></span>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-plug text-yellow-300 mr-2 w-5"></i>
+                            <span class="font-semibold">Port:</span>
+                            <span id="port" class="ml-2 text-yellow-300"></span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="refreshQR()" 
+                            class="bg-white/20 hover:bg-white/30 border border-white/30 text-white px-6 py-3 rounded-lg 
+                                   transition-all duration-300 font-semibold flex items-center mx-auto">
+                        <i class="fas fa-sync-alt mr-2"></i>
+                        Refresh QR Code
+                    </button>
+                </div>
+            </div>
+            
+            <!-- About Card -->
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 animate-slide-up">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-rocket text-2xl mr-3 text-purple-300"></i>
+                    <h3 class="text-2xl font-bold">About Sipho AI</h3>
+                </div>
+                
+                <p class="text-gray-200 mb-6 leading-relaxed">
+                    Sipho AI is a powerful voice command assistant that combines traditional command execution 
+                    with AI-powered conversations for seamless automation and interaction.
+                </p>
+                
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold mb-3 text-yellow-300">
+                        <i class="fas fa-stars mr-2"></i>
+                        Features
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div class="flex items-center py-2">
+                            <i class="fas fa-bullseye text-green-300 mr-3 w-5"></i>
+                            <span>Voice recognition</span>
+                        </div>
+                        <div class="flex items-center py-2">
+                            <i class="fas fa-robot text-blue-300 mr-3 w-5"></i>
+                            <span>AI conversations</span>
+                        </div>
+                        <div class="flex items-center py-2">
+                            <i class="fas fa-laptop text-purple-300 mr-3 w-5"></i>
+                            <span>System automation</span>
+                        </div>
+                        <div class="flex items-center py-2">
+                            <i class="fas fa-globe text-cyan-300 mr-3 w-5"></i>
+                            <span>Web & app control</span>
+                        </div>
+                        <div class="flex items-center py-2">
+                            <i class="fas fa-mobile text-pink-300 mr-3 w-5"></i>
+                            <span>Mobile-friendly</span>
+                        </div>
+                        <div class="flex items-center py-2">
+                            <i class="fas fa-camera text-orange-300 mr-3 w-5"></i>
+                            <span>Screen analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-3 text-yellow-300">
+                        <i class="fas fa-tools mr-2"></i>
+                        How to Use
+                    </h4>
+                    <ol class="space-y-2 text-gray-200">
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">1</span>
+                            <span>Send voice commands via API</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">2</span>
+                            <span>Use natural language</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">3</span>
+                            <span>Get instant AI responses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">4</span>
+                            <span>Access from any device</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-1 flex gap-1">
+                <button onclick="showTab('overview')" id="overview-tab" class="tab-button active px-4 py-2 rounded text-sm font-medium flex items-center gap-2">
+                    <i class="fas fa-home"></i>
+                    Overview
+                </button>
+                <button onclick="showTab('logs')" id="logs-tab" class="tab-button px-4 py-2 rounded text-sm font-medium flex items-center gap-2">
+                    <i class="fas fa-history"></i>
+                    Conversation Logs
+                </button>
+            </div>
+        </div>
+
+        <!-- Overview Tab Content -->
+        <div id="overview-content" class="tab-content">
+            <!-- API Endpoints Section -->
+            <section class="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-8 animate-slide-up">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-code text-2xl mr-3 text-green-300"></i>
+                    <h3 class="text-2xl font-bold">API Endpoints</h3>
+                </div>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-slate-700 rounded-xl p-4 border-l-4 border-green-400">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-green-600 text-white px-2 py-1 rounded text-xs font-bold mr-2">POST</span>
+                        <i class="fas fa-comments text-green-300"></i>
+                    </div>
+                    <code class="text-green-300 text-sm font-mono block break-all">
+                        <span id="api-command"></span>/api/command
+                    </code>
+                    <p class="text-gray-300 text-xs mt-2">Execute commands & AI chat</p>
+                </div>
+                
+                <div class="bg-slate-700 rounded-xl p-4 border-l-4 border-blue-400">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold mr-2">GET</span>
+                        <i class="fas fa-question-circle text-blue-300"></i>
+                    </div>
+                    <code class="text-blue-300 text-sm font-mono block break-all">
+                        <span id="api-help"></span>/api/help
+                    </code>
+                    <p class="text-gray-300 text-xs mt-2">Get available commands</p>
+                </div>
+                
+                <div class="bg-slate-700 rounded-xl p-4 border-l-4 border-yellow-400">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs font-bold mr-2">GET</span>
+                        <i class="fas fa-heartbeat text-yellow-300"></i>
+                    </div>
+                    <code class="text-yellow-300 text-sm font-mono block break-all">
+                        <span id="api-status"></span>/api/status
+                    </code>
+                    <p class="text-gray-300 text-xs mt-2">Server status</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- API Configuration Section -->
+        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-8 animate-slide-up">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-cog text-2xl mr-3 text-orange-300"></i>
+                <h3 class="text-2xl font-bold">API Configuration</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- API Key Configuration -->
+                <div class="bg-slate-700 rounded-xl p-4">
+                    <h4 class="text-lg font-bold mb-3 text-orange-300">
+                        <i class="fas fa-key mr-2"></i>
+                        OpenRouter API Key
+                    </h4>
+                    <p class="text-gray-300 text-sm mb-4">Configure your OpenRouter API key for AI conversations</p>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">API Key:</label>
+                            <div class="flex gap-2">
+                                <input 
+                                    type="password" 
+                                    id="api-key-input" 
+                                    placeholder="Enter your OpenRouter API key"
+                                    class="flex-1 bg-slate-600 border border-slate-500 rounded px-3 py-2 text-sm text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none"
+                                >
+                                <button 
+                                    onclick="toggleApiKeyVisibility()"
+                                    class="bg-slate-600 hover:bg-slate-500 border border-slate-500 px-3 py-2 rounded text-sm"
+                                >
+                                    <i id="eye-icon" class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-2">
+                            <button 
+                                onclick="testApiKey()"
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center gap-2"
+                            >
+                                <i class="fas fa-vial"></i>
+                                Test API Key
+                            </button>
+                            <button 
+                                onclick="saveApiKey()"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center gap-2"
+                            >
+                                <i class="fas fa-save"></i>
+                                Save Config
+                            </button>
+                        </div>
+                        
+                        <div id="api-test-result" class="hidden p-3 rounded text-sm"></div>
+                    </div>
+                </div>
+                
+                <!-- API Status -->
+                <div class="bg-slate-700 rounded-xl p-4">
+                    <h4 class="text-lg font-bold mb-3 text-blue-300">
+                        <i class="fas fa-heartbeat mr-2"></i>
+                        API Status
+                    </h4>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">Server Status:</span>
+                            <span id="server-status" class="text-green-300">
+                                <i class="fas fa-circle text-xs mr-1"></i>
+                                Online
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">AI Integration:</span>
+                            <span id="ai-status" class="text-yellow-300">
+                                <i class="fas fa-circle text-xs mr-1"></i>
+                                Checking...
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">Last API Call:</span>
+                            <span id="last-api-call" class="text-gray-400 text-xs">
+                                Never
+                            </span>
+                        </div>
+                        
+                        <button 
+                            onclick="checkApiStatus()"
+                            class="w-full bg-slate-600 hover:bg-slate-500 text-white px-4 py-2 rounded text-sm font-medium flex items-center justify-center gap-2"
+                        >
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh Status
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick API Test -->
+            <div class="mt-6 bg-slate-700 rounded-xl p-4">
+                <h4 class="text-lg font-bold mb-3 text-purple-300">
+                    <i class="fas fa-comments mr-2"></i>
+                    Quick AI Test
+                </h4>
+                <p class="text-gray-300 text-sm mb-4">Test AI conversation functionality</p>
+                
+                <div class="flex gap-2">
+                    <input 
+                        type="text" 
+                        id="test-message-input" 
+                        placeholder="Enter a test message (e.g., 'Hello, how are you?')"
+                        class="flex-1 bg-slate-600 border border-slate-500 rounded px-3 py-2 text-sm text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none"
+                        onkeypress="handleTestEnter(event)"
+                    >
+                    <button 
+                        onclick="testAiConversation()"
+                        class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center gap-2"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                        Send
+                    </button>
+                </div>
+                
+                <div id="ai-test-result" class="hidden mt-3 p-3 rounded text-sm"></div>
+            </div>
+        </section>
+        
+        <!-- Voice Commands Section -->
+        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-8 animate-slide-up">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-microphone-lines text-2xl mr-3 text-purple-300"></i>
+                <h3 class="text-2xl font-bold">Available Voice Commands</h3>
+            </div>
+            
+            <div id="commands-list" class="text-gray-200">
+                <div class="flex items-center justify-center py-8">
+                    <i class="fas fa-spinner fa-spin text-2xl mr-3 text-blue-300"></i>
+                    <span>Loading commands...</span>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <!-- Conversation Logs Tab Content -->
+        <div id="logs-content" class="tab-content hidden">
+            <!-- Logs Header -->
+            <section class="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-8 animate-slide-up">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-history text-2xl mr-3 text-cyan-300"></i>
+                        <h3 class="text-2xl font-bold">Conversation Logs</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="refreshLogs()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh
+                        </button>
+                        <button onclick="clearLogs()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-trash"></i>
+                            Clear Logs
+                        </button>
+                        <button onclick="exportLogs()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="grid md:grid-cols-4 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Filter by Type:</label>
+                        <select id="log-type-filter" onchange="filterLogs()" class="w-full bg-slate-600 border border-slate-500 rounded px-3 py-2 text-sm text-white">
+                            <option value="all">All Types</option>
+                            <option value="conversation">Conversations</option>
+                            <option value="command">Commands</option>
+                            <option value="error">Errors</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Date Range:</label>
+                        <select id="log-date-filter" onchange="filterLogs()" class="w-full bg-slate-600 border border-slate-500 rounded px-3 py-2 text-sm text-white">
+                            <option value="all">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Search:</label>
+                        <input type="text" id="log-search" onkeyup="filterLogs()" placeholder="Search messages..." class="w-full bg-slate-600 border border-slate-500 rounded px-3 py-2 text-sm text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none">
+                    </div>
+                    <div class="flex items-end">
+                        <button onclick="filterLogs()" class="w-full bg-slate-600 hover:bg-slate-500 text-white px-4 py-2 rounded text-sm font-medium flex items-center justify-center gap-2">
+                            <i class="fas fa-search"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Summary -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-slate-700 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-blue-300" id="total-conversations">0</div>
+                        <div class="text-sm text-gray-300">Total Conversations</div>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-green-300" id="successful-commands">0</div>
+                        <div class="text-sm text-gray-300">Successful Commands</div>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-red-300" id="failed-commands">0</div>
+                        <div class="text-sm text-gray-300">Failed Commands</div>
+                    </div>
+                    <div class="bg-slate-700 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-purple-300" id="avg-response-time">0ms</div>
+                        <div class="text-sm text-gray-300">Avg Response Time</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logs List -->
+            <section class="bg-slate-800 border border-slate-700 rounded-2xl p-6 mb-8 animate-slide-up">
+                <div id="logs-container" class="space-y-4">
+                    <div class="flex items-center justify-center py-12">
+                        <i class="fas fa-spinner fa-spin text-2xl mr-3 text-blue-300"></i>
+                        <span class="text-gray-300">Loading conversation logs...</span>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex items-center justify-between mt-6 pt-6 border-t border-slate-700">
+                    <div class="text-sm text-gray-400" id="logs-pagination-info">
+                        Showing 0 of 0 entries
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="previousPage()" id="prev-page-btn" class="bg-slate-600 hover:bg-slate-500 text-white px-3 py-2 rounded text-sm disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="flex items-center px-3 py-2 text-sm text-gray-300" id="page-info">Page 1 of 1</span>
+                        <button onclick="nextPage()" id="next-page-btn" class="bg-slate-600 hover:bg-slate-500 text-white px-3 py-2 rounded text-sm disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center bg-slate-800 border border-slate-700 rounded-2xl p-6 opacity-80">
+            <div class="flex flex-wrap justify-center items-center gap-6 text-sm">
+                <div class="flex items-center">
+                    <i class="fas fa-flask text-blue-300 mr-2"></i>
+                    <span>Built with Flask</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-brain text-purple-300 mr-2"></i>
+                    <span>Powered by OpenAI</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-mobile-alt text-green-300 mr-2"></i>
+                    <span>Mobile Ready</span>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-center items-center">
+                <span>Version 1.0.3 • Made with</span>
+                <i class="fas fa-heart text-red-400 mx-1"></i>
+                <span>by NiqueWrld</span>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <script>
+        // Get server info and populate the page
+        async function loadServerInfo() {
+            try {
+                // Get QR code and server info
+                const response = await fetch('/api/server-info');
+                const data = await response.json();
+                
+                document.getElementById('qr-image').src = 'data:image/png;base64,' + data.qr_base64;
+                document.getElementById('server-url').textContent = data.server_url;
+                document.getElementById('local-ip').textContent = data.local_ip;
+                document.getElementById('port').textContent = data.port;
+                
+                // Update API endpoints
+                document.getElementById('api-command').textContent = data.server_url;
+                document.getElementById('api-help').textContent = data.server_url;
+                document.getElementById('api-status').textContent = data.server_url;
+                
+            } catch (error) {
+                console.error('Error loading server info:', error);
+                document.getElementById('qr-image').style.display = 'none';
+                document.getElementById('server-url').textContent = 'Error loading server info';
+            }
+        }
+
+        // Load commands
+        async function loadCommands() {
+            try {
+                const response = await fetch('/api/help');
+                const data = await response.json();
+                
+                if (data.success && data.help_data) {
+                    let commandsHtml = '';
+                    
+                    // Get category icons
+                    const categoryIcons = {
+                        'Web Commands': 'fas fa-globe',
+                        'Application Commands': 'fas fa-desktop',
+                        'System Commands': 'fas fa-cog',
+                        'Media Commands': 'fas fa-play-circle',
+                        'Voice Commands': 'fas fa-microphone',
+                        'Third Party Apps': 'fas fa-puzzle-piece',
+                        'default': 'fas fa-terminal'
+                    };
+                    
+                    // Get category colors
+                    const categoryColors = {
+                        'Web Commands': 'text-blue-300',
+                        'Application Commands': 'text-green-300',
+                        'System Commands': 'text-red-300',
+                        'Media Commands': 'text-purple-300',
+                        'Voice Commands': 'text-yellow-300',
+                        'Third Party Apps': 'text-pink-300',
+                        'default': 'text-cyan-300'
+                    };
+                    
+                    commandsHtml = '<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">';
+                    
+                    for (const [category, commands] of Object.entries(data.help_data)) {
+                        const icon = categoryIcons[category] || categoryIcons.default;
+                        const color = categoryColors[category] || categoryColors.default;
+                        
+                        commandsHtml += `
+                            <div class="bg-slate-700 rounded-xl p-4">
+                                <div class="flex items-center mb-3">
+                                    <i class="${icon} ${color} text-lg mr-2"></i>
+                                    <h4 class="font-bold text-lg ${color}">${category}</h4>
+                                </div>
+                                <div class="space-y-2">
+                        `;
+                        
+                        commands.forEach(cmd => {
+                            const triggers = cmd.triggers.map(t => `"${t}"`).join(', ');
+                            commandsHtml += `
+                                <div class="flex items-start text-sm">
+                                    <i class="fas fa-quote-left text-gray-400 mr-2 mt-1 text-xs"></i>
+                                    <span class="text-gray-200">${triggers}</span>
+                                </div>
+                            `;
+                        });
+                        
+                        commandsHtml += `
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    commandsHtml += '</div>';
+                    document.getElementById('commands-list').innerHTML = commandsHtml;
+                } else {
+                    document.getElementById('commands-list').innerHTML = `
+                        <div class="text-center py-8">
+                            <i class="fas fa-exclamation-triangle text-red-400 text-2xl mb-2"></i>
+                            <p class="text-red-300">Error loading commands</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading commands:', error);
+                document.getElementById('commands-list').innerHTML = `
+                    <div class="text-center py-8">
+                        <i class="fas fa-wifi text-red-400 text-2xl mb-2"></i>
+                        <p class="text-red-300">Connection error - Unable to load commands</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Refresh QR code
+        function refreshQR() {
+            loadServerInfo();
+        }
+
+        // API Configuration Functions
+        function toggleApiKeyVisibility() {
+            const input = document.getElementById('api-key-input');
+            const icon = document.getElementById('eye-icon');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fas fa-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'fas fa-eye';
+            }
+        }
+
+        async function testApiKey() {
+            const apiKey = document.getElementById('api-key-input').value.trim();
+            const resultDiv = document.getElementById('api-test-result');
+            
+            if (!apiKey) {
+                showApiResult('Please enter an API key first', 'error');
+                return;
+            }
+            
+            showApiResult('Testing API key...', 'loading');
+            
+            try {
+                const response = await fetch('/api/test-openrouter-key', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ api_key: apiKey })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showApiResult(`✅ API key is valid! Model: ${data.model || 'Unknown'}`, 'success');
+                    updateAiStatus('Connected', 'success');
+                } else {
+                    showApiResult(`❌ API key test failed: ${data.message}`, 'error');
+                    updateAiStatus('Failed', 'error');
+                }
+            } catch (error) {
+                showApiResult(`❌ Connection error: ${error.message}`, 'error');
+                updateAiStatus('Error', 'error');
+            }
+        }
+
+        async function saveApiKey() {
+            const apiKey = document.getElementById('api-key-input').value.trim();
+            const resultDiv = document.getElementById('api-test-result');
+            
+            if (!apiKey) {
+                showApiResult('Please enter an API key first', 'error');
+                return;
+            }
+            
+            showApiResult('Saving configuration...', 'loading');
+            
+            try {
+                const response = await fetch('/api/save-config', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        openrouter_api_key: apiKey 
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showApiResult('✅ Configuration saved successfully!', 'success');
+                } else {
+                    showApiResult(`❌ Save failed: ${data.message}`, 'error');
+                }
+            } catch (error) {
+                showApiResult(`❌ Save error: ${error.message}`, 'error');
+            }
+        }
+
+        async function checkApiStatus() {
+            updateAiStatus('Checking...', 'loading');
+            
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                
+                if (data.success && data.ai_enabled) {
+                    updateAiStatus('Connected', 'success');
+                } else {
+                    updateAiStatus('Not configured', 'warning');
+                }
+                
+                // Update last API call time
+                document.getElementById('last-api-call').textContent = new Date().toLocaleTimeString();
+                
+            } catch (error) {
+                updateAiStatus('Error', 'error');
+            }
+        }
+
+        async function testAiConversation() {
+            const message = document.getElementById('test-message-input').value.trim();
+            const resultDiv = document.getElementById('ai-test-result');
+            
+            if (!message) {
+                showAiTestResult('Please enter a test message', 'error');
+                return;
+            }
+            
+            showAiTestResult('Sending message...', 'loading');
+            
+            try {
+                const response = await fetch('/api/command', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        command: message 
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showAiTestResult(`🤖 AI Response: "${data.message}"`, 'success');
+                    updateAiStatus('Working', 'success');
+                    document.getElementById('last-api-call').textContent = new Date().toLocaleTimeString();
+                } else {
+                    showAiTestResult(`❌ Test failed: ${data.message}`, 'error');
+                    updateAiStatus('Error', 'error');
+                }
+            } catch (error) {
+                showAiTestResult(`❌ Connection error: ${error.message}`, 'error');
+                updateAiStatus('Error', 'error');
+            }
+        }
+
+        function handleTestEnter(event) {
+            if (event.key === 'Enter') {
+                testAiConversation();
+            }
+        }
+
+        function showApiResult(message, type) {
+            const resultDiv = document.getElementById('api-test-result');
+            resultDiv.className = `p-3 rounded text-sm ${getResultClasses(type)}`;
+            resultDiv.innerHTML = message;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function showAiTestResult(message, type) {
+            const resultDiv = document.getElementById('ai-test-result');
+            resultDiv.className = `p-3 rounded text-sm ${getResultClasses(type)}`;
+            resultDiv.innerHTML = message;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function updateAiStatus(status, type) {
+            const statusElement = document.getElementById('ai-status');
+            const icon = type === 'success' ? 'fas fa-circle' : 
+                        type === 'error' ? 'fas fa-times-circle' :
+                        type === 'loading' ? 'fas fa-spinner fa-spin' : 'fas fa-circle';
+            
+            const color = type === 'success' ? 'text-green-300' :
+                         type === 'error' ? 'text-red-300' :
+                         type === 'loading' ? 'text-blue-300' : 'text-yellow-300';
+            
+            statusElement.innerHTML = `<i class="${icon} text-xs mr-1"></i>${status}`;
+            statusElement.className = color;
+        }
+
+        function getResultClasses(type) {
+            switch(type) {
+                case 'success': return 'bg-green-900 border border-green-700 text-green-200';
+                case 'error': return 'bg-red-900 border border-red-700 text-red-200';
+                case 'loading': return 'bg-blue-900 border border-blue-700 text-blue-200';
+                case 'warning': return 'bg-yellow-900 border border-yellow-700 text-yellow-200';
+                default: return 'bg-slate-600 border border-slate-500 text-gray-200';
+            }
+        }
+
+        // Tab Management
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName + '-content').classList.remove('hidden');
+            
+            // Add active class to selected tab button
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Load data for logs tab
+            if (tabName === 'logs') {
+                loadConversationLogs();
+            }
+        }
+
+        // Conversation Logs Management
+        let conversationLogs = [];
+        let filteredLogs = [];
+        let currentPage = 1;
+        const logsPerPage = 10;
+
+        async function loadConversationLogs() {
+            try {
+                const response = await fetch('/api/conversation-logs');
+                const data = await response.json();
+                
+                if (data.success) {
+                    conversationLogs = data.logs || [];
+                    filteredLogs = [...conversationLogs];
+                    updateLogStats();
+                    displayLogs();
+                } else {
+                    showLogsError('Failed to load conversation logs');
+                }
+            } catch (error) {
+                console.error('Error loading logs:', error);
+                showLogsError('Connection error - Unable to load logs');
+            }
+        }
+
+        function updateLogStats() {
+            const totalConversations = conversationLogs.filter(log => log.type === 'conversation').length;
+            const successfulCommands = conversationLogs.filter(log => log.success === true).length;
+            const failedCommands = conversationLogs.filter(log => log.success === false).length;
+            const avgResponseTime = conversationLogs.reduce((acc, log) => acc + (log.response_time || 0), 0) / (conversationLogs.length || 1);
+
+            document.getElementById('total-conversations').textContent = totalConversations;
+            document.getElementById('successful-commands').textContent = successfulCommands;
+            document.getElementById('failed-commands').textContent = failedCommands;
+            document.getElementById('avg-response-time').textContent = Math.round(avgResponseTime) + 'ms';
+        }
+
+        function filterLogs() {
+            const typeFilter = document.getElementById('log-type-filter').value;
+            const dateFilter = document.getElementById('log-date-filter').value;
+            const searchTerm = document.getElementById('log-search').value.toLowerCase();
+
+            filteredLogs = conversationLogs.filter(log => {
+                // Type filter
+                if (typeFilter !== 'all' && log.type !== typeFilter) return false;
+                
+                // Date filter
+                if (dateFilter !== 'all') {
+                    const logDate = new Date(log.timestamp);
+                    const now = new Date();
+                    
+                    switch (dateFilter) {
+                        case 'today':
+                            if (logDate.toDateString() !== now.toDateString()) return false;
+                            break;
+                        case 'week':
+                            const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                            if (logDate < weekAgo) return false;
+                            break;
+                        case 'month':
+                            if (logDate.getMonth() !== now.getMonth() || logDate.getFullYear() !== now.getFullYear()) return false;
+                            break;
+                    }
+                }
+                
+                // Search filter
+                if (searchTerm) {
+                    const searchableText = `${log.command || ''} ${log.response || ''} ${log.error || ''}`.toLowerCase();
+                    if (!searchableText.includes(searchTerm)) return false;
+                }
+                
+                return true;
+            });
+
+            currentPage = 1;
+            displayLogs();
+        }
+
+        function displayLogs() {
+            const container = document.getElementById('logs-container');
+            const startIndex = (currentPage - 1) * logsPerPage;
+            const endIndex = startIndex + logsPerPage;
+            const logsToShow = filteredLogs.slice(startIndex, endIndex);
+
+            if (logsToShow.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-inbox text-4xl text-gray-500 mb-4"></i>
+                        <p class="text-gray-400">No conversation logs found</p>
+                        <p class="text-sm text-gray-500 mt-2">Start using the AI features to see logs here</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = logsToShow.map(log => createLogEntry(log)).join('');
+            }
+
+            updatePagination();
+        }
+
+        function createLogEntry(log) {
+            const timestamp = new Date(log.timestamp).toLocaleString();
+            const typeIcon = log.type === 'conversation' ? 'fas fa-comments' : 
+                            log.type === 'command' ? 'fas fa-terminal' : 'fas fa-exclamation-triangle';
+            const typeColor = log.success ? 'text-green-300' : log.success === false ? 'text-red-300' : 'text-blue-300';
+            const statusIcon = log.success === true ? 'fas fa-check-circle text-green-400' :
+                              log.success === false ? 'fas fa-times-circle text-red-400' : 'fas fa-info-circle text-blue-400';
+
+            return `
+                <div class="log-entry bg-slate-700 rounded-lg p-4 border border-slate-600">
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="${typeIcon} ${typeColor}"></i>
+                            <div>
+                                <div class="font-medium text-white">${log.command || 'System Message'}</div>
+                                <div class="text-xs text-gray-400">${timestamp}</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="${statusIcon}"></i>
+                            ${log.response_time ? `<span class="text-xs text-gray-400">${log.response_time}ms</span>` : ''}
+                        </div>
+                    </div>
+                    
+                    ${log.response ? `
+                        <div class="bg-slate-800 rounded p-3 mb-2">
+                            <div class="text-sm text-gray-300">${log.response}</div>
+                        </div>
+                    ` : ''}
+                    
+                    ${log.error ? `
+                        <div class="bg-red-900/20 border border-red-700/50 rounded p-3 mb-2">
+                            <div class="text-sm text-red-300">Error: ${log.error}</div>
+                        </div>
+                    ` : ''}
+                    
+                    ${log.action ? `
+                        <div class="flex items-center gap-2 text-xs text-gray-400">
+                            <i class="fas fa-cog"></i>
+                            <span>Action: ${log.action}</span>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredLogs.length / logsPerPage);
+            const startEntry = (currentPage - 1) * logsPerPage + 1;
+            const endEntry = Math.min(currentPage * logsPerPage, filteredLogs.length);
+
+            document.getElementById('logs-pagination-info').textContent = 
+                `Showing ${startEntry}-${endEntry} of ${filteredLogs.length} entries`;
+            
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+            
+            document.getElementById('prev-page-btn').disabled = currentPage <= 1;
+            document.getElementById('next-page-btn').disabled = currentPage >= totalPages;
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayLogs();
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(filteredLogs.length / logsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayLogs();
+            }
+        }
+
+        function refreshLogs() {
+            loadConversationLogs();
+        }
+
+        async function clearLogs() {
+            if (!confirm('Are you sure you want to clear all conversation logs? This action cannot be undone.')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/clear-logs', { method: 'POST' });
+                const data = await response.json();
+                
+                if (data.success) {
+                    conversationLogs = [];
+                    filteredLogs = [];
+                    updateLogStats();
+                    displayLogs();
+                    alert('Logs cleared successfully!');
+                } else {
+                    alert('Failed to clear logs: ' + data.message);
+                }
+            } catch (error) {
+                alert('Error clearing logs: ' + error.message);
+            }
+        }
+
+        function exportLogs() {
+            const dataStr = JSON.stringify(filteredLogs, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `sipho-ai-logs-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        function showLogsError(message) {
+            document.getElementById('logs-container').innerHTML = `
+                <div class="text-center py-12">
+                    <i class="fas fa-exclamation-triangle text-4xl text-red-400 mb-4"></i>
+                    <p class="text-red-300">${message}</p>
+                    <button onclick="loadConversationLogs()" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm">
+                        Try Again
+                    </button>
+                </div>
+            `;
+        }
+
+        // Load everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadServerInfo();
+            loadCommands();
+            checkApiStatus();
+        });
+    </script>
+</body>
+</html>
