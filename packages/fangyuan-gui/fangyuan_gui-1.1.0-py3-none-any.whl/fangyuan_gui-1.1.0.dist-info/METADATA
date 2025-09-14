@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: fangyuan-gui
+Version: 1.1.0
+Summary: 使用自然语言创建GUI的Python库
+Author: 方圆开发团队
+License-File: LICENSE
+Requires-Dist: PySide6>=6.0.0
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
