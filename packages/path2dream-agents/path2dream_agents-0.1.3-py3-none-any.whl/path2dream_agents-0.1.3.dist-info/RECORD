@@ -1,0 +1,17 @@
+agents/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+agents/coding_agent.py,sha256=fUH-H446y4u8Pf22AASG0NCoqoitoFDfBJHvOROsPWo,4351
+agents/send_email.py,sha256=embNLBEogoG1PZ1EJSQu9NucBGd4nwpJmljFdKCHfU0,941
+agents/utils.py,sha256=bPoLc87np2qUcmUnDWEc0b0NyzpmblZ0R94Kjh601gE,8948
+agents/pipelines/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+agents/pipelines/call_multi_turn_agent.py,sha256=2GCTuwp-MYPBxt2sXPhsPoO3E6Kr7J7jbFZW4mXsKew,1502
+agents/pipelines/init_multi_turn_agent.py,sha256=Gt315PIFmRkAMSOk3SFKg6R9C4WF3kCrJHSBtFsFugM,1661
+agents/providers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+agents/providers/codex.py,sha256=yVDvgHDzsXBKD2Odea5Q03Y3ThonKafqj9vZ1A8CHzE,2629
+agents/providers/gemini.py,sha256=EwZ-NLFKNNHzhI346pOKYsI-1vZdOkuTPDennsYhSig,1681
+agents/providers/glm.py,sha256=FD9jFZTo15gbaQWINByookFWIhOcbQyOydxIJ9i4Ei4,1420
+agents/providers/qwen.py,sha256=rPV3Z2WWXvFdyt7V6aK5EL-5byHcqBv2t514DpTkAjs,1390
+agents/providers/sonnet.py,sha256=RoY9IMIKTmB2avWtRSDCpgue7HdCO1wXyHuGIdKBDbk,2867
+path2dream_agents-0.1.3.dist-info/METADATA,sha256=nndEolu0VXmS8EivJankUl8Cb131OML_aL1QLHhmnGE,180
+path2dream_agents-0.1.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+path2dream_agents-0.1.3.dist-info/entry_points.txt,sha256=LyNH3cjD3y35d1LHinHoAljcj4W5UHkesgYX63V9o6M,196
+path2dream_agents-0.1.3.dist-info/RECORD,,
