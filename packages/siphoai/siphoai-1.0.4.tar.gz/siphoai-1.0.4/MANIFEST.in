@@ -1,0 +1,9 @@
+﻿include README.md
+include LICENSE
+include requirements.txt
+include .env.example
+include DEVELOPMENT.md
+recursive-include siphoai/data *.json
+recursive-include siphoai/templates *.html *.css *.js
+recursive-include siphoai/static *.svg *.css *.js *.png *.ico
+recursive-include siphoai *.py
