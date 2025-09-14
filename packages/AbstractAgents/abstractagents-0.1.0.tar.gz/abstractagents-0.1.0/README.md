@@ -1,0 +1,239 @@
+# AbstractAgents
+
+[![PyPI version](https://badge.fury.io/py/AbstractAgents.svg)](https://badge.fury.io/py/AbstractAgents)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A framework for creating abstract agents using the [AbstractLLM](https://github.com/lpalbou/AbstractLLM) unified interface.
+
+**Version: 0.1.0**
+
+**IMPORTANT**: This is a Work In Progress. This initial release is primarily to reserve the package name on PyPI. The full framework implementation is under active development.
+
+## Overview
+
+AbstractAgents leverages the power of [AbstractLLM's](https://github.com/lpalbou/AbstractLLM) unified interface to multiple Large Language Model providers, enabling developers to build intelligent agents that can:
+
+- Work seamlessly across different LLM providers (OpenAI, Anthropic, HuggingFace, Ollama, MLX)
+- Maintain conversation context and state
+- Use tools and external integrations
+- Handle complex multi-step reasoning tasks
+- Operate in both synchronous and asynchronous environments
+
+## Relationship to AbstractLLM
+
+AbstractAgents is built on top of [AbstractLLM](https://github.com/lpalbou/AbstractLLM), which provides:
+
+- **Unified API**: Single interface for multiple LLM providers
+- **Provider Support**: OpenAI, Anthropic, HuggingFace, Ollama, MLX
+- **Tool Calling**: Native support for function calling and tool use
+- **Media Support**: Text, image, and multimodal content handling
+- **Streaming**: Real-time response streaming
+- **Configuration**: Flexible provider and model configuration
+
+AbstractAgents extends this foundation by adding:
+
+- **Agent Abstractions**: High-level agent patterns and behaviors
+- **State Management**: Persistent conversation and context handling
+- **Task Orchestration**: Complex multi-step task execution
+- **Tool Integration**: Advanced tool chaining and workflow management
+- **Memory Systems**: Long-term and working memory implementations
+- **Agent Communication**: Multi-agent interaction patterns
+
+## Planned Features
+
+### Core Agent Framework
+- **BaseAgent**: Abstract base class for all agents
+- **ConversationalAgent**: Agents that maintain dialogue context
+- **TaskAgent**: Goal-oriented agents for specific tasks
+- **ToolAgent**: Agents specialized in tool usage
+
+### Advanced Capabilities
+- **Memory Systems**: 
+  - Working memory for current context
+  - Long-term memory for persistent knowledge
+  - Episodic memory for past interactions
+- **Planning & Reasoning**:
+  - Multi-step task decomposition
+  - Goal-oriented planning
+  - Chain-of-thought reasoning
+- **Tool Integration**:
+  - Tool discovery and registration
+  - Tool chaining and workflows
+  - Custom tool development framework
+- **Multi-Agent Systems**:
+  - Agent-to-agent communication
+  - Collaborative task solving
+  - Agent orchestration patterns
+
+### Provider Integration
+Full compatibility with all AbstractLLM providers:
+- **OpenAI**: GPT-4, GPT-3.5 with function calling
+- **Anthropic**: Claude 3/3.5 with tool use
+- **HuggingFace**: Open-source models with local deployment
+- **Ollama**: Local model hosting and inference
+- **MLX**: Optimized inference on Apple Silicon
+
+## Installation
+
+```bash
+# Basic installation
+pip install AbstractAgents
+
+# With AbstractLLM provider support
+pip install AbstractAgents[all]
+
+# Development installation
+pip install AbstractAgents[dev]
+```
+
+## Quick Start (Planned)
+
+```python
+from abstractagents import ConversationalAgent
+from abstractllm import create_llm
+
+# Create an LLM provider
+provider = create_llm("openai", model="gpt-4", api_key="your-api-key")
+
+# Create an agent
+agent = ConversationalAgent(
+    provider=provider,
+    system_prompt="You are a helpful assistant.",
+    memory_type="working"
+)
+
+# Interact with the agent
+response = agent.chat("What can you help me with?")
+print(response.content)
+
+# Agent maintains context
+follow_up = agent.chat("Can you elaborate on that?")
+print(follow_up.content)
+```
+
+### Tool-Enabled Agent (Planned)
+
+```python
+from abstractagents import ToolAgent
+from abstractllm import create_llm
+
+def search_web(query: str) -> str:
+    """Search the web for information."""
+    # Implementation here
+    return f"Search results for: {query}"
+
+def save_file(filename: str, content: str) -> str:
+    """Save content to a file."""
+    # Implementation here
+    return f"Saved content to {filename}"
+
+# Create a tool-enabled agent
+provider = create_llm("anthropic", model="claude-3-5-sonnet-20241022")
+agent = ToolAgent(
+    provider=provider,
+    tools=[search_web, save_file],
+    system_prompt="You can search the web and save files."
+)
+
+# Agent can use tools automatically
+response = agent.execute_task(
+    "Search for information about quantum computing and save a summary to a file"
+)
+```
+
+## Architecture (Planned)
+
+### Agent Hierarchy
+```
+BaseAgent
+├── ConversationalAgent
+├── TaskAgent
+│   ├── ResearchAgent
+│   ├── WritingAgent
+│   └── AnalysisAgent
+├── ToolAgent
+└── MultiAgent
+    ├── CollaborativeAgent
+    └── OrchestratorAgent
+```
+
+### Memory Systems
+- **WorkingMemory**: Short-term context and conversation state
+- **LongTermMemory**: Persistent knowledge and learned information
+- **EpisodicMemory**: Historical interaction records
+- **SemanticMemory**: Structured knowledge representation
+
+### Tool Framework
+- **ToolRegistry**: Central tool discovery and management
+- **ToolChain**: Sequential tool execution workflows
+- **ToolWorkflow**: Complex branching tool interactions
+- **CustomTool**: Framework for developing custom tools
+
+## Roadmap
+
+### Phase 1: Foundation (v0.1.x)
+- [x] Package structure and PyPI publication
+- [ ] Core agent abstractions
+- [ ] Basic memory systems
+- [ ] Integration with AbstractLLM
+
+### Phase 2: Core Features (v0.2.x)
+- [ ] ConversationalAgent implementation
+- [ ] TaskAgent framework
+- [ ] Working memory system
+- [ ] Tool integration framework
+
+### Phase 3: Advanced Features (v0.3.x)
+- [ ] Long-term memory systems
+- [ ] Multi-step planning capabilities
+- [ ] Advanced tool chaining
+- [ ] Agent communication protocols
+
+### Phase 4: Multi-Agent Systems (v0.4.x)
+- [ ] Multi-agent frameworks
+- [ ] Agent orchestration
+- [ ] Collaborative problem solving
+- [ ] Distributed agent networks
+
+## Contributing
+
+We welcome contributions! This project follows the same contribution guidelines as AbstractLLM.
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/lpalbou/AbstractAgents.git
+cd AbstractAgents
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Format code
+black abstractagents/
+isort abstractagents/
+
+# Type checking
+mypy abstractagents/
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Related Projects
+
+- **[AbstractLLM](https://github.com/lpalbou/AbstractLLM)**: Unified interface for multiple LLM providers
+- **[ALMA](https://github.com/lpalbou/AbstractLLM/blob/main/alma.py)**: Example tool-enhanced agent implementation
+
+## Acknowledgments
+
+Built on the foundation of [AbstractLLM](https://github.com/lpalbou/AbstractLLM) and inspired by the growing need for robust, provider-agnostic agent frameworks in the AI development community.
+
+---
+
+**Note**: This is an early-stage project focused on reserving the package name and establishing the project structure. Full implementation is under active development. Stay tuned for updates!
