@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+pica/__init__.py
+pica/_stash.py
+picapica.egg-info/PKG-INFO
+picapica.egg-info/SOURCES.txt
+picapica.egg-info/dependency_links.txt
+picapica.egg-info/top_level.txt
