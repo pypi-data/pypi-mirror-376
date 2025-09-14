@@ -1,0 +1,4 @@
+stringcase
+
+[test]
+pytest
