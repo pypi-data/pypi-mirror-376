@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "github_repo_lister"
+version = "2025.9.131919"
+description = "a simple python function that takes ENV var GITHUB_TOKEN,  and name of a user gihub and return JSON of all repositories of that github user"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" },
+]
+license = { file = "LICENSE" }
+dependencies = [
+
+]
+
+[project.urls]
+Repository = "https://pypi.org/project/github_repo_lister/"
