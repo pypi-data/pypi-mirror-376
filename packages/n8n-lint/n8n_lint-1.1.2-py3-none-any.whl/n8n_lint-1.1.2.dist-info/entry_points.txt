@@ -1,0 +1,2 @@
+[console_scripts]
+n8n-lint = n8n_lint.cli.main:app
