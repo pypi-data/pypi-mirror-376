@@ -1,0 +1,2 @@
+[myapp.plugins]
+calculator = myapp_plugin_hello.plugin:HelloPlugin
