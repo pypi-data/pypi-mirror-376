@@ -1,0 +1,2 @@
+[console_scripts]
+version_finder = project_version_finder.cli:version_finder

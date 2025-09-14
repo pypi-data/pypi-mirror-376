@@ -1,0 +1,9 @@
+project_version_finder/__init__.py,sha256=AicVjipCg1amnRv36PZy5gZZGc3hFKwGFxyFtqrOYSw,202
+project_version_finder/__main__.py,sha256=YxL69SqiqYEaRASjEwjMGe6I2wfvKc_8c5ff7sexquQ,130
+project_version_finder/cli.py,sha256=20zzMrb20UbmYWdK2wdt37UhxADus7Ro2r0SyOy6yXc,366
+project_version_finder/finder.py,sha256=KN22p_OwAcRYpOQMl6FHYzKaPb_fm2RgaMWDpLOASY0,3092
+project_version_finder/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+project_version_finder-0.3.0.dist-info/METADATA,sha256=gS-WH12u4LVK2trXmyx7mXRoMcyrq9O7pm-yEvpasK0,3574
+project_version_finder-0.3.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+project_version_finder-0.3.0.dist-info/entry_points.txt,sha256=-a2ppn4IuR5hMtupK9rXmfAajrg8omrjzxaOycTNpNs,77
+project_version_finder-0.3.0.dist-info/RECORD,,
