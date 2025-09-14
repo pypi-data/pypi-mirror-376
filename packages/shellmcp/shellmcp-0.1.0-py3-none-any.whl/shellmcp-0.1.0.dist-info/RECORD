@@ -1,0 +1,16 @@
+shellmcp/__init__.py,sha256=fjmXO5fBrEVCYdZzYWhBXOxF8WKhOrXCMhabmkaO3UE,75
+shellmcp/cli.py,sha256=Ai5lNa4yYUEc9Gj_tLJmnX9SrewB-wNLgL7R3XhnKnE,17514
+shellmcp/generator.py,sha256=pUNnuSZOvVJOCs2FQdMCCDjRmO4t_I0CzDNfz544C1Y,3605
+shellmcp/models.py,sha256=7q7U4cPAEZb1mogtHlr961HnFVlIw6CuFMEL6QU1CCs,18132
+shellmcp/parser.py,sha256=kceEcFq_1IXG0_yrLI_10cthx1DPJK71mc_JPthCyTM,10113
+shellmcp/template_utils.py,sha256=LBlhiAAgKdKuI4ZOqtiKPZH8ABrAr0d5YsPClPDxbVs,1304
+shellmcp/utils.py,sha256=MsJuhzWyxUsjfoWfQa4heM_bKuVMUgRLFHRhDfofSfs,2666
+shellmcp/templates/README.md.j2,sha256=hzmDvYjs1-ZvwoWDfTi10Di3VYiaiLtKwiTOdYnTaRw,1815
+shellmcp/templates/requirements.txt.j2,sha256=NSi_DH29N-nSfvUX1AbtzxOyNIknEeLN4ECYK1jZ7Zg,40
+shellmcp/templates/server.py.j2,sha256=_NgBSPnqIhwUP7WMgsuI4pIuXaF4mc5cxl7HZHA9WMQ,10348
+shellmcp-0.1.0.dist-info/licenses/LICENSE,sha256=5Xlq0ks3UohNk5Uho_S7PWEwwkqNI0GyiiH7BdBGiCM,1068
+shellmcp-0.1.0.dist-info/METADATA,sha256=-qNGI1RCltTG3FDh3lVDgvmF_YIMh4Y0ua2rXLBKd_A,598
+shellmcp-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+shellmcp-0.1.0.dist-info/entry_points.txt,sha256=5bXJ-RsrxTp2xjUPofKeU83vGZ6eR1FsELjZpcwEeuU,47
+shellmcp-0.1.0.dist-info/top_level.txt,sha256=kbvoUf10802NC4Z649yoX5L9hqEecaTXPGMD297WgAs,9
+shellmcp-0.1.0.dist-info/RECORD,,
