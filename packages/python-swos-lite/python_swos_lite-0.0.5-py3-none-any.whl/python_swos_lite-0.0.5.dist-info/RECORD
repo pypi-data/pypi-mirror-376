@@ -1,0 +1,13 @@
+python_swos_lite/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+python_swos_lite/client.py,sha256=1RXyDL01JgmPuzs9_NjQylbQh3YyWuPlYqJx8zop5z4,882
+python_swos_lite/endpoint.py,sha256=LZ0MBYkwJgArA6a1tcPDu2IrIgCZuEzgguCvihtQ1Es,2429
+python_swos_lite/http.py,sha256=O-wejcEPMTbmcM1VhHj1gIsoZ3iaNObZV6XeoP2s_jI,3486
+python_swos_lite/utils.py,sha256=9GouPS11AbDz8hikmnnM1jD7D1GjHP7SeqpFZwxriTM,2170
+python_swos_lite/endpoints/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+python_swos_lite/endpoints/link.py,sha256=9_5mkDz7CYYq9d7NlTRZ-THc8EoRNOEqcx-iYQXVpcU,1361
+python_swos_lite/endpoints/poe.py,sha256=hTji52eyqE9TsjWsAN_apYbKzNanyKVyylX18zJJbNo,1730
+python_swos_lite/endpoints/sys.py,sha256=q0lQD9td2lLHOwm3mKV-atgIsogYhQ4sVPN6r1LUxUc,1644
+python_swos_lite-0.0.5.dist-info/METADATA,sha256=nFo5bQoBsvb2f6iL8J9-b3w7dG-Y44QgGUooFQ0sdpk,2049
+python_swos_lite-0.0.5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+python_swos_lite-0.0.5.dist-info/licenses/LICENSE,sha256=4LDrlmFXTkFSB5PAi8ih5OXmzdBdkkmREsChOrQqcaQ,1091
+python_swos_lite-0.0.5.dist-info/RECORD,,
