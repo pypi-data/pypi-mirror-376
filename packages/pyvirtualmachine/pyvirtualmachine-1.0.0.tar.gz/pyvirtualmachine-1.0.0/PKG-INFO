@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: pyvirtualmachine
+Version: 1.0.0
+Summary: Run and manage virtual machines with Python and VirtualBox
+Home-page: https://github.com/fueguitos/pyvirtualmachine
+Author: TuFueguito
+Requires-Python: >=3.8
+Requires-Dist: PySimpleGUI
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

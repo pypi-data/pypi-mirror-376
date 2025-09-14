@@ -1,0 +1,11 @@
+setup.py
+pyvirtualmachine/__init__.py
+pyvirtualmachine/gui.py
+pyvirtualmachine/installer.py
+pyvirtualmachine/vm_manager.py
+pyvirtualmachine.egg-info/PKG-INFO
+pyvirtualmachine.egg-info/SOURCES.txt
+pyvirtualmachine.egg-info/dependency_links.txt
+pyvirtualmachine.egg-info/entry_points.txt
+pyvirtualmachine.egg-info/requires.txt
+pyvirtualmachine.egg-info/top_level.txt
