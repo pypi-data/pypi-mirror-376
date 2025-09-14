@@ -1,0 +1,14 @@
+persidict/.DS_Store,sha256=1lFlJ5EFymdzGAUAaI30vcaaLHt3F1LwpG7xILf9jsM,6148
+persidict/__init__.py,sha256=CDOSJGgCnyRTkGUTzaeg3Cqsxwx0-0EFieOtldXwAls,1380
+persidict/file_dir_dict.py,sha256=2McFaDdr03g-PXlCIiG3fPb7h59LXW_3hDo0xLA17DE,24804
+persidict/jokers.py,sha256=gTu7g2l2MIgBc3-hjvUrcwcgWs6tcbLyxB0u57M3bfU,3012
+persidict/overlapping_multi_dict.py,sha256=UFyPEG2GbMmMHY48UmcaLHpsaxMqRH3bc_UA8S90yJo,5947
+persidict/persi_dict.py,sha256=CKVHy8YELLRVgLWgo0Akbd8RznCVxqt8JHszIjqA_sI,23176
+persidict/s3_dict.py,sha256=F5N7DlpZBkEEUsDk7OQXiqACY-mJ2SOMNrh3AlHC9qo,21454
+persidict/safe_chars.py,sha256=H-cL9waCmDtwaRR5Y4b4oTzcBx09nc8wn8u61SVZDY0,1728
+persidict/safe_str_tuple.py,sha256=YBTcYjUKIffznOawXb9xKjz4HaKdklrgyVtegJFmr5w,7202
+persidict/safe_str_tuple_signing.py,sha256=mpOfx_xyprc0_c60XPB_EihI3vR1gOn6T03iCx1HwwQ,7494
+persidict/write_once_dict.py,sha256=nv5vx9uh6VZ5Qh3HJcBgUHLnDX9KY843FbHndcy-63E,11677
+persidict-0.37.1.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+persidict-0.37.1.dist-info/METADATA,sha256=M2EVewTSqdjfqdMi-7VHkSUKHqlL-ohlXYrcVRj7ViA,12387
+persidict-0.37.1.dist-info/RECORD,,
