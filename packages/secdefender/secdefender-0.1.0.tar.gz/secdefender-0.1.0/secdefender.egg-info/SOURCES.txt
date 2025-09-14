@@ -1,0 +1,7 @@
+pyproject.toml
+secdefender.py
+secdefender.egg-info/PKG-INFO
+secdefender.egg-info/SOURCES.txt
+secdefender.egg-info/dependency_links.txt
+secdefender.egg-info/entry_points.txt
+secdefender.egg-info/top_level.txt

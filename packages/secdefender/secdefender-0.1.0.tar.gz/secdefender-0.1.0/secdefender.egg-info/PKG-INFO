@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: secdefender
+Version: 0.1.0
+Summary: Lightweight cybersecurity defensive toolkit - log analyzer & IOC matcher
+Author-email: Your Name <you@example.com>
+License: MIT
+Description-Content-Type: text/markdown
