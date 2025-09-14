@@ -1,0 +1,8 @@
+Changelog
+=========
+
+
+1.0.0
+-----
+
+Initial release. Replaces ``wikipedia`` and ``wiktionary`` plugins from ``sopel`` core.

@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: sopel-wikimedia
+Version: 1.0.0
+Summary: Wikimedia plugin for Sopel
+Author: Dimitri Molenaars
+Author-email: Elad Alfassa <elad@fedoraproject.org>, dgw <dgw@technobabbl.es>, SnoopJ <snoopjedi@gmail.com>
+Maintainer-email: dgw <dgw@technobabbl.es>, SnoopJ <snoopjedi@gmail.com>
+License-Expression: EFL-2.0
+Project-URL: Homepage, https://github.com/sopel-irc/sopel-wikimedia
+Project-URL: Bug Tracker, https://github.com/sopel-irc/sopel-wikimedia/issues
+Keywords: sopel,plugin,bot,irc
+Platform: Linux x86, x86-64
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Communications :: Chat :: Internet Relay Chat
+Requires-Python: <4,>=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: sopel>=7.1
+Dynamic: license-file
+
+===============
+sopel-wikimedia
+===============
+
+Sopel plugin for interacting with Wikimedia projects like Wikipedia and Wiktionary
+
+Looking up Wikipedia articles, either using the ``.wp`` command or an in-message URL::
+
+    <SnoopJ> .wp ichiju sansai
+    <terribot> [wikipedia] Ichijū-sansai | "Ichijū-sansai (Japanese: 一汁三菜)
+               'one soup, three dishes' is a traditional Japanese dining format
+               of a bowl of rice, soup, a main dish, and two side dishes. It is
+               a key component of kaiseki cuisine and reflects the aesthetic and
+               nutritional principles of Japanese meals." |
+               https://en.wikipedia.org/wiki/Ichij%C5%AB-sansai
+    <SnoopJ> https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+    <terribot> [wikipedia] List of ISO 639 language codes | "ISO 639 is a
+               standardized nomenclature used to classify languages. Each
+               language is assigned a two-letter (set 1) and three-letter
+               lowercase abbreviation (sets 2–5). Part 1 of the standard, ISO
+               639-1 defines the two-letter codes, and Part 3 (2007), ISO 639-3,
+               defines the three-letter codes, aiming to cover all known natural
+               languages, largely superseding the ISO 639-2 three-letter code
+               standard. "
+
+Looking up Wiktionary definitions and etymologies using the ``.wt`` and ``.ety`` commands::
+
+    <SnoopJ> .wt schnozz
+    <terribot> [wiktionary] schnozz — noun: 1. (slang) Nose
+    <SnoopJ> .ety windfall
+    <terribot> [wiktionary] windfall: From Middle English windfal, wyndfall,
+               equivalent to wind + fall. Cognate with Middle High German
+               wintval, wintfal, German Windfall.
+
+Install
+=======
+
+The recommended way to install this plugin is to use ``pip``::
+
+    $ pip install sopel-wikimedia
+
+Note that this plugin requires Python 3.8+ and Sopel 7.1+. It won't work on
+Python versions that are not supported by the version of Sopel you are using.
+
+Configure
+=========
+
+``sopel-wikimedia`` can be configured by invoking Sopel's interactive wizard::
+
+    $ sopel-plugins configure wikipedia
+    Configure wikipedia.py - Sopel Wikipedia Plugin
+    Enter the default language to find articles from. [en]
+
+The [bot database](https://sopel.chat/docs/package/db) also supports the
+per-nick (for PMs) and per-channel value `wikipedia_lang`.
+
+Changelog
+=========
+
+
+1.0.0
+-----
+
+Initial release. Replaces ``wikipedia`` and ``wiktionary`` plugins from ``sopel`` core.
