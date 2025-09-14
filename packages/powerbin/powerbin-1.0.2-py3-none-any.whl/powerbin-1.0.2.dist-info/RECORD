@@ -1,0 +1,16 @@
+powerbin/CHANGELOG.rst,sha256=Sq-BtbfwRzMMIAiakoliHlt38IIS_R8-la5VOCA7l1I,125
+powerbin/LICENSE.txt,sha256=pZDurJbClCZFcuCw3OOwoCdfBeZSCy-JzhKuZAJuWlo,927
+powerbin/README.rst,sha256=mbVF5-ukmoRuh8XoxIqZOp2US_Z6s5ppJiJFaTFI3IU,4900
+powerbin/__init__.py,sha256=olorT5rzktm3JS8vQ7geRgJIZfcXFEHoEYh0u0ixa-g,345
+powerbin/bin_accretion.py,sha256=vhDz66dHumtk-nagoo4vPXPU0cZjNTZYDXg70kGYTCk,10343
+powerbin/early_stopper.py,sha256=2IZ7E1-xx3b1LtKZ0lMhJeGwYsyWQvCzzMv2S__v_s8,6369
+powerbin/plotting.py,sha256=jwDSE00THL32cMwjxcr9U9hEt7X8trMZALq9Q0Khdz4,4713
+powerbin/powerbin.py,sha256=aq5RbidB3qrI8Ondbt_yVkA2_sAnFD2WfN1aTx6UtAI,13997
+powerbin/examples/__init__.py,sha256=lHh5C2ZdvPF-ypsfPPu-8HsnBrcvHwaH6xInHK0wtNw,35
+powerbin/examples/powerbin_example.py,sha256=3hPh7UOVTMM_gjJ7TPxO4n-soxDMbNxhalE6reItlao,3248
+powerbin/examples/sample_data_ngc2273.txt,sha256=Vo46KU6aRjXby1WEmJ3VdgckC04fQf7wLeltNkwjUxk,177333
+powerbin-1.0.2.dist-info/METADATA,sha256=hoEwCNCe3EK9bxen9jD1iGRjYjJCFMqXCrmfvPsDsmU,11525
+powerbin-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+powerbin-1.0.2.dist-info/top_level.txt,sha256=qOqU-_Fm0jnHpYBr0M8odiBU1iYsupRPRCa6UUduprc,9
+powerbin-1.0.2.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+powerbin-1.0.2.dist-info/RECORD,,
