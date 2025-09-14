@@ -1,0 +1,8 @@
+PyYAML
+packaging
+rapids-dependency-file-generator<2.0.dev0,>=1.13.3
+tomlkit
+
+[test]
+jinja2
+pytest
