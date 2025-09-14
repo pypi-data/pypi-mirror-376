@@ -1,0 +1,2 @@
+[console_scripts]
+shard-sd = image_analysis_sd.core:main

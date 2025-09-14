@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+image_analysis_sd/__init__.py
+image_analysis_sd/__main__.py
+image_analysis_sd/core.py
+image_analysis_sd.egg-info/PKG-INFO
+image_analysis_sd.egg-info/SOURCES.txt
+image_analysis_sd.egg-info/dependency_links.txt
+image_analysis_sd.egg-info/entry_points.txt
+image_analysis_sd.egg-info/requires.txt
+image_analysis_sd.egg-info/top_level.txt
