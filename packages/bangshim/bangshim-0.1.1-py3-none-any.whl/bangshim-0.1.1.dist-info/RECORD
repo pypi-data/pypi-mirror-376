@@ -1,0 +1,8 @@
+bangshim/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bangshim/asset/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bangshim/asset/shim.exe,sha256=FA44Adit7aY5ohsU5iuTpMfSa3p1hCH0PIK-WXU75Js,136192
+bangshim/bangshim.py,sha256=2jb-JtUUaXLslTeIV7VVVTXwjtpfqWt15dlJTmhYWS0,3916
+bangshim-0.1.1.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+bangshim-0.1.1.dist-info/entry_points.txt,sha256=2h4AlTa4Su6d0PJ2KdEL8GGOpm35QCFIY1-e7snHlMQ,53
+bangshim-0.1.1.dist-info/METADATA,sha256=5BJgKD8zHg2arpSHjLABt3vrtAyGcbLHpEQw--bK85I,16214
+bangshim-0.1.1.dist-info/RECORD,,
