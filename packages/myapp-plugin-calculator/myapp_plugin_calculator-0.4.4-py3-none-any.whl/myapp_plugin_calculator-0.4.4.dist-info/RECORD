@@ -1,0 +1,9 @@
+myapp_plugin_calculator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+myapp_plugin_calculator/interactive_myapp.py,sha256=upwzNHLd2ex5TK7znG78AP4d1EP-GmJBZXU_p-BYNUo,2806
+myapp_plugin_calculator/plugin.py,sha256=RwVWix-6JOoyhArftutWKeWMqiHoUWbsf0Qyk8ovY5g,12856
+myapp_plugin_calculator-0.4.4.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+myapp_plugin_calculator-0.4.4.dist-info/METADATA,sha256=LXMzEVdKLa21JoIkvxajVOdGESGHZC_zXzew3OtK-D0,1001
+myapp_plugin_calculator-0.4.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+myapp_plugin_calculator-0.4.4.dist-info/entry_points.txt,sha256=d7v3LsU50kTKvuT9VKfYyYJGJiEIYrMyLmjwfjSn0ZE,77
+myapp_plugin_calculator-0.4.4.dist-info/top_level.txt,sha256=f1ARbAWxFhUi9pGVMDV6DLV1yTiB0ENSGZqC9zznGTk,24
+myapp_plugin_calculator-0.4.4.dist-info/RECORD,,
