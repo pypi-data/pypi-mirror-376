@@ -1,0 +1,14 @@
+cmsketch/base.py,sha256=-r2fVDBiffrMFKoBYDxMQiYwamJZU8NoPofHkwhBkBI,1182
+cmsketch/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cmsketch/_core.cp311-win_amd64.pyd,sha256=ZdZwbCx8GCbQ1eqEg3FBap00uiTZFTI7UluO9ZJXTNM,203776
+cmsketch/_core.pyi,sha256=hiC-_LTAs56jYYUO_f7BYqatQ3coQk_iAbkMrSuP4lM,552
+cmsketch/_version.py,sha256=qltvj0ya1436mM0sTa3ce4zTRxRpDNoVnOcrwmPPubM,347
+cmsketch/__init__.py,sha256=5LGo1jxWqK57cJ5aCD40Xlb4SSJrqlcHkftD-90FWRg,1049
+cmsketch/py/count_min_sketch.py,sha256=aSfR25topTuMYlWnsp5j4dIOP3Qz8nswRt77u3H5ujU,5822
+cmsketch/py/hash_util.py,sha256=54jIdcb2ADHb7wbEqhG64dDx9G6b8YpaQdlGXjCa51g,2634
+cmsketch-0.1.10.dist-info/DELVEWHEEL,sha256=elyq6SUYy_ZfUKgr90l70hI_UVDlOpL4JgE-X5YKA8s,402
+cmsketch-0.1.10.dist-info/METADATA,sha256=gZFCm2dtUrjNYgNglhUJ5X4temZfLqQcWzICafg_LO0,16549
+cmsketch-0.1.10.dist-info/RECORD,,
+cmsketch-0.1.10.dist-info/WHEEL,sha256=oXhHG6ewLm-FNdEna2zwgy-K0KEl4claZ1ztR4VTx0I,106
+cmsketch-0.1.10.dist-info/licenses/LICENSE,sha256=GmoEywLmaAdf6DK1min-YH097NuKqa-jNg6kr9581iA,1083
+cmsketch.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll,sha256=pMIim9wqKmMKzcCVtNhgCOXD47x3cxdDVPPaT1vrnN4,575056
