@@ -1,0 +1,12 @@
+README.rst
+pyproject.toml
+spatial_dynamics/n_simplex_neighborhoods.py
+spatial_dynamics/pwlo-es-pt.py
+spatial_dynamics.egg-info/PKG-INFO
+spatial_dynamics.egg-info/SOURCES.txt
+spatial_dynamics.egg-info/dependency_links.txt
+spatial_dynamics.egg-info/entry_points.txt
+spatial_dynamics.egg-info/requires.txt
+spatial_dynamics.egg-info/top_level.txt
+tests/test_n_simplex.py
+tests/test_pairwise.py
