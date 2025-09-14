@@ -1,0 +1,8 @@
+Metadata-Version: 2.3
+Name: workit
+Version: 0.1.0
+Summary: A customizable async pipeline framework
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# workit
