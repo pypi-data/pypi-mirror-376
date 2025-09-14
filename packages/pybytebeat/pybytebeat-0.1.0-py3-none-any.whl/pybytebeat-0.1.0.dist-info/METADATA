@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: pybytebeat
+Version: 0.1.0
+Summary: Python bytebeat generator
+Home-page: https://github.com/Yousuf-Al-Hadhrami/PyByteBeat
+Author: Yousuf Yaqoob Awadh Ali Salam Al Hadhrami
+Author-email: gethdc92@gmail.com
+License: CC0-1.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: sounddevice
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
