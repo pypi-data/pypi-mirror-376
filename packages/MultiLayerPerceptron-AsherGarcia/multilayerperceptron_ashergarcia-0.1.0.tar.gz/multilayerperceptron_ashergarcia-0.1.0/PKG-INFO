@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: MultiLayerPerceptron_AsherGarcia
+Version: 0.1.0
+Summary: Implementación desde cero de un Perceptrón Multicapa en Python, sin librerías externas, con backpropagation y soporte para múltiples capas.
+Project-URL: Homepage, https://github.com/AsherGarciaO/MultiLayerPerceptron/
+Author-email: Asher <ashergarciaortiz@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+🧠 Proyecto: Perceptrón Y Perceptrón Multicapa desde Cero
+
+Este proyecto implementa un Perceptrón Multicapa (MLP) en Python, desarrollado sin librerías externas, únicamente con la biblioteca estándar.
+
+El objetivo es mostrar cómo funcionan las redes neuronales artificiales desde sus fundamentos matemáticos, sin depender de frameworks como TensorFlow o PyTorch, NumPy, etc.
+
+✨ Características
+
+-> Implementación desde cero de un MLP (Multi-Layer Perceptron).
+
+-> Funciones de activación clásicas (Sigmoide, ReLU, Leaky ReLU y tanh).
+
+-> Entrenamiento con backpropagation y gradiente descendente.
+
+-> Soporte para múltiples capas ocultas y diferentes cantidades de neuronas por capa.
+
+Ejemplos de entrenamiento con problemas simples (ej. compuertas lógicas).
+
+🎯 Objetivo
+
+Este proyecto está pensado como material educativo para quienes quieran entender a detalle el funcionamiento interno de las redes neuronales y el algoritmo de retropropagación, sin “caja negra”.

@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+MultiLayerPerceptron/MultiLayerPerceptron.py
+MultiLayerPerceptron/Perceptron.py
+MultiLayerPerceptron.egg-info/PKG-INFO
+MultiLayerPerceptron.egg-info/SOURCES.txt
+MultiLayerPerceptron.egg-info/dependency_links.txt
+MultiLayerPerceptron.egg-info/top_level.txt
+test/test.py
