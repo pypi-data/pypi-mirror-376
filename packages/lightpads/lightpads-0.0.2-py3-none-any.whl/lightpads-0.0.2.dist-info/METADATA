@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: lightpads
+Version: 0.0.2
+Summary: Python client library for controlling Lightpads™ interactive play systems — set colors, detect pad hits, and build custom games.
+Author-email: Mark Jennings <mark@playerverse.co.uk>
+License: Apache-2.0
+Keywords: lightpads,interactive,hardware,games,sdk
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# lightpads-py
+Python client library for controlling Lightpads™ interactive play systems — set colors, detect pad hits, and build custom games.
