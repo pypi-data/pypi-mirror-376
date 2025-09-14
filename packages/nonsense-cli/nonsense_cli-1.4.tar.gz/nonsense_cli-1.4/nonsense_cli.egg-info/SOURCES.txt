@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+nonsense/__init__.py
+nonsense/nonsense.py
+nonsense_cli.egg-info/PKG-INFO
+nonsense_cli.egg-info/SOURCES.txt
+nonsense_cli.egg-info/dependency_links.txt
+nonsense_cli.egg-info/entry_points.txt
+nonsense_cli.egg-info/requires.txt
+nonsense_cli.egg-info/top_level.txt
