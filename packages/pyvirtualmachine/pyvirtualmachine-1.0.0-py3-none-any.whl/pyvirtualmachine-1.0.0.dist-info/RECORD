@@ -1,0 +1,9 @@
+pyvirtualmachine/__init__.py,sha256=PlqN7veAgZeVF8WAN6iTApnGMIhIpa43yhRzJ5uWXwI,33
+pyvirtualmachine/gui.py,sha256=iQU6SWwaQX_-2lGw20HmapBWyZpJuhhndYSgAkgckpk,883
+pyvirtualmachine/installer.py,sha256=pZOv1aXeGv35reqHO_HYZ-r2aFPL1iU16A4v6q5VRJg,1189
+pyvirtualmachine/vm_manager.py,sha256=Cxp8FJQid5f6gR_Csrb8SNPUQejpQBpiJvE2XSLbMbQ,1074
+pyvirtualmachine-1.0.0.dist-info/METADATA,sha256=LPiTkbuYAyrhdIqfBGHnR2wsBUWld6l8rwvyMivao_I,367
+pyvirtualmachine-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pyvirtualmachine-1.0.0.dist-info/entry_points.txt,sha256=HN5_M11hgjrowa8hkiIU25zM2YuOTqWfZT2GkVVJ6jo,51
+pyvirtualmachine-1.0.0.dist-info/top_level.txt,sha256=IWYm4tv21bfmX_3FQJZudYrcxQJP0ZWrd4WFpq4Pj0Y,17
+pyvirtualmachine-1.0.0.dist-info/RECORD,,
