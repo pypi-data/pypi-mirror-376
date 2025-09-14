@@ -1,0 +1,12 @@
+mcp_redmine/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mcp_redmine/filter_presets.py,sha256=r6O3FDSB2G0h62KzVzDwxLMEOh84QaNeddVrUfwVbVc,4230
+mcp_redmine/journal_filters.py,sha256=1nmCJUkUqrcIOXeci68HwgWmfRQkJjq-wyXKWpvQ6aI,18743
+mcp_redmine/mcp_capabilities.py,sha256=bOv5UoTIIP7kgFw895KT2OsQ1j13RwRGxCtkm6z8o1U,3782
+mcp_redmine/redmine_openapi.yml,sha256=vGnehd-I-NXgzqrHQfJWGQlRs61ro5WWInuJgMkTlUo,139111
+mcp_redmine/response_filters.py,sha256=CeyBhGPNxh7LV375yTHMv6ZAVsuWEDQDUzbZRavSvdM,11752
+mcp_redmine/server.py,sha256=4iNICBdX0Hghe_spXJZHNGfBma2qcSXbNRmBqtDtylM,7869
+mcp_redmine_enhanced-2025.9.13.162715.post0.dist-info/METADATA,sha256=ClYIsIG-xeRMmgIOl8VctRDjKMAJAV3NHfyGjwQBi48,11952
+mcp_redmine_enhanced-2025.9.13.162715.post0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_redmine_enhanced-2025.9.13.162715.post0.dist-info/entry_points.txt,sha256=K9kTQSSvtxXRN313LOubOKrEjRdc6ueEM8CQLC2Slqo,56
+mcp_redmine_enhanced-2025.9.13.162715.post0.dist-info/licenses/LICENSE,sha256=HyVuytGSiAUQ6ErWBHTqt1iSGHhLmlC8fO7jTCuR8dU,16725
+mcp_redmine_enhanced-2025.9.13.162715.post0.dist-info/RECORD,,
