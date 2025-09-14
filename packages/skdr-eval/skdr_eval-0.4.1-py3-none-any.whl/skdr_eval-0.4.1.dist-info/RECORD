@@ -1,0 +1,11 @@
+skdr_eval/__init__.py,sha256=iCKSy4bPferEnx8jIB8mmh8FVTuL7pcS_WddyERucNM,890
+skdr_eval/_version.py,sha256=k7cu0JKra64gmMNU_UfA5sw2eNc_GRvf3QmesiYAy8g,704
+skdr_eval/choice.py,sha256=evU9OCg6PahkXAisKBDiRhqcuTc9nNuA3ekrxcFFcfc,9211
+skdr_eval/core.py,sha256=e9NfyVpbXex30BpAotvfgghTKQdP_NyLw5JjF4VpypQ,50133
+skdr_eval/pairwise.py,sha256=SyPwI1OQ4l0-kahcVGBNUxgKkp-bP36QEveplI7wwGw,18592
+skdr_eval/synth.py,sha256=cneHMGCEa58ugw7n5dwhYLqgWQQIqsLFs8t-A9zpcpc,13143
+skdr_eval-0.4.1.dist-info/licenses/LICENSE,sha256=DRR54P1tLNkPXf7mAxnuR8j83IleL8eQgJjygRWprYE,1069
+skdr_eval-0.4.1.dist-info/METADATA,sha256=57SaDbsNe2k8DPapKaQwW8Ot7XRNZxp8EEPWzzfOlJE,12529
+skdr_eval-0.4.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+skdr_eval-0.4.1.dist-info/top_level.txt,sha256=z4eElif_54Bu19yvvgag-TSSfssKf-3sP02l5oE2gaU,10
+skdr_eval-0.4.1.dist-info/RECORD,,
