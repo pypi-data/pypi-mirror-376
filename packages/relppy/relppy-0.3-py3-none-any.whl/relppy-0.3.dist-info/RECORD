@@ -1,0 +1,12 @@
+relppy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+relppy/client.py,sha256=aTnZO4CT4nR6LtlFH27ksjpmY7eo2vtxoqDscnwpc2k,8487
+relppy/main.py,sha256=43V1ux6b9CVLSxhIsqROsUjrQ-GIYVlig4NpNmgGY0k,7908
+relppy/protocol.py,sha256=gaukJkI9fJILbVMbAwDnzbzz1_wKh9OGQTJTTCKX4cM,4060
+relppy/server.py,sha256=YGXoJMa0fNY3EAX2MJrFaYjFYwjjnlztwUAMWvlVyhQ,3459
+relppy/version.py,sha256=PCeCCdO1ykKVj0EOflHpAllEoT-GhDVVuenmgZuF8ks,16
+relppy-0.3.dist-info/licenses/LICENSE,sha256=KkWMmr4SfLJJviEkK-fA-5xZStX_RGDhBIQvI6xkM7c,1073
+relppy-0.3.dist-info/METADATA,sha256=sgM3pH9P49JZzuDDLL6AdiRbSvVDXwns-52XulvVaUQ,1398
+relppy-0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+relppy-0.3.dist-info/entry_points.txt,sha256=MJbKySaHUQ71tNvKdV6NMUcc9JQ44fw5r4DxxXX0BCU,43
+relppy-0.3.dist-info/top_level.txt,sha256=bsINfP-I_gTyMcJ-CrnKLK6AnH5uonsuwU10RzeZgo0,7
+relppy-0.3.dist-info/RECORD,,
