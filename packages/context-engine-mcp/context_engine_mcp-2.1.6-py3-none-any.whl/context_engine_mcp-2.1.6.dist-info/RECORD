@@ -1,0 +1,13 @@
+context_engine_mcp/__init__.py,sha256=t5JT8akVW1Kd78ptf9Oz2hBZSDH62wD5Dv_DuWiaYac,174
+context_engine_mcp/__main__.py,sha256=5BaFmPWeF4fGjtGjYLN0qdwm5spTtMznMz4MEX-iXkY,753
+context_engine_mcp/__version__.py,sha256=B_jJKqZ8YMAHiFLIBSf_P7qimFOCbJFkjkB5-0bL0To,76
+context_engine_mcp/claude_hook.py,sha256=DNGxjNRlXVI9rFV3jk3JLbDKrvw7cBGNZg-HJbYsyYA,5912
+context_engine_mcp/install.py,sha256=3cWNqK9O3CJ8llHzaqlX2H1XG62oZcjYU4KaqMTwdmw,36120
+context_engine_mcp/prompts.py,sha256=1mWbwvX-9fzleYrbP_0ovAOB3sjAWifVvxrFpjrQTEc,11775
+context_engine_mcp/server.py,sha256=LkE5xX20AWODpfMIWXILSK9_0bRgPm1mgCwXEwnnpuw,10815
+context_engine_mcp/flags.yaml,sha256=CgqpPPGlsi2rVF3zuNQPX_IpDKZJy3f4IUSFjbV-H_U,17154
+context_engine_mcp-2.1.6.dist-info/METADATA,sha256=bj8L2A9bOSvRSFaChY59M8Cb8FyVc3MUUHe1LTbCQRc,8406
+context_engine_mcp-2.1.6.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+context_engine_mcp-2.1.6.dist-info/entry_points.txt,sha256=qj-oCBMRIfkQ4MNBSmGUBqnUReEwXjiEt4IyA0NycT4,121
+context_engine_mcp-2.1.6.dist-info/licenses/LICENSE,sha256=ASO6_oqwFtDEA8NGIsJ22pdNeDy2_4AZ0q180TozKRY,1087
+context_engine_mcp-2.1.6.dist-info/RECORD,,
