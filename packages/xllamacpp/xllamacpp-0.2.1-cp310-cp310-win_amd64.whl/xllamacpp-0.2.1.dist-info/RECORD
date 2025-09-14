@@ -1,0 +1,9 @@
+xllamacpp/__init__.py,sha256=ftYSx9H7BKmDEfkzspTwam6tq9ScvfXHR2IbYceMdOA,809
+xllamacpp/_version.py,sha256=qCLj6Z8A4SbwYTd0-1cCAt9PCW2HsTOsUSYkNRjNuNc,518
+xllamacpp/memory.py,sha256=-a5Gb19Ba7dXR4D3YjPkP5QHRxOhfc6aJBjUG63WPMQ,16128
+xllamacpp/xllamacpp.cp310-win_amd64.pyd,sha256=pSOt6z4Sni9T-Wr6FpeJNGjlf3Hl6U3rb3taPJY2Moo,4800000
+xllamacpp-0.2.1.dist-info/licenses/LICENSE,sha256=z19nzhUc-YIumg55qyqdddc8vK1vf_24jBzNxg7Y-xU,1093
+xllamacpp-0.2.1.dist-info/METADATA,sha256=dxSPCRYh9xhH2BvZ-zYkb9HwI4qTqsL1qL-RsRVEDPg,10338
+xllamacpp-0.2.1.dist-info/WHEEL,sha256=KUuBC6lxAbHCKilKua8R9W_TM71_-9Sg5uEP3uDWcoU,101
+xllamacpp-0.2.1.dist-info/top_level.txt,sha256=Lu5vLPOlGYHI7Ox8hVqa-ys-gg-cULIAj4bfqNm5SY8,10
+xllamacpp-0.2.1.dist-info/RECORD,,
