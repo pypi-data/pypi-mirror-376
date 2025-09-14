@@ -1,0 +1,15 @@
+six
+
+[:platform_system != "Windows"]
+lxml
+
+[:python_version <= "2.7"]
+typing-extensions
+
+[pyquery]
+
+[pyquery:python_version < "3.0"]
+pyquery<=1.4.1
+
+[pyquery:python_version >= "3.0"]
+pyquery
