@@ -1,0 +1,8 @@
+README.md
+pyswisslib.py
+setup.py
+PySwissLib.egg-info/PKG-INFO
+PySwissLib.egg-info/SOURCES.txt
+PySwissLib.egg-info/dependency_links.txt
+PySwissLib.egg-info/requires.txt
+PySwissLib.egg-info/top_level.txt

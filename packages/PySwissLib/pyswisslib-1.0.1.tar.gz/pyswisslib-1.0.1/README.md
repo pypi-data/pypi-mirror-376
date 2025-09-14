@@ -1,0 +1,92 @@
+## PySwissLib - A Comprehensive Python Utility Library
+
+**PySwissLib** is a versatile Python library designed to streamline common programming and data-related tasks. It offers a structured collection of modules for system operations, string manipulation, mathematics, data science, visualization, file handling, and more. Authored by **Gautham Nair**, this library aims to be a single, convenient toolkit for developers and data scientists.
+
+-----
+
+## Installation
+
+You can easily install **pyswisslib** using `pip`.
+
+```bash
+pip install pyswisslib
+```
+
+This command will automatically install all required dependencies, including `numpy`, `pandas`, `matplotlib`, `seaborn`, `torch`, `scikit-learn`, and `requests`.
+
+-----
+
+## Core Features
+
+### 1\. General Utilities (`pyswisslib.basic`)
+
+  * **System and Platform Info**: Get details about the operating system and Python version.
+  * **Screen Clearing**: A cross-platform function to clear the console.
+  * **Package Installation**: Install new Python packages directly from your script.
+
+### 2\. String & Math (`pyswisslib.string`, `pyswisslib.math`)
+
+  * **String Manipulation**: Perform common operations like string comparison, word counting, and palindrome checks.
+  * **Mathematical Functions**: Calculate factorials, check for prime numbers, and generate Fibonacci sequences.
+
+### 3\. Data Science (`pyswisslib.datascience`)
+
+  * **DataFrames**: Create and manipulate Pandas DataFrames from various sources.
+  * **Statistical Analysis**: Get descriptive statistics and calculate correlation matrices.
+  * **Array Operations**: Utilize NumPy for efficient array creation and statistical summaries.
+
+### 4\. Visualization (`pyswisslib.visualization`)
+
+  * **Plotting**: Generate a variety of plots, including line, bar, scatter, and histograms, using **Matplotlib** and **Seaborn**.
+  * **Heatmaps**: Visualize data correlations with heatmaps.
+
+### 5\. File & Network (`pyswisslib.filehandler`, `pyswisslib.network`)
+
+  * **File Handling**: Read, write, and manage files and directories easily.
+  * **Network Utilities**: Ping hosts and fetch JSON data from URLs with built-in caching.
+
+### 6\. AI & Machine Learning (`pyswisslib.aiml`)
+
+  * **PyTorch Integration**: Access **PyTorch** utilities for model training and evaluation.
+  * **GPU Detection**: Automatically detect and utilize available GPUs for accelerated computing.
+
+-----
+
+## Usage Example
+
+The library is designed for simple imports and static method calls.
+
+```python
+import pandas as pd
+from pyswisslib import string, math, datascience, visualization, aiml
+
+# String and Math
+my_string = "Hello, PySwissLib!"
+print(f"Word count: {string.word_count(my_string)}")
+print(f"Is 13 prime? {math.is_prime(13)}")
+
+# Data Science
+try:
+    data = {'numbers': [1, 2, 3, 4, 5], 'squares': [1, 4, 9, 16, 25]}
+    df = datascience.create_dataframe(data)
+    print("\nDataFrame statistics:\n", datascience.basic_stats(df))
+
+    # Visualization
+    visualization.line_plot(df['numbers'], df['squares'], title="Numbers vs. Squares")
+
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+# AI/ML - Get the best available device
+try:
+    device = aiml.get_device()
+    print(f"\nUsing device: {device}")
+except Exception as e:
+    print(f"An error occurred: {e}")
+```
+
+-----
+
+## Author
+
+  * Gautham Nair
