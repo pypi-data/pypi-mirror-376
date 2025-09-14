@@ -1,0 +1,3 @@
+[sopel.plugins]
+wikipedia = sopel_wikimedia.wikipedia.plugin
+wiktionary = sopel_wikimedia.wiktionary.plugin
