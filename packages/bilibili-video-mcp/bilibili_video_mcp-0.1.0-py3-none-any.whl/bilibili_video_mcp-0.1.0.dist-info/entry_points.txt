@@ -1,0 +1,2 @@
+[console_scripts]
+bilibili-video-mcp-server = bilibili_video_mcp.bilibili_server:main
