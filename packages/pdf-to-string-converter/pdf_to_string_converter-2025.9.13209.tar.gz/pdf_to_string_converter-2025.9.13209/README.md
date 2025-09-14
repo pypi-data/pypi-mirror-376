@@ -1,0 +1,47 @@
+[![PyPI version](https://badge.fury.io/py/pdf_to_string_converter.svg)](https://badge.fury.io/py/pdf_to_string_converter)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/pdf_to_string_converter)](https://pepy.tech/project/pdf_to_string_converter)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://www.linkedin.com/in/eugene-evstafev-716669181/)
+
+# pdf_to_string_converter
+
+`pdf_to_string_converter` is a Python package designed to extract text content from PDF files efficiently. It leverages the `pypdfium2` library to provide a simple interface for converting PDF documents into plain text.
+
+## Installation
+
+To install `pdf_to_string_converter`, use pip:
+
+```bash
+pip install pdf_to_string_converter
+```
+
+## Usage
+
+Using `pdf_to_string_converter` is straightforward. Import the `extract_text_from_pdf` function and pass the path to your PDF file.
+
+```python
+from pdf_to_string_converter import extract_text_from_pdf
+
+# Assuming you have a PDF file named 'example.pdf' in the same directory
+pdf_file_path = 'example.pdf'
+extracted_text = extract_text_from_pdf(pdf_file_path)
+print(extracted_text)
+```
+
+## Features
+
+- Extracts all text from a given PDF file.
+- Returns the extracted text as a single, easy-to-process string.
+- Includes newline characters between text from different pages for better readability.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/chigwell/pdf_to_string_converter/issues).
+
+## License
+
+`pdf_to_string_converter` is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+## Author
+
+Eugene Evstafev <hi@eugene.plus>

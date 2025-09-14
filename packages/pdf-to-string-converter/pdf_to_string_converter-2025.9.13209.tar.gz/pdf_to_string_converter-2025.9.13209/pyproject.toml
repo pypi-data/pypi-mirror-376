@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf_to_string_converter"
+version = "2025.9.13209"
+description = "Convert pdf to plain string (multiline if needed)"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" },
+]
+license = { file = "LICENSE" }
+dependencies = [
+    "pypdfium2",
+    "textract",
+    "tika",
+    "pdfplumber",
+    "pdftotext"
+]
+
+[project.urls]
+Repository = "https://pypi.org/project/pdf_to_string_converter/"
