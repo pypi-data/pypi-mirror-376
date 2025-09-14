@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "EMGFlow"
+version = "1.1.0"
+description = "A general EMG processing and feature extraction package."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "D. William Conley", email = "william@cconley.ca"},
+    {name = "Steven R. Livingstone", email = "steven.livingstone@ontariotechu.ca"},
+]
+maintainers = [
+    {name = "D. William Conley", email = "william@cconley.ca"}
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "tqdm",
+    "shiny",
+    "nest-asyncio",
+    "importlib-resources"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/WiIIson/EMGFlow-Python-Package"
+Documentation = "https://wiiison.github.io/EMGFlow-Python-Package/"
+Issues = "https://github.com/WiIIson/EMGFlow-Python-Package/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"EMGFlow" = ["data/*.csv"]
