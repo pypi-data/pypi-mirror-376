@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+whitespace_normalizer/__init__.py
+whitespace_normalizer.egg-info/PKG-INFO
+whitespace_normalizer.egg-info/SOURCES.txt
+whitespace_normalizer.egg-info/dependency_links.txt
+whitespace_normalizer.egg-info/top_level.txt

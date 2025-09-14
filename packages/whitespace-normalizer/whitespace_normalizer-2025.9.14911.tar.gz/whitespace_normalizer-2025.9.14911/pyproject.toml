@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whitespace_normalizer"
+version = "2025.9.14911"
+description = "import re   def compress_whitespace(text: str) -> str:     \"\"\"     Collapse runs of spaces/tabs to a single space on each line, trim traili…"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" },
+]
+license = { file = "LICENSE" }
+dependencies = [
+
+]
+
+[project.urls]
+Repository = "https://pypi.org/project/whitespace_normalizer/"

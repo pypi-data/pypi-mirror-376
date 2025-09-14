@@ -1,0 +1,79 @@
+Metadata-Version: 2.4
+Name: whitespace_normalizer
+Version: 2025.9.14911
+Summary: import re   def compress_whitespace(text: str) -> str:     """     Collapse runs of spaces/tabs to a single space on each line, trim traili…
+Author-email: Eugene Evstafev <hi@eugene.plus>
+License: MIT License
+Project-URL: Repository, https://pypi.org/project/whitespace_normalizer/
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+[![PyPI version](https://badge.fury.io/py/whitespace_normalizer.svg)](https://badge.fury.io/py/whitespace_normalizer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/whitespace_normalizer)](https://pepy.tech/project/whitespace_normalizer)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://www.linkedin.com/in/eugene-evstafev-716669181/)
+
+# whitespace_normalizer
+
+`whitespace_normalizer` is a Python package designed to clean and standardize whitespace within text. It collapses multiple spaces and tabs into single spaces on each line, trims trailing whitespace, and removes entirely blank lines.
+
+## Installation
+
+To install `whitespace_normalizer`, use pip:
+
+```bash
+pip install whitespace_normalizer
+```
+
+## Usage
+
+Using `whitespace_normalizer` is straightforward. Import the `normalize_whitespace` function and pass your string to it.
+
+```python
+from whitespace_normalizer import normalize_whitespace
+
+text_with_messy_whitespace = """
+This is a   string   with
+extra     spaces.
+
+And some
+trailing whitespace.   
+"""
+
+cleaned_text = normalize_whitespace(text_with_messy_whitespace)
+print(cleaned_text)
+```
+
+This will output:
+
+```
+This is a string with
+extra spaces.
+And some
+trailing whitespace.
+```
+
+## Features
+
+- Collapses consecutive spaces and tabs into a single space per line.
+- Removes trailing whitespace from each line.
+- Eliminates empty lines from the text.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/chigwell/whitespace_normalizer/issues).
+
+## License
+
+`whitespace_normalizer` is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+## Author
+
+**Eugene Evstafev**
+- LinkedIn: [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://www.linkedin.com/in/eugene-evstafev-716669181/)
+
+## Repository
+
+[https://github.com/chigwell/whitespace_normalizer](https://github.com/chigwell/whitespace_normalizer)
