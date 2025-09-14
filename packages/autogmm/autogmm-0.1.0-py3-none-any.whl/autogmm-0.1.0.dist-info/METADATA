@@ -1,0 +1,137 @@
+Metadata-Version: 2.4
+Name: autogmm
+Version: 0.1.0
+Summary: Automatic Gaussian Mixture Modeling in Python
+Author: Tingshan Liu
+License: BSD 3-Clause License
+        
+        Copyright (c) YEAR, NeuroData
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice,
+           this list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from this
+           software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+        THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+        PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+        CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+        EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+        PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+        OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+        WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+        OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+        ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: Homepage, https://github.com/neurodata/autogmm
+Project-URL: Repository, https://github.com/neurodata/autogmm
+Project-URL: Issues, https://github.com/neurodata/autogmm/issues
+Keywords: clustering,gmm,mixture,model selection
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.21
+Requires-Dist: scipy>=1.8
+Requires-Dist: scikit-learn>=1.1
+Requires-Dist: joblib>=1.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7; extra == "dev"
+Requires-Dist: pytest-cov>=4; extra == "dev"
+Requires-Dist: ruff>=0.6; extra == "dev"
+Requires-Dist: black>=24.4; extra == "dev"
+Requires-Dist: pre-commit>=3.6; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=8; extra == "docs"
+Requires-Dist: numpydoc>=1.6; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=2.0; extra == "docs"
+Provides-Extra: experiments
+Requires-Dist: matplotlib; extra == "experiments"
+Requires-Dist: pandas; extra == "experiments"
+Requires-Dist: graspologic; extra == "experiments"
+Requires-Dist: seaborn; extra == "experiments"
+Requires-Dist: tqdm; extra == "experiments"
+Requires-Dist: scipy; extra == "experiments"
+Requires-Dist: joblib; extra == "experiments"
+Requires-Dist: nbformat; extra == "experiments"
+Requires-Dist: nbconvert; extra == "experiments"
+Requires-Dist: ipykernel; extra == "experiments"
+Dynamic: license-file
+
+# AutoGMM
+
+Automatic Gaussian Mixture Modeling in Python.
+
+### Install
+``` bash
+pip install autogmm
+```
+
+### Quick start
+``` python
+from autogmm import AutoGMM
+from sklearn.datasets import make_blobs
+
+X, _ = make_blobs(
+                 n_samples=1000,
+                 centers=4,
+                 cluster_std=1.2,
+                 random_state=0
+)
+
+labels = AutoGMM(
+                 min_components=1,
+                 max_components=10, # unknown K
+                 criterion="bic",
+                 random_state=0
+).fit_predict(X)
+```
+
+
+### Features
+- Initializations: KMeans, Ward–Euclidean, Ward–Mahalanobis
+
+- EM with eigenvalue flooring and covariance constraints (spherical, diag, tied, full)
+
+- Model selection via BIC/AIC (unknown *K*)
+
+- Optional spectral front-end (ASE/LSE) for nonconvex structure
+
+- Parallel evaluation, clean API, reproducible scripts
+
+
+
+### Documentation
+- API & Guides: https://github.com/neurodata/autogmm/
+- Examples: [examples/](examples) (benchmarks; stress tests; runtime scaling)
+- Reproducibility: [scripts/reproduce.sh](scripts/reproduce.sh) (regenerates all figures with fixed seeds)
+
+### Legacy & Independence
+AutoGMM was originally developed in the [graspologic](https://github.com/graspologic-org/graspologic/) library.
+As of v1.0, it is a standalone package with no dependency on graspologic.
+
+### Contributing
+Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Citation
+``` bibtex
+@software{autogmm,
+  title   = {AutoGMM: Automatic Gaussian Mixture Modeling in Python},
+  author  = {Liu, Tingshan and Athey, Thomas L. and Pedigo, Benjamin D. and Vogelstein, Joshua T.},
+  year    = {2025},
+  url     = {https://github.com/neurodata/autogmm}
+}
+```
+
+### License
+BSD 3-Clause License. See [LICENSE](LICENSE).
