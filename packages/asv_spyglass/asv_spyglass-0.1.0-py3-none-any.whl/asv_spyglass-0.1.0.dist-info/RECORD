@@ -1,0 +1,11 @@
+asv_spyglass-0.1.0.dist-info/METADATA,sha256=JVortqHtBUZIHavJXdF9oHbr-ZOYl2p6N0T79piEc2s,17675
+asv_spyglass-0.1.0.dist-info/WHEEL,sha256=9P2ygRxDrTJz3gsagc0Z96ukrxjr-LFBGOgv3AuKlCA,90
+asv_spyglass-0.1.0.dist-info/entry_points.txt,sha256=qg5JIZn0c0U9YG6sOqpHJzZWFNrGn9T9_cMrN-EbAU0,70
+asv_spyglass-0.1.0.dist-info/licenses/LICENSE.md,sha256=q2Hl1aoQox2ysFLmliLT0MRDtZfJpAf5sV-82d9TXB0,1123
+asv_spyglass/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+asv_spyglass/_asv_ro.py,sha256=V8uBswVBjIVecwzCuMBOgFRkorOBSObVuix0BYI8lQ8,2493
+asv_spyglass/_aux.py,sha256=z97953tIgongkfgr6LQxAaT_ejRwddWS7sY8J1oEsf0,85
+asv_spyglass/cli.py,sha256=vPJPOa81oIgCQHfR5BSC2KLMg4ABH-xeGFd37EzxCWo,2400
+asv_spyglass/compare.py,sha256=3xCQSpEe8-vkoJ0qhaF0Ohd8OpMwkpBiSpbrswDJHps,9318
+asv_spyglass/results.py,sha256=mUzcGKFUEweS0WMSwI2dBf3hjm5rbo_GYufwSd5-qk4,3126
+asv_spyglass-0.1.0.dist-info/RECORD,,

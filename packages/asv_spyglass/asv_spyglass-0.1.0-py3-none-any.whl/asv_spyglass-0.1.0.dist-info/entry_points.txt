@@ -1,0 +1,5 @@
+[console_scripts]
+asv-spyglass = asv_spyglass.cli:cli
+
+[gui_scripts]
+
