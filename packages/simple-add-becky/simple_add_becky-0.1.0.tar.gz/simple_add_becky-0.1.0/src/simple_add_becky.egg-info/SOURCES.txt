@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.cfg
+src/simple_add_becky/__init__.py
+src/simple_add_becky/add.py
+src/simple_add_becky.egg-info/PKG-INFO
+src/simple_add_becky.egg-info/SOURCES.txt
+src/simple_add_becky.egg-info/dependency_links.txt
+src/simple_add_becky.egg-info/top_level.txt
+tests/test_add.py

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple_add_becky"
+version = "0.1.0"
+description = "A simple example package that adds two numbers."
+authors = [{name = "Rebecca Koleth", email = "rebeccakoleth@gmail.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = []
+requires-python = ">=3.7"
