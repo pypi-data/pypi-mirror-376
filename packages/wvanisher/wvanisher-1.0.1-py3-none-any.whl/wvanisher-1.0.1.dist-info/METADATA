@@ -1,0 +1,122 @@
+Metadata-Version: 2.4
+Name: wvanisher
+Version: 1.0.1
+Summary: A flexible configuration management library for Python with dot notation support, environment variable overrides, and more.
+Project-URL: Documentation, https://github.com/woidzero/vanisher#readme
+Project-URL: Issues, https://github.com/woidzero/vanisher/issues
+Project-URL: Source, https://github.com/woidzero/vanisher
+Author-email: woidzero <wwwoidzero@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 woidzero
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: config,configuration,control,env,json,management,options,parameters
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Vanisher
+
+[![PyPI - Version](https://img.shields.io/pypi/v/wvanisher.svg)](https://pypi.org/project/wvanisher)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/wvanisher)](https://pypi.org/project/wvanisher)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wvanisher.svg)](https://pypi.org/project/wvanisher)
+
+🔩 A flexible configuration management library for Python with dot notation support, environment variable overrides and more.
+
+## Features
+
+- JSON configuration file support
+- Dot notation for accessing nested values
+- Environment variable overrides
+- Type-safe getters
+- Dictionary-like interface
+- Import/export to JSON, YAML, and TOML
+- Deep merging of configurations
+- Easy configuration updates and persistence
+- Easy to use for both pros and beginners
+
+## Installation
+
+```bash
+pip install vanisher
+```
+
+## Quick Start
+
+```python
+import vanisher
+
+config = vanisher.Vanisher("config.json")
+
+config.set({
+    "server.port": 8080,
+    "debug": False,
+    "database.user.name": "user"
+})
+
+config.get("server.port") # prints: 8080
+```
+
+## Environment Variables
+
+Environment variables automatically override config values when `env_override=True` (default).
+Keys are converted to UPPERCASE with underscores: `database.host` → `DATABASE_HOST`
+
+## Type-Safe Getters
+
+```python
+config.get_int("port", 8080)    # Returns int
+config.get_bool("debug", False) # Returns bool
+config.get_list("allowed_ips")  # Returns list
+config.get_dict("settings")     # Returns dict
+```
+
+## Advanced Features
+
+```python
+# List all config keys
+keys = config.list_keys()
+
+# Export config
+json_str = config.export("json")
+yaml_str = config.export("yaml")  # Requires PyYAML
+toml_str = config.export("toml")  # Requires toml
+
+# Import config
+config.import_('{"key": "value"}')
+config.import_({"key": "value"})
+
+# Merge configurations
+config.merge({"new": "data"})
+```
+
+## License
+
+`vanisher` is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
