@@ -1,0 +1,14 @@
+template_nn/__init__.py,sha256=vRwkPRNnmuXa_pGBvnccS0DxUO-zCt005efZlUSplY4,86
+template_nn/args_val.py,sha256=R7pVhvhg7uNcncfH9vdU9H7X0y70uj_xyQp-J4kB9EY,1320
+template_nn/keys.json,sha256=vYCTwa3Q8gvMA8_eznR1gosKZUri50c3qWmN4UYuX-U,430
+template_nn/retrieve_keys.py,sha256=NXKKsjWuoNu_0R8m1JfiHSjw2BjmjyhxvqngIR5IXlI,852
+template_nn/networks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+template_nn/networks/base_nn.py,sha256=ONYUSNmprtYfftIeNqiNBDt2AGT8xSWYEmNaifHqP5M,2170
+template_nn/networks/cml.py,sha256=OEWIafs5UcOhrFRlNoUgwDTSiJLD6701iVBTWts-v-8,1845
+template_nn/networks/cnn.py,sha256=kbGe1EGlu4abK6hh6TAR0VFPgMzi1fZIilnZfNY16SU,3466
+template_nn/networks/fnn.py,sha256=VyD4c9oY5Ugpxm3CL0EzTVmpjj-P8yr5c2Hy0t4MFb4,2175
+template_nn-0.2.3.dist-info/licenses/LICENSE,sha256=buR11NvwbhPpyrQwWpFiCmsmXKxt2786ldAu75aALFU,1076
+template_nn-0.2.3.dist-info/METADATA,sha256=C87YI2zIHYQz2TyL8QiwndGHlxY1FBSK9DckybENdTI,2208
+template_nn-0.2.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+template_nn-0.2.3.dist-info/top_level.txt,sha256=pRsE0Av778862tRjdVHJKX0uORX3VSUOPKWmWQp60eo,12
+template_nn-0.2.3.dist-info/RECORD,,
