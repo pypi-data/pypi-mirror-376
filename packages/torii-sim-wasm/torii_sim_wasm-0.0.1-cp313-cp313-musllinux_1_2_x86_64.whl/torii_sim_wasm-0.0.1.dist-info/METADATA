@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: torii-sim-wasm
+Version: 0.0.1
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Typing :: Typed
+Requires-Dist: torii>=0.8.0,<1.0
+Requires-Dist: pyvcd
+Requires-Dist: nox ; extra == 'dev'
+Provides-Extra: dev
+License-File: LICENSE
+License-File: LICENSE.docs
+Summary: A WASM based simulation backend for Torii
+Keywords: Torii,Simulation,WASM
+Author: Torii Contributors
+Author-email: Aki Van Ness <aki@lethalbit.net>, Miika Alikirri <duck@duckie.fi>
+License-Expression: BSD-2-Clause
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: source, https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm
+Project-URL: issues, https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm/issues
+
+# Torii WASM Simulation Engine
+
+TODO
+
+## Community
+
+The two primary community spots for Torii are the `#torii` IRC channel on [libera.chat] (`irc.libera.chat:6697`) which you can join via your favorite IRC client or the [web chat], and the [discussion forum] on GitHub.
+
+Please do join and share your projects using Torii, ask questions, get help with problems, or discuss Torii's development.
+
+## Reporting Issues and Requesting Features
+
+The reporting of bugs and suggestion of features are done GitHub via the [issue tracker], there are pre-defined templates for both of them that will walk you though all the information you need to provide.
+
+Be sure to read the [reporting issues] or the [suggesting features] sections of the [Contribution Guidelines] as appropriate as they go into more important details on the finer points.
+
+## License
+
+The Torii WASM simulation engine is released under the [BSD-2-Clause], the full text of which can be found in the [`LICENSE`] file in the root of the [git repository].
+
+[issue tracker]: https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm/issues
+[reporting issues]: https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm/blob/main/CONTRIBUTING.md#reporting-issues
+[suggesting features]: https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm/blob/main/CONTRIBUTING.md#suggesting-features
+[Contribution Guidelines]: https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm/blob/main/CONTRIBUTING.md
+[libera.chat]: https://libera.chat/
+[web chat]: https://web.libera.chat/#torii
+[discussion forum]: https://github.com/shrine-maiden-heavy-industries/torii-hdl/discussions
+[BSD-2-Clause]: https://spdx.org/licenses/BSD-2-Clause.html
+[`LICENSE`]: https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm/blob/main/LICENSE
+[git repository]: https://github.com/shrine-maiden-heavy-industries/torii-sim-wasm
+
