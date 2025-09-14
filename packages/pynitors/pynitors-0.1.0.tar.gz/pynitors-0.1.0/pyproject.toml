@@ -1,0 +1,20 @@
+[project]
+name = "pynitors"
+version = "0.1.0"
+description = "CLI System monitor build in python."
+readme = "README.md"
+authors = [
+    { name = "ariefminardi", email = "ariefminardi140@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "psutil>=7.0.0",
+    "typer>=0.17.4",
+]
+
+[project.scripts]
+pynitors = "pynitors.main:app"
+
+[build-system]
+requires = ["uv_build>=0.8.12,<0.9.0"]
+build-backend = "uv_build"
