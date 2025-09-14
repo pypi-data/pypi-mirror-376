@@ -1,0 +1,4 @@
+[console_scripts]
+agent-eval=agentlin.evaluation.__main__:app
+agentlin=agentlin.__main__:app
+
