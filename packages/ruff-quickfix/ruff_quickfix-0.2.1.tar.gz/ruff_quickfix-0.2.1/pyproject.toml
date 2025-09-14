@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "ruff-quickfix"
+version = "0.2.1"
+description = "Wrapper for the `ruff` command for (neo)vim's quickfix"
+authors = ["Neal Joslin <neal@joslin.io>"]
+readme = "README.md"
+license = "LICENSE"
+repository = "https://github.com/Nealium/ruff-quickfix"
+keywords = ["ruff", "cli", "vim", "neovim", "nvim", "quickfix"]
+packages = [
+    { include = "ruff_quickfix", from = "src" },
+]
+
+[tool.poetry.scripts]
+ruff-quickfix = "ruff_quickfix:cli"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^8.1.7"
+ruff = { version = "^0.6.1", optional = true }
+
+[tool.poetry.extras]
+ruff = ["ruff"]
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = { version = "^3.8.0", python = "^3.9" }
+
+[tool.poetry.group.test.dependencies]
+mypy = "^1.11.1"
+pytest = "^8.3.2"
+pytest-click = "^1.1.0"
+pytest-cov = "^5.0.0"
+tox = "^4.18.0"
+pytest-mock = "^3.14.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812",  # missing trailing comma
+    "D203",  # missing blank line before class
+    "D205",  # missing blank line after summary
+    "D212",  # summary must be placed on first physical line
+    "D400",  # requires summary to end with a period
+    "D406",  # sections shouldn't have colons, etc.
+    "D407",  # dashed lines under sections
+    "D413",  # last section needs a new line prepended
+    "D415",  # requires summary to end with a period 
+    "FIX002",  # no `TODO` comments
+    "ISC001",  # single line string concatenation
+    "S101",  # no assers (yet used in pytest)
+    "TD003",  # require issue for all `TODO` comments
+    "UP037",  # no quoted type annotations with __future__
+]
+
+[ruff.lint.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "double"
+
+[ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = "tests"
+
+[tool.coverage.run]
+branch = true
