@@ -1,0 +1,2 @@
+[console_scripts]
+mkast = mkast.__main__:main

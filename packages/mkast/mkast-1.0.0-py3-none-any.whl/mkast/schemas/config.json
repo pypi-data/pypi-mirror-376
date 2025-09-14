@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "mkast config",
+  "type": "object",
+  "properties": {
+    "extends": {
+      "type": "string",
+      "description": "A string which contains a path to another configuration file to inherit from, relative from the directory of the current configuration file. The configuration from the base file are loaded first, then overridden by those in the inheriting config file. All relative paths found in the configuration file will be resolved relative to the configuration file they originated in. Circularity between configuration files is not allowed."
+    },
+    "input": {
+      "type": "string"
+    },
+    "known_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^([A-Za-z_]\\w*)(?:\\.[A-Za-z_]\\w*)*$"
+      }
+    },
+    "root": {
+      "type": "string",
+      "pattern": "^[A-Za-z_]\\w*$"
+    },
+    "common_props": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[A-Za-z_]\\w*$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^=?([A-Za-z_]\\w*)(?:\\.[A-Za-z_]\\w*)*[?+*]*$"
+      }
+    },
+    "target": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string",
+      "pattern": "^([A-Za-z_]\\w*)(?:\\.[A-Za-z_]\\w*)*$"
+    },
+    "assert": {
+      "$ref": "#/definitions/snippet1",
+      "description": "Expands to an assertion. $1 is replaced by the boolean expression to assert"
+    },
+    "imports": {
+      "type": "array",
+      "description": "Imports to add at the top of the file",
+      "items": {
+        "type": "string",
+        "pattern": "^([A-Za-z_]\\w*)(?:\\.[A-Za-z_]\\w*)*$"
+      }
+    },
+    "union": {
+      "$ref": "#/definitions/snippet1",
+      "description": "Code placed before the name in the declaration of an union node"
+    },
+    "product": {
+      "$ref": "#/definitions/snippet1",
+      "description": "Code placed before name in the declaration of a product node"
+    },
+    "modifiers": {
+      "type": "object",
+      "properties": {
+        "": {
+          "$ref": "#/definitions/modifier"
+        },
+        "?": {
+          "$ref": "#/definitions/modifier"
+        },
+        "+": {
+          "$ref": "#/definitions/modifier"
+        },
+        "*": {
+          "$ref": "#/definitions/modifier"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "modifier": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/snippet1",
+          "title": "type",
+          "description": "The type name. $1 is replaced by the payload type."
+        },
+        "must": {
+          "$ref": "#/definitions/snippet1",
+          "title": "must",
+          "description": "The \"must\" expression. A boolean expression that validates the value. $1 is replaced by the name of the variable to check."
+        },
+        "none_when": {
+          "$ref": "#/definitions/snippet1",
+          "title": "none_when",
+          "description": "The \"none when\" expression. A boolean expression that indicates when it is invalid to unwrap the value. $1 is replaced by name of the variable to check."
+        },
+        "unwrap": {
+          "$ref": "#/definitions/snippet1",
+          "title": "unwrap",
+          "description": "The unwrapping expression. $1 is replaced by the haystack value. $1 is replaced by the name of the variable to unwrap. $2, if present, is replaced by the inner expression (based on $1)"
+        }
+      }
+    },
+    "snippet1": {
+      "type": "string",
+      "pattern": "\\$1"
+    }
+  }
+}
