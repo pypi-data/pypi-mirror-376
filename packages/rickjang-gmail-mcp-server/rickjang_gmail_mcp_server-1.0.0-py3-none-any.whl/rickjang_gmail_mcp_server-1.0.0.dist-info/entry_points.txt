@@ -1,0 +1,2 @@
+[console_scripts]
+rickjang-gmail-mcp-server = gmail_mcp_server.main:main
