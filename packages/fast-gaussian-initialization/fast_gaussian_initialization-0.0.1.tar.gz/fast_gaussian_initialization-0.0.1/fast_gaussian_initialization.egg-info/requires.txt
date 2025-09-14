@@ -1,0 +1,7 @@
+numpy
+scipy
+scikit-learn
+plyfile
+matplotlib
+tqdm
+open3d

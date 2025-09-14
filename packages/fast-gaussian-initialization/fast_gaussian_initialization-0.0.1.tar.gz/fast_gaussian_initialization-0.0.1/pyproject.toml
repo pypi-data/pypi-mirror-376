@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fast-gaussian-initialization"
+version = "0.0.1"
+license = "MIT" 
+authors = [
+  { name="rakaplay", email="161695371+rakaplay@users.noreply.github.com"},
+]
+description = "A library for fast CPU-based initialization of 3D Gaussian Splatting models from point clouds."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "plyfile",
+    "matplotlib",
+    "tqdm",
+    "open3d"
+]
