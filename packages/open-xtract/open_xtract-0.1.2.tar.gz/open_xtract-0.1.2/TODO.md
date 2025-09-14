@@ -1,0 +1,1 @@
+[] Update Docs site to include info about images and pdfs
