@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+py_archons/__init__.py
+py_archons/core.py
+py_archons/version.py
+py_archons.egg-info/PKG-INFO
+py_archons.egg-info/SOURCES.txt
+py_archons.egg-info/dependency_links.txt
+py_archons.egg-info/top_level.txt
