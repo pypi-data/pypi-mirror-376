@@ -1,0 +1,28 @@
+[package]
+name = "moon_sol_sdk_rust"
+version = "0.1.1"
+edition = "2021"
+description = "Rust bindings for Solana trading operations with PumpSwap and Raydium CPMM support"
+license = "MIT"
+homepage = "https://github.com/moon-arbitrage/moon_sol_sdk"
+repository = "https://github.com/moon-arbitrage/moon_sol_sdk"
+documentation = "https://github.com/moon-arbitrage/moon_sol_sdk#readme"
+keywords = ["solana", "blockchain", "trading", "defi"]
+categories = ["api-bindings", "cryptography::cryptocurrencies"]
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "moon_sol_sdk_rust"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.23.3", features = ["extension-module"] }
+sol-trade-sdk = "0.6.8"
+solana-sdk = "2.1"
+solana-signer = "2.1"
+tokio = { version = "1.0", features = ["full"] }
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+futures = "0.3"
