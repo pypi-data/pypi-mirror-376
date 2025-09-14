@@ -1,0 +1,11 @@
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\liblibc-79f82e7af061abdf.rmeta: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\macros.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\primitives.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\mod.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\msvc\mod.rs
+
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\liblibc-79f82e7af061abdf.rlib: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\macros.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\primitives.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\mod.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\msvc\mod.rs
+
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\libc-79f82e7af061abdf.d: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\macros.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\primitives.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\mod.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\msvc\mod.rs
+
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\lib.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\macros.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\primitives.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\mod.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\libc-0.2.174\src\windows\msvc\mod.rs:

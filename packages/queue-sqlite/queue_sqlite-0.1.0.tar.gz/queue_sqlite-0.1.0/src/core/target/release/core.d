@@ -1,0 +1,1 @@
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\core.dll: C:\Users\chakcy\Desktop\queue_sqlite\src\core\src\lib.rs C:\Users\chakcy\Desktop\queue_sqlite\src\core\src\queue_operation.rs C:\Users\chakcy\Desktop\queue_sqlite\src\core\src\task_mounter.rs

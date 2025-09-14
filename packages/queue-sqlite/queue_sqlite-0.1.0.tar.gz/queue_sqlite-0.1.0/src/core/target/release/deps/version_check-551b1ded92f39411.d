@@ -1,0 +1,10 @@
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\libversion_check-551b1ded92f39411.rmeta: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\version.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\channel.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\date.rs
+
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\libversion_check-551b1ded92f39411.rlib: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\version.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\channel.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\date.rs
+
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\version_check-551b1ded92f39411.d: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\version.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\channel.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\date.rs
+
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\lib.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\version.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\channel.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\version_check-0.9.5\src\date.rs:

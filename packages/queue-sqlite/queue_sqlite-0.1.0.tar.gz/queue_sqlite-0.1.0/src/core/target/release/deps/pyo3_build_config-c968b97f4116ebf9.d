@@ -1,0 +1,14 @@
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\libpyo3_build_config-c968b97f4116ebf9.rmeta: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\errors.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\impl_.rs C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config-file.txt C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config.txt
+
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\libpyo3_build_config-c968b97f4116ebf9.rlib: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\errors.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\impl_.rs C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config-file.txt C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config.txt
+
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\deps\pyo3_build_config-c968b97f4116ebf9.d: C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\lib.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\errors.rs C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\impl_.rs C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config-file.txt C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config.txt
+
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\lib.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\errors.rs:
+C:\Users\chakcy\.cargo\registry\src\mirrors.ustc.edu.cn-04b7754156161b43\pyo3-build-config-0.25.1\src\impl_.rs:
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config-file.txt:
+C:\Users\chakcy\Desktop\queue_sqlite\src\core\target\release\build\pyo3-build-config-dc39881a409da639\out/pyo3-build-config.txt:
+
+# env-dep:CARGO_PKG_VERSION=0.25.1
+# env-dep:OUT_DIR=C:\\Users\\chakcy\\Desktop\\queue_sqlite\\src\\core\\target\\release\\build\\pyo3-build-config-dc39881a409da639\\out

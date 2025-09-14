@@ -1,0 +1,44 @@
+[project]
+authors = [
+  {name = "chakcy", email = "947105045@qq.com"},
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: System :: Distributed Computing",
+  "Typing :: Typed",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+]
+dependencies = []
+description = "A high-performance, SQLite-based distributed task queue system with Rust-backed core operations. Supports task mounting, message listening, priority handling, retry mechanisms, and automatic cleanup of expired messages. Ideal for building reliable, scalable background task processing systems."
+name = "queue-sqlite"
+readme = "README.md"
+requires-python = ">=3.7"
+version = "0.1.0"
+
+[[tool.uv.index]]
+default = true
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[dependency-groups]
+dev = [
+    "maturin>=1.9.4",
+    "psutil>=7.0.0",
+    "pytest>=7.4.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/queue_sqlite"]
+platforms = ["windows_x86_64", "linux_x86_64"]
+
+[tool.hatch.build]
+artifacts = [
+  "src/queue_sqlite/core/*.pyd",
+]
