@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+vidurl/__init__.py
+vidurl/__main__.py
+vidurl/cli.py
+vidurl/config.py
+vidurl/exceptions.py
+vidurl/extractor.py
+vidurl/utils.py
+vidurl.egg-info/PKG-INFO
+vidurl.egg-info/SOURCES.txt
+vidurl.egg-info/dependency_links.txt
+vidurl.egg-info/entry_points.txt
+vidurl.egg-info/requires.txt
+vidurl.egg-info/top_level.txt
