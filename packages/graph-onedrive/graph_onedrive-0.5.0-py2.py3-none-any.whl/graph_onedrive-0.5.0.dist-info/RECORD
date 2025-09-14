@@ -1,0 +1,15 @@
+graph_onedrive/__init__.py,sha256=1Fcc6ZoGQJiYJsWXweFkGTvN_Iar5NxvEfw6QG_3YAA,204
+graph_onedrive/__main__.py,sha256=zhCjG7IsMxI4ioHDZtxbvkc8EGwMBRsdIUGeTKlr7nk,201
+graph_onedrive/_cli.py,sha256=mh3bGwhvg9gb4mT8uhcuLk9obhQstaCmVOvl4yEuFpA,20400
+graph_onedrive/_config.py,sha256=J6Gw126rylMA1jkuMJJCGWFAz4OaLw94tNX82z3KAfU,5274
+graph_onedrive/_decorators.py,sha256=wxlTr0ILoJCteJOi-r9gA6a6qqlunzUYSPPZjFwCGvI,1218
+graph_onedrive/_main.py,sha256=VYjV4OUM3HdQMX_qf7OMVs6pdLzVq_XDmqwjXWIelrk,141
+graph_onedrive/_manager.py,sha256=H88EbdN0BsthM1ZRxGPd9tqJpcxJlCEhFU116WYQPHw,1076
+graph_onedrive/_onedrive.py,sha256=7qE5VC9Uk29m2yGwh6euJsMW7z8uw7OFCJYih-WAE4Q,65908
+graph_onedrive/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+graph_onedrive-0.5.0.dist-info/licenses/LICENSE,sha256=Lx4ocHGHQKn_mw1z8FM2i4m9roSvCFlDCuDnlqRpi1k,1519
+graph_onedrive-0.5.0.dist-info/METADATA,sha256=CRFTY8Iexh8hFtwwMLgEwOX4Netsjyg8-AQQH-Q9hL8,4897
+graph_onedrive-0.5.0.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+graph_onedrive-0.5.0.dist-info/entry_points.txt,sha256=S9QcoWlqEn2ANmkbuKtMbSSZGjNj8gsfz9EDPk-pltc,60
+graph_onedrive-0.5.0.dist-info/top_level.txt,sha256=XEKfKbu83kj8NLfDacfnlbdfeZJfL-2ch3tx4hvnXm8,15
+graph_onedrive-0.5.0.dist-info/RECORD,,
