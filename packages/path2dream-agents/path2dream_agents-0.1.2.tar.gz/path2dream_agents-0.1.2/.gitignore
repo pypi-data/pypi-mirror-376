@@ -1,0 +1,12 @@
+# Environment files
+.env
+.venv/
+
+# UV lock file
+uv.lock
+
+# Python cache
+**/__pycache__/
+
+.claude
+
