@@ -1,0 +1,171 @@
+version: 2.1
+
+orbs:
+  gh: circleci/github-cli@2.7.0
+
+parameters:
+  project_name:
+    type: string
+    default: delfino
+  working_directory:
+    type: string
+    default: ~/delfino
+  python_version:
+    type: string
+    default: "3.9"
+  cache_version:
+    type: string
+    default: "8"
+  git_trunk_branch:
+    type: string
+    default: "main"
+  command_prefix:
+    type: string
+    default: "uv run python src/delfino/main.py"
+
+jobs:
+  test:
+    environment:
+      PYTHONPATH: src
+    parameters:
+      python_version:
+        type: string
+    docker:
+      - image: cimg/python:<< parameters.python_version >>
+        environment:
+          PIPENV_VENV_IN_PROJECT: "true"
+    working_directory: << pipeline.parameters.working_directory >>
+    steps:
+      - checkout
+      - restore_cache:
+          key: << pipeline.parameters.cache_version >>-<< pipeline.parameters.project_name >>-<< parameters.python_version >>-{{ checksum "uv.lock" }}
+      - run:
+          name: Install uv
+          command: pip install uv
+      - run:
+          name: Install dev libraries
+          command: |
+            uv venv --allow-existing
+            uv sync --dev
+      - save_cache:
+          key: << pipeline.parameters.cache_version >>-<< pipeline.parameters.project_name >>-<< parameters.python_version >>-{{ checksum "uv.lock" }}
+          paths:
+            - ".venv"
+      - run:
+          name: Verify
+          command: << pipeline.parameters.command_prefix >> verify
+      - run:
+          name: Build coverage report
+          command: << pipeline.parameters.command_prefix >> coverage-report
+      - run:
+          name: Upload coverage reports to Codecov
+          command: |
+            [[ "${CIRCLE_BRANCH}" == "<< pipeline.parameters.git_trunk_branch >>" ]] && BASE_COMMIT_SHA=$(git rev-parse HEAD~1) || BASE_COMMIT_SHA=$(git merge-base ${CIRCLE_BRANCH} origin/<< pipeline.parameters.git_trunk_branch >>)
+            bash <(curl -s https://codecov.io/bash) -N ${BASE_COMMIT_SHA} -f reports/coverage-unit.xml -F total,unit_tests &&
+            bash <(curl -s https://codecov.io/bash) -N ${BASE_COMMIT_SHA} -f reports/coverage-integration.xml -F total,integration_tests
+      - store_artifacts:
+          path: reports/coverage-report
+      - store_test_results:
+          path: reports
+
+  build:
+    working_directory: << pipeline.parameters.working_directory >>
+    docker: # run the steps with Docker
+      - image: cimg/python:<< pipeline.parameters.python_version >>
+        environment:
+          PIPENV_VENV_IN_PROJECT: "true"
+    steps:
+      - checkout
+      - restore_cache:
+          key: << pipeline.parameters.cache_version >>-<< pipeline.parameters.project_name >>-<< pipeline.parameters.python_version >>-{{ checksum "uv.lock" }}
+      - run:
+          name: Install uv
+          command: pip install uv
+      - run:
+          name: Build library
+          command: |
+            uv build
+      - persist_to_workspace:
+          root: << pipeline.parameters.working_directory >>
+          paths:
+            - .
+
+  publish:
+    working_directory: << pipeline.parameters.working_directory >>
+    docker: # run the steps with Docker
+      - image: cimg/python:<< pipeline.parameters.python_version >>
+    steps:
+      - attach_workspace:
+          at: << pipeline.parameters.working_directory >>
+      - run:
+          name: Install uv
+          command: pip install uv
+      - run:
+          name: Upload to pypi
+          command: |
+            VERSION=$(uv version --short)
+            VERSION_EXISTS=$( \
+              curl -Ls https://pypi.org/pypi/<< pipeline.parameters.project_name >>/json | \
+                jq -r '.releases | keys_unsorted' | \
+                grep -q "\"$VERSION\"" ; echo $? \
+            )
+            if [[ $VERSION_EXISTS -ne 0 ]]; then
+              uv publish
+            else
+              echo "Package with this version has been already release. Skipping."
+            fi
+
+  release:
+    working_directory: << pipeline.parameters.working_directory >>
+    docker:
+      - image: cimg/python:<< pipeline.parameters.python_version >>
+    steps:
+      - checkout
+      - restore_cache:
+          key: << pipeline.parameters.cache_version >>-<< pipeline.parameters.project_name >>-<< pipeline.parameters.python_version >>-{{ checksum "uv.lock" }}
+      - gh/setup
+      - run:
+          name: Install uv
+          command: pip install uv
+      - run:
+          name: Check if current version has been released
+          command: |
+            VERSION=$(uv version --short)
+            if [[ $(gh release view $VERSION >/dev/null 2>&1; echo $?) -eq 0 ]]; then
+              echo "Tag '$VERSION' already exists. Skipping."
+              circleci-agent step halt
+            fi
+      - run:
+          name: Create a release
+          command: gh release create $(uv version --short) -F CHANGELOG.md
+
+workflows:
+  version: 2
+  all_pipelines:
+    jobs:
+      - test:
+          name: Python << matrix.python_version >> tests
+          context: << pipeline.parameters.project_name >>
+          matrix:
+            parameters:
+              python_version: [ "3.10", "3.11", "3.12", "3.13" ]
+      - build:
+          name: Build
+          requires:
+            - test
+      - publish:
+          name: Publish to Pypi
+          context: pypi_upload
+          requires:
+            - Build
+          filters:
+            branches:
+              only: << pipeline.parameters.git_trunk_branch >>
+      - release:
+          context:
+            - github
+          requires:
+            - Publish to Pypi
+          filters:
+            branches:
+              only: << pipeline.parameters.git_trunk_branch >>
