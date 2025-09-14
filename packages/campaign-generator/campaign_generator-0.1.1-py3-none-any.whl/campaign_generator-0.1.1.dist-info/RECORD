@@ -1,0 +1,14 @@
+api.py,sha256=gYtZxINJYTmG2jhTnuPi9Q231qX4byQg-SIonHE3PFA,819
+main.py,sha256=6kU27_hQMKSWqGXb64i8HAkwCWrLKFnDgr0FIEE2iGQ,477
+schemas.py,sha256=cB9TSeuyULiPlFCKGxs2_3GMH481Ph7TteSlrR_MRJg,104
+utils.py,sha256=GvBPxBFlsq-oH7XDmELPsS6WvOGrIx__u4S9M3wlwAo,4470
+routers/audio_router.py,sha256=yDObuP9zW9TLjh5kM4JoCui2UZ-ibqRsWi1a8G77JVQ,1873
+routers/frontend_router.py,sha256=jzUoj43eLp3O-0Sc2_ZD0oQXFbsuupbFFOTuQmhYbpI,536
+routers/news_router.py,sha256=p6xD8VwGrZSdzf9ZiMV9sq2svqShvIn4qTglUJAmWK4,508
+routers/text_router.py,sha256=WW7vkcw59ewiF-rC050ATmtnQYAisZ1DWkmuKQ9Mt7s,790
+templates/home.html,sha256=tWpl8VNXBeCTJMO-1pGngUaIZUrz-QYsn2U_fj1qd1s,14483
+campaign_generator-0.1.1.dist-info/METADATA,sha256=BV46S8Lb6GKLSQOYmZTictxa9PJzh1eOR2YvLJbKwUY,3593
+campaign_generator-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+campaign_generator-0.1.1.dist-info/entry_points.txt,sha256=AL4_l9BxVBXnMaxTPUlu4qXvvIhml5rNa2v04ndyrtA,52
+campaign_generator-0.1.1.dist-info/top_level.txt,sha256=oaWL1mfpotHNqrLEMf0lP-RzehFmeyW8EOGqXfx7Oxk,41
+campaign_generator-0.1.1.dist-info/RECORD,,
