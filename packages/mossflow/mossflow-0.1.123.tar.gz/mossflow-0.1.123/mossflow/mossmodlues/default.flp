@@ -1,0 +1,357 @@
+{
+    "language": "zh",
+    "background_color": [
+        0.11,
+        0.13,
+        0.22,
+        1.0
+    ],
+    "scale": 1.0,
+    "offset_x": -1,
+    "offset_y": 0,
+    "rotation_angle": 0,
+    "modlues": {
+        "openfile": {
+            "class": "Graphics_OpenFileModule",
+            "x": -228.74923445705355,
+            "y": -259.8401435479625,
+            "radius": 10,
+            "text": "openfile",
+            "normalcolor": [
+                0.0,
+                0.5,
+                0.5,
+                1.0
+            ],
+            "selectedcolor": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+            "font_size": 16,
+            "textcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parameters": {
+                "filename": null,
+                "lastrunstatus": false
+            },
+            "breifimagewidth": 86,
+            "breifimageheight": 84,
+            "status": "Normal",
+            "language": "zh",
+            "breifimage_visible": 1,
+            "lastrunstatus": true
+        },
+        "XYZ": {
+            "class": "Graphics_ReadXYZFile",
+            "x": -266.66666666666663,
+            "y": -143.20987654320984,
+            "radius": 10,
+            "text": "XYZ",
+            "normalcolor": [
+                0.0,
+                0.5,
+                0.5,
+                1.0
+            ],
+            "selectedcolor": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+            "font_size": 16,
+            "textcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parameters": {
+                "filename": null,
+                "pointscloud": null,
+                "lastrunstatus": false
+            },
+            "breifimagewidth": 54,
+            "breifimageheight": 72,
+            "status": "Normal",
+            "language": "zh",
+            "breifimage_visible": 0,
+            "lastrunstatus": true
+        },
+        "GetPointsCloud": {
+            "class": "Graphics_GetRangeImageFromPoints",
+            "x": -242.80915550417348,
+            "y": 7.647532456824351,
+            "radius": 10,
+            "text": "GetPointsCloud",
+            "normalcolor": [
+                0.0,
+                0.5,
+                0.5,
+                1.0
+            ],
+            "selectedcolor": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+            "font_size": 16,
+            "textcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parameters": {
+                "pointscloud": null,
+                "rangeimage": null,
+                "step": 0.01,
+                "function": "getgirdimageformpointscloud",
+                "lastrunstatus": false
+            },
+            "breifimagewidth": 143,
+            "breifimageheight": 74,
+            "status": "Normal",
+            "language": "zh",
+            "breifimage_visible": 0,
+            "lastrunstatus": true
+        },
+        "TIFF": {
+            "class": "Graphics_SaveTiffModule",
+            "x": -85.0,
+            "y": 158.0,
+            "radius": 10,
+            "text": "TIFF",
+            "normalcolor": [
+                0.0,
+                0.5,
+                0.5,
+                1.0
+            ],
+            "selectedcolor": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+            "font_size": 16,
+            "textcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parameters": {
+                "depthimage": null,
+                "lastrunstatus": false
+            },
+            "breifimagewidth": 56,
+            "breifimageheight": 72,
+            "status": "Normal",
+            "language": "zh",
+            "breifimage_visible": 0,
+            "lastrunstatus": true
+        }
+    },
+    "linemodules": {
+        "BaseLine": {
+            "class": "Grpahics_WrapLineModule",
+            "x": -212.70795056186006,
+            "y": -180.52501004558619,
+            "radius": 10,
+            "text": "BaseLine",
+            "normalcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "selectedcolor": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+            "font_size": 16,
+            "textcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parameters": {
+                "ValueModule": false
+            },
+            "breifimagewidth": 90,
+            "breifimageheight": 74,
+            "language": "zh",
+            "status": "Normal",
+            "KeyA": "filename",
+            "KeyB": "filename",
+            "A": "openfile",
+            "B": "XYZ"
+        },
+        "B1": {
+            "class": "Grpahics_WrapLineModule",
+            "x": -205.48791108542005,
+            "y": -49.781172043192754,
+            "radius": 10,
+            "text": "B1",
+            "normalcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "selectedcolor": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+            "font_size": 16,
+            "textcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parameters": {
+                "ValueModule": false
+            },
+            "breifimagewidth": 43,
+            "breifimageheight": 72,
+            "language": "zh",
+            "status": "Normal",
+            "KeyA": "pointscloud",
+            "KeyB": "pointscloud",
+            "A": "XYZ",
+            "B": "GetPointsCloud"
+        },
+        "LIN1": {
+            "class": "Grpahics_WrapLineModule",
+            "x": -114.15457775208674,
+            "y": 101.32376622841218,
+            "radius": 10,
+            "text": "LIN1",
+            "normalcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "selectedcolor": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+            "font_size": 16,
+            "textcolor": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parameters": {
+                "ValueModule": false
+            },
+            "breifimagewidth": 59,
+            "breifimageheight": 72,
+            "language": "zh",
+            "status": "Normal",
+            "KeyA": "rangeimage",
+            "KeyB": "depthimage",
+            "A": "GetPointsCloud",
+            "B": "TIFF"
+        }
+    },
+    "texts": {
+        "zh": {
+            "update_drawobjects_msg_title": "更新模块",
+            "update_drawobjects_msg_content": "模块已存在，是否覆盖？",
+            "update_drawobjects_msg_error": "模块名称不能为空。",
+            "on_confirmbuttonclick_errormsg_title": "错误",
+            "on_confirmbuttonclick_errormsg_content": "设置输入失败，请检查参数。",
+            "on_f11_error": "请选择一个模块",
+            "module": "模块",
+            "langeuage": "语言",
+            "setting": "设置",
+            "link": "链接",
+            "basicline": "链接",
+            "ifline": "条件分支",
+            "script": "脚本",
+            "tool": "工具",
+            "calculator": "计算器",
+            "numberkeyboard": "数字键盘",
+            "imageviewer": "图像查看器",
+            "defaulttask": "默认任务",
+            "save": "保存任务",
+            "fileprocess": "文件",
+            "cv": "图像处理",
+            "Cvt": "转换",
+            "cvtcolor": "转换颜色",
+            "loadimg": "加载",
+            "loadrgbimg": "加载RGB",
+            "tiff": "加载TIFF",
+            "openfile": "打开文件",
+            "readxyzfile": "读取XYZ文件",
+            "savetiff": "保存为Tiff文件",
+            "IFLINE": "判断分支",
+            "BaseLine": "链接",
+            "pcl": "点云",
+            "getminmax3d": "获取点云最小最大值",
+            "getrangeimagefrompoints": "获取点云深度图"
+        },
+        "en": {
+            "update_drawobjects_msg_title": "Update Module",
+            "update_drawobjects_msg_content": "Module already exists. Overwrite?",
+            "update_drawobjects_msg_error": "Module name cannot be empty.",
+            "on_confirmbuttonclick_errormsg_title": "Error",
+            "on_confirmbuttonclick_errormsg_content": "Failed to set input, please check parameters.",
+            "on_f11_error": "Please select a module",
+            "module": "Module",
+            "langeuage": "Language",
+            "setting": "Settings",
+            "link": "Link",
+            "basicline": "Basic Line",
+            "ifline": "If Line",
+            "script": "Script",
+            "tool": "Tool",
+            "calculator": "Calculator",
+            "numberkeyboard": "Numeric Pad",
+            "imageviewer": "Image Viewer",
+            "defaulttask": "Default Task",
+            "save": "Save Task",
+            "fileprocess": "FileOperation",
+            "cv": "CV",
+            "Cvt": "Convert",
+            "cvtcolor": "CvtColor",
+            "loadimg": "LoadImg",
+            "loadrgbimg": "LoadRGB",
+            "tiff": "LoadTIFF",
+            "openfile": "OpenFile",
+            "readxyzfile": "Read XYZ File",
+            "savetiff": "Save as Tiff File",
+            "IFLINE": "IfLine",
+            "BaseLine": "Link",
+            "pcl": "PointsCloud",
+            "getminmax3d": "Get Min Max 3D",
+            "getrangeimagefrompoints": "Get Range Image From Points"
+        }
+    }
+}
