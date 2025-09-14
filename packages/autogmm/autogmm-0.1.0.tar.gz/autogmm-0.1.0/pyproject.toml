@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=70", "wheel>=0.44"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autogmm"
+version = "0.1.0"
+description = "Automatic Gaussian Mixture Modeling in Python"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Tingshan Liu" }]
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.21",
+  "scipy>=1.8",
+  "scikit-learn>=1.1",
+  "joblib>=1.1"
+]
+keywords = ["clustering","gmm","mixture","model selection"]
+
+[project.urls]
+Homepage = "https://github.com/neurodata/autogmm"
+Repository = "https://github.com/neurodata/autogmm"
+Issues   = "https://github.com/neurodata/autogmm/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = true
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov>=4", "ruff>=0.6", "black>=24.4", "pre-commit>=3.6"]
+docs = ["sphinx>=8", "numpydoc>=1.6", "sphinx-rtd-theme>=2.0"]
+experiments = [
+  "matplotlib",
+  "pandas",
+  "graspologic",
+  "seaborn",
+  "tqdm",
+  "scipy",
+  "joblib",
+  "nbformat",
+  "nbconvert",
+  "ipykernel",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py39","py310","py311","py312"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+lint.select = ["E","F","I","UP","B"]
+lint.ignore = ["E203","E266","E501"]
+exclude = ["docs/_build"]
+
+[tool.ruff.isort]
+known-first-party = ["autogmm"]

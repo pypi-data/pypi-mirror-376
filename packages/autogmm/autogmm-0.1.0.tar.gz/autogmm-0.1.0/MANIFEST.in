@@ -1,0 +1,18 @@
+include LICENSE
+include README.md
+include pyproject.toml
+
+# docs (but not the built HTML)
+recursive-include docs *.rst conf.py
+prune docs/_build
+
+# experiments
+recursive-include envs *.yml
+recursive-include examples *.ipynb *.md *.csv
+recursive-include scripts *.sh *.py
+
+# tests
+recursive-include tests *.py
+
+# never ship these
+global-exclude __pycache__ *.py[cod] *.so .DS_Store */.DS_Store .ipynb_checkpoints*
