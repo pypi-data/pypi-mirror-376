@@ -1,0 +1,11 @@
+mini_gpr/__init__.py,sha256=ShXQBVjyiSOHxoQJS2BvNG395W4KZfqMxZWBAR0MZrE,22
+mini_gpr/kernels.py,sha256=R4qcBpM3TNmH9NMUOZijoaT9wdf7hE0gYRNabGwHm5I,8744
+mini_gpr/models.py,sha256=QQQvLnUu3FKUfJlYZReG4RLDp1OS8L6WEN5L2cGWzdk,11828
+mini_gpr/opt.py,sha256=rmojahwVWfavEJVNgHgN1tmj1IDR4XtS1GZN835zpcY,4084
+mini_gpr/solvers.py,sha256=hGGy6T7ZNQ5Z8afyYAc9eZxlckq_QLAaHOLMnMMSpYo,734
+mini_gpr/tutorials.py,sha256=L3lr0avbPcxeXP1OCubRDco3oeDfwyMTOLmiDqNfVoo,900
+mini_gpr/utils.py,sha256=4Bn5vBTT2Uo3ajpe9W_CAb3uP_J1MuYnjUeSp_XZ5zo,1485
+mini_gpr/viz.py,sha256=We1YI7SmRS96MDsVVMWGy18ehefUec7kwyd9jFIHeuM,3690
+mini_gpr-0.0.0.dist-info/METADATA,sha256=DoOQiHgmq-KUES9QBJtao10NtIrhTe6IlTt-kjXSD0U,992
+mini_gpr-0.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mini_gpr-0.0.0.dist-info/RECORD,,
