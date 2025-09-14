@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"..\\pictex\\.venv\\Scripts\\python.exe\" -c \"\n# Test si el import funciona correctamente\nprint(''=== TESTING IMPORTS ==='')\ntry:\n    from html2pic import Html2Pic\n    print(''✓ html2pic import OK'')\n    \n    html = ''<div>test</div>''\n    css = ''''''\n    @font-face {\n        font-family: ''Test'';\n        src: url(''test.ttf'');\n    }\n    div { font-family: Test; }\n    ''''''\n    \n    renderer = Html2Pic(html, css)\n    print(f''✓ Html2Pic instance created'')\n    print(f''✓ Font registry: {len(renderer.font_registry)} fonts'')\n    \n    # Verificar el import directo de src\n    from src.html2pic import Html2Pic as SrcHtml2Pic\n    print(''✓ src.html2pic import OK'')\n    \n    renderer2 = SrcHtml2Pic(html, css)\n    print(f''✓ SrcHtml2Pic font registry: {len(renderer2.font_registry)} fonts'')\n    \nexcept Exception as e:\n    print(f''✗ Error: {e}'')\n    import traceback\n    traceback.print_exc()\n\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
