@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: kvx-sysops
+Version: 1.1.1
+Summary: Herramienta de pentesting
+Author-email: Kovax00 <adx@ejemplo.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: license-file

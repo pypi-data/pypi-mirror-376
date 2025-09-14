@@ -1,0 +1,10 @@
+LICENSE.txt
+Readme.md
+pyproject.toml
+SysOps/__init__.py
+SysOps/main.py
+kvx_sysops.egg-info/PKG-INFO
+kvx_sysops.egg-info/SOURCES.txt
+kvx_sysops.egg-info/dependency_links.txt
+kvx_sysops.egg-info/entry_points.txt
+kvx_sysops.egg-info/top_level.txt
