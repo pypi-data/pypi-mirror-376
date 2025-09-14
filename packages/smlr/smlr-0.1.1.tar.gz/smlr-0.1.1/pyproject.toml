@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smlr"
+version = "0.1.1"
+description = "A simple image compression tool"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Jack Douglas"},
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "Pillow",
+    "importlib_metadata; python_version < '3.8'",
+]
+
+[project.scripts]
+smlr = "smlr.cli:cli"
+
+[project.urls]
+Repository = "https://github.com/J-Douglas/smlr"
+Issues = "https://github.com/J-Douglas/smlr/issues"

@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+smlr/__init__.py
+smlr/cli.py
+smlr/dct.py
+smlr/smlr.py
+smlr.egg-info/PKG-INFO
+smlr.egg-info/SOURCES.txt
+smlr.egg-info/dependency_links.txt
+smlr.egg-info/entry_points.txt
+smlr.egg-info/not-zip-safe
+smlr.egg-info/requires.txt
+smlr.egg-info/top_level.txt

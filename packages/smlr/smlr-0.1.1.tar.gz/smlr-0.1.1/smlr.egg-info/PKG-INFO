@@ -1,0 +1,75 @@
+Metadata-Version: 2.4
+Name: smlr
+Version: 0.1.1
+Summary: A simple image compression tool
+Home-page: https://github.com/yourusername/smlr
+Author: Jack Douglas
+License: MIT
+Project-URL: Repository, https://github.com/J-Douglas/smlr
+Project-URL: Issues, https://github.com/J-Douglas/smlr/issues
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: Pillow
+Requires-Dist: importlib_metadata; python_version < "3.8"
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# SMLR
+
+A simple compression tool.
+
+## Installation
+
+```bash
+pip install smlr
+```
+
+## Usage
+
+### Command Line Interface
+```bash
+smlr --path /path/to/image.jpg --ratio 4
+```
+
+### Python API
+```python
+from smlr import SMLR
+
+# Compress an image with compression ratio 4
+SMLR.compress("image.jpg", ratio=4)
+```
+
+## Example
+
+<table>
+  <tr>
+    <td align="center"><strong>Original (4.9 MB)</strong></td>
+    <td align="center"><strong>Compressed (1.7 MB, ratio=4)</strong></td>
+  </tr>
+  <tr>
+    <td><img src="https://j-douglas.github.io/img/eiffel_tower.jpg" alt="Original Eiffel Tower (4.9 MB)" width="400" /></td>
+    <td><img src="https://j-douglas.github.io/img/compressed_eiffel_tower.jpg" alt="Compressed Eiffel Tower (1.7 MB, ratio=4)" width="400" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><code>smlr --path eiffel_tower.jpg --ratio 4</code></td>
+  </tr>
+  
+</table>
+
+
+## Requirements
+
+- Python 3.7+
+- numpy
+- scipy
+- matplotlib
+- Pillow
+
+## License
+
+MIT License
