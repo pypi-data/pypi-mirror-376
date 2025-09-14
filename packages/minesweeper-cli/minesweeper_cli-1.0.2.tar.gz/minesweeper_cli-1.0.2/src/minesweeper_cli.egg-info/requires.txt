@@ -1,0 +1,7 @@
+click>=8.0
+colorama>=0.4
+ruff>=0.13.0
+
+[dev]
+black>=22.0
+ruff>=0.13.0
