@@ -1,0 +1,12 @@
+refusal_cleaner/__init__.py,sha256=jLYIhRulVzX4sAEfFBG2B4-FV4c9XGfzLHQui5Bk00U,219
+refusal_cleaner/classifier.py,sha256=HngpjOlfI8VqS-BsnZl-aJPTLN_jV2YduxbFE5TlSvU,1402
+refusal_cleaner/cli.py,sha256=6C6ypVMQRgBDxg4gslHq8-XL328H4qimS6OqCgJXLDA,1964
+refusal_cleaner/download_and_clean.py,sha256=DGyXaBJC0jzfVOrkgjnDQFk8cBXCkkHIKcCIhFy9A0A,1170
+refusal_cleaner/pipeline.py,sha256=QfdqY1n-ELUaKaxgJQ12dhQg7aFXk9NRs_hPtGglqvY,3588
+refusal_cleaner/rewriter.py,sha256=HwMtTrcfT91leLlzZSJhwedPtPIb3C3tu9XBFrY8WnI,2801
+refusal_cleaner-0.1.0.dist-info/licenses/LICENSE,sha256=BN-J8jGji_kkLmh2oLf-Q_mHoU-T9wAyLGdgMbPoA88,1071
+refusal_cleaner-0.1.0.dist-info/METADATA,sha256=Ln5Lv8DIKbdhHYTIa9UrrDpJDQqGcOFT2RyaNn2bgZ0,9465
+refusal_cleaner-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+refusal_cleaner-0.1.0.dist-info/entry_points.txt,sha256=ZJChLpF0Bs7jlZ-KiMGfIH8avohKM2slcTSb85fAwGE,61
+refusal_cleaner-0.1.0.dist-info/top_level.txt,sha256=RR4fR5Ui5pZTtLy-2oxO-Y00MhRIHtquxtROWZJp5B4,16
+refusal_cleaner-0.1.0.dist-info/RECORD,,
