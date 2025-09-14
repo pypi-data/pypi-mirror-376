@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "otium-common"
+version = "0.1.0"
+authors = [
+    {name = "배주영",email = "bjs338570@gmail.com"}
+]
+dependencies = [
+    "djangorestframework (>=3.15.2,<4.0.0)",
+    "django (==5.2b1)"
+]
+
+[project.urls]
+Repository = "https://github.com/bjs3385/otium-common"
+
+[tool.setuptools]
+
+[tool.setuptools.packages.find]
+# Include package and all subpackages (e.g., otium_common.service, ...)
+include = ["otium_common*"]
