@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+examples/simple_demo.py
+test_cad/first_model.py
+topax/__init__.py
+topax/_app.py
+topax/_builders.py
+topax/_utils.py
+topax/ops.py
+topax/sdfs.py
+topax.egg-info/PKG-INFO
+topax.egg-info/SOURCES.txt
+topax.egg-info/dependency_links.txt
+topax.egg-info/entry_points.txt
+topax.egg-info/requires.txt
+topax.egg-info/top_level.txt
