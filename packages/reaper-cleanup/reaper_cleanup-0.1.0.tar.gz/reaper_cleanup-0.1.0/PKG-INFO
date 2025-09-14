@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: reaper-cleanup
+Version: 0.1.0
+Summary: CLI tool to clean up unused media files from Reaper projects
+Author: MateusMolina
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/MateusMolina/reaper-cleanup
+Project-URL: Repository, https://github.com/MateusMolina/reaper-cleanup
+Project-URL: Issues, https://github.com/MateusMolina/reaper-cleanup/issues
+Keywords: reaper,audio,cleanup,media,daw
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Multimedia :: Sound/Audio
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0.0
+
+# Reaper Cleanup
+
+A CLI tool to clean up unused media files from Reaper projects. It covers the use case of having multiple projects in the same folder refering to the same medias (e.g., for version control). 
+
+## Features
+
+- Scans all Reaper project files (`.rpp`) in a given directory
+- Identifies media files referenced in the projects
+- Finds unused media files in the Media folder (configurable, type `reaper-cleanup --help`)
+- Shows a list of files to be deleted and asks for confirmation
+- Safely removes unused media files
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+```bash
+reaper-cleanup /path/to/your/reaper/project/folder
+```
+
+The tool will:
+
+1. Scan all `.rpp` files in the specified folder
+2. Check which media files are referenced
+3. List all unused media files in the Media subfolder
+4. Ask for confirmation before deletion
