@@ -1,0 +1,10 @@
+book_cataloguing/__init__.py,sha256=fHwc6o1oDLrwQkpNuz6vGYqa9lnUjTNwws67d2iJL8s,730
+book_cataloguing/author_titles.txt,sha256=ipd6CT4v8o55b8jEzluVEPxzWw59V40XS4m5l4D-SSs,670
+book_cataloguing/contents.py,sha256=lX4wnPxxsZBszRikKCda0bFU9QpdYcpawkI-1fNBJnA,30961
+book_cataloguing/lowercase_author_words.txt,sha256=VG6qDnCzpDZHrHHi6RrHPToQv22heLtTKlIaOwHUbnw,44
+book_cataloguing/lowercase_title_words.txt,sha256=2OiYe0a3sMZWDAMzt4Da71zNd0mI9r4PUDad6QS-b-I,154
+book_cataloguing/mac_surnames.txt,sha256=sugu_9hQeYg2iHvIbNPre7n7DfIMMq1rgbC0-AJRvbM,716
+book_cataloguing-1.0.0.dist-info/METADATA,sha256=iSCNR_EhL7dHsQ94HMKPmQMaWrcD0pXeo22cr86n-nQ,1831
+book_cataloguing-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+book_cataloguing-1.0.0.dist-info/licenses/LICENSE,sha256=8BbxJbqYuOvZvXW4fnzMBcKPSFtXjoW68fevUdNvYQQ,1070
+book_cataloguing-1.0.0.dist-info/RECORD,,
