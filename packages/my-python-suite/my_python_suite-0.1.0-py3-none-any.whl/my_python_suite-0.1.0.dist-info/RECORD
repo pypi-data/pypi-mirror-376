@@ -1,0 +1,12 @@
+my_python_suite/Calc.py,sha256=FAsbsCnqsst6SKySQAH33feyo7JOjiDTOryD2BMXWNg,379
+my_python_suite/PythonSuite.py,sha256=cxoAPlDXoHMkc5S46lce2WFlcMXLm5wWv9nv1vt_C1U,6122
+my_python_suite/UnitConvert.py,sha256=ArM0lqctnZo9Rydj0P0VwowbOjAdDFFGuZJnkfNTKdI,6300
+my_python_suite/__init__.py,sha256=MWFitKTtcjoF0DOcFGcFt3K2Z5s1bS8DZ7A0zULtrF4,163
+my_python_suite/cli.py,sha256=6QE0UNIfYvjJng80EcMI9ElJbNmkk3Jzbd2qYC0p3OY,751
+my_python_suite/funfact.py,sha256=CoTglWECVYRDklElmhM3JWtvXq6NiV25XK6_r8IhZzs,1030
+my_python_suite-0.1.0.dist-info/licenses/LICENSE,sha256=PziOENXCmojWM95CeMVDxsXt4LhrmYlyp2Gzyupukt8,1071
+my_python_suite-0.1.0.dist-info/METADATA,sha256=pgzD3OoW0koIU5QKI99MwSQrDscBTBooR2Y3czZqiDA,4551
+my_python_suite-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+my_python_suite-0.1.0.dist-info/entry_points.txt,sha256=UlMyRRCYYlNDObUogtge_Zg-0TQJwfDs9cKi36dMC50,55
+my_python_suite-0.1.0.dist-info/top_level.txt,sha256=KiwWZP-HiefJF-EE7mbUoAz6izgY5mZEoCw1SXPICeY,16
+my_python_suite-0.1.0.dist-info/RECORD,,
