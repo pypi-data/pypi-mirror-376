@@ -1,0 +1,255 @@
+{'benchmark_base': shape: (16,)
+Series: 'benchmark_base' [str]
+[
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	…
+	"benchmarks.time_ranges_multi"
+	"benchmarks.time_ranges_multi"
+	"benchmarks.time_ranges_multi"
+	"benchmarks.time_sort"
+	"benchmarks.time_sort"
+],
+ 'ci_99_a': shape: (16,)
+Series: 'ci_99_a' [f64]
+[
+	1.3444e-7
+	5.3813e-7
+	0.000001
+	1.8023e-7
+	7.7445e-7
+	…
+	0.000001
+	4.3157e-7
+	0.000003
+	0.000001
+	0.000002
+],
+ 'ci_99_b': shape: (16,)
+Series: 'ci_99_b' [f64]
+[
+	1.4947e-7
+	5.4586e-7
+	0.000001
+	1.9282e-7
+	7.9307e-7
+	…
+	0.000001
+	4.3557e-7
+	0.000003
+	0.000001
+	0.000002
+],
+ 'env': shape: (16,)
+Series: 'env' [str]
+[
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+	…
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+	"rattler-py3.12-numpy"
+],
+ 'machine': shape: (16,)
+Series: 'machine' [str]
+[
+	"rgx1gen11"
+	"rgx1gen11"
+	"rgx1gen11"
+	"rgx1gen11"
+	"rgx1gen11"
+	…
+	"rgx1gen11"
+	"rgx1gen11"
+	"rgx1gen11"
+	"rgx1gen11"
+	"rgx1gen11"
+],
+ 'name': shape: (16,)
+Series: 'name' [str]
+[
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	"benchmarks.TimeSuiteDecoratorS…
+	…
+	"benchmarks.time_ranges_multi(1…
+	"benchmarks.time_ranges_multi(1…
+	"benchmarks.time_ranges_multi(1…
+	"benchmarks.time_sort(10)"
+	"benchmarks.time_sort(100)"
+],
+ 'number': shape: (16,)
+Series: 'number' [i64]
+[
+	67364
+	16815
+	8960
+	63961
+	15516
+	…
+	9631
+	20588
+	3042
+	9345
+	5828
+],
+ 'param_func_name': shape: (16,)
+Series: 'param_func_name' [str]
+[
+	null
+	null
+	null
+	null
+	null
+	…
+	"'arange'"
+	"'range'"
+	"'arange'"
+	null
+	null
+],
+ 'param_n': shape: (16,)
+Series: 'param_n' [str]
+[
+	null
+	null
+	null
+	null
+	null
+	…
+	"10"
+	"100"
+	"100"
+	"10"
+	"100"
+],
+ 'param_size': shape: (16,)
+Series: 'param_size' [str]
+[
+	"10"
+	"100"
+	"200"
+	"10"
+	"100"
+	…
+	null
+	null
+	null
+	null
+	null
+],
+ 'q_25': shape: (16,)
+Series: 'q_25' [f64]
+[
+	1.3621e-7
+	5.4190e-7
+	0.000001
+	1.8595e-7
+	7.8003e-7
+	…
+	0.000001
+	4.3176e-7
+	0.000003
+	0.000001
+	0.000002
+],
+ 'q_75': shape: (16,)
+Series: 'q_75' [f64]
+[
+	1.4310e-7
+	5.4495e-7
+	0.000001
+	1.9121e-7
+	7.8758e-7
+	…
+	0.000001
+	4.3420e-7
+	0.000003
+	0.000001
+	0.000002
+],
+ 'repeat': shape: (16,)
+Series: 'repeat' [i64]
+[
+	10
+	10
+	10
+	10
+	10
+	…
+	10
+	10
+	10
+	10
+	10
+],
+ 'result': shape: (16,)
+Series: 'result' [f64]
+[
+	1.3738e-7
+	5.4292e-7
+	0.000001
+	1.8705e-7
+	7.8471e-7
+	…
+	0.000001
+	4.3222e-7
+	0.000003
+	0.000001
+	0.000002
+],
+ 'samples': shape: (16,)
+Series: 'samples' [null]
+[
+	null
+	null
+	null
+	null
+	null
+	…
+	null
+	null
+	null
+	null
+	null
+],
+ 'units': shape: (16,)
+Series: 'units' [str]
+[
+	"seconds"
+	"seconds"
+	"seconds"
+	"seconds"
+	"seconds"
+	…
+	"seconds"
+	"seconds"
+	"seconds"
+	"seconds"
+	"seconds"
+],
+ 'version': shape: (16,)
+Series: 'version' [str]
+[
+	"64746c9051ff76aa879b428c27b424…
+	"64746c9051ff76aa879b428c27b424…
+	"64746c9051ff76aa879b428c27b424…
+	"ab162b6142a1390a0e2a667ed8d2d3…
+	"ab162b6142a1390a0e2a667ed8d2d3…
+	…
+	"f9ae8b134446c273c0d3eb1e90246a…
+	"f9ae8b134446c273c0d3eb1e90246a…
+	"f9ae8b134446c273c0d3eb1e90246a…
+	"60785bf757da0254d857b696482db7…
+	"60785bf757da0254d857b696482db7…
+]}
