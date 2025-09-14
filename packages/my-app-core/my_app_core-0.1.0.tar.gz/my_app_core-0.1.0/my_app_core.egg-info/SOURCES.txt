@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+my_app_core.egg-info/PKG-INFO
+my_app_core.egg-info/SOURCES.txt
+my_app_core.egg-info/dependency_links.txt
+my_app_core.egg-info/entry_points.txt
+my_app_core.egg-info/top_level.txt
+myapp/__init__.py
+myapp/core.py
+myapp/plugin_base.py
+myapp/plugin_manager.py
