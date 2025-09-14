@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anubis-solver"
+version = "0.1.0"
+description = "Solver for anti-bot challenges (Anubis / canine.tools style)"
+authors = [{ name="huzpsb", email="noreply@example.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = ["requests"]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/huzpsb/anubis_solver_pypi"
+
+[tool.setuptools]
+packages = ["anubis_solver"]
+
+[tool.setuptools.package-data]
+anubis_solver = ["*.py"]

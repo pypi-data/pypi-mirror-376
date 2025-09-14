@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.cfg
+anubis_solver/__init__.py
+anubis_solver/solver.py
+anubis_solver/utils.py
+anubis_solver.egg-info/PKG-INFO
+anubis_solver.egg-info/SOURCES.txt
+anubis_solver.egg-info/dependency_links.txt
+anubis_solver.egg-info/requires.txt
+anubis_solver.egg-info/top_level.txt
