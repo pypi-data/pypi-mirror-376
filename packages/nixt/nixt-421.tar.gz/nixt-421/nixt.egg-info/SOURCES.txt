@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+pyproject.toml
+nixt/handler.py
+nixt/methods.py
+nixt/objects.py
+nixt/persist.py
+nixt/runtime.py
+nixt.egg-info/PKG-INFO
+nixt.egg-info/SOURCES.txt
+nixt.egg-info/dependency_links.txt
+nixt.egg-info/top_level.txt
