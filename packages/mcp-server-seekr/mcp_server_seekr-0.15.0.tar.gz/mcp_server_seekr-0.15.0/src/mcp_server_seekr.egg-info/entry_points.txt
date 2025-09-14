@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-server-seekr = mcp_server_seekr.main:run
