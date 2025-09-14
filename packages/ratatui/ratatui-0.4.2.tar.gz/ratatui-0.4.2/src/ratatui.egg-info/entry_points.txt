@@ -1,0 +1,15 @@
+[console_scripts]
+ratatui = ratatui_py.demo_runner:run_demo_hub
+ratatui-dashboard = ratatui_py.demo_runner:run_dashboard
+ratatui-demos = ratatui_py.demo_runner:run_demo_hub
+ratatui-ffi-audit-py = ratatui_py.tools.ffi_coverage_py:main
+ratatui-ffi-audit-ts = ratatui_py.tools.ffi_coverage_ts:main
+ratatui-hello = ratatui_py.examples:hello_main
+ratatui-life = ratatui_py.examples:life_main
+ratatui-py = ratatui_py.demo_runner:run_demo_hub
+ratatui-py-dashboard = ratatui_py.demo_runner:run_dashboard
+ratatui-py-demos = ratatui_py.demo_runner:run_demo_hub
+ratatui-py-hello = ratatui_py.examples:hello_main
+ratatui-py-life = ratatui_py.examples:life_main
+ratatui-py-widgets = ratatui_py.examples:widgets_main
+ratatui-widgets = ratatui_py.examples:widgets_main
