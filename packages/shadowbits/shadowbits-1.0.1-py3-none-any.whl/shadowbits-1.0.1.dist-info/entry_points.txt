@@ -1,0 +1,2 @@
+[console_scripts]
+shadowbits = shadowbits.cli:main
