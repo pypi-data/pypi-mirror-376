@@ -1,0 +1,12 @@
+LLMlight/LLMlight.py,sha256=ULeA0dsjjgCaMGG6VlaWrL0PM3ciLgw-CvJKexcVTBc,70056
+LLMlight/RAG.py,sha256=-UbNL6ySXB25yoBhFlLX8kmg-dHsOy7Atm2zuOJlq_E,17068
+LLMlight/__init__.py,sha256=mqRMkVhLi96vDoqoX7G2uEA9O8m5g884g7VDZibTGuI,5204
+LLMlight/examples.py,sha256=-vxuMF-rJ3BWJ3Ld4Tl0LiMHTUzChPsdJqX8tWX3kiY,36419
+LLMlight/memory.py,sha256=crERzMYwWmlfYcv7siiI1BRaKx4KVg8h00Gym8FgGgo,16740
+LLMlight/read_outlook.py,sha256=erQwDyZ4-q86vu6rmaVm47J0FwJSjzPCP_TvJPMefyI,12470
+LLMlight/utils.py,sha256=uDUKQdQBmzn7qdb3-TWjNlAxyshPr3Wp2Yrf287A60w,5686
+llmlight-0.4.0.dist-info/licenses/LICENSE,sha256=JkxTrO8pV4E09oHxiJFIGyq7rs1NEGrLjO84dKkuVPk,1085
+llmlight-0.4.0.dist-info/METADATA,sha256=zRDUSwlnhccCWl5cI-nmJAHCdzrHp55vIW5RzHOd4xY,12046
+llmlight-0.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+llmlight-0.4.0.dist-info/top_level.txt,sha256=pOpUJr6UikESfIBDw_QtBNKM6ALg9TefsBk-KS6eNgM,9
+llmlight-0.4.0.dist-info/RECORD,,
