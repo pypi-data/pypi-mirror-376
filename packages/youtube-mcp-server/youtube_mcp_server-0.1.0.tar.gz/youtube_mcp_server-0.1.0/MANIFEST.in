@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include CLAUDE.md
+exclude test_server.py
+exclude UPLOAD_GUIDE.md
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

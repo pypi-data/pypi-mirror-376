@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "youtube-mcp-server"
+version = "0.1.0"
+description = "YouTube MCP server using FastMCP and you-get for downloading videos"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "yzfly", email = "yz.liu.me@gmail.com" }
+]
+dependencies = [
+    "fastmcp>=2.12.0",
+    "you-get>=0.4.1650",
+]
+
+[project.scripts]
+youtube-mcp-server = "youtube_mcp_server:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["youtube_mcp_server"]

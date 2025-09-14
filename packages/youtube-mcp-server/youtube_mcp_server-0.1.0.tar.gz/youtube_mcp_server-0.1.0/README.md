@@ -1,0 +1,108 @@
+# YouTube MCP Server
+
+A Model Context Protocol (MCP) server that provides YouTube video downloading capabilities using [FastMCP](https://fastmcp.com/) and [you-get](https://github.com/soimort/you-get).
+
+## Features
+
+- Download YouTube videos in various formats
+- Get video information without downloading
+- List available video formats
+- Configurable output directory
+- Built with FastMCP for easy integration
+
+## Installation
+
+### From PyPI
+
+```bash
+pip install youtube-mcp-server
+```
+
+### From Source
+
+```bash
+git clone https://github.com/yzfly/youtube-mcp-server.git
+cd youtube-mcp-server
+pip install -e .
+```
+
+## Prerequisites
+
+This server requires `you-get` to be installed:
+
+```bash
+pip install you-get
+```
+
+## Usage
+
+### Running the Server
+
+```bash
+youtube-mcp-server
+```
+
+The server runs on stdio transport by default, making it compatible with Claude Desktop and other MCP clients.
+
+### Available Tools
+
+#### `download_youtube_video`
+Downloads a YouTube video.
+
+**Parameters:**
+- `url` (str): YouTube video URL
+- `output_dir` (str, optional): Output directory for downloaded files
+- `format_type` (str, optional): Preferred video format (e.g., 'mp4', 'flv')
+- `info_only` (bool): If True, only returns video info without downloading
+
+#### `get_video_info`
+Gets video information without downloading.
+
+**Parameters:**
+- `url` (str): YouTube video URL
+
+#### `list_available_formats`
+Lists all available formats for a video.
+
+**Parameters:**
+- `url` (str): YouTube video URL
+
+## Configuration
+
+### Claude Desktop Integration
+
+Add to your Claude Desktop configuration:
+
+```json
+{
+  "mcpServers": {
+    "youtube-mcp-server": {
+      "command": "youtube-mcp-server"
+    }
+  }
+}
+```
+
+## Development
+
+### Setup
+
+```bash
+git clone https://github.com/yzfly/youtube-mcp-server.git
+cd youtube-mcp-server
+pip install -e ".[dev]"
+```
+
+### Testing
+
+```bash
+pytest
+```
+
+## License
+
+MIT License
+
+## Author
+
+Created by [yzfly](https://github.com/yzfly)
