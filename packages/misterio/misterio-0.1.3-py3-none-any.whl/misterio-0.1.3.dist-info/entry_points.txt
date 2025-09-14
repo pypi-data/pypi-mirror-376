@@ -1,0 +1,6 @@
+[console_scripts]
+misterio=misterio.misterio:misterio
+misterio-add=misterio.misterio_util:misterio_add
+misterio-mv=misterio.misterio_util:misterio_mv
+misterio-rm=misterio.misterio_util:misterio_rm
+
