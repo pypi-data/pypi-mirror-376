@@ -1,0 +1,6 @@
+core
+dashboard
+inspector
+orchestrator
+reporter
+tests
