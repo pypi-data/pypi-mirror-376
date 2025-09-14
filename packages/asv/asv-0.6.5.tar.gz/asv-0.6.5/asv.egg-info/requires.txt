@@ -1,0 +1,64 @@
+asv-runner>=v0.2.1
+json5
+build
+tabulate
+virtualenv
+packaging
+importlib-metadata
+
+[:platform_python_implementation != "PyPy"]
+pyyaml
+pympler
+
+[:platform_system == "Windows"]
+colorama
+
+[:python_version < "3.11"]
+tomli
+
+[all]
+asv[dev,doc,envs,hg]
+
+[dev]
+ruff
+
+[doc]
+sphinx
+sphinx-autoapi
+sphinx-collapse
+sphinxcontrib.bibtex
+setuptools
+sphinxcontrib.katex
+furo
+
+[envs]
+py-rattler
+
+[hg]
+python-hglib
+
+[plugs]
+asv-bench-memray
+
+[test]
+pytest
+pytest-xdist
+pytest-timeout
+pytest-rerunfailures>=10.0
+filelock
+numpy
+feedparser
+selenium
+flaky
+pytest-rerunfailures
+
+[test:platform_python_implementation != "PyPy"]
+scipy
+
+[test:platform_system != "Windows"]
+python-hglib
+
+[testR]
+
+[testR:platform_system != "Windows" and platform_python_implementation != "PyPy"]
+rpy2
