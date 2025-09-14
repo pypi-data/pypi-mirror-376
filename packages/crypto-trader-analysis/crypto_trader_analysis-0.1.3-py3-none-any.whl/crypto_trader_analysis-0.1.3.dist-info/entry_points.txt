@@ -1,0 +1,3 @@
+[console_scripts]
+crypto-trader-gpu-one = src.crypto_trader_analysis.gpu.run_gpu_one:main
+crypto-trader-gpu-zero = src.crypto_trader_analysis.gpu.run_gpu_zero:main
