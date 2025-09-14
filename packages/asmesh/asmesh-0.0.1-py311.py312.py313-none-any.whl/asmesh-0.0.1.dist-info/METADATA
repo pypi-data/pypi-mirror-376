@@ -1,0 +1,486 @@
+Metadata-Version: 2.4
+Name: asmesh
+Version: 0.0.1
+Summary: 3D processing library
+Author-email: alpinebuster <imzqqq@hotmail.com>
+License: NON-COMMERCIAL & education LICENSE AGREEMENT
+        
+        This  agreement  is  between  the  individual below (User) and AMV Consulting, LLC, a 
+        Nevada limited liability company (AMV). The AMV source code library software, and all 
+        modifications,  enhancements,  technical documentation provided by AMV as part of the 
+        Software (Software)  are  licensed  and  are  not  sold.  By  receiving or using this 
+        Software, User indicates its acceptance of the terms of this agreement. 
+        
+        
+        TRIAL LICENSE.
+        
+        Subject to the terms of this agreement, AMV grants User a terminable, non-exclusive, 
+        and  non-transferable  license  to  use  the  Software,  solely  for non-commercial, 
+        evaluation or educational purposes. 
+        
+        
+        DISCLAIMER.
+        
+        AMV  DISCLAIMS  ANY AND ALL REPRESENTATIONS OR WARRANTIES OF ANY 
+        KIND,  WHETHER  EXPRESS  OR  IMPLIED,  MADE  WITH RESPECT TO THE 
+        SOFTWARE,  INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES 
+        OF   MERCHANTABILITY,   NON-INFRINGEMENT,   AND  FITNESS  FOR  A 
+        PARTICULAR PURPOSE. THE SOFTWARE IS PROVIDED ‘AS IS’ WITHOUT ANY 
+        WARRANTY  OF ANY KIND. AMV AND ITS LICENSORS DO NOT WARRANT THAT 
+        ANY  SOFTWARE  IS WITHOUT DEFECT OR ERROR, OR THAT THE OPERATION 
+        OF ANY SOFTWARE WILL BE UNINTERRUPTED.
+        
+        
+        RESTRICTIONS ON USE.
+        
+        User may not sell, rent, sublicense, display, modify, or otherwise transfer the Software 
+        to any third party. 
+        
+        
+        OWNERSHIP.
+        
+        All right, title, and interest to the Software are owned by AMV and its licensors, and 
+        are  protected by United States and international intellectual property laws. User may 
+        not  remove  or alter any copyright or proprietary notice from copies of the Software. 
+        AMV reserves all rights not expressly granted to User.
+        
+        
+        TERMINATION.
+        
+        The  license  in  Section  1 terminates upon AMV’s notice of termination to User. Upon 
+        termination of this agreement or a license for any reason, User must discontinue using 
+        the  Software, de-install, and destroy the Software and all copies within 5 days. Upon 
+        AMV’s  request,  User  will confirm in writing its compliance with this destruction or 
+        return requirement.
+        
+        
+        LIABILITY LIMIT.
+        
+        EXCLUSION  OF  INDIRECT  DAMAGES.  TO THE MAXIMUM EXTENT ALLOWED 
+        BY LAW, AMV IS NOT LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, 
+        OR  CONSEQUENTIAL  DAMAGES  ARISING  OUT  OF  OR RELATED TO THIS 
+        AGREEMENT  (INCLUDING,  WITHOUT LIMITATION, COSTS OF DELAY; LOSS 
+        OF  OR  UNAUTHORIZED  ACCESS  TO  DATA  OR INFORMATION; AND LOST 
+        PROFITS,  REVENUE,  OR  ANTICIPATED  COST  SAVINGS),  EVEN IF IT 
+        KNOWS  OF  THE  POSSIBILITY  OR FORESEEABILITY OF SUCH DAMAGE OR 
+        LOSS.
+        
+        TOTAL  LIMIT ON LIABILITY. TO THE MAXIMUM EXTENT ALLOWED BY LAW, 
+        AMV'S  TOTAL  LIABILITY  ARISING  OUT  OF  OR  RELATED  TO  THIS 
+        AGREEMENT  (WHETHER  IN  CONTRACT,  TORT, OR OTHERWISE) DOES NOT 
+        EXCEED $100.
+        
+        
+        GOVERNING LAW AND FORUM.
+        
+        This  agreement  is  governed  by  the  laws  of  the  State  of  Nevada  (without regard to 
+        conflicts  of  law principles) for any dispute between the parties or relating in any way to 
+        the  subject  matter  of  this  agreement.  Any suit or legal proceeding must be exclusively 
+        brought  in  the  federal  or  state  courts  for Washoe County, Nevada, and User submits to 
+        this  personal  jurisdiction  and  venue.  Nothing  in this  agreement prevents either party 
+        from  seeking  injunctive  relief in a court of competent jurisdiction. The prevailing party 
+        in any litigation is entitled to recover its attorneys’ fees and costs from the other party.
+        
+        
+        OTHER TERMS.
+        
+        Entire Agreement and Changes. This agreement constitutes the entire 
+        agreement between the parties and supersedes any prior or contemporaneous 
+        negotiations or agreements, whether oral or written, related to this subject matter. 
+        User is not relying on any representation concerning this subject matter, oral or 
+        written, not included in this agreement. No representation, promise, or inducement 
+        not included in this agreement is binding. No modification or waiver of any term of 
+        this agreement is effective unless both parties sign it.
+        
+        No Assignment. Neither party may assign or transfer this agreement to a third 
+        party, nor delegate any duty, except that the agreement may be assigned, without 
+        the consent of the other party, (i) as part of a merger or sale of all or substantially 
+        all a party's businesses or assets, of User, and (ii) in the case of AMV at any time 
+        to any third party.
+        
+        Independent Contractors. The parties are independent contractors with respect 
+        to each other, and neither party is an agent, employee, or partner of the other 
+        party or the other party's affiliates.
+        
+        Enforceability and Force Majeure. If any term of this agreement is invalid or 
+        unenforceable, the other terms remain in effect. Neither party is liable for its non-
+        performance due to events beyond its reasonable control, including but not limited 
+        to natural weather events and disasters, labor disruptions, and disruptions in the 
+        supply of utilities.
+        
+        Money Damages Insufficient. Any breach by a party of this agreement or 
+        violation of the other party’s intellectual property rights could cause irreparable 
+        injury or harm to the other party. The other party may seek a court order to stop 
+        any breach or avoid any future breach of this agreement.
+        
+        Survival of Terms. All provisions of this agreement regarding payment, 
+        confidentiality, indemnification, limitations of liability, proprietary rights and such 
+        other provisions that by fair implication require performance beyond the term of 
+        this agreement must survive expiration or termination of this agreement until fully 
+        performed or otherwise are inapplicable. The UN Convention on Contracts for the 
+        International Sale of Goods does not apply.
+        
+        Compliance Audit. No more than once in any 12-month period and upon at least 
+        30 days’ advance notice, AMV (or its representative) may audit User’s usage of the 
+        Software at any User facility. User will cooperate with such audit. User agrees to pay 
+        within 30 days of written notification any fees applicable to User’s use of the 
+        Software in excess of the license.
+        
+        Export Compliance. The Software and Confidential Information may be subject to 
+        export laws and regulations of the United States and other jurisdictions. Each party 
+        represents that it is not named on any U.S. government denied-party list. Neither 
+        party will permit its personnel or representatives to access any Software in a U.S.-
+        embargoed country or in violation of any applicable export law or regulation.
+        
+        U.S. Government Restricted Rights. If User is a United States government 
+        agency or acquired the license to the Software hereunder pursuant to a 
+        government contract or with government funds, then as defined in FAR §2.101, 
+        DFAR §252.227-7014(a)(1), and DFAR §252.227-7014(a)(5), or otherwise, all 
+        Software provided in connection with this agreement are “commercial items,” 
+        “commercial computer software,” or “commercial computer software 
+        documentation.” Consistent with DFAR §227.7202 and FAR §12.212, any use, 
+        modification, reproduction, release, performance, display, disclosure, or 
+        distribution by or for the United States government is governed solely by the 
+        terms of this agreement and is prohibited except to the extent permitted by the 
+        terms of this agreement.
+        
+        Open Source Software Licenses. The Software may contain embedded open source 
+        software components, which are provided as part of the Software and for 
+        which additional terms may be included in the technical documentation.
+        
+        Feedback. If User provides feedback or suggestions about the Software, then AMV 
+        (and those it allows to use its technology) may use such information without 
+        obligation to User.
+        
+Project-URL: Homepage, https://meshsdk.tech/
+Project-URL: Documentation, https://meshsdk.tech/documentation/
+Project-URL: Source, https://github.com/alpinebuster/meshsdk
+Project-URL: Bug Reports, https://github.com/alpinebuster/meshsdk/issues
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: Free For Educational Use
+Classifier: License :: Free for non-commercial use
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.19.0
+Dynamic: license-file
+
+[![build-test-distribute](https://github.com/alpinebuster/meshsdk/actions/workflows/build-test-distribute.yml/badge.svg?branch=main)](https://github.com/alpinebuster/meshsdk/actions/workflows/build-test-distribute.yml?branch=main) 
+
+# MeshSDK
+
+The MeshSDK is an open-source library that provides advanced algorithms for 3D data processing. It assists developers and engineers in achieving precise results while delivering significant resource savings. Whether you are working on 3D printing, scanning, inspection, automation, robotics, scientific visualization, or medical devices, our 3D data processing library is ideally suited to meet your needs thanks to its potent capabilities and broad applicability. The SDK provides a robust foundation for 3D data processing, supporting all essential formats like point clouds, meshes, and volumes continuously generated by modern sensors. Our powerful half-edge data structure ensures manifold compliance for precise, reliable mesh representation. Plus, our repository includes clear code samples to help you get started quickly and explore advanced features with ease.
+
+## Why Choose MeshSDK
+
+**Fully Open Source.** You can also fork the code for your own unique use cases.
+
+**Multi-Language Support.** Written in C++ with bindings for C, C#, and Python, our library integrates easily into AI pipelines and workflows.
+
+**High Performance.** Internal benchmarks show up to 10x faster execution compared to alternative SDKs — especially in mesh boolean operations and simplification.
+
+**GPU-Accelerated Architecture.** Built with speed and scalability in mind, MeshSDK supports GPU acceleration and CUDA for high-performance computing.
+
+**Cross-Platform Ready.** The SDK runs on Windows, macOS, Linux, and WebAssembly, offering flexibility for any development environment.
+
+**Developer Support.** Get timely assistance from our responsive support team for integration, usage, or troubleshooting.
+
+**Flexible Integration.** Use our toolkit as a standalone engine with UI components, or integrate selected algorithms into existing applications with minimal dependencies.
+
+## Key Available Algorithms
+
+- **3D Boolean** performs fast, highly optimized mesh- and voxel-based operations.
+- **Mesh Repair** eliminates self-intersections, fills holes, and removes degeneracies.
+- **Mesh Offsetting** controls surface thickness with multiple precise modes for 3D printing and machining.
+- **Hole Filling** fills flat and curved surfaces, connects or separates holes, and builds bridges.
+- **Mesh Simplification** optimizes mesh complexity while keeping details within set tolerance. We provide remeshing, and subdivision options as well.
+- **Collision Detection** verifies intersections between models for further operations.
+- **Extensive File Format Support** enables importing a wide range of file formats for meshes, point clouds, CT scans, polylines, distance maps, and G-code. Export functionalities—and support for color and texture data—are available for select formats, too.
+- **Triangulation** converts point clouds into meshes with accurate normal creation.
+- **ICP** precisely aligns meshes using point-to-point and point-to-plane transformations.
+- **Segmentation** performs semi-automatic segmentation based on curvature for meshes and voxels.
+- **Deformation** applies Laplacian, freeform, and relaxation smoothing for fine mesh adjustments.
+- **Support of Distance Maps and Polylines** allows to generate distance maps and iso-lines and performs projection and intersection.
+
+## Development
+
+### Clangd
+
+Install Clang 20, 19, or old versions in Ubuntu 24.04 | 22.04.
+
+```sh
+wget https://apt.llvm.org/llvm.sh
+chmod u+x llvm.sh
+sudo ./llvm.sh 20
+
+sudo mkdir -p /etc/apt/keyrings
+sudo mv /etc/apt/trusted.gpg.d/apt.llvm.org.asc /etc/apt/keyrings/
+# When file opens in terminal window, add following in between “deb” and “http://apt.llvm.org/…”:
+# [arch=amd64 signed-by=/etc/apt/keyrings/apt.llvm.org.asc]
+#   - arch=amd64, tells your OS type is amd64 (Intel/AMD). For non-Intel/AMD platform, run dpkg --print-architecture command tell OS type, and replace amd64 with the output. So far, arm64 and s390x are also supported
+#   - signed-by=/path/to/key-file, specify the key file.
+sudo nano /etc/apt/sources.list.d/archive_uri-http_apt_llvm_org_noble_*.list
+
+sudo apt install clang-20 lldb-20 lld-20 clangd-20
+# To install everything, use the command below instead:
+sudo apt install clang-tidy-20 clang-format-20 clang-tools-20 llvm-20-dev lld-20 lldb-20 llvm-20-tools libomp-20-dev libc++-20-dev libc++abi-20-dev libclang-common-20-dev libclang-20-dev libclang-cpp20-dev liblldb-20-dev libunwind-20-dev
+
+# If everything’s done successfully, just run clang-xx --version and/or locate clang-xx to verify.
+```
+
+#### Uninstall
+To remove the repository added by the script, just open terminal and run command to remove the corresponding source file:
+
+```sh
+sudo rm /etc/apt/sources.list.d/archive_uri-http_apt_llvm_org_*.list
+```
+
+And, remove the repository key file via command:
+
+```sh
+sudo rm /etc/apt/trusted.gpg.d/apt.llvm.org.asc
+```
+
+To remove Clang packages (replace 20 accordingly), just run command:
+
+```sh
+sudo apt remove --autoremove clang-20 lldb-20 lld-20 clangd-20
+```
+
+### Linux & MacOS
+
+Install emscripten toolkit:
+
+```sh
+# Fetch the latest version of the emsdk (not needed the first time you clone)
+git pull
+
+# Download and install the latest SDK tools.
+# ./emsdk install latest # ⚠️
+./emsdk install 4.0.10
+
+# Make the "latest" SDK "active" for the current user. (writes .emscripten file)
+# ./emsdk activate latest # ⚠️
+./emsdk activate latest
+
+# Activate PATH and other environment variables in the current terminal
+source ./emsdk_env.sh
+```
+
+Build source code:
+
+```sh
+git submodule update --init
+
+./scripts/build_thirdparty.sh
+./scripts/build_source.sh
+```
+
+### Docker
+
+```sh
+`docker compose up --build meshsdk-emscripten-build`
+
+`docker compose up meshsdk-emscripten-build`
+`docker compose up meshsdk-emscripten-build -d`
+
+`docker compose --profile singlethreaded up meshsdk-emscripten-build-singlethreaded`
+`docker compose --profile wasm64 up meshsdk-emscripten-build-wasm64`
+
+#
+# To run custom build commands:
+#
+`docker compose exec meshsdk-emscripten-build bash`
+`docker compose exec meshsdk-emscripten-build-singlethreaded bash`
+`docker compose exec meshsdk-emscripten-build-wasm64 bash`
+```
+
+### Windows (Desktop)
+
+#### Prerequisites
+ 1. **Git**
+  - [Install Git](https://git-scm.com/) to manage repositories and submodules, which is also required to install `vcpkg`.
+ 2. **Visual Studio 2019 or 2022**
+  - [Download and install either Visual Studio 2019 or 2022](https://visualstudio.microsoft.com/). During installation, make sure to:
+   - Select the "Desktop development with C++" workload.
+   - Include support for the C++ programming language.
+   - Ensure the English language pack is installed (required for `vcpkg`).
+ 3. **CUDA Toolkit**
+  - For **Visual Studio 2019**: Install [CUDA v11.4](https://developer.nvidia.com/cuda-11-4-0-download-archive)
+  - For **Visual Studio 2022**: Install [CUDA v12.0](https://developer.nvidia.com/cuda-12-0-0-download-archive)
+ Choose the appropriate version based on your Visual Studio installation.
+ 4. **vcpkg**
+  - To install `vcpkg`, follow these steps:
+   1. **Open a command prompt (CMD) or PowerShell window**.
+   2. **Navigate to a directory where you want to install** `vcpkg`:
+```cmd
+cd C:\path\to\your\desired\directory
+```
+   3. **Clone the** `vcpkg` **repository**:
+```cmd
+git clone https://github.com/microsoft/vcpkg.git
+```
+   4. **Navigate to the** `vcpkg` **directory**:
+```cmd
+cd vcpkg
+git checkout 2024.10.21
+```
+If you're using **Visual Studio 2022**, you can use the latest version of vcpkg:
+```cmd
+git checkout 2025.04.09
+```
+The version `2024.10.21` is required only for compatibility with **Visual Studio 2019**.
+   5. **Run the bootstrap script to build the** `vcpkg` **executable**:
+```cmd
+bootstrap-vcpkg.bat
+```
+   6. **Integrate** `vcpkg` **with Visual Studio (requires Administrator access)**:
+```cmd
+vcpkg integrate install
+```
+
+[Learn more about](https://github.com/Microsoft/vcpkg) `vcpkg`
+
+#### Installing the local build
+The following steps will require approximately 40 GB of disk space.
+
+ 1. **Clone the Submodules**:
+```cmd
+git submodule update --init
+# or
+git submodule update --init --recursive
+```
+ 2. (Optional) **Speed Up with AWS CLI**
+  - Optionally, [install AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to speed up the process before using the Installation Script. Restart your terminal after installation.
+ 3. **Install Third-Party Dependencies**
+  - Execute the following commands to run the third-party installation script:
+```cmd
+cd vcpkg
+..\meshsdk\thirdparty\install.bat
+```
+  - This script automates the installation of necessary third-party dependencies.
+ 4. **Build and Run Visual Studio Solution**
+  - Open `meshsdk/source/MeshSDK.sln` in Visual Studio.
+  - Build the solution and run the application.
+ 5. **Build and Run CMake Project**
+  - Make sure you have the "C++ CMake tools for Windows" component installed.
+  - Open `meshsdk/CMakeLists.txt` in Visual Studio (File - Open - CMake).
+  - Build the project and run the application.
+
+
+### Python
+
+Build mrbind from source code:
+
+```sh
+# At project's root dir
+sudo ./scripts/mrbind/install_deps_ubuntu.sh
+./scripts/mrbind/install_mrbind_ubuntu.sh 
+
+
+make -f scripts/mrbind/generate.mk -B --trace FOR_WHEEL=1
+# PYTHON_VERSIONS=$(cat scripts/mrbind-pybind11/python_versions.txt | xargs)
+make -f scripts/mrbind/generate.mk -B --trace PYTHON_VERSIONS=3.11
+make -f scripts/mrbind/generate.mk -B --trace FOR_WHEEL=1 PYTHON_VERSIONS=3.11
+make shims -f scripts/mrbind/generate.mk -B --trace FOR_WHEEL=1 PYTHON_VERSIONS=3.11
+
+
+# Create and fix wheel
+python -m pip install patchelf
+# This will generate the `meshsdk` wheel to `./scripts/wheel/meshsdk`
+python ./scripts/wheel/build_wheel.py --version 'v0.0.1'
+# Install the built `meshsdk`
+cd  ./scripts/wheel/meshsdk
+pip install .
+# Check the installed `meshsdk`
+pip list | grep meshsdk
+
+
+# Publish
+cd  ./scripts/wheel/meshsdk
+pip install --upgrade build twine
+python -m build
+
+# [distutils]
+# index-servers =
+#     pypi
+#     testpypi
+
+# [pypi]
+# username = __token__
+# password = <u-token>
+# [testpypi]
+# username = __token__
+# password = <u-token>
+vi ~/.pyirc
+
+# test
+twine upload --repository testpypi dist/*
+pip install -i https://test.pypi.org/simple meshsdk
+
+# official
+twine upload dist/*
+pip install meshsdk
+```
+
+> Run the generator on different platforms
+
+* **On Windows:** `scripts\mrbind\generate_win.bat -B --trace` from the VS developer command prompt (use the `x64 Native` one!).
+
+  When generating the Python bindings, the current directory matters, as this will look for MeshSDK in `./source/x64/Release`. Add `VS_MODE=Debug` at the end if you built MeshSDK in debug mode.
+
+  The `generate_win.bat` file merely calls `generate.mk` (see below) inside of MSYS2 shell. You can use that directly if you want.
+
+* **On Linux:** `make -f scripts/mrbind/generate.mk -B --trace`
+
+  This will look for MeshSDK in `./build/Release/bin`. Pass `MESHSDK_SHLIB_DIR=path/to/bin` for a different directory.
+
+* **On MacOS:** Same as on Linux, but before running the command you must adjust the PATH. On Arm Macs: `export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"`, and on x86 Macs `/usr/local/...` instead of `/opt/homebrew/...`. This adds the version of Make installed in Homebrew to PATH, because the default one is outdated. Confirm the version with `make --version`, it must be 4.x or newer.
+
+#### Some common flags:
+
+* **`--trace` — enable verbose logs.**
+
+* **`-B` — force a full rebuild of the bindings.** Incremental builds are not very useful, because they're not perfect and can miss changes. Use incremental builds e.g. when you're fixing linker errors.
+
+The remaining flags are for Python bindings only:
+
+* **`MODE=none` — disable optimization** for faster build times. The default is `MODE=release`. To enable debug symbols, use `MODE=debug`. To set completely custom compiler flags, set `EXTRA_CFLAGS` and `EXTRA_LDFLAGS`.
+
+* **`NUM_FRAGMENTS=?? -j??` — adjust RAM usage vs build speed tradeoff.** `NUM_FRAGMENTS=??` is how many translation units the bindings are split into. `-j??` is the number of parallel build threads/processes. `NUM_FRAGMENTS=64 -j8` is the default, good for 16 GB of RAM.
+
+  Guessing the fastest combination isn't trivial. Usually less fragments and more threads lead to faster builds but more RAM usage, but not always; turns out `NUM_FRAGMENTS=1` isn't optimal even if you have enough RAM for it.
+
+* **`PYTHON_PKGCONF_NAME=python-3.??-embed` — select Python version.** We try to guess this one. You can set this to `python3-embed` to use whatever the OS considers to be the default version.
+
+
+### Installation
+
+#### WASM
+
+Install with npm or yarn:
+
+```sh
+npm install @alpinebuster/meshsdk
+yarn add @alpinebuster/meshsdk
+```
+
+#### Python
+
+For Python, simply install via pip:  
+
+```sh
+pip install meshsdk
+```
+
+## **License**
+
+Here, you can access our Non-Commercial Free License with a Commercial License Requirement. Also, see [license](./LICENSE).
