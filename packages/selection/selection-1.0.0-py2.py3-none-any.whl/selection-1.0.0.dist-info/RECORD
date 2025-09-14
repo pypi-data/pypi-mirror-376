@@ -1,0 +1,13 @@
+selection/__init__.py,sha256=UY12KEbFA4RssIcT6Ug6uFOuvnUqFVjRAjnh1gkfXgs,302
+selection/backend_lxml.py,sha256=yQV9gpzd9p6NS99j7TN-XPct1qc7rBqAE9JidppRLTo,3020
+selection/backend_pyquery.py,sha256=6u7HKoN7YeGrEU-CjlIz1NkqZLVl_8BFm0VeUJbW9nk,684
+selection/base.py,sha256=gk0DZrgyOmBV253QqvJP2rolcLMKBdNQEY9Z-rNoUlM,9211
+selection/const.py,sha256=Ock14t9YxAo11OorqInjk6wGrqgvbPXR2L7wzI6vOgk,21
+selection/errors.py,sha256=1llXo0IHbnNei9JJ-OfZkR20TkU1Ptda66gaPsc8S5Y,79
+selection/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+selection/util.py,sha256=31mQj5ZbobZXti6eaJWJ1R6HnH6vT_LEFnrh0A6FLEs,4390
+selection-1.0.0.dist-info/licenses/LICENSE,sha256=4v2aFm5W-wB-MjkrHacsBcSfQTWchUyNe_OmCRoI2Pg,1089
+selection-1.0.0.dist-info/METADATA,sha256=R0cOSAIi8l2Rlr6Bs001IJkNAwfX1aEnyo-p_e-p92I,3082
+selection-1.0.0.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+selection-1.0.0.dist-info/top_level.txt,sha256=eqXcXt97mEEn5L0RS7w8Hcxzu3t7uIDwIIGukhki--k,10
+selection-1.0.0.dist-info/RECORD,,
