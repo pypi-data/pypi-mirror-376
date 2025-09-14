@@ -1,0 +1,32 @@
+[project]
+name = "revolving_asyncio"
+authors = [
+    { name = "wukan", email = "wu-kan@163.com" },
+]
+description = "easy to covert between sync and async"
+readme = "README.md"
+requires-python = ">=3.6"
+keywords = ["sync", "async", "asyncio"]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python"
+]
+dependencies = [
+    "nest_asyncio",
+]
+dynamic = ["version"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "revolving_asyncio/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["revolving_asyncio"]
+include-package-data = true
+
+[tool.hatch.build.targets.sdist]
+include = ["revolving_asyncio*"]
