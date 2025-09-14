@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/bootify/__init__.py
+src/bootify/loader.py
+src/bootify.egg-info/PKG-INFO
+src/bootify.egg-info/SOURCES.txt
+src/bootify.egg-info/dependency_links.txt
+src/bootify.egg-info/requires.txt
+src/bootify.egg-info/top_level.txt
