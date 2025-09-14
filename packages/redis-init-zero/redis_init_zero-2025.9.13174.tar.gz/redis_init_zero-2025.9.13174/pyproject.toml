@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redis_init_zero"
+version = "2025.9.13174"
+description = "a function that recieve the key and redis connection string and then: 1. check if key doesnt exist then to create this key with value 0 2. …"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" },
+]
+license = { file = "LICENSE" }
+dependencies = [
+    "redis"
+]
+
+[project.urls]
+Repository = "https://pypi.org/project/redis_init_zero/"

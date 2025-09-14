@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: redis_init_zero
+Version: 2025.9.13174
+Summary: a function that recieve the key and redis connection string and then: 1. check if key doesnt exist then to create this key with value 0 2. …
+Author-email: Eugene Evstafev <hi@eugene.plus>
+License: MIT License
+Project-URL: Repository, https://pypi.org/project/redis_init_zero/
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: redis
+Dynamic: license-file
+
+[![PyPI version](https://badge.fury.io/py/redis_init_zero.svg)](https://badge.fury.io/py/redis_init_zero)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/redis_init_zero)](https://pepy.tech/project/redis_init_zero)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://www.linkedin.com/in/eugene-evstafev-716669181/)
+
+# redis_init_zero
+
+A Python package to initialize a Redis key with a value of 0 if the key does not already exist.
+
+## Installation
+
+To install `redis_init_zero`, use pip:
+
+```bash
+pip install redis_init_zero
+```
+
+## Usage
+
+Using `redis_init_zero` is straightforward. You need to provide the Redis connection string and the key you want to initialize.
+
+```python
+from redis_init_zero import initialize_key_if_not_exists
+
+# Replace with your actual Redis connection string
+REDIS_CONNECTION_STRING = "redis://localhost:6379/0"
+KEY_TO_INITIALIZE = "my_counter"
+
+# Initialize the key if it doesn't exist
+was_initialized = initialize_key_if_not_exists(REDIS_CONNECTION_STRING, KEY_TO_INITIALIZE)
+
+if was_initialized:
+    print(f"Key '{KEY_TO_INITIALIZE}' was initialized to 0.")
+else:
+    print(f"Key '{KEY_TO_INITIALIZE}' already exists.")
+
+# Example demonstrating it only initializes once
+was_initialized_again = initialize_key_if_not_exists(REDIS_CONNECTION_STRING, KEY_TO_INITIALIZE)
+if not was_initialized_again:
+    print(f"Key '{KEY_TO_INITIALIZE}' was not re-initialized.")
+```
+
+## Functionality
+
+- `initialize_key_if_not_exists(redis_connection_string: str, key: str) -> bool`:
+    - Connects to the Redis server using the provided connection string.
+    - Checks if the specified `key` exists.
+    - If the key does not exist, it sets the key's value to `0` and returns `True`.
+    - If the key already exists, it does nothing and returns `False`.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/chigwell/redis_init_zero/issues).
+
+## License
+
+`redis_init_zero` is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+## Author
+
+Eugene Evstafev <hi@eugene.plus>
