@@ -1,0 +1,71 @@
+---
+- name: Check if role has been completed
+  stat:
+    path: /opt/marker_file_common
+  register: role_complete
+
+- name: Skip role if already completed
+  debug:
+    msg: "Role already completed. Skipping..."
+  when: role_complete.stat.exists
+  tags: always
+
+- block:
+    - name: Execute the role tasks
+      debug:
+        msg: "Executing role tasks..."
+
+    - name: Update all packages to the latest version
+      apt:
+        update_cache: yes
+
+    - name: Add deadsnakes PPA
+      apt_repository:
+        repo: ppa:deadsnakes/ppa
+
+    - name: install necessary tools
+      apt:
+        pkg:
+        - net-tools
+        - jq
+        - build-essential
+        - python3.11
+        - python3.11-dev
+
+    - name: "Install ansible python3 mysql dependency"
+      apt:
+        name: python3-mysqldb
+        state: latest
+
+    - name: Add a virtualhost group
+      group:
+        name: virtualhost
+        state: present
+
+    - name: Add a sftp group
+      group:
+        name: sftp
+        state: present
+
+    - name: Add a allowssh group
+      group:
+        name: allowssh
+        state: present
+
+    - name: Add a sshpwauth group
+      group:
+        name: sshpwauth
+        state: present
+
+    - name: Add root user to allowssh group
+      user:
+        name: root
+        groups: allowssh
+        append: yes
+
+    - name: Create a marker file after role completion
+      file:
+        path: /opt/marker_file_common
+        state: touch
+
+  when: not role_complete.stat.exists

@@ -1,0 +1,10 @@
+---
+- name: Enable service mariadb
+  service:
+    name: mariadb
+    enabled: yes
+
+- name: Restart service MariaDB, in all cases
+  service:
+    name: mariadb
+    state: restarted

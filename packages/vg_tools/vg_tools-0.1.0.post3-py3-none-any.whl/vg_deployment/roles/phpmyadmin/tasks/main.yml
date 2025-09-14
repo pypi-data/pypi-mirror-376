@@ -1,0 +1,22 @@
+---
+##################################### INSTALL phpMyAdmin ##################################
+
+- name: DownLoad phpMyAdmin
+  get_url: validate_certs=False dest=/etc/httpd/htdocs/phpMyAdmin-{{ phpmyadmin_version }}-english.tar.gz url=https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-english.tar.gz
+
+- name: Extract archive
+  unarchive: src=/etc/httpd/htdocs/phpMyAdmin-{{ phpmyadmin_version }}-english.tar.gz dest=/etc/httpd/htdocs copy=no 
+
+- name: PhpMyAdmin folder stat ### check folder exist
+  stat: path=/etc/httpd/htdocs/phpMyAdmin-{{ phpmyadmin_version }}-english
+  register: phpmyadmin_stat
+
+- name: Move folder phpmyadmin
+  command: mv /etc/httpd/htdocs/phpMyAdmin-{{ phpmyadmin_version }}-english /etc/httpd/htdocs/phpmyadmin
+  when: phpmyadmin_stat.stat.exists
+
+- name: Create config file
+  command: chdir=/etc/httpd/htdocs/phpmyadmin cp config.sample.inc.php config.inc.php
+
+- name: Chown permit
+  command: chdir=/etc/httpd/htdocs chown -R apache:apache phpmyadmin

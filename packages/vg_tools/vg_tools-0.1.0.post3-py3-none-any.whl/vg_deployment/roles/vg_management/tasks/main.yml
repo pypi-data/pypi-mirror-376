@@ -1,0 +1,56 @@
+---
+################## Install management tool #############################################
+- name: Check if role has been completed
+  stat:
+    path: /opt/marker_file_vg_management
+  register: role_complete
+
+# - name: Skip role if already completed
+#   debug:
+#     msg: "Role already completed. Skipping..."
+#   when: role_complete.stat.exists
+#   tags: always
+
+- name: Setup python venv
+  when: not role_complete.stat.exists
+  block:
+    # - name: Execute the role tasks
+    #   debug:
+    #     msg: "Executing role tasks..."
+    - name: Ensure python3-venv package is installed (for Debian based systems)
+      ansible.builtin.apt:
+        name:
+          - python3-venv
+          - python3-dev
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Create the destination directory
+      ansible.builtin.file:
+        path: "{{ VG_MANAGEMENT_DEFAULT_DIR }}"
+        state: directory
+        mode: '0755'
+
+    - name: Create a virtual environment
+      command: "python3 -m venv {{ VG_TOOLS_DEFAULT_DIR }}/.venv"
+      register: venv_output # <- Registers the command output.
+      changed_when: venv_output.rc != 0 # <- Uses the return code to define when the task has changed.
+
+    - name: Create a marker file after role completion
+      ansible.builtin.file:
+        path: /opt/marker_file_vg_management
+        state: touch
+        mode: u=rw,g=r,o=r
+
+- name: Install vg_menegement into the specified (virtualenv), inheriting none of the globally installed modules (DEV MODE)
+  ansible.builtin.pip:
+    name: vg_management
+    virtualenv: "{{ VG_TOOLS_DEFAULT_DIR }}/.venv"
+    extra_args: "-i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
+  when: development_mode
+
+- name: Install vg_menegement into the specified (virtualenv), inheriting none of the globally installed modules
+  ansible.builtin.pip:
+    name: vg_management
+    virtualenv: "{{ VG_TOOLS_DEFAULT_DIR }}/.venv"
+  when: not development_mode

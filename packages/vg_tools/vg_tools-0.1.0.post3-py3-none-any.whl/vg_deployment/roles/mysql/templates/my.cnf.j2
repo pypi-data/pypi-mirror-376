@@ -1,0 +1,36 @@
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+user=mysql
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+skip-host-cache
+skip-name-resolve
+
+back_log = 256
+max_connections = 1024
+key_buffer = 128M
+sort_buffer_size = 256K
+read_buffer_size = 32M
+join_buffer_size = 64M
+read_rnd_buffer_size = 756K
+thread_concurrency = 16
+read_buffer_size = 32M
+table_open_cache = 1024
+tmp_table_size = 1024M
+max_heap_table_size = 1024M
+myisam_sort_buffer_size = 32M
+max_allowed_packet = 512M
+query_cache_limit = 4M
+query_cache_size = 256M
+query_cache_type = 1
+query_cache_min_res_unit = 1K
+interactive_timeout = 300
+wait_timeout = 600
+connect_timeout = 360
+thread_cache_size = 32
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid

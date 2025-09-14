@@ -1,0 +1,58 @@
+---
+################## Install APACHE #############################################
+- name: Check if role has been completed
+  stat:
+    path: /opt/marker_file_apache2
+  register: role_complete
+
+- name: Skip role if already completed
+  debug:
+    msg: "Role already completed. Skipping..."
+  when: role_complete.stat.exists
+  tags: always
+
+- block:
+    - name: Execute the role tasks
+      debug:
+        msg: "Executing role tasks..."
+
+    - name: Install apache httpd  (state=present is optional)
+      apt:
+        name: apache2
+        state: present
+
+    - name: Enable the Apache2 module proxy_fcgi
+      community.general.apache2_module:
+        state: present
+        name: proxy_fcgi
+
+    - name: Enable the Apache2 module proxy
+      community.general.apache2_module:
+        state: present
+        name: proxy
+
+    - name: Enable the Apache2 module rewrite
+      community.general.apache2_module:
+        state: present
+        name: rewrite
+
+    - name: Install default virtualhost
+      template: src=apache2-default.conf dest=/etc/apache2/sites-available/000-default.conf owner=root mode=0644
+
+    - name: Install default apache2.conf 
+      template: src=apache2.conf dest=/etc/apache2/apache2.conf owner=root mode=0644
+
+    - name: Remove default Apache index.html
+      file:
+        path: /var/www/html/index.html
+        state: absent
+
+    - name: Install default php script.
+      template: src=default_page.php dest=/var/www/html/index.php owner=www-data mode=0644
+
+    - name: Create a marker file after role completion
+      file:
+        path: /opt/marker_file_apache2
+        state: touch
+
+  when: not role_complete.stat.exists

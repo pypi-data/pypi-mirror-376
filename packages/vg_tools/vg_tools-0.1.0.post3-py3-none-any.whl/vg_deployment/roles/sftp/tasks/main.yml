@@ -1,0 +1,27 @@
+---
+##################################### SFTP CONFIGURATION ##################################
+- name: Check if role has been completed
+  stat:
+    path: /opt/marker_file_sftp
+  register: role_complete
+
+- name: Skip role if already completed
+  debug:
+    msg: "Role already completed. Skipping..."
+  when: role_complete.stat.exists
+  tags: always
+
+- block:
+    - name: Execute the role tasks
+      debug:
+        msg: "Executing role tasks..."
+
+    - name: Install sshd_config file with SFTP configuration
+      template: src=sshd_config dest=/etc/ssh/sshd_config owner=root mode=0644
+
+    - name: Create a marker file after role completion
+      file:
+        path: /opt/marker_file_sftp
+        state: touch
+
+  when: not role_complete.stat.exists

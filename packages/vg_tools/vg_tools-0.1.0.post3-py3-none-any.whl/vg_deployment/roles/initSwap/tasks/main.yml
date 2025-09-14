@@ -1,0 +1,49 @@
+---
+##################################### INSTALL Swap Area ##################################
+- name: Check if role has been completed
+  stat:
+    path: /opt/marker_file_initswap
+  register: role_complete
+
+- name: Skip role if already completed
+  debug:
+    msg: "Role already completed. Skipping..."
+  when: role_complete.stat.exists
+  tags: always
+
+- block:
+    - name: Execute the role tasks
+      debug:
+        msg: "Executing role tasks..."
+
+    - name: Create swap space
+      shell: "dd if=/dev/zero of=/swapfile bs=1024 count={{ swap_size }}"
+      when: "ansible_swaptotal_mb == 0"
+
+    - name: Make swap
+      shell: mkswap /swapfile
+      when: "ansible_swaptotal_mb == 0"
+
+    - name: Set swapfile perms
+      shell: "chmod 600 /swapfile"
+      when: "ansible_swaptotal_mb == 0"
+
+    - name: Make permanent
+      shell: "echo '/swapfile   none    swap    sw    0   0' >> /etc/fstab"
+      when: "ansible_swaptotal_mb == 0"
+
+    - name: Enable swapfile
+      shell: "swapon /swapfile"
+      when: "ansible_swaptotal_mb == 0"
+
+    - name: Set swapiness now
+      command: sysctl vm.swappiness=10
+
+    - name: Set swapiness when reboot
+      command: echo "vm.swappiness = 10" >> /etc/sysctl.conf
+
+    - name: Create a marker file after role completion
+      file:
+        path: /opt/marker_file_initswap
+        state: touch
+  when: not role_complete.stat.exists

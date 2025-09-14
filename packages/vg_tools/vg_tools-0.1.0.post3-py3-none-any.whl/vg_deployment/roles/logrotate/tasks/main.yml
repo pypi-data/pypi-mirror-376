@@ -1,0 +1,8 @@
+---
+##################################### INSTALL Log Rotate ##################################
+
+- name: Create folder rotate_logs
+  file: path=/home/logs/rotate_logs state=directory
+
+- name: Create config rotate
+  template: src=reverse_proxy_rotate_log dest=/etc/logrotate.d/reverse_proxy_rotate_log

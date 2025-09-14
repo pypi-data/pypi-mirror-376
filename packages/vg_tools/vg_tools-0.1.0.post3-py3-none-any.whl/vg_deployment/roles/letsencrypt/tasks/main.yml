@@ -1,0 +1,59 @@
+---
+##################################### INSTALL FREE LET's ENCRYPT SSL PROVIDER ##################################
+- name: Check if role has been completed
+  stat:
+    path: /opt/marker_file_letsencrypt
+  register: role_complete
+
+- name: Skip role if already completed
+  debug:
+    msg: "Role already completed. Skipping..."
+  when: role_complete.stat.exists
+  tags: always
+
+- block:
+    - name: Execute the role tasks
+      debug:
+        msg: "Executing role tasks..."
+
+    - name: Ensure snapd is installed
+      apt:
+        name: snapd
+        state: present
+        update_cache: yes
+
+    - name: Ensure snap's core is installed and up to date
+      shell: snap install core; snap refresh core
+      args:
+        creates: /snap/core/current
+
+    - name: Remove certbot-auto if present (cleanup old installs)
+      apt:
+        name: certbot
+        state: absent
+      ignore_errors: yes
+
+    - name: Install certbot via snap
+      shell: snap install --classic certbot
+      args:
+        creates: /snap/bin/certbot
+
+    - name: Ensure certbot command is available
+      file:
+        src: /snap/bin/certbot
+        dest: /usr/bin/certbot
+        state: link
+        force: yes
+
+    - name: Install python3-certbot-apache (for Apache plugin via APT)
+      apt:
+        name: python3-certbot-apache
+        state: present
+        update_cache: yes
+
+    - name: Create a marker file after role completion
+      file:
+        path: /opt/marker_file_letsencrypt
+        state: touch
+
+  when: not role_complete.stat.exists

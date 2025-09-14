@@ -1,0 +1,2 @@
+[console_scripts]
+vg_deploy = entrypoints.vg_tools:vg_deploy

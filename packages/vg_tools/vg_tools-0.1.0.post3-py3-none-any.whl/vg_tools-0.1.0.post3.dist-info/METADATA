@@ -1,0 +1,154 @@
+Metadata-Version: 2.4
+Name: vg_tools
+Version: 0.1.0.post3
+Summary: The Python script & library for managing web service stack
+Author-email: swettoth0812 <tan@vnguru.com>
+License-Expression: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# VNGuru TOOLS
+
+This Python package contains a collection of tools for managing webserver's stack from provisioning, deployment, to configuration.
+
+---
+
+## Compatibility
+
+Ubuntu 22.04 and Ubuntu 24.04
+
+---
+
+## Notices
+
+**Python >=3.10 is required for this project**.
+
+---
+
+## Prerequisites
+
+- Python 3.10 or higher (most of the OS current supported)
+- Terraform CLI [How to install](https://developer.hashicorp.com/terraform/downloads)
+- Ansible [How to install](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+- The sshpass package, please use this command
+
+```bash
+# Ubuntu
+sudo apt install sshpass
+# MacOS
+brew install sshpass
+```
+
+---
+
+## Getting Started
+
+## Installation
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Then, you can install vg_management from PyPI with:
+
+```bash
+python -m pip install vg_tools
+```
+
+**See All Options**
+
+```bash
+vg_deploy --help
+```
+
+### Server is already provisioned
+
+Please make sure the ssh connection is allowed.
+Then, let's begin deployment.
+
+```bash
+# Using ssh password authentication
+vg_deploy --provisioned-ip <server_ip> --ssh-password <ssh_password>
+# or if you prefer ssh-key authentication
+vg_deploy --provisioned-ip <server_ip> --ssh-key-file <key_file_path>
+```
+
+Deploy to multiple servers are supported
+
+```bash
+vg_deploy --provisioned-ip <server_ip_1> <server_ip_2> --ssh-password <ssh_password>
+```
+
+### Server is not provisioned yet
+
+Currently, we only support provisioning server based on terraform and only support DigitalOcean Cloud Provider.
+First, you need to create a DigitalOcean token, please follow this [guide](https://www.digitalocean.com/docs/api/create-personal-access-token/)
+Then, create an ssh key pair with this command
+
+```bash
+# Leave all the option as default
+ssh-keygen
+# Check the key
+cat ~/.ssh/id_rsa.pub # Public key
+cat ~/.ssh/id_rsa # Private key
+```
+
+**Please note that the ssh key pair location is kept as default, if you change the location when you generate the key pair, please change the --ssh-key-file and --ssh-key-file variables in the vg_tools.py accordingly**
+
+Now run the tools with those informations to provision and deployment a webserver
+
+```bash
+DO_TOKEN=<digitalocean_key> vg_deploy
+```
+
+---
+
+## Post Deployment
+
+When the first deployment is done, if you want to install another php version to your server, please run
+
+```bash
+vg_deploy --php-version 8.3 --provisioned-ip <server_ip> --ssh-password <ssh_password>
+```
+
+All the installed and configured softwares will be ignored, the command only installs php 8.3
+
+---
+
+## Cleanup
+
+The tool is not support cleanup yet, please manually delete the server with terraform command
+
+Inside the vg_provisioning directory, we could find the terraform state file
+
+```bash
+# Get the python package
+python -m pip show vg_tools
+# Get the location of the python package
+# Like this
+Location: /root/.venv/lib/python3.10/site-packages
+
+cd <Location>/vg_provisioning
+# Get the state file
+ls -la | grep tfstate
+```
+
+Run destroy to delete the server
+
+```bash
+terraform destroy
+
+## Input the values
+var.do_ssh_key_name
+  Enter a value:
+
+var.do_ssh_pubkey_file
+  Enter a value: /root/.ssh/id_rsa
+
+var.do_token
+  Enter a value: <your_do_key>
+
+```

@@ -1,0 +1,59 @@
+Protocol 2
+Port 22
+Port 22614
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+IgnoreRhosts yes
+PermitEmptyPasswords no
+MaxAuthTries 3
+PubkeyAuthentication yes
+PasswordAuthentication yes
+PermitRootLogin yes
+AllowGroups allowssh sftp sshpwauth
+DenyUsers bin daemon adm lp sync shutdown halt mail operator games ftp nobody dbus polkitd avahi avahi-autoipd postfix sshd ntp tss systemd-bus-proxy systemd-network
+RekeyLimit 1G 1h
+LoginGraceTime 2m
+StrictModes yes
+MaxAuthTries 3
+MaxSessions 5
+AuthorizedKeysFile      .ssh/authorized_keys
+HostbasedAuthentication no
+IgnoreUserKnownHosts yes
+IgnoreRhosts yes
+ChallengeResponseAuthentication no
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials no
+UsePAM yes
+AllowAgentForwarding no
+AllowTcpForwarding no
+GatewayPorts no
+X11Forwarding no
+TCPKeepAlive yes
+#UsePrivilegeSeparation sandbox
+PermitUserEnvironment no
+PermitTunnel no
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+ClientAliveCountMax 2
+Compression no
+UseDNS no
+#Subsystem       sftp    /usr/libexec/openssh/sftp-server
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1
+##Match Group sshpwauth
+##            PasswordAuthentication yes
+Match Group sftp
+            ChrootDirectory %h
+            ForceCommand internal-sftp -d /www
+#           Banner /usr/local/etc/vg_tools/banner_sftp.txt
+            PasswordAuthentication yes
+Match Group sshpwauth
+            ChrootDirectory %h
+            ForceCommand internal-sftp -d /upload
+#           Banner /usr/local/etc/vg_tools/banner_sftp.txt
+            PasswordAuthentication yes

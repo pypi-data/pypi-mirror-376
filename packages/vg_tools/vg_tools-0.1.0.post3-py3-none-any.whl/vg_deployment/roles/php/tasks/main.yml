@@ -1,0 +1,76 @@
+---
+################## Install Multiple PHP #############################################
+- name: Check if role has been completed
+  stat:
+    path: /opt/marker_file_php{{ php_version }}
+  register: role_complete
+
+- name: Skip role if already completed
+  debug:
+    msg: "Role already completed. Skipping..."
+  when: role_complete.stat.exists
+  tags: always
+
+- block:
+    - name: Execute the role tasks
+      debug:
+        msg: "Executing role tasks..."
+    # On Ubuntu target:
+    - name: install software-properties-common package
+      apt:
+        name: software-properties-common
+
+    - apt_repository:
+        repo: ppa:ondrej/php
+
+    - name: Run the equivalent of "apt-get update" as a separate step
+      apt:
+        update_cache: yes
+
+    # install php {{ php_version }}
+    - name: install php {{ php_version }}
+      apt:
+        pkg:
+        - php{{ php_version }}-fpm
+        - php{{ php_version }}-mysql
+        - php{{ php_version }}-mbstring
+        - php{{ php_version }}-xml
+        - php{{ php_version }}-gd
+        - php{{ php_version }}-curl
+        - php{{ php_version }}-bz2
+        - php{{ php_version }}-cli
+        - php{{ php_version }}-common
+        - php{{ php_version }}-intl
+        #- php{{ php_version }}-json # no need json since php version 8.0
+        - php{{ php_version }}-opcache
+        - php{{ php_version }}-readline
+        - php{{ php_version }}-sqlite3
+        - php{{ php_version }}-zip
+
+    - name: install libapache2-mod-php{{ php_version }} package
+      apt:
+        name: libapache2-mod-php{{ php_version }}
+
+    - name: Copy if.php file to /var/www/html
+      template:
+        src: if.php
+        dest: /var/www/html/if.php
+        owner: www-data
+        group: www-data
+        mode: '0644'
+    ################## Config PHP #############################################
+
+    # - name: Copy php.ini template.
+    #   template: src=php.ini dest=/etc/php.ini
+
+    ## Notes
+    # switch php default version
+    # sudo update-alternatives --config php # console UI
+    # sudo update-alternatives --set php /usr/bin/php7.4  # direct
+
+    - name: Create a marker file after role completion
+      file:
+        path: /opt/marker_file_php{{ php_version }}
+        state: touch
+
+  when: not role_complete.stat.exists

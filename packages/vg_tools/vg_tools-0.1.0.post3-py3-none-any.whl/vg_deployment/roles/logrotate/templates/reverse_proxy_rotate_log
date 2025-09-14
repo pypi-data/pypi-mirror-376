@@ -1,0 +1,12 @@
+/home/logs/httpd/*
+/home/logs/nginx/*
+/etc/httpd/logs/*
+{
+	rotate 2 
+	size=3M
+	missingok
+	copytruncate
+	dateext
+	maxage 90
+	olddir  /home/logs/rotate_logs
+}

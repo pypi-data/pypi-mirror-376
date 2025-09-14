@@ -1,0 +1,33 @@
+---
+- name: LAMP Stack
+  hosts: serveradmin
+  user: root
+  gather_facts: false
+  # remote_user: user
+  # sudo: yes
+
+  vars:
+    ansible_password: "{{ lookup('env', 'ANSIBLE_SSH_PASSWORD') }}"
+    ansible_user: "{{ lookup('env', 'ANSIBLE_SSH_USER') }}"
+    development_mode: "{{ lookup('env', 'DEVELOPMENT_MODE') | default(false) }}"
+    mysql_root_password: "{{ lookup('env', 'MYSQL_INIT_ROOT_PASSWORD') }}"
+  pre_tasks:
+    - name: Wait for SSH connection to become available
+      ansible.builtin.wait_for_connection:
+        timeout: "{{ lookup('env', 'SSH_TIMEOUT') }}" # Wait for up to 600 seconds (10 minutes)
+        delay: 10 # Check every 10 seconds
+    - name: Gather facts manually
+      ansible.builtin.setup:
+  roles:
+    - initSwap
+    - common
+    - mysql
+    - apache
+    - php
+    - firewall
+    - vg_management
+    - sftp
+    - letsencrypt
+    # - phpmyadmin
+    # - logrotate
+    # - scripts
