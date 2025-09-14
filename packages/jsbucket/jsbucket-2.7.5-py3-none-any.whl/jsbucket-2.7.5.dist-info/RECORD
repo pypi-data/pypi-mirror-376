@@ -1,0 +1,10 @@
+jsbucket/__init__.py,sha256=0pQN2PYA9agAvtJ-Oui6sJyA6NSZ6phaZAfDx0OFiCU,1160
+jsbucket/__main__.py,sha256=bQ2-D3EX6mF-n59wXoteT725wtCzyvIelkj_9JihMqM,246
+jsbucket/core.py,sha256=AwijI-7px69VDo8iBvFTjhu2LZhYCXWdLvyXNwUndGo,35185
+jsbucket/jsbucket.py,sha256=sNZvhENcoPcq5f2xJhOdKgJg18Arh0LjpuxnWYB0b64,13888
+jsbucket-2.7.5.dist-info/licenses/LICENSE,sha256=pB_otEKTQ8GV_sRbkraokVayEw9HSn24AE6uMN7CrNI,1083
+jsbucket-2.7.5.dist-info/METADATA,sha256=yGdXXjMMA6JZgDDWfE-R-GPLuJH7CPvf0jwD0UiB_Oc,8616
+jsbucket-2.7.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jsbucket-2.7.5.dist-info/entry_points.txt,sha256=6fOqQN0kAwqeXrQnKXAnB5VbtxDQFIHtD8NiQkFomQc,48
+jsbucket-2.7.5.dist-info/top_level.txt,sha256=bcLBCe_XBZgjvNqVJLhgPKKUZGs0oZpMKIXMAeiwelA,9
+jsbucket-2.7.5.dist-info/RECORD,,
