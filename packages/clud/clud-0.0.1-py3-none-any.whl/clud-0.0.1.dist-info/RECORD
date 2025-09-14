@@ -1,0 +1,9 @@
+clud/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clud/cli.py,sha256=dibfAZIh0kXWsBbfp3onKLjyZXo54mTzDjUdzJlDlWo,231
+clud/assets/example.txt,sha256=lTBovRjiz0_TgtAtbA1C5hNi2ffbqnNPqkKg6UiKCT8,54
+clud-0.0.1.dist-info/licenses/LICENSE,sha256=b6pOoifSXiUaz_lDS84vWlG3fr4yUKwB8fzkrH9R8bQ,1064
+clud-0.0.1.dist-info/METADATA,sha256=dJps9lwp7I-AYVAzgap99uPBHWqSFathvDKV5TmZV3A,1258
+clud-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+clud-0.0.1.dist-info/entry_points.txt,sha256=1gBM84cqm-LjE84vBvvTMALsH-fRkCj8HLODEQ9N1O8,39
+clud-0.0.1.dist-info/top_level.txt,sha256=aZmHRHsMPIEEiC7kDHwc01_fd7ey3wZ5ak05EEYxubE,5
+clud-0.0.1.dist-info/RECORD,,
