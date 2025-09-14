@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-code-recorder-client"
+version = "1.0.0"
+description = "AI代码记录器 MCP 客户端 - 通过 MCP 协议记录 AI 生成的代码片段"
+authors = [
+    {name = "AI Code Recorder Team", email = "contact@aicodeteam.com"}
+]
+maintainers = [
+    {name = "AI Code Recorder Team", email = "contact@aicodeteam.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["ai", "code", "recorder", "mcp", "cursor", "development"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "fastmcp>=0.1.0",
+    "requests>=2.31.0",
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+ai-code-recorder-client = "ai_code_recorder_client.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/ai-code-team/ai-code-recorder"
+Repository = "https://github.com/ai-code-team/ai-code-recorder"
+Issues = "https://github.com/ai-code-team/ai-code-recorder/issues"
+Documentation = "https://github.com/ai-code-team/ai-code-recorder/blob/main/README.md"
