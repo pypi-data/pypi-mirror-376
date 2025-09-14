@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: py-archons
+Version: 0.1.0
+Summary: A simple Python package with a get_names function
+Author-email: Bruno <bruno@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/bruno/py-archons
+Project-URL: Repository, https://github.com/bruno/py-archons
+Project-URL: Issues, https://github.com/bruno/py-archons/issues
+Keywords: python,package,names
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# py-archons
+
+A simple Python package that provides a `get_names` function.
+
+## Installation
+
+```bash
+pip install py-archons
+```
+
+## Usage
+
+```python
+from py_archons import get_names
+
+names = get_names()
+print(names)  # Output: ["guapo", "bandida"]
+```
+
+## Development
+
+To install in development mode:
+
+```bash
+pip install -e .
+```
+
+## Building for PyPI
+
+```bash
+pip install build twine
+python -m build
+python -m twine upload dist/*
+```
+
+## License
+
+MIT License
