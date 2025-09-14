@@ -1,0 +1,10 @@
+ppfind/__init__.py,sha256=qIo0d9MQ7Zt92_I_rwziicZMt7CaOvG3H1sw717BF8Y,243
+ppfind/cli.py,sha256=8oHE8k_KuyzqnYxDiV0GtX7wCUHs5hYEHDYEcztgUro,11549
+ppfind/config.py,sha256=AQgZSyGR393Fgv7J-Y0M7R5tqqxRkaR06qfCebZrdd0,3808
+ppfind/core.py,sha256=iLKci5H2Er2-Zbvumhp2wywaQsZ6GQhoOxYaa8GtvHA,3586
+ppfind-1.1.0.dist-info/licenses/LICENSE,sha256=h9QPpQpbmSAmaDPmXOvz7BZHv4w8U5DSavFO7o_ai6o,1089
+ppfind-1.1.0.dist-info/METADATA,sha256=KfPUcKl8ZB6GRHW3bUk26tebLUW0KidnW7MIJUWVZ_A,3637
+ppfind-1.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ppfind-1.1.0.dist-info/entry_points.txt,sha256=GlJVY9uVFdbTl5NptO9EJ2_ER1derKP9zIOejYoHO0k,43
+ppfind-1.1.0.dist-info/top_level.txt,sha256=gt82OHB1utVyaoJ89DFkySaYtaRU_b5lfcIk9CMOeuw,7
+ppfind-1.1.0.dist-info/RECORD,,
