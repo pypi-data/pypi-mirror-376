@@ -1,0 +1,9 @@
+kicad_symbol_tool/__init__.py,sha256=nWdk8hSsE-NJea20YrcAijzoznMXr5LcMXju6j6yCJA,396
+kicad_symbol_tool/cli.py,sha256=h9DnLU_l-EwAzD1Ewt19B3pAn3U6d7BQ58lpgxVRXD4,3473
+kicad_symbol_tool/derived_parts_from_spreadsheet.py,sha256=Y7XDgPvyj8-IEjzM-Lzn7ZtTyPU-jViCo-K59-YzKnU,9523
+kicad_symbol_tool-1.0.1.dist-info/licenses/LICENSE,sha256=W4tBKShJA87oJSkQzXK5KLd5vaIl4I97SqzkyxOzrZM,1090
+kicad_symbol_tool-1.0.1.dist-info/METADATA,sha256=L3s-Pp4quZ_JJBEpCnx9uNM6VYwk7EckwhYlEfh3EtA,4916
+kicad_symbol_tool-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+kicad_symbol_tool-1.0.1.dist-info/entry_points.txt,sha256=UwCF-9ffN67uHoLH2EaGn7WS6tXlombDqaeaODQQQxE,64
+kicad_symbol_tool-1.0.1.dist-info/top_level.txt,sha256=XKFyuaPiIA3LpSQcW-umTFJE6YOkhHSivmWT2qxJ5QM,18
+kicad_symbol_tool-1.0.1.dist-info/RECORD,,
