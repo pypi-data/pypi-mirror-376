@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+secpro.egg-info/PKG-INFO
+secpro.egg-info/SOURCES.txt
+secpro.egg-info/dependency_links.txt
+secpro.egg-info/requires.txt
+secpro.egg-info/top_level.txt
+tests/test_app.py
