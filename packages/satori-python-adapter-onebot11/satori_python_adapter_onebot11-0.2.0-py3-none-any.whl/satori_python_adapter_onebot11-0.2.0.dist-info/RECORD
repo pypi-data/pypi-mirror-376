@@ -1,0 +1,16 @@
+.mina/adapter_onebot11.toml,sha256=wiAwlogVWJxq8NYed-D5sBBjDCyujNozd5hraKGcWWw,935
+satori/adapters/onebot11/__init__.py,sha256=ZKd5XID3fgPNYI7fEpikfHLj1lyJ4bARZK-5ZTkbq2g,140
+satori/adapters/onebot11/api.py,sha256=ymSxAwmQDUQY8hLBjqWZWPOQMO0KVp0oMoyX7Q3jzSI,12712
+satori/adapters/onebot11/events/__init__.py,sha256=OW2BaxHhuJGilxUFSDoQWrmXGajXlrmUpNPTL4P6BH0,36
+satori/adapters/onebot11/events/base.py,sha256=nZ86I52yJrl-wWKOT5zM-kqjO7QvzWNDxem8Sa2oR0w,412
+satori/adapters/onebot11/events/message.py,sha256=2HQJ6_4E46Rx-UDxjIeVqvnqZkD9v-ZMpuUfoY5enQo,4008
+satori/adapters/onebot11/events/notice.py,sha256=juLCfi4dQl_FHxYCwINroobhl0o8cVxZnYxWSzaMhI4,11867
+satori/adapters/onebot11/events/request.py,sha256=QpTU5WqLfg2y1WB4VoGRk6-1QEZ1gWqMsql0a7bffjA,1616
+satori/adapters/onebot11/forward.py,sha256=ALMWM4WyhX_iMDsUhdxOVP-l11QOgynIKBvLDVo9XSo,9871
+satori/adapters/onebot11/message.py,sha256=vcxKflO7zi2tuT6xekhOXQ19WdltclqlLUmhbwV_848,12743
+satori/adapters/onebot11/reverse.py,sha256=7QizyWENeeubY7RqtJ5gL88JhfB-F-4wTTGgtZN99FE,8343
+satori/adapters/onebot11/utils.py,sha256=zPUCbO1hXuhFmB9dmHstr8zG0DAZZakAweroAOLWh18,574
+satori_python_adapter_onebot11-0.2.0.dist-info/METADATA,sha256=LlZXcU-k4TURt7xW3ovEcBR204tgtde6FEE4z9X8o_o,4698
+satori_python_adapter_onebot11-0.2.0.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+satori_python_adapter_onebot11-0.2.0.dist-info/licenses/LICENSE,sha256=2EDswKd1M1648judap8BEEwp3Jz6IpfFP2wYVdU0Y2o,1069
+satori_python_adapter_onebot11-0.2.0.dist-info/RECORD,,
