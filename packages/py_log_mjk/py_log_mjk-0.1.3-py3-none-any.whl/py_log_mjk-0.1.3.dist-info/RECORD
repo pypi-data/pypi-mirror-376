@@ -1,0 +1,14 @@
+py_log_mjk/__init__.py,sha256=qRocO1tSYxmE6tkqy_i28lIvUyOM0K8LrZKAEUKL2qE,388
+py_log_mjk/config_logging.py,sha256=ZpTNRryE3u9_ipqDt17glYAa7zZcEMSscOTMKLII3LQ,3794
+py_log_mjk/filters.py,sha256=VfkdnnWmJRUqWa3hc0bgRWTEydVG-7ViO1nAIn622eA,319
+py_log_mjk/formatter.py,sha256=nfaaBT49Ru0rMn-T8auNpP9Den9lK7p-G7f9Sy7Vee8,2287
+py_log_mjk/handler.py,sha256=ywVYMdv98NwmrPUy_XWPbm8r-S6M6IKh1EqV-ro3eew,632
+py_log_mjk/main.py,sha256=QrMiP8mpt2-uQ9dAQxHsvYnuYxp_GLC5YMRJ8RyKG5Q,5237
+py_log_mjk/settings.py,sha256=XoMEtLoRs5bA8odY0iTbZaRfxksXPPj4H6whQgvgBfM,1553
+py_log_mjk/setup.py,sha256=4pJbVLWQGtyH6OHeHnwpkelYmY1wv3Olh5ma0y_TG60,3664
+py_log_mjk/templates/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+py_log_mjk/templates/default_logging.conf.json,sha256=bcFtFe-EyEIZ3A5taREmaBr790kBu29MI_RKqepIo-Q,1649
+py_log_mjk-0.1.3.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+py_log_mjk-0.1.3.dist-info/METADATA,sha256=aYML2isD_XIQAzRHe4UZuNdFBg6s-qy7lRDSfFeVpF4,3173
+py_log_mjk-0.1.3.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+py_log_mjk-0.1.3.dist-info/RECORD,,
