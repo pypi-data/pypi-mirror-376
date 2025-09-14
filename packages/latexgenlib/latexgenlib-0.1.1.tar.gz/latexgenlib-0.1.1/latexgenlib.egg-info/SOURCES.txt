@@ -1,0 +1,8 @@
+README
+pyproject.toml
+latexgenlib/__init__.py
+latexgenlib/latex_generator.py
+latexgenlib.egg-info/PKG-INFO
+latexgenlib.egg-info/SOURCES.txt
+latexgenlib.egg-info/dependency_links.txt
+latexgenlib.egg-info/top_level.txt

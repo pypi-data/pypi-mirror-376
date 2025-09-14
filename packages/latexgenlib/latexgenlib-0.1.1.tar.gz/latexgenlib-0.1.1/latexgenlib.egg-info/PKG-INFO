@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: latexgenlib
+Version: 0.1.1
+Summary: Library for generating LaTeX tables and images.
+Author-email: Maria Okorochkova <okorochkova26@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
