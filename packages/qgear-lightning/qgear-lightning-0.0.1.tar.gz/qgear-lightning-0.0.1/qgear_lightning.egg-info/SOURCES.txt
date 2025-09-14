@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+settings.ini
+setup.py
+qgear_lightning/__init__.py
+qgear_lightning/_modidx.py
+qgear_lightning/core.py
+qgear_lightning/io.py
+qgear_lightning.egg-info/PKG-INFO
+qgear_lightning.egg-info/SOURCES.txt
+qgear_lightning.egg-info/dependency_links.txt
+qgear_lightning.egg-info/entry_points.txt
+qgear_lightning.egg-info/not-zip-safe
+qgear_lightning.egg-info/requires.txt
+qgear_lightning.egg-info/top_level.txt

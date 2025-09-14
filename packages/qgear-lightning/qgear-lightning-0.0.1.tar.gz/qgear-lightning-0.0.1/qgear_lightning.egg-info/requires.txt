@@ -1,0 +1,10 @@
+cudaq
+h5py
+numpy
+pillow
+qiskit
+
+[dev]
+jupyterlab
+nbdev
+pennylane
