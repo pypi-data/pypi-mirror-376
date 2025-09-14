@@ -1,0 +1,10 @@
+pysterling/__init__.py,sha256=c1MGzrEO1142w4HM6PjR7RS36sFiwIPJJc_1APxzR34,82
+pysterling/archaic.py,sha256=SCztnzqdFug_hNWLr7G5YeeAl8ygRfprccRl5wshzY0,2301
+pysterling/sterling.py,sha256=FQcmt5_Y5vJNImZDNyosxoowstjtbKUAIvr1d4Zrg2o,3835
+pysterling/sterling.pyi,sha256=YtJCxtgCGKXxRtHIqIvkwlX74kioIye5JYaKHzfLx_s,594
+pysterling/vat.py,sha256=wjUCOklLVYMsiFvapH4uqzu_Zo36XEOzssk9ixoxoBE,452
+pysterling-1.0.0.dist-info/LICENSE.txt,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+pysterling-1.0.0.dist-info/METADATA,sha256=N5T9KfdbTvXm65qKRjjEZrX3Gv0AJVTMQvg_9iwXEDg,614
+pysterling-1.0.0.dist-info/WHEEL,sha256=4-iQBlRoDdX1wfPofc7KLWa5Cys4eZSgXs6GVU8fKlQ,101
+pysterling-1.0.0.dist-info/top_level.txt,sha256=snaUrsB4PYIbVuTuFf6LbM3p2u0N37L_-4ZnwY4Culg,11
+pysterling-1.0.0.dist-info/RECORD,,

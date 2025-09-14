@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pysterling
+Version: 1.0.0
+Summary: Python library for manipulating the pound sterling in the United Kingdom's financial system.
+Author-email: WCG847 <heelmods@gmail.com>
+License: GPL-3.0-or-later
+Keywords: money,uk,financial,vat,hmrc
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Office/Business :: Financial
+Requires-Python: >=3.10
+License-File: LICENSE.txt
