@@ -1,0 +1,12 @@
+affine
+h5py
+matplotlib
+numpy
+rioxarray
+xarray
+
+[all]
+prismatools[extra]
+
+[extra]
+pandas
