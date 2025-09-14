@@ -1,0 +1,2 @@
+[console_scripts]
+facet = facet_lang.cli:main
