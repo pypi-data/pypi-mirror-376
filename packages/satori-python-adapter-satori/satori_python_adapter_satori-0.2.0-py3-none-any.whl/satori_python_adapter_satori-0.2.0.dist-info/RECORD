@@ -1,0 +1,7 @@
+.mina/adapter_satori.toml,sha256=ah4rP3SUOsYUXgWARmW96JmErB9eOJAyznDPXBWtJbw,921
+satori/adapters/satori/__init__.py,sha256=hcuE9VSkuVIDdwJy_lDj1EXsbC4I6lRwHLS3G1fFyP4,49
+satori/adapters/satori/main.py,sha256=sDaCKnkFoV8wlM41I3VY7Ig0yeJ61-Tz6zaw9NLeBGE,3971
+satori_python_adapter_satori-0.2.0.dist-info/METADATA,sha256=MZRFtQKJIKLuHsffQPoZudfXyCQ7TvprayXg5CzrqXo,4686
+satori_python_adapter_satori-0.2.0.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+satori_python_adapter_satori-0.2.0.dist-info/licenses/LICENSE,sha256=2EDswKd1M1648judap8BEEwp3Jz6IpfFP2wYVdU0Y2o,1069
+satori_python_adapter_satori-0.2.0.dist-info/RECORD,,
