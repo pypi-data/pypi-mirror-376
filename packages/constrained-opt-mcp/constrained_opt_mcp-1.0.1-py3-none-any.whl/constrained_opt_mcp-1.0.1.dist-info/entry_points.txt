@@ -1,0 +1,2 @@
+[console_scripts]
+constrained-opt-mcp = constrained_opt_mcp.server.main:main
