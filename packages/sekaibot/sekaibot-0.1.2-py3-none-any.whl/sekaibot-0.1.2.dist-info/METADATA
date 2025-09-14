@@ -1,0 +1,107 @@
+Metadata-Version: 2.4
+Name: sekaibot
+Version: 0.1.2
+Summary: A cross-platform, asynchronous, and progressive Python bot development framework
+Project-URL: Repository, https://github.com/sekaibot-dev/sekaibot
+Author-email: Kotodama <2682064633@qq.com>
+License: MIT
+License-File: LICENSE
+Keywords: bot,chatbot,coolq,cqhttp,qq,qqbot
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: Robot Framework
+Classifier: Framework :: Robot Framework :: Library
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Communications :: Chat
+Requires-Python: <4,>=3.11
+Requires-Dist: aiohttp<4.0.0,>=3.8.0
+Requires-Dist: anyio<5.0.0,>=4.4.0
+Requires-Dist: exceptiongroup==1.2.2
+Requires-Dist: pyahocorasick==2.1.0
+Requires-Dist: pydantic==2.11.3
+Requires-Dist: pygtrie==2.5.0
+Requires-Dist: pypinyin==0.54.0
+Requires-Dist: pyyaml==6.0.2
+Requires-Dist: structlog<26.0.0,>=25.1.0
+Requires-Dist: typing-extensions==4.13.2
+Provides-Extra: all
+Requires-Dist: pyahocorasick>=2.1.0; extra == 'all'
+Requires-Dist: pypinyin>=0.54.0; extra == 'all'
+Requires-Dist: sekaibot-adapter-cqhttp; extra == 'all'
+Requires-Dist: sekaibot-adapter-onebot; extra == 'all'
+Requires-Dist: sekaibot-plugin-apscheduler; extra == 'all'
+Requires-Dist: watchfiles>=0.24; extra == 'all'
+Provides-Extra: apscheduler
+Requires-Dist: sekaibot-plugin-apscheduler; extra == 'apscheduler'
+Provides-Extra: cqhttp
+Requires-Dist: sekaibot-adapter-cqhttp; extra == 'cqhttp'
+Provides-Extra: hot-reload
+Requires-Dist: watchfiles>=0.24; extra == 'hot-reload'
+Provides-Extra: onebot
+Requires-Dist: sekaibot-adapter-onebot; extra == 'onebot'
+Provides-Extra: word-fliter
+Requires-Dist: pyahocorasick>=2.1.0; extra == 'word-fliter'
+Requires-Dist: pypinyin>=0.54.0; extra == 'word-fliter'
+Description-Content-Type: text/markdown
+
+<p align="center">
+  <a href=""><img src="https://raw.githubusercontent.com/sekaibot-dev/sekaibot/main/docs/public/logo.png" width="250" height="250" alt="sekaibot"></a>
+</p>
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/sekaibot-dev/sekaibot/main/docs/public/name.png" width="140" alt="sekaibot">
+
+_-跨平台的 Python 异步渐进式机器人开发框架-_
+
+</div>
+
+<div align="center">
+  <a href="https://raw.githubusercontent.com/AliceBotProject/alicebot/master/LICENSE">
+    <img src="https://img.shields.io/github/license/AliceBotProject/alicebot" alt="license">
+  </a>
+  <a href="https://pypi.python.org/pypi/alicebot">
+    <img src="https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fgithub.com%2FAliceBotProject%2Falicebot%2Fraw%2Fmaster%2Fpyproject.toml" alt="pypi">
+  </a>
+  <a href="https://pypi.python.org/pypi/alicebot">
+    <img src="https://img.shields.io/pypi/v/alicebot" alt="pypi">
+  </a>
+  <a href="https://github.com/sekaibot-dev/sekaibot/">
+    <img src="https://img.shields.io/github/stars/sekaibot-dev/sekaibot?style=social" alt="github">
+  </a>
+  <br />
+  <a href="https://github.com/psf/black">
+    <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="black">
+  </a>
+  <a href="https://github.com/astral-sh/ruff">
+    <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="ruff">
+  </a>
+  <a href="https://github.com/pylint-dev/pylint">
+    <img src="https://img.shields.io/badge/linting-pylint-blue" alt="pylint">
+  </a>
+  <a href="https://github.com/Microsoft/pyright">
+    <img src="https://img.shields.io/badge/type%20checker-pyright-yellowgreen" alt="pyright">
+  </a>
+  <a href="https://github.com/python/mypy">
+    <img src="https://img.shields.io/badge/type%20checker-mypy-blue" alt="mypy">
+  </a>
+  <br />
+  <a href="https://codecov.io/gh/AliceBotProject/alicebot">
+    <img src="https://codecov.io/gh/AliceBotProject/alicebot/graph/badge.svg?token=3H6ZU6NN0J" alt="codecov">
+  </a>
+  <a href="https://github.com/AliceBotProject/alicebot/actions/workflows/test.yml">
+    <img src="https://github.com/AliceBotProject/alicebot/actions/workflows/test.yml/badge.svg?branch=master&event=push" alt="github">
+  </a>
+  <a href="https://github.com/AliceBotProject/alicebot/actions/workflows/lint.yml">
+    <img src="https://github.com/AliceBotProject/alicebot/actions/workflows/lint.yml/badge.svg?branch=master&event=push" alt="github">
+  </a>
+  <a href="https://github.com/AliceBotProject/alicebot/actions/workflows/docs.yml">
+    <img src="https://github.com/AliceBotProject/alicebot/actions/workflows/docs.yml/badge.svg?branch=master&event=push" alt="github">
+  </a>
+  <br />
+  <a href="https://jq.qq.com/?_wv=1027&k=ZbE3p6tq">
+    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-834922207-orange" alt="qq-group">
+  </a>
+</div>
