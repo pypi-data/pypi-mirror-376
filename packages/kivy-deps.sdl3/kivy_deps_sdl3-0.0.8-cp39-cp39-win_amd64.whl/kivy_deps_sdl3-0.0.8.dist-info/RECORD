@@ -1,0 +1,12 @@
+kivy_deps/__init__.py,sha256=h-QyvMVzDNpT3jyVskcSbUVFXxGCRxieFPrvTveZG9k,64
+kivy_deps/sdl3/__init__.py,sha256=86I8-sLmShmXh9LbnGliKqENIa5AoB6PKcAZzcgUTbk,675
+kivy_deps_sdl3-0.0.8.data/data/share/sdl3/bin/SDL3.dll,sha256=OCoTCn8oFAVMXMdgWSdAHFs_feJVpDBTV3v68kK_D-M,2405888
+kivy_deps_sdl3-0.0.8.data/data/share/sdl3/bin/SDL3_image.dll,sha256=ia1kKzV-R3VOBnb0NfMY-sFf2eKpM_ADQkuERtqyzLQ,184320
+kivy_deps_sdl3-0.0.8.data/data/share/sdl3/bin/SDL3_ttf.dll,sha256=1_MJzOHWywPqVT5szO3yI4Y9apPbhnCmyxjGxggyqIE,1810944
+kivy_deps_sdl3-0.0.8.data/data/share/sdl3/bin/pkgconfig/sdl3-image.pc,sha256=htLMXm_tFBDFE7LK96Fg9OvNRwW7jxkjyEaetEaDZYk,321
+kivy_deps_sdl3-0.0.8.data/data/share/sdl3/bin/pkgconfig/sdl3-ttf.pc,sha256=vdRwLrJVFgXX-I_1y3vdWOgJoeOeEcK65sTBh7UW0Po,331
+kivy_deps_sdl3-0.0.8.data/data/share/sdl3/bin/pkgconfig/sdl3.pc,sha256=IYYCVbQqm8HMgnbfcRGvTBTqtRN-8EhzRSdb3JnQhbQ,588
+kivy_deps_sdl3-0.0.8.dist-info/METADATA,sha256=hTvDiDBkHwmVI5Af5sO-Z9llNrCRqqgbdpkt2A-q4V4,331
+kivy_deps_sdl3-0.0.8.dist-info/WHEEL,sha256=XkFE14KmFh7mutkkb-qn_ueuH2lwfT8rLdfc5xpQ7wE,99
+kivy_deps_sdl3-0.0.8.dist-info/top_level.txt,sha256=YMwhIe4C46UWpn5ggwslPdp7LkNw5RbCnvMcqI6e78Q,10
+kivy_deps_sdl3-0.0.8.dist-info/RECORD,,
