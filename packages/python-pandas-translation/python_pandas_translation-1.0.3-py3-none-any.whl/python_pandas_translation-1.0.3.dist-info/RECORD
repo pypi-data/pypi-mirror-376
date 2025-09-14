@@ -1,0 +1,11 @@
+python_pandas_translation/__init__.py,sha256=WOQFNzXl-YVgMfI2Vvfj54gzOt97d-HTPO2BRiP8SAk,401
+python_pandas_translation/pandas_column.py,sha256=n1qxPOAuc3poJPjNsecXj3sTCuAg_ygCqDCfyLmj8eI,4011
+python_pandas_translation/pandas_group.py,sha256=Y2pWX7wk03EPtynnPkJZFtvEAJWZnnlwuIFcUG2uwV8,1935
+python_pandas_translation/pandas_io.py,sha256=q3EzxomMKU1buZcUnnQiRloqMm9AjaZR7d0F3qnFe7Y,2946
+python_pandas_translation/pandas_query.py,sha256=LINjbtt-iKzbFnWoGB3ZCApTqSRgyDDgQB_MWMjWDXI,3014
+python_pandas_translation/pandas_rows.py,sha256=maxkxyLY68C5BlD2f6keBfKavd5-gdYm8PV8fTo_u2o,4284
+python_pandas_translation-1.0.3.dist-info/licenses/LICENSE,sha256=cSikHY6SZFsPZSBizCDAJ0-Bjjzxt-JtX6TVbKxwimo,1067
+python_pandas_translation-1.0.3.dist-info/METADATA,sha256=3hQNrM8_XJe3ndVWNIW5A4mKqhdtjUFHEJj6Gb1Cz3Y,1898
+python_pandas_translation-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+python_pandas_translation-1.0.3.dist-info/top_level.txt,sha256=dKSieymFDnY_FLH5r5eK-BgqKjODszWpfrnkRI_9fHg,26
+python_pandas_translation-1.0.3.dist-info/RECORD,,
