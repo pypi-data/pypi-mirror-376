@@ -1,0 +1,11 @@
+oxrdflib/__init__.py,sha256=NJU6U8r4n_F0WJvNVb1kgzCR7rk0u46ZVvnXmpJgL50,62
+oxrdflib/_converter.py,sha256=QK9_1EA8LWyKIp8uIxTfDpE01m5tTKfHdkmZLv4Epp4,3987
+oxrdflib/_type.py,sha256=AuC8pqDIWyLfJaL7ev6CEK3dPcKORXpzUg6h0JpYsz4,235
+oxrdflib/parser.py,sha256=Swn8BfyL5S8fXjAX5ziaG77Xg_AWHADzOJPX7wtiRM8,2981
+oxrdflib/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+oxrdflib/serializer.py,sha256=Cr_wxJL0Kd57O7qJcVubClV7sW38eGGt6qoZzdVZY50,2183
+oxrdflib/store.py,sha256=qqUEySfJv2Gg1K0VRN0XlLBxf3f2hoIfByZNV5SvJ_8,8369
+oxrdflib-0.5.0.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+oxrdflib-0.5.0.dist-info/entry_points.txt,sha256=URIxkr2BNLIaDG6nesi8MXwvVO6zOztS4mdQ3Kk7_eA,1414
+oxrdflib-0.5.0.dist-info/METADATA,sha256=fuBoOqItsKp3ioypu07E0WjDS7CcLu6AZGRQXmUxbIU,6691
+oxrdflib-0.5.0.dist-info/RECORD,,
