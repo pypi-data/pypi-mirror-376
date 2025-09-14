@@ -1,0 +1,15 @@
+ows_sysinfo/__init__.py,sha256=nw-wt0j34bfwSeqdR6zinPL810AYrNk0FaJLCgF3dHA,701
+ows_sysinfo/cli.py,sha256=eA6OdSH_5nvJzxukpe-mLAHiAC3Pjvn5-cm_OVeTxBM,1267
+ows_sysinfo/cpu_info.py,sha256=8jmpIguKGiUGqMApjryO7nGjDqWzUZaz5OH-fOLOtK4,908
+ows_sysinfo/gpu_info.py,sha256=re5fRbRW6qzF65DxDu_N8y_SZ2C2ArBD-zt7PUwqyVI,704
+ows_sysinfo/memory_disk.py,sha256=sM6DJ0uzy3Ixw2RaxNw_KkX4aoGWsP5EVQ3tbBB3biQ,1776
+ows_sysinfo/miscellaneous.py,sha256=i-F297a6YAv57LI4S4HVny-9tg1mVXUMAQ7dAHEd5UI,923
+ows_sysinfo/network_info.py,sha256=wO2kM6AQEFI7QfZhaMW8VwN9LMBdfe2eT9XbXgaDl_Q,2396
+ows_sysinfo/processes_info.py,sha256=3zQpyg05wDkeAAtO9IwC3baXvfZXO2SbCKRVSyMCtvM,893
+ows_sysinfo/reporter.py,sha256=guiufPCsvYo3EcDZeZFm1Co2R5623QC30BvR2F4LsiU,1884
+ows_sysinfo/system_info.py,sha256=eL29UA3cOO-SmRDBuwkOn3xzwYxToppvAXfCw0zg4WE,962
+ows_sysinfo-0.1.0.dist-info/METADATA,sha256=Z412xFbkh42NZys8XRIuMzm5jMicJCnfv184vZKUTQM,599
+ows_sysinfo-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ows_sysinfo-0.1.0.dist-info/entry_points.txt,sha256=ylvV1j243xkTQM5Yy8Gei83xgJOhq74Kf3W849bcRlk,53
+ows_sysinfo-0.1.0.dist-info/top_level.txt,sha256=JNCYxtCN1B4M8BOwuzhekGC2yw2bbZ_PhEJvAF4U3_E,12
+ows_sysinfo-0.1.0.dist-info/RECORD,,

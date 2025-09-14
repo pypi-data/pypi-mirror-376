@@ -1,0 +1,2 @@
+[console_scripts]
+ows-sysinfo = ows_sysinfo.cli:main
