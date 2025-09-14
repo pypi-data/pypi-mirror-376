@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+nlp_text_clean/__init__.py
+nlp_text_clean/cleaner.py
+nlp_text_clean.egg-info/PKG-INFO
+nlp_text_clean.egg-info/SOURCES.txt
+nlp_text_clean.egg-info/dependency_links.txt
+nlp_text_clean.egg-info/requires.txt
+nlp_text_clean.egg-info/top_level.txt
+tests/test_cleaner.py
