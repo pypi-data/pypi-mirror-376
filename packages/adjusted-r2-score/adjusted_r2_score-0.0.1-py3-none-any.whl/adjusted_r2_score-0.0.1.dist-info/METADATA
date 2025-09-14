@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: adjusted_r2_score
+Version: 0.0.1
+Summary: A simple package to calculate the adjusted R-squared score.
+Project-URL: Homepage, https://github.com/dhyeymakwana/adjusted_r2_score_project
+Project-URL: Bug Tracker, https://github.com/dhyeymakwana/adjusted_r2_score_project/issues
+Author-email: YOUR_NAME <your_email@example.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
