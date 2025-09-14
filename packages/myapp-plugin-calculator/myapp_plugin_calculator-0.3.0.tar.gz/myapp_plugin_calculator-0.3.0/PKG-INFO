@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: myapp-plugin-calculator
+Version: 0.3.0
+Summary: MyApp的高级科学计算器插件 - 支持复杂算式、科学函数、历史记录和连续计算
+Author-email: Sans <your.email@example.com>
+Project-URL: Homepage, https://github.com/yourusername/myapp-plugin-calculator
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: my-app-core
+Dynamic: license-file
+
+\# MyApp Plugin Calculator
+
+
+
+MyApp的计算器插件，支持基本数学运算。
+
+
+
+\## 功能
+
+
+
+\- 支持加减乘除四则运算
+
+\- 支持中英文运算符
+
+\- 支持结果验证
+
+\- 友好的错误提示
+
+
+
+\## 使用示例
+
+
+
+```bash
+
+\# 安装插件
+
+pip install myapp-plugin-calculator
+
+
+
+\# 运行应用
+
+myapp
+
+
+
+\# 在应用中输入：
+
+5 + 3 =
+
+10 减 4 =
+
+2.5 乘 4 =
+
+10 除 2 =
+
+7 + 3 = 10  # 会验证结果是否正确
+
+支持的运算符
+
+加法：+ 或 加
+
+减法：- 或 减
+
+乘法：\*, 乘, 或 x
+
+除法：/ 或 除
+
