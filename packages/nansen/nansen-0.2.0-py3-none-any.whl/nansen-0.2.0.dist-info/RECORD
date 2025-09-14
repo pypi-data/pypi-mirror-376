@@ -1,0 +1,10 @@
+nansen/__init__.py,sha256=gHGTCbwIam4cLB1J871nYJlqIcw4_g4cihpEhzB2M68,243
+nansen/_version.py,sha256=3RBgSg6ZyveZibOVWBXBaGPTQJ8Lb0BvCQYl6Nze7_E,712
+nansen/main.py,sha256=3FL-U8fNoLNU-dyY48-z7awtDmmMqlzHmoEVbhZq8kI,96
+nansen/core/gpx.py,sha256=K2kbfIXMqYJLnpzxtM1fsC6aMW0eQXEnQNeJiG2O7OQ,14761
+nansen/io/gpx.py,sha256=K1sY6nGekAIUixO_wfOKSt1CLa4dETWuvNsrq9wMTz8,2601
+nansen/utils/smooth.py,sha256=sh_sjQ_SZmkGhrOxLPWdzTbHvOnFChG3IYZ3HQq-Gio,1942
+nansen-0.2.0.dist-info/METADATA,sha256=HDchdrxeqsP2pC7KYaG53lJhPpChmdN4g__6_IlxBao,251
+nansen-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nansen-0.2.0.dist-info/top_level.txt,sha256=GL7XDQ6rsUm10BRFFaWCdyD7NshEOCHkP3BtsfJHI7o,7
+nansen-0.2.0.dist-info/RECORD,,
