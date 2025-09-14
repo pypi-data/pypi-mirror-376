@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cf_d1_manager"
+version = "2025.9.14920"
+description = "CF_API_TOKEN = _must_env(\"CF_API_TOKEN\") CF_ACCOUNT_ID = _must_env(\"CF_ACCOUNT_ID\") CF_D1_DATABASE_ID = _must_env(\"CF_D1_DATABASE_ID\") CF_A…"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" },
+]
+license = { file = "LICENSE" }
+dependencies = [
+    "http_exception"
+]
+
+[project.urls]
+Repository = "https://pypi.org/project/cf_d1_manager/"
