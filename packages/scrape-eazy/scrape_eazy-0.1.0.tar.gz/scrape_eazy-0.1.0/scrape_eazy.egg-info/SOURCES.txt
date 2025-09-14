@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+scrape_eazy/__init__.py
+scrape_eazy/core.py
+scrape_eazy/utils.py
+scrape_eazy.egg-info/PKG-INFO
+scrape_eazy.egg-info/SOURCES.txt
+scrape_eazy.egg-info/dependency_links.txt
+scrape_eazy.egg-info/requires.txt
+scrape_eazy.egg-info/top_level.txt

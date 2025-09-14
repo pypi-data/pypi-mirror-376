@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scrape_eazy"
+version = "0.1.0"
+description = "A simple web scraping helper for humans"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+license = {text = "MIT"}
+readme = "README.md"
+dependencies = ["requests", "beautifulsoup4"]
+requires-python = ">=3.8"
