@@ -1,0 +1,4 @@
+from .arbre import Var, TRUE, FALSE, Node, RAISE_ON_IDENTICAL_BRANCHES, FINGERPRINT_SIZE
+
+__version__ = "0.1.1"
+__all__ = ["Var", "TRUE", "FALSE", "Node", "RAISE_ON_IDENTICAL_BRANCHES", "FINGERPRINT_SIZE"]
