@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "adjusted_r2_score"
+version = "0.0.1"
+authors = [
+  { name="YOUR_NAME", email="your_email@example.com" },
+]
+description = "A simple package to calculate the adjusted R-squared score."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/dhyeymakwana/adjusted_r2_score_project"
+"Bug Tracker" = "https://github.com/dhyeymakwana/adjusted_r2_score_project/issues"
