@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: api-eazy
+Version: 0.1.5
+Summary: Ultra-simple async web server framework for Python
+Author-email: Your Name <you@example.com>
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: AsyncIO
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp>=3.8.0
+
+# api-eazy
+
+Ultra-simple async web server framework for Python.
+
+## Installation
+
+```bash
+pip install api-eazy
