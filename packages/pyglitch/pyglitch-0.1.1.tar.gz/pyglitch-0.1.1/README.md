@@ -1,0 +1,46 @@
+pyglitch
+A library for image file manipulation, focused on data corruption and glitch effects.
+
+Introduction
+pyglitch is a simple yet powerful tool for creating artistic data corruption effects on image files. By directly manipulating the raw byte data of an image, this library produces unique and unpredictable "glitches" that can be used for digital art and creative projects.
+
+The library supports popular image formats like JPEG and PNG by navigating their file headers and focusing corruption on the main image data.
+
+Installation
+You can install pyglitch directly from PyPI (when published) or from a local source.
+
+To install from a local source:
+
+pip install .
+
+The library has no external dependencies beyond Python's standard library.
+
+Usage
+The main function you will use is glitch_img(). You can import it directly from the main package, as shown below.
+
+glitch_img(image_path, output_path, corruption_level)
+
+image_path: The path to the input image file (e.g., 'my_photo.jpg').
+
+output_path: The path where the glitched image will be saved (e.g., 'glitched_photo.jpg').
+
+corruption_level: (Optional) A float representing the percentage of the file's data to corrupt (e.g., 0.05 for 5%). The default value is 0.01.
+
+Example
+Here is a simple Python script to use the pyglitch library:
+
+from pyglitch import glitch_img
+
+input_image = 'path/to/your/image.jpg'
+output_image = 'path/to/save/glitched_image.jpg'
+
+# Glitch the image with a 2% corruption level
+glitch_img(input_image, output_image, corruption_level=0.02)
+
+print(f"Glitched image saved to {output_image}")
+
+Contributing
+pyglitch is an open-source project. If you have an idea for a new type of glitch effect or an improvement, please feel free to contribute!
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
