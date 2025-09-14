@@ -1,0 +1,5 @@
+biopython<2,>=1.85
+pandas<3,>=2.2.3
+natsort<9,>=8.4
+tensorflow<2.17,>=2.16
+grpcio-status<1.60.0

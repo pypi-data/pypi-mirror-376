@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: funbgcex
+Version: 1.0.0
+Summary: Fungal Biosynthetic Gene Cluster eXtractor
+Home-page: https://github.com/ydmatsd/funbgcex
+Author: Yudai Matsuda
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: biopython<2,>=1.85
+Requires-Dist: pandas<3,>=2.2.3
+Requires-Dist: natsort<9,>=8.4
+Requires-Dist: tensorflow<2.17,>=2.16
+Requires-Dist: grpcio-status<1.60.0
