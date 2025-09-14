@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+vinwiki_py.egg-info/PKG-INFO
+vinwiki_py.egg-info/SOURCES.txt
+vinwiki_py.egg-info/dependency_links.txt
+vinwiki_py.egg-info/top_level.txt
