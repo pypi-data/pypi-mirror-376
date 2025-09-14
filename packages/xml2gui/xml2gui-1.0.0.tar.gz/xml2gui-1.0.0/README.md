@@ -1,0 +1,171 @@
+# Xml2GUI
+
+<div align="center">
+  <img src="image.png" width="200" alt="Xml2GUI">
+  <h1>Xml2GUI</h1>
+  <p></p>
+  <a href="https://www.gnu.org/licenses/gpl-3.0">
+    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPL v3">
+  </a>
+</div>
+
+
+
+### 完整使用指南：[USER_GUIDE.md](USER_GUIDE.md)
+
+## 什么是Xml2GUI？
+
+Xml2GUI是一个十分方便的框架，专为没有任何编程经验的用户设计。它允许您通过简单的XML文件创建功能强大、界面美观的桌面应用程序。您无需编写复杂的Python代码，只需使用直观的XML标记语言，就能创建出漂亮的图形用户界面（GUI）应用程序。
+### 各位刷机大佬建议配合bff食用（doge
+---
+### 核心优势
+
+- **零编程经验要求**：无需任何编程知识，只需了解基本的XML语法
+- **直观的XML语法**：使用简单易懂的XML标签定义界面元素
+- **自动代码生成**：将XML文件自动转换为可执行的Python代码
+- **一键编译为EXE**：轻松将应用程序编译为独立的可执行文件
+- **丰富的控件支持**：支持各种常用控件和布局
+- **现代化界面**：支持PyQt-Fluent-Widgets，创建美观的现代化界面
+- **事件处理简化**：简单易用的事件绑定机制
+
+## 快速开始（3步完成）
+
+### 第1步：编写XML文件
+
+创建一个XML文件，定义您的应用程序界面和功能：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+    <!-- 窗口属性 -->
+    <window title="我的第一个应用" width="600" height="400"/>
+    
+    <!-- 布局定义 -->
+    <layouts>
+        <layout id="main_layout" type="VBoxLayout">
+            <widget id="welcome_label" type="Label" text="欢迎使用Xml2GUI框架!"/>
+            <widget id="run_button" type="Button" text="运行程序"/>
+            <widget id="result_label" type="Label" text=""/>
+        </layout>
+    </layouts>
+    
+    <!-- 事件绑定 -->
+    <events>
+        <event widget="run_button" type="click" handler="on_run_button_clicked"/>
+    </events>
+</application>
+```
+
+### 第2步：生成应用程序
+
+在命令行中执行以下命令：
+
+```bash
+# 生成Python程序
+python build.py my_app.xml
+
+# 生成可执行文件（EXE）
+python build.py my_app.xml -exe
+```
+
+### 第3步：运行您的应用
+
+```bash
+# 运行Python程序
+python dist/my_app.py
+
+# 或直接运行生成的EXE文件
+output/my_app.exe
+```
+
+## 安装指南
+
+### 系统要求
+
+- Windows 操作系统（推荐）
+- Python 3.6 或更高版本
+
+### 安装步骤
+
+1. **下载项目**
+
+   ```bash
+   git clone https://gitee.com/ghhuang1057/xml2-gui.git
+   cd xml2-gui
+   ```
+
+2. **安装依赖**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+   这会自动安装以下依赖：
+   - `PyQt5` - Python Qt5 GUI框架
+   - `PyQt-Fluent-Widgets` - Fluent风格控件库
+   - `nuitka` - Python代码编译器（用于生成EXE）
+
+3. **完成安装**
+
+   现在您已经准备好使用Xml2GUI了！所有必要的依赖都已安装，包括编译EXE所需的工具。
+
+## 功能特性
+
+### 1. 按钮操作
+- **打开程序**：点击按钮启动任何可执行文件
+- **打开文档**：点击按钮打开文档、图片等文件
+- **运行批处理**：点击按钮执行.bat或.cmd脚本
+- **打开网页**：点击按钮打开指定网址
+
+### 2. 数据交互
+- **文本输入**：支持单行和多行文本输入
+- **选择操作**：支持下拉框、复选框、单选按钮等
+- **文件选择**：支持文件和文件夹选择对话框
+
+### 3. 界面设计
+- **多种布局**：垂直、水平、网格、表单等布局方式
+- **样式定制**：通过CSS样式定制控件外观
+- **响应式设计**：自适应窗口大小变化
+
+## 项目结构
+
+```
+Xml2GUI/
+├── build.py              # 构建脚本
+├── xml2gui/              # 框架核心代码
+│   ├── __init__.py
+│   ├── parser.py         # XML解析器
+│   ├── generator.py      # Python代码生成器
+│   └── compiler.py       # 编译器（用于生成exe）
+├── examples/             # 示例文件
+│   ├── hello_world.xml
+│   └── ...
+├── dist/                 # 生成的Python代码输出目录
+└── output/               # 生成的exe文件输出目录
+```
+
+## 详细使用指南
+
+有关更详细的使用说明，请参考[用户使用指南](USER_GUIDE.md)。
+
+## 许可证
+本项目主要基于GNU通用公共许可证版本3（GPL v3）授权。
+
+此外，本项目采用可持续发展开源许可证（SCL）作为例外条款。SCL允许经极客地平线工作室（Geek Horizon Studio）认证的开发者在满足特定条件的情况下，免除GPL v3的某些义务。
+
+**对于所有用户：**
+*   默认情况下，您必须遵守GPL v3许可证的条款。
+*   请参阅 `LICENSE-GPLv3` 文件了解详细条款。
+
+**对于认证开发者：**
+*   如果您已从极客地平线工作室获得有效的SCL校验码，您可以依据 `LICENSE-SCL` 文件中规定的例外条款操作。
+
+---
+我的校验码：
+开发者信息
+名称: huang1057
+校验码: GHS-57529AD4487EB14D5528BDF0522E
+
+---
+
+验证SCL校验码：https://scl-verify.ghosf.dpdns.org/

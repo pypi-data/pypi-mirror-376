@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xml2gui"
+version = "1.0.0"
+authors = [
+    {name = "huang1057", email = "your.email@example.com"}
+]
+description = "A powerful framework for creating GUI applications using XML files"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {file = "LICENSE-SCL"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Software Development :: Code Generators",
+]
+keywords = ["xml", "gui", "pyqt", "pyqt5", "qt", "python", "ui", "designer"]
+dependencies = [
+    "PyQt5>=5.15.0",
+    "PyQt-Fluent-Widgets>=1.0.0",
+    "nuitka>=1.5.0"
+]
+
+[project.urls]
+Documentation = "https://gitee.com/ghhuang1057/xml2-gui/blob/master/USER_GUIDE.md"
+Source = "https://gitee.com/ghhuang1057/xml2-gui"
+Bug Reports = "https://gitee.com/ghhuang1057/xml2-gui/issues"
+
+[project.scripts]
+xml2gui = "xml2gui_build:main"

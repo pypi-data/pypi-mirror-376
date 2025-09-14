@@ -1,0 +1,6 @@
+include README.md
+include LICENSE-SCL
+include LINENCE-GPLv3
+include requirements.txt
+include image.png
+recursive-include examples *.xml

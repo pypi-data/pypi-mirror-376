@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+    <!-- 窗口属性 -->
+    <window title="Hello World" width="800" height="600"/>
+    
+    <!-- 导入模块 -->
+    <imports>
+        <import module="sys"/>
+        <import module="os"/>
+    </imports>
+    
+    <!-- 样式定义 -->
+    <styles>
+        <style name="main_label">
+            <font-size>24px</font-size>
+            <font-weight>bold</font-weight>
+            <color>#333333</color>
+            <padding>10px</padding>
+        </style>
+        <style name="hello_button">
+            <background-color>#0078D7</background-color>
+            <color>white</color>
+            <border-radius>5px</border-radius>
+            <padding>10px 20px</padding>
+            <font-size>16px</font-size>
+        </style>
+    </styles>
+    
+    <!-- 布局定义 -->
+    <layouts>
+        <layout id="main_layout" type="VBoxLayout">
+            <widget id="title_label" type="Label" text="欢迎使用Xml2GUI框架!"/>
+            <widget id="description_label" type="Label" text="这是一个通过XML创建PyQt5 GUI程序的示例"/>
+            <widget id="hello_button" type="Button" text="点击我"/>
+            <widget id="result_label" type="Label" text=""/>
+        </layout>
+    </layouts>
+    
+    <!-- 事件绑定 -->
+    <events>
+        <event widget="hello_button" type="click" handler="on_hello_button_clicked"/>
+    </events>
+</application>

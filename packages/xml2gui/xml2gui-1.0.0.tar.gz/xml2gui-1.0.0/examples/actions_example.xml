@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+    <!-- 窗口属性 -->
+    <window title="Xml2GUI 操作示例" width="800" height="600"/>
+    
+    <!-- 导入模块 -->
+    <imports>
+        <import module="sys"/>
+        <import module="os"/>
+    </imports>
+    
+    <!-- 样式定义 -->
+    <styles>
+        <style name="title_style">
+            <font-size>24px</font-size>
+            <font-weight>bold</font-weight>
+            <color>#1E1E1E</color>
+            <padding>10px</padding>
+        </style>
+        <style name="button_style">
+            <background-color>#0078D7</background-color>
+            <color>white</color>
+            <border-radius>5px</border-radius>
+            <padding>10px 20px</padding>
+            <font-size>16px</font-size>
+            <margin>5px</margin>
+        </style>
+        <style name="result_style">
+            <font-size>14px</font-size>
+            <color>#333333</color>
+            <padding>10px</padding>
+            <background-color>#F5F5F5</background-color>
+            <border>1px solid #CCCCCC</border>
+            <border-radius>3px</border-radius>
+        </style>
+    </styles>
+    
+    <!-- 布局定义 -->
+    <layouts>
+        <layout id="main_layout" type="VBoxLayout">
+            <!-- 标题区域 -->
+            <widget id="title_label" type="Label" text="Xml2GUI 操作示例"/>
+            
+            <!-- 程序执行区域 -->
+            <layout id="execute_section" type="HBoxLayout">
+                <widget id="execute_label" type="Label" text="程序执行:"/>
+                <widget id="notepad_button" type="Button" text="打开记事本"/>
+                <widget id="calc_button" type="Button" text="打开计算器"/>
+                <widget id="cmd_button" type="Button" text="打开命令提示符"/>
+            </layout>
+            
+            <!-- 批处理执行区域 -->
+            <layout id="batch_section" type="HBoxLayout">
+                <widget id="batch_label" type="Label" text="批处理执行:"/>
+                <widget id="batch_button" type="Button" text="运行测试批处理"/>
+            </layout>
+            
+            <!-- 文件打开区域 -->
+            <layout id="file_section" type="HBoxLayout">
+                <widget id="file_label" type="Label" text="文件操作:"/>
+                <widget id="open_folder_button" type="Button" text="打开项目文件夹"/>
+                <widget id="open_readme_button" type="Button" text="打开README文档"/>
+            </layout>
+            
+            <!-- 网页浏览区域 -->
+            <layout id="web_section" type="HBoxLayout">
+                <widget id="web_label" type="Label" text="网页浏览:"/>
+                <widget id="github_button" type="Button" text="访问GitHub"/>
+                <widget id="baidu_button" type="Button" text="访问百度"/>
+            </layout>
+            
+            <!-- 结果显示区域 -->
+            <widget id="result_label" type="Label" text="操作结果将显示在这里"/>
+        </layout>
+    </layouts>
+    
+    <!-- 事件绑定 -->
+    <events>
+        <event widget="notepad_button" type="click" handler="on_notepad_button_clicked"/>
+        <event widget="calc_button" type="click" handler="on_calc_button_clicked"/>
+        <event widget="cmd_button" type="click" handler="on_cmd_button_clicked"/>
+        <event widget="batch_button" type="click" handler="on_batch_button_clicked"/>
+        <event widget="open_folder_button" type="click" handler="on_open_folder_button_clicked"/>
+        <event widget="open_readme_button" type="click" handler="on_open_readme_button_clicked"/>
+        <event widget="github_button" type="click" handler="on_github_button_clicked"/>
+        <event widget="baidu_button" type="click" handler="on_baidu_button_clicked"/>
+    </events>
+    
+    <!-- 功能定义 -->
+    <actions>
+        <!-- 程序执行 -->
+        <action widget="notepad_button" event="click" type="execute" target="notepad.exe"/>
+        <action widget="calc_button" event="click" type="execute" target="calc.exe"/>
+        <action widget="cmd_button" event="click" type="execute" target="cmd.exe"/>
+        
+        <!-- 批处理执行 -->
+        <action widget="batch_button" event="click" type="execute" target="test.bat"/>
+        
+        <!-- 文件打开 -->
+        <action widget="open_folder_button" event="click" type="open" target="."/>
+        <action widget="open_readme_button" event="click" type="open" target="README.md"/>
+        
+        <!-- 网页浏览 -->
+        <action widget="github_button" event="click" type="browse" target="https://github.com"/>
+        <action widget="baidu_button" event="click" type="browse" target="https://www.baidu.com"/>
+    </actions>
+</application>

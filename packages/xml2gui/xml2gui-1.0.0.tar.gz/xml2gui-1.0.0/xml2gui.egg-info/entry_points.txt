@@ -1,0 +1,3 @@
+[console_scripts]
+xml2gui = xml2gui_build:main
+
