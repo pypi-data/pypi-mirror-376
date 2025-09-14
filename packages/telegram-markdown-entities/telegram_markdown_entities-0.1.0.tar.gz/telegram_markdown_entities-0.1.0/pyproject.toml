@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-markdown-entities"
+version = "0.1.0"
+description = "Convert Markdown into plain text and Telegram message entities."
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    {name = "Lebedev Nikolay", email = "fifo.mail@gmail.com"},
+]
+license = {text = "MIT"}
+keywords = ["telegram", "markdown", "entities", "bot", "tg"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Source = "https://github.com/bakaut/telegram-markdown-entities"
+Issues = "https://github.com/bakaut/telegram-markdown-entities/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
