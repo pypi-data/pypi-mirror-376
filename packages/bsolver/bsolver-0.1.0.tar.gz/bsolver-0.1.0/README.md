@@ -1,0 +1,97 @@
+# bsolver
+
+bsolver est une bibliothèque Python pour la résolution de problèmes logiques et de contraintes, avec un accent particulier sur la recherche de solutions minimales.
+
+## Installation
+
+Installez bsolver et ses dépendances avec pip :
+
+```bash
+pip install .
+```
+
+## Utilisation
+
+Exemple d'importation et d'utilisation :
+
+```python
+from bsolver import Var
+
+A, B, C, D = Var("A"), Var("B"), Var("C"), Var("D")
+expr = ((A & B)|(~A & C)) & D
+
+# Affichage de la formule (forme FND réduite)
+print(expr) # (!A & C & D)|(B & C & D)|(A & B & D)
+
+# Affiche l'arbre ROBDD
+expr.print()
+# A
+# ├── T: B
+# │   ├── T: D
+# │   └── F: FALSE
+# └── F: C
+#     ├── T: D
+#     └── F: FALSE
+
+# Affiche la table de verité de l'expression
+expr.print_table()
+# A | B | C | D | Résultat
+# --------------------------
+# 0 | 0 | 0 | 0 |   0
+# 0 | 0 | 0 | 1 |   0
+# 0 | 0 | 1 | 0 |   0
+# 0 | 0 | 1 | 1 |   1
+# 0 | 1 | 0 | 0 |   0
+# 0 | 1 | 0 | 1 |   0
+# 0 | 1 | 1 | 0 |   0
+# 0 | 1 | 1 | 1 |   1
+# 1 | 0 | 0 | 0 |   0
+# 1 | 0 | 0 | 1 |   0
+# 1 | 0 | 1 | 0 |   0
+# 1 | 0 | 1 | 1 |   0
+# 1 | 1 | 0 | 0 |   0
+# 1 | 1 | 0 | 1 |   1
+# 1 | 1 | 1 | 0 |   0
+# 1 | 1 | 1 | 1 |   1
+
+# Affiche les solutions de l'expression
+expr.print_table(solutions_only=True)
+# A | B | C | D | Résultat
+# --------------------------
+# 0 | * | 1 | 1 |   1
+# * | 1 | 1 | 1 |   1
+# 1 | 1 | * | 1 |   1
+
+# les solutions peuvent être obtenues et parcourues via la propriété "solutions"
+for s in expr.solutions:
+    env = {var: val for var, val in s}
+    # Il est possible d'évaluer une expression pour des valeurs de variable données
+    assert expr.eval(env), f"{env} n'est pas une solution de {expr} ??"
+    print(f"{env} est bien une solution de {expr}")
+# {'D': True, 'B': True, 'A': True} est bien une solution de (A & B & D)|(B & C & D)|(!A & C & D)
+# {'D': True, 'C': True, 'B': True} est bien une solution de (A & B & D)|(B & C & D)|(!A & C & D)
+# {'D': True, 'C': True, 'A': False} est bien une solution de (A & B & D)|(B & C & D)|(!A & C & D)
+
+# Fixer des variables à des valeurs données
+print(expr.fix({'A': True})) # (B & D)
+print(expr.fix({'A': True, 'B': True})) # (D)
+print(expr.fix({'D': False})) # FALSE
+
+# Verifier l'implication de deux expressions
+print(expr.implies(D)) # True
+print(expr.implies(A & B)) # False
+print(expr.implies(~A | B)) # True
+
+```
+
+## Tests
+
+Lancez les tests avec :
+
+```bash
+pytest
+```
+
+## Licence
+
+Ce projet est sous licence MIT.

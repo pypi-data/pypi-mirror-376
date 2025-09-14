@@ -1,0 +1,27 @@
+[project]
+name = "bsolver"
+version = "0.1.0"
+description = "Un solveur d'expressions booléenes"
+authors = [{ name = "Jimmy C. (Jimw)", email = "jimmy.c@jimw.fr" }]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+license = "MIT"
+license-files = ["LICENSE"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Mathematics"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bsolver*"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
