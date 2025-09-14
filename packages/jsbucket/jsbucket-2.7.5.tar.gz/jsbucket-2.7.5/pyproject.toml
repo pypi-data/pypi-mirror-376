@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jsbucket"
+dynamic = ["version"]
+authors = [
+    {name = "Mortaza Behesti Al Saeed", email = "saeed.ctf@gmail.com"},
+]
+description = "A tool to discover S3 buckets from subdomains by analyzing JavaScript files."
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7", 
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP",
+]
+keywords = ["security", "s3", "bucket", "discovery", "javascript", "subdomain", "bugbounty", "pentest"]
+dependencies = [
+    "requests",
+    "tqdm", 
+    "rich",
+    "tldextract",
+]
+
+[project.urls]
+Homepage = "https://github.com/saeed0xf/jsbucket"
+Repository = "https://github.com/saeed0xf/jsbucket"
+Issues = "https://github.com/saeed0xf/jsbucket/issues"
+Documentation = "https://github.com/saeed0xf/jsbucket/blob/main/README.md"
+
+[project.scripts]
+jsbucket = "jsbucket.core:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["jsbucket*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "jsbucket.__version__"}
