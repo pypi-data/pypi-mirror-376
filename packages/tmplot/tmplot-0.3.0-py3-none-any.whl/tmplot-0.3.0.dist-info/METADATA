@@ -1,0 +1,190 @@
+Metadata-Version: 2.4
+Name: tmplot
+Version: 0.3.0
+Summary: Visualization of Topic Modeling Results
+Author-email: Maksim Terpilovskii <maximtrp@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2021 Maksim Terpilowski
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: homepage, https://github.com/maximtrp/tmplot
+Project-URL: documentation, https://tmplot.readthedocs.io/
+Keywords: data science,data analytics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Text Processing :: General
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: seaborn
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: altair
+Requires-Dist: ipywidgets
+Requires-Dist: tqdm
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: coverage; extra == "test"
+Provides-Extra: models
+Requires-Dist: tomotopy>=0.8.0; extra == "models"
+Requires-Dist: gensim; extra == "models"
+Requires-Dist: bitermplus; extra == "models"
+Dynamic: license-file
+
+# tmplot
+
+[![Codacy coverage](https://img.shields.io/codacy/coverage/5939b1cf99bc4f9d91de11c0d3ff9e50)](https://app.codacy.com/gh/maximtrp/tmplot/coverage)
+[![Codacy grade](https://img.shields.io/codacy/grade/5939b1cf99bc4f9d91de11c0d3ff9e50)](https://app.codacy.com/gh/maximtrp/tmplot)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/maximtrp/tmplot/python-package.yml?label=tests)](https://github.com/maximtrp/tmplot/actions/workflows/python-package.yml)
+[![Documentation Status](https://readthedocs.org/projects/tmplot/badge/?version=latest)](https://tmplot.readthedocs.io/en/latest/?badge=latest)
+[![Downloads](https://static.pepy.tech/badge/tmplot)](https://pepy.tech/project/tmplot)
+[![PyPI](https://img.shields.io/pypi/v/tmplot)](https://pypi.org/project/tmplot)
+[![Issues](https://img.shields.io/github/issues/maximtrp/tmplot.svg)](https://github.com/maximtrp/tmplot/issues)
+
+**tmplot** is a comprehensive Python package for **topic modeling analysis and visualization**. Built for data scientists and researchers, it provides powerful interactive reports and advanced analytics that extend beyond traditional LDAvis/pyLDAvis capabilities.
+
+**Analyze** • **Visualize** • **Compare** multiple topic models with ease
+
+![Plots](https://raw.githubusercontent.com/maximtrp/tmplot/main/images/topics_terms_plots.png)
+
+## Key Features
+
+### Interactive Visualization
+
+- **Topic scatter plots** with customizable coordinates and sizing
+- **Term probability charts** with relevance weighting
+- **Document analysis** showing top documents per topic
+- **Interactive reports** with real-time parameter adjustment
+
+### Advanced Analytics
+
+- **Topic stability analysis** across multiple model runs
+- **Model comparison** with sophisticated distance metrics
+- **Saliency calculations** for term importance
+- **Entropy metrics** for model optimization
+
+### Model Support
+
+- **[tomotopy](https://bab2min.github.io/tomotopy/)**: `LDAModel`, `LLDAModel`, `CTModel`, `DMRModel`, `HDPModel`, `PTModel`, `SLDAModel`, `GDMRModel`
+- **[gensim](https://radimrehurek.com/gensim/)**: `LdaModel`, `LdaMulticore`
+- **[bitermplus](https://github.com/maximtrp/bitermplus)**: `BTM`
+
+### Distance Metrics
+
+- Kullback-Leibler (symmetric & non-symmetric)
+- Jensen-Shannon divergence
+- Jeffrey's divergence
+- Hellinger & Bhattacharyya distances
+- Total variation distance
+- Jaccard index
+
+### Dimensionality Reduction
+
+t-SNE, SpectralEmbedding, MDS, LocallyLinearEmbedding, Isomap
+
+## Donate
+
+If you find this package useful, please consider donating any amount of money. This will help me spend more time on supporting open-source software.
+
+<a href="https://www.buymeacoffee.com/maximtrp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+## Quick Start
+
+### Installation
+
+```bash
+# From PyPI (recommended)
+pip install tmplot
+
+# Development version
+pip install git+https://github.com/maximtrp/tmplot.git
+```
+
+### Basic Usage
+
+```python
+import tmplot as tmp
+
+# Load your topic model and documents
+model = your_fitted_model  # tomotopy, gensim, or bitermplus
+docs = your_documents
+
+# Create interactive report
+tmp.report(model, docs=docs)
+
+# Or create individual visualizations
+coords = tmp.prepare_coords(model)
+tmp.plot_scatter_topics(coords, size_col='size')
+```
+
+## Advanced Examples
+
+### Get Stable Topics
+
+```python
+import tmplot as tmp
+
+# Find stable topics across multiple models
+models = [model1, model2, model3, model4]
+closest_topics, distances = tmp.get_closest_topics(models)
+stable_topics, stable_distances = tmp.get_stable_topics(closest_topics, distances)
+```
+
+### Analyze Model
+
+```python
+# Calculate entropy for model selection
+entropy_score = tmp.entropy(phi_matrix)
+
+# Analyze topic stability
+saliency = tmp.get_salient_terms(phi, theta)
+```
+
+### Visualize
+
+```python
+# Create topic distance matrix with different metrics
+topic_dists = tmp.get_topics_dist(phi, method='jensen-shannon')
+
+# Generate coordinates with custom algorithm
+coords = tmp.get_topics_scatter(topic_dists, theta, method='tsne')
+tmp.plot_scatter_topics(coords, topic=3)  # Highlight topic 3
+```
+
+## Documentation & Examples
+
+- [Complete Tutorial](https://tmplot.readthedocs.io/en/latest/tutorial.html) - Step-by-step guide
+- [API Reference](https://tmplot.readthedocs.io/) - Full documentation
+- [Example Notebooks](https://github.com/maximtrp/tmplot/tree/main/examples) - Jupyter examples
+
+## Requirements
+
+**Core dependencies:** `numpy`, `scipy`, `scikit-learn`, `pandas`, `altair`, `ipywidgets`
+
+**Optional models:** `tomotopy`, `gensim`, `bitermplus`
