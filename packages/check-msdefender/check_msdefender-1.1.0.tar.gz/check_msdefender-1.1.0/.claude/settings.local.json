@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(python -m check_msdefender:*)",
+      "Bash(python.exe -m check_msdefender:*)",
+      "Bash(check_msdefender:*)",
+      "Bash(pip install:*)",
+      "Bash(pytest:*)",
+      "Bash(python:*)",
+      "Bash(find:*)",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(mypy:*)",
+      "Bash(black:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
