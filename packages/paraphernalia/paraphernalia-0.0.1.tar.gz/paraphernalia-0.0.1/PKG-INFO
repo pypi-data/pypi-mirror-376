@@ -1,0 +1,113 @@
+Metadata-Version: 2.4
+Name: paraphernalia
+Version: 0.0.1
+Summary: A collection of tools for making art
+Project-URL: Homepage, https://github.com/joehalliwell/paraphernalia
+Project-URL: Repository, https://github.com/joehalliwell/paraphernalia
+Author-email: Joe Halliwell <joe.halliwell@gmail.com>
+License-Expression: GPL-3.0-or-later
+License-File: LICENSE
+Keywords: art,glsl,torch
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: ~=3.10
+Requires-Dist: click<8,>=7.1.2
+Requires-Dist: einops<0.4,>=0.3.0
+Requires-Dist: imageio-ffmpeg<0.5,>=0.4.3
+Requires-Dist: imageio<3,>=2.9.0
+Requires-Dist: importlib-metadata~=1.0; python_version < '3.8'
+Requires-Dist: ipython<8,>=7.25.0
+Requires-Dist: moderngl-window<3,>=2.4.1
+Requires-Dist: moderngl<6,>=5.6.4
+Requires-Dist: pydantic[dotenv]<2,>=1.8.2
+Requires-Dist: pyrr<0.11,>=0.10.3
+Requires-Dist: python-xmp-toolkit<3,>=2.0.1
+Requires-Dist: torch<2,>=1.11.0
+Requires-Dist: torchvision<0.15,>=0.14.1
+Requires-Dist: tqdm<5,>=4.59.0
+Requires-Dist: xdg<6,>=5.1.0
+Provides-Extra: docs
+Requires-Dist: autodoc-pydantic<2,>=1.5.1; extra == 'docs'
+Requires-Dist: pydata-sphinx-theme<0.8,>=0.7.1; extra == 'docs'
+Requires-Dist: sphinx-click<4,>=3.0.1; extra == 'docs'
+Requires-Dist: sphinx==4.2.0; extra == 'docs'
+Provides-Extra: openai
+Requires-Dist: clip-anytorch<3,>=2.4.0; extra == 'openai'
+Requires-Dist: dall-e<0.2,>=0.1; extra == 'openai'
+Requires-Dist: ftfy<7,>=6.0.3; extra == 'openai'
+Requires-Dist: regex<2022,>=2021.7.1; extra == 'openai'
+Provides-Extra: rich
+Requires-Dist: rich<11,>=10.15.2; extra == 'rich'
+Provides-Extra: taming
+Requires-Dist: omegaconf<3,>=2.1.0; extra == 'taming'
+Requires-Dist: pytorch-lightning==1.5.0rc0; extra == 'taming'
+Requires-Dist: taming-transformers; extra == 'taming'
+Description-Content-Type: text/markdown
+
+# Paraphernalia
+
+[![CI Badge](https://github.com/joehalliwell/paraphernalia/actions/workflows/test.yml/badge.svg)](https://github.com/joehalliwell/paraphernalia/actions)
+[![CI Badge](https://github.com/joehalliwell/paraphernalia/actions/workflows/docs.yml/badge.svg)](https://github.com/joehalliwell/paraphernalia/actions)
+
+An assortment of tools for making digital art from Joe Halliwell
+(@joehalliwell).
+
+## Features
+
+- [Decent documentation](http://joehalliwell.com/paraphernalia)
+- Fragment shader realtime preview and offline rendering
+- CLIP-based image generation
+- Helpers for running creative projects in jupyter/Colaboratory
+
+## Quick start guide
+
+In a notebook/Colaboratory:
+
+```
+!pip install --upgrade git+https://github.com/joehalliwell/paraphernalia.git[openai,taming]
+import paraphernalia as pa
+pa.setup()
+```
+
+For developers: `poetry install`
+
+## TODOs
+
+### General
+
+- Add CLIP/generator sample notebook
+- Oblique strategy of the day during startup
+
+## review
+
+- Move reviewed folders to a target folder "lost"
+- "kept" and "lost" should excluded
+- Notebook mode?
+
+### glsl
+
+- Support all/more Book of Shaders uniforms
+- Support all Shadertoy uniforms (see https://github.com/iY0Yi/ShaderBoy)
+- Support buffers
+
+#### clip
+
+- Is anti-prompt logic actually working?
+- Adaptive focus
+- Factor our perceptual modes
+- Perceptual masking for CLIP
+- Image prompts
+- Add SRCNN
+- Use https://github.com/assafshocher/ResizeRight
+
+### torch
+
+- Fix replace_grad and add tests
+- Fix clamp_with_grad and add tests
+- Add BigGAN generators
+- Add soft_permutation()
+- Add ZX Spectrum/C64 Standard Mode generator
+- Main entry point for generator+CLIP?
+- Add standard description string/slug to generators
+- Add Diffusion generator
