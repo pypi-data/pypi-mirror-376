@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+jTookkit/__init__.py
+jTookkit/jConfig.py
+jTookkit/jLogging.py
+j_utilities_toolkit.egg-info/PKG-INFO
+j_utilities_toolkit.egg-info/SOURCES.txt
+j_utilities_toolkit.egg-info/dependency_links.txt
+j_utilities_toolkit.egg-info/requires.txt
+j_utilities_toolkit.egg-info/top_level.txt
