@@ -1,0 +1,9 @@
+__pycache__
+/dist
+.vscode
+*.txt
+/manual_test_jupyterlab.py
+.coverage
+/demo.py
+*.jupytext.py
+/.ipynb_checkpoints
