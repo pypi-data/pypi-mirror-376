@@ -1,0 +1,17 @@
+torch
+torchvision
+transformers
+sentencepiece
+fastapi
+click>=8.0.0
+uvicorn
+ftfy
+accelerate
+xformers
+protobuf
+
+[dev]
+pytest
+black
+isort
+mypy

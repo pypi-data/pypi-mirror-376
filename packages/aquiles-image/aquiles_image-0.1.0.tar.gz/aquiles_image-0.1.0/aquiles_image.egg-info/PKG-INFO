@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: aquiles-image
+Version: 0.1.0
+Summary: Aquiles-Image.
+Author-email: Aquiles-ai / Fredy <riveraaai200678@gmail.com>
+License: Apache License 2.0
+Project-URL: Homepage, https://github.com/Aquiles-ai/Aquiles-Image
+Project-URL: Issues, https://github.com/Aquiles-ai/Aquiles-Image/issues
+Keywords: fastapi,ai
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Web Environment
+Classifier: Topic :: Software Development :: Build Tools
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: transformers
+Requires-Dist: sentencepiece
+Requires-Dist: fastapi
+Requires-Dist: click>=8.0.0
+Requires-Dist: uvicorn
+Requires-Dist: ftfy
+Requires-Dist: accelerate
+Requires-Dist: xformers
+Requires-Dist: protobuf
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+
+<h1 align="center">Aquiles-Image</h1>
+
+<div align="center">
+  <img src="aquilesimage/static/aquilesim.png" alt="Aquiles-Image Logo" width="225"/>
+</div>
+
+<p align="center">
+  <strong>Easy, fast and cheap Diffusion Models that work for everyone.</strong><br/>
+  🚀 FastAPI • Diffusers • Compatible with the OpenAI client
+</p>
