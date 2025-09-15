@@ -1,0 +1,36 @@
+{
+    "deepseek-r1:1.5b": {
+        "can_json": [
+            true,
+            ""
+        ],
+        "can_json_think": [
+            false,
+            "Expecting ',' delimiter: line 34 column 1 (char 99) '{\n\n\"What is 2 plus 3?\":\n\n2\n    \t\t\t\n   \n  \n  \n   \n  \n  \n\n\n\n  \n \n\n  \n  \n\n  \n   \n  \n\n\n  \n  \n  \n\n\n\n   \n'"
+        ],
+        "can_pydantic": [
+            true,
+            ""
+        ],
+        "can_pydantic_think": [
+            true,
+            ""
+        ],
+        "can_think": [
+            true,
+            ""
+        ],
+        "can_tool_call": [
+            false,
+            "Does not support tools"
+        ],
+        "can_tool_call_think": [
+            false,
+            "Does not support tools"
+        ],
+        "content_no_thinking": [
+            true,
+            ""
+        ]
+    }
+}
