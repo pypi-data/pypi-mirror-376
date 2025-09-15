@@ -1,0 +1,14 @@
+[project]
+name = "tyr"
+version = "0.0.1"
+description = "A simple and efficient Python library."
+readme = "README.md"
+authors = [
+    { name = "cao zheliang", email = "82938871+caozheliang@users.noreply.github.com" },
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
