@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+opa_wasmtime/__init__.py
+opa_wasmtime/benchmark.py
+opa_wasmtime/opa_wasmtime.py
+opa_wasmtime.egg-info/PKG-INFO
+opa_wasmtime.egg-info/SOURCES.txt
+opa_wasmtime.egg-info/dependency_links.txt
+opa_wasmtime.egg-info/requires.txt
+opa_wasmtime.egg-info/top_level.txt

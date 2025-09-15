@@ -1,0 +1,23 @@
+[project]
+name = "opa-wasmtime"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "wasmtime>=27.0.2",
+]
+[tool.pypath]
+paths = ["opa_wasmtime"]
+[dependency-groups]
+dev = [
+    "opa-wasmtime",
+    "pytest>=8.4.1",
+]
+
+[tool.uv.sources]
+opa-wasmtime = { workspace = true }
+
+[tool.setuptools.packages.find]
+include = ["opa_wasmtime"]
+
