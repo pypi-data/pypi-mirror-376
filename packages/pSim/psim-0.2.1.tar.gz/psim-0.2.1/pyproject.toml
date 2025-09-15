@@ -1,0 +1,64 @@
+[build-system]
+requires = ["wheel", "setuptools<76", "swig"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pSim"
+version = "0.2.1"
+description = "A pythonic Very Small Size Soccer (VSSS) simulation environment for reinforcement learning research."
+readme = "README.md"
+authors = [
+  { name = "juliodltv", email = "juliodltv@gmail.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "pygame",
+    "scipy", # When robots are created, this library is used to calculate the distance between robots
+]
+
+[project.optional-dependencies]
+gym = [
+    "gymnasium",
+]
+zoo = [
+    "pettingzoo>=1.25.0",
+]
+docs = [
+    "mkdocs-material",
+    "mkdocstrings[python]",
+]
+tools = [
+    "ruff",
+    "build",
+]
+all = [
+    "gymnasium",
+    "pettingzoo>=1.25.0",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+]
+
+[project.scripts]
+pSim = "pSim.main:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+"pSim.pybox2d" = ["*.cpp", "*.h", "*.i", "*.hpp"]
+"pSim.pybox2d.Box2D" = ["**/*.cpp", "**/*.h"]
+"pSim.pybox2d.library" = ["**/*"]
+"pSim.config" = ["*.json"]
