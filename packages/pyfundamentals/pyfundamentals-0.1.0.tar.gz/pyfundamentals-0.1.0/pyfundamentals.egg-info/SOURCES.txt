@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+pyfundamentals/__init__.py
+pyfundamentals/basics.py
+pyfundamentals/functions.py
+pyfundamentals/loops.py
+pyfundamentals.egg-info/PKG-INFO
+pyfundamentals.egg-info/SOURCES.txt
+pyfundamentals.egg-info/dependency_links.txt
+pyfundamentals.egg-info/top_level.txt
+tests/test_basics.py
