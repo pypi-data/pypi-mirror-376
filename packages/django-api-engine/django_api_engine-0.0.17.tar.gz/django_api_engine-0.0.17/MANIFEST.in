@@ -1,0 +1,75 @@
+include LICENSE*
+include README*
+
+# Include pyproject, setup files, requirements (if you want them in sdist)
+include pyproject.toml
+include requirements*.txt
+
+# Include docs (if you ship them)
+#recursive-include docs *.md *.rst *.txt *.png *.jpg *.svg
+
+# Include source code
+recursive-include docs *
+recursive-include django_api_engine *
+
+# ------------------------------
+# Exclude / prune unnecessary stuff
+# ------------------------------
+
+# Version control
+exclude django_conf*
+prune django_conf
+exclude api_editor*
+prune api_editor
+exclude django_example_project*
+prune django_example_project
+
+exclude .git*
+
+prune .git
+prune .github
+prune .gitlab
+prune git_hooks
+prune app_template
+prune project_template
+exclude .flake8
+
+
+# Editor/IDE settings
+exclude .editorconfig
+exclude .prettierrc*
+prune .idea
+prune .vscode
+
+# CI/CD configs
+exclude .travis.yml
+exclude .circleci*
+prune .circleci
+prune .azure-pipelines
+
+recursive-exclude */__pycache__ *
+recursive-exclude */django_api_engine.egg-info *
+prune */django_api_engine.egg-info
+
+prune */__pycache__
+
+global-exclude *~ *.py[cod] *.so
+
+# Build artifacts
+exclude *.egg-info
+prune dist
+prune build
+
+exclude *.egg-info
+prune *.egg-info
+prune *.eggs
+exclude *.pyc
+exclude *.pyo
+prune __pycache__
+
+# Tests (optional: remove this prune if you want to ship tests)
+#prune tests
+
+# OS / temp files
+exclude *.DS_Store
+exclude Thumbs.db
