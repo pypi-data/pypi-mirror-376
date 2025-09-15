@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+PyBenChatBot.egg-info/PKG-INFO
+PyBenChatBot.egg-info/SOURCES.txt
+PyBenChatBot.egg-info/dependency_links.txt
+PyBenChatBot.egg-info/requires.txt
+PyBenChatBot.egg-info/top_level.txt
+pybenchatbot/__init__.py
+pybenchatbot/__main__.py
+pybenchatbot/botserver.py
