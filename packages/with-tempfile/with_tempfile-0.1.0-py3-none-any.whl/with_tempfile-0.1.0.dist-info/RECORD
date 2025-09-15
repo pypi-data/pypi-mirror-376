@@ -1,0 +1,8 @@
+with_tempfile/__init__.py,sha256=SAbo7zwnykm0d4HbcBAmJjCRdOVv1QpP1YOYFYgbGDE,892
+with_tempfile/defs.py,sha256=wgCysl9txZN8ux_Rw6zDZ6sZA-ERkjQeHEIJofFRS_Y,330
+with_tempfile/impl.py,sha256=FPyuT37i9Tv2JouRk66NwmMOx_4ulvyuWgh03eQn6WE,1265
+with_tempfile/pathutil.py,sha256=T4vErxpTQo73XOoaI2Wxc8MjZrDTninyMpcO_SHv2wo,2230
+with_tempfile/temputil.py,sha256=MlEOjM8DGv-tyOSHJ2s8tjOtxYuUXsEDKcGJBKaWyCY,6450
+with_tempfile-0.1.0.dist-info/METADATA,sha256=mOaORabY-kABNUGphrEPhyp4_Wyd_kb4JJIkdTirU6M,6201
+with_tempfile-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+with_tempfile-0.1.0.dist-info/RECORD,,
