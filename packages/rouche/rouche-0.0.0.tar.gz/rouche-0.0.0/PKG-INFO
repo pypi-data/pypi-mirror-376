@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: rouche
+Version: 0.0.0
+Summary: (WIP) A modern Python web API framework
+Author-email: Movpasd <54367524+movpasd@users.noreply.github.com>
+License-File: LICENSE.md
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.13

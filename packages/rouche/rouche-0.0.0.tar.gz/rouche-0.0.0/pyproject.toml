@@ -1,0 +1,17 @@
+[project]
+name = "rouche"
+version = "0.0.0"
+description = "(WIP) A modern Python web API framework"
+readme = "README.md"
+authors = [
+    { name = "Movpasd", email = "54367524+movpasd@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+classifiers = [
+    "Development Status :: 1 - Planning",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
