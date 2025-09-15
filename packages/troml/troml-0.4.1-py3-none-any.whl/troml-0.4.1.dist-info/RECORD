@@ -1,0 +1,10 @@
+troml/__init__.py,sha256=7lcr248CpLmfq0CGayHLGUFE963Mqi0M9tmbQRa8SMQ,2990
+troml/classifiers.py,sha256=salMwqSQ771ikqSiQ9hizyCDqQXh0GRN7vDUtXKoUto,5151
+troml/loader.py,sha256=qvE-Wo16q2D9HTVUa_aKMqCw4Gb1rmK2J9fNHn3_nzU,595
+troml/trove-classifiers,sha256=aNHvhK1TgqWvV5S6tl-0M5RRY8SfBe_xJXs6GNHTjNo,37916
+troml/utils.py,sha256=q7s-rglcvPojFXER-7Bri-ldOypUSv3WQQMwpO02r9Q,296
+troml/writer.py,sha256=W5EkV_hyzbIzIZILhQu4MDQoRLu9LD2RuHcXjGT8-SQ,670
+troml-0.4.1.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+troml-0.4.1.dist-info/entry_points.txt,sha256=hDmSn4Pc_-YrHN81LoEdBwzsiLiZgK4Mc8M7tzVtqXQ,37
+troml-0.4.1.dist-info/METADATA,sha256=a8FWc-pC6RxDfazh_qY31Tb8l3eXhOix93hELhGyjTA,4779
+troml-0.4.1.dist-info/RECORD,,
