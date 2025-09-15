@@ -1,0 +1,17 @@
+include LICENSE
+include *.md
+include *.rst
+
+global-exclude *.orig *.py[co] *.log *.swp *.pyc
+recursive-include qubitscope *.py
+recursive-include qubitscope *.so
+recursive-include qubitscope *.yml
+recursive-include qubitscope *.json
+
+
+exclude tests/*
+exclude tests/**
+exclude tmp/*
+exclude tmp/**
+prune tests
+prune tmp
