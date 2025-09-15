@@ -1,0 +1,39 @@
+from setuptools import setup, find_packages
+
+setup(
+    name='matteplotlib',
+    version='0.5',
+    packages=find_packages(),
+    install_requires=[
+        # Add dependencies here.
+        # e.g. 'numpy>=1.11.1'
+    ],
+    entry_points={
+        "console_scripts": [
+            "ml-help = matplotib:ml_help",
+            "ml-index = matplotib:ml_index",
+            "ml-prac-1a = matplotib:ml_prac_1a",
+            "ml-prac-1b = matplotib:ml_prac_1b",
+            "ml-prac-1c = matplotib:ml_prac_1c",
+            "ml-prac-1d = matplotib:ml_prac_1d",
+            "ml-prac-2a = matplotib:ml_prac_2a",
+            "ml-prac-3a = matplotib:ml_prac_3a",
+            "ml-prac-3b = matplotib:ml_prac_3b",
+            "ml-prac-3c = matplotib:ml_prac_3c",
+            "ml-prac-4a = matplotib:ml_prac_4a",
+            "ml-prac-4b = matplotib:ml_prac_4b",
+            "ml-prac-4c = matplotib:ml_prac_4c",
+            "ml-prac-4d = matplotib:ml_prac_4d",
+            "ml-prac-4e = matplotib:ml_prac_4e",
+            "ml-prac-4f = matplotib:ml_prac_4f",
+            "ml-prac-5a = matplotib:ml_prac_5a",
+            "ml-prac-5b = matplotib:ml_prac_5b",
+            "ml-prac-6a = matplotib:ml_prac_6a",
+            "ml-prac-6b = matplotib:ml_prac_6b",
+            "ml-prac-7a = matplotib:ml_prac_7a",
+            "ml-prac-7b = matplotib:ml_prac_7b",
+            "ml-prac-8a = matplotib:ml_prac_8a",
+            "ml-prac-9a = matplotib:ml_prac_9a"
+        ],
+    },
+)
