@@ -1,0 +1,99 @@
+Metadata-Version: 2.4
+Name: metapg-dev
+Version: 0.0.1
+Summary: Development tools and dependencies for metapg
+Project-URL: Homepage, https://github.com/metapg/metapg
+Project-URL: Documentation, https://github.com/metapg/metapg#readme
+Project-URL: Repository, https://github.com/metapg/metapg
+Project-URL: Issues, https://github.com/metapg/metapg/issues
+Author-email: Darwin Monroy <darwin@ideatives.com>
+License: MIT
+Keywords: async,database,development,migration,pool,postgresql
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.11
+Requires-Dist: black>=24.0.0
+Requires-Dist: build>=1.0.0
+Requires-Dist: hatchling>=1.0.0
+Requires-Dist: ipdb
+Requires-Dist: ipython
+Requires-Dist: mypy>=1.11.0
+Requires-Dist: pytest-asyncio>=0.24.0
+Requires-Dist: pytest-cov>=5.0.0
+Requires-Dist: pytest>=8.0.0
+Requires-Dist: ruff>=0.6.0
+Description-Content-Type: text/markdown
+
+# metapg-dev
+
+Development dependencies for the metapg project.
+
+## Purpose
+
+This package provides all development dependencies needed for metapg development to ensure consistent development environments across all contributors.
+
+## Installation
+
+```bash
+# Install development environment
+pip install -e src/dev
+```
+
+## Included Tools
+
+### Testing
+- **pytest** - Testing framework with async support
+- **pytest-asyncio** - Async test support
+- **pytest-cov** - Coverage reporting
+
+### Code Quality
+- **black** - Code formatting
+- **ruff** - Fast Python linter
+- **mypy** - Static type checking
+
+### Build Tools
+- **build** - Modern Python package building
+- **setuptools** - Package setup utilities
+- **wheel** - Wheel format support
+
+### Development Utilities
+- **ipython** - Enhanced interactive Python shell
+- **ipdb** - IPython debugger
+
+## Usage
+
+After installation, you can use all the development tools:
+
+```bash
+# Format code
+black src/ tests/ examples/
+
+# Lint code  
+ruff check src/ tests/ examples/
+
+# Type check
+mypy src/pool/ src/migration/ src/cli/ src/metapg/
+
+# Run tests
+pytest tests/ -v --cov=metapg
+
+# Build packages
+python -m build
+```
+
+## Development Workflow
+
+1. Install metapg-dev: `pip install -e src/dev`
+2. Set up packages: `just install-dev`
+3. Run quality checks: `just check`
+4. Run tests: `just test`
+5. Build packages: `just build`
+
+This package ensures all developers have the same tools and versions for consistent development experience.
