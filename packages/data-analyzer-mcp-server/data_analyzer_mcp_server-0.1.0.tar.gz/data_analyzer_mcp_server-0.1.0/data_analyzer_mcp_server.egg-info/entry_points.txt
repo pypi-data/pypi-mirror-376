@@ -1,0 +1,2 @@
+[console_scripts]
+data-analyzer-mcp-server = data_analyzer_mcp_server.cli:main

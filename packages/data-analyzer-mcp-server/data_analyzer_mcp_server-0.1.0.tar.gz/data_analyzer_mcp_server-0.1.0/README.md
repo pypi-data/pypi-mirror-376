@@ -1,0 +1,27 @@
+# 数据分析助手
+
+
+## 本地调试
+
+安装依赖包
+```
+uv sync
+```
+启动命令（如下是讲课的时候的目录，同学需要根据自己的实际情况调整）
+```
+uv --directory /Users/morris/Desktop/coding/mcp-data-analzyer-imooc run main.py
+```
+## 提示词
+分析{需要分析的文件路径}的各个方面，包含文字和图表，将分析结果保存为markdown格式的分析报告，
+分析报告保存到{文件保存路径}目录下
+
+## MCP 配置
+```
+{
+   "data-analyzer-mcp-server":{
+       "command": "uvx",
+      "args": ["data-analyzer-mcp-server"]
+   }
+}
+
+```

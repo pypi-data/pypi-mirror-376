@@ -1,0 +1,20 @@
+[project]
+name = "data-analyzer-mcp-server"
+version = "0.1.0"
+description = "data-analyzer-mcp-server"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.10.6",
+    "mcp[cli]>=1.14.0",
+    "pandas>=2.3.2",
+    "seaborn>=0.13.2",
+    "twine>=6.1.0",
+    "openpyxl>=3.1.5"
+]
+
+[project.scripts]
+data-analyzer-mcp-server = "data_analyzer_mcp_server.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["data_analyzer_mcp_server"]
