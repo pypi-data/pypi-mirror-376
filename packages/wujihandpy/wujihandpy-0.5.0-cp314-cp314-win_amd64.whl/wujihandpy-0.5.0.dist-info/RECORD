@@ -1,0 +1,12 @@
+wujihandpy/_core.cp314-win_amd64.pyd,sha256=IqFSL4ptiLoX1dLzVu91xZlvkzpsMKiFBxz2PO7dQKA,372736
+wujihandpy/_core.pyi,sha256=EBcKffWcq65NB9g2HPLiLTKdP7yCuTNnjlnQbMU67DA,15361
+wujihandpy/_version.py,sha256=aIvF76QrdnyjKd3PPvQ6IFlfXbYjdpxVBfoDNu-rwqE,746
+wujihandpy/__init__.py,sha256=5plS1qToxzRcyDIZqsXH0THLwK31-6bCQY2mEzv3u6U,516
+wujihandpy-0.5.0.dist-info/DELVEWHEEL,sha256=PlfMRo91mWeh9uwI6Z9bF1cevMY1T7xL0z0n56wul3g,455
+wujihandpy-0.5.0.dist-info/METADATA,sha256=bC5gM2MZGz0O_Ab2BBS8G6eg15OLnLlHrM1COvKfPHw,8037
+wujihandpy-0.5.0.dist-info/RECORD,,
+wujihandpy-0.5.0.dist-info/WHEEL,sha256=gWMs92Yhbl9pSGNRFWCXG1mfeuNl7HhxcJG5aLu4nQc,106
+wujihandpy-0.5.0.dist-info/licenses/LICENSE,sha256=aWRV7TIHNfIAV58Abtu5ubNfqOHUeANdqg_QXb99nto,1093
+wujihandpy.libs/libusb-1.0-c44fdc13de566f7fd6dcc586aefe8fcd.dll,sha256=xE_cE95Wb3_W3MWGrv6PzUapIzUDmc322SBLwogw3AU,158208
+wujihandpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll,sha256=pMIim9wqKmMKzcCVtNhgCOXD47x3cxdDVPPaT1vrnN4,575056
+wujihandpy.libs/msvcp140_atomic_wait-eb238a7437cff8f49c01cc67fd035163.dll,sha256=aR3icdyYE_-F-pRwzFoq8K2INB8tg4IhD8HFdLrgehc,29696
