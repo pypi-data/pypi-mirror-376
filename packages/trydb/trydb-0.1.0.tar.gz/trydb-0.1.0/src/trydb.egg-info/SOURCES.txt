@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+src/trydb/__init__.py
+src/trydb.egg-info/PKG-INFO
+src/trydb.egg-info/SOURCES.txt
+src/trydb.egg-info/dependency_links.txt
+src/trydb.egg-info/requires.txt
+src/trydb.egg-info/top_level.txt
+src/trydb/complier/__init__.py
+src/trydb/complier/create_table.py
+src/trydb/complier/insert.py
+src/trydb/complier/select.py
+src/trydb/models/__init__.py
+src/trydb/models/query.py
