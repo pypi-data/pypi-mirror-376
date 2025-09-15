@@ -1,0 +1,14 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/irp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/irp/v20220324/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/irp/v20220324/errorcodes.py,sha256=rP_vGA8Q5VjOI2MfmD3FIq_YF0NLLsXpQHyM6bcJqzQ,934
+tencentcloud/irp/v20220324/irp_client.py,sha256=9OkbLfBLwgxa8JB0llkKlVOTFfoW3ZsscXpfyPoyJKs,4366
+tencentcloud/irp/v20220324/models.py,sha256=10G_O32yrTeR2z60cuOHXPL-Cxs4klCmJXR8VlubRCQ,67600
+tencentcloud/irp/v20220805/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/irp/v20220805/errorcodes.py,sha256=D2lhMuPOTzPLA_6ecYsdOkLE639gZtKxTxpZ0Lq9994,991
+tencentcloud/irp/v20220805/irp_client.py,sha256=oZr4oFqp8noeNKqhkZ-QO8hG4NC4WD0oxIVPbVpD3IM,7345
+tencentcloud/irp/v20220805/models.py,sha256=MdKTuDqY00D4COij0g_bH0VEi0kNlG2KJ9aaejPOWM4,109949
+tencentcloud_sdk_python_irp-3.0.1459.dist-info/METADATA,sha256=AoK05m8CvaO29aSCeIcmNqzAWGw8uuAmNoVKVs6m394,1503
+tencentcloud_sdk_python_irp-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_irp-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_irp-3.0.1459.dist-info/RECORD,,
