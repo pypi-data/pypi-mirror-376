@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+baseline/__init__.py
+baseline/main.py
+baseline_cli.egg-info/PKG-INFO
+baseline_cli.egg-info/SOURCES.txt
+baseline_cli.egg-info/dependency_links.txt
+baseline_cli.egg-info/entry_points.txt
+baseline_cli.egg-info/requires.txt
+baseline_cli.egg-info/top_level.txt
