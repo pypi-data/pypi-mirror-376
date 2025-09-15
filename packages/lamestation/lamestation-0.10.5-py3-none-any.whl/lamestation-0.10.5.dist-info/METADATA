@@ -1,0 +1,100 @@
+Metadata-Version: 2.4
+Name: lamestation
+Version: 0.10.5
+Summary: LameStation SDK.
+License: GPL-3.0-or-later
+Project-URL: Home, https://gitlab.com/lamestation/sdk
+Project-URL: Issues, https://gitlab.com/lamestation/sdk/-/issues
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# ![LameStation SDK](icons/sdk.png)
+
+<!-- BADGIE TIME -->
+
+[![pipeline status](https://img.shields.io/gitlab/pipeline-status/lamestation/sdk?branch=main)](https://gitlab.com/lamestation/sdk/-/commits/main)
+[![latest release](https://img.shields.io/gitlab/v/release/lamestation/sdk)](https://gitlab.com/lamestation/sdk/-/releases)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![cici enabled](https://img.shields.io/badge/%E2%9A%A1_cici-enabled-c0ff33)](https://gitlab.com/saferatday0/cici)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+<!-- END BADGIE TIME -->
+
+The LameStation SDK is the official development kit of the LameStation gaming
+handheld. It contains:
+
+- The LameStation core libraries
+
+- Extension demos and example code
+
+- A collection of LameStation games
+
+- A library of art assets
+
+- Content creation tools
+
+## Installation
+
+The Python tools are published on PyPI:
+
+```sh
+python3 -m pip install lamestation
+```
+
+## Project layout
+
+- [`demos/`](demos/) - demos to test out the features of the SDK.
+
+- [`games/`](games/) - finished games to play on your LameStation.
+
+- [`library/`](library/) - core LameStation libraries to program your games.
+
+- [`assets/`](assets/) - collection of royalty-free, ready-to-lame assets to use
+  in your games.
+
+- [`templates/`](templates/) - PropellerIDE project templates.
+
+## Release
+
+Build a release with `make`:
+
+```sh
+make
+```
+
+Clean upp artifacts with `make clean`:
+
+```sh
+make clean
+```
+
+## Documentation
+
+Visit [sdk.lamestation.org](https://sdk.lamestation.org) for the complete
+documentation.
+
+## License
+
+Copyright (C) 2010-2025 The LameStation SDK Contributors.
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>.
