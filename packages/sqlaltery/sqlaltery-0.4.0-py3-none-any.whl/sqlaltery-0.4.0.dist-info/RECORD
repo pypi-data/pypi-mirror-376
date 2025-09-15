@@ -1,0 +1,11 @@
+sqlaltery/__init__.py,sha256=zYpob3HCl4WojB1C7bRWsnZQYYO09WJ8yY0IPnpDWZs,31
+sqlaltery/command.py,sha256=bL6KhaxiRtHrNxCB1gdLWghUU_jHqMn-QxRVl-MaTmQ,4491
+sqlaltery/compare.py,sha256=ZJNA-Q4IIpK8kfyjiFXtq4D8Wl1WUQybL_Ijrt0KpMI,7491
+sqlaltery/migration.py,sha256=mRWNzZRYt3VnAbI07gRxOBrsoeQBHWPViLAmtc4H1Z4,207
+sqlaltery/ops.py,sha256=7IxAKCk4Y8qKqPszShCMC_0MBKAaTxGnsYVtKqc8k_g,21258
+sqlaltery/render.py,sha256=Piw_2akn4VBiZ4yeVnT_P5vkhXBPPrErVSExlZBp23c,735
+sqlaltery/util.py,sha256=RokiElXd48RpSMlq8CP565QlpSgJiB-X4QluOa8w0V4,3892
+sqlaltery-0.4.0.dist-info/METADATA,sha256=3XvlRJUQrl1pnUKBzu42VhNXbWPhankaLoBWaislbMI,1844
+sqlaltery-0.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sqlaltery-0.4.0.dist-info/top_level.txt,sha256=27QY8vlUt7WxnPem0-GP0r_EvSa79ma4Sk9qNgj2EnI,10
+sqlaltery-0.4.0.dist-info/RECORD,,

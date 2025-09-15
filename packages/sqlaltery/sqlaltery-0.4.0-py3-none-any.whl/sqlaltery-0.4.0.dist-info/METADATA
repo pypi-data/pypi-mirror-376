@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: sqlaltery
+Version: 0.4.0
+Summary: A migration library for SQLAlchemy.
+Home-page: https://gitlab.com/valtron/sqlaltery
+Author: valtron
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: sqlalchemy~=2.0.35
+Requires-Dist: alembic~=1.13.3
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: duckdb-engine; extra == "test"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# SQLAltery
+
+A migration library for SQLAlchemy. A cleaner frontend to Alembic.
+
+## Status
+
+- [x] `MetaData` diffing (`sqlaltery/compare.py`)
+- [x] apply ops to `MetaData` (`sqlaltery/ops.py:apply`)
+- [x] apply ops to `Connection` (`sqlaltery/ops.py:apply`); all the heavy lifting is passed to Alembic's DDL
+- [x] write migration to a file (`sqlaltery/command.py:_save_migration`)
+- [ ] tests (95%)
+- [ ] docs
+
+## Why not Alembic?
+
+- Alembic diffs the head MD against current DB, not against latest migration
+- Alembic has split upgrade/downgrade
+- Alembic requires you to manually manage metadata in migrations (for doing queries)
+- Alembic creates a bunch of files (alembic.ini, env.py). The default case should be simple: just create an `SQLAltery` and use it; customize by passing arguments.
