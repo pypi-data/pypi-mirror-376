@@ -1,0 +1,15 @@
+ultralytics
+appdirs
+tqdm
+Levenshtein
+
+[:platform_system == "Darwin"]
+ocrmac
+
+[mistral]
+mistralai
+dotenv
+
+[pero]
+pero-ocr
+configparser
