@@ -1,0 +1,6 @@
+**v0.1: First version**
+
+- Created repository
+- Added Aizynthfinder package
+
+**v0.2: Env generation modifications
