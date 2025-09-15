@@ -1,0 +1,13 @@
+zakilla/__init__.py,sha256=sSpcHIT10yi4ODfzmDqwP07W_7ewsohqGYCFfC1ahWM,223
+zakilla/embed_create/__init__.py,sha256=Mwnw7Nu11yBT4_SJ9uypbQPwCVxbua3BVhvNSPqC89M,9630
+zakilla/embed_create/methods.py,sha256=0km15PhLkhEWTjZw-OavPlWkkcDltK0Y8_TLVjSNptk,9018
+zakilla/paginator/__init__.py,sha256=9jcvib6DaFCPi_QAArpDRE2CRpv8ULzz1fckUM178Rw,202
+zakilla/paginator/paginator.py,sha256=828623N0K0k39xPWWKen8rY1dcNLqg0AWKOwrBRm0Gw,6726
+zakilla/paginator/types.py,sha256=F6USJ4JWLn5oAKvR8pJ_68i7aqbUGb4_Q_sPfO4vtH4,278
+zakilla/utils/__init__.py,sha256=Tfb_CiSi03zwd4h5gc7nOLRGUglgUhTcJ_vTZkeIoBE,20
+zakilla/utils/input.py,sha256=ffFjcLM4ICwtJDOBXzvfhr8LwyUClSk0UeGIBNcbXtA,4452
+zakilla-1.0.1.dist-info/licenses/LICENSE.md,sha256=HrhfyXIkWY2tGFK11kg7vPCqhgh5DcxleloqdhrpyMY,11558
+zakilla-1.0.1.dist-info/METADATA,sha256=d0bQ0Ntj5pd4Wr_nCIVbSxnikgAb3MXXYlBU1-lokfE,2233
+zakilla-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+zakilla-1.0.1.dist-info/top_level.txt,sha256=S6MBYRQJ0UbncQAUiupVeYKAA6L1aL3mPcBij_cMKJ4,8
+zakilla-1.0.1.dist-info/RECORD,,
