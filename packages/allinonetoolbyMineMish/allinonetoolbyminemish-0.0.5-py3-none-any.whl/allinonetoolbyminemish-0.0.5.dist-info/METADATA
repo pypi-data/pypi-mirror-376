@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: allinonetoolbyMineMish
+Version: 0.0.5
+Summary: A collection of useful mini functions
+Home-page: https://github.com/MineMish/all-in-one-tools
+Author: MineMish
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: Pillow>=8.0.0
+Requires-Dist: requests>=2.25.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# All in one tools
+
+---
+
+A collection of useful mini functions:
+* Captcha
+* Easy Date
+* Easy Files
+* Easy Math
+* Easy Network
+* Easy Text
+* and ect.
+
+---
+
+#### MineMish™️  Open-Source
