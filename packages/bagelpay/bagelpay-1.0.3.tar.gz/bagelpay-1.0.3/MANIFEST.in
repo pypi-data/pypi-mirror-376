@@ -1,0 +1,19 @@
+# Include README and requirements
+include README.md
+include requirements.txt
+include pytest.ini
+
+# Include all Python files in src
+recursive-include src *.py
+
+# Exclude test files and cache
+recursive-exclude tests *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .pytest_cache
+recursive-exclude * htmlcov
+recursive-exclude * .coverage
+recursive-exclude * venv
+recursive-exclude * venv311
+recursive-exclude * .git
+recursive-exclude * .DS_Store
