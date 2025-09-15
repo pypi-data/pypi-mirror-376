@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+nosqllite/__init__.py
+nosqllite/database.py
+nosqllite/document.py
+nosqllite/group.py
+nosqllite.egg-info/PKG-INFO
+nosqllite.egg-info/SOURCES.txt
+nosqllite.egg-info/dependency_links.txt
+nosqllite.egg-info/requires.txt
+nosqllite.egg-info/top_level.txt
+tests/test_database.py
+tests/test_document.py
+tests/test_groups.py
