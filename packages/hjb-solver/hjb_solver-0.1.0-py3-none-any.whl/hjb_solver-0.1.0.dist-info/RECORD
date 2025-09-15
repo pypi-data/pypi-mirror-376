@@ -1,0 +1,16 @@
+examples/BCW2011Hedging.py,sha256=1hYEhiu_27429cm8U7TYJy4WLLxiJwor_Ul2Akn9aS4,12379
+examples/BCW2011Liquidation.py,sha256=fRiraN1weOleLjTjLeyoG-CFh7RnyVL4oN544YlXzZ4,2791
+examples/test.py,sha256=RMgYfNw6vZMiakJumORc_XStvLd6v3deHKgiKrCdcuE,3273
+hjb_solver/__init__.py,sha256=jLuPC71MAKGwWUmgppVxtucJ-1RhjMIeVG54dU2dut8,562
+hjb_solver/config.py,sha256=J1RWDyHssm--Wra2jSsU-OFvJP6ukQ3P2_x-hb0556A,364
+hjb_solver/imports.py,sha256=DIEtC7A2oG9PdGE9G_WW4wTHgkZPaDlYEqxE7TuS9IE,732
+hjb_solver/utils.py,sha256=hx35NqY7gszjv2sBwNhch8PXWT6__h-PLkL5O-lMT7o,1214
+hjb_solver/core/__init__.py,sha256=jLuPC71MAKGwWUmgppVxtucJ-1RhjMIeVG54dU2dut8,562
+hjb_solver/core/abstraction.py,sha256=W_QvMRRwglxOTVB48w29qgmMV_ZWcnRPt-i6e1iwIgk,8705
+hjb_solver/core/main.py,sha256=zg8yMtWErptA1Ao4eujPeof8DUN7jGbugIxjhXQbQNI,6935
+hjb_solver/core/mixin.py,sha256=Qtmz9uZxi8zOdMWX7yFkIZtHH6ENIdLXibR9nXEGALY,63428
+hjb_solver/core/structure.py,sha256=ZkquJjU5AGDJgDJy7kwxRvGdrrAMP9XRnfuyXZS9tgk,6723
+hjb_solver-0.1.0.dist-info/METADATA,sha256=Q3GYKoajIOh8iKM7NW5VgTf5ISq5neqoBxnQRGZ7xH0,23890
+hjb_solver-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hjb_solver-0.1.0.dist-info/top_level.txt,sha256=vGHb_gKP9tIOi2Q-TqMGyqQGwj-PQDTzlWAk8GgR-sc,20
+hjb_solver-0.1.0.dist-info/RECORD,,
