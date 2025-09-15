@@ -1,0 +1,11 @@
+searchcli/__init__.py,sha256=JMD28FXYHc_TM03visyUSd3UA9FZAaJMRStnfZoq50Y,21
+searchcli/cli.py,sha256=vYq8xXZnUWAs5sOCII6bk-i0mfX19zVzcOowkYuBVnM,3126
+searchcli/engines.py,sha256=lraP88NCAtKyq4kIx3jNhb9ckcr6zFTKkhbnxh9yUus,2820
+searchcli/interactive.py,sha256=NQGNjFEE67rHlYSFywzShV7AMPEaITGgpc--5J2aC4g,1890
+searchcli/search.py,sha256=EKdZifU1_TwbOdvy0B0pyW30IbBoJgGHU6V5I-1djkY,3726
+searchcli/utils.py,sha256=DS_wS3ncORgBJq0v2Hv-Qv9vLKD37E6Uon0kwDwmc0k,1480
+search_cli_pro-0.1.4.dist-info/METADATA,sha256=avGqIXWEoWcxmNww8sO8xI6En5wznaNzSb4GuEutM_o,3454
+search_cli_pro-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+search_cli_pro-0.1.4.dist-info/entry_points.txt,sha256=_Ts6zBmpbUncYGLf6HBjJqfJqeg7ARem0JIpQ85zAp8,46
+search_cli_pro-0.1.4.dist-info/top_level.txt,sha256=3bRlbzvKYuOSPnw0_YIjwJ91V_bd3u4j4oassTbrgAo,10
+search_cli_pro-0.1.4.dist-info/RECORD,,
