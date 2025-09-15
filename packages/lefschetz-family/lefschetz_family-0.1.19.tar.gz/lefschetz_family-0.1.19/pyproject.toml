@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lefschetz-family"
+version = "0.1.19"
+authors = [
+  { name="Eric Pichon-Pharabod", email="eric.pichon@mis.mpg.de" },
+]
+description = "This package implements algorithms relying on Lefschetz fibration theory to compute periods of algebraic varieties."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "ore_algebra",
+  "delaunay_triangulation",
+]
+
+[project.optional-dependencies]
+passagemath = [
+  "scipy",
+  "passagemath-combinat",
+  "passagemath-flint",
+  "passagemath-graphs",
+  "passagemath-groups",
+  "passagemath-modules",
+  "passagemath-pari",
+  "passagemath-polyhedra",
+  "passagemath-repl",
+  "passagemath-schemes",
+  "passagemath-symbolics",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ericpipha/lefschetz-family"
+"Bug Tracker" = "https://github.com/ericpipha/lefschetz-family"
