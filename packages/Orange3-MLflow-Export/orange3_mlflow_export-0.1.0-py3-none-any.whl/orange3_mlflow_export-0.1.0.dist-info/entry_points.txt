@@ -1,0 +1,5 @@
+[orange.widgets]
+Examples = orangecontrib.mlflowexport.widgets
+
+[orange3.addon]
+mlflowexport = orangecontrib.mlflowexport
