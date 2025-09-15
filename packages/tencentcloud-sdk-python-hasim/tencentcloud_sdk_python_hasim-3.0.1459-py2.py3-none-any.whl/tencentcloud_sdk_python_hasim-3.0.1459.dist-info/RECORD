@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/hasim/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/hasim/v20210716/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/hasim/v20210716/errorcodes.py,sha256=sM_rLQdisD8LLHOJ1ZnvzL03WMB8wwnVfv9ENJvvlm8,1366
+tencentcloud/hasim/v20210716/hasim_client.py,sha256=VKHEMByD2XTKIrMnOafdrzkj8FaDCfYj5ft9N76RIY0,19717
+tencentcloud/hasim/v20210716/models.py,sha256=DIamG8jLVJu53wgdJ6HXXzCjHCTFqPT0yk57vVKvHjs,152262
+tencentcloud_sdk_python_hasim-3.0.1459.dist-info/METADATA,sha256=eIimYou4G679LYt1pfofxQuuBcn915ryctxh92KUleY,1513
+tencentcloud_sdk_python_hasim-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_hasim-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_hasim-3.0.1459.dist-info/RECORD,,
