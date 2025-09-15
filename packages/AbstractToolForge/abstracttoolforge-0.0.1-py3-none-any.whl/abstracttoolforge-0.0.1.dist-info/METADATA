@@ -1,0 +1,96 @@
+Metadata-Version: 2.4
+Name: AbstractToolForge
+Version: 0.0.1
+Summary: A framework to enable Agentic AI to create and update tools when needed, while maintaining reproducibility of actions through versioning.
+Author-email: AbstractToolForge Team <contact@abstracttoolforge.org>
+Maintainer-email: AbstractToolForge Team <contact@abstracttoolforge.org>
+License: MIT License
+        
+        Copyright (c) 2025 AbstractToolForge Team
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/abstracttoolforge/AbstractToolForge
+Project-URL: Documentation, https://abstracttoolforge.readthedocs.io/
+Project-URL: Repository, https://github.com/abstracttoolforge/AbstractToolForge
+Project-URL: Bug Tracker, https://github.com/abstracttoolforge/AbstractToolForge/issues
+Keywords: agentic-ai,tools,framework,versioning,reproducibility,ai-agents
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Dynamic: license-file
+
+# AbstractToolForge
+
+**A framework to enable Agentic AI to create and update tools when needed, while maintaining reproducibility of actions through versioning.**
+
+## Overview
+
+AbstractToolForge is designed to empower Agentic AI systems with the ability to dynamically create, modify, and manage tools throughout their execution lifecycle. The framework emphasizes reproducibility through comprehensive versioning mechanisms, ensuring that AI-driven tool modifications can be tracked, audited, and replicated.
+
+## Key Features (Planned)
+
+- **Dynamic Tool Creation**: Enable AI agents to generate new tools as needed
+- **Tool Versioning**: Comprehensive versioning system for tool evolution tracking
+- **Reproducibility**: Ensure all tool modifications are reproducible and auditable
+- **Agent Integration**: Seamless integration with various Agentic AI frameworks
+- **Tool Management**: Lifecycle management for AI-created tools
+
+## Status
+
+🚧 **Early Development - Namespace Reserved** 🚧
+
+This package is currently in the early development phase. The primary purpose of this initial release is to reserve the "AbstractToolForge" namespace on PyPI while we develop the core functionality.
+
+## Installation
+
+```bash
+pip install AbstractToolForge
+```
+
+## Contributing
+
+We welcome contributions! Please check back soon for contribution guidelines as we develop the project structure.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+---
+
+*Note: This is an early development release primarily for namespace reservation. Full functionality will be available in upcoming releases.*
