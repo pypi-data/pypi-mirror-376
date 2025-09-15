@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: bettersanic
+Version: 1.1.0
+Summary: Sanic with discord.py-like cogs and extensions.
+Home-page: https://github.com/HyperKiko/bettersanic
+Author: Kiko
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sanic
+Dynamic: license-file
+
+# BetterSanic
+adds discord.py-like cogs and extensions to sanic.
+
+i apologize for the condescending package name. that was not my intention, i didn't realize it was bad at first, and i can't be bothered to change it.
+## example
+there's an example [here](https://github.com/hyperkiko/bettersanic/tree/main/example).
