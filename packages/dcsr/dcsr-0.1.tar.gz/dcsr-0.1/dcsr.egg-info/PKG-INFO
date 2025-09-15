@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: dcsr
+Version: 0.1
+Summary: Distributed Common-Sense Reasoning (DCSR) Framework
+Author: AmongTheCouch Studios
+Platform: any
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=2.0
+Requires-Dist: transformers>=4.30
+Requires-Dist: sympy>=1.12
+Requires-Dist: torchvision>=0.15
+Requires-Dist: pillow>=9.0
+
+# DCSR – Distributed Common-Sense Reasoning Framework
+
+A modular, general-purpose AI framework based on distributed knowledge agents.
+
+## Features
+- Decentralized agents (Language, Logic, Perception, Action)
+- Orchestrator for adaptive reasoning
+- Transparent reasoning paths
+- Addon system for new agents
+
+## Install
+```bash
+pip install dcsr

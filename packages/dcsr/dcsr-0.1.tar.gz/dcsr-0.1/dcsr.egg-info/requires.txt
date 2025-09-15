@@ -1,0 +1,5 @@
+torch>=2.0
+transformers>=4.30
+sympy>=1.12
+torchvision>=0.15
+pillow>=9.0
