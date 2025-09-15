@@ -1,0 +1,56 @@
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[project]
+name = "polarion-rest-client"
+description = "Polarion REST API client, wrappers & helpers"
+authors = [
+    { name = "emesika", email = "emesika@redhat.com" },
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "attrs>=23.1.0",
+    "httpx>=0.23.0",
+    "pydantic>=2.0.0",
+    "openapi-python-client>=0.25.3",
+]
+version = "25.6.3"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+codegen = [
+    "openapi-spec-validator>=0.7.1",
+    "nodeenv>=1.9.1",
+]
+test = [
+    "pytest>=8.2",
+]
+
+[tool.pdm.scripts]
+regenerate-client = "bash ./scripts/regenerate_polarion_rest_client.sh"
+prepare-build = "bash -lc 'rm -rf src/rest_api_polarion_client && mkdir -p src && cp -r autogen/rest_api_polarion_client src/'"
+pkg-build = "bash -lc 'rm -rf src/rest_api_polarion_client && mkdir -p src && cp -r autogen/rest_api_polarion_client src/ && pdm build'"
+
+[tool.pdm.build]
+package-dir = "src"
+packages = [
+    { include = "polarion_rest_client" },
+    { include = "rest_api_polarion_client" },
+]
+includes = [
+    "src/",
+    "LICENSE",
+    "README.md",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src",
+]
