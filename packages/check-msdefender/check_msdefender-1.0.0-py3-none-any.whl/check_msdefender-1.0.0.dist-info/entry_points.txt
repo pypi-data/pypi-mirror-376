@@ -1,0 +1,2 @@
+[console_scripts]
+check_msdefender = check_msdefender.cli:main
