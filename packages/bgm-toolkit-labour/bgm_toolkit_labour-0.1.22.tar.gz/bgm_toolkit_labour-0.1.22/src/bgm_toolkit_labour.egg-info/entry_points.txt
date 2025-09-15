@@ -1,0 +1,2 @@
+[console_scripts]
+bgm-labour = bgm_labour.__main__:main
