@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: otelmark
+Version: 0.1.0a0
+Summary: Benchmark with telemetry data.
+Author: Çağlar Kutlu
+Author-email: Çağlar Kutlu <caglar.kutlu@gmail.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Dist: attrs>=25.3.0
+Requires-Dist: freezegun>=1.5.5
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: opentelemetry-api>=1.36.0
+Requires-Dist: opentelemetry-sdk>=1.36.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# 👷 Coming soon
