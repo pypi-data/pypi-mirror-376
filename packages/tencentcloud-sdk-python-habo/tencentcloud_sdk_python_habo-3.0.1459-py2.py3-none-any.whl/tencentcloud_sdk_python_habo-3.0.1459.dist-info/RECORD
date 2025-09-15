@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/habo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/habo/v20181203/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/habo/v20181203/errorcodes.py,sha256=KvHs6W2GONKBsXXCjJUx8q8sqMTR7e5vr5Gx01t5b24,625
+tencentcloud/habo/v20181203/habo_client.py,sha256=00scuqOqMwXnKUpaqZxxXq-aWV93eShA5TXAeUdJPPo,2775
+tencentcloud/habo/v20181203/models.py,sha256=ZphG5rHPBmeFRgUUNqJy6g9zv7lAoqaoKeAfxCqecD8,7571
+tencentcloud_sdk_python_habo-3.0.1459.dist-info/METADATA,sha256=4TDVNCm1Z-wHHJa6BssUW2HOIRyM3S68ILenDa5uz6E,1508
+tencentcloud_sdk_python_habo-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_habo-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_habo-3.0.1459.dist-info/RECORD,,
