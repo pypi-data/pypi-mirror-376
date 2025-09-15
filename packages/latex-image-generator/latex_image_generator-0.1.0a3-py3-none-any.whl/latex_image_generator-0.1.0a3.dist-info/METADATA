@@ -1,0 +1,29 @@
+Metadata-Version: 2.3
+Name: latex-image-generator
+Version: 0.1.0a3
+Summary: Tool to generate images using LaTeX.
+License: MIT
+Keywords: tex,math
+Author: Kenta Kabashima
+Author-email: kenta_program37@hotmail.co.jp
+Requires-Python: >=3.11,<3.14
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Framework :: AsyncIO
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Typing :: Typed
+Requires-Dist: click (>=8.2.1,<9.0.0)
+Project-URL: Homepage, https://gitlab.com/MusicScience37Projects/tools/latex-image-generator
+Project-URL: Repository, https://gitlab.com/MusicScience37Projects/tools/latex-image-generator.git
+Description-Content-Type: text/markdown
+
+# latex-image-generator
+
+Tool to generate images using LaTeX.
+
