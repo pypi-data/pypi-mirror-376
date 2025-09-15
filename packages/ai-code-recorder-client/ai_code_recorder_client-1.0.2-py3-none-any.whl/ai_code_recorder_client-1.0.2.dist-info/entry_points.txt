@@ -1,0 +1,2 @@
+[console_scripts]
+ai-code-recorder-client = src.__main__:main
