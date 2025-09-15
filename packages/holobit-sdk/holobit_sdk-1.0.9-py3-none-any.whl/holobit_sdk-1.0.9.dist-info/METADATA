@@ -1,0 +1,630 @@
+Metadata-Version: 2.4
+Name: holobit-sdk
+Version: 1.0.9
+Summary: SDK para arquitectura holográfica avanzada
+Home-page: https://github.com/Alphonsus411/holobit_SDK
+Author: Adolfo González Hernández
+Author-email: Adolfo González Hernández <adolfogonzal@gmail.com>
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Provides-Extra: qiskit
+Requires-Dist: qiskit; extra == "qiskit"
+Provides-Extra: pennylane
+Requires-Dist: pennylane; extra == "pennylane"
+Provides-Extra: aws
+Requires-Dist: boto3; extra == "aws"
+Provides-Extra: azure
+Requires-Dist: azure-identity; extra == "azure"
+Provides-Extra: gcp
+Requires-Dist: google-cloud-compute; extra == "gcp"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+
+# Holobit SDK - Documentación Oficial
+
+## 📌 Introducción
+El **Holobit SDK** es un kit de desarrollo diseñado para la transpilación y ejecución de código holográfico cuántico. Su arquitectura multinivel permite trabajar con diferentes niveles de abstracción, optimizando el rendimiento en múltiples arquitecturas de hardware.
+
+## 🔹 Características Principales
+- **Transpilador Cuántico Holográfico**: Convierte código HoloLang en código máquina optimizado para arquitecturas x86, ARM y RISC-V.
+- **Backends C/C++, Rust y Go**: Traducen programas HoloLang a código clásico en C, C++, Rust o Go, permitiendo un flujo tradicional de compilación.
+- **Optimización Avanzada**: Reduce instrucciones redundantes y reutiliza registros para maximizar la eficiencia.
+- **Ejecución Multinivel**: Soporte para bajo, medio y alto nivel en la programación holográfica.
+- **Compatibilidad con Múltiples Arquitecturas**: x86, ARM y RISC-V.
+- **Integración con frameworks cuánticos**: Qiskit, PennyLane, Cirq, AWS Braket y QuTiP.
+
+## 📥 Instalación
+Para instalar el SDK Holobit, sigue los siguientes pasos:
+
+### 🔹 Requisitos Previos
+- **Python >=3.10** (versión mínima recomendada)
+- **pip** actualizado
+- **Git (opcional, pero recomendado)**
+
+### 🔹 Instalación desde GitHub
+```bash
+# Clonar el repositorio
+git clone https://github.com/usuario/holobit_sdk.git
+cd holobit_sdk
+
+# Instalar dependencias
+pip install -r requirements_optional.txt
+# Para tareas de desarrollo instala también las dependencias de 
+# linting y cobertura
+pip install -r requirements_dev.txt
+```
+
+## 🚀 Uso del SDK
+### 🔹 Transpilación de Código HoloLang
+Para transpilar un archivo de código holográfico:
+```bash
+holobit-transpiler --input archivo.holo --arch x86
+```
+También puedes ejecutarlo con el módulo de Python:
+```bash
+python -m holobit_sdk.transpiler.machine_code_transpiler --input archivo.holo --arch x86
+```
+Esto generará un archivo con el código máquina optimizado para la arquitectura especificada.
+
+### 🔹 Ejemplo de Uso en Código
+```python
+from transpiler.machine_code_transpiler import MachineCodeTranspiler
+
+transpiler = MachineCodeTranspiler("x86")
+instruccion = "ADD H1 H2"
+codigo_maquina = transpiler.transpile(instruccion)
+print(codigo_maquina)  # ADD H1, H2 ; Registro reutilizado
+```
+
+Puedes encontrar más demostraciones en el directorio `examples/`.
+
+### 🔹 Integración con Cirq, Braket y QuTiP
+Los holobits pueden ejecutarse en diferentes frameworks cuánticos mediante adaptadores.
+
+```python
+from holobit_sdk.quantum_integration import CirqAdapter, BraketAdapter, QutipAdapter
+
+adapter = CirqAdapter()  # También BraketAdapter o QutipAdapter
+circuito = adapter.holobit_to_native(holobit)
+resultado = adapter.execute(circuito)
+```
+
+Cada adaptador convierte el ``Holobit`` a la representación nativa del backend y devuelve el estado resultante tras la ejecución.
+
+## 🌐 Servicio Web de Compilación y Ejecución
+El SDK incluye un servicio REST basado en FastAPI para compilar y ejecutar Holobits mediante los backends definidos en `holobit_sdk.cloud`.
+
+### Configuración
+- `HOLOBIT_PORT`: puerto del servidor (por defecto 8000).
+- `HOLOBIT_BACKEND`: backend a utilizar (`aws`, `azure` o `gcp`).
+- `HOLOBIT_USER` y `HOLOBIT_PASSWORD_HASH`: usuario y hash `bcrypt` de la contraseña.
+
+### Proveedores de secretos
+Los backends `AWSBackend` y `AzureBackend` pueden recibir un objeto que
+implemente la interfaz `CredentialsProvider` para obtener credenciales desde
+servicios externos como *AWS Secrets Manager* o *Azure Key Vault*.
+
+```python
+from holobit_sdk.cloud import AWSBackend, CredentialsProvider
+
+class SecretsManagerProvider(CredentialsProvider):
+    def get_credentials(self) -> dict[str, str]:
+        return {
+            "AWS_ACCESS_KEY_ID": "...",
+            "AWS_SECRET_ACCESS_KEY": "...",
+        }
+
+backend = AWSBackend(provider=SecretsManagerProvider())
+```
+
+Si el proveedor no responde o devuelve credenciales incompletas se registrará
+un error y se lanzará `EnvironmentError`.
+
+### Ejecución
+```bash
+export HOLOBIT_BACKEND=aws
+export HOLOBIT_USER=usuario
+export HOLOBIT_PASSWORD_HASH=$(python - <<'PY'
+import bcrypt
+print(bcrypt.hashpw(b'secreto', bcrypt.gensalt()).decode())
+PY
+)
+python -m holobit_sdk.api.service
+```
+Los endpoints disponibles son:
+- `POST /compile` con el campo `code` que devuelve `job_id`.
+- `POST /execute` con `job_id` que devuelve el resultado.
+  El identificador `job_id` acepta hasta 256 caracteres.
+
+### 🔐 HTTPS opcional
+Para cifrar la comunicación HTTP puedes generar un certificado y una clave
+privada. Por ejemplo, con OpenSSL:
+
+```bash
+openssl req -x509 -nodes -newkey rsa:4096 -keyout holobit.key -out holobit.crt -days 365 -subj '/CN=localhost'
+```
+
+Antes de iniciar el servicio exporta las rutas de ambos archivos:
+
+```bash
+export HOLOBIT_TLS_CERT=holobit.crt
+export HOLOBIT_TLS_KEY=holobit.key
+python -m holobit_sdk.api.service
+```
+
+Si los certificados no están definidos o faltan archivos, el servidor mostrará
+una advertencia y deberá desplegarse detrás de un proxy HTTPS.
+
+Consulta `examples/clients` para ver ejemplos de clientes en JavaScript y Go.
+
+
+## 🔌 Servicio gRPC
+Además del servicio REST, el SDK ofrece un servicio gRPC definido en `api/holobit.proto` con los métodos `Compile` y `Execute`.
+
+Para arrancarlo:
+```bash
+python -m holobit_sdk.api.grpc_service
+```
+El puerto se puede configurar con la variable `HOLOBIT_PORT` (por defecto 50051).
+
+### 🔐 TLS opcional
+Para cifrar la comunicación es necesario generar un certificado y una clave
+privada. Por ejemplo, con OpenSSL:
+
+```bash
+openssl req -x509 -nodes -newkey rsa:4096 -keyout holobit.key -out holobit.crt -days 365 -subj '/CN=localhost'
+```
+
+Antes de iniciar el servicio exporta las rutas de ambos archivos:
+
+```bash
+export HOLOBIT_TLS_CERT=holobit.crt
+export HOLOBIT_TLS_KEY=holobit.key
+python -m holobit_sdk.api.grpc_service
+```
+
+Si no se definen estas variables el servidor arrancará sin TLS, dejando la
+comunicación sin cifrar y expuesta a intercepciones; úsalo solo para
+desarrollo.
+
+### 🔑 Autenticación por token
+El servidor exige un token compartido para cada llamada gRPC. Genera un valor
+aleatorio y expórtalo antes de iniciar el servicio:
+
+```bash
+python - <<'PY'
+import secrets; print(secrets.token_hex(32))
+PY
+export HOLOBIT_GRPC_TOKEN=el_valor_generado
+python -m holobit_sdk.api.grpc_service
+```
+
+Los clientes autorizados deben incluir el token en la metadata con la clave
+`x-holobit-token`:
+
+```python
+with grpc.insecure_channel("localhost:50051") as channel:
+    stub = holobit_pb2_grpc.HolobitServiceStub(channel)
+    metadata = [("x-holobit-token", os.environ["HOLOBIT_GRPC_TOKEN"])]
+    stub.Compile(holobit_pb2.CodeRequest(code="..."), metadata=metadata)
+```
+
+Las solicitudes sin token o con un valor incorrecto serán rechazadas con el
+estado `UNAUTHENTICATED`.
+
+Los clientes en otros lenguajes pueden generarse compilando el archivo `.proto` correspondiente. Por ejemplo, para Python:
+```bash
+python -m grpc_tools.protoc -I api --python_out=. --grpc_python_out=. api/holobit.proto
+```
+En C++, Java, Go u otros lenguajes basta con ejecutar `protoc` con el plugin gRPC adecuado y apuntar al mismo archivo `holobit.proto`.
+
+
+### 🔹 Flujo HoloLang → C/C++/Rust/Go → ensamblador
+Además del código máquina directo, el compilador permite generar código C, C++, Rust o Go a partir de un programa HoloLang, manteniendo un flujo clásico de compilación:
+```python
+from holobit_sdk.multi_level.high_level.compiler import HoloLangCompiler
+
+compiler = HoloLangCompiler("rust")  # también "go", "c" o "cpp"
+programa = "IMPRIMIR A"
+codigo = compiler.compilar_y_ejecutar(programa)
+print(codigo)
+```
+El resultado puede compilarse con `gcc`/`clang`, `rustc` o `go build` para producir ensamblador u objetos binarios.
+
+### 🔹 Ejecución de HoloLang desde la línea de comandos
+Puedes ejecutar código HoloLang directamente con el comando `hololang`:
+```bash
+hololang -c "CREAR H1 (0.1, 0.2, 0.3)" -c "IMPRIMIR H1"
+```
+O bien pasar un archivo con varias instrucciones y especificar el backend deseado:
+```bash
+hololang --file programa.holo --arch rust
+```
+Esto mostrará por pantalla el resultado de cada línea procesada.
+
+### 🔹 Máquina Virtual del Ensamblador
+El módulo `assembler.virtual_machine` permite ejecutar instrucciones holográficas en un entorno controlado.
+```python
+from assembler.virtual_machine import AssemblerVM
+
+vm = AssemblerVM()
+programa = ["CREAR Q1 (0.1, 0.2, 0.3)", "CREAR Q2 (0.4, 0.5, 0.6)", "CREAR H1 {Q1, Q2}", "ROT H1 z 90"]
+vm.run_program(programa)
+```
+Las instrucciones del ASIIC pueden escribirse con cualquier combinación de mayúsculas y minúsculas. Por ejemplo, `rotar`, `Rotar` y `ROTAR` se interpretan de la misma manera.
+#### 🧩 Macros y alias
+El parser incluye un preprocesador que reconoce directivas `#macro` y `#endmacro` para definir plantillas reutilizables:
+```asm
+#macro CREAR_ROT nombre x y z
+CREAR {nombre} ({x}, {y}, {z})
+ROTAR {nombre} z 90
+#endmacro
+
+CREAR_ROT H1 0.1 0.2 0.3
+```
+Además, la máquina virtual carga alias al iniciar; por ejemplo `ROTAR` es un alias de `ROT`.
+También se incluyen alias como `MEASURE` → `MEDIR`, `ENTRELAZAR` → `ENTANGLE` y `SUPERPOSICION` → `SUPERPOS`.
+Las macros pueden eliminarse en tiempo de ejecución mediante `assembler.macros.remove_macro("CREAR_ROT")`.
+### 🔹 Instrucciones cuánticas esenciales
+Las últimas versiones del lenguaje incluyen operaciones de nivel cuántico que
+pueden combinarse con macros y con la máquina virtual:
+
+- **SUPERPOS** *(alias: `SUPERPOSICION`)*: coloca un Holobit o qubit en superposición.
+  ```asm
+  CREAR Q1 (0.1, 0.2, 0.3)
+  SUPERPOS Q1
+  ```
+- **MEDIR** *(alias: `MEASURE`)*: colapsa el estado y almacena el resultado en `parser.measurements`.
+  ```asm
+  MEDIR Q1
+  ```
+- **ENTANGLE** *(alias: `ENTRELAZAR`)*: entrelaza dos registros, propagando el colapso de uno sobre el otro.
+  ```asm
+  ENTANGLE Q1 Q2
+  ```
+- **DECOHERENCIA**: simula la pérdida de coherencia devolviendo un estado clásico aleatorio.
+  ```asm
+  DECOHERENCIA Q1
+  ```
+
+### 🔹 Manejo de grupos
+Los Holobits pueden organizarse en grupos lógicos para operar sobre varios
+elementos simultáneamente:
+
+```asm
+CREAR H1 {Q1, Q2}
+CREAR H2 {Q3, Q4}
+GRUPO G1 {H1, H2}
+```
+
+### 🔹 Persistencia del estado del Holocron
+Es posible guardar y restaurar el conjunto completo de holobits y grupos:
+
+```holo
+GUARDAR_ESTADO inicial
+# ... realizar operaciones ...
+RESTABLECER_ESTADO inicial
+```
+
+Estas instrucciones utilizan internamente ``Holocron.save_state`` y
+``Holocron.restore_state`` para serializar y recuperar el contenido.
+
+### 🔹 Estructuras de control
+El ensamblador incorpora instrucciones de alto nivel para controlar el flujo:
+
+- `SI` / `SINO` / `FIN`
+- `MIENTRAS` / `FIN`
+- `PARA` / `FIN`
+- `CASO` / `CUANDO` / `OTRO` / `FINCASO`
+
+```asm
+MEDIR H1
+SI H1
+    ROT H1 z 90
+SINO
+    ROT H1 z 180
+FIN
+
+PARA 3
+    ROT H1 x 30
+FIN
+
+CASO H1
+    CUANDO 0
+        ROT H1 y 45
+    CUANDO 1
+        ROT H1 y 90
+    OTRO
+        ROT H1 y 180
+FINCASO
+```
+
+En HoloLang también pueden emplearse llaves para definir bloques con
+condicionales y estructuras de casos:
+
+```holo
+SI condicion {
+    INSTRUCCION_A
+} SINO {
+    INSTRUCCION_B
+}
+
+CASO expresion {
+    CUANDO 1 {
+        ACCION_1
+    }
+    CUANDO 2 {
+        ACCION_2
+    }
+    OTRO {
+        ACCION_DEFECTO
+    }
+} FINCASO
+```
+
+### 🔹 Simulación de Holobits
+El simulador `HologramSimulator` permite mover y rotar Holobits paso a paso,
+y visualizar cada estado en 3D.
+```python
+from holobit_sdk.quantum_holocron.core.hologram_simulator import HologramSimulator
+sim = HologramSimulator()
+pasos = [{"traslacion": (0.1, 0, 0), "rotacion": ("z", 15)}]
+sim.animate(holobit, pasos)
+```
+### 🔹 Interacciones básicas
+El módulo `holobit_sdk.core.interactions` ofrece funciones sencillas para
+modificar el estado de los Holobits:
+
+- `confinar_quarks(holobit, limite)`: limita la posición de cada quark al
+  rango ``[-limite, limite]``.
+- `cambiar_spin(holobit, nuevo_spin)`: ajusta el valor del *spin* del Holobit.
+- `sincronizar_spin(holobits)`: iguala el *spin* de un grupo de Holobits al
+  promedio del conjunto.
+
+```python
+from holobit_sdk.core import interactions
+
+interactions.confinar_quarks(holobit, limite=0.5)
+interactions.cambiar_spin(holobit, 1.0)
+```
+## 🔬 Arquitectura Interna del SDK
+El SDK Holobit está estructurado en varios niveles:
+1. **Nivel Bajo**: Manejo directo de registros y memoria holográfica.
+2. **Nivel Medio**: Procesamiento cuántico holográfico.
+3. **Nivel Alto**: Lenguaje de programación HoloLang y compilador asociado.
+
+## 📖 Referencia Técnica
+- **Módulo `transpiler`**: Contiene el transpilador de código holográfico a código máquina.
+- **Módulo `execution`**: Maneja la ejecución de código transpilado en arquitecturas objetivo.
+- **Módulo `debugger`**: Herramientas de depuración y análisis de código transpilado.
+
+## 📄 Ejemplos de Código
+Los ejemplos del SDK se encuentran en el directorio `examples/` y pueden
+ejecutarse directamente con Python. Por ejemplo:
+```bash
+python examples/holobit_demo.py
+python examples/hololang_compiler.py
+python examples/hologram_simulation.py
+python examples/new_instructions_demo.py
+```
+Cada script muestra una funcionalidad concreta del SDK. También puedes
+utilizar el transpilador de forma manual:
+```bash
+holobit-transpiler --input ejemplo.holo --arch x86
+```
+O bien con el módulo de Python:
+```bash
+python -m holobit_sdk.transpiler.machine_code_transpiler --input ejemplo.holo --arch x86
+```
+
+### Expresiones ampliadas con `SIQ`
+La instrucción `SIQ` permite evaluar los resultados de medición mediante
+expresiones complejas combinando operadores aritméticos y lógicos.
+Además de comparaciones simples entre un grupo y un valor, ahora es
+posible evaluar **expresiones completas** utilizando los resultados de
+medición disponibles:
+
+```hololang
+SIQ (G1 + G2) > 1 {
+    CREAR A (1)
+} ELSEQ {
+    CREAR B (1)
+}
+```
+Los operadores admitidos incluyen `==`, `!=`, `<`, `>`, `<=` y `>=`, así
+como operaciones aritméticas dentro de la expresión. Asimismo, `SIQ`
+soporta combinaciones lógicas mediante `AND`, `OR` y `NOT`, e incluso
+agrupar subexpresiones con paréntesis para un control detallado.
+
+### DESENTANGLE
+La instrucción `DESENTANGLE` revierte el entrelazamiento entre dos
+Holobits, restaurando su independencia y evitando colapsos propagados.
+Es especialmente útil tras mediciones o manipulaciones intensivas.
+
+```hololang
+ENTANGLE Q1 Q2
+DESENTANGLE Q1 Q2
+```
+
+### Operaciones adicionales con `CANALIZAR`
+`CANALIZAR` abre un flujo de control sobre uno o varios Holobits donde se
+habilitan operaciones avanzadas como `AMPLIFICAR`, `FILTRAR` y
+`REFRACTAR`, las cuales no están disponibles fuera de este contexto.
+
+```hololang
+CANALIZAR H1 {
+    AMPLIFICAR H1 2;
+    FILTRAR H1 z>0;
+}
+```
+
+### Sintaxis para secuencias de operaciones
+Varias instrucciones pueden encadenarse en una sola línea utilizando el
+separador `;`. Esto facilita describir **secuencias de operaciones** que
+el intérprete ejecutará de izquierda a derecha.
+
+```hololang
+CREAR Q1 (0.1,0.2,0.3); ROTAR Q1 z 90; MEDIR Q1
+```
+
+### Ejemplo combinado según el Holocron Cuántico
+El siguiente fragmento muestra cómo integrar estas características para
+mantener la coherencia indicada por el **Holocron Cuántico**:
+
+```hololang
+CREAR Q1 (0.1,0.2,0.3); CREAR Q2 (0.4,0.5,0.6)
+ENTANGLE Q1 Q2
+CANALIZAR {Q1,Q2} {
+    AMPLIFICAR Q1 2;
+    FILTRAR Q2 x>0;
+}
+SIQ (MEDIR Q1 + MEDIR Q2) >= 1 AND NOT(MEDIR Q1 == 0) {
+    DESENTANGLE Q1 Q2;
+    CREAR H1 {Q1, Q2};
+} ELSEQ {
+    ROTAR Q1 y 45;
+}
+```
+
+## 🌿 Fractales Holográficos
+
+### Concepto, jerarquías de densidad y reglas morfométricas
+Un **fractal holográfico** describe la distribución jerárquica de densidades dentro de un *Holocron*. Cada nivel genera subniveles con una densidad proporcional que sigue reglas morfométricas, permitiendo explorar la estructura cuántica con una escala autosimilar.
+
+### Uso desde Python
+```python
+from holobit_sdk.quantum_holocron.core.holocron import Holocron
+from holobit_sdk.quantum_holocron.fractal import Fractal
+from holobit_sdk.core.holobit import Holobit
+from holobit_sdk.core.quark import Quark
+from holobit_sdk.visualization.fractal_plot import visualizar_fractal
+
+def _crear_holocron():
+    holo = Holocron()
+    for i in range(10):
+        q = [Quark(0, 0, 0) for _ in range(6)]
+        aq = [Quark(0, 0, 0) for _ in range(6)]
+        holo.add_holobit(f"hb{i}", Holobit(q, aq, spin=i))
+    return holo
+
+holo = _crear_holocron()
+fractal = Fractal(holo)
+fractal.hierarquia_superior = 20
+fractal.generar()
+fig, axes = visualizar_fractal(lambda **_: list(fractal.densidades.values()))
+```
+
+### Uso desde Hololang
+```hololang
+CREAR_FRACTAL F1 (densidad_max=20)
+GRAFICAR_FRACTAL F1
+```
+### Sintaxis de las nuevas instrucciones
+El SDK incorpora instrucciones específicas para trabajar con fractales multidimensionales:
+
+- `CREAR_FRACTAL <id> (densidad_max=<N>, dimensiones=<D>)`: define un fractal con densidad máxima `N` y `D` dimensiones.
+- `SIMULAR_FRACTAL <id> pasos=<P>`: ejecuta `P` iteraciones sobre el fractal existente.
+- `GRAFICAR_FRACTAL <id> modo=<modo>`: muestra el fractal en modo `2D`, `3D` o `animado`.
+
+Ejemplo completo:
+```hololang
+CREAR_FRACTAL F1 (densidad_max=20, dimensiones=4)
+SIMULAR_FRACTAL F1 pasos=10
+GRAFICAR_FRACTAL F1 modo=animado
+```
+## 📝 Notas sobre archivos binarios
+Los documentos de arquitectura se mantienen en PDF, pero debido a que los archivos binarios dificultan las revisiones, se evita editarlos directamente en el repositorio. Las actualizaciones deben registrarse en formatos de texto o imágenes vectoriales, generando los PDFs fuera del control de versiones.
+
+## 📦 Despliegue y Distribución
+El SDK Holobit será empaquetado y distribuido a través de **GitHub Releases** y **PyPI**.
+
+### 🔹 Construcción del Paquete
+```bash
+python setup.py sdist bdist_wheel
+```
+
+### 🔹 Publicación en PyPI
+```bash
+pip install twine
+
+# Subir el paquete
+python -m twine upload dist/*
+```
+
+## ➕ Añadir nuevos backends cuánticos
+Para integrar un nuevo backend cuántico en el SDK:
+1. Crea una clase en ``holobit_sdk/quantum_integration`` que herede de ``QuantumAdapter``.
+2. Implementa el método ``holobit_to_native`` para traducir un ``Holobit`` al formato del backend.
+3. Implementa ``execute`` para ejecutar la representación nativa y devolver su estado.
+4. Añade pruebas correspondientes en ``holobit_sdk/quantum_integration/tests``.
+
+## ☁️ Backends en la Nube
+El SDK incluye conectores simples para ejecutar trabajos Holobit en servicios de **AWS**, **Azure** y **Google Cloud Platform**.
+
+### Instalación de dependencias opcionales
+Para cada proveedor instala el extra correspondiente:
+```bash
+# AWS
+pip install .[aws]
+# Azure
+pip install .[azure]
+# GCP
+pip install .[gcp]
+```
+
+### Variables de entorno requeridas
+- **AWS**: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
+- **Azure**: `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_CLIENT_SECRET`, `AZURE_SUBSCRIPTION_ID`
+- **GCP**: `GOOGLE_APPLICATION_CREDENTIALS` (ruta al archivo de credenciales)
+
+Ejemplo de uso con AWS:
+```python
+from holobit_sdk.cloud.aws import CloudBackend
+backend = CloudBackend()
+job_id = backend.submit_job({"payload": "..."})
+backend.execute_job(job_id)
+```
+
+## 🧪 Pruebas
+Para ejecutar las pruebas unitarias del proyecto debes instalar las dependencias opcionales.
+La suite completa requiere la librería `qiskit`, incluida en este archivo, para ejecutar las pruebas de integración cuántica:
+```bash
+pip install -r requirements_optional.txt
+```
+Si además deseas comprobar la cobertura de código instala las dependencias de desarrollo y ejecuta `coverage`:
+```bash
+pip install -r requirements_dev.txt
+```
+Luego ejecuta `flake8` para verificar el estilo y `coverage run` junto con `pytest`:
+```bash
+flake8
+coverage run -m pytest
+```
+Este repositorio cuenta con un flujo de **Integración Continua** en GitHub Actions que instala estas dependencias y ejecuta las pruebas en cada *push* y *pull request*.
+
+## ♻️ Notas de migración
+Para quienes actualicen desde versiones anteriores de **Hololang**:
+
+- Las instrucciones `SUPERPOS`, `MEDIR` y `ENTANGLE` sustituyen a las antiguas `SUP`, `MEASURE` y `ENTRELACE`.
+- La gestión de grupos se realiza con `GRUPO` en lugar de las primitivas heredadas `SET`.
+- Las estructuras de control `SI`/`SINO`/`FIN` y `MIENTRAS`/`FIN` reemplazan a `IF`/`ELSE`/`END`.
+- Las macros deben declararse mediante `#macro` y `#endmacro`; la sintaxis `DEFINE` ya no está soportada.
+
+## 🛠 Mantenimiento y Contribución
+Si deseas contribuir al SDK Holobit, puedes hacer un **fork** del repositorio y enviar un **pull request** con tus mejoras.
+
+## 📧 Contacto y Soporte
+Para cualquier consulta, reportes de errores o contribuciones, puedes contactarnos en **adolfogonzal@gmail.com** o a través del repositorio en **GitHub**.
+
+---
+
+📌 **Holobit SDK - Computación Cuántica Holográfica para el Futuro** 🚀
+
+
