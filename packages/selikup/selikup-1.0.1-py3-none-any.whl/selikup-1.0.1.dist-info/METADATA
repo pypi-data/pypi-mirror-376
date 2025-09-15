@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: selikup
+Version: 1.0.1
+Summary: A tool to download and install kernels from the main repository
+Author: Fatih Önder
+Author-email: Fatih ÖNDER <fatih@algyazilim.com>
+License: GPL-3.0-or-later
+Project-URL: Homepage, https://algyazilim.com
+Project-URL: Source, https://github.com/cektor/selikup
+Description-Content-Type: text/markdown
+Requires-Dist: PyQt5
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: certifi
+Requires-Dist: chardet
+Requires-Dist: idna
+Requires-Dist: urllib3
+Dynamic: author
+
+# Selikup
+
+Selikup is a Python-based tool that helps you download and install kernels from the main repository.  
+It provides both command-line usage and can be extended with a graphical interface using PyQt5.
+
+## Installation
+
+Install directly from PyPI:
+
+```bash
+pip install selikup
+
