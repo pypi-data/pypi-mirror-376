@@ -1,0 +1,9 @@
+query_builder.pyi,sha256=GcTUALM3c6ItAsm8e8YniXXwOtri8ZV1iIq2zB4lQLI,4682
+query_builder/__init__.py,sha256=yqXVhx--t-O20KitIrsmHmSHkN1qxe33Jb3lbXCmJdA,135
+query_builder/__init__.pyi,sha256=GcTUALM3c6ItAsm8e8YniXXwOtri8ZV1iIq2zB4lQLI,4682
+query_builder/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+query_builder/query_builder.pyd,sha256=7EAM_a4BUTaAc6EgH_aaeXzOOe0LKC-WseT2olq1rLE,5610496
+query_builder_tool-0.2.0.dist-info/METADATA,sha256=A_8qsDG0ItBeVd7OZ1mRRqAuguWxj_U3d_BAgsy9tG0,10422
+query_builder_tool-0.2.0.dist-info/WHEEL,sha256=7bfl5v0wbVhXZba613g0x-n2obNNfpQuN8I1cQ4oaU8,94
+query_builder_tool-0.2.0.dist-info/licenses/LICENSE,sha256=69y-uvwkRldfLnhDNs_TpCm9o7G4VXARtFoXURRxYcE,1102
+query_builder_tool-0.2.0.dist-info/RECORD,,
