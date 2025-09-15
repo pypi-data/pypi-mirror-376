@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+whisperx/SubtitlesProcessor.pyi
+whisperx/__init__.pyi
+whisperx/alignment.pyi
+whisperx/asr.pyi
+whisperx/audio.pyi
+whisperx/conjunctions.pyi
+whisperx/diarize.pyi
+whisperx/transcribe.pyi
+whisperx/types.pyi
+whisperx/utils.pyi
+whisperx_stubs.egg-info/PKG-INFO
+whisperx_stubs.egg-info/SOURCES.txt
+whisperx_stubs.egg-info/dependency_links.txt
+whisperx_stubs.egg-info/requires.txt
+whisperx_stubs.egg-info/top_level.txt
