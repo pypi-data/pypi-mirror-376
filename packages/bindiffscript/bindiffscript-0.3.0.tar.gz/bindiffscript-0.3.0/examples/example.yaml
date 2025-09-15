@@ -1,0 +1,11 @@
+#!/usr/bin/env bindiffscript
+
+width: 8
+colors: ["blue", "red bold"]
+format: "%i:%d-%x-%a"
+files:
+    - path: ${here}/short_text-1.txt
+      padding:
+      - [0xc, 4]
+      - [0x27, 2]
+    - path: ${here}/short_text-2.txt

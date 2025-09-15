@@ -1,0 +1,28 @@
+#!/usr/bin/env bindiffscript
+
+width: 8
+context: 2
+#head: 5000
+colors: ["green", "red bold"]
+format: "%d-%x-%a"
+files:
+    #- path: ${here}/00reverse-1-init.xy
+    #  disable: false
+    #  #padding:
+    #  #- [10, 4]
+    #  #- [28, 2]
+    - path: ${here}/00reverse-2-metro-off.xy
+      disable: false
+      padding:
+      - [10, 4, 0]
+      - [4221, 13, 0]
+    - path: ${here}/00reverse-3-track-3-note1.xy
+      disable: false
+      padding:
+      - [10, 4, 0]
+      - [3812, 2, 0]
+    #- path: ${here}/00reverse-4-rename.xy
+    #  disable: false
+    #  padding:
+    #  - [10, 4, 0]
+
