@@ -1,0 +1,2 @@
+[console_scripts]
+unifi-dns-sync = unifi_dns_sync.cli:main
