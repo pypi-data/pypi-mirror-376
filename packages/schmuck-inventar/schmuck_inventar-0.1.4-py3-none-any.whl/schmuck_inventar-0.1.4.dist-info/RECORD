@@ -1,0 +1,13 @@
+schmuck_inventar/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+schmuck_inventar/detection.py,sha256=qcAlIAocEKoXsa9Lt4LiGN5RJQJ-kRN-rmQCmt3hfk8,4060
+schmuck_inventar/postprocessor.py,sha256=8GX5HlL-JwB-j8d-ZFXmGM_VdJe5508XSAsthvmw7so,10425
+schmuck_inventar/recognition.py,sha256=Q87fthLr9gzHTRCnV7YuSaGRGKDS78ZVslIEfsGoNPU,13033
+schmuck_inventar/run.py,sha256=ZIG_bLWdHYd5l9fV1Injss76L8onMtmw1FKeQQMekgU,6843
+schmuck_inventar/utils.py,sha256=W1Eyf5M5r0xY869Hy922WiPtwRM4PjW-s6rDqhFhUaU,1620
+schmuck_inventar/config/regions.yaml,sha256=WaZe40vEzIcExaaP8oGprjtcU0yZnyF5e9NLEN84n4Q,728
+schmuck_inventar/resources/example_output.json,sha256=IJZAJ2uROMe7pGzKVtI4VKLgy2AfzAq1OrLOoCZZjsE,115335
+schmuck_inventar-0.1.4.dist-info/METADATA,sha256=O2UBeMfZYCgm1ZUACe4zLIqorvnAVhtkNlj1PwzXrHA,766
+schmuck_inventar-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+schmuck_inventar-0.1.4.dist-info/entry_points.txt,sha256=aKsyqtByEbLiyyntT1zGsXjLjybPK6DDy83Xs5jMYDQ,63
+schmuck_inventar-0.1.4.dist-info/top_level.txt,sha256=WlVz06Roirq0FLd9EFEdi4PsYfxtHVW5wXUxXlQD8bw,17
+schmuck_inventar-0.1.4.dist-info/RECORD,,
