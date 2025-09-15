@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: pkix-io
+Version: 0.1.0
+Summary: PKIX Certificate Lifecycle Management Platform
+Home-page: https://github.com/pkix-io/pkix
+Author: Evan Nevermore
+Author-email: pkix-pypi@pkix.io
+Project-URL: Homepage, https://pkix.io
+Project-URL: Documentation, https://docs.pkix.io
+Project-URL: Source, https://github.com/pkix-io/pkix
+Project-URL: Tracker, https://github.com/pkix-io/pkix/issues
+Keywords: pkix,pki,certificates,x509,certificate-management,lifecycle-management,tls,ssl,ca,certificate-authority,acme,letsencrypt
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Security :: Cryptography
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Environment :: Web Environment
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+PKIX Certificate Lifecycle Management Platform - Package Reserved
