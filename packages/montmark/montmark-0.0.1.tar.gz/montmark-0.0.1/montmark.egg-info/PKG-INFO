@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: montmark
+Version: 0.0.1
+Summary: Markdown pet project
+Author-email: "Martin D." <desgeeko@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/desgeeko/montmark
+Project-URL: Issues, https://github.com/desgeeko/montmark/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+Montmark
+========
+
+> Pet project, for educational purpose
+
+This is a work in progress and alpha quality software: do not use it in production!
+
+
