@@ -1,0 +1,69 @@
+[project]
+name = "not-my-ex"
+version = "1.2.0"
+description = "Tiny CLI to post simultaneously to Mastodon and Bluesky"
+authors = [{name = "Eduardo Cuducos", email = "4732915+cuducos@users.noreply.github.com"}]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.10,<3.15"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "aiofiles>=24.1.0",
+    "appdirs>=1.4.4",
+    "backoff>=2.2.1",
+    "beautifulsoup4>=4.12.3",
+    "cryptography>=43.0.1",
+    "eld>=1.0.6",
+    "httpx>=0.28.1",
+    "typer>=0.12.5",
+]
+
+[project.urls]
+Repository = "https://codeberg.org/cuducos/not-my-ex"
+Changelog =  "https://codeberg.org/cuducos/not-my-ex/src/branch/main/CHANGELOG.md"
+Bug = "https://codeberg.org/cuducos/not-my-ex/issues"
+Funding = "https://github.com/sponsors/cuducos"
+
+[project.scripts]
+"not-my-ex" = "not_my_ex.__main__:cli"
+
+[tool.uv]
+dev-dependencies = [
+    "ipdb==0.13.13",
+    "pytest-asyncio==1.2.0",
+    "pytest-mypy==1.0.1",
+    "pytest-ruff==0.5",
+    "tox-uv==1.28.0",
+    "types-aiofiles==24.1.0.20250822",
+    "types-appdirs==1.4.3.5",
+    "types-beautifulsoup4==4.12.0.20250516",
+]
+
+[tool.pytest.ini_options]
+addopts = "--ruff --ruff-format --mypy --pdbcls=IPython.terminal.debugger:Pdb"
+asyncio_default_fixture_loop_scope = "module"
+
+[tool.ruff.lint]
+select = ["A", "E", "F", "I", "N", "SIM", "TID", "UP"]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.tox]
+env_list = ["3.10", "3.11", "3.12", "3.13", "3.14"]
+
+[tool.tox.env_run_base]
+description = "Run test under {base_python}"
+commands = [["pytest"]]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
