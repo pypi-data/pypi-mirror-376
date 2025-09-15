@@ -1,0 +1,7 @@
+tasgnss/__init__.py,sha256=NOrIhR2UpqqFs89R9peKLy29T9dZ4pr5ZzrBKnONaWQ,683
+tasgnss/core.py,sha256=JEbaoEzDydBdl0ZN9tOtPh4mIfReVx-_7ki6uLUYpxU,63270
+tasgnss/core_dev.py,sha256=h5uMq6dHQQlHL3AmcJDtYX-DZjQM4q1F5XRAlO_vEhs,71614
+tasgnss-0.1.0.dist-info/METADATA,sha256=xF4oBk70uKiXZbkEmmHthgMkX69nAtqCQlCQ8CcXvS8,2924
+tasgnss-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tasgnss-0.1.0.dist-info/top_level.txt,sha256=FsRt8LzqaiY9b7gR9TX8aHu9fWAmkuPGt1HGY-CWpO0,8
+tasgnss-0.1.0.dist-info/RECORD,,
