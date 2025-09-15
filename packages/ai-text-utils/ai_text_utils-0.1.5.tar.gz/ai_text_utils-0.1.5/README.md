@@ -1,0 +1,141 @@
+# AI Text Utils - GenTextDataset
+
+This repository contains a reusable GenTextDataset, text extractor from gutenberg texts.
+
+## Installation
+
+```bash
+pip install ai-text-utils
+```
+
+## Usage:
+
+# Download and Process Project Gutenberg Books
+
+There are two ways to download and process books from Project Gutenberg:
+
+## 1. Using GutenbergBooks Class (Recommended)
+
+```python
+from ai_text_utils.text import GutenbergBooks
+
+# Initialize with download directory
+books = GutenbergBooks("my_gutenberg_books")
+
+# Method 1: Download specific books by ID
+book_ids = [1342, 74, 11]  # Pride and Prejudice, Treasure Island, Alice in Wonderland
+combined_text = books.get_books(book_ids)
+
+# Method 2: Download range of books
+range_ids = [
+    {'start_id': 108, 'num_books': 10},  # 10 books starting from 108
+    {'start_id': 3157, 'num_books': 5}   # 5 books starting from 3157
+]
+combined_text = books.get_books(range_ids)
+```
+
+## Details
+- **GutenbergBooks Class Features**:
+  - Smart caching: Downloads books only if not already present
+  - Progress tracking with tqdm
+  - Metadata tracking in JSON
+  - Proper text cleaning and processing
+  - Handles HTML content
+  - Removes headers, footers, and Project Gutenberg boilerplate
+  - Combines multiple books with separator
+
+- **Arguments for get_books()**:
+  - `book_ids`: Can be either:
+    - List of individual book IDs: `[123, 105, 90]`
+    - List of range objects: `[{'start_id':108, 'num_books':30}]`
+  - `delay`: Time to wait between downloads (default: 0.001s)
+
+- **Returns**: Combined text from all successfully downloaded books, with "<end_of_text>" separator between books
+
+
+## 2. Legacy Method (Basic)
+
+```python
+from ai_text_utils.text import get_text_from_gutenberg_books
+
+txt = get_text_from_gutenberg_books(start_book_id=2007, 
+                                  num_books=1, 
+                                  keep_headers=False)
+```
+
+## Legacy Details
+- **Returns**: text start from book id 2007 
+- **Arguments**: `num_books` tells number of books from which text has to be extracted starting from `start_book_id`. `keep_headers` tells if header info like author name, date of publish, copyright info, payment details, etc needs to be included in extracted text. setting `keep_headers` to False extracts only the content of the book.
+
+# convert text to tokens 
+```python
+
+from ai_text_utils.text import Tokenizer
+
+tkn = Tokenizer()
+
+tokens = tkn.encode("This is an example of tokenization")
+
+print(f'Tokens={tokens}')
+tokens = torch.Tensor(tokens).numpy()
+print(f'Getting text back from tokens = {tkn.decode(tokens)}')
+
+tokens = tkn.encode("This is an example of tokenization")
+tokens = torch.Tensor(tokens)
+print(f'Getting text back from tokens = {tkn.decode(tokens)}')
+
+tokens = tkn.encode("This is an example of tokenization")
+print(f'Getting text back from tokens = {tkn.decode(tokens)}')
+
+tokens = tkn.encode("This is an example of tokenization")
+tokens = tokens[-1]
+print(f'Getting text back from tokens = {tkn.decode(tokens)}')
+```
+
+## Details
+- **functions**: tokenizer has 2 functions `encode` and `decode`. `encode` converts text to list of tokens . `decode` converts list of tokens into text. `decode` function can take in list of tokens or numpy array of tokens or tensor array of tokens or single token of type int or type float and converts to text.
+
+
+
+# convert token list to dataset
+
+```python
+
+from ai_text_utils.text import GenTextDataset, Tokenizer, get_text_from_gutenberg_books
+
+txt = get_text_from_gutenberg_books(start_book_id=2007, 
+                                        num_books=1, 
+                                        keep_headers=False)
+
+tokenizer = Tokenizer()
+tokens = tokenizer.encode(txt)
+
+dataset = GenTextDataset(tokens=tokens,
+                        last_token_only=True,
+                        seq_len=seq_len)
+```
+
+## Details
+- **Returns**: GenTextDataset returns dataset with (input, output)
+- **Arguments**: `tokens` is list of tokens . 
+- **say tokens** =[1,2,3,4,5,6,7,8,9,10,11,12]
+- **last_token_only=False** generates data as ([1,2,3,4,5],[2,3,4,5,6]), ([7,8,9,10,11],[8,9,10,11,12]). This type of dataset used for transformer next word prediction
+- **last_token_only=True** generates data as ([1,2,3,4,5],[6]), ([2,3,4,5,6],[7]), ([3,4,5,6,7],[8]). This type of dataset used for LSTM next word prediction
+    `seq_len` tells how many tokens in each input . in above example seq_len=5
+
+
+# train val split and create dataloader
+
+```python
+
+from ai_text_utils.text import train_val_split, create_dataloader
+
+train_txt, val_txt = train_val_split(txt, train_ratio=0.9)
+train_dl = create_dataloader(train_txt,seq_len=10, batch_size=3, shuffle=True,last_token_only=True)
+val_dl=create_dataloader(val_txt,seq_len=10, batch_size=3, shuffle=True,last_token_only=True)
+
+```
+## Details
+Handy tools for splitting txt based on ratio and `create_dataloader` handy tool internally calls tokenizer and GenTextDataset . 
+you can also use tokenizer and GenTextDataset  classes directly to create your own dataloader
+
