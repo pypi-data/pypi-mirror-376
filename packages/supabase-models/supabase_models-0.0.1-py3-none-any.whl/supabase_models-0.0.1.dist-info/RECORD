@@ -1,0 +1,14 @@
+supabase_models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+supabase_models/__main__.py,sha256=nld0B4G3ZENnHYGWg8exMqlrWNTFiSkxYCGUek4KHHM,80
+supabase_models/cli.py,sha256=tmhjK-1qbQKwVpnHh7GqMGq5-jUzMhCuTbyJdPG4aRg,3769
+supabase_models/config.py,sha256=iAy4xb1qS_2PZrjE8iWrcekZddd5TnzumW6wWLDe4L8,238
+supabase_models/default.jinja2,sha256=smIJnj5Bd7qlyXDG6vIpwAHBU7rf2AfDne5WqFt42AA,6239
+supabase_models/generator.py,sha256=CvUTREOuWbWzQGQDvSHpic9QT252SUHYgT5jLxXhaXM,12300
+supabase_models/parser.py,sha256=6P1jbezJfChS8tu7L0ynzS2V3d2sefXBat8HSxdQICU,17491
+supabase_models/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+supabase_models/schemas.py,sha256=9EaS6gUYpyFmAEbJZsx2hvpzFFNZ4ZkIq8BnGnOYYDg,1359
+supabase_models-0.0.1.dist-info/METADATA,sha256=P6XainBFixJdalCsYP2btk-WdGttbtJbX-r9aZg5QMk,11142
+supabase_models-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+supabase_models-0.0.1.dist-info/entry_points.txt,sha256=uZw_WlHd2JnmWYRlA3hzSybaQiH6W-MN367kgVvC5lk,61
+supabase_models-0.0.1.dist-info/licenses/LICENSE,sha256=sQXGaOALzIyPsZ_u_6T13ukd1_USqQZ8WymnoLy9H_A,1087
+supabase_models-0.0.1.dist-info/RECORD,,
