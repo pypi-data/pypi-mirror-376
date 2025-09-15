@@ -1,0 +1,10 @@
+cleaning/__init__.py,sha256=a4DcbQ9wkFHP_CSC6KbMt0GRAd_VCBAvvhAm63Lyz6U,185
+cleaning/ukdata_cleaning.py,sha256=rrZQegu7MBYHIZzCudGGjo9wUMigUpWCsghPYn-9_5M,2781
+graphs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+htmlgen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+maps/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spiegeltools-0.1.0.dist-info/licenses/LICENSE,sha256=TveLUs7LwgNLefBiY_LIVcR05EuoKay0jiKzv8a-i84,1087
+spiegeltools-0.1.0.dist-info/METADATA,sha256=TC8NJYnzzYY6NPv37_Wmzwo1qF6Gc9JOwhY6Mt9c-Y8,3259
+spiegeltools-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spiegeltools-0.1.0.dist-info/top_level.txt,sha256=ooLMZswTOqJ7C-a_cUVwbb_yKwD9LaY0NnHvzusijPE,29
+spiegeltools-0.1.0.dist-info/RECORD,,
