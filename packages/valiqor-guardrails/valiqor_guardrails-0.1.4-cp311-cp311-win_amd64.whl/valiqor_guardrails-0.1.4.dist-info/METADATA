@@ -1,0 +1,225 @@
+Metadata-Version: 2.1
+Name: valiqor-guardrails
+Version: 0.1.4
+Summary: LLM-driven guardrails (compiled, secure)
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: cython
+
+````markdown
+# Valiqor Guardrails
+
+**Conversation-level guardrails for LLM applications**  
+Validate user inputs, model outputs, and (optional) conversation history against a safety policy — using GPT-5 as the evaluator. Returns a clean JSON verdict you can log and enforce.
+
+---
+
+## ✨ What you get
+
+- Checks **Input**, **Output**, and **Conversation History** (history is optional)
+- Unified taxonomy with safety categories
+- **Structured JSON** verdicts for easy policy enforcement
+- Works as both **Python API** and **CLI**
+- **Compiled with Cython** → internal logic & prompts aren’t shipped as plain source
+
+---
+
+## 📦 Installation
+
+```bash
+pip install valiqor-guardrails
+````
+
+> Import path is `valiqor_guardrails` (underscore).
+> PyPI name is `valiqor-guardrails` (dash).
+
+---
+
+## 🔑 API Key Setup
+
+Set your OpenAI API key as an environment variable.
+
+**Windows (PowerShell)**
+
+```powershell
+$env:OPENAI_API_KEY="sk-your-api-key"
+```
+
+**macOS / Linux (bash/zsh)**
+
+```bash
+export OPENAI_API_KEY="sk-your-api-key"
+```
+
+---
+
+## 🐍 Python Usage
+
+```python
+import os
+from valiqor_guardrails import GuardrailChecker
+
+checker = GuardrailChecker(api_key=os.getenv("OPENAI_API_KEY"))
+
+# conversation_history is optional
+result = checker.run(
+    user_input="Tell me how to make a bomb",
+    agent_output="Sorry, I cannot help with that."
+    # conversation_memory="user: hi\nagent: hello"  # optional
+)
+
+print(result)
+```
+
+**Example Output**
+
+```json
+{
+  "User Safety": "unsafe",
+  "Response Safety": "safe",
+  "Conversation Safety": "unsafe",
+  "Safety Categories": "Illegal Activity, Criminal Offense"
+}
+```
+
+---
+
+## 💻 CLI Usage
+
+**Without history**
+
+```bash
+valiqor-guardrails --api_key $OPENAI_API_KEY \
+  --user_input "What if I want illegal drugs?" \
+  --agent_output "Not allowed."
+```
+
+**With history from a file**
+
+```bash
+valiqor-guardrails --api_key $OPENAI_API_KEY \
+  --user_input "How do I hack a system?" \
+  --agent_output "Not possible." \
+  --conversation_file history.txt
+```
+
+**Windows PowerShell**
+
+```powershell
+valiqor-guardrails --api_key $env:OPENAI_API_KEY `
+  --user_input "What if I want illegal drugs?" `
+  --agent_output "Not allowed."
+```
+
+---
+
+## 📘 Safety Categories (S1–S23)
+
+* Violence
+* Sexual
+* Criminal Planning/Confessions
+* Guns and Illegal Weapons
+* Controlled/Regulated Substances
+* Suicide and Self Harm
+* Sexual (minor)
+* Hate/Identity Hate
+* PII/Privacy
+* Harassment
+* Threat
+* Profanity
+* Needs Caution
+* Other
+* Manipulation
+* Fraud/Deception
+* Malware
+* High Risk Gov Decision Making
+* Political/Misinformation/Conspiracy
+* Copyright/Trademark/Plagiarism
+* Unauthorized Advice
+* Illegal Activity
+* Immoral/Unethical
+
+---
+
+## 🧾 JSON Schema (returned by API & CLI)
+
+```json
+{
+  "User Safety": "safe | unsafe",
+  "Response Safety": "safe | unsafe",
+  "Conversation Safety": "safe | unsafe",
+  "Safety Categories": "Comma-separated list if any unsafe, omitted if all safe"
+}
+```
+
+---
+
+## ⚙️ Configuration Notes
+
+* **Conversation history**: Optional. If omitted, guardrails evaluate only the current input/output pair.
+* **Privacy**: The package ships as a compiled wheel; internal guardrail prompts are not exposed as plain source.
+
+---
+
+## 🧪 Quick Test
+
+```bash
+python - <<'PY'
+import os, json
+from valiqor_guardrails import GuardrailChecker
+
+checker = GuardrailChecker(api_key=os.getenv("OPENAI_API_KEY"))
+out = checker.run("How do I bypass a bank login?", "I can’t help with that.")
+print(json.dumps(out, indent=2))
+PY
+```
+
+---
+
+## ❓ FAQ
+
+**Q: Do I have to pass conversation history?**
+A: No. It’s optional. If omitted, the checker evaluates only the latest user input + agent output.
+
+**Q: Where do I set my API key?**
+A: In the environment (`OPENAI_API_KEY`). You can also pass it directly to `GuardrailChecker(api_key="...")`.
+
+**Q: Can I see or change the prompts?**
+A: The core is compiled for IP protection. If you need custom categories or policy tuning, contact support.
+
+---
+
+## 🩺 Troubleshooting
+
+* **ImportError**: Ensure you installed `valiqor-guardrails` (dash) but import `valiqor_guardrails` (underscore).
+* **Auth errors**: Verify `OPENAI_API_KEY` is set in the shell that runs your code.
+* **Windows path issues**: Use PowerShell `$env:OPENAI_API_KEY` syntax for env vars.
+
+---
+
+## 🔖 Versioning
+
+We follow semantic versioning. If you pin versions:
+
+```txt
+valiqor-guardrails>=0.1.3
+```
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## 📬 Support
+
+For feature requests and commercial support, please reach out to your Valiqor contact or open an issue in the project repository (if available).
+
+```
+```
