@@ -1,0 +1,12 @@
+chemformula/__init__.py,sha256=4zdGhsrUjwCdeivHYSGE1ownUz-mGQ5uRxOMRTbinZQ,244
+chemformula/chemformula.py,sha256=EhQY18d70m8pgKOgeRuyZdhZcrxA2mkOp89890rqXsY,27747
+chemformula/chemformula.pyi,sha256=1Dx7PWptO0xWeHOTjArIvjbck63e8o1hHwGSDxJTn30,2261
+chemformula/config.py,sha256=934YZYiFw6ig4JQivz0n36UZh9iZu1o6m5Si-XF-LQc,164
+chemformula/config.pyi,sha256=U9eQUREx1nxjfTvTsjGER3eDL5mcgl0ZpPSPfMyULFY,28
+chemformula/elements.py,sha256=lYO-2OBufq4RILvmj42eKn_1QAswyffLsMfhW7ZHFvA,7469
+chemformula/elements.pyi,sha256=_dr7yL2perJmKryU_9B23dCy936DdzA-J0AII72RoKg,189
+chemformula/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemformula-1.5.0.dist-info/METADATA,sha256=Kv5CA3ZCcg4rH2-Zx5QqNnzSHU-ZokByrjETZJcBXCo,17166
+chemformula-1.5.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+chemformula-1.5.0.dist-info/licenses/LICENSE,sha256=-iggtKOTrOXPdSYYWTrp6UlDYKXZ-KDZq2wewAk0Guo,1069
+chemformula-1.5.0.dist-info/RECORD,,
