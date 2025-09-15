@@ -1,0 +1,8 @@
+ivrit/__init__.py,sha256=Nln_bB_cSv7lFb1zVmJZH3QOSIJxu4Y2UZZxPqlkzPo,452
+ivrit/audio.py,sha256=Os3hYj-0kPl2zaT9HbrVkLmNfEPqc7Xl_N4Pd232rwA,51682
+ivrit/diarization.py,sha256=4VuqvIYdBD0NB-P-uPJ9IJ_nm1Dh1xfyjhIqMGuVziw,31989
+ivrit/types.py,sha256=RQQAlRg2UbCUTQxuNFYuzYiewtQJUjro-DVD5a8Ozto,799
+ivrit/utils.py,sha256=1DG8bwuatE8VkzNtDBnnxgpgyhZ5O21hMxTdLSBlG4U,3569
+ivrit-0.1.1.dist-info/METADATA,sha256=25a7QF7L6Y0-zlpv1aBcIaNAP7dS8gr9eDgc3GMmVd4,7516
+ivrit-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ivrit-0.1.1.dist-info/RECORD,,
