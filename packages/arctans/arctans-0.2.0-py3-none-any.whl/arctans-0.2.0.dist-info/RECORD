@@ -1,0 +1,12 @@
+arctans/__init__.py,sha256=I4FP3MyYOefiKBAWYtuM2-JNiwzRh_XllP3J77K11oc,316
+arctans/arctans.py,sha256=ujVboJmGx9vwj2MBP5ckXKQ1cWydQJ867KpDnHxPsF8,5082
+arctans/generation.py,sha256=aQS4wrszos7Vb9b3yWn0wCEnj6rxH0nNmw_NT_FD2GY,2351
+arctans/numbers.py,sha256=LgsGQZ9KgLwRwOYzpYILPfSK4jXFGCQ9h6ItIZ1byUQ,18802
+arctans/primes.py,sha256=SX5fnhqqcIA0fL-wgQcgnBkBhxCfPAxCk3-TFM13nv4,3034
+arctans/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+arctans/reduction.py,sha256=8vrEOSi_aKyKLMNx3A91JusewZjWpHjwYVL5W4kn7W4,2412
+arctans-0.2.0.dist-info/licenses/LICENSE,sha256=Nc1-cLooJS7GbGHsWfYpwKyYRcbl-SbpnyQxRp4fr1I,1072
+arctans-0.2.0.dist-info/METADATA,sha256=3t_HzUUwrZrfNNpTtYUcRnE5L84S_ACutUwKRM9e-f8,4060
+arctans-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+arctans-0.2.0.dist-info/top_level.txt,sha256=T9DAPeDA3kTezBTNHXmeNuKviXPIbkxT1oEwKx_3g-g,8
+arctans-0.2.0.dist-info/RECORD,,
