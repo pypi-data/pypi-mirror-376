@@ -1,0 +1,27 @@
+[project]
+name = "ai-text-utils"
+version = "0.1.6.dev1"
+description = ""
+authors = [
+    {name = "kedar",email = "abc@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "torch",
+    "tiktoken",
+    "numpy",
+    "beautifulsoup4",
+    "tqdm"
+]
+
+[tool.poetry]
+packages = [{include = "ai_text_utils", from = "src"}]
+include=["pyproject.toml"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry.scripts]
+text-utils="ai_text_utils.cli.main:main"

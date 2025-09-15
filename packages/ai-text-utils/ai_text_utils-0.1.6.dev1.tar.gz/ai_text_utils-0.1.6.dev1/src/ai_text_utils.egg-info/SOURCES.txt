@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/ai_text_utils/__init__.py
+src/ai_text_utils.egg-info/PKG-INFO
+src/ai_text_utils.egg-info/SOURCES.txt
+src/ai_text_utils.egg-info/dependency_links.txt
+src/ai_text_utils.egg-info/requires.txt
+src/ai_text_utils.egg-info/top_level.txt
+src/ai_text_utils/cli/__init__.py
+src/ai_text_utils/cli/main.py
+src/ai_text_utils/text/__init__.py
+src/ai_text_utils/text/data.py
+src/ai_text_utils/text/datasets.py
+src/ai_text_utils/text/models.py
+src/ai_text_utils/text/utils.py
