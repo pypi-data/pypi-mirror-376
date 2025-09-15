@@ -1,0 +1,12 @@
+[
+  {
+    "revisio": "b36784ef693844bc45614bce99d2f835e7f91198",
+    "versio": "0.1.1",
+    "kuvaus": "Lis\u00e4tty `lazy_static`"
+  },
+  {
+    "revisio": "a079827114b885de1f4315d174721f8ecb12a0f2",
+    "versio": "0.1",
+    "kuvaus": "Alustava toteutus"
+  }
+]
