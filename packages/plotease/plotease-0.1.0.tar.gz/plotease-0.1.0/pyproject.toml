@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plotease"                        # PyPI name (lowercase recommended)
+version = "0.1.0"
+description = "High-level plotting library for EDA and model evaluation"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Rayyan Ahmed"},
+    {name = "Irtat Mobin"},
+    {name = "Agha Haris"}
+]
+keywords = ["eda", "visualization", "machine-learning", "matplotlib", "seaborn"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Intended Audience :: Science/Research",
+    "Development Status :: 3 - Alpha"
+]
+
+dependencies = [
+    "matplotlib",
+    "seaborn",
+    "pandas",
+    "numpy"
+]
+
