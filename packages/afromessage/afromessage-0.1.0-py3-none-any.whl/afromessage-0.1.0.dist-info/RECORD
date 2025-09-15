@@ -1,0 +1,10 @@
+afromessage/__init__.py,sha256=HPd-_FLiS_eG6RIOqYxF63x23_agaB5o-M0-YmgJRL0,83
+afromessage/challenge.py,sha256=PU99cX0wmZAB6_njS1uzbr6g-7ZI9pAOTZ0N8QVgCIU,1743
+afromessage/client.py,sha256=wkRV_0iZLbWTJZHCti5tKkmdSmRLu0x5pS_eO4ka0GA,1347
+afromessage/sms.py,sha256=NGhd3ls2xxiA2_Cw0eXYEh-DggzfBDvlYUz279jZPz8,1779
+afromessage/utils.py,sha256=2XEgy-LZ5wz_eNOncJB5uxPYDOe-9a9-6rM6S50rA84,1068
+afromessage-0.1.0.dist-info/METADATA,sha256=KZDw0eqqxyr2sLEY-iFm7Di7FgjROsCJFMoHkb91HJs,1559
+afromessage-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+afromessage-0.1.0.dist-info/entry_points.txt,sha256=exQRB9BZLpNlfCVZ1H9hwlqO34ji98f8XmsTXBuKMZU,63
+afromessage-0.1.0.dist-info/top_level.txt,sha256=RnGlfoYqJAawumEqro_JNui-Xt6UzwimmSrEBis0unc,12
+afromessage-0.1.0.dist-info/RECORD,,

@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: afromessage
+Version: 0.1.0
+Summary: Python SDK for AfroMessage API
+Home-page: https://github.com/yonas8989/afromessage-python-sdk
+Author: Yonas Fikadie
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AfroMessage Python SDK
+
+A complete Python SDK for the AfroMessage SMS and OTP API.
+
+## Installation
+
+```bash
+pip install afromessage
+```
+
+# Quick Start
+
+```bash
+from afromessage import AfroMessage
+
+# Initialize with your API token
+sdk = AfroMessage(token="your_api_token_here")
+
+# Send an SMS
+response = sdk.sms.send(
+    to="+yourNumber",
+    message="Hello from AfroMessage!",
+    from_="your_sender_id",
+    sender="YourBrand"
+)
+
+# Create OTP challenge
+otp_response = sdk.challenge.challenge(
+    to="+yourNumber", 
+    pr="Your code is",
+    len_=6
+)
+
+# Verify OTP
+verify_response = sdk.challenge.verify(
+    to="+yourNumber",
+    code="123456"
+)
+```
+Features
+✅ Single SMS sending
+
+✅ Bulk SMS campaigns
+
+✅ OTP challenge generation
+
+✅ OTP verification
+
+✅ Comprehensive error handling
+
+✅ Request/response logging
