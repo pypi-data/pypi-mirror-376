@@ -1,0 +1,16 @@
+httpx<0.24.0,>=0.15.0
+attrs>=21.3.0
+python-dateutil<3,>=2.8.0
+cryptography==39.0.1
+PyJWT==2.8.0
+requests==2.32.4
+
+[dev]
+types-python-dateutil
+isort
+mypy
+autoflake
+pylint==3.3.3
+types-requests==2.32.0.20240602
+pdoc3==0.11.6
+build
