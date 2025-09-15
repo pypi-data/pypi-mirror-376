@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: pytoolbox4dev
+Version: 0.0.1
+Summary: A collection of handy utility functions for efficient, reproducible python workflows.
+Home-page: https://github.com/minion057/python_utils
+Author: minion057
+Author-email: getit3981@gmail.com
+Keywords: python,python-utils,python-dev-tool,pytoolbox4dev,pycm
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.4
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: pycm
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
