@@ -1,0 +1,2 @@
+[console_scripts]
+checklist-plus = checklist_plus.cli:main
