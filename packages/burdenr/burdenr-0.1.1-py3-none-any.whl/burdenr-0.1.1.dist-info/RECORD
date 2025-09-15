@@ -1,0 +1,11 @@
+burdenr/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+burdenr/cli.py,sha256=_CEzTGJ1GMrQTjikKgCTTzV_-_IqFs4hyazkgOnt1QQ,10780
+burdenr/tools/Grantham_Scores.json,sha256=LNaNnIVCYwWijIKrt69DeXk6-Xp9wJV4wibGdy9rpxA,8155
+burdenr/tools/callrisk.py,sha256=0o70922C4Pwx4ONUr57qslczTxjF9oiiGdfZE9R3biI,8477
+burdenr/tools/handle_data.py,sha256=GxOh-JQS6R_w79WHn9HmzNCwB60dPI52qrnd0Xi7AMA,4669
+burdenr/tools/handle_data_vcf.py,sha256=vGZbLLNjrMdawOQOHgoAM1ev1X4-j_LjgYTx5PMhTaE,4661
+burdenr-0.1.1.dist-info/METADATA,sha256=_qKUH6oxpyhmayrM7VID3BPQ_sqdnGoxMbY7TfLmzkU,205
+burdenr-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+burdenr-0.1.1.dist-info/entry_points.txt,sha256=uex8wuUTUlzXNc73759bNKAhI0WMkf5QTnP4l84iIXQ,45
+burdenr-0.1.1.dist-info/top_level.txt,sha256=I_UFd8Gy_L6HeRpvN7340djvhtixAb52PBmNHVRJKa4,8
+burdenr-0.1.1.dist-info/RECORD,,
