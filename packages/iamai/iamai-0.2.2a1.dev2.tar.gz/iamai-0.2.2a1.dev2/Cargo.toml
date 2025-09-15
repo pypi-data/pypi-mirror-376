@@ -1,0 +1,31 @@
+[package]
+name = "iamai"
+version = "0.2.2-alpha.1-dev.2"
+edition = "2021"
+description = "Comprehensive AI Toolkit for Multimodal Learning and Cross-Platform Robotics."
+license = "AGPL-3.0"
+documentation = "https://iamai.is-a.dev/"
+homepage = "https://iamai.is-a.dev/"
+repository = "https://github.com/retrofor/iamai"
+authors = ["HsiangNianian"]
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+image = "0.25.5"
+meval = "0.2.0"
+num-complex = "0.4.6"
+pyo3 = { version = "0.19.2", features = [
+    "extension-module",
+    "abi3-py39",
+    "serde",
+] }
+rand = "0.8.5"
+regex = "1.11.1"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.138"
+time = "0.3.36"
