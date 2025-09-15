@@ -1,0 +1,3 @@
+[console_scripts]
+selflayer = selflayer.tui:main_sync
+sl = selflayer.cli:main
