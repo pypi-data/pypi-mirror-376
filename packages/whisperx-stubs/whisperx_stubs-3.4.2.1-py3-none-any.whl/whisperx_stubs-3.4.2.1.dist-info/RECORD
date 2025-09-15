@@ -1,0 +1,14 @@
+whisperx/SubtitlesProcessor.pyi,sha256=kW6mKdKxCOtmGIlPK1mKsxTEgPIFGYgAapQ_SB9vj2A,1182
+whisperx/__init__.pyi,sha256=E3K4XtixEnKKLFOP97bOX3nDa-vxzaB_P-PlM5zzEFc,1019
+whisperx/alignment.pyi,sha256=nrs1LNbT8F2wt7YLdj5iVF20nbd9DVf5aI3mKqeDZiU,1980
+whisperx/asr.pyi,sha256=d8v7LRhhDPDf-9vYnvt71xpxwaCvB-m_cMgOscgBVxE,2945
+whisperx/audio.pyi,sha256=uZFdGaer16LMu7rphVz5t0uZrTrTWKr_SL0OCRgB9fY,683
+whisperx/conjunctions.pyi,sha256=ivWTRM-jh7ZredJLPKZE2DXfm8AB76Ae9t2en4kU-fo,206
+whisperx/diarize.pyi,sha256=ZiHKWs0SCrM6U07OAu42ucOJgXy7FCmxrzI_ymfed7A,1892
+whisperx/transcribe.pyi,sha256=mt9mbymXwuoqLC2pIgur9RTXs8DYVPzIb9cv4O_ki_g,695
+whisperx/types.pyi,sha256=bpxIZSBB_V7ooH2k7_D1kq7qwEck1A5Fb1bvDTOVFWk,880
+whisperx/utils.pyi,sha256=fVnmIUM8naG0YEOP3W_JYXKxjQIwcmwMEIIdQM9oeeo,2050
+whisperx_stubs-3.4.2.1.dist-info/METADATA,sha256=Svs7PsvaK9jVYw0w-DDl6gfL5oAF1pnKTpR_DjBLJ5g,1389
+whisperx_stubs-3.4.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+whisperx_stubs-3.4.2.1.dist-info/top_level.txt,sha256=ahRPMg4XEwBh0w94dhmcEad2NenwTTzMu7Bkkh9sOEs,9
+whisperx_stubs-3.4.2.1.dist-info/RECORD,,
