@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+superflag.egg-info/PKG-INFO
+superflag.egg-info/SOURCES.txt
+superflag.egg-info/dependency_links.txt
+superflag.egg-info/requires.txt
+superflag.egg-info/top_level.txt

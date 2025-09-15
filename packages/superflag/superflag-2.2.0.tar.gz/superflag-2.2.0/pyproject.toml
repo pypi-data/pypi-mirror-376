@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "superflag"
+version = "2.2.0"
+description = "Simple installer for context-engine-mcp - MCP-based contextual flag system for AI assistants"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "context-engine-mcp>=2.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/SuperClaude-Org/context-engine-mcp"
+Repository = "https://github.com/SuperClaude-Org/context-engine-mcp"
