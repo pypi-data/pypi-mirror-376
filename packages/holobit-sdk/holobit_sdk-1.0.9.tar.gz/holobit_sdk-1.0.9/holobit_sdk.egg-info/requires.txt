@@ -1,0 +1,17 @@
+numpy
+matplotlib
+
+[aws]
+boto3
+
+[azure]
+azure-identity
+
+[gcp]
+google-cloud-compute
+
+[pennylane]
+pennylane
+
+[qiskit]
+qiskit
