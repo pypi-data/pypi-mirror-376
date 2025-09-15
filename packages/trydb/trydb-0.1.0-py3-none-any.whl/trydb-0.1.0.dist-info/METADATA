@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: trydb
+Version: 0.1.0
+Summary: 關於trydb 數據庫Py-package
+Home-page: https://github.com/wangtry3417/freecloud.git
+Author: WTech
+Author-email: wangtry3417@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sqlalchemy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# freeCloud
+# -------------
+FreeCloud 提供一個DataBase簡化語言"TryDB"
+可以使用/trydb端點
+
+關於tryDB 語法:
+# Create table
+```
+  create table <table.name> -> ('fieldName','DataType'),()....
+```
+# Insert record
+```
+  insert <table.name> -> field1,field2... -> value1,value2...
+```
+# Select record
+```
+  using <table.name>, select <field>/*
+```

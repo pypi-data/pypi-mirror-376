@@ -1,0 +1,12 @@
+trydb/__init__.py,sha256=U-1eIIMov453FspyED2NWp6FNWgsOApJPCUCOfkGw_Q,1043
+trydb/complier/__init__.py,sha256=HlmTiA6Rc4tKOE81820QtDFMtQOL4nC2uxiEwM0HJAg,761
+trydb/complier/create_table.py,sha256=z0uWRFvhG3ixRRbTZP3P7FMkLoNF29-_CWucJBU5-bk,1448
+trydb/complier/insert.py,sha256=hirRqRgOxlF8_K3CEWwcQ5H-vxZcM0xWpwSE4KWF9o8,1043
+trydb/complier/select.py,sha256=hNRseV2IMuTcu1i4WuPR85Fovv6615G12vCfJ8Bfx2I,1172
+trydb/models/__init__.py,sha256=__fCE4ZNwc1TCxzBpUem0h0sruGUz7jxvoOJQT7i5Xw,315
+trydb/models/query.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+trydb-0.1.0.dist-info/licenses/LICENSE,sha256=6fhsDtnr0AD-y__m_R8Vp50cgprIRRy23RwELF93nhE,1068
+trydb-0.1.0.dist-info/METADATA,sha256=A4bAXidEILaMcWl8Xkgk0qG0GRu4YTEOxd07DZdyFIM,1032
+trydb-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+trydb-0.1.0.dist-info/top_level.txt,sha256=cmIWCEPFYA-xeFk0oR-0mX07NkwSwqJCP6ac7Elw1aQ,6
+trydb-0.1.0.dist-info/RECORD,,
