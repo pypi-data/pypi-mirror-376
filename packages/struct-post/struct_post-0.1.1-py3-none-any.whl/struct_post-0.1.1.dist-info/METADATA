@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: struct-post
+Version: 0.1.1
+Summary: A module designed to analyse common structural test results.
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib>=3.10.6
+Requires-Dist: openpyxl>=3.1.5
+Requires-Dist: pandas>=2.3.2
+
+# struct_post
+A module designed to analyze common structural test results. The common stuctural tests include:
+    - Material coupon test
+    - Four-pont bending test
+    - Three-point bending test
