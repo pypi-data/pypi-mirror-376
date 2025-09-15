@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinelmft"
+version = "0.1.0"
+description = "AI-powered secure managed file transfer with AES-256-GCM, GCS, and anomaly detection."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Raghava Chellu"}]
+requires-python = ">=3.9"
+dependencies = [
+  "google-cloud-storage>=2.16.0",
+  "cryptography>=43.0.0",
+  "pandas>=2.2.0",
+  "scikit-learn>=1.5.0",
+  "pyyaml>=6.0.1",
+  "joblib>=1.4.0",
+  "click>=8.1.7"
+]
+keywords = ["mft","gcp","gcs","encryption","aes-gcm","anomaly-detection","devsecops","firewall"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Security :: Cryptography",
+  "Topic :: System :: Networking",
+  "Intended Audience :: Developers"
+]
+
+[project.urls]
+Homepage = "https://github.com/RaghavaCh440/sentinelmft"
+
+[project.scripts]
+sentinelmft = "sentinelmft.cli:app"

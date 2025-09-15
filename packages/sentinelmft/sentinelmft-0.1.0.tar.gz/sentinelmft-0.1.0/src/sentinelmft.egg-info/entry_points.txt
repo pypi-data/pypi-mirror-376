@@ -1,0 +1,2 @@
+[console_scripts]
+sentinelmft = sentinelmft.cli:app
