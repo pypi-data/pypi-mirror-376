@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "kdniao-mcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "d:\\work\\mcptrae",
+        "kdnmcp",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "EBUSINESS_ID": "<YOUR_EBUSINESS_ID>",
+        "API_KEY": "<YOUR_API_KEY>",
+        "LOG_LEVEL": "INFO",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  }
+}
