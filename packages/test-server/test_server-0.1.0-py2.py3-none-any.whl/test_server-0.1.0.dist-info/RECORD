@@ -1,0 +1,12 @@
+test_server/__init__.py,sha256=krAMgTHmdRDdAKcZSiahSYRoCi3d8CXCayVR5gH3QqA,562
+test_server/const.py,sha256=oHYpH1Wu6S52Pu6TZb2RgSh6Kz9-llrr3aBJ2Oizj48,38
+test_server/error.py,sha256=rp80MXl1sQOdlDR-RQp7qC-kOb_cxW_Lx0q7CAukHqo,781
+test_server/multipart.py,sha256=1Jq3oxuLnH2N8gvKKuIclzX8yyAp6v5a3MVOP7KcmKE,7663
+test_server/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test_server/server.py,sha256=50UkxkQetkLDWmGVnqTrH9pKqLzAuSw-9xQF51U7zn8,16778
+test_server/structure.py,sha256=d3L7kIl9zg7xBMBQWTA76ZDAADJgqnT5f0zYvip6I8g,2843
+test_server-0.1.0.dist-info/licenses/LICENSE,sha256=TH21KgAQ47EP772GJdfiy3s2nYMX1W-XDW20ughaNvE,1089
+test_server-0.1.0.dist-info/METADATA,sha256=o77jxzdNl9VP0pfmw9b7bSBErNoQ6Bn6yF6cN_uhQ1I,3671
+test_server-0.1.0.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+test_server-0.1.0.dist-info/top_level.txt,sha256=kCjOlpBd05dHo2z21B4EarlbC1PYuQKSAWhOSkNojIo,12
+test_server-0.1.0.dist-info/RECORD,,
