@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: hana-cloud-interface
+Version: 0.1.2
+Summary: Runs a SQL command on SAP HANA Cloud using OAuth single sign on and returns a pandas or polars dataframe
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: keyring
+Requires-Dist: hdbcli
+Requires-Dist: polars
+Requires-Dist: pandas
