@@ -1,0 +1,3 @@
+[console_scripts]
+pmd-render = pmd.cli:app
+ymd-render = ymd.cli:app
