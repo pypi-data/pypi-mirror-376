@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: habits-to-streaks
+Version: 1.0.0
+Summary: Convert habit data from *Habits* app to *Streaks* app format.
+Project-URL: Repository, https://github.com/JasonNero/habits-to-streaks
+Author-email: Jason Schuehlein <schuehlein@hdm-stuttgart.de>
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.11
+Requires-Dist: pandas>=2.3.2
+Requires-Dist: tqdm>=4.67.1
+Requires-Dist: typer>=0.17.4
+Description-Content-Type: text/markdown
+
+# Habits-To-Streaks
+Convert your habits from the Habits (aka Habitude) app into Streaks app format.

@@ -1,0 +1,2 @@
+[console_scripts]
+habits-to-streaks = habits_to_streaks.cli:app
