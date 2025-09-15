@@ -1,0 +1,116 @@
+Metadata-Version: 2.1
+Name: adaptive-formula
+Version: 0.1.0
+Summary: Cognitive Programming SDK - Eliminate conditionals with adaptive formulas
+Home-page: https://github.com/yourusername/adaptive-formula
+Author: Jaime Alexander Jimenez Lozano
+Author-email: jaimeajl@hotmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: requests>=2.25.0
+Requires-Dist: cython>=0.29.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+
+
+
+A "Cognitive Programming" framework for replacing complex `if/else` chains with declarative logic and adaptive scoring.
+
+
+
+Code filled with nested conditionals is difficult to maintain, test, and scale. This SDK solves that problem by allowing you to define business logic as a **configurable mathematical formula** instead of rigid code. It transforms your rules into a weighted scoring system that is flexible, interpretable, and extremely fast.
+
+---
+
+## Key Features
+
+* **🧠 Declarative Logic:** Define your rules as a list of fields with weights and criticalities. Your code becomes more readable, and business logic is separated from the implementation.
+* **⚖️ Weighted Scoring:** Each field contributes to a final score based on its importance (weight) and its criticality, allowing for nuanced decisions instead of a simple pass/fail.
+* **✨ ML-Powered Optimization (Premium):** The Professional and Enterprise tiers can auto-calibrate weights and criticalities based on historical data to optimize scoring accuracy.
+* **🚀 High Performance:** The core algorithm is written in **Cython**, compiled to C to deliver performance thousands of times faster than pure Python.
+* **🧩 Heterogeneous Data Handling (Premium):** Support for evaluating not just dictionaries, but also Pandas DataFrames, NumPy arrays, and other complex data types.
+
+---
+
+## Installation
+
+Install the package directly from PyPI:
+```bash
+pip install adaptive-formula
+```
+
+---
+
+## Quick Start Guide
+
+Here is a simple example for validating a new user's configuration.
+
+```python
+from adaptive_formula import CognitiveSDK, Field
+
+# 1. Initialize the SDK (uses the 'Community' tier by default)
+sdk = CognitiveSDK()
+
+# 2. Configure the fields and their rules
+# Define how important each field is for the validation.
+sdk.configure([
+    Field(name='has_verified_email', default=False, weight=3.0, criticality=5.0),
+    Field(name='profile_completeness', default=0.0, weight=2.0, criticality=3.0),
+    Field(name='country', default='unknown', weight=1.0, criticality=1.5),
+])
+
+# 3. Prepare the data to evaluate
+new_user_data = {
+    'has_verified_email': True,
+    'profile_completeness': 0.85, # 85% complete
+    'country': 'CO'
+}
+
+# 4. Evaluate and get the score
+# The SDK compares the user data against the configured 'default' values.
+score = sdk.evaluate(new_user_data)
+
+print(f"User validation score: {score:.3f}")
+
+if score > 0.75:
+    print("✅ User validated with high confidence.")
+else:
+    print("⚠️ User requires additional review.")
+
+```
+
+---
+
+## Licensing
+
+The Adaptive Formula SDK uses a tiered licensing model.
+
+* **Community (Free):** Ideal for small projects and testing.
+    * Up to 1,000 evaluations per month.
+    * Supports `dict` data format only.
+    * Registration is required for production use.
+
+* **Professional (Subscription):** For professional applications and small teams.
+    * Unlimited evaluations.
+    * Support for heterogeneous data (Pandas, NumPy).
+    * ML-powered optimization capabilities.
+
+* **Enterprise (Annual):** For mission-critical applications.
+    * All features included.
+    * Guaranteed support SLA and custom integrations.
+
+To get a **Professional** or **Enterprise** license key, please contact `jaimeajl@hotmail.com` or visit `https://your-website.com/pricing`.
+
