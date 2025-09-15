@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: smartdebug
+Version: 0.1.0
+Summary: A Python debugging toolkit for developers with smart trace, watch, time travel, and more.
+Author-email: Mohammad Shohag <shohagcsediu@gmail.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: colorama>=0.4.6
+
+# smartdebug
+
+Smart debugging helpers for Python developers — `smart_trace`, `Watch`, `log_io`, `TimeTravel`, and `why_none`.
