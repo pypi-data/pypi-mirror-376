@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: sentinelmft
+Version: 0.1.4
+Summary: AI-powered secure managed file transfer (GCS + AES-256-GCM + anomaly detection)
+Author: Raghava Chellu
+License: MIT
+Project-URL: Homepage, https://github.com/RaghavaCh440/sentinelmft
+Project-URL: Documentation, https://github.com/RaghavaCh440/sentinelmft#readme
+Project-URL: Source, https://github.com/RaghavaCh440/sentinelmft
+Project-URL: Issues, https://github.com/RaghavaCh440/sentinelmft/issues
+Keywords: mft,gcp,gcs,encryption,aes-gcm,anomaly-detection,devsecops
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Security :: Cryptography
+Classifier: Topic :: System :: Networking
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# SentinelMFT
+
+AI-powered secure managed file transfer for Google Cloud — with AES-256-GCM encryption, resilient transfers, and anomaly detection.
+
+## Features
+- AES-256-GCM encrypt/decrypt files
+- Google Cloud Storage uploads/downloads (resumable)
+- Isolation Forest anomaly detection on transfer logs
+- CLI for transfer, encrypt/decrypt, train/score
+
+## Install
+```bash
+pip install sentinelmft
+
+# Quick Start
+
+# Encrypt a file
+sentinelmft encrypt --keyfile ./aes.key --src input.bin --dst input.bin.enc
+
+# Transfer local→GCS (configure project/bucket in config)
+sentinelmft transfer --config ./config.yaml --src ./input.bin.enc --dst gs://my-bucket/secure/input.bin.enc
+
+# Train anomaly model
+sentinelmft ai-train --logfile transfers.csv
+
+Config.yml
+```
+gcs:
+  project: my-gcp-project
+  bucket: my-bucket
+security:
+  keyfile: ./aes.key
+  allow_ips: ["203.0.113.10"]
+
