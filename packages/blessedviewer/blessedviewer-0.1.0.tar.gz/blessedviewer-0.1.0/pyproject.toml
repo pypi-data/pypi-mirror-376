@@ -1,0 +1,26 @@
+[project]
+name = "blessedviewer"
+version = "0.1.0"
+description = "A blessed terminal-based image viewer"
+authors = [
+    {name = "Ashkan Feyzollahi",email = "ashkanfeyzollahi@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "blessed (>=1.21.0,<2.0.0)",
+    "pillow (>=11.3.0,<12.0.0)",
+    "click (>=8.2.1,<9.0.0)",
+    "numpy (>=2.3.3,<3.0.0)",
+]
+
+[project.scripts]
+blessedviewer = "blessedviewer:blessedviewer"
+
+[tool.poetry]
+packages = [{include = "blessedviewer.py", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
