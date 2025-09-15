@@ -1,0 +1,7 @@
+metapg/pool/__init__.py,sha256=dFFjVEg-My1MsLRJO_k2zmR5Lf49kGdGh859fdwkPqY,499
+metapg/pool/config.py,sha256=1KzX2xw2bVpGAP_JAmy5ALXAY0byJigbgiV7y482bMw,6793
+metapg/pool/pool.py,sha256=95mNIiFi8PEOApQplzN0sdz8CJJ34jsqLfaJ_1govrs,8069
+metapg/pool/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+metapg_pool-0.0.1.dist-info/METADATA,sha256=jONLs_1VvFK2aK9sMYFf1qY1V4ZCBzXSHKFIl3keBig,4103
+metapg_pool-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+metapg_pool-0.0.1.dist-info/RECORD,,
