@@ -1,0 +1,14 @@
+objective_lol/_api.cpython-311-aarch64-linux-gnu.h,sha256=oQwF1i5u-zo1QLHwhA_gGi55T2anFNgIXV_lQBuYJyk,26309
+objective_lol/api.c,sha256=K9jUOqioTpJbjT9LlErS91k9Hu4PKe8Uw_uErmH0we8,240601
+objective_lol/build.py,sha256=k6Gaep2eQyDFv93wvRTRewhUIOGl1RRLzA5ydUXdAwE,33343
+objective_lol/api.py,sha256=nJG25gW-1opuM81U7COFfiuPU3YVoNw1S3MKqDMdIKY,61982
+objective_lol/olol.py,sha256=uTWYemeRPsf9qUNppDs1Xt_GSjYuSLQXm93J00wLRkc,24562
+objective_lol/__init__.py,sha256=cyHKw35aEmjaqdn8IdOc-qyWWRbSZ6pmDM3aqxnoNnE,114
+objective_lol/api.go,sha256=lL4d-y9LAZTcO897H2vuhHd5spuuSp4LBPg1mNITILs,114567
+objective_lol/_api.cpython-311-aarch64-linux-gnu.so,sha256=wvrlBq8NANIzcrZCXKJ7mNraNrdukmf0au8kg69SDR8,7342552
+objective_lol/api_go.h,sha256=oQwF1i5u-zo1QLHwhA_gGi55T2anFNgIXV_lQBuYJyk,26309
+objective_lol/go.py,sha256=4XDLXC23Q8b5RKom_lQD_1t91YiC8CRBkeimklxopqk,58069
+objective_lol-0.0.1.dist-info/WHEEL,sha256=Dy8R5M9BACn3D4f77RwQdzutwy8OAVtFzN68buD5j0g,153
+objective_lol-0.0.1.dist-info/METADATA,sha256=wNg9gMVn-mKKZQ3v-yGTff8-PuxVLdQdw7BrcY-ClQE,2570
+objective_lol-0.0.1.dist-info/top_level.txt,sha256=rTN0_hCTHkYlXLyIoyqsuAAFqlBzN1LVMP3hV31x92M,14
+objective_lol-0.0.1.dist-info/RECORD,,
