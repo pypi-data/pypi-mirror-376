@@ -1,0 +1,5 @@
+psutil
+polars
+sqlalchemy
+nvidia-ml-py
+PyGithub
