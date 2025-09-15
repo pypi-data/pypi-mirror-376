@@ -1,0 +1,11 @@
+metapg/cli/__init__.py,sha256=E44PSyCXX_LRmgsADltzRNaUI0bIaKIszYVpLtLz8A0,223
+metapg/cli/app.py,sha256=POsbr4DhNjHWWdi1_Dj-UrntL2s5RT9XPVUxptWbnag,608
+metapg/cli/utils.py,sha256=hyTUZzk_Bpr5z7Xe49qVQtzyiJFpzji7nsGyV9rR1Pg,196
+metapg/cli/commands/__init__.py,sha256=gQ6tnU0Rvm0-ESWFUBU-KDl5dpNOpUTG509hXOQQjwY,27
+metapg/cli/commands/migration.py,sha256=ztDZb4vj0oVQCcRhTOyeAbCmVZau0rdypqxYeQkAi4Y,8202
+metapg/cli/commands/pool.py,sha256=zCrmizTzq7AQ4Hva11b0Hbouz0FPMDNkaiEP25dugw0,4112
+metapg/cli/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+metapg_cli-0.0.1.dist-info/METADATA,sha256=XeuTASN6nJq5NK59Ug0NCx0gAef7BRMpSASJNP8glbs,6156
+metapg_cli-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+metapg_cli-0.0.1.dist-info/entry_points.txt,sha256=ezH-ZAPfCA0uJMhiUAJwZGJ6iEdHwRcDWKnlQIEVePU,46
+metapg_cli-0.0.1.dist-info/RECORD,,
