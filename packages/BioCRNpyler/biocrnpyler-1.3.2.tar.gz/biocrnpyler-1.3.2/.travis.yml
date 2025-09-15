@@ -1,0 +1,23 @@
+# Disable sudo to speed up the build
+sudo: false
+
+language: python
+python:
+  - "3.6"
+  - "3.7"
+
+# Install the codecov and pytest pip dependencies
+install:
+  - make get_test_deps
+
+env:
+  - TEST_SUITE=test
+  - TEST_SUITE=test_all
+script:
+  - make $TEST_SUITE
+  - make flake8-mutable
+  - make install
+
+# Push the results back to codecov
+after_success:
+  - codecov

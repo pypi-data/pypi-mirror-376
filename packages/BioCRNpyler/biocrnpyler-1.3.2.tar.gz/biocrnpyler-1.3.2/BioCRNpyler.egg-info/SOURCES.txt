@@ -1,0 +1,194 @@
+.coveragerc
+.gitignore
+.readthedocs.yaml
+.travis.yml
+LICENSE
+MANIFEST.in
+Makefile
+README.md
+pyproject.toml
+pytest.ini
+setup.cfg
+.github/codecov.yml
+.github/workflows/deploy.yml
+.github/workflows/pypi-release.yml
+.github/workflows/test.yml
+BioCRNpyler.egg-info/PKG-INFO
+BioCRNpyler.egg-info/SOURCES.txt
+BioCRNpyler.egg-info/dependency_links.txt
+BioCRNpyler.egg-info/requires.txt
+BioCRNpyler.egg-info/top_level.txt
+Tests/TestingReadMe.txt
+Tests/test_combinatorial_complex.py
+Tests/test_combinatorial_conformation.py
+Tests/Combinatorial/test_construct_combinatorially.py
+Tests/Combinatorial/test_jupyter_notebooks.py
+Tests/Combinatorial/test_mixtures_and_components_combinatorially.py
+Tests/Unit/test_DNAconstruct.py
+Tests/Unit/test_RNAconstruct.py
+Tests/Unit/test_chemicalReactionNetwork.py
+Tests/Unit/test_combinatorial_promoter.py
+Tests/Unit/test_compartment.py
+Tests/Unit/test_compartment_dna_assembly.py
+Tests/Unit/test_complex.py
+Tests/Unit/test_complex_species.py
+Tests/Unit/test_component.py
+Tests/Unit/test_component_basic.py
+Tests/Unit/test_component_membrane.py
+Tests/Unit/test_dna_assembly.py
+Tests/Unit/test_dna_part.py
+Tests/Unit/test_dna_part_misc.py
+Tests/Unit/test_dna_part_promoter.py
+Tests/Unit/test_dna_part_rbs.py
+Tests/Unit/test_global_mechanism.py
+Tests/Unit/test_initial_concentration.py
+Tests/Unit/test_integrase_enumerator.py
+Tests/Unit/test_mechanism.py
+Tests/Unit/test_membrane_signaling.py
+Tests/Unit/test_mixture.py
+Tests/Unit/test_parameter.py
+Tests/Unit/test_plotting.py
+Tests/Unit/test_polymer.py
+Tests/Unit/test_polymer_conformation.py
+Tests/Unit/test_propensities.py
+Tests/Unit/test_reaction.py
+Tests/Unit/test_sbml.py
+Tests/Unit/test_simulation_packages_import.py
+Tests/Unit/test_species.py
+Tests/Unit/test_specific_mechanisms.py
+Tests/Unit/test_transport.py
+Tests/Unit/test_units.py
+Tests/Unit/test_utils.py
+biocrnpyler/__init__.py
+biocrnpyler/_version.py
+biocrnpyler/components/__init__.py
+biocrnpyler/components/basic.py
+biocrnpyler/components/combinatorial_complex.py
+biocrnpyler/components/combinatorial_conformation.py
+biocrnpyler/components/component_enumerator.py
+biocrnpyler/components/construct_explorer.py
+biocrnpyler/components/integrase_enumerator.py
+biocrnpyler/components/membrane.py
+biocrnpyler/components/dna/__init__.py
+biocrnpyler/components/dna/assembly.py
+biocrnpyler/components/dna/cds.py
+biocrnpyler/components/dna/construct.py
+biocrnpyler/components/dna/misc.py
+biocrnpyler/components/dna/promoter.py
+biocrnpyler/components/dna/rbs.py
+biocrnpyler/components/dna/terminator.py
+biocrnpyler/core/__init__.py
+biocrnpyler/core/chemical_reaction_network.py
+biocrnpyler/core/compartment.py
+biocrnpyler/core/component.py
+biocrnpyler/core/mechanism.py
+biocrnpyler/core/mixture.py
+biocrnpyler/core/parameter.py
+biocrnpyler/core/polymer.py
+biocrnpyler/core/propensities.py
+biocrnpyler/core/reaction.py
+biocrnpyler/core/species.py
+biocrnpyler/mechanisms/__init__.py
+biocrnpyler/mechanisms/binding.py
+biocrnpyler/mechanisms/conformation.py
+biocrnpyler/mechanisms/enzyme.py
+biocrnpyler/mechanisms/global_mechanisms.py
+biocrnpyler/mechanisms/integrase.py
+biocrnpyler/mechanisms/metabolite.py
+biocrnpyler/mechanisms/signaling.py
+biocrnpyler/mechanisms/transport.py
+biocrnpyler/mechanisms/txtl.py
+biocrnpyler/mixtures/__init__.py
+biocrnpyler/mixtures/cell.py
+biocrnpyler/mixtures/extract.py
+biocrnpyler/utils/__init__.py
+biocrnpyler/utils/general.py
+biocrnpyler/utils/plotting.py
+biocrnpyler/utils/sbmlutil.py
+biocrnpyler/utils/units.py
+docs/.gitignore
+docs/Makefile
+docs/_autogen_components.rst
+docs/_autogen_mechanisms.rst
+docs/_autogen_mixtures.rst
+docs/components.rst
+docs/conf.py
+docs/core.rst
+docs/develop.rst
+docs/generate_library_docs.py
+docs/index.rst
+docs/intro.rst
+docs/library.rst
+docs/mechanisms.rst
+docs/membranes.rst
+docs/mixtures.rst
+docs/requirements.txt
+docs/tutorials.rst
+docs/_static/css/custom.css
+docs/examples/1. Building CRNs Directly.ipynb
+docs/examples/2. Compiling CRNs with Enzymes Catalysis and Binding.ipynb
+docs/examples/3. DNA Assemblies gene expression transcription and translation.ipynb
+docs/examples/4. Promoters Transcriptional Regulation and Gene Regulatory Networks.ipynb
+docs/examples/5. Parameters.ipynb
+docs/examples/6. Global Mechanisms.ipynb
+docs/examples/7. Network Plotting Examples.ipynb
+docs/examples/8. Developer Overview.ipynb
+docs/examples/9. DNA_construct Examples.ipynb
+docs/figures/BioCRNpyler_Code.png
+docs/figures/BioCRNpyler_Overview.png
+docs/figures/BioCRNpyler_Overview_Page_1.png
+docs/figures/BioCRNpyler_Overview_Page_2.png
+docs/figures/BioCRNpyler_Simulation.png
+docs/figures/Facilitated_Transport.png
+docs/figures/Flow_Chart_MembraneFeatures.png
+docs/figures/Flow_membrane.png
+docs/figures/Membrane_Integration.png
+docs/figures/Membrane_Models.png
+docs/figures/Membrane_Models_trimmed.png
+docs/figures/Primary_Active_Transport.png
+docs/figures/Simple_Diffusion.png
+docs/figures/Simple_Transport.png
+docs/figures/Two_Component_Sensing.png
+examples/0. Tutorial Index.txt
+examples/1. Building CRNs Directly.ipynb
+examples/2. Compiling CRNs with Enzymes Catalysis and Binding.ipynb
+examples/3. DNA Assemblies gene expression transcription and translation.ipynb
+examples/4. Promoters Transcriptional Regulation and Gene Regulatory Networks.ipynb
+examples/5. Parameters.ipynb
+examples/6. Global Mechanisms.ipynb
+examples/7. Network Plotting Examples.ipynb
+examples/8. Developer Overview.ipynb
+examples/9. DNA_construct Examples.ipynb
+examples/BasicExtract.tsv
+examples/Default Param File Example.tsv
+examples/Perfect Param File Example.tsv
+examples/default_parameters.txt
+examples/generate_index.py
+examples/Old Examples and Tests/BasicExtract.tsv
+examples/Old Examples and Tests/Testing Propensities.py
+examples/Old Examples and Tests/deCas9_repression.py
+examples/Old Examples and Tests/dilution_with_global_mechanisms.py
+examples/Old Examples and Tests/dna_assembly_and_constituitive_expression.py
+examples/Old Examples and Tests/regulated_promoter_activation_and_repression.py
+examples/Old Examples and Tests/repr_for_crn_and_component_and_write_to_sbml.py
+examples/Old Examples and Tests/retroactivity_with_custom_mechanism_and_custom_promoter.py
+examples/Old Examples and Tests/simulate_compiled_crn_with_bioscrape.py
+examples/Old Examples and Tests/simulate_compiled_crn_with_bioscrape_via_sbml.py
+examples/Old Examples and Tests/tutorial_CRNLab.py
+examples/Specialized Tutorials/1. Combinatorial Promoters.ipynb
+examples/Specialized Tutorials/2. Membrane Models.ipynb
+examples/Specialized Tutorials/3. Multiple Occupancy in TX-TL.ipynb
+examples/Specialized Tutorials/4. Combinatorial Conformation Modeling.ipynb
+examples/Specialized Tutorials/5. TX-TL Toolbox.ipynb
+examples/Specialized Tutorials/6. Integrase Examples.ipynb
+examples/Specialized Tutorials/7. Transport_Models.ipynb
+examples/Specialized Tutorials/8. Multicellular_Transport.ipynb
+examples/Specialized Tutorials/all_parameters.txt
+examples/Specialized Tutorials/default_parameters.txt
+examples/Specialized Tutorials/membrane_toolbox_parameters.txt
+examples/Specialized Tutorials/roadrunner_example.ipynb
+examples/Specialized Tutorials/test_transport_models.py
+examples/Specialized Tutorials/test_txtl_toolbox.py
+examples/Specialized Tutorials/transport_models.png
+examples/Specialized Tutorials/txtl_toolbox_parameters.txt
+static/SpecificationToCRN.png
