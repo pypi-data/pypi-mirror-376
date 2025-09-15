@@ -1,0 +1,16 @@
+gdsfactory~=9.15.0
+gplugins[sax]~=1.4.2
+doroutes>=0.2.0
+
+[dev]
+pytest
+pytest-cov
+pytest_regressions
+jsondiff
+pytest-github-actions-annotate-failures
+pre-commit
+
+[docs]
+autodoc_pydantic
+jupytext
+jupyter-book==1.0.3
