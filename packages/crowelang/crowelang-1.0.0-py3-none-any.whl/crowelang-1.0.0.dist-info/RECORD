@@ -1,0 +1,10 @@
+crowelang/__init__.py,sha256=0fvLNfROElWxG2ZaTSLS38EoKTvl98ygvuC4zHmz4Y4,552
+crowelang/cli.py,sha256=YTrI9LdwEJ-cNESi7_64AjGkSlzh1kfPQhWnWlYO8NY,4333
+crowelang/compiler.py,sha256=BvB4q0Y-iwDbFxi2guckX8OaOQmd_L6C3uTVJibY7Mo,4906
+crowelang-1.0.0.dist-info/licenses/LICENSE,sha256=ncLrlD6Zd4qjcOowMixhPeFRcgotj_ob5UF9efBWscw,1296
+crowelang-1.0.0.dist-info/licenses/LICENSE.old,sha256=vtcwOGkB53D9LH-PGI1l-ivHGiqWl4O0lwvGXDzaL9s,1079
+crowelang-1.0.0.dist-info/METADATA,sha256=f_delPsY8b6DQzp98EhTpsXcAxf26QKmnm2Gg6pJebM,12034
+crowelang-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+crowelang-1.0.0.dist-info/entry_points.txt,sha256=VFX7XpLYuBkE3PAiaiHf-aIcC1kdmWWY3n6GhOiScJI,76
+crowelang-1.0.0.dist-info/top_level.txt,sha256=OXuXkppKfz9CWcILKmT486I8mLbM4Akjbxfj0OIrS0I,10
+crowelang-1.0.0.dist-info/RECORD,,
