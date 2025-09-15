@@ -1,0 +1,107 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coterie-command-deck"
+version = "0.1.1"
+description = "Command Deck CLI — Automate all the things"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.12.0",
+]
+
+[project.scripts]
+deck = "command_deck:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src", "."]
+strict = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_reexport = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+namespace_packages = true
+explicit_package_bases = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+warn_unused_ignores = false
+ignore_errors = false
+
+[tool.ruff]
+target-version = "py313"
+src = ["src", "tests"]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E","F","I","UP","B","A","C4","SIM","PERF","RUF100","S"]
+extend-ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["coterie_agents"]
+combine-as-imports = true
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = [
+	"S101",  # allow asserts in tests
+	"ANN",   # missing type annotations
+	"ARG",   # unused arguments in fixtures/helpers
+	"E731",  # do not assign a lambda expression, use a def
+	"PLR2004", # magic value used in comparison
+	"B018",  # Found useless expression
+	"PT011", # pytest parametrize values are not tuples
+	"PT013", # pytest parametrize input is not a list
+	"PT019", # pytest parametrize marks are not tuples
+]
+
+"src/tests/**" = ["S101", "ANN", "ARG"]
+
+# Stricter rules for scripts - only allow essential exceptions
+"scripts/**" = [
+	"S101",  # allow asserts in scripts for validation
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-randomly>=3.15",
+    "mypy>=1.10",
+    "types-requests>=2.31.0.6",
+    "ruff>=0.6.0",
+    "black>=24.8",
+    "pdoc>=14.5",
+    "pytest-cov>=5.0",
+    "python-dotenv>=1.0.0",
+]
+full = [
+    "typer[all]>=0.12.0",
+    "pyyaml>=6.0",
+    "requests>=2.31.0",
+    "build>=1.0.0",
+    "twine>=4.0.0",
+]
+nas = [
+    "pyyaml>=6.0",
+    "requests>=2.31.0",
+]
+ship = [
+    "build>=1.0.0", 
+    "twine>=4.0.0",
+]
+
