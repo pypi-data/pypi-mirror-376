@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: geodatafusion
+Version: 0.1.1
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: datafusion
+Requires-Python: >=3.9
