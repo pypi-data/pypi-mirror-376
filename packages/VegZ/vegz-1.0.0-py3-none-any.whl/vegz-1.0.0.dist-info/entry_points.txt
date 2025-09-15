@@ -1,0 +1,2 @@
+[console_scripts]
+vegz-demo = vegz.examples.demo:main
