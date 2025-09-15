@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/bmvpc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/bmvpc/v20180625/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/bmvpc/v20180625/bmvpc_client.py,sha256=rQOFLwEAzZJaHtAcot-KlnRa8GemCw2pwjIye1DLCeE,59998
+tencentcloud/bmvpc/v20180625/errorcodes.py,sha256=H7z2eE28yJ95JJo4AU1rjS6-xGdSB5Qiu9EOs5ysTf8,3233
+tencentcloud/bmvpc/v20180625/models.py,sha256=1LVYGwUSE-n3i0JAeEaEO_Miolh2Y5rFQFAlMBBvHog,315550
+tencentcloud_sdk_python_bmvpc-3.0.1459.dist-info/METADATA,sha256=3SQlGyQlm4i7QIdQqQPnl0fFA9hp-eZ-LhUct2bJXmo,1513
+tencentcloud_sdk_python_bmvpc-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_bmvpc-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_bmvpc-3.0.1459.dist-info/RECORD,,
