@@ -1,0 +1,18 @@
+from __future__ import annotations
+
+from typing import Any
+
+from wexample_config.config_option.abstract_config_option import AbstractConfigOption
+from wexample_filestate.option.mixin.option_mixin import OptionMixin
+
+from wexample_helpers.decorator.base_class import base_class
+
+
+@base_class
+class ClassOption(OptionMixin, AbstractConfigOption):
+    @staticmethod
+    def get_raw_value_allowed_type() -> Any:
+        from wexample_filestate.item.item_target_directory import ItemTargetDirectory
+        from wexample_filestate.item.item_target_file import ItemTargetFile
+
+        return type[ItemTargetDirectory] | type[ItemTargetFile]
