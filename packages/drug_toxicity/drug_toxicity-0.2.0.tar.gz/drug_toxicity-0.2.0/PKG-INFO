@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: drug_toxicity
+Version: 0.2.0
+Summary: Drug metabolism and toxicity prediction.
+Author-email: Hester Chapman <hester.chapman@btinternet.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/HettieC/DrugToxicity
+Project-URL: Issues, https://github.com/HettieC/DrugToxicity/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: molvs>=0.1.1
+Requires-Dist: pubchempy>=1.0.4
+Requires-Dist: rdkit>=2025.3.6
+Dynamic: license-file
+
+# Drug Toxicity software
+
+Package for the simulation phase I and phase II metabolism of drugs using RDKit.
+
+A compound in SMILES format is required, and phase I and phase II reactions can be simulated using ```predict_phase_i``` and ```predict_phase_ii``` respectively. 
+## Installation 
+
+You can install DrugToxicity using ```pip install git+https://github.com/HettieC/DrugToxicity```
+
+## Issues and support
+If you encounter any issues, please contact us through the [issues](https://github.com/HettieC/DrugToxicity/issues) page.
