@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/aviro/__init__.py
+src/aviro/core.py
+src/aviro.egg-info/PKG-INFO
+src/aviro.egg-info/SOURCES.txt
+src/aviro.egg-info/dependency_links.txt
+src/aviro.egg-info/requires.txt
+src/aviro.egg-info/top_level.txt
