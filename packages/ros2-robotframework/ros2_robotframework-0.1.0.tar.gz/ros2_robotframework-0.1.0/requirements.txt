@@ -1,0 +1,17 @@
+# Core dependencies
+robotframework>=6.0.0
+
+# ROS2 Python dependencies
+rclpy>=3.0.0
+std-msgs
+geometry-msgs
+sensor-msgs
+nav-msgs
+tf2-msgs
+tf2-geometry-msgs
+action-msgs
+lifecycle-msgs
+
+# Additional utilities
+numpy
+typing-extensions
