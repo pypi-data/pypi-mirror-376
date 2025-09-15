@@ -1,0 +1,5 @@
+recursive-include src/word_datasets/data *
+include README.md
+include LICENSE
+
+
