@@ -1,0 +1,11 @@
+click
+PyYAML
+pandas
+rich
+pre-commit
+
+[dev]
+pre-commit
+tensorflow
+scikit-learn
+xgboost
