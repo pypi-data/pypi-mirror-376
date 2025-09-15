@@ -1,0 +1,15 @@
+ncuhep/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ncuhep/muography/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ncuhep/muography/parser/__init__.py,sha256=BbQJcZxkdvy7LHQURqOPB41GBGtqHQQwhmI-4jRV1WY,50
+ncuhep/muography/parser/parser.py,sha256=cdWTnjpzzIhajb4YXUAYcjQ0f0FYrdk9EICZy4vXQlc,6930
+ncuhep/muography/utils/__init__.py,sha256=odjEIRTOCalcREhaDSXdSPf8cUZ33au72VMgG5S_NL8,949
+ncuhep/muography/utils/coordinates.py,sha256=XTVucCjMWrXD1Cdvlk5_OUzspiNC27OCOUwY5NcGcWo,5890
+ncuhep/muography/utils/flux.py,sha256=fDMc6vqPoSeBBNN9Hh0-GHP-pkocTAFyuSJFcGKix6s,4212
+ncuhep/muography/utils/hough_transformation.py,sha256=PISnPtEul4lxxcOCLv__VITcyUwtVpjj0CgAsK85SXA,2560
+ncuhep/muography/utils/monte_carlo.py,sha256=gUa2omtRQI4Ga5kmwdGl1ljSiw_LkAdh2OeBg48CqmU,11760
+ncuhep/muography/utils/tracking.py,sha256=GKeyTXYdT3S8I3lsIb2GIC08u83IfAIaPD4LEgr-jxI,770
+ncuhep-0.1.61.dist-info/licenses/LICENSE,sha256=4NfTAvwIv5RNmtTlFYPJMG4VWX37mnOzMjMrx7dX8ME,1070
+ncuhep-0.1.61.dist-info/METADATA,sha256=_zuqGGnjjAlaD5gH89jLEe_HsSld4vAzblyOeYDCndc,1451
+ncuhep-0.1.61.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ncuhep-0.1.61.dist-info/top_level.txt,sha256=YvktzcmjMFPUBwvt6EXdO_ro2KQU1KSu8FO7Jw0ijAU,7
+ncuhep-0.1.61.dist-info/RECORD,,
