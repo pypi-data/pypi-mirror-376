@@ -1,0 +1,9 @@
+libdir=/tmp/tmpzy3uir4o/wheel/platlib/lib64
+includedir=/tmp/tmpzy3uir4o/wheel/platlib/include
+
+Name: FlatBuffers
+Description: Memory Efficient Serialization Library
+Version: 25.2.10
+
+Libs: -L${libdir} -lflatbuffers
+Cflags: -I${includedir}
