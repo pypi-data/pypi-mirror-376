@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: MoonFramework
+Version: 0.1.8
+Summary: Moon
+Author-email: Pavlov Ivan <pvana621@gmail.com>
+License-Expression: MIT AND (Apache-2.0 OR BSD-2-Clause)
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+Requires-Dist: colorama
+Requires-Dist: keyboard
+Requires-Dist: typing_extensions
+Requires-Dist: tripy
+
+#MoonFramework
+
+MIT AND (Apache-2.0 OR BSD-2-Clause)
