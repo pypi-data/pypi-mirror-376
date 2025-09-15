@@ -1,0 +1,4 @@
+keyring
+hdbcli
+polars
+pandas
