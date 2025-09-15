@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+SimplePYCalc.egg-info/PKG-INFO
+SimplePYCalc.egg-info/SOURCES.txt
+SimplePYCalc.egg-info/dependency_links.txt
+SimplePYCalc.egg-info/top_level.txt
+simplecalc/__init__.py
+simplecalc/calculator.py
