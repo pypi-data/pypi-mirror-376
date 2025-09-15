@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: neovim-pyinstaller
+Version: 0.11.4rc1
+Summary: Cross-platform Neovim installation via Python packaging
+Author-email: Mike Wilkerson <wilkystyle@gmail.com>
+License: Apache-2.0
+Keywords: editor,neovim,text-editor,vim
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Editors
+Requires-Python: >=3.8
+Provides-Extra: dev
+Requires-Dist: build; extra == 'dev'
+Requires-Dist: packaging; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# neovim-pyinstaller
+
+Cross-platform Neovim installation via Python packaging.
+
+This package wraps official Neovim releases to enable easy installation on systems without admin privileges `uv tool install`. This is an experimental package, mostly for fun and to prove to myself that I could make it work.
+
+## Installation
+
+```bash
+uv tool install neovim-pyinstaller
+```
+
+## Usage
+After installation, the `nvim` command will be available in your PATH:
+
+```bash
+nvim myfile.txt
+```
+
+## How it works
+
+
+This package downloads the appropriate Neovim release tarball for your platform and architecture, extracts it into the Python package data directory, and provides a wrapper script that executes the binary with proper argument forwarding.
+
+## Platform Support
+
+**Currently**
+- Linux (x64)
+
+**Coming soon**
+- Linux (arm64)
+- macOS (x64, arm64)
+- Windows (x64)
+
+## License
+This package is licensed under Apache-2.0. Neovim itself is licensed under Apache-2.0 and Vim license.
