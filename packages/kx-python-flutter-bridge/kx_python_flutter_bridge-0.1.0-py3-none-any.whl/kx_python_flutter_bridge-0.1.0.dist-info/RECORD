@@ -1,0 +1,13 @@
+kx_python_flutter_bridge/__init__.py,sha256=uxX6uJDSzGpfXxqQuN-xFOHfn97LPd6gdUexEli8M4w,1087
+kx_python_flutter_bridge/__version__.py,sha256=PYvbyK-HanDXfL_V1PW9G8coNyauuzJp-bnoKqStaIo,82
+kx_python_flutter_bridge/jsonrpc_bridge.py,sha256=eMMLaALrVMrOrztOZirmsFn1lmSeS1AuHyMWSYLhGbw,1278
+kx_python_flutter_bridge/jsonrpc/__init__.py,sha256=fkzzzzY_SnvApWESBBz7s1axwBE5FERcg1HvCqiVAmE,50
+kx_python_flutter_bridge/jsonrpc/function_registry.py,sha256=Ym3Z4mrVss7NfW6_cI7qMcuLAA8yn2PPvOHEni54_68,6797
+kx_python_flutter_bridge/jsonrpc/protocol.py,sha256=-mTuFPl6uRipN3W6YFDCrXvEFY8Ci9X9m9r8gI9_mQI,4506
+kx_python_flutter_bridge/jsonrpc/server.py,sha256=bkHG9PTluibXk8clmd6t9XL2POqQ_n5jf9TyvgD6nEg,5935
+kx_python_flutter_bridge-0.1.0.dist-info/licenses/LICENSE,sha256=ddtAmX8CbFdL9_ctFKwDoWokcTfnqQrr-1-HCxOEhk0,1119
+kx_python_flutter_bridge-0.1.0.dist-info/METADATA,sha256=zqYlc_2x-Zkd3jMk79MxCTJE2Q8YzUlxh1kR2eLJ1u8,1373
+kx_python_flutter_bridge-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+kx_python_flutter_bridge-0.1.0.dist-info/entry_points.txt,sha256=alq9C6OWg8cHZGvwPP1AHEZYVq_wE2FWYgFgP0MxCjs,82
+kx_python_flutter_bridge-0.1.0.dist-info/top_level.txt,sha256=S4WbxKOYeNMLZFCegni3oM7fvt1FmLBEwHsdGszp9_g,25
+kx_python_flutter_bridge-0.1.0.dist-info/RECORD,,
