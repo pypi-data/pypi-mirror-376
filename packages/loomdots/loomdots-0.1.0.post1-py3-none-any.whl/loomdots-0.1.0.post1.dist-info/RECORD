@@ -1,0 +1,9 @@
+loomdots/__init__.py,sha256=c5RUP-PkkMEJpwsRcsCtPurBUNEq2kxB24IsQik9DIA,1777
+loomdots/expose.py,sha256=RaPP95MLyYyHiAxzhP6Cq8dRi12hisYJ0pcUCL08t2U,20753
+loomdots/introspection.py,sha256=Q6whpuQOSE6cvF6_D9UsoR4J8R0gRh3aHaNJJ4qfS4Q,13616
+loomdots/server.py,sha256=sZwXccM7Poa-AcqZM_JQmhii2S0T3sJrzwlf5E527PU,6842
+loomdots/validation.py,sha256=RI3sEMHDPXgo1AaG_mS8twb4XYFXgckU6nYLsAnpyiA,17092
+loomdots/wrappers.py,sha256=Qvnj2xYDG3H3jLhS6kkqmwth6kp0_Fv4V6UJHxSJg-k,20804
+loomdots-0.1.0.post1.dist-info/METADATA,sha256=5EVyA7k-pdp6salqbvDRWk0AVrw37ZSiVNUKx-gtYgo,816
+loomdots-0.1.0.post1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+loomdots-0.1.0.post1.dist-info/RECORD,,
