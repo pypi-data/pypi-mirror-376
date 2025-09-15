@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+lamestation/__init__.py
+lamestation/_version.py
+lamestation/freqtable.py
+lamestation.egg-info/PKG-INFO
+lamestation.egg-info/SOURCES.txt
+lamestation.egg-info/dependency_links.txt
+lamestation.egg-info/top_level.txt
