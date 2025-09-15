@@ -1,0 +1,15 @@
+aiotcvectordb/__init__.py,sha256=lEH1vF5-nqcYzvhiBvhRyiNVt4-D1FzlF55zR0meFJc,210
+aiotcvectordb/exceptions.py,sha256=z2GXEbqkGjizRve7QlzCY9K6xSD8JIGiW32vSE6yrW0,1243
+aiotcvectordb/client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aiotcvectordb/client/httpclient.py,sha256=TD77xR6VzigV7r4ffMtj_m_dgBJNqisfw72Uq1wRY2o,7765
+aiotcvectordb/client/stub.py,sha256=dm7mw5YY9qg8pzM-l-p1dvdGqY6s1nJJWGvRTyvZ-Dk,43349
+aiotcvectordb/model/__init__.py,sha256=P82juX2hCD2YO57CnBzdsOLIpWdsBMrXapq-ptSRbx8,2179
+aiotcvectordb/model/ai_database.py,sha256=PdTgGQ9_8u984zsYPAFPGxeP1S5fh-tqHoIPBx_O6Qc,11319
+aiotcvectordb/model/collection.py,sha256=q3_-fxiCpJ-qyMzBI3TmpGLD6lBkS7QpOr-NSMf3GP0,31164
+aiotcvectordb/model/collection_view.py,sha256=4iTsjzIMc6zoBmVynRdnZk84rshSR1Xr6i25bC3pl8c,18629
+aiotcvectordb/model/database.py,sha256=1vvobxhKYuTa2UxONudavqZbhUDnUu_8r6Nt-j-Y8po,19347
+aiotcvectordb/model/document_set.py,sha256=Dj7qiwLaUu2TC6scMlKaazRBoZmDeivrdPr4aZuc1Ak,2117
+aiotcvectordb-0.1.1.dist-info/METADATA,sha256=so_PRCfS2k4TVJHiY3eG-flP1_mfxyhsfUNqYB2-y5U,6497
+aiotcvectordb-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+aiotcvectordb-0.1.1.dist-info/licenses/LICENSE,sha256=9t_kzccFiir0nGtLwJAtScV17XXCTCYb8bQMME5-lJQ,1068
+aiotcvectordb-0.1.1.dist-info/RECORD,,
