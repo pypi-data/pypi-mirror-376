@@ -1,0 +1,12 @@
+ocr_stringdist-0.3.0.dist-info/METADATA,sha256=YZzEt3aeo26-vS_1HCdXtbV1w7YC9Rnfw2dU8uUfy-s,4188
+ocr_stringdist-0.3.0.dist-info/WHEEL,sha256=6qFQrLWDCPaQU7OaQC_3iTmoUAMJ7VHgISF54rbNy98,127
+ocr_stringdist-0.3.0.dist-info/licenses/LICENSE,sha256=5BPRcjlnbl2t4TidSgpfGrtC_birSf8JlZfA-qmVoQE,1072
+ocr_stringdist/__init__.py,sha256=ApxqraLRcWAkzXhGJXSf3EqGEVFbxghrYrfJ9dmQjQU,467
+ocr_stringdist/_rust_stringdist.cpython-39-x86_64-linux-gnu.so,sha256=TxZotg05z3lticNmaHtgash3ta0DiXBA72vkL7zCEuY,826072
+ocr_stringdist/default_ocr_distances.py,sha256=oSu-TpHjPA4jxKpLAfmap8z0ZsC99jsOjnRVHW7Hj_Y,1033
+ocr_stringdist/edit_operation.py,sha256=EgEc-2_nOwLUZDOWtogYqKLXIQJxOd9sIAbcGkn-TMY,395
+ocr_stringdist/learner.py,sha256=9gZMqnF5Fm3gSKOnAfSI40JhGtMKGg0gZNil1-LVP9Q,10191
+ocr_stringdist/levenshtein.py,sha256=5A1k8Ana10tCbRbQXYIbMHIjeU9mhUK_DSFZZ2Znx2o,13360
+ocr_stringdist/matching.py,sha256=28Xt-x_V_iVsohD3F64MfZ0mys4_qOZXTIAcmSOE0dA,3270
+ocr_stringdist/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ocr_stringdist-0.3.0.dist-info/RECORD,,
