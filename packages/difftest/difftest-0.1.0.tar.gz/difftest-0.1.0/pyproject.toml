@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65.5.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "difftest"
+version = "0.1.0"
+description = "Your project description"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.6",
+    "torch>=2.8.0",
+    "neonunicorn>=0.1.0"
+]
+
+authors = [
+    { name = "Fereshteh Molaverdi" }
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/neonunicorngh/difftest"
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel>=6.30.1",
+    "jupyter>=1.1.1"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["matrix*"]  # Optional: Ensures the 'matrix' package is explicitly found; remove if auto-discovery works
