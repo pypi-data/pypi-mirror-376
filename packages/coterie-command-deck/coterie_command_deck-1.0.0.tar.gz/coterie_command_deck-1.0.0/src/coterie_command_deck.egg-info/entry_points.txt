@@ -1,0 +1,2 @@
+[console_scripts]
+deck = coterie_agents.command_deck:main
