@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+src/bagelpay/__init__.py
+src/bagelpay/client.py
+src/bagelpay/exceptions.py
+src/bagelpay/models.py
+src/bagelpay.egg-info/PKG-INFO
+src/bagelpay.egg-info/SOURCES.txt
+src/bagelpay.egg-info/dependency_links.txt
+src/bagelpay.egg-info/requires.txt
+src/bagelpay.egg-info/top_level.txt
