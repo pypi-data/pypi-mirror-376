@@ -1,0 +1,9 @@
+pytest_fixtures_fixtures/__init__.py,sha256=3KUJQ_Z34Mjjuww7PIhY3CZcvcR809ckQ2buDIK3pvY,492
+pytest_fixtures_fixtures/parametrize.py,sha256=NfJdYR-BYXQvS1K1UEMIWmOoKPVt8elGRKlU9__veT4,12208
+pytest_fixtures_fixtures/protocols.py,sha256=_LSNRG_txrH9ABdClIthvl3mhwyO5SkET3xeyKuwqfI,10477
+pytest_fixtures_fixtures/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_fixtures_fixtures/pytest_plugin.py,sha256=bAX3jbyuvLGpk4VtBvKDEYnnE1qamvlzE-UxUt1Aj7A,15938
+pytest_fixtures_fixtures-0.3.4.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+pytest_fixtures_fixtures-0.3.4.dist-info/entry_points.txt,sha256=oqArjc-JkE9UpTUj5ldTXQi6hCYU8KY_bC6D4teFNb0,78
+pytest_fixtures_fixtures-0.3.4.dist-info/METADATA,sha256=BXSl2IaXCP4-HKP4VR-i22cVfsEyHGifZdCkVJ7TxrA,4850
+pytest_fixtures_fixtures-0.3.4.dist-info/RECORD,,
