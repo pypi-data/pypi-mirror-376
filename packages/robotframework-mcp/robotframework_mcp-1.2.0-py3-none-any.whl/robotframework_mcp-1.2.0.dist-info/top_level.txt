@@ -1,0 +1,6 @@
+bin
+mcp_server
+node_modules
+run_mcp
+scripts
+src
