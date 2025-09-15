@@ -1,0 +1,2 @@
+[console_scripts]
+nvim = neovim_pyinstaller.main:launch_neovim
