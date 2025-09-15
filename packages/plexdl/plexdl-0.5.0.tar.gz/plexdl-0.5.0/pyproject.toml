@@ -1,0 +1,85 @@
+[project]
+name = "plexdl"
+version = "0.5.0"
+description = ""
+authors = [
+    { name = "Daniel Hoherd", email = "daniel.hoherd@gmail.com" }
+]
+license = { text = "MIT License" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "humanfriendly>=10.0",
+    "PlexAPI>=4.16.0",
+    "requests>=2.32.3",
+    "typer>=0.13.1",
+    "humanize>=4.11.0",
+]
+requires-python = ">=3.11"
+
+[project.scripts]
+plexdl = "plexdl.cli:app"
+
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# https://docs.astral.sh/ruff/settings/
+[tool.ruff]
+line-length = 132
+target-version = "py311"
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+
+# https://docs.astral.sh/ruff/rules/
+select = [
+  "ASYNC",
+  "ARG",
+  "BLE",
+  "C",
+  "E",
+  "F",
+  "FLY",
+  "FURB",
+  "I",
+  "N",
+  "PERF",
+  "PGH",
+  "Q",
+  "R",
+  "RUF",
+  "S",
+  "TID",
+  "UP",
+  "W",
+  "YTT",
+]
+ignore = [
+  "E501",
+  "S311",
+  "S603",
+  "S607",
+  "S608",
+]
+
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+"**/__init__.py" = ["F401"]
+
+[tool.ruff.lint.mccabe]
+# TODO: reduce this
+max-complexity = 11
