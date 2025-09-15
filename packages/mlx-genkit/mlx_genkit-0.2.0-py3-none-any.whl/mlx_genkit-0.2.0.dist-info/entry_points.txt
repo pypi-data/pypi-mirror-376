@@ -1,0 +1,3 @@
+[console_scripts]
+mlxgk-generate = mlx_genkit.cli:generate_cmd
+mlxgp-generate = mlx_gen_parity.cli:generate_cmd
