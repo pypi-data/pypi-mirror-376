@@ -1,0 +1,2 @@
+[console_scripts]
+gemini-starter-agent = gemini_starter_agent.main:main
