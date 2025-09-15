@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: cruxpy
+Version: 0.1.4
+Summary: Help building a webpage for Crux ports repository
+Author-email: Wawrzyniec Niewodniczański <main@wawrzek.name>
+License-Expression: GPL-3.0-only
+Project-URL: repository, https://github.com/wawrzek/cruxpy
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: System :: Software Distribution
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: GitPython
+Dynamic: license-file
+
+# CruxPy
+
+The package contain classes helpful in dealing with Crux ports.
+At the moment the main usage is for creation of the ports collection website.
+
+## Classes
+
+### page
+
+The class to prepare a website for a Crux ports repository.
+It takes the path to a directory with a collection and content of a page 'header', which is a html code over the table containing port informations.
+By default it looks for a collection in current foler `.`, and html from the `files/header.html` file.
+
+### port
+
+The class to get information from a Crux port.
+It requires the path to the port as the input.
+By default it also takes information about the date of a last update from the git repository.
