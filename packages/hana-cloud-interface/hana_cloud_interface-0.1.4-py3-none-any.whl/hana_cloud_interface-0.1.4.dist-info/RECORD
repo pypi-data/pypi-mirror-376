@@ -1,0 +1,6 @@
+hana_cloud_interface/__init__.py,sha256=afee63541644ae210da90e08e3cee1af035edaa6905ff49ee2ac2aca921e6897,74
+hana_cloud_interface/main.py,sha256=123fc760b710e70e85564de442f06a7810ab311a85f6995864d083976e06538a,9036
+hana_cloud_interface/py.typed,sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,0
+hana_cloud_interface-0.1.4.dist-info/WHEEL,sha256=b70116f4076fa664af162441d2ba3754dbb4ec63e09d563bdc1e9ab023cce400,78
+hana_cloud_interface-0.1.4.dist-info/METADATA,sha256=1f4beef9c115ff3f16be964202a5ddab8fd558c4f5bd081000870049fdab5822,418
+hana_cloud_interface-0.1.4.dist-info/RECORD,,
