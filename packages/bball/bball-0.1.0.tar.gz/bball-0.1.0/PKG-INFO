@@ -1,0 +1,89 @@
+Metadata-Version: 2.4
+Name: bball
+Version: 0.1.0
+Summary: Meta-package for the bball ecosystem - comprehensive NBA analytics platform
+Project-URL: Homepage, https://bball.dev
+Project-URL: Documentation, https://docs.bball.dev
+Project-URL: Repository, https://github.com/bball-dev/bball
+Project-URL: Issues, https://github.com/bball-dev/bball/issues
+Author-email: Nicholas Cooper <nicholascullencooper@gmail.com>
+License: MIT
+Keywords: analytics,basketball,data,nba,sports
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.11
+Provides-Extra: all
+Requires-Dist: bball-api>=0.1.0; extra == 'all'
+Requires-Dist: bball-cli>=0.1.0; extra == 'all'
+Requires-Dist: bball-core>=0.1.0; extra == 'all'
+Requires-Dist: bball-data>=0.1.0; extra == 'all'
+Requires-Dist: bball-reports>=0.1.0; extra == 'all'
+Requires-Dist: bball-strategies>=0.1.0; extra == 'all'
+Provides-Extra: analytics
+Requires-Dist: bball-data>=0.1.0; extra == 'analytics'
+Requires-Dist: bball-reports>=0.1.0; extra == 'analytics'
+Requires-Dist: bball-strategies>=0.1.0; extra == 'analytics'
+Provides-Extra: api
+Requires-Dist: bball-api>=0.1.0; extra == 'api'
+Provides-Extra: cli
+Requires-Dist: bball-cli>=0.1.0; extra == 'cli'
+Provides-Extra: core
+Requires-Dist: bball-core>=0.1.0; extra == 'core'
+Provides-Extra: data
+Requires-Dist: bball-data>=0.1.0; extra == 'data'
+Provides-Extra: reports
+Requires-Dist: bball-reports>=0.1.0; extra == 'reports'
+Provides-Extra: strategies
+Requires-Dist: bball-strategies>=0.1.0; extra == 'strategies'
+Provides-Extra: web
+Requires-Dist: bball-api>=0.1.0; extra == 'web'
+Description-Content-Type: text/markdown
+
+# bball
+
+Meta-package for the bball ecosystem - a comprehensive NBA analytics platform.
+
+## Installation
+
+### Install everything
+```bash
+pip install bball[all]
+```
+
+### Install specific components
+```bash
+# Just the CLI
+pip install bball[cli]
+
+# API server
+pip install bball[api]
+
+# Analytics stack (data, strategies, reports)
+pip install bball[analytics]
+
+# Multiple components
+pip install bball[cli,api,data]
+```
+
+## Components
+
+- **bball-core**: Core models and utilities shared across all packages
+- **bball-cli**: Command-line interface for bball operations
+- **bball-api**: REST/GraphQL API server
+- **bball-data**: Data fetching and processing
+- **bball-strategies**: Analysis strategies and algorithms
+- **bball-reports**: Report generation and visualization
+
+## Documentation
+
+See [https://docs.bball.dev](https://docs.bball.dev) for full documentation.
+
+## License
+
+MIT

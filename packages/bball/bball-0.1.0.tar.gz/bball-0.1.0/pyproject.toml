@@ -1,0 +1,72 @@
+[project]
+name = "bball"
+version = "0.1.0"
+description = "Meta-package for the bball ecosystem - comprehensive NBA analytics platform"
+authors = [
+    {name = "Nicholas Cooper", email = "nicholascullencooper@gmail.com"},
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+keywords = ["nba", "basketball", "analytics", "sports", "data"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Pure meta-package - no direct dependencies
+dependencies = []
+
+[project.urls]
+Homepage = "https://bball.dev"
+Documentation = "https://docs.bball.dev"
+Repository = "https://github.com/bball-dev/bball"
+Issues = "https://github.com/bball-dev/bball/issues"
+
+[project.optional-dependencies]
+# Individual components
+core = ["bball-core>=0.1.0"]
+cli = ["bball-cli>=0.1.0"]
+api = ["bball-api>=0.1.0"]
+data = ["bball-data>=0.1.0"]
+strategies = ["bball-strategies>=0.1.0"]
+reports = ["bball-reports>=0.1.0"]
+
+# Convenience groups
+analytics = [
+    "bball-data>=0.1.0",
+    "bball-strategies>=0.1.0",
+    "bball-reports>=0.1.0",
+]
+web = [
+    "bball-api>=0.1.0",
+]
+all = [
+    "bball-core>=0.1.0",
+    "bball-cli>=0.1.0",
+    "bball-api>=0.1.0",
+    "bball-data>=0.1.0",
+    "bball-strategies>=0.1.0",
+    "bball-reports>=0.1.0",
+]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+packages = []  # No packages to include - pure meta-package
+
+[tool.uv.sources]
+bball-core = { workspace = true }
+bball-cli = { workspace = true }
+bball-api = { workspace = true }
+bball-data = { workspace = true }
+bball-strategies = { workspace = true }
+bball-reports = { workspace = true }
