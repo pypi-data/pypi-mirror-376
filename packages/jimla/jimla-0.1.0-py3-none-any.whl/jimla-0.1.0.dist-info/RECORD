@@ -1,0 +1,11 @@
+jimla/__init__.py,sha256=hHqU0fdY1fCAnRxXaqFo6YEg2Ngo7VQnehsvbrro8Do,379
+jimla/broom.py,sha256=7hr8MtdSpl5tr5Cl_Rll6U2N5nucACd_r-C7cF-ezI4,6123
+jimla/data.py,sha256=5EC9CAK6Ul8OAW7nVa5N6-aa7Rov27PQrgSQVgvj-Cg,1713
+jimla/likelihood.py,sha256=3V2myeDUH-iobAd-VBCod2JsB7HF4mYxm4QVMFqPoXU,1242
+jimla/models.py,sha256=AekryP3WJa1abfZuozPRU78Yy34npB75LfPblM20xzE,4658
+jimla/priors.py,sha256=MrjBMbloGkA10IJMjOUqgL-m9eg2YL-SH7LgG4u3EC0,3588
+jimla/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jimla-0.1.0.dist-info/METADATA,sha256=aBCS969Ygb44YEtwadHE7qgDfaBrp_aC0zK5BUSpMpg,7313
+jimla-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jimla-0.1.0.dist-info/licenses/LICENSE,sha256=dBw_dQUNsNXy9X5kF8I0UatW0tsb--JOtdID6tvnkOc,1068
+jimla-0.1.0.dist-info/RECORD,,
