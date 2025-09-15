@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+maskify/__init__.py
+maskify/main.py
+maskify.egg-info/PKG-INFO
+maskify.egg-info/SOURCES.txt
+maskify.egg-info/dependency_links.txt
+maskify.egg-info/requires.txt
+maskify.egg-info/top_level.txt
