@@ -1,0 +1,2 @@
+[console_scripts]
+dice-apply = dice_apply.cli:main
