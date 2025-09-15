@@ -1,0 +1,20 @@
+Metadata-Version: 2.3
+Name: pytest-otelmark
+Version: 0.1.0a0
+Summary: Pytest plugin for otelmark.
+Author: Caglar Kutlu
+Author-email: Caglar Kutlu <caglar.kutlu@gmail.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Classifier: Framework :: Pytest
+Requires-Dist: otelmark>=0.1.0
+Requires-Dist: pytest>=8.3.5
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Pytest plugin for otelmark

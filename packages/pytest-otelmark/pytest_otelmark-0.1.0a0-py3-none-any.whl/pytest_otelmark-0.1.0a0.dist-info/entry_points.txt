@@ -1,0 +1,3 @@
+[pytest11]
+pytest_otelmark = pytest_otelmark.plugin
+
