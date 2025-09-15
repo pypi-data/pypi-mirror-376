@@ -1,0 +1,13 @@
+libresubtitles/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+libresubtitles/cli.py,sha256=kf-a-R2Ndbv0JtbLtqDvuPNHpxzLF-75aRq-wg9MeoE,1268
+libresubtitles/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+libresubtitles/core/audio.py,sha256=StJKOriSHXO9wZCWqsxxMShW7oBr5mLonRfQfSJE9nk,495
+libresubtitles/core/globals.py,sha256=rJ4lSBxwvY0g-iV6mwZL6SD1RvVi1XBp8_4qL6p2SHs,167
+libresubtitles/core/splitter.py,sha256=m0ULKrtrIOcsfkHCHdeGbnlPRrVmDR-HNqUaubJ-1CI,674
+libresubtitles/core/srt.py,sha256=J16n0hcd8EXl6nl1H5WujCLpfR4ngH3EN4TBlRl6l24,706
+libresubtitles/core/stt.py,sha256=BaBMUjinEzDe9hTXdOKiI1nicMdAi9JnHKzVEUHuR0g,1198
+libresubtitles-1.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+libresubtitles-1.0.1.dist-info/METADATA,sha256=q1WH-qUwco9g68pGfp3nyhqwryS7D1f1yKPzRlLsG_Y,1453
+libresubtitles-1.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+libresubtitles-1.0.1.dist-info/entry_points.txt,sha256=D60AQJT7mJdE0ZcNtscjRqtsurmzVeWgdZXm5bZcnjg,58
+libresubtitles-1.0.1.dist-info/RECORD,,
