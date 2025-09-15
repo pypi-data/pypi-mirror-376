@@ -1,0 +1,15 @@
+autoproperty/__init__.py,sha256=qMIOD_HTp5U_dnku_ce7MiUWUwH07nFGEQ5ZER8zkUw,81
+autoproperty/autoproperty.py,sha256=nzk2KcIY8CMKdYDKPR3LxDjp071RCS8BsZuo4SEovYY,6395
+autoproperty/fieldvalidator.py,sha256=t2qjVnAUb8oIcM7XkOqcShfU1a1RzuXaK0lgIQxfbHg,3570
+autoproperty/prop_settings.py,sha256=vc0rrYoKDShzVw2kFblDIjHelfcnJ6QUir6Id8C1_eY,88
+autoproperty/autoproperty_methods/__init__.py,sha256=zANle2UwIp7M1T2WRa_lyZnxEi36F6XLkiz-mepZe6g,95
+autoproperty/autoproperty_methods/autoproperty_base.py,sha256=BBynOcvtNwilXfitscBD25SVFOokES0Bo_s0jLEZnq8,720
+autoproperty/autoproperty_methods/autoproperty_getter.py,sha256=p_m_YQPwb_5q7s8LRLJwesrwGv7sOkNmlr_fa87Yluk,752
+autoproperty/autoproperty_methods/autoproperty_setter.py,sha256=7ZSk-Z4ZivmuA4je0BTt21nYaforle_XhS8EYiy3xiI,764
+autoproperty/docs/basic_example.md,sha256=3ATMvA1ICFvUCRETLI0ym7OewNW8hdNDqUhfceH2jrE,3050
+autoproperty/exceptions/Exceptions.py,sha256=ZJ0ZEhRRzSyKUMycJJXB3tLvJc2xFsbGXw02HacFQlE,390
+autoproperty/interfaces/autoproperty_methods/__init__.py,sha256=t2hmCdGuVq1_hXVwN_kerQBUAu5afivk4dOO30FEhdw,1319
+autoproperty-0.0.3.dist-info/METADATA,sha256=DwJubPUGf_kJiTEMADEUh0zz40Z2eHe14qmBPeyl9EY,4112
+autoproperty-0.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+autoproperty-0.0.3.dist-info/licenses/LICENSE,sha256=nzdpCVhb1jjsZYzRL5W_XogOnIakaxsnVhBFucBb-JE,1085
+autoproperty-0.0.3.dist-info/RECORD,,
