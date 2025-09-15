@@ -1,0 +1,2 @@
+[console_scripts]
+genesys = framework_cli.main:cli
