@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/unifi_dns_sync/__init__.py
+src/unifi_dns_sync/__main__.py
+src/unifi_dns_sync/cli.py
+src/unifi_dns_sync/config.py
+src/unifi_dns_sync/dns_manager.py
+src/unifi_dns_sync/sync.py
+src/unifi_dns_sync.egg-info/PKG-INFO
+src/unifi_dns_sync.egg-info/SOURCES.txt
+src/unifi_dns_sync.egg-info/dependency_links.txt
+src/unifi_dns_sync.egg-info/entry_points.txt
+src/unifi_dns_sync.egg-info/not-zip-safe
+src/unifi_dns_sync.egg-info/requires.txt
+src/unifi_dns_sync.egg-info/top_level.txt
