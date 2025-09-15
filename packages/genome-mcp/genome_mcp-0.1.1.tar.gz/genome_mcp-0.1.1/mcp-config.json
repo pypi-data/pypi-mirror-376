@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "genome-mcp": {
+      "command": "uv",
+      "args": ["run", "python", "main.py"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    }
+  }
+}
