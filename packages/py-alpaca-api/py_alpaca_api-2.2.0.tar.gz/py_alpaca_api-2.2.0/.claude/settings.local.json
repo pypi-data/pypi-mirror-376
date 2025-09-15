@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./test.sh:*)",
+      "Bash(git add:*)",
+      "Bash(git checkout:*)",
+      "Bash(git push:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv run:*)",
+      "Bash(find:*)",
+      "Bash(make:*)",
+      "Bash(sed:*)",
+      "Bash(python:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(git commit:*)",
+      "Bash(git rm:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh release create:*)"
+    ],
+    "deny": []
+  }
+}
