@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+thescore/__init__.py
+thescore/api.py
+thescore_wrapper.egg-info/PKG-INFO
+thescore_wrapper.egg-info/SOURCES.txt
+thescore_wrapper.egg-info/dependency_links.txt
+thescore_wrapper.egg-info/requires.txt
+thescore_wrapper.egg-info/top_level.txt
