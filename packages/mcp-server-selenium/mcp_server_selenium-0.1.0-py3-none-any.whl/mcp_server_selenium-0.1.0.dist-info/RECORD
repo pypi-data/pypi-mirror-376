@@ -1,0 +1,13 @@
+./Makefile,sha256=UKY5Mme5OMtBec1_x3Y8nXOWH4x2Frku53a4CNJAoK4,34
+./PKG-INFO,sha256=PxPQ410KpCYOH_WpurEzuxrNCfBqJwy11wJoiWSirG0,7780
+./README.md,sha256=TloxxyI599qxfXIvXCZut8_mxoWSC-Y20pzAqxIQ1YY,7453
+./main.py,sha256=p-PYNaKXYCUe3vBmS-E_haIORGHc7sT5r51kljCL0p0,69965
+./pyproject.toml,sha256=PmOZxtj1TEOuVAF9CXmPaMhk6C58RwYPvQXjhrCmliU,554
+./uv.lock,sha256=kJGMXtlLy8l7h2MaE3UVtbN1hexmVWVwr5PuTI6l8EY,96687
+./.vscode/mcp.json,sha256=7SzI1NClPV0xKuMACaL28G4dBks_6ThNYWvCseOl1qw,965
+./images/image.png,sha256=K30DiB9oM0uogd70jcGDzO9NGtqKVIL-9cpLDevWc20,234870
+./images/image1.png,sha256=xjeBSKVTmBMQDtwyM9YCUxquXz_ITLojuBWeTQ11AA0,78183
+mcp_server_selenium-0.1.0.dist-info/METADATA,sha256=PxPQ410KpCYOH_WpurEzuxrNCfBqJwy11wJoiWSirG0,7780
+mcp_server_selenium-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_server_selenium-0.1.0.dist-info/entry_points.txt,sha256=CUKdUsy4M_y7USdTH2hx7RygZcLyp2rN9dCQRsFjGXE,50
+mcp_server_selenium-0.1.0.dist-info/RECORD,,
