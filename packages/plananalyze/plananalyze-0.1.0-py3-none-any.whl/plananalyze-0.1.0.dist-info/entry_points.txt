@@ -1,0 +1,3 @@
+[console_scripts]
+pa = plananalyze.cli:main
+plananalyze = plananalyze.cli:main
