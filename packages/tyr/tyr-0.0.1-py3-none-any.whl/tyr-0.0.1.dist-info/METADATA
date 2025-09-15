@@ -1,0 +1,9 @@
+Metadata-Version: 2.3
+Name: tyr
+Version: 0.0.1
+Summary: A simple and efficient Python library.
+Author: cao zheliang
+Author-email: cao zheliang <82938871+caozheliang@users.noreply.github.com>
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
