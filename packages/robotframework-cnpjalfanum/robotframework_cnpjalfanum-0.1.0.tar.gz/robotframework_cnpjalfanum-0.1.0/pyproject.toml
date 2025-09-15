@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robotframework-cnpjalfanum"
+version = "0.1.0"
+description = "Biblioteca Robot Framework para gerar e validar CNPJs alfanuméricos"
+authors = [
+  { name="QA Iniciante", email="ro_jordao@hotmail.com" }
+]
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.8"
+dependencies = ["robotframework>=6.0"]
+keywords = ["robotframework", "cnpj", "alfanumérico", "validação", "qa"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Framework :: Robot Framework",
+  "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/Srjordao/robotframework-cnpjalfanum"
+Documentation = "https://github.com/Srjordao/robotframework-cnpjalfanum"
+
+[tool.setuptools]
+packages = ["cnpjalfanum"]

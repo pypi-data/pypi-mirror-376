@@ -1,0 +1,11 @@
+LICENCE
+README.md
+pyproject.toml
+cnpjalfanum/__init__.py
+cnpjalfanum/validator.py
+robotframework_cnpjalfanum.egg-info/PKG-INFO
+robotframework_cnpjalfanum.egg-info/SOURCES.txt
+robotframework_cnpjalfanum.egg-info/dependency_links.txt
+robotframework_cnpjalfanum.egg-info/requires.txt
+robotframework_cnpjalfanum.egg-info/top_level.txt
+tests/tests_units.py
