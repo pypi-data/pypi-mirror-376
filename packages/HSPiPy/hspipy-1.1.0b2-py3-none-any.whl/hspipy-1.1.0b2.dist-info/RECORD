@@ -1,0 +1,10 @@
+hspipy/__init__.py,sha256=aEJXH5leg3tlbyZQzJGWBgMaTny792iJDYP9sOPhLwY,338
+hspipy/db.csv,sha256=QstBecneS2XlNAh23oAx3z44VSPhpcz9rc3G1I3OUtI,35035
+hspipy/hsp.py,sha256=ZzBrbWKznASU5x6M1cv1zboLQTHFv3JjTHYSKM_AV5c,12685
+hspipy/hsp_example.csv,sha256=O0svH0mwd9Rd4YNLL6a0j-TzU4zzte58OsstaaEtkfE,1277
+hspipy/readers.py,sha256=bCP6AUu-2KShcgyIcRArKqbI2DZlKk3oy_HTqAIAyPo,9030
+hspipy-1.1.0b2.dist-info/licenses/LICENSE,sha256=W_LBN3JekVUnExPa0yh_K4ljlNFJ-I0pEWB5wRIMLck,1066
+hspipy-1.1.0b2.dist-info/METADATA,sha256=bVmT-VY8uryBHRNwxLl3a5030UfgLLhWR7KjFmEfbHU,7533
+hspipy-1.1.0b2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hspipy-1.1.0b2.dist-info/top_level.txt,sha256=amz1AVUztVrgiqZ86SocDgpTdlghRWncpg1Qa6gRNbA,7
+hspipy-1.1.0b2.dist-info/RECORD,,
