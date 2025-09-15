@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+steosmorphy/__init__.py
+steosmorphy/morph.dawg.zst
+steosmorphy/steosmorphy.dll
+steosmorphy/steosmorphy_lib.py
+steosmorphy.egg-info/PKG-INFO
+steosmorphy.egg-info/SOURCES.txt
+steosmorphy.egg-info/dependency_links.txt
+steosmorphy.egg-info/not-zip-safe
+steosmorphy.egg-info/requires.txt
+steosmorphy.egg-info/top_level.txt
+tests/test_analyzer.py
+tests/test_benchmark.py
