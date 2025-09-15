@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-performance-hints"
+version = "0.1.0"
+description = "Intelligent performance bottleneck detection for Python developers"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Rajaul Uddin", email = "uddin.rajaul@gmail.com"}
+]
+keywords = ["performance", "profiling", "optimization", "development", "debugging"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: Software Development :: Quality Assurance",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/py-performance-hints"
+Repository = "https://github.com/yourusername/py-performance-hints"
+
+[tool.setuptools]
+packages = ["performance_hints", "performance_hints.config", "performance_hints.detectors", "performance_hints.analyzers", "performance_hints.reporters"]
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = ["-v"]
