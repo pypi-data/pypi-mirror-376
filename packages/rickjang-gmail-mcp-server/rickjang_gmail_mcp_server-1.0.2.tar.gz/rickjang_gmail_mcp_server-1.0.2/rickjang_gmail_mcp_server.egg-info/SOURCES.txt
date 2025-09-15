@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+gmail_mcp_server/__init__.py
+gmail_mcp_server/main.py
+rickjang_gmail_mcp_server.egg-info/PKG-INFO
+rickjang_gmail_mcp_server.egg-info/SOURCES.txt
+rickjang_gmail_mcp_server.egg-info/dependency_links.txt
+rickjang_gmail_mcp_server.egg-info/entry_points.txt
+rickjang_gmail_mcp_server.egg-info/requires.txt
+rickjang_gmail_mcp_server.egg-info/top_level.txt
