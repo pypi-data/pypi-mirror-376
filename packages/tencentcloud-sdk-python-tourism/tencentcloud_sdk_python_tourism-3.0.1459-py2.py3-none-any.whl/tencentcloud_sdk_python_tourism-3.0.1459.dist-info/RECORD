@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/tourism/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/tourism/v20230215/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/tourism/v20230215/errorcodes.py,sha256=KvHs6W2GONKBsXXCjJUx8q8sqMTR7e5vr5Gx01t5b24,625
+tencentcloud/tourism/v20230215/models.py,sha256=hWyRjVAaeloLZ-FsD7s4yrHhoMPgierUb0g7lNyGm90,10850
+tencentcloud/tourism/v20230215/tourism_client.py,sha256=wdkY7jn6dxjb4dfKmifedzREl3ll9oxqUUqeE66Ebx0,1933
+tencentcloud_sdk_python_tourism-3.0.1459.dist-info/METADATA,sha256=8W6_lmVPIftA0bYp7iPnfEQcA5XQ90FkBpi1WAuRRZo,1523
+tencentcloud_sdk_python_tourism-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_tourism-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_tourism-3.0.1459.dist-info/RECORD,,
