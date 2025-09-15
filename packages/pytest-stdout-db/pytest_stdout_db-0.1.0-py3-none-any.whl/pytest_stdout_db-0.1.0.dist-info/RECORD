@@ -1,0 +1,5 @@
+pytest_stdout_db/__init__.py,sha256=sXPB1UEMhvEqgFB205cmTwHhL5HFPNCfpiFY1slEw0s,62
+pytest_stdout_db/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_stdout_db-0.1.0.dist-info/METADATA,sha256=hR0qP6ZTauPmZPKqi0-_fov6kfUNq7b7JFceFE3oE88,173
+pytest_stdout_db-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pytest_stdout_db-0.1.0.dist-info/RECORD,,
