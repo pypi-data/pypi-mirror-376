@@ -1,0 +1,269 @@
+0: Danmark
+5100: Danmark
+5115: Kongelig
+5902: Færøerne
+5901: Færøerne uoplyst
+5101: Grønland
+1: Vestlige lande
+5124: Andorra
+5502: Australien
+5126: Belgien
+5128: Bulgarien
+5314: Canada
+5422: Cypern
+5184: DDR
+5607: Estland
+5104: Finland
+5130: Frankrig
+5134: Grækenland
+5142: Irland
+5106: Island
+5105: Island, ligeret dansk
+5150: Italien
+5750: Kroatien
+5609: Letland
+5107: Liechtenstein
+5611: Litauen
+5108: Luxembourg
+5153: Malta
+5109: Monaco
+5140: Nederlandene
+5514: New Zealand
+5111: Nordirland
+5110: Norge
+5154: Polen
+5156: Portugal
+5158: Rumænien
+5159: San Marino
+5160: Schweiz
+5778: Slovakiet
+5752: Slovenien
+5164: Spanien
+5170: Storbritannien
+5120: Sverige
+5776: Tjekkiet
+5129: Tjekkoslovakiet
+5180: Tyskland
+5174: Ungarn
+5390: USA
+5176: Vatikanstaten
+5182: Østrig
+5397: Nordamerika uoplyst
+5399: Nordamerika uoplyst
+2: Ikke-vestlige lande
+5535: Abu Dhabi
+5404: Afghanistan
+5122: Albanien
+5202: Algeriet
+5204: Angola
+5309: Antigua og Barbuda
+5302: Argentina
+5708: Armenien
+5301: Aruba
+5710: Aserbajdsjan
+5303: Bahamas
+5406: Bahrain
+5410: Bangladesh
+5305: Barbados
+5706: Belarus
+5526: Belize
+5281: Benin
+5307: Bermuda
+5408: Bhutan
+5304: Bolivia
+5754: Bosnien-Hercegovina
+5207: Botswana
+5306: Brasilien
+5394: Britisk Vestindien
+5412: Brunei
+5294: Burkina Faso
+5213: Burundi
+5416: Cambodja
+5277: Cameroun
+5276: Centralafrikanske Republik
+5316: Chile
+5318: Colombia
+5215: Comorerne
+5278: Congo, Demokratiske Republik
+5279: Congo, Republikken
+5516: Cookøerne
+5779: Cookøerne
+5322: Costa Rica
+5324: Cuba
+5325: Curacao
+5525: Djibouti
+5345: Dominica
+5326: Dominikanske Republik
+5531: Dubai
+5328: Ecuador
+5272: Egypten
+5372: El Salvador
+5282: Elfenbenskysten
+5216: Eritrea
+5259: Eswatini
+5214: Etiopien
+5530: Falklandsøerne
+5508: Fiji
+5474: Filippinerne
+5403: Forenede Arabiske Emirater
+5529: Fransk Guyana
+5336: Fransk Vestindien
+5506: Franske besiddelser i Stillehavet
+5283: Gabon
+5222: Gambia
+5223: Gaza
+5724: Georgien
+5228: Ghana
+5339: Grenada
+5528: Guadeloupe
+5338: Guatemala
+5232: Guinea
+5231: Guinea-Bissau
+5308: Guyana
+5342: Haiti
+5348: Honduras
+5428: Hongkong
+5432: Indien
+5498: Indokina
+5434: Indonesien
+5436: Irak
+5438: Iran
+5442: Israel
+5352: Jamaica
+5444: Japan
+5446: Jordan
+5152: Jugoslavien
+5758: Jugoslavien, Forbundsrepublikken
+5233: Kap Verde
+5716: Kasakhstan
+5234: Kenya
+5448: Kina
+5720: Kirgisistan
+5274: Kiribati
+5761: Kosovo
+5452: Kuwait
+5454: Laos
+5235: Lesotho
+5456: Libanon
+5236: Liberia
+5238: Libyen
+5533: Macao
+5242: Madagaskar
+5297: Malawi
+5458: Malaysia
+5457: Maldiverne
+5243: Mali
+5244: Marokko
+5248: Marshalløerne
+5353: Martinique
+5284: Mauretanien
+5245: Mauritius
+5354: Mexico
+5712: Moldova
+5459: Mongoliet
+5759: Montenegro
+5240: Mozambique
+5414: Myanmar
+5247: Namibia
+5310: Nauru
+5346: Nederlandske Antiller
+5464: Nepal
+5356: Nicaragua
+5285: Niger
+5246: Nigeria
+5466: Nordkorea
+5756: Nordmakedonien
+5468: Nordvietnam
+5494: Nordyemen
+5462: Oman
+5472: Pakistan
+5157: Palæstina
+5473: Palæstina
+5358: Panama
+5534: Papua Ny Guinea
+5364: Paraguay
+5366: Peru
+5527: Puerto Rico
+5496: Qatar
+5286: Reunion
+5700: Rusland
+5287: Rwanda
+5623: Salomonøerne
+5522: Samoa
+5621: Sao Tome og Principe
+5478: Saudi-Arabien
+5288: Senegal
+5757: Serbien
+5151: Serbien og Montenegro
+5298: Seychellerne
+5255: Sierra Leone
+5480: Sikkim
+5482: Singapore
+5253: Skt. Helena
+5625: Skt. Kitts og Nevis
+5347: Skt. Lucia
+5311: Skt. Vincent og Grenadinerne
+5289: Somalia
+5162: Sovjetunionen
+5256: Spanske besiddelser i Afrika
+5418: Sri Lanka
+5258: Sudan
+5344: Surinam
+5262: Sydafrika
+5484: Sydkorea
+5260: Sydsudan
+5264: Sydvestafrika
+5486: Syrien
+5722: Tadsjikistan
+5424: Taiwan
+5266: Tanzania
+5292: Tchad
+5492: Thailand
+5435: Timor-Leste
+5293: Togo
+5505: Tonga
+5374: Trinidad og Tobago
+5268: Tunesien
+5718: Turkmenistan
+5273: Tuvalu
+5493: Trucial Oman
+5172: Tyrkiet
+5269: Uganda
+5704: Ukraine
+5376: Uruguay
+5714: Usbekistan
+5275: Vanuatu
+5392: Venezuela
+5393: Vestbredden
+5395: Vestindiske Øer
+5488: Vietnam
+5402: Yemen
+5296: Zambia
+5295: Zimbabwe
+5230: Ækvatorialguinea
+5599: Øer i Stillehavet
+5532: Øst Timor
+5437: Østjerusalem
+5290: Afrika uoplyst
+5299: Afrika uoplyst
+5471: Asien uoplyst
+5476: Asien uoplyst
+5499: Asien uoplyst
+5114: Europa uoplyst
+5132: Europa uoplyst
+5143: Europa uoplyst
+5186: Europa uoplyst
+5199: Europa uoplyst
+5487: Mellemøsten uoplyst
+5319: Syd- og Mellemamerika uoplyst
+5367: Syd- og Mellemamerika uoplyst
+5398: Syd- og Mellemamerika uoplyst
+5102: Udlandet uoplyst
+5999: Udlandet uoplyst
+5103: Statsløse
+9: Helt uoplyst
+5000: Helt uoplyst
+5001: Helt uoplyst
+5800: Helt uoplyst
+5906: Helt uoplyst
+0: Helt uoplyst

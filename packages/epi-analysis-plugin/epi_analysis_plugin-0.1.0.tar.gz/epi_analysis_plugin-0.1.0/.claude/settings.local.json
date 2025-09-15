@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo check:*)",
+      "Read(/home/tkragholm/Development/final_upload/src/python/**)",
+      "Read(/home/tkragholm/Development/final_upload/src/python/**)",
+      "Read(/home/tkragholm/Development/final_upload/src/python/**)",
+      "Read(/home/tkragholm/Development/final_upload/src/python/**)",
+      "Read(/home/tkragholm/Development/final_upload/src/python/**)",
+      "Bash(cargo clippy:*)",
+      "Read(/home/tkragholm/Development/final_upload/polars_extensions_example/**)",
+      "Read(/home/tkragholm/Development/final_upload/polars_extensions_example/**)",
+      "Read(/home/tkragholm/Development/final_upload/polars_extensions_example/derive_expression/expression_lib/**)",
+      "Bash(source:*)",
+      "Bash(python:*)",
+      "Read(/home/tkragholm/Development/final_upload/algorithm/**)",
+      "Read(/home/tkragholm/Development/final_upload/algorithm/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
