@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+tterminal/__init__.py
+tterminal/main.py
+tterminal/models.py
+tterminal/styles.css
+tterminal.egg-info/PKG-INFO
+tterminal.egg-info/SOURCES.txt
+tterminal.egg-info/dependency_links.txt
+tterminal.egg-info/entry_points.txt
+tterminal.egg-info/requires.txt
+tterminal.egg-info/top_level.txt
