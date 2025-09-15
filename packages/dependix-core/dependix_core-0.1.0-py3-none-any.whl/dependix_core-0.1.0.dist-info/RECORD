@@ -1,0 +1,13 @@
+dependix_core/__init__.py,sha256=Ygg8NDBLmd57UtME8mOaQiNlfAjE8ufFa_OZ1lWUxLk,482
+dependix_core/bean_definition.py,sha256=zlOuH_BZsCP0hpjPRdapQ_RVQ34iU20C1v7eJUTVRcA,1532
+dependix_core/config.py,sha256=3TQTygSGF8Di-tyvs7KkzzICTUeYpdk6VsNRwBHgDm0,2292
+dependix_core/container.py,sha256=aVqBoxh_tResSf_mp-buB34Av1VhuuSgpLdFPbmepl8,10364
+dependix_core/decorators.py,sha256=nyCibeMz-aIXumMgwIwlOcoWQ6aIsiiDZwmBt8fK1A0,2414
+dependix_core/exceptions.py,sha256=VHo4GM22eX4oGhioBG6vWhB-1g_3O_1fIHukrzg4fkk,2582
+dependix_core/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dependix_core/tests/test_container.py,sha256=Vdr5mO9rxc56-59schtfY8GhmuZvekpE0jLI_TUHRwU,21585
+dependix_core-0.1.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dependix_core-0.1.0.dist-info/METADATA,sha256=Y6FwTFvEyP9Uy8nzGZ271sGCrf8i4RIZCXnXnyN7fb4,5708
+dependix_core-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dependix_core-0.1.0.dist-info/top_level.txt,sha256=VQuRGVoNZnbGjBsF8Zr1so3QN6r1wV2vmjRJskY5vbw,14
+dependix_core-0.1.0.dist-info/RECORD,,
