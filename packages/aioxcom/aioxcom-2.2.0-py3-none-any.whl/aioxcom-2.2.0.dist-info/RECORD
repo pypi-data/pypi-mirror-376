@@ -1,0 +1,16 @@
+aioxcom/__init__.py,sha256=BmVcefj5dHZkWKjDbPhi6i1tn-J71YYxV8xSAXE_y-M,1007
+aioxcom/xcom_api.py,sha256=iHCzSWe_QXmUXjLlnsh7SY7Ps_zIQPydQdtD9cYTgy0,24720
+aioxcom/xcom_const.py,sha256=u-uVitDs-urXyoUMzOm8IYYAXVuRhYQX-rXReEyLpU8,7944
+aioxcom/xcom_data.py,sha256=mjh5xK88vA3-V28XI0qAL-2kWOrK_Ol__dkro775DdE,10015
+aioxcom/xcom_datapoints.py,sha256=1FkjgBMEeQXoZv-IOUdsjngnRr8uC5R8hNHNEWjX42o,6539
+aioxcom/xcom_datapoints_120v.json,sha256=IsWl1_VmGTMW93sb8CX8THucKUNrD6dcEsKknzLhy6k,2966
+aioxcom/xcom_datapoints_240v.json,sha256=eAs7DNBPcXIIDFJNAE5ZQWwf_LzKjL2HWK01VVYb6-U,302336
+aioxcom/xcom_discover.py,sha256=9ALpAgovguzPpbCKdbkvUlwaWF2dR8d4uECCQX2lDZI,11321
+aioxcom/xcom_families.py,sha256=vwSMSztmcdm0W47IIxVvZJE1297mw_04Y1U0uNAi0I8,9716
+aioxcom/xcom_protocol.py,sha256=i4o86Pt1O2NrHb9wYzwlzlQF8EvslKXs5READIdHvb0,7735
+aioxcom/xcom_values.py,sha256=_tQKXgr3yGC55McuACdYIkpa6Vq5CtpklE_mf_kkKCY,5047
+aioxcom-2.2.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+aioxcom-2.2.0.dist-info/METADATA,sha256=OWSCqkxcfVAD1vvqMJc9vUgtp-KNY4FaEwVze_RMv6k,6482
+aioxcom-2.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aioxcom-2.2.0.dist-info/top_level.txt,sha256=M4tPjiN0m38ARLpSkji4cxlR82NQPwfq5A1bYirJHVA,8
+aioxcom-2.2.0.dist-info/RECORD,,
