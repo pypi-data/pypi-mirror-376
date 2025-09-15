@@ -1,0 +1,14 @@
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/LICENSE,sha256=UYTsl03awKSeR4RxvXif2emvclQDDht_KvdMKrikFh4,1069
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/__init__.py,sha256=BrEtSDLTrGamzZzQ6SrHH_cesfUg4eEnMRioNepf5iM,29
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/libmoonshine.dylib,sha256=GJObVs76qBMsHBDHCVVMfOuMig2ACrsRaOwIh2xzBOs,97296
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/libonnxruntime.1.22.1.dylib,sha256=ff07MRbQLZhNUWx0HAFFPsItfP024WJCYmV51PW73IA,56487112
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/moonshine_cpp.py,sha256=LRtuPuOmBFIrbTv_77GLB4BS39qKGiiuGRZEOIgYNCs,12102
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/test.py,sha256=EhINArkrG2VWEvWyDQ2zxJ1BTS1ECYMoH6rtDvoqmT4,1097
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/models/base-en/decoder_model_merged.ort,sha256=Nw4MHxYdaNwcImTBqCAk-xIzgNo7c_R_BVMdHo0zCMM,42703232
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/models/base-en/encoder_model.ort,sha256=nRoZ4ETL-JogdyPRrbZn3omlZxoePmEbjr5yGywxIZw,20661976
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/models/base-en/tokenizer.bin,sha256=BGcNeJlNAwGFw92EPGBZF4j-0KVsxnUHR70yaCXxPKk,241639
+moonshine_cpp-0.1.4.data/purelib/moonshine_cpp/test-data/beckett.wav,sha256=5aJrPSnlsLyNvXLBHRajgIpOwKxFsh8Son0qL-XFrmE,318978
+moonshine_cpp-0.1.4.dist-info/METADATA,sha256=ESxfXOt8YhX7rF7kcNMEGZKvFIcxLLC07sm6TO47j0s,1211
+moonshine_cpp-0.1.4.dist-info/WHEEL,sha256=ruEIWHHW23wFe2I1DhW6hPNE3CrAntUheJBV9nlqN-s,106
+moonshine_cpp-0.1.4.dist-info/top_level.txt,sha256=TN71T5dlwoQEEsMJbLGfsFSEWp9TdSsa6CoO8TJHC34,14
+moonshine_cpp-0.1.4.dist-info/RECORD,,
