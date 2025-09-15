@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: gwop
+Version: 1.0.1
+Summary: gwop CLI
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.1
+Requires-Dist: httpx>=0.27
+Requires-Dist: pydantic>=2.0
+Requires-Dist: pyyaml>=6.0
+
+# gwop cli
+
+a cli implementation of gwop, built for the athena award
+
+to get started install with [pipx](https://pypa.github.io/pipx/):
+
+```bash
+pipx install gwop
+```
+
