@@ -1,0 +1,7 @@
+LICENSE.txt
+setup.py
+echocodepackage/__init__.py
+echocodepackage.egg-info/PKG-INFO
+echocodepackage.egg-info/SOURCES.txt
+echocodepackage.egg-info/dependency_links.txt
+echocodepackage.egg-info/top_level.txt
