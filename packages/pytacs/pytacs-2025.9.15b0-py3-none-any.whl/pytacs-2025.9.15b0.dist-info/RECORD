@@ -1,0 +1,12 @@
+pytacs/__init__.py,sha256=dDcK9DhwHKZEKHw7vozfw7QzFAft3eDQzdrxUajT6_U,1458
+pytacs/classifier.py,sha256=CQtZr9YKWVtv9sDT9YsNm_3MI0PxsWnGeZsOr_-pC4k,40877
+pytacs/data.py,sha256=n_yb80Ob_EBUNQJ9reGtP8l_qbSu50j1g3-0x12Bdw8,38459
+pytacs/plot.py,sha256=mwKkTrzXDO8A4Yoi0ZhSewFgOdNVU6wwxeCgliQgp2g,14039
+pytacs/spatial.py,sha256=h-0FoF70_lSSCV5hXiD2nm8gbE5h4cog3l4CTA5sD1A,80881
+pytacs/spatial_deprecated.py,sha256=ptfW_yhYqFSI041BZM1WB1xJuhYSxwGmSQ6WJfopHVI,30023
+pytacs/types.py,sha256=1ROweF70VvZjLt2igkMGfr-qkq-xiEXB0aPArFku5UA,736
+pytacs/utils.py,sha256=M8PNiJWufZw_JJ-nQw99TIYBsvh6lF31jr-PFa7-9Uk,17560
+pytacs-2025.9.15b0.dist-info/LICENSE,sha256=zGQpr3HZnRA91a2y-Fqk2mnw_1uhnmn7xflIyRFs4IA,35156
+pytacs-2025.9.15b0.dist-info/METADATA,sha256=DSpQmNZ-dPpXP_89vqEyH8tOTnguk4w-bbD8SoSSpyQ,3286
+pytacs-2025.9.15b0.dist-info/WHEEL,sha256=IYZQI976HJqqOpQU6PHkJ8fb3tMNBFjg-Cn-pwAbaFM,88
+pytacs-2025.9.15b0.dist-info/RECORD,,
