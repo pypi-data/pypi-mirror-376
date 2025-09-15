@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/mitm_requests/__init__.py
+src/mitm_requests/addon.py
+src/mitm_requests/capture.py
+src/mitm_requests/proxy.py
+src/mitm_requests.egg-info/PKG-INFO
+src/mitm_requests.egg-info/SOURCES.txt
+src/mitm_requests.egg-info/dependency_links.txt
+src/mitm_requests.egg-info/requires.txt
+src/mitm_requests.egg-info/top_level.txt
+tests/test_integration.py
+tests/test_proxy.py
