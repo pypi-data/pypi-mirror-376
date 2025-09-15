@@ -1,0 +1,11 @@
+LICENCE
+README.md
+pyproject.toml
+setup.cfg
+hello_world/__init__.py
+hello_world/test.py
+nexlify_hello_world.egg-info/PKG-INFO
+nexlify_hello_world.egg-info/SOURCES.txt
+nexlify_hello_world.egg-info/dependency_links.txt
+nexlify_hello_world.egg-info/top_level.txt
+tests/test.py

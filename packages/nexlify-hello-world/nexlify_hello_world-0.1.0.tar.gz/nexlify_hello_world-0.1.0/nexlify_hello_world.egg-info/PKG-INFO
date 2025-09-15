@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: nexlify-hello-world
+Version: 0.1.0
+Summary: Un paquete simple que saluda a los usuarios.
+Author: nexlify
+Project-URL: Homepage, https://github.com/tu_usuario/mi_paquete
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Dynamic: license-file
+
+# Hello World
+
+Este es un proyecto de ejemplo en Python para imprimir "Hello, World!".
+
+## Requisitos
+
+- Python 3.x
+
+## Uso
+
+```bash
+python hello.py
+```
+
+## Estructura
+
+```
+hello-world/
+├── hello.py
+└── README.md
+```
+
+## Autor
+
+- [Tu Nombre]
