@@ -1,0 +1,13 @@
+cvqp/__init__.py,sha256=gFG4NLDg8EGV5V_fBfTF0L1-RTVevve4NXgRph2zncM,356
+cvqp/admm.py,sha256=a-RdyyRBckfu89VUR9zq2wsIFUW2CcJCPnMCdRNzOXI,16838
+cvqp/libs/__init__.py,sha256=NPpJiPPrQs8PppSG0Mjk99rypCtWYQlHyMVZwx0l-h0,91
+cvqp/libs/bindings.cpp,sha256=k3fA3DnzFEqXGW7oPTVIuq2ST48VLNhhB7ep5rSnUtY,892
+cvqp/libs/sum_largest_proj.cpp,sha256=tF0H_Xos6HLV2rWntvSZ-aJvWgQtiLFrSerrf-aLyC0,5204
+cvqp/libs/sum_largest_proj.h,sha256=1fnTTgjb1ytInhSyJh4-CoXGg8HPZva5HxNXieiaGbE,274
+cvqp/projection.py,sha256=dbkXb33VSZfmuAoKcNdYCd0uujmL5uk70kbjSq4aY5M,1872
+cvqp/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cvqp/types.py,sha256=B64ZLCny7OsV0i5EK9DTtMbItaD-1V9shp0lauHNvms,4214
+cvqp-0.2.0.dist-info/LICENSE,sha256=ki_xlogPZpQ3lyPgOmWFf68S3vStKESnVUtlQ7Q3ivs,11364
+cvqp-0.2.0.dist-info/METADATA,sha256=bIWn-Qg9MSR3O7iAtBj8g7h0rZH583MMt8VPBm_1OVA,5782
+cvqp-0.2.0.dist-info/WHEEL,sha256=IYZQI976HJqqOpQU6PHkJ8fb3tMNBFjg-Cn-pwAbaFM,88
+cvqp-0.2.0.dist-info/RECORD,,
