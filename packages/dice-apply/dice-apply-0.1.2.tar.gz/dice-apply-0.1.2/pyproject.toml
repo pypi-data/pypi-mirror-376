@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dice-apply"
+version = "0.1.2"
+description = "Automated job application tool for Dice.com"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Sam Savage", email = "samatcrispy@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Topic :: Office/Business",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["dice", "job", "application", "automation", "selenium", "career"]
+requires-python = ">=3.8"
+dependencies = [
+    "selenium>=4.0.0",
+    "webdriver-manager>=3.8.0",
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black",
+    "flake8",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/samsavage/robo-apply"
+Repository = "https://github.com/samsavage/robo-apply"
+Issues = "https://github.com/samsavage/robo-apply/issues"
+
+[project.scripts]
+dice-apply = "dice_apply.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dice_apply*"]
+
+[tool.setuptools.package-data]
+dice_apply = ["*.py"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
