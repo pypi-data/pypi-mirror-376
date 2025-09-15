@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "face-miner"
+version = "1.0.0"
+description = "Extractor for HuggingFace models"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Jati H. Husen", email = "jatihusen@telkomuniversity.ac.id" },
+  { name = "Adam Rafif Faqih", email = "adamrafif@student.telkomuniversity.ac.id" },
+  { name = "M. Daffa Raygama", email = "daffraygama@student.telkomuniversity.ac.id" },
+  { name = "Yanwar Ardika Cahyani", email = "yanwardika@student.telkomuniversity.ac.id" },
+  { name = "Farah", email = "farah@student.telkomuniversity.ac.id" } # Recommend updating this last email if possible
+]
+keywords = ["huggingface", "library", "extractor"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Framework :: Flask",
+]
+
+dependencies = [
+  "flask",
+  "pandas",
+  "huggingface_hub",
+  "requests"
+]
+
+[project.urls]
+Homepage = "https://github.com/F201" 
+Issues = "https://github.com/F201/hf-extractor" 
+
+[tool.hatch.build.targets.wheel]
+packages = ["hf_extractor"]

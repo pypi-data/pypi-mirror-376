@@ -1,0 +1,8 @@
+*.egg-info/
+__pycache__/
+*.py[cod]
+progress.json
+.venv/
+app.log
+*.csv
+data/

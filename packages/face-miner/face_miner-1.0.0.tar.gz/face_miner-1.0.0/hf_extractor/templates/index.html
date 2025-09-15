@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face Model Extractor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        #main-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div id="main-container" class="p-4">
+        <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-3xl mx-auto">
+            <h1 class="text-3xl font-bold mb-4 text-center text-gray-900">Hugging Face Model Extractor</h1>
+            <p class="text-center text-gray-600 mb-8">
+                Enter your Hugging Face token and a model ID (optional). Leave model ID blank to extract all models.
+            </p>
+
+            <div class="mb-6">
+                <label for="tokenInput" class="block text-sm font-medium text-gray-700 mb-2">Hugging Face Token</label>
+                <input type="password" id="tokenInput" placeholder="Enter your hf_... token" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                <button id="clearTokenButton" onclick="document.getElementById('tokenInput').value = ''; localStorage.removeItem('token');" class="mt-2 w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    Clear Token
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="md:col-span-2">
+                    <label for="modelIdInput" class="block text-sm font-medium text-gray-700 mb-2">Model ID (Optional)</label>
+                    <input type="text" id="modelIdInput" placeholder="Leave blank for all models" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="numThreadsInput" class="block text-sm font-medium text-gray-700 mb-2">Threads</label>
+                    <input type="number" id="numThreadsInput" value="8" min="1" max="64" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button id="startButton" onclick="startNewExtraction()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    Start New Extraction
+                </button>
+                <button id="resumeButton" onclick="resumeExtraction()" class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                    Resume Extraction
+                </button>
+                <a href="/download" id="downloadLink" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 text-center hidden">
+                    Download CSV
+                </a>
+            </div>
+
+            <div id="statusContainer" class="mt-8 text-center hidden">
+                <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                    <div id="progressBar" class="bg-blue-600 h-4 rounded-full" style="width: 0%"></div>
+                </div>
+                <div id="progressText" class="mt-2 text-sm text-gray-600"></div>
+                <div id="overallProgressText" class="mt-1 text-xs text-gray-500"></div>
+                <div id="errorText" class="mt-2 text-sm text-red-600"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let statusInterval;
+
+        function setButtonsState(disabled) {
+            document.getElementById('startButton').disabled = disabled;
+            document.getElementById('resumeButton').disabled = disabled;
+        }
+
+        function startExtraction(resetProgress) {
+            const modelId = document.getElementById('modelIdInput').value.trim();
+            const numThreads = parseInt(document.getElementById('numThreadsInput').value, 10);
+            const token = document.getElementById('tokenInput').value.trim();
+
+            if (!token) {
+                document.getElementById('errorText').textContent = 'Please enter a Hugging Face token.';
+                document.getElementById('statusContainer').classList.remove('hidden');
+                return;
+            }
+            
+            setButtonsState(true);
+            document.getElementById('startButton').textContent = 'Working...';
+            document.getElementById('resumeButton').textContent = 'Working...';
+            document.getElementById('statusContainer').classList.remove('hidden');
+            document.getElementById('downloadLink').classList.add('hidden');
+            document.getElementById('errorText').textContent = '';
+            document.getElementById('overallProgressText').textContent = '';
+            updateProgressBar(0, 'Starting...'); 
+
+            fetch('/extract', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    model_id: modelId || null,
+                    num_threads: numThreads,
+                    token: token,
+                    reset_progress: resetProgress 
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to start extraction.');
+                } 
+                return response.json();
+            })
+            .then(data => {
+                localStorage.setItem('token', document.getElementById('tokenInput').value.trim());
+                if (statusInterval) clearInterval(statusInterval); 
+                statusInterval = setInterval(checkStatus, 2000);
+            })
+            .catch(error => {
+                console.error('Error:', error); 
+                document.getElementById('errorText').textContent = 'Error starting extraction.';
+                resetUI();
+            });
+        }
+
+        function startNewExtraction() {
+            startExtraction(true); 
+        }
+
+        function resumeExtraction() {
+            const modelId = document.getElementById('modelIdInput').value.trim();
+            if (modelId) {
+                document.getElementById('errorText').textContent = 'Resume functionality is only for full crawls (leave Model ID blank).';
+                document.getElementById('statusContainer').classList.remove('hidden');
+                return;
+            }
+            startExtraction(false); 
+        }
+
+
+        function checkStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'initializing') {
+                        updateProgressBar(0, 'Initializing extraction...');
+                    } else if (data.status === 'running') {
+                        // --- FIX: Use the reliable `extraction_type` from the backend ---
+                        const isSingleModel = data.extraction_type === 'single';
+                        let percent = 0;
+                        let progressMsg = '';
+                        let overallMsg = '';
+
+                        if (isSingleModel) {
+                            percent = data.total > 0 ? (data.processed / data.total) * 100 : 0;
+                            progressMsg = `Processed ${data.processed} of ${data.total}`;
+                        } else {
+                            // Full crawl uses chunk progress
+                            percent = data.chunk_total > 0 ? (data.chunk_processed / data.chunk_total) * 100 : 0;
+                            progressMsg = `Processing chunk ${data.chunk_number}: ${data.chunk_processed} of ${data.chunk_total}`;
+                            overallMsg = `(Total models processed so far: ${data.processed})`;
+                        }
+                        
+                        updateProgressBar(percent, progressMsg, overallMsg);
+
+                    } else if (data.status === 'complete') {
+                    clearInterval(statusInterval);
+                    updateProgressBar(100, 'Extraction complete! Rebuilding CSVs…');
+
+                    fetch('/rebuild_and_cleanup', { method: 'POST' })
+                        .then(r => r.json())
+                        .then(info => {
+                        updateProgressBar(100, 'Rebuild complete!', `(rows: ${Object.entries(info.rows_written).map(([k,v])=>k+': '+v).join(', ')})`);
+                        document.getElementById('downloadLink').classList.remove('hidden');
+                        resetUI();
+                        })
+                        .catch(err => {
+                        document.getElementById('errorText').textContent = 'Rebuild failed. You can retry from the UI or via /rebuild_and_cleanup.';
+                        resetUI();
+                        });
+                    } else if (data.status === 'error') {
+                        clearInterval(statusInterval);
+                        document.getElementById('errorText').textContent = `Error: ${data.error_message}`;
+                        resetUI();
+                    }
+                })
+                .catch(err => {
+                    clearInterval(statusInterval);
+                    document.getElementById('errorText').textContent = 'Failed to get status.';
+                    resetUI();
+                });
+        }
+        
+        function updateProgressBar(percent, message, overallMessage = '') {
+            document.getElementById('progressBar').style.width = `${percent}%`;
+            document.getElementById('progressText').textContent = message;
+            document.getElementById('overallProgressText').textContent = overallMessage;
+        }
+
+        function resetUI() {
+            setButtonsState(false);
+            document.getElementById('startButton').textContent = 'Start New Extraction';
+            document.getElementById('resumeButton').textContent = 'Resume Extraction';
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedToken = localStorage.getItem('token');
+            if (savedToken) {
+                document.getElementById('tokenInput').value = savedToken;
+            }
+        });
+    </script>
+</body>
+</html>
