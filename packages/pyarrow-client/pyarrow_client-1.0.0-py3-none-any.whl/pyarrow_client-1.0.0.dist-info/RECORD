@@ -1,0 +1,11 @@
+pyarrow/__version__.py,sha256=sau_1LzepzFDRQGJXaNpc-hygabDclXAY4IeCKqUwL8,418
+pyarrow/arrow_utils.py,sha256=yDQKqlCNhsRQ-M91Uy-6j53unmg3TzXAGBZUO-JNxs4,6281
+pyarrow/connect.py,sha256=91XzHV2zfX4qQE5ve_h5RpuMXfqR2O4e8WFTBXI44KM,14390
+pyarrow/constants.py,sha256=AQAEmhdA0CPf1sHsIOq-DcyF2Vj6vDtzT5MA2vEcJpU,3003
+pyarrow/exceptions.py,sha256=oodRzhLBPrKt4vtSN3KGuX7V2kxBclPnet-_hjqulT0,1053
+pyarrow/sockets.py,sha256=9XDe-VcUfL5PUpnKSbp57NzvANIQcE9Qr2ajIr1pKRI,19248
+pyarrow_client-1.0.0.dist-info/licenses/LICENSE,sha256=qqhq-Nwi1EOdoQGGFznvkeaeZwIcKZZcR32A6d9M1W4,1069
+pyarrow_client-1.0.0.dist-info/METADATA,sha256=hdKbEtabiNnqoFJqPMl781KI3qBAR_MhhksE4GVvEYo,13306
+pyarrow_client-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pyarrow_client-1.0.0.dist-info/top_level.txt,sha256=fPLFY23J70iLX3TKZtbNM2WS9DlDdIA5d9WX0dloJVY,8
+pyarrow_client-1.0.0.dist-info/RECORD,,
