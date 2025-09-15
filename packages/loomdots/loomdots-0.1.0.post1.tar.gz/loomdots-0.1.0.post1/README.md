@@ -1,0 +1,1 @@
+Loomdots is a lightweight network layer for agents. Expose any agent over HTTP/A2A with streaming and validation.

@@ -1,0 +1,42 @@
+[project]
+name = "loomdots"
+version = "0.1.0.post1"
+description = "The network layer for agents."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "starlette>=0.37.2",
+  "sse-starlette>=2.1.0", 
+  "a2a-sdk[http-server]>=0.1.0",
+  "psutil>=5.9.0",  # For resource monitoring and validation
+  "uvicorn>=0.24.0",  # For the server
+]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/loomdots"]
+
+[tool.hatch.build]
+include = ["src/loomdots"]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.5.6", 
+  "pytest>=8.3.2",
+  "pytest-asyncio>=0.21.0",
+  "pytest-mock>=3.11.0",
+  "coverage[toml]>=7.3.0",
+]
+framework-support = [
+  "google-adk>=0.1.0",  # For Google ADK support
+]
+
+[tool.ruff]
+line-length = 100
+lint.extend-select = ["I"]  # import sorting
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
