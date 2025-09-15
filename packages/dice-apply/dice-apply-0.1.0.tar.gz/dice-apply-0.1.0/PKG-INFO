@@ -1,0 +1,149 @@
+Metadata-Version: 2.1
+Name: dice-apply
+Version: 0.1.0
+Summary: Automated job application tool for Dice.com
+Author-email: Sam Savage <samatcrispy@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/samsavage/robo-apply
+Project-URL: Repository, https://github.com/samsavage/robo-apply
+Project-URL: Issues, https://github.com/samsavage/robo-apply/issues
+Keywords: dice,job,application,automation,selenium,career
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP :: Browsers
+Classifier: Topic :: Office/Business
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# Dice Apply
+
+🤖 Automated job application tool for Dice.com
+
+## Features
+
+- 🎯 Apply to single jobs or bulk apply to multiple positions
+- 🔍 Smart job search with location and job type filtering
+- 🚀 Optimized session management (single login for multiple applications)
+- 📊 Detailed application tracking and reporting
+- 🛡️ Anti-detection measures for reliable automation
+- 📱 Remote job support
+
+## Installation
+
+```bash
+pip install dice-apply
+```
+
+## Quick Start
+
+After installation, use the `dice-apply` command:
+
+### Bulk Apply to Multiple Jobs
+
+```bash
+# Apply to 10 data engineer jobs in New York
+dice-apply bulk --job-type "data engineer" --location "New York, NY" --num-jobs 10
+
+# Apply to remote software engineer positions
+dice-apply bulk --job-type "software engineer" --location "Remote" --num-jobs 15
+
+# Apply to Python developer jobs in San Francisco
+dice-apply bulk --job-type "python developer" --location "San Francisco, CA" --num-jobs 5
+```
+
+### Apply to a Single Job
+
+```bash
+dice-apply apply "https://www.dice.com/job-detail/12345-abcde-67890"
+```
+
+### Command Options
+
+#### Global Options
+- `--email`: Your Dice.com email (default: prompts for input)
+- `--password`: Your Dice.com password (default: prompts securely)
+- `--resume`: Path to resume file (optional, Dice auto-selects if not provided)
+
+#### Bulk Apply Options
+- `--job-type`: Type of job to search for (default: "software developer")
+- `--num-jobs`: Number of jobs to apply to (default: 10)
+- `--location`: Job location, use "Remote" for remote jobs (default: "San Francisco, CA, USA")
+
+#### Single Apply Options
+- `--job-type`: Job type for categorization (default: "software developer")
+
+## Examples
+
+```bash
+# Basic bulk application
+dice-apply bulk
+
+# Custom job search
+dice-apply bulk --job-type "DevOps Engineer" --location "Austin, TX" --num-jobs 20
+
+# Remote jobs only
+dice-apply bulk --job-type "Full Stack Developer" --location "Remote" --num-jobs 15
+
+# With custom credentials
+dice-apply --email your@email.com bulk --job-type "Data Scientist" --num-jobs 8
+
+# Single job application
+dice-apply apply "https://www.dice.com/job-detail/abc123"
+```
+
+## How It Works
+
+1. **Authentication**: Logs into Dice.com with your credentials
+2. **Job Search**: Searches for jobs matching your criteria
+3. **Smart Application**: Applies to jobs using optimized session management
+4. **Reporting**: Provides detailed success/failure statistics
+
+## Session Management
+
+The tool uses intelligent session management:
+- **First job**: Full login process
+- **Subsequent jobs**: Reuses session, only re-logs if needed
+- **Auto-recovery**: Automatically handles session expiration
+
+## Requirements
+
+- Python 3.8+
+- Chrome browser (automatically managed)
+- Valid Dice.com account
+
+## Security Notes
+
+- Credentials are only used for Dice.com authentication
+- No data is stored or transmitted to third parties
+- Uses anti-detection measures to prevent account issues
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details
+
+## Disclaimer
+
+This tool is for educational purposes. Users are responsible for:
+- Following Dice.com's terms of service
+- Using reasonable application rates
+- Ensuring their own account security
+
+Use responsibly and respect rate limits to avoid account restrictions.

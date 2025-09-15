@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include pyproject.toml
+include setup.py
+recursive-include dice_apply *.py
+exclude *.pyc
+exclude __pycache__
+exclude .DS_Store
+exclude cli.py
+exclude simple_main.py
+exclude main.py
+exclude app.html
