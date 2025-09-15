@@ -1,0 +1,100 @@
+Metadata-Version: 2.4
+Name: naingood-sederhana
+Version: 0.1.1
+Summary: Library Python sederhana dengan utilitas contoh
+Project-URL: Homepage, https://example.com/
+Project-URL: Repository, https://example.com/repo
+Project-URL: Issues, https://example.com/repo/issues
+Author-email: naingood <nain.good@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Your Name
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+License-File: LICENSE
+Keywords: contoh,sederhana,utils
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Sederhana
+
+Library Python sederhana sebagai template untuk memulai membuat package.
+
+## Fitur
+
+- add(a, b): penjumlahan dua angka
+- factorial(n): faktorial bilangan bulat non-negatif
+
+## Struktur Proyek
+
+```
+.
+├─ pyproject.toml
+├─ README.md
+├─ src/
+│  └─ sederhana/
+│     ├─ __init__.py
+│     └─ mathutils.py
+└─ tests/
+   └─ test_mathutils.py
+```
+
+## Pengembangan Lokal
+
+1. Buat virtualenv (opsional tapi disarankan)
+2. Instal editable:
+
+```
+pip install -e .
+```
+
+3. Jalankan test (membutuhkan `pytest`):
+
+```
+pytest -q
+```
+
+## Build Rilis
+
+Untuk membangun wheel dan sdist (membutuhkan paket `build`):
+
+```
+pip install build
+python -m build
+```
+
+Artefak akan tersedia di folder `dist/`.
+
+## Contoh Penggunaan
+
+```python
+from sederhana import add, factorial
+
+print(add(2, 3))       # 5
+print(factorial(5))    # 120
+```
+
+## Lisensi
+
+MIT
