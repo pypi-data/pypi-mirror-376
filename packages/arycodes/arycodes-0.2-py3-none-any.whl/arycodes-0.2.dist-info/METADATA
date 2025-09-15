@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: arycodes
+Version: 0.2
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: tabulate
+Requires-Dist: colorama
+Dynamic: license-file
+Dynamic: requires-dist
