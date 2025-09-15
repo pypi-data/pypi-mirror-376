@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+license-files = [ "LICENSE.txt" ]
+
+[project]
+name = "client_model"
+version = "0.1.0"
+description = "Pacote de exemplo com clientes e operações bancárias"
+authors = [
+    { name = "Michael Baldez", email = "teu.email@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]

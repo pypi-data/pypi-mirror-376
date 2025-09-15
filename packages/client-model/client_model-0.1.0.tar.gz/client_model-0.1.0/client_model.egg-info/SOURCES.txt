@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+client_model/__init__.py
+client_model/client.py
+client_model.egg-info/PKG-INFO
+client_model.egg-info/SOURCES.txt
+client_model.egg-info/dependency_links.txt
+client_model.egg-info/top_level.txt
+examples/demo.py
+tests/test_client.py
