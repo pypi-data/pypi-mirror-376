@@ -1,0 +1,14 @@
+README.rst
+setup.cfg
+setup.py
+tencentcloud/__init__.py
+tencentcloud/ctsdb/__init__.py
+tencentcloud/ctsdb/v20230202/__init__.py
+tencentcloud/ctsdb/v20230202/ctsdb_client.py
+tencentcloud/ctsdb/v20230202/errorcodes.py
+tencentcloud/ctsdb/v20230202/models.py
+tencentcloud_sdk_python_ctsdb.egg-info/PKG-INFO
+tencentcloud_sdk_python_ctsdb.egg-info/SOURCES.txt
+tencentcloud_sdk_python_ctsdb.egg-info/dependency_links.txt
+tencentcloud_sdk_python_ctsdb.egg-info/requires.txt
+tencentcloud_sdk_python_ctsdb.egg-info/top_level.txt
