@@ -1,0 +1,12 @@
+-c core.txt
+-c test.txt
+-c publish.txt
+pre-commit
+jupyterlab
+jupyter-contrib-nbextensions
+ipywidgets
+torchinfo
+bumpver
+line_profiler
+mypy
+types-tqdm
