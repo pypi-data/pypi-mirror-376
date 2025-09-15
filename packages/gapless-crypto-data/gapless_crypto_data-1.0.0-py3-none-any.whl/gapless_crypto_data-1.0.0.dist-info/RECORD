@@ -1,0 +1,16 @@
+gapless_crypto_data/__init__.py,sha256=GG5macVI01OQyF2AkSuVQ3c6vtDmWtOvxAG-0KNLUPE,977
+gapless_crypto_data/cli.py,sha256=c2R9d2cU7vm39jejKon1pculRCgrfm24lYuJWE56iwQ,5931
+gapless_crypto_data/collectors/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gapless_crypto_data/collectors/binance_public_data_collector.py,sha256=TOUQ2YCjCtmL68Z8QeP8tM4er0JJDJdWuWqvBWqsq-I,52383
+gapless_crypto_data/exchanges/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gapless_crypto_data/gap_filling/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gapless_crypto_data/gap_filling/safe_file_operations.py,sha256=t3PWek-pIavYTsRolPyoECERJEM9aVnPmQqvXBdes48,10386
+gapless_crypto_data/gap_filling/universal_gap_filler.py,sha256=fQYBCCTpQv6shMhK4TS4Vr1HnL07yFNDLEQOYsdqEDo,12492
+gapless_crypto_data/sample_data/binance_spot_BTCUSDT-1h_20240101-20240102_0.0y.csv,sha256=M52W6ZYD3b5lpOfUkYWFWkR5owQg_T2-e3K2Fpiz5cA,3613
+gapless_crypto_data/sample_data/binance_spot_BTCUSDT-1h_20240101-20240102_0.0y.metadata.json,sha256=MdBDjmEnlWjz8h6xO6FFWWaCi3A28wI8-0_vRuMjwqQ,1748
+gapless_crypto_data/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gapless_crypto_data-1.0.0.dist-info/METADATA,sha256=MHMiKIEAA--2h8OQlXBDjXstJcbu0eFzbGEp9hzGGPk,9915
+gapless_crypto_data-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gapless_crypto_data-1.0.0.dist-info/entry_points.txt,sha256=hpVNOgX7tI18K1Y4ILpv_hNPbavTdcjiGAwT9kLMR3A,69
+gapless_crypto_data-1.0.0.dist-info/licenses/LICENSE,sha256=dYCu7Ot3Vn2bSX9rgJGk8OT9B02Pk7gDzPXhjyCXZEE,1064
+gapless_crypto_data-1.0.0.dist-info/RECORD,,
