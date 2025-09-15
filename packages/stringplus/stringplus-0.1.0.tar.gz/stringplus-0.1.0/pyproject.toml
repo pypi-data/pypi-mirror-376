@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stringplus"  # change if already taken!
+version = "0.1.0"
+description = "Extended string utilities with CLI"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{name="Ahamed"}]
+license = {text = "MIT"}
+dependencies = []
+keywords = ["string", "text", "utils", "cli"]
+
+[project.scripts]
+stringx = "stringx.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["stringx*"]
