@@ -1,0 +1,112 @@
+# Ankipan
+
+Ankipan is a flashcard creation program for language-learning that helps you spend more time on what you enjoy, and less on guessing and looking up words while immersed.
+
+Prepare for your upcoming immersions by deliberately focussing on the words that are most relevant to the sources that you are interested in.
+Ankipan lets you parse any text or corpus (text, subtitles, websites, lyrics etc.), sorts the words by frequency and filters the words you are currently learning or that you already know.
+
+New words are internally stored as decks and can be converted to Anki Flashcards, which contain customizable content such as scraped dictionary definitions and example sentences from different sources.
+Optional translations and explanations for the example sentences can be generated from your own (free) google gemini api key.
+
+
+## Getting started
+
+### 1. Prerequisites
+
+- Download and install anki from https://apps.ankiweb.net/
+- Create an account on their website
+- Install the ankiconnect plugin from https://ankiweb.net/shared/info/2055492159 (in anki, open Tools -> Add Ons -> Get Add-Ons -> paste code 2055492159)
+- Open the app and login, keep anki open when syncing databases
+
+### 2. Installation
+
+- Using pip:
+
+```bash
+pip install ankipan
+```
+
+- From source:
+
+```bash
+git clone git@gitlab.com:ankipan/ankipan.git
+cd ankipan
+pip install .
+```
+
+### 3. (Optional) Install lemmatizers to parse your own texts
+
+- Download pytorch from https://pytorch.org/get-started/locally/ (for stanza lemma parsing)
+- install dependencies:
+
+```bash
+pip install stanza
+```
+
+### 4. (Optional but recommended) Use your own gemini API key to generate translations and explanations for example sentences (see prompt in ankipan/translator.py)
+
+- Create your own free gemini API key in https://ai.google.dev/gemini-api/docs/api-key
+- Save it in your local cache:
+```python
+ python3 -c "import ankipan;ankipan.Config.set_gemini_api_key('<api key>')"
+```
+- Each gemini key has a free quota of 1500 prompts/day, and each prompt can process up to 300 sentences at once, which allows you to process sentences for ~10.000 flashcards per day.
+- If one of your sentences has been cached on the server by a previous user, it is not processed in your prompt.
+- The server also has a free gemini api key set up, and each user has up to 10 server-side prompts per IP. If they run out, users will have to use their own keys to generate translations/explanations.
+
+## Usage
+
+See interactive source notebook in `/examples`
+
+```python
+# Create a new collection with your name, learning language and native language
+from ankipan import Collection
+collection = Collection('One Piece 1', learning_lang='jp', native_lang='en')
+
+# Specify content to be downloaded for flashcards (see collection.get_available_sources() for example sentences and scraper.py module)
+
+# the following e.g. prints ['jisho', 'wadoku', 'wikitionary_de', 'wikitionary_en', 'wikitionary_fr', 'wikitionary_jp', 'tatoeba', 'urban']:
+print(collection.valid_definition_fields)
+# now we select which definitions we want on our flashcard backside:
+definitions = ['wadoku', 'jisho', 'wikitionary_en']
+
+# the following e.g. prints ['lyrics', 'wikipedia', 'youtube']:
+print(collection.get_available_sources())
+# the following e.g. prints ['hajimesyacho', 'sushiramen', 'hikakin', 'fischers']:
+print(c.get_available_sources('youtube'))
+# the following can also be left empty if you have no preference, otherwise example sentences from the specified sources will be prioritized:
+example_sentence_source_paths = ['wikipedia', 'syosetu.com', 'youtube/fischers', 'youtube/sushiramen']
+
+# set the fields in the collection:
+c.set_flashcard_fields(definitions = definitions, example_sentence_source_paths = example_sentence_source_paths)
+
+# Specify a source the words of which you would like to add to your deck, either directly as string, as path to file or folder, or directly by source name
+# see source names from collection.get_available_sources()
+
+words = collection.collect(source_path='wikipedia/O/ONE_PIECE.html') # from DB, no lemmatizers required
+# words = collection.collect(string='かつてこの世の全てを手に入れた男、〝海賊王〟ゴールド・ロジャー。') # from string
+# words = collection.collect('./example_text_jp.txt') # textfile from path (original source: https://ja.wikipedia.org/wiki/ONE_PIECE)
+# words = collection.collect('./example_subtitle_jp.srt') # subtitle from path
+
+# Select the words you already know and the words you would like to learn from the table overview
+words.select_new_words()
+
+# Add words to collection
+collection.add_deck(words, 'example_source')
+
+# Optional: Persist collection state to harddrive (see /'.data' folder)
+collection.save()
+
+# Download content for new cards (also autosaves collection to drive)
+collection.fetch('example_source')
+
+# Sync current collection with anki to upload them to currently open anki instance
+collection.sync_with_anki('testsource')
+
+```
+
+## Notes
+
+- Current lemmatization is done via the `stanza` library in the reader.py module. While this works mostly fine, the library still just uses a statistical model to estimate the likely word roots (lemmas) of the different pieces of sentences. It sometimes makes mistakes, which requires the users to manually filter them in the `select_new_words` overview, or suspend the card later on in anki.
+
+- The translation engine running on the server has a limited quota (free gemini api). Once it has been exceeded for the day, users will have to specify their own google gemini API key which is then locally used for translations.
