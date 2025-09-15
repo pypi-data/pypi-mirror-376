@@ -1,0 +1,1 @@
+from formcrypt.core import FormCrypt

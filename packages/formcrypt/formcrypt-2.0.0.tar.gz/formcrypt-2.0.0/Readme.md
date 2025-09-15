@@ -1,0 +1,248 @@
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Sixtyfour+Convergence&size=50&duration=1000&pause=1000&center=true&vCenter=true&width=500&height=100&lines=FormCrypt" alt="Typing SVG">
+  <h4 align="center">
+    A string obfuscation tool for C/C++
+  </h4>
+</p>
+</br>
+</br>
+</br>
+
+### Project Info
+FormCrypt is a tool for encrypting strings in your C code. The string will be hidden in a structure that mimics an x86 or x64 assembly function. This tool was inspired by the string obfuscation methods used by the FormBook malware variant, which is described in this [research article](https://www.stormshield.com/news/in-depth-formbook-malware-analysis-obfuscation-and-process-injection/) from [stormshield](https://www.stormshield.com).
+
+### Technical Info
+FormBook used encrypted buffers known as 'enc_bufs' to hide its strings. These buffers attempted to masquerade as functions by pre-pending a function prologue at the beginning of the buffer. When this data is viewed in a disassembler, a function prologue will appear. At first glance, it will appear to be a function. If looked at closer, the 'function' can quickly turn to garble.
+
+![FormBook Function Prolog](https://github.com/wizardy0ga/FormCrypt/blob/master/images/formbook_fake_function_prologue.png)
+###### Image sourced from Arbor Networks
+
+Further reading about FormBook can be found in this [stormshield](https://www.stormshield.com/news/in-depth-formbook-malware-analysis-obfuscation-and-process-injection/) article or in this article from [arbor networks](https://www.netscout.com/blog/asert/formidable-formbook-form-grabber).
+
+### How This Implementation Works
+FormCrypt attempts to mimic the obfuscation technique employed by the FormBook malware. FormCrypt provides the C code necessary for hiding strings which will appear as functions in a disassembler. It does this by pre-pending a function prologue & epilogue to the encrypted buffer. Each string is encrypted with the RC4 cipher which has been modified to extract the encryption key for the buffer prior to processing the data.
+
+The **ENCRYPTED_BUFFER** structure is shown below. The Key member is allocated enough space to pre-pend the function prologue. This structure is only intended to be created with the **NEW_BUFFER** macro.
+
+```C
+typedef struct _ENCRYPTED_BUFFER {
+	char Key[PROLOGUE_SIZE + KEY_SIZE];
+	char Buffer[];
+} ENCRYPTED_BUFFER, * PENCRYPTED_BUFFER;
+```
+
+This is the **NEW_BUFFER** macro. When called, the macro will inject the function prologue & epilogue at the beginning & and of the structure respectively. A null byte is also injected between the **Ciphertext** and **FUNCTION_EPILOG** placements. The null byte allows **DecryptRc4Buffer** to calculate the correct string length for decrypting the data so that the epilogue is not processed.
+
+```C
+#define NEW_BUFFER(VariableName, Ciphertext, Cipherkey) \
+	ENCRYPTED_BUFFER VariableName = {                   \
+		.Key	= { FUNCTION_PROLOG, Cipherkey },       \
+		.Buffer = { Ciphertext, 0x00, FUNCTION_EPILOG } \
+	}                                                   \
+```
+
+In the examples below, the string **HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run** has been hidden in an encrypted buffer generated with the FormCrypt utility.
+
+###### x64 Encrypted Buffer Disassembly
+![x64 Demo Buffer](https://github.com/wizardy0ga/FormCrypt/blob/master/images/x64_buffer_disasm.png)
+
+###### x64 Encrypted Buffer Memory Dump
+![x64 Buffer Dump (Encrypted)](https://github.com/wizardy0ga/FormCrypt/blob/master/images/x64_buffer_encrypted_dump.png)
+
+###### x64 Decrypted Buffer Memory Dump
+![x64 Buffer Dump (Decrypted)](https://github.com/wizardy0ga/FormCrypt/blob/master/images/x64_buffer_decrypted_dump.png)
+
+## Installation
+FormCrypt can be installed from the python package index ([pypi](https://pypi.org)) or locally. All operations are performed from the command line.
+
+### Pip (PyPi)
+`pip install formcrypt`
+
+### Local
+```
+git clone https://github.com/wizardy0ga/formcrypt
+cd ./formcrypt
+pip install .
+```
+
+## Usage 
+FormCrypt offers two interfaces for usage, scripting & the command line.
+
+### Using FormCrypt CLI
+![usage](https://github.com/wizardy0ga/FormCrypt/blob/master/images/usage.png)
+
+FormCrypt CLI only requires the user to provide the strings to encrypt. This is done with either **--strings** or **--file** for a filepath containing a list of strings to encrypt.
+
+###### Using --strings argument
+`formcrypt --strings URL=https://google.com BACKUP_URL=https://baidu.com`
+
+###### Using --file argument
+`formcrypt --file strings.txt`
+
+> [!IMPORTANT]
+> Each argument expects a list of key value pairs. These pairs represent the macro definition name (key) and it's corresponding encrypted string value. In **URL=https://google.com**, **URL** will become the macro name & this macros value will be an rc4 encrypted string representing **https://google.com**. When using the file method, ensure each key/value pair is seperated by a new line.
+
+### Using FormCrypt in a Script
+FormCrypt also offers a scripting interface via the **FormCrypt** object. This object takes two parameters, **strings** and **keysize**. Only **strings** needs to be specified.
+
+###### FormCrypt object definition
+```py
+class FormCrypt( object ):
+    """
+    Represents the source for formcrypt.
+
+    :param: strings
+        A dicitionary of strings to encrypt & include in the formcrypt header. Syntax for dictionary
+        is -> macro_name=string_value. 'macro_name' sets the name of the macro for string ciphertext
+        in the header file & string is the data to encrypt.
+    
+    :param: keysize
+        An int which sets the size of the default encryption key size for all string keys within the 
+        formcrypt source. Default to 16 bytes.
+    """
+```
+
+The strings parameter expects a dictionary where each key value pair represents a macro definition name & it's corresponding ciphertext value. 
+
+###### Creating a FormCrypt object
+```py
+FormCrypt( strings={'URL': 'https://google.com', 'BACKUP_URL': 'https://baidu.com'} )
+```
+
+To write the source code to a target directory, we can use the **write_to_dir** method. The function writes both the source & header files to a single directory or to their own respective directories.
+
+###### Function definition for write_to_dir
+```py
+def write_to_dir( self, outdir="", source_dir="", header_dir="" ):
+    """ Write the source/header files to single or targeted directories """
+```
+
+A demonstration script has been provided below.
+```py
+from formcrypt import FormCrypt
+enc_buf = FormCrypt( strings={'URL': 'https://google.com', 'BACKUP_URL': 'https://baidu.com'} )
+enc_buf.write_to_dir( outdir='C:\\MyProjects\\Project1' )
+```
+
+### Integration Into Your Codebase
+
+Include the **FormCrypt.h** header file in the part of your project codebase where you need to access the functions or strings. By default, the structures are defined globally in the **FormCrypt.h** header file. You can move these to a local function if desired.
+
+#### FormCrypt.h Exports
+| Name | Type | Description |
+| - | - | - |
+| DecryptRc4Buffer( PENCRYPTED_BUFFER pEncryptedBuffer ) | Function | Used for decrypting or re-encrypting an encrypted buffer. Takes a pointer to the structure as an argument. 
+
+To decrypt or re-encrypt your buffer, just call **DecryptRc4Buffer** with a pointer to the structure you want to decrypt as an argument.
+
+#### Example Code
+```
+#include <stdio.h>
+
+/* ---------------- FormCrypt.h ----------------------*/
+#define SHADOW_SPACE_SIZE 0x20
+#define KEY_SIZE 12
+#ifndef ARCH_X86
+#define PROLOGUE_SIZE 8
+#define FUNCTION_PROLOG 0x55, 0x48, 0x89, 0xE5, 0x48, 0x83, 0xEC, SHADOW_SPACE_SIZE
+#define FUNCTION_EPILOG 0xCC, 0xCC, 0xCC, 0x48, 0x83, 0xC4, SHADOW_SPACE_SIZE, 0x5D, 0xC3
+#endif
+#ifdef ARCH_X86
+#define PROLOGUE_SIZE 6
+#define FUNCTION_PROLOG 0xCC, 0xCC, 0xCC, 0x55, 0x8B, 0xEC
+#define FUNCTION_EPILOG 0xCC, 0xCC, 0xCC, 0x89, 0xEC, 0x5D, 0xC3
+#endif
+
+typedef struct _ENCRYPTED_BUFFER {
+    char Key[PROLOGUE_SIZE + KEY_SIZE];
+    char Buffer[];
+} ENCRYPTED_BUFFER, * PENCRYPTED_BUFFER;
+
+void DecryptRc4Buffer(PENCRYPTED_BUFFER pEncryptedBuffer);
+
+#define NEW_BUFFER(VariableName, Ciphertext, Cipherkey) \
+	ENCRYPTED_BUFFER VariableName = {                   \
+		.Key	= { FUNCTION_PROLOG, Cipherkey },       \
+		.Buffer = { Ciphertext, 0x00, FUNCTION_EPILOG } \
+	}                                                   \
+
+#define MYENCRYPTEDBUFFER_TEXT 0x32,0xE2,0x11,0xA8,0x9C,0x4B,0x24,0x0D,0xD4,0x86,0x49,0x71,0xAF,0xE1,0x3C,0x29,0x8C,0x86,0x14,0xC2,0x60,0x45,0x33,0xC5,0x82,0xF5,0x7E,0x9F,0xEB,0x19,0x29,0xAB,0xD7,0xDF,0x4F,0x06,0x75,0xC0,0x61,0x41,0x18,0xEA,0x98,0xCD,0x3E,0xEF,0xE1,0x88,0x5C,0x88,0x80
+#define MYENCRYPTEDBUFFER_KEY 0xE4,0x26,0xAF,0x28,0x47,0x03,0x87,0xB0,0xE1,0x97,0x76,0x74
+
+NEW_BUFFER(MyEncryptedBuffer, MYENCRYPTEDBUFFER_TEXT, MYENCRYPTEDBUFFER_KEY);
+
+/*---------------- End FromCrypt.h -----------------------*/
+
+/* --------------- FormCrypt.c --------------------------*/
+
+void DecryptRc4Buffer(PENCRYPTED_BUFFER pEncryptedBuffer) {
+    unsigned char   S[256], TrueKey[KEY_SIZE], temp;
+    const char      *String1, *String2;
+    unsigned int    i, j = 0, k, StringLength;
+
+    // Retrieve the string length
+    String1 = pEncryptedBuffer->Buffer;
+    for (String2 = String1; *String2; ++String2);
+    StringLength = String2 - String1;
+
+    // Seperate key from fake function prologue
+    for (int x = 0; x < KEY_SIZE; x++) {
+        TrueKey[x] = pEncryptedBuffer->Key[PROLOGUE_SIZE + x];
+    }
+
+    // Key Scheduling Algorithm (KSA)
+    for (i = 0; i < 256; i++) {
+        S[i] = i;
+    }
+    for (i = 0; i < 256; i++) {
+        j = (j + S[i] + TrueKey[i % KEY_SIZE]) % 256;
+        temp = S[i];
+        S[i] = S[j];
+        S[j] = temp;
+    }
+
+    // Pseudo-Random Generation Algorithm (PRGA)
+    i = j = 0;
+    for (k = 0; k < StringLength; k++) {
+        i = (i + 1) % 256;
+        j = (j + S[i]) % 256;
+        temp = S[i];
+        S[i] = S[j];
+        S[j] = temp;
+        pEncryptedBuffer->Buffer[k] ^= S[(S[i] + S[j]) % 256];
+    }
+}
+/* ----------------- End FormCrypt.c -------------------*/
+
+int main() {
+
+    printf("[+] Encrypted buffer is located at 0x%p.\n\t> Press enter to decrypt buffer.", &MyEncryptedBuffer);
+    getchar();
+    
+    DecryptRc4Buffer(&MyEncryptedBuffer);
+    printf("[+] Decrypted buffer. Content: %s\n\t> Press enter to re-encrypt buffer.", MyEncryptedBuffer.Buffer);
+    getchar();
+
+    DecryptRc4Buffer(&MyEncryptedBuffer);
+    printf("[+] Re-encrypted buffer.\n\t> Press enter to decrypt buffer.");
+    getchar();
+
+    DecryptRc4Buffer(&MyEncryptedBuffer);
+    printf("[+] Decrypted buffer. Content: %s\n\t> Press enter to re-encrypt buffer.", MyEncryptedBuffer.Buffer);
+    getchar();
+    
+    DecryptRc4Buffer(&MyEncryptedBuffer);
+    printf("[+] Re-encrypted buffer.\n\t> Press enter to quit.");
+    getchar();
+    
+    return 0;
+}
+```
+
+### Change Log
+
+#### Version 2.0.0
+##### Script
+- Converted code from script to module adding second usage interface for scripting.
+##### FormCrypt source
+- Removed StringLength functions & integrated directly to **DecryptRc4Buffer**. 
