@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: plexdl
+Version: 0.5.0
+Author-email: Daniel Hoherd <daniel.hoherd@gmail.com>
+License: MIT License
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Utilities
+Requires-Python: >=3.11
+Requires-Dist: humanfriendly>=10.0
+Requires-Dist: humanize>=4.11.0
+Requires-Dist: plexapi>=4.16.0
+Requires-Dist: requests>=2.32.3
+Requires-Dist: typer>=0.13.1
