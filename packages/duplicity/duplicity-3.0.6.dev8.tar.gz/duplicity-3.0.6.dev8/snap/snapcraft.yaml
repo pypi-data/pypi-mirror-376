@@ -1,0 +1,136 @@
+name: duplicity
+version: 3.0.6.dev8
+license: GPL-2.0
+summary: Efficient, encrypted backup to local or remote hosts
+description: |
+  Duplicity backs directories by producing encrypted tar-format volumes and uploading
+  them to a remote or local file server. Because duplicity uses librsync, the incremental
+  archives are space efficient and only record the parts of files that have changed since
+  the last backup. Because duplicity uses GnuPG to encrypt and/or sign these archives,
+  they will be safe from spying and/or modification by the server.
+
+grade: stable
+confinement: classic
+base: core24
+
+environment:
+    # this is applied for all apps:name
+    DUPL_VENV: /usr/local/duplicity.venv
+
+apps:
+    duplicity:
+        command: bin/duplicity-launcher.sh
+    # the following two debug apps allow printing env in snap for debug purposes,
+    # to help pinning snap startup issues (missing libs, _rsync module ...)
+    # duplity.debug : unmodified PATH/PYTHONPATH
+    debug:
+        command: bin/duplicity-launcher.sh
+        environment:
+            # print plain unmodified PATH/PYTHONPATH etc. see laumcher.sh
+            DUPL_LAUNCHER: "DEBUG1"
+    # duplicity.debug2 : patched PATH/PYTHONPATH as used by duplicity
+    debug2:
+        command: bin/duplicity-launcher.sh
+        environment:
+            DUPL_LAUNCHER: "DEBUG2"
+
+parts:
+    duplicity:
+        plugin: python
+        source: .
+        override-build: |
+            which python3
+            # show env vars for debugging
+            #env
+
+            # we will not use the default craft parts implementation 
+            # check class BasePythonPlugin in
+            #  https://github.com/canonical/craft-parts/blob/main/craft_parts/plugins/base.py#L267-L275
+            # to see what the default steps are
+            #craftctl default
+
+            # we will do pretty much the same as 'craftctl default' above but 
+            # using a dedicated venv subfolder so snap system and 
+            # venv dependencies stay clearly separated
+            DUPL_VENV=/usr/local/duplicity.venv
+            python3 -m venv "${CRAFT_PART_INSTALL}${DUPL_VENV}"
+            PIP="${CRAFT_PART_INSTALL}${DUPL_VENV}"/bin/pip
+            "$PIP" install -U pip setuptools wheel
+            "$PIP" install -r requirements.txt
+            "$PIP" install -U .
+
+            # Some python modules cause snap build to import argparse from pypi.
+            # argparse in pypi supports <= 3.4 so we need the distribution version.
+            # Let pip remove that version since a current one is in libpython3-minimal.
+            "$PIP" uninstall -y argparse
+            # python module tahoe-lafs dies trying to compile really old pycddl 
+            # on other archs than amd64, as python plugin does not support 
+            # conditions we only include it in amd64 snaps manually here
+            if [ "$CRAFT_ARCH_BUILD_FOR" != "amd64" ]; then
+                echo "Skipping tahoe-lafs integration on arch that is not 'amd64'."
+            else
+                "$PIP" install zfec==1.5.7.4
+                "$PIP" install tahoe-lafs
+            fi
+
+            # verify python binary is in snap
+            if [ -z "$(find "${CRAFT_PART_INSTALL}" -type f -executable -name 'python3.12')" ]; then
+              echo "ERROR. Missing python binary in snap. Check stage-packages."
+              exit 1
+            fi
+            # fix symlink in venv/bin/, point to python of this snap
+            ln -sf ../../../bin/python3.12 "${CRAFT_PART_INSTALL}${DUPL_VENV}"/bin/python3
+            "${CRAFT_PART_INSTALL}${DUPL_VENV}"/bin/python3 --version
+            # internet says it's a good idea to remove this file, it supposedly breaks things
+            rm -v "$CRAFT_PART_INSTALL${DUPL_VENV}"/pyvenv.cfg
+
+            # install duplicity launcher wrapper that patches (PYTHON)PATH and supports debug output
+            mkdir -p "$CRAFT_PART_INSTALL"/bin
+            cp -v "$CRAFT_PROJECT_DIR"/snap/local/launcher.sh "$CRAFT_PART_INSTALL"/bin/duplicity-launcher.sh
+        override-stage: |
+            craftctl default
+            # list snap content for debugging purposes
+            find "$CRAFT_STAGE"/ -type f
+        build-packages:
+            - build-essential
+            - ieee-data
+            - intltool
+            - librsync-dev
+            - python3-dev
+            - python3-minimal
+            - python3.12-minimal
+            - python3-venv
+            # dependencies needed to build missing pip wheels on non amd64 archs
+            - cargo
+            - libffi-dev
+            - libxslt1-dev
+            - libxml2-dev
+            - libssl-dev
+            - python3-cryptography
+            - python3-openssl
+            - pkg-config
+        stage-packages:
+            - libpython3.12-minimal
+            - libpython3.12-stdlib
+            - libpython3.12t64
+            - python3-minimal
+            - python3.12-minimal
+            - python3-venv
+            - librsync2t64
+            # (backend) binaries
+            - gnupg
+            - lftp
+            - ncftp
+            - openssh-client
+            - rclone
+            - rsync
+            # pygobject bindings for gio-backend
+            - python3-gi
+            # some libraries needed on non amd64 archs
+            - libatm1t64
+            - libicu74
+            - libxml2
+            - libxslt1.1
+        build-attributes:
+            - enable-patchelf
+
