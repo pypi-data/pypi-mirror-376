@@ -1,0 +1,184 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+tag-pattern = "^v(?P<version>\\d+\\.\\d+\\.\\d+)$"
+
+version-file = "src/ymago/_version.py"
+
+[project]
+name = "ymago"
+dynamic = ["version"]
+description = "An advanced, asynchronous command-line toolkit and Python library for generative AI media."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Andrej Mäsiar", email = "86407432+aurichalcite@users.noreply.github.com"}]
+keywords = ["ai", "generative", "image", "video", "gemini", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Multimedia :: Graphics",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "aiocsv>=1.3.2",
+    "aiofiles>=24.1.0",
+    "aiohttp>=3.12.15",
+    "google-genai>=1.36.0",
+    "pydantic>=2.0,<3.0",
+    "rich>=14.1.0",
+    "tenacity>=9.0.0",
+    "tomli>=2.2.1",
+    "typer>=0.17.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/aurichalcite/ymago"
+Documentation = "https://github.com/aurichalcite/ymago#readme"
+Repository = "https://github.com/aurichalcite/ymago.git"
+Issues = "https://github.com/aurichalcite/ymago/issues"
+
+[project.optional-dependencies]
+dev = [
+    "aresponses>=3.0.0",
+    "mypy>=1.17.1",
+    "ruff>=0.13.0",
+    "types-aiofiles>=24.1.0.20250822",
+    "bandit>=1.8.6",
+    "tomli>=2.2.1",
+    "pydantic>=2.0,<3.0",
+    "aioboto3>=13.2.0",
+    "mypy-boto3-s3>=1.28.0",
+    "gcloud-aio-storage>=9.3.0",
+    "aioresponses>=0.7.6",
+]
+docs = [
+    "sphinx>=8.0.0",
+    "sphinx-rtd-theme>=3.0.0",
+    "sphinx-autodoc-typehints>=2.5.0",
+    "myst-parser>=3.0.0",
+    "sphinxcontrib-mermaid>=1.0.0",
+]
+test = [
+    "pytest>=8.4.2",
+    "pytest-asyncio>=1.1.0",
+    "pytest-cov>=7.0.0",
+    "pytest-xdist>=3.8.0",
+    "pytest-mock>=3.14.0",
+    "pytest-benchmark>=5.0.0",
+    "hypothesis>=6.100.0",
+]
+aws = [
+    "aioboto3>=13.2.0",
+    "botocore>=1.35.0",
+]
+gcp = [
+    "gcloud-aio-storage>=9.3.0",
+]
+r2 = [
+    "aioboto3>=13.2.0",
+    "botocore>=1.35.0",
+]
+cloud = [
+    "aioboto3>=13.2.0",
+    "botocore>=1.35.0",
+    "gcloud-aio-storage>=9.3.0",
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github",
+    "/docs",
+    "/tests",
+    "/.gitignore",
+    "/.pre-commit-config.yaml",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ymago"]
+
+[project.scripts]
+ymago = "ymago.cli:app"
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.31.4",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"] # flake8, pyflakes, bugbear, isort
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = [
+    "google.*",
+    "tenacity.*",
+    "tomli.*",
+    "pydantic.*",
+    "aiofiles.*",
+    "aiocsv.*",
+    "aiohttp.*",
+    "typer.*",
+    "rich.*",
+    "gcloud.aio.storage",
+    "aioboto3",
+]
+ignore_missing_imports = true
+
+[tool.basedpyright]
+pythonVersion = "3.10"
+typeCheckingMode = "standard"
+reportMissingTypeStubs = false
+pythonPlatform = "All"
+include = ["src", "tests"]
+exclude = [".venv", "build", "dist", ".mypy_cache", ".pytest_cache", ".ruff_cache"]
+reportMissingImports = true
+reportUnusedImport = true
+reportUnusedClass = true
+reportUnusedFunction = true
+reportUnusedVariable = true
+reportDuplicateImport = true
+reportOptionalMemberAccess = true
+reportOptionalCall = true
+reportOptionalIterable = true
+reportOptionalContextManager = true
+reportOptionalOperand = true
+reportTypedDictNotRequiredAccess = true
+reportPrivateImportUsage = true
+reportConstantRedefinition = true
+reportIncompatibleMethodOverride = true
+reportIncompatibleVariableOverride = true
+reportInconsistentConstructor = true
+reportOverlappingOverload = true
+reportMissingSuperCall = false
+reportUninitializedInstanceVariable = true
+reportInvalidStringEscapeSequence = true
+reportInvalidTypeVarUse = true
+reportCallInDefaultInitializer = true
+reportUnnecessaryIsInstance = true
+reportUnnecessaryCast = true
+reportUnnecessaryComparison = true
+reportAssertAlwaysTrue = true
+reportSelfClsParameterName = true
+reportUnusedExpression = true
+reportUnnecessaryTypeIgnoreComment = true
+reportMatchNotExhaustive = true
