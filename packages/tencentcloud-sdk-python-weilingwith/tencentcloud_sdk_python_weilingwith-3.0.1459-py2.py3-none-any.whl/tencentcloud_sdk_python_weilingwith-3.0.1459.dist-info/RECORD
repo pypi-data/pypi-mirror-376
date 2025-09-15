@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/weilingwith/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/weilingwith/v20230427/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/weilingwith/v20230427/errorcodes.py,sha256=0MCGlncQUFA9gdysPEea0_Yhh9Rzawyy1akmTNFXHgw,8506
+tencentcloud/weilingwith/v20230427/models.py,sha256=31tP2Es1lZivelIJdwMHee_aFzfcn_IMie-l3ToZbYo,558862
+tencentcloud/weilingwith/v20230427/weilingwith_client.py,sha256=3NdqdIfCh6Te8Gme0PjCU_gRFGS0Nu1WCKdYILlrDbI,60108
+tencentcloud_sdk_python_weilingwith-3.0.1459.dist-info/METADATA,sha256=APcWar7F8IEwIl11WqcRZGlLBwBJAkL4MMMvKqtuiBo,1543
+tencentcloud_sdk_python_weilingwith-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_weilingwith-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_weilingwith-3.0.1459.dist-info/RECORD,,
