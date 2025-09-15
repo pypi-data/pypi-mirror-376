@@ -1,0 +1,30 @@
+Metadata-Version: 2.3
+Name: kabukit
+Version: 0.1.1
+Summary: A Python toolkit for Japanese financial market data, supporting J-Quants and EDINET APIs.
+Author: Daizu
+Author-email: Daizu <daizutabi@gmail.com>
+Requires-Dist: altair>=5.5.0
+Requires-Dist: async-typer>=0.1.10
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: marimo>=0.15.3
+Requires-Dist: platformdirs>=4.4.0
+Requires-Dist: polars>=1.33.1
+Requires-Dist: python-dotenv>=1.1.1
+Requires-Dist: typer>=0.17.4
+Requires-Dist: vegafusion-python-embed>=1.6.9
+Requires-Dist: vegafusion>=2.0.2
+Requires-Dist: vl-convert-python>=1.8.0
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# kabukit
+
+A Python toolkit for Japanese financial market data, supporting J-Quants and EDINET APIs.
+
+## References
+
+https://jpx.gitbook.io/j-quants-ja/api-reference
+https://japanexchangegroup.github.io/J-Quants-Tutorial/
+https://www.jpx.co.jp/corporate/news/news-releases/0010/20210813-01.html
+https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/WZEK0110.html
