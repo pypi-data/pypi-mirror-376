@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjupyterlab_theme_python_courses=self.webpackChunkjupyterlab_theme_python_courses||[]).push([[509],{509:(e,t,s)=>{s.r(t),s.d(t,{default:()=>u});const u={id:"jupyterlab_theme_python_courses:plugin",description:"A JupyterLab extension.",autoStart:!0,activate:e=>{console.log("JupyterLab extension jupyterlab_theme_python_courses is activated!")}}}}]);
