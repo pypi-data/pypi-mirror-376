@@ -1,0 +1,2 @@
+[console_scripts]
+agentic-social-server = social_server.cli:main
