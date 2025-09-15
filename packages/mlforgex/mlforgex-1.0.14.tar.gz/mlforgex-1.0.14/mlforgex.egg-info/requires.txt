@@ -1,0 +1,13 @@
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+xgboost
+imbalanced-learn
+tqdm
+scipy
+requests
+nltk
+gensim
+wordcloud
