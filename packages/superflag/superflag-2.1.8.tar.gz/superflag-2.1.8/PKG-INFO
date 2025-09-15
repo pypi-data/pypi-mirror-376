@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: superflag
+Version: 2.1.8
+Summary: Simple installer for context-engine-mcp - MCP-based contextual flag system for AI assistants
+License: MIT
+Project-URL: Homepage, https://github.com/SuperClaude-Org/context-engine-mcp
+Project-URL: Repository, https://github.com/SuperClaude-Org/context-engine-mcp
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: context-engine-mcp>=2.1.8
+
+# contextengine
+
+Simple installer for context-engine-mcp.
+
+## Installation
+
+```bash
+pip install contextengine
+```
+
+This automatically installs `context-engine-mcp` with all features.
+
+## Usage
+
+After installation, use the `context-engine` command:
+
+```bash
+context-engine install --target claude-code
+```
+
+## Documentation
+
+See: https://github.com/SuperClaude-Org/context-engine-mcp
