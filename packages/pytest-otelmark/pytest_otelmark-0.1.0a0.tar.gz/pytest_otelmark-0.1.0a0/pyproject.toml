@@ -1,0 +1,29 @@
+[project]
+name = "pytest-otelmark"
+version = "0.1.0a0"
+description = "Pytest plugin for otelmark."
+readme = "README.md"
+authors = [{ name = "Caglar Kutlu", email = "caglar.kutlu@gmail.com" }]
+requires-python = ">=3.10"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+  "Framework :: Pytest",
+]
+
+dependencies = ["otelmark>=0.1.0", "pytest>=8.3.5"]
+
+[project.entry-points.pytest11]
+pytest_otelmark = "pytest_otelmark.plugin"
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+otelmark = { workspace = true }
