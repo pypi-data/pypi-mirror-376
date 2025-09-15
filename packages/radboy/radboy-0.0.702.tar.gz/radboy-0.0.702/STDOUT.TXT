@@ -1,0 +1,6 @@
+#USER INPUT# -> :"t"
+#USER INPUT# -> :"smpl scnr"
+#USER INPUT# -> :"lst scn"
+#USER INPUT# -> :""
+#USER INPUT# -> :"b"
+#USER INPUT# -> :"0.0.702"
