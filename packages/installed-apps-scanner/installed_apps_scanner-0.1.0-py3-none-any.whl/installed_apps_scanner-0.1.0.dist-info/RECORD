@@ -1,0 +1,9 @@
+app_scanner/__init__.py,sha256=R_a1rx06_XnKfub2rBTHv6cfE87DIPnhqvUeO-q5mRg,992
+app_scanner/_linux.py,sha256=cSD33By3M9thP5lIEEHXrGIupn68vMgljlBH9QcAZTw,13069
+app_scanner/_macos.py,sha256=ruP-XYHcGYzbblZsWk8-FOKO49v716f3I1MfRW5aHYg,5045
+app_scanner/_windows.py,sha256=ZdTFhiVjS_RHpTDslfr_nCucEKYMrgN6XuOoNhDuxhQ,5267
+installed_apps_scanner-0.1.0.dist-info/licenses/LICENSE,sha256=OphKV48tcMv6ep-7j-8T6nycykPT0g8ZlMJ9zbGvdPs,1066
+installed_apps_scanner-0.1.0.dist-info/METADATA,sha256=kQTYNXyhPqFtz0p6nWCpAcTY2wrEs-uu0T9gDd8ki14,2132
+installed_apps_scanner-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+installed_apps_scanner-0.1.0.dist-info/top_level.txt,sha256=UpckqxVkq_1UHZ9tT3Ugz0CAdOwwBnLyBOr_9M0tytU,12
+installed_apps_scanner-0.1.0.dist-info/RECORD,,
