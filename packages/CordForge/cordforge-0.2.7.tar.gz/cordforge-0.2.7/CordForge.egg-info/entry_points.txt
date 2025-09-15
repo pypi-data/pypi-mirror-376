@@ -1,0 +1,2 @@
+[console_scripts]
+cordforge = cordforge.__main__:run
