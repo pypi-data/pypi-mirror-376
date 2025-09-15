@@ -1,0 +1,22 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+site/
+examples/
+wheels/
+*.egg-info
+
+# venv
+.venv
+docs/img/.DS_Store
+.DS_Store
+src/rich_gradient/examples/example_gradient.py
+src/rich_gradient/examples/example_rule.py
+.mypy_cache/
+out/
+lolcat.py
+cspell.json
+.cspell/
+.cspell.json
