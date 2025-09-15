@@ -1,0 +1,7 @@
+fastapi[all]
+SQLAlchemy==2.0.41
+pydantic-settings
+aiomysql
+asyncmy
+redis
+fastcrud==0.16.0
