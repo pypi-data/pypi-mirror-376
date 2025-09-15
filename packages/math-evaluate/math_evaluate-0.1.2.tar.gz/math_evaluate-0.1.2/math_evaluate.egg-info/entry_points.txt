@@ -1,0 +1,2 @@
+[console_scripts]
+math = math_evaluate.cli:main
