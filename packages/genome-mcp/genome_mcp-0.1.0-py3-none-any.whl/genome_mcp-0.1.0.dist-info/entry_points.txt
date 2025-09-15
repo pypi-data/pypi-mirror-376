@@ -1,0 +1,2 @@
+[console_scripts]
+genome-mcp = genome_mcp.cli:cli_entry_point
