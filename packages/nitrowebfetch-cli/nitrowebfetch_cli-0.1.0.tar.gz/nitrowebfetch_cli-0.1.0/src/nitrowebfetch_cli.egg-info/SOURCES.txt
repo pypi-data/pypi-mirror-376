@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/nitrowebfetch_cli/__init__.py
+src/nitrowebfetch_cli/main.py
+src/nitrowebfetch_cli.egg-info/PKG-INFO
+src/nitrowebfetch_cli.egg-info/SOURCES.txt
+src/nitrowebfetch_cli.egg-info/dependency_links.txt
+src/nitrowebfetch_cli.egg-info/entry_points.txt
+src/nitrowebfetch_cli.egg-info/requires.txt
+src/nitrowebfetch_cli.egg-info/top_level.txt
