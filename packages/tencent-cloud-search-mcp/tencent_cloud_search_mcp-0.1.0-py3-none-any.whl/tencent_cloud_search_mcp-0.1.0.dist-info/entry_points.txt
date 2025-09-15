@@ -1,0 +1,2 @@
+[console_scripts]
+tencent-search-mcp = tencent_cloud_search_mcp.server:main
