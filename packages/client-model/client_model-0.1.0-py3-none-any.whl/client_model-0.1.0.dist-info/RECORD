@@ -1,0 +1,8 @@
+client_model/__init__.py,sha256=hFapiwVwRUhiNh5NoLqqzfjs9BmHhnk372y9-WkvLQY,91
+client_model/client.py,sha256=Rf41_uUNYsqLPn_h74jN8oEUqsGyPIvIyOIeEpzh4mM,2323
+examples/demo.py,sha256=nII8keYYe6NXFDcQZQHmswg8qZYgMI7TEM3YeYafiT8,1982
+tests/test_client.py,sha256=cfAPrpGCfoP33ZEWgiOGWGKoE0KibAgp8BHZdCth2P0,1590
+client_model-0.1.0.dist-info/METADATA,sha256=JY_aenVihmYMGiaN09h5-E3iospQSnbmAlZjUhwVY_I,863
+client_model-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+client_model-0.1.0.dist-info/top_level.txt,sha256=rn5QRdzSqKbesZFvYfAngtfVZRYRXb2k6V6e3TH8p1w,28
+client_model-0.1.0.dist-info/RECORD,,
