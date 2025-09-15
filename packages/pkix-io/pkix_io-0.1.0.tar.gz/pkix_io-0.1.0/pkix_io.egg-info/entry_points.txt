@@ -1,0 +1,2 @@
+[console_scripts]
+pkix-io = pkix_io.cli:main
