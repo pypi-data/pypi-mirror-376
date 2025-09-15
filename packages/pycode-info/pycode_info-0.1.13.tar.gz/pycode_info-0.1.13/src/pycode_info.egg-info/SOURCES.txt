@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+src/pycode_info/__init__.py
+src/pycode_info/ccv.py
+src/pycode_info/colors.py
+src/pycode_info/flake8er.py
+src/pycode_info/lang_info.py
+src/pycode_info.egg-info/PKG-INFO
+src/pycode_info.egg-info/SOURCES.txt
+src/pycode_info.egg-info/dependency_links.txt
+src/pycode_info.egg-info/requires.txt
+src/pycode_info.egg-info/top_level.txt
