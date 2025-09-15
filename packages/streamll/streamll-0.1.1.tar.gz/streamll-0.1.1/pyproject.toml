@@ -1,0 +1,64 @@
+[project]
+name = "streamll"
+version = "0.1.1"
+description = "Stream your DSPy application's inner-workings back to users in real-time"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.0", "nanoid>=2.0", "dspy>=2.7.0"]
+authors = [{ name = "Nick Glasson" }]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+keywords = ["dspy", "streaming", "llm", "observability", "ai"]
+
+[project.urls]
+Homepage = "https://github.com/glssn/streamll"
+Repository = "https://github.com/glssn/streamll"
+Issues = "https://github.com/glssn/streamll/issues"
+
+[project.optional-dependencies]
+redis = ["faststream[redis]>=0.5.0"]
+rabbitmq = ["faststream[rabbit]>=0.5.0"]
+all = ["streamll[redis,rabbitmq]"]
+
+[dependency-groups]
+dev = [
+  "streamll[all]",
+  "pytest>=7.4",
+  "pytest-asyncio>=0.21",
+  "pytest-cov>=4.1",
+  "pytest-timeout>=2.1",
+  "pytest-mock>=3.11",
+  "ruff>=0.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = """
+    -ra
+    --strict-markers
+    --cov=src/streamll
+    --cov-report=term-missing
+    --cov-report=html
+"""
+markers = [
+  "integration: marks tests as integration tests (require real infrastructure)",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"] # Allow assert in tests
