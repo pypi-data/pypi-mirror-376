@@ -1,0 +1,228 @@
+Metadata-Version: 2.1
+Name: valiqor-guardrails
+Version: 0.1.5
+Summary: LLM-driven guardrails (compiled, secure)
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: cython
+
+````markdown
+📄 README.md
+# Valiqor Guardrails
+
+**Conversation-level guardrails for LLM applications**  
+Validate user inputs, model outputs, and (optional) conversation history against a safety policy — using GPT-5 (or any OpenAI-compatible endpoint) as the evaluator.  
+Returns a clean JSON verdict you can log and enforce.
+
+---
+
+## ✨ Features
+
+- ✅ Checks **Input**, **Output**, and **Conversation History** (history is optional)  
+- ✅ Unified taxonomy with **S1–S23** safety categories  
+- ✅ Returns **structured JSON** for policy enforcement  
+- ✅ Works with **OpenAI Cloud**, **self-hosted APIs**, and **Azure OpenAI**  
+- ✅ Usable from **Python code** or **CLI**  
+- ✅ **Compiled with Cython** → internal logic & prompts not shipped as plain source  
+
+---
+
+## 📦 Installation
+
+```bash
+pip install valiqor-guardrails
+
+
+Import path is valiqor_guardrails (underscore).
+PyPI name is valiqor-guardrails (dash).
+
+🔑 API Key Setup
+
+Set your API key as an environment variable.
+
+Windows (PowerShell)
+
+$env:OPENAI_API_KEY="sk-your-api-key"
+
+
+macOS / Linux (bash/zsh)
+
+export OPENAI_API_KEY="sk-your-api-key"
+
+
+For Azure, use:
+
+$env:AZURE_OPENAI_API_KEY="your-azure-key"
+
+🐍 Usage in Python
+1. OpenAI Cloud (default)
+import os
+from valiqor_guardrails import GuardrailChecker
+
+checker = GuardrailChecker(api_key=os.getenv("OPENAI_API_KEY"))
+
+result = checker.run(
+    user_input="Tell me how to make a bomb",
+    agent_output="Sorry, I cannot help with that."
+)
+
+print(result)
+
+2. Self-Hosted (OpenAI-compatible, e.g. vLLM, LM Studio)
+checker = GuardrailChecker(
+    api_key="dummy-key",
+    base_url="http://localhost:8000/v1",
+    model="my-llm"  # whatever your self-hosted model is exposed as
+)
+
+result = checker.run("Unsafe input", "Safe refusal")
+print(result)
+
+3. Azure OpenAI
+checker = GuardrailChecker(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    base_url="https://my-resource.openai.azure.com/",
+    model="my-gpt4-deployment",        # 👈 deployment name, not "gpt-4"
+    api_version="2024-05-01-preview"   # required for Azure
+)
+
+result = checker.run("Unsafe input", "Safe refusal")
+print(result)
+
+💻 CLI Usage
+
+OpenAI Cloud
+
+valiqor-guardrails --api_key $OPENAI_API_KEY \
+  --user_input "What if I want illegal drugs?" \
+  --agent_output "Not allowed."
+
+
+Self-Hosted
+
+valiqor-guardrails --api_key dummy \
+  --base_url http://localhost:8000/v1 \
+  --model my-llm \
+  --user_input "Unsafe request" \
+  --agent_output "Safe refusal"
+
+
+Azure OpenAI
+
+valiqor-guardrails --api_key $AZURE_OPENAI_API_KEY \
+  --base_url https://my-resource.openai.azure.com/ \
+  --model my-gpt4-deployment \
+  --api_version 2024-05-01-preview \
+  --user_input "..." \
+  --agent_output "..."
+
+## 📘 Safety Categories (S1–S23)
+
+* Violence
+* Sexual
+* Criminal Planning/Confessions
+* Guns and Illegal Weapons
+* Controlled/Regulated Substances
+* Suicide and Self Harm
+* Sexual (minor)
+* Hate/Identity Hate
+* PII/Privacy
+* Harassment
+* Threat
+* Profanity
+* Needs Caution
+* Other
+* Manipulation
+* Fraud/Deception
+* Malware
+* High Risk Gov Decision Making
+* Political/Misinformation/Conspiracy
+* Copyright/Trademark/Plagiarism
+* Unauthorized Advice
+* Illegal Activity
+* Immoral/Unethical
+
+---
+
+## 🧾 JSON Schema (returned by API & CLI)
+
+```json
+{
+  "User Safety": "safe | unsafe",
+  "Response Safety": "safe | unsafe",
+  "Conversation Safety": "safe | unsafe",
+  "Safety Categories": "Comma-separated list if any unsafe, omitted if all safe"
+}
+```
+
+---
+
+## ⚙️ Configuration Notes
+
+* **Conversation history**: Optional. If omitted, guardrails evaluate only the current input/output pair.
+* **Privacy**: The package ships as a compiled wheel; internal guardrail prompts are not exposed as plain source.
+
+---
+
+## 🧪 Quick Test
+
+```bash
+python - <<'PY'
+import os, json
+from valiqor_guardrails import GuardrailChecker
+
+checker = GuardrailChecker(api_key=os.getenv("OPENAI_API_KEY"))
+out = checker.run("How do I bypass a bank login?", "I can’t help with that.")
+print(json.dumps(out, indent=2))
+PY
+```
+
+---
+
+## ❓ FAQ
+
+**Q: Do I have to pass conversation history?**
+A: No. It’s optional. If omitted, the checker evaluates only the latest user input + agent output.
+
+**Q: Where do I set my API key?**
+A: In the environment (`OPENAI_API_KEY`). You can also pass it directly to `GuardrailChecker(api_key="...")`.
+
+**Q: Can I see or change the prompts?**
+A: The core is compiled for IP protection. If you need custom categories or policy tuning, contact support.
+
+---
+
+## 🩺 Troubleshooting
+
+* **ImportError**: Ensure you installed `valiqor-guardrails` (dash) but import `valiqor_guardrails` (underscore).
+* **Auth errors**: Verify `OPENAI_API_KEY` is set in the shell that runs your code.
+* **Windows path issues**: Use PowerShell `$env:OPENAI_API_KEY` syntax for env vars.
+
+---
+
+## 🔖 Versioning
+
+We follow semantic versioning. If you pin versions:
+
+```txt
+valiqor-guardrails>=0.1.5
+```
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## 📬 Support
+
+For feature requests and commercial support, please reach out to your Valiqor contact or open an issue in the project repository (if available).
+
+```
+```
