@@ -1,0 +1,267 @@
+Metadata-Version: 2.4
+Name: vexy-pdf-werk
+Version: 1.1.2.dev0
+Project-URL: Documentation, https://github.com/vexyart/vexy-pdf-werk#readme
+Project-URL: Issues, https://github.com/vexyart/vexy-pdf-werk/issues
+Project-URL: Source, https://github.com/vexyart/vexy-pdf-werk
+Author-email: Fontlab Ltd <opensource@vexy.art>
+License: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10
+Provides-Extra: all
+Provides-Extra: dev
+Requires-Dist: absolufy-imports>=0.3.1; extra == 'dev'
+Requires-Dist: isort>=6.0.1; extra == 'dev'
+Requires-Dist: mypy>=1.15.0; extra == 'dev'
+Requires-Dist: pre-commit>=4.1.0; extra == 'dev'
+Requires-Dist: pyupgrade>=3.19.1; extra == 'dev'
+Requires-Dist: ruff>=0.9.7; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: myst-parser>=3.0.0; extra == 'docs'
+Requires-Dist: sphinx-autodoc-typehints>=2.0.0; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme>=2.0.0; extra == 'docs'
+Requires-Dist: sphinx>=7.2.6; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: coverage[toml]>=7.6.12; extra == 'test'
+Requires-Dist: pytest-asyncio>=0.25.3; extra == 'test'
+Requires-Dist: pytest-benchmark[histogram]>=5.1.0; extra == 'test'
+Requires-Dist: pytest-cov>=6.0.0; extra == 'test'
+Requires-Dist: pytest-xdist>=3.6.1; extra == 'test'
+Requires-Dist: pytest>=8.3.4; extra == 'test'
+Description-Content-Type: text/markdown
+
+# this_file: README.md
+
+# Vexy PDF Werk
+
+**Transform PDFs into high-quality, accessible formats with AI-enhanced processing**
+
+Vexy PDF Werk (VPW) is a Python package that converts PDF documents into multiple high-quality formats using modern tools and optional AI enhancement. Transform your PDFs into PDF/A archives, paginated Markdown, ePub books, and structured bibliographic metadata.
+
+## Features
+
+🔧 **Modern PDF Processing**
+- PDF/A conversion for long-term archival
+- OCR enhancement using OCRmyPDF
+- Quality optimization with qpdf
+
+📚 **Multiple Output Formats**
+- Paginated Markdown documents with smart naming
+- ePub generation from Markdown
+- Structured bibliographic YAML metadata
+- Preserves original PDF alongside enhanced versions
+
+🤖 **Optional AI Enhancement**
+- Text correction using Claude or Gemini CLI
+- Content structure optimization
+- Fallback to proven traditional methods
+
+⚙️ **Flexible Architecture**
+- Multiple conversion backends (Marker, MarkItDown, Docling, basic)
+- Platform-appropriate configuration storage
+- Robust error handling with graceful fallbacks
+
+## Quick Start
+
+### Installation
+
+```bash
+# Install from PyPI
+pip install vexy-pdf-werk
+
+# Or install in development mode
+git clone https://github.com/vexyart/vexy-pdf-werk
+cd vexy-pdf-werk
+pip install -e .
+```
+
+### Basic Usage
+
+```python
+import vexy_pdf_werk
+
+# Process a PDF with default settings
+config = vexy_pdf_werk.Config(name="default", value="process")
+result = vexy_pdf_werk.process_data(["document.pdf"], config=config)
+```
+
+### CLI Usage (Coming Soon)
+
+```bash
+# Process a PDF into all formats
+vpw process document.pdf
+
+# Process with specific formats only
+vpw process document.pdf --formats pdfa,markdown
+
+# Enable AI enhancement
+vpw process document.pdf --ai-enabled --ai-provider claude
+```
+
+## Output Structure
+
+VPW creates organized output with consistent naming:
+
+```
+output/
+├── document_enhanced.pdf    # PDF/A version
+├── 000--introduction.md     # Paginated Markdown files
+├── 001--chapter-one.md
+├── 002--conclusions.md
+├── document.epub            # Generated ePub
+└── metadata.yaml            # Bibliographic data
+```
+
+## System Requirements
+
+### Required Dependencies
+- Python 3.10+
+- tesseract-ocr
+- qpdf
+- ghostscript
+
+### Optional Dependencies
+- pandoc (for ePub generation)
+- marker-pdf (advanced PDF conversion)
+- markitdown (Microsoft's document converter)
+- docling (IBM's document understanding)
+
+### Installation Commands
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get update
+sudo apt-get install tesseract-ocr tesseract-ocr-eng qpdf ghostscript pandoc
+```
+
+**macOS:**
+```bash
+brew install tesseract tesseract-lang qpdf ghostscript pandoc
+```
+
+**Windows:**
+```bash
+choco install tesseract qpdf ghostscript pandoc
+```
+
+## Configuration
+
+VPW stores configuration in platform-appropriate directories:
+
+- **Linux/macOS**: `~/.config/vexy-pdf-werk/config.toml`
+- **Windows**: `%APPDATA%\\vexy-pdf-werk\\config.toml`
+
+### Example Configuration
+
+```toml
+[processing]
+ocr_language = "eng"
+pdf_quality = "high"
+force_ocr = false
+
+[conversion]
+markdown_backend = "auto"  # auto, marker, markitdown, docling, basic
+paginate_markdown = true
+include_images = true
+
+[ai]
+enabled = false
+provider = "claude"  # claude, gemini
+correction_enabled = false
+
+[output]
+formats = ["pdfa", "markdown", "epub", "yaml"]
+preserve_original = true
+output_directory = "./output"
+```
+
+## Development
+
+This project uses modern Python tooling:
+
+- **Package Management**: uv + hatch
+- **Code Quality**: ruff + mypy
+- **Testing**: pytest
+- **Version Control**: git-tag-based semver with hatch-vcs
+
+### Development Setup
+
+```bash
+# Install uv and hatch
+curl -LsSf https://astral.sh/uv/install.sh | sh
+pip install hatch
+
+# Clone and setup
+git clone https://github.com/vexyart/vexy-pdf-werk
+cd vexy-pdf-werk
+
+# Run tests using hatch (automatically manages environment)
+hatch run test
+
+# Run linting and formatting
+hatch run lint
+
+# Type checking
+hatch run type-check
+
+# Or run individual commands
+hatch run python -c "import vexy_pdf_werk; print(vexy_pdf_werk.__version__)"
+```
+
+## Architecture
+
+VPW follows a modular pipeline architecture:
+
+```
+PDF Input → Analysis → OCR Enhancement → Content Extraction → Format Generation → Multi-Format Output
+                          ↓
+                   Optional AI Enhancement
+```
+
+### Core Components
+
+- **PDF Processor**: Handles OCR and PDF/A conversion
+- **Content Extractors**: Multiple backends for PDF-to-Markdown
+- **Format Generators**: Creates ePub and metadata outputs
+- **AI Integrations**: Optional LLM enhancement services
+- **Configuration System**: Platform-aware settings management
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes following the code quality standards
+4. Run tests and linting
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Authors
+
+- **Fontlab Ltd** - *Initial work* - [Vexy Art](https://vexy.art)
+
+## Acknowledgments
+
+- Built on proven tools: qpdf, OCRmyPDF, tesseract
+- Integration with cutting-edge AI services
+- Inspired by the need for better PDF accessibility and archival
+
+---
+
+**Project Status**: Under active development
+
+For detailed implementation specifications, see the [spec/](spec/) directory.
