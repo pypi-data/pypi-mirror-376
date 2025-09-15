@@ -1,0 +1,8 @@
+NagaAgent_core
+agents
+api
+logs
+mcp
+messages
+streaming
+tools
