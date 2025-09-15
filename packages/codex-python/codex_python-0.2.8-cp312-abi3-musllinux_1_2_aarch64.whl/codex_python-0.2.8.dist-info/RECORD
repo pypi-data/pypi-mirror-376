@@ -1,0 +1,14 @@
+codex/__init__.py,sha256=qNRv-_A3E55YKW6a8c0NiTyR58kN7RrcpqAgDRVkwBA,617
+codex/api.py,sha256=FhRSIAu5dpwTB4sO2qjuVjH_akFoDAG-2wyAyRSGCvw,2892
+codex/config.py,sha256=388mrVtzyA6t8qigS8JxFSFPJbT3A-KMDMP-YQo6rUs,2869
+codex/event.py,sha256=HPS6ySBa7Pwn4gRjQKj2yUE5_kiad4WFqwmA7aEdoiI,387
+codex/native.py,sha256=GpC5DKEZvA7ZUeuCtK9tIIbnSpeiezLPS3a3Y393GVs,1201
+codex/protocol/types.py,sha256=7SxZgDwfTsXiqhQb5Yj4n2rT6-fEs7JxERbPQPtJmh0,34759
+codex/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+codex_native.libs/libgcc_s-39080030.so.1,sha256=fIO6GHOh8Ft9CR0Geu7wSUb9Xnl122iTtrxQQ9TAkTQ,789673
+codex_native/__init__.py,sha256=F6wnaifw2lA804o89FM946g2tbrunIvG3xy1PWR_9DE,131
+codex_native/codex_native.abi3.so,sha256=L6gkRZmSXtAedCT05VYa4mhegwiTQUyqceeGfIq2Tpc,21828377
+codex_python-0.2.8.dist-info/METADATA,sha256=BsP5iSpcNODbzwFuVX2ucHp0s8OsSnwNl9N7lOJZdzA,4431
+codex_python-0.2.8.dist-info/WHEEL,sha256=zd0UDdvmu2F8VZAClKs5U47Q9dcoM1Zk2EOK2dJdqf8,107
+codex_python-0.2.8.dist-info/licenses/LICENSE,sha256=ZhGahTKhsCbPWNmZ7ugZ14LVewMo4Gh1OeIOlQabyrI,1066
+codex_python-0.2.8.dist-info/RECORD,,
