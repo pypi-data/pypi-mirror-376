@@ -1,0 +1,69 @@
+Metadata-Version: 2.4
+Name: context-engine-mcp
+Version: 3.0.0
+Summary: Deprecated: This package has been renamed to 'superflag'
+Home-page: https://github.com/SuperClaude-Org/context-engine-mcp
+Author: SuperClaude-Org
+Author-email: 
+Project-URL: Documentation, https://github.com/SuperClaude-Org/context-engine-mcp
+Project-URL: Source, https://github.com/SuperClaude-Org/context-engine-mcp
+Project-URL: Tracker, https://github.com/SuperClaude-Org/context-engine-mcp/issues
+Keywords: deprecated,renamed,superflag,context-engine,mcp
+Classifier: Development Status :: 7 - Inactive
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: superflag>=2.2.1
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# IMPORTANT: Package Renamed to superflag
+
+This package has been renamed. Installing this package will automatically install `superflag` instead.
+
+## What Changed?
+
+- **Old name**: `context-engine-mcp`
+- **New name**: `superflag`
+- **All functionality remains the same**
+
+## Migration Steps
+
+### For New Users
+```bash
+pip install superflag
+```
+
+### For Existing Users
+No action needed! This package now installs `superflag` automatically.
+
+### Command Compatibility
+All commands work with both names:
+- `superflag install` (recommended)
+- `context-engine install` (backward compatible)
+
+## Why the Change?
+
+We've simplified the package name to make it easier to remember and use.
+
+## Support
+
+For issues or questions, visit: https://github.com/SuperClaude-Org/context-engine-mcp
+
+---
+
+**Note**: This is a transitional package. In future versions, please use `pip install superflag` directly.
