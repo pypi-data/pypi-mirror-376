@@ -1,0 +1,25 @@
+# Include documentation and configuration files
+include README.md
+include CHANGELOG.md
+include LICENSE
+include requirements.txt
+include package.json
+include pyproject.toml
+
+# Include Python source files
+include mcp_server.py
+include run_mcp.py
+include __init__.py
+
+# Include the Node.js wrapper and related files
+recursive-include bin *
+recursive-include scripts *
+
+# Global exclusions
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
+global-exclude *.egg-info
+global-exclude .git
+global-exclude .gitignore
+global-exclude .pytest_cache
