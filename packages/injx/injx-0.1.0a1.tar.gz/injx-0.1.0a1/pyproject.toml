@@ -1,0 +1,127 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "injx"
+dynamic = ["version"]
+description = "Type-safe dependency injection for Python 3.13+"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.13"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Qrius Global", email = "mishal@qrius.global"}
+]
+keywords = ["dependency-injection", "ioc", "di", "type-safe", "async", "python3.13"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Framework :: AsyncIO",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/qriusglobal/injx"
+Repository = "https://github.com/qriusglobal/injx"
+Documentation = "https://github.com/qriusglobal/injx#readme"
+"Bug Tracker" = "https://github.com/qriusglobal/injx/issues"
+Changelog = "https://github.com/qriusglobal/injx/releases"
+CI = "https://github.com/qriusglobal/injx/actions"
+
+[tool.uv]
+package = true
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2",
+    "pytest-asyncio>=0.23",
+    "httpx>=0.27",
+    "asyncpg>=0.29",
+    "SQLAlchemy>=2.0",
+    "aiosqlite>=0.19",
+    "playwright>=1.44",
+    "pre-commit>=3.7",
+]
+
+
+[tool.basedpyright]
+include = ["src"]
+exclude = ["examples", "dist", "build", "tests"]
+pythonVersion = "3.13"
+typeCheckingMode = "strict"
+reportMissingTypeStubs = "error"
+reportImportCycles = "warning"
+reportAny = "warning"
+reportUnusedImport = "error"
+reportUnusedClass = "error" 
+reportUnusedFunction = "error"
+reportUnnecessaryIsInstance = "warning"
+reportPrivateUsage = "warning"
+venv = ".venv"
+stubPath = "typings"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+]
+show_missing = true
+# fail_under = 95  # Removed strict coverage requirement
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+]
+markers = [
+    "slow: marks tests as slow",
+    "unit: marks tests as unit tests",
+    "integration: marks tests as integration tests",
+]
+asyncio_mode = "auto"
+
+[tool.hatch.build]
+include = [
+    "src/injx/py.typed",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/injx"]
+
+[tool.hatch.version]
+path = "src/injx/_version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/injx/py.typed",
+    "src/injx/**/*.py",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+]
