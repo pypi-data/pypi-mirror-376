@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: road-flood-risk-map
+Version: 0.1.2
+Summary: A python package for doing flood risk analysis of roads.
+Author-email: Martin Arrogante <arrogantemartin@gmail.com>
+License: MIT License
+Project-URL: Homepage, https://github.com/marts-dev/road-flood-risk-map
+Keywords: road-flood-risk-map
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: xarray
+Requires-Dist: osmnx
+Requires-Dist: rasterio
+Requires-Dist: geopandas
+Requires-Dist: leafmap
+Requires-Dist: localtileserver
+Requires-Dist: geemap
+Requires-Dist: earthengine-api
+Requires-Dist: whitebox-workflows
+Requires-Dist: ipywidgets
+Provides-Extra: all
+Requires-Dist: road-flood-risk-map[extra]; extra == "all"
+Provides-Extra: extra
+Requires-Dist: pandas; extra == "extra"
+Dynamic: license-file
+
+# road-flood-risk-map
+
+
+[![image](https://img.shields.io/pypi/v/road-flood-risk-map.svg)](https://pypi.python.org/pypi/road-flood-risk-map)
+[![image](https://img.shields.io/conda/vn/conda-forge/road-flood-risk-map.svg)](https://anaconda.org/conda-forge/road-flood-risk-map)
+
+
+**A python package for doing flood risk analysis of roads.**
+
+
+-   Free software: MIT License
+-   Documentation: https://marts-dev.github.io/road-flood-risk-map
+    
+
+## Features
+
+-   Perform D8 Flow Analysis and Flow Accumulation
+
+## Under Development
+
+-   Road map overlay with flow accumulation
+
+## Citation
+
+> Lindsay, J. B., & Whitebox Geospatial Inc. (2025). *whitebox_workflows* (Version 1.3.5) [Software]. Available at: https://pypi.org/project/whitebox-workflows/
+
+> Wu, Q. (2020). *geemap: A Python package for interactive mapping with Google Earth Engine*. Journal of Open Source Software, 5(51), 2305. https://doi.org/10.21105/joss.02305
