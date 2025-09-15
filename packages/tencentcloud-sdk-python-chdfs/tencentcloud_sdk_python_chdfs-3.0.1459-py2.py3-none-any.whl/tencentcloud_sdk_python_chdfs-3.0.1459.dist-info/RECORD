@@ -1,0 +1,14 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/chdfs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/chdfs/v20190718/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/chdfs/v20190718/chdfs_client.py,sha256=wqIFTalVBzcD_hNLigUmXvWrEpFPW_6HxN2cZtSjw0w,28125
+tencentcloud/chdfs/v20190718/errorcodes.py,sha256=-AdV57fhSJ0HAQzZdo0yUfvO2RYFQ7EKhjDFIAfxlCg,3253
+tencentcloud/chdfs/v20190718/models.py,sha256=Vjjqvm3h2DXJYt6hbE9LbD-G80u3Uwm1dYUNo4257d0,90745
+tencentcloud/chdfs/v20201112/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/chdfs/v20201112/chdfs_client.py,sha256=8WwiFDP7JxqDHB7beWYjoSIrX1Qe8bpjvKVpNMiOA8o,27404
+tencentcloud/chdfs/v20201112/errorcodes.py,sha256=5DdfIlKv3iWJZ6XGQT50gtOQhtJaolitp9EmAPAYXqU,3573
+tencentcloud/chdfs/v20201112/models.py,sha256=Q5qYPOwM2pq1Ir3wov0YgmMUgeocmoTxMtI6JMq3ou8,113185
+tencentcloud_sdk_python_chdfs-3.0.1459.dist-info/METADATA,sha256=7rkyXY9gZVKweISlXbZ_t8TvqA2qHY_kt9dyd0XECqY,1513
+tencentcloud_sdk_python_chdfs-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_chdfs-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_chdfs-3.0.1459.dist-info/RECORD,,
