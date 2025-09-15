@@ -1,0 +1,113 @@
+Metadata-Version: 2.1
+Name: optidata-core
+Version: 1.24.3
+Summary: Paquete de Python para OptiData
+Author: Gonzalo Torres Moya
+Author-email: Gonzalo Torres Moya <gtorres@optimisa.cl>
+License: Copyright (c) 2018 The Python Packaging Authority
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Keywords: python,optidata-core
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Flask-Bcrypt==1.0.1
+Requires-Dist: Flask>=3.0.2
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: openpyxl>=3.1.2
+Requires-Dist: pandas>=2.2.1
+Requires-Dist: pymongo==4.3.3
+Requires-Dist: pysftp==0.2.9
+Requires-Dist: vaex>=4.17.0
+Requires-Dist: kafka-python>=2.0.2
+Requires-Dist: joblib>=1.3.2
+Requires-Dist: paramiko~=3.4.0
+Requires-Dist: oracledb==2.1.0
+Requires-Dist: sqlalchemy==2.0.28
+Requires-Dist: APScheduler>=3.10.4
+Requires-Dist: flask-restx>=1.3.0
+Requires-Dist: Fernet==1.0.1
+Requires-Dist: retrying==1.3.4
+Requires-Dist: pycryptodome==3.20.0
+Requires-Dist: cryptography~=42.0.5
+Requires-Dist: chardet~=5.2.0
+
+# OptiData Core Package (optidata-core)
+
+Paquete para OptiData que contiene funcionalidades para realizar una Conciliación con Pandas y Vaex.
+
+## Descripción
+
+Este es un paquete de Python para OptiData. Proporciona funcionalidades clave para realizar procesos de conciliación de datos utilizando las potentes librerías `pandas` y `vaex`. Además, incluye módulos para la interacción con bases de datos (MongoDB, Oracle), manejo de archivos (SFTP), y la creación de APIs (Flask).
+
+## Características
+
+*   Conciliación de datos de alto rendimiento con `pandas` y `vaex`.
+*   Conectividad con bases de datos MongoDB y Oracle.
+*   Transferencia segura de archivos a través de SFTP.
+*   Capacidad para construir servicios web y APIs con `Flask` y `flask-restx`.
+*   Programación de tareas con `APScheduler`.
+
+## Requisitos
+
+*   Python 3.9 o superior.
+
+## Instalación
+
+Para instalar las dependencias del proyecto, puedes usar el archivo `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Dependencias
+
+El proyecto utiliza las siguientes dependencias:
+
+- `APScheduler>=3.10.4`
+- `chardet~=5.2.0`
+- `cryptography~=42.0.5`
+- `Fernet==1.0.1`
+- `Flask-Bcrypt==1.0.1`
+- `Flask>=3.0.2`
+- `flask-restx>=1.3.0`
+- `joblib>=1.3.2`
+- `kafka-python>=2.0.2`
+- `numpy>=1.26.4`
+- `openpyxl>=3.1.2`
+- `oracledb==2.1.1`
+- `pandas>=2.2.1`
+- `paramiko~=3.4.0`
+- `pycryptodome==3.20.0`
+- `pymongo==4.3.3`
+- `pysftp==0.2.9`
+- `retrying==1.3.4`
+- `sqlalchemy==2.0.28`
+- `vaex>=4.17.0`
+
+## Autor
+
+Gonzalo Torres Moya (<gtorres@optimisa.cl>)
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT.
