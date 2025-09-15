@@ -1,0 +1,30 @@
+# 包含许可证文件
+include LICENSE
+
+# 包含README文件
+include README.md
+
+# 包含requirements文件
+include requirements.txt
+
+# 包含py.typed文件用于类型检查
+include NagaAgent_core/py.typed
+
+# 递归包含所有Python文件
+recursive-include NagaAgent_core *.py
+
+# 排除测试文件
+recursive-exclude NagaAgent_core tests/*
+recursive-exclude NagaAgent_core test_*
+
+# 排除缓存文件
+recursive-exclude NagaAgent_core __pycache__/*
+recursive-exclude NagaAgent_core *.pyc
+recursive-exclude NagaAgent_core *.pyo
+
+# 排除开发文件
+recursive-exclude NagaAgent_core .git/*
+recursive-exclude NagaAgent_core .pytest_cache/*
+recursive-exclude NagaAgent_core .mypy_cache/*
+recursive-exclude NagaAgent_core .coverage
+recursive-exclude NagaAgent_core htmlcov/*

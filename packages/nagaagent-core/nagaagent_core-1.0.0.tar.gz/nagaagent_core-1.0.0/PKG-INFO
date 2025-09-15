@@ -1,0 +1,341 @@
+Metadata-Version: 2.4
+Name: nagaagent-core
+Version: 1.0.0
+Summary: 娜迦AI助手核心功能包 - 基础框架，包含API服务器、Agent框架、日志管理等核心组件
+Home-page: https://github.com/Xxiii8322766509/NagaAgent
+Author: NagaAgent Team
+Author-email: NagaAgent Team <naga@example.com>
+Maintainer-email: NagaAgent Team <naga@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/Xxiii8322766509/NagaAgent
+Project-URL: Documentation, https://github.com/Xxiii8322766509/NagaAgent
+Project-URL: Repository, https://github.com/Xxiii8322766509/NagaAgent.git
+Project-URL: Bug Tracker, https://github.com/Xxiii8322766509/NagaAgent/issues
+Keywords: ai,assistant,mcp,streaming,tool-calling,chat,api,framework,core
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: asyncio-mqtt>=0.11.0
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: uvicorn>=0.20.0
+Requires-Dist: websockets>=11.0.0
+Requires-Dist: psutil>=5.9.0
+Provides-Extra: api
+Requires-Dist: fastapi>=0.100.0; extra == "api"
+Requires-Dist: uvicorn>=0.20.0; extra == "api"
+Requires-Dist: websockets>=11.0.0; extra == "api"
+Provides-Extra: framework
+Requires-Dist: aiohttp>=3.8.0; extra == "framework"
+Requires-Dist: pydantic>=2.0.0; extra == "framework"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: coverage>=7.0.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=6.0.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.2.0; extra == "docs"
+Requires-Dist: myst-parser>=1.0.0; extra == "docs"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# NagaAgent_core - 娜迦AI助手核心功能包
+
+这是一个包含娜迦AI助手核心框架的Python包，提供流式工具调用、MCP管理器、消息管理、Web API服务器、Agent框架、日志管理等基础组件，作为开发AI助手应用的基础依赖。
+
+## 功能特点
+
+### 核心功能
+- **流式工具调用**: 支持实时提取和处理AI响应中的工具调用
+- **MCP管理器**: 统一管理MCP服务的连接和调用
+- **消息管理器**: 处理对话历史和会话管理
+- **工具调用工具**: 提供工具调用的解析和执行功能
+
+### 新增功能 (v2.0.0)
+- **Web API服务器**: 基于FastAPI的RESTful API和WebSocket支持
+- **Agent框架**: 统一的Agent基础类和注册表管理
+- **日志管理**: 完整的日志解析、上下文管理和持久化存储
+- **模块化设计**: 清晰的模块分离，易于扩展和定制
+
+## 安装
+
+### 基础安装
+```bash
+pip install NagaAgent-core
+```
+
+### 完整安装（包含所有功能）
+```bash
+pip install NagaAgent-core[api,framework]
+```
+
+### 开发安装
+```bash
+pip install NagaAgent-core[dev]
+```
+
+## 快速开始
+
+### 1. 流式工具调用
+
+```python
+from NagaAgent_core.streaming import StreamingToolCallExtractor
+
+# 创建提取器
+extractor = StreamingToolCallExtractor(mcp_manager)
+
+# 设置回调函数
+def on_text_chunk(text: str, chunk_type: str):
+    print(f"文本块: {text}")
+
+def on_tool_call(tool_call: str, tool_type: str):
+    print(f"工具调用: {tool_call}")
+
+extractor.set_callbacks(
+    on_text_chunk=on_text_chunk,
+    on_tool_call=on_tool_call
+)
+
+# 处理流式响应
+await extractor.process_text_chunk("一些文本内容")
+```
+
+### 2. MCP管理器
+
+```python
+from NagaAgent_core.mcp import MCPManager
+
+# 创建管理器
+manager = MCPManager()
+
+# 注册服务
+manager.register_handoff(
+    service_name="my_service",
+    tool_name="my_tool",
+    tool_description="我的工具",
+    input_schema={"type": "object"},
+    agent_name="MyAgent"
+)
+
+# 调用服务
+result = await manager.handoff("my_service", {"param": "value"})
+```
+
+### 3. 消息管理器
+
+```python
+from NagaAgent_core.messages import MessageManager
+
+# 创建管理器
+manager = MessageManager()
+
+# 创建会话
+session_id = manager.create_session()
+
+# 添加消息
+manager.add_message(session_id, "user", "你好")
+manager.add_message(session_id, "assistant", "你好！有什么可以帮助你的吗？")
+
+# 获取消息历史
+messages = manager.get_messages(session_id)
+```
+
+### 4. Web API服务器
+
+```python
+from NagaAgent_core.api import NagaAPIServer
+
+# 创建API服务器
+server = NagaAPIServer(host="127.0.0.1", port=8000)
+
+# 运行服务器
+server.run()
+
+# 或者使用命令行
+# naga-api --host 127.0.0.1 --port 8000
+```
+
+### 5. Agent框架使用
+
+```python
+from NagaAgent_core.agents import AgentRegistry, BaseAgent
+
+# 创建自定义Agent
+class MyCustomAgent(BaseAgent):
+    def __init__(self):
+        super().__init__(
+            name="my_agent",
+            instructions="我的自定义Agent"
+        )
+    
+    async def handle_handoff(self, data: dict) -> str:
+        # 实现具体的处理逻辑
+        return f"处理结果: {data}"
+
+# 创建Agent注册表
+registry = AgentRegistry()
+
+# 注册Agent
+registry.register_agent_class("my_agent", MyCustomAgent)
+
+# 创建Agent实例
+agent = registry.create_agent("my_agent")
+
+# 调用Agent
+result = await registry.call_agent("my_agent", {"param": "value"})
+```
+
+### 6. 日志和上下文管理
+
+```python
+from NagaAgent_core.logs import LogManager, ContextManager
+
+# 创建日志管理器
+log_manager = LogManager()
+
+# 记录对话
+log_manager.log_conversation(
+    session_id="session_1",
+    user_message="你好",
+    assistant_message="你好！有什么可以帮助你的吗？"
+)
+
+# 创建上下文管理器
+context_manager = ContextManager()
+
+# 加载历史上下文
+context = context_manager.load_persistent_context(session_id="session_1")
+
+# 构建对话上下文
+messages = context_manager.build_conversation_context(
+    session_id="session_1",
+    system_prompt="你是一个AI助手",
+    current_message="今天天气怎么样？"
+)
+```
+
+## API文档
+
+启动API服务器后，可以访问以下端点：
+
+- **API文档**: http://localhost:8000/docs
+- **健康检查**: http://localhost:8000/system/health
+- **系统信息**: http://localhost:8000/system/info
+- **WebSocket**: ws://localhost:8000/ws/mcplog
+
+## 命令行工具
+
+### 启动API服务器
+```bash
+naga-api --host 127.0.0.1 --port 8000
+```
+
+### 运行核心功能测试
+```bash
+NagaAgent-core test --component all
+```
+
+## 项目结构
+
+```
+NagaAgent_core/
+├── streaming/          # 流式处理模块
+├── mcp/               # MCP管理模块
+├── messages/          # 消息管理模块
+├── tools/             # 工具调用模块
+├── api/               # API服务器模块
+│   ├── server.py      # 主服务器
+│   ├── websocket.py   # WebSocket管理
+│   └── routes/        # API路由
+├── agents/            # Agent框架模块
+│   ├── registry.py    # Agent注册表
+│   └── base.py        # 基础Agent类
+└── logs/              # 日志管理模块
+    ├── parser.py      # 日志解析器
+    ├── manager.py     # 日志管理器
+    └── context.py     # 上下文管理器
+```
+
+## 版本历史
+
+### v2.0.0 (最新)
+- ✅ 新增Web API服务器
+- ✅ 新增Agent框架
+- ✅ 新增日志和上下文管理
+- ✅ 提供基础框架，支持自定义Agent开发
+- ✅ 完善包结构和配置
+
+### v1.0.0
+- ✅ 基础流式工具调用
+- ✅ MCP管理器
+- ✅ 消息管理器
+- ✅ 工具调用解析
+
+## 使用说明
+
+### 作为基础依赖包使用
+
+NagaAgent_core设计为一个基础框架包，不包含具体的Agent实现。你可以：
+
+1. **安装基础包**：
+   ```bash
+   pip install NagaAgent-core
+   ```
+
+2. **创建自定义Agent**：
+   ```python
+   from NagaAgent_core.agents import BaseAgent
+   
+   class MyAgent(BaseAgent):
+       async def handle_handoff(self, data: dict) -> str:
+           # 实现你的业务逻辑
+           return "处理完成"
+   ```
+
+3. **集成到现有项目**：
+   ```python
+   from NagaAgent_core import MCPManager, MessageManager
+   
+   # 使用核心组件
+   mcp_manager = MCPManager()
+   message_manager = MessageManager()
+   ```
+
+### 扩展开发
+
+- 继承`BaseAgent`类创建自定义Agent
+- 使用`AgentRegistry`管理Agent生命周期
+- 通过`MCPManager`集成外部服务
+- 利用`LogManager`和`ContextManager`管理对话历史
+
+## 许可证
+
+本项目采用MIT许可证。详见LICENSE文件。
+
+## 贡献
+
+欢迎提交Issue和Pull Request来改进这个项目。
+
+## 更新日志
+
+### v1.0.0
+- 初始版本发布
+- 包含流式工具调用、MCP管理器、消息管理器等核心功能

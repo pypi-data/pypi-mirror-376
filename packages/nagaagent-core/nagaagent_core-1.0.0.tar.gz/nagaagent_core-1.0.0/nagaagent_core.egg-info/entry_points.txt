@@ -1,0 +1,3 @@
+[console_scripts]
+naga-api = NagaAgent_core.api.server:run_api_server
+nagaagent-core = NagaAgent_core.cli:main
