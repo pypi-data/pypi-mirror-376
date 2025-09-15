@@ -1,0 +1,2 @@
+[console_scripts]
+llm-behavior-eval = llm_behavior_eval.evaluate:app
