@@ -1,0 +1,77 @@
+Bisex‑Base — Python → TypeScript type generator
+================================================
+
+General‑purpose utilities to generate TypeScript declarations from Python
+types. Extracts static shapes from dataclasses/annotated classes, Enums,
+TypedDicts and type aliases, and can also export TypeScript interfaces from
+Python function signatures using type annotations.
+
+Highlights
+- Dataclasses / annotated classes → TS interfaces
+- TypedDicts → TS interfaces
+- Enums → TS enums (string/number literal members)
+- Type aliases → TS `export type` (PEP 695 `type`, `typing.TypeAlias`, and common assignment aliases)
+- Function signatures → TS interfaces (customizable return wrapper)
+- No runtime imports of your modules needed for static types; uses AST
+
+Quick start
+-----------
+
+```python
+from pathlib import Path
+from bysex import TsGen
+
+gen = TsGen(
+    py_types=["path/to/types.py", "another/file.py"],
+    out_ts=Path("web/src/lib/types.generated.ts"),
+    return_wrapper=None,  # or "() => Promise<{ret}>" for Eel‑style wrappers
+)
+
+# Optional: expose Python functions as a TS interface
+@gen.interface("Backend")
+def my_api(arg1: str, count: int) -> None:  # type hints are used
+    ...
+
+gen.generate()  # writes the file and returns the output Path
+```
+
+Design
+------
+- Static types are parsed via `ast` — no module import side effects.
+- Function annotations are resolved with `typing.get_type_hints` (for forward refs),
+  falling back to `__annotations__`, then converted with `typing.get_origin/get_args` to produce TS types.
+- Minimal, dependency‑free core (standard library only).
+
+API
+---
+
+`TsGen(py_types, out_ts, return_wrapper=None)`
+- `py_types`: `str | Path | Iterable[str | Path]` — .py files to scan for static types
+- `out_ts`: `Path | str` — output .ts file
+- `return_wrapper`: Optional[str] — format string where `{ret}` is replaced
+  with the return type. Example for Eel: `"() => Promise<{ret}>"`.
+
+`interface(name: str)`
+- Decorator that captures a function signature into an exported TS interface.
+
+`produce_ts() -> str`
+- Returns the generated TypeScript source (no disk writes).
+
+`generate() -> Path`
+- Writes to `out_ts` and returns the output path.
+
+Limitations
+-----------
+- Complex typing constructs may fall back to `any`.
+- Dataclass/typed class field defaults are ignored in TS generation.
+- Enums with computed/complex values map to member names if values are not
+  string/number literals. Negative numbers are recognized as numeric literals.
+- Type alias detection beyond PEP 695 and `typing.TypeAlias` uses a heuristic for
+  simple assignment aliases (e.g. `MyT = list[int]` or `MyT = int | str`). Plain
+  constant assignments like `VERSION = "1.0"` are intentionally ignored.
+
+License
+-------
+This folder is part of the WuWa Mod Manager repository. Extract and publish as
+you see fit. The package source lives under `bysex/` and is built via
+`pyproject.toml` in this directory.
