@@ -1,0 +1,11 @@
+tf_tagguard/__init__.py,sha256=Pru0BlFBASFCFo7McHdohtKkUtgMPDwbGfyUZlE2_Vw,21
+tf_tagguard/cli.py,sha256=zbk5X7qiDrjEP9chbTQAcAWIhPYuylL64Cj5ScZHdVg,1645
+tf_tagguard/exceptions.py,sha256=EjDS1wtLp4TUSSWB7pm-Sg-ozUX_nGm9SPhVq_ZbBEo,224
+tf_tagguard/utils.py,sha256=UgYV18OQB8IX3ymsxu3U4oGfbLmPoatih6u6Vfn8wV4,1206
+tf_tagguard/validator.py,sha256=DBVMrwllXzxXTSIBifhbeZKIHsEKJpir5zTSj40Eu5o,3342
+tf_tagguard-0.1.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tf_tagguard-0.1.0.dist-info/METADATA,sha256=ZYspCtJf5i3Qi96NXCeReLLmObwX89A1FbnvMP50H_4,4021
+tf_tagguard-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tf_tagguard-0.1.0.dist-info/entry_points.txt,sha256=S8QlTyeOI90XAV8VHxL9alWUbAfpBsSRT6so3lxvc58,56
+tf_tagguard-0.1.0.dist-info/top_level.txt,sha256=OoZbOSpUz5hnUO1f0PvkkKk38c7fEp3cDMdX4016JyQ,12
+tf_tagguard-0.1.0.dist-info/RECORD,,
