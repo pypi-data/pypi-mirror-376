@@ -1,0 +1,2 @@
+[console_scripts]
+tenrec = tenrec.__main__:main
