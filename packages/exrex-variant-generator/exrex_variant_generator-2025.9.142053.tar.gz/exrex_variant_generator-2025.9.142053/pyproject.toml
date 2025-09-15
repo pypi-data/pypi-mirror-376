@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exrex_variant_generator"
+version = "2025.9.142053"
+description = ""
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" },
+]
+license = { file = "LICENSE" }
+dependencies = [
+    "exrex"
+]
+
+[project.urls]
+Repository = "https://pypi.org/project/exrex_variant_generator/"
