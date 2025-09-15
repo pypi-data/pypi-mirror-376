@@ -1,0 +1,8 @@
+mitm_requests/__init__.py,sha256=-f0MpYqRMW5vUsQwlRJ0rb2zIFFAveEc5BMCIJ623RA,152
+mitm_requests/addon.py,sha256=5XkFDm_YIip5KIVv1kLSnsGnFLu5MqkMJBqo6TaGnwQ,3195
+mitm_requests/capture.py,sha256=0NU8vqG6pXcojAG3nj9rfROSq5QDwEOZhJ96JxHXbmY,1731
+mitm_requests/proxy.py,sha256=7jmlk_ZS1uFb_JUlIQJus20Y1MkLhFQyGorluCNwY6I,5484
+mitm_requests-1.0.0.dist-info/METADATA,sha256=yoZ9CgArbEA9_p6jeEP8PJjvVdmQVNpidaLFJWNN95A,5821
+mitm_requests-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mitm_requests-1.0.0.dist-info/top_level.txt,sha256=E-DXWPlRBFdUDyO5Ob0sumRXjEdRA_ACXIxT1bSn2PI,14
+mitm_requests-1.0.0.dist-info/RECORD,,
