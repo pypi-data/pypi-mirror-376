@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: akdev
+Version: 0.1.0
+Summary: Development tools and utilities by Aarush Kukreja
+Author-email: Aarush Kukreja <aarush@example.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# AKDev
+
+Development tools and utilities by Aarush Kukreja.
+
+## Installation
+```bash
+pip install akdev
+```
+
+## Usage
+```python
+from akdev import debug_info, format_code, DevLogger
+
+# Debug information
+print(debug_info([1, 2, 3]))
+
+# Code formatting
+code = "def hello(): print('world')"
+print(format_code(code))
+
+# Development logging
+logger = DevLogger("MyApp")
+logger.log("Application started")
+print(logger.get_logs())
+```
