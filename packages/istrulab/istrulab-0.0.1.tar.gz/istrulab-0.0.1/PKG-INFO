@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: istrulab
+Version: 0.0.1
+Summary: AI-driven structure intelligence toolkit
+Author-email: Your Name <you@example.com>
+Project-URL: Homepage, https://github.com/yourname/istrulab
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown

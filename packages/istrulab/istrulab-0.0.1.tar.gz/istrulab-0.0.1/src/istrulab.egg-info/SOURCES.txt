@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+src/istrulab/__init__.py
+src/istrulab.egg-info/PKG-INFO
+src/istrulab.egg-info/SOURCES.txt
+src/istrulab.egg-info/dependency_links.txt
+src/istrulab.egg-info/top_level.txt
