@@ -1,0 +1,5 @@
+include README.md
+include requirements.txt
+include carbonx/data/*.yaml
+include carbonx/data/*.yml
+recursive-include carbonx *.pyx *.pxd

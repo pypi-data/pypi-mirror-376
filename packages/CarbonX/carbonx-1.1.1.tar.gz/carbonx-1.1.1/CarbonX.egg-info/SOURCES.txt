@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+CarbonX.egg-info/PKG-INFO
+CarbonX.egg-info/SOURCES.txt
+CarbonX.egg-info/dependency_links.txt
+CarbonX.egg-info/not-zip-safe
+CarbonX.egg-info/requires.txt
+CarbonX.egg-info/top_level.txt
+carbonx/data/FFCM2.yaml
