@@ -1,0 +1,13 @@
+xyzstyle-0.2.0.dist-info/METADATA,sha256=re8StQMZK5grHPXsyXpHGDE13ZVYohDZdZAlDUd8mCs,17717
+xyzstyle-0.2.0.dist-info/WHEEL,sha256=9P2ygRxDrTJz3gsagc0Z96ukrxjr-LFBGOgv3AuKlCA,90
+xyzstyle-0.2.0.dist-info/entry_points.txt,sha256=HwzOPTx0cW1RJrP2LPJruB4h6Z1V7XIQLDQeUGoBLFU,76
+xyzstyle-0.2.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+xyzstyle/__init__.py,sha256=1G8jNNLmZyUoCZWM385mZDCKUcyBYF34HNrsW1yBZ8s,1256
+xyzstyle/set_theme.py,sha256=LQ7HtfNj2wyT4JJzPJfOX5Dfcshyp-_awPCGTJU8KzU,5452
+xyzstyle/theme/xyzstyle/layout.html,sha256=bGPPAhCJ9HU6_S-f3GRULLDrZnRp3WmkrdCn8qyETZY,47
+xyzstyle/theme/xyzstyle/static/css/custom.css,sha256=OZjAuw9H3s8EtPZAf0A_1zbsCu2bQ5iEYUlfMfxgAgw,3821
+xyzstyle/theme/xyzstyle/static/css/tippy.css,sha256=4qahpufXghOdAfoIS0S_4142h3L2O1PMcNJckcnvzIc,607
+xyzstyle/theme/xyzstyle/static/css/try_examples.css,sha256=qtzgumtYwUduQtCDquhKX3t9_bldGLTSWOjIe8ceufo,1825
+xyzstyle/theme/xyzstyle/static/js/custom-icon.js,sha256=dNXUAIkAiiq76IhpYlZEfNEzeDYTvojfOmLaTuX5kME,2948
+xyzstyle/theme/xyzstyle/theme.toml,sha256=qJqCfj_2nTKkhG0QosCVBANSKOVO1DlsfATjWI-QCG8,2879
+xyzstyle-0.2.0.dist-info/RECORD,,
