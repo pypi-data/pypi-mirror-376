@@ -1,0 +1,2 @@
+[console_scripts]
+kx-bridge-server = kx_python_flutter_bridge.jsonrpc_bridge:main
