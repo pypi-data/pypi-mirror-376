@@ -1,0 +1,26 @@
+
+[cli]
+typer
+
+[docs]
+mkdocs
+mkdocs-material
+mkdocs-markdownextradata-plugin
+mkdocs-macros-plugin
+mkdocs-include-markdown-plugin
+
+[lambda]
+
+[local]
+boto3>=1.26
+tomli-w>=1.0
+
+[local:python_version < "3.11"]
+tomli>=2.0
+
+[test]
+coverage
+pytest
+ruff
+ty
+ipdb
