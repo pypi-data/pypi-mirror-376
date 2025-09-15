@@ -1,0 +1,17 @@
+iamai-0.2.2a1.dev2.dist-info/METADATA,sha256=j4bKgQk4LNxjGBXAHUnc0k1KIV8w0GXYRFBQYapOZH8,14193
+iamai-0.2.2a1.dev2.dist-info/WHEEL,sha256=-M5O7l5EczTA8VFaBQsg2Fpg0dKz0WOuvpt3nEh86bo,94
+iamai-0.2.2a1.dev2.dist-info/licenses/COPYING,sha256=bx5iLIKjgAdYQ7sISn7DsfHRKkoCUm1154sJJKhgqnU,35184
+iamai/__init__.py,sha256=8m5q0CuLu7qK-dRnfnKysv3AJGdxqprhE9BVm7PS3_k,2144
+iamai/_core.pyd,sha256=Gr5Y5CNCTlNyl-bWFtfKUox8_FagQ6jcWkWzA3qSvOs,2007552
+iamai/bot.py,sha256=JnE8hol1JYSow9fL3Q7JdGA_4W8qotTYfEMtB45RoOI,11419
+iamai/config.py,sha256=7wmki6gicNfgeLJv3Jw_S7SfmaZnNDf4fDxAExRAYmQ,7091
+iamai/event.py,sha256=NCYnBwq1Kt6df-DbOCdARFgZ9-S5r_IBPxtLMXMtLHQ,2454
+iamai/logger.py,sha256=CAwItGO_GI6heg8qI_5AB81RFXUQ_8I3XSC8akw3_38,1325
+iamai/message.py,sha256=LPsDJoHI-NK-xKbfjlSjK_WZHb9VxD8CHmisFM-QnMw,4785
+iamai/middleware/__init__.py,sha256=DNUEEa1e65R-0d5l3PgvzsfDtdbfOU_nqsBfbjS3xyY,4452
+iamai/middleware/console.py,sha256=CoG3rcmiGO9vd1j7dEry3LXps1Gm2eZ27_RR_YRAlYg,9032
+iamai/middleware/websockets.py,sha256=LjDB5jXW2lqCxQ980YfhXOZnM2MJS_uVbnPONX-Fouc,8185
+iamai/plugin.py,sha256=ftHZhMSix4bWPer6Irjg5-8rh8uPiPqdWjwLT__2PeQ,8442
+iamai/rule.py,sha256=R5_Er6510YcMR4iVwmDKh6D78BkDjUMAd_wK4_cperc,9365
+iamai/typing.py,sha256=IX2gozQCbyy2hT_2Ahq8uMMPUlMPIfmINHeug7606VY,3014
+iamai-0.2.2a1.dev2.dist-info/RECORD,,
