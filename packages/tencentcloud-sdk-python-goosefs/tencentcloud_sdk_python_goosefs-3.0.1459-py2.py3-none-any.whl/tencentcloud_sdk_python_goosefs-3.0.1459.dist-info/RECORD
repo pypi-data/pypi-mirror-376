@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/goosefs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/goosefs/v20220519/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/goosefs/v20220519/errorcodes.py,sha256=KvHs6W2GONKBsXXCjJUx8q8sqMTR7e5vr5Gx01t5b24,625
+tencentcloud/goosefs/v20220519/goosefs_client.py,sha256=mAmn8cDlKtsZNiRJCNMiGswkkyXQxfg0hg1ush1Cw7c,26136
+tencentcloud/goosefs/v20220519/models.py,sha256=qky7j2A-FpT2q7jjtaQLlmRT4XDM2pGqcxPv05IOOJY,124009
+tencentcloud_sdk_python_goosefs-3.0.1459.dist-info/METADATA,sha256=jJZ8n5IJHYpFfaIij-usN-Hi-uBPFyO3G38GQOxZgOs,1523
+tencentcloud_sdk_python_goosefs-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_goosefs-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_goosefs-3.0.1459.dist-info/RECORD,,
