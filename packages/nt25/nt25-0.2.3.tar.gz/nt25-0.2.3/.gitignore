@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+uv.lock
+.venv
+
+# package
+*.spec
+scripts/uv
+
+dist*.zip
+
+
+# dataset
+ds/
+
+# output
+out.csv
+output/
+
+# test
+tests/**/*.jpg
+tests/**/*.png
+
