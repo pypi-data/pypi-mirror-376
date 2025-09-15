@@ -1,0 +1,15 @@
+univllm/__init__.py,sha256=h-0IMF3NVGi7JAYgM-1RPuTnDQxyMUlPXW6vnyNiJLU,506
+univllm/client.py,sha256=IwocWlWSWObKJubCXRG7OnWusqPoIkYZG6CCMEKgycc,9390
+univllm/exceptions.py,sha256=fmghyDJ39Bro57dvx2m_CgnrgKgv8HR8fz6SrCvw9hQ,622
+univllm/models.py,sha256=GBxxkbzNLsxfMI2DT6g7wNwbb9nY0sCYR4j0UYT1eVg,1433
+univllm/providers/__init__.py,sha256=4kv_aKazV1JDfob_2KXJ_gzz3VcxfpAe_OfxSy9_A0g,468
+univllm/providers/anthropic_provider.py,sha256=e1UY2TT9_EV5s4o6tmOzSK0ew9RzLeCSN2CtII3Ayxg,6840
+univllm/providers/base.py,sha256=iojGELWQ_UQMiJEp1dz_r8boI6V5SPl3Q1G4s_BVTS0,3389
+univllm/providers/deepseek_provider.py,sha256=sCfA17QYMQkY8wzffpxqNkrRmgRIDB_tk2KwUutiT4E,6606
+univllm/providers/mistral_provider.py,sha256=G7iTpuUnAY9s0r4SkvRxtFd0_t09FYXuBBBGxrCK0Tw,7286
+univllm/providers/openai_provider.py,sha256=D6YvJsqXtdajg5vFuY1p5N541EhtouOHhF3MS7vE5kw,5276
+univllm/providers/supported_models.py,sha256=oowfoOIWtB9rSJIElsxVenBA9cWxHBzfVdw131KSm1Y,540
+univllm-0.1.0.dist-info/METADATA,sha256=ge4jgS6tTo6svEVxmSoXaRjy4blW1sbC1MYElpcxyh8,8321
+univllm-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+univllm-0.1.0.dist-info/top_level.txt,sha256=kTTAmxHqNRJzr5gVHpxgtVhWDw-mofU751eqmQJ07SI,8
+univllm-0.1.0.dist-info/RECORD,,
