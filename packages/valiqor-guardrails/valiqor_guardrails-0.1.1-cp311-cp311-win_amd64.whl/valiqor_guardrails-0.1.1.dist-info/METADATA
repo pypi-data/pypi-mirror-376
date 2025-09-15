@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: valiqor-guardrails
+Version: 0.1.1
+Summary: LLM-driven guardrails (compiled, secure)
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: cython
+
