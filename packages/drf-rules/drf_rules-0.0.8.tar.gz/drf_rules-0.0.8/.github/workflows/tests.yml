@@ -1,0 +1,79 @@
+name: test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+      - uses: pre-commit/action@v3.0.1
+
+  tests:
+    name: Python ${{ matrix.python-version }} / Django ${{ matrix.django-version }}
+    runs-on: ubuntu-latest
+    needs: lint
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+        django-version: ["4.2", "5.0", "5.1", "5.2"]
+        exclude:
+          # Unsupported Python versions for Django 5.0
+          - python-version: 3.8
+            django-version: 5.0
+          - python-version: 3.9
+            django-version: 5.0
+          - python-version: 3.13
+            django-version: 5.0
+          # Unsupported Python versions for Django 5.1
+          - python-version: 3.8
+            django-version: 5.1
+          - python-version: 3.9
+            django-version: 5.1
+          # Unsupported Python versions for Django 5.2
+          - python-version: 3.8
+            django-version: 5.2
+          - python-version: 3.9
+            django-version: 5.2
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          sed -i s,requires-python\ =\ \".*\",requires-python\ =\ \"\>=${{ matrix.python-version }}\",g pyproject.toml
+          uv sync --all-extras --dev
+          uv add "django~=${{ matrix.django-version }}"
+      - name: Run Tests
+        run: |
+          uv run coverage run tests/manage.py test testapp --failfast -v2
+          uv run coverage report -m
+
+      - name: Upload coverage data to coveralls.io
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_FLAG_NAME: run-${{ matrix.python-version }}
+          COVERALLS_PARALLEL: true
+        run: uv run coveralls --service=github
+
+  finish:
+    name: Indicate completion to coveralls.io
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Finalize publishing to coveralls.io
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
