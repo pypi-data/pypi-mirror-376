@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: exceptionlib
+Version: 0.1.1
+Summary: Easily customizing exceptions in any way you can think of!
+Author: Aiden
+License: MIT License
+        
+        Copyright (c) 2025 Aiden
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Description-Content-Type: text/markdown
+
+# ExceptionLib v0.1.1
+
+ExceptionLib is a module designed to help make custom exceptions without having to create a new class.  
+To install ExceptionLib, run the following command in your terminal:  
+~~~Bash
+pip install exceptionlib
+~~~
+Here are some examples of what you can do:
+~~~Python
+import exceptionlib
+error = exceptionlib.CustomException(error="hello world!", error_type="HelloWorldError", traceback_code="raise CustomException(...)", traceback_file="...")
+
+raise error
+~~~
+This will output:  
+~~~Plaintext
+Traceback (most recent call last):
+  File "...", line 108, in <module>
+    raise CustomException(...)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+HelloWorldError: hello world!
+~~~
