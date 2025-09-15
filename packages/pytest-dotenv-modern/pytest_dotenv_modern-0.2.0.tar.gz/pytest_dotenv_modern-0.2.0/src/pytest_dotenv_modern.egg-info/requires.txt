@@ -1,0 +1,9 @@
+pytest>=6.0.0
+
+[dev]
+pytest-cov
+black
+isort
+flake8
+mypy
+pre-commit
