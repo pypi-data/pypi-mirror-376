@@ -1,0 +1,8 @@
+volt_llm_client-0.1.2.dist-info/licenses/LICENSE,sha256=tcT-x2glKCSp3h3mCIJJQeOr9Bp5Fxws7oG6dOAVCaU,1063
+voltllmclient/__init__.py,sha256=59I9oe56FZ7nlVMHADEeUCk1SNj6drOiakGnPd2FKzU,72
+voltllmclient/client.py,sha256=nA1N61cDpxK7bDfaHO7ZfQQSDzo5YAEq8ctxXEVrwLM,5151
+voltllmclient/conversation.py,sha256=ZOxRUKtFECU5j_RIJdhyLRagkPjrexNg5svIZpHk9VU,2228
+volt_llm_client-0.1.2.dist-info/METADATA,sha256=a32ST40lgxlHx_7_WA_4roukgB1x7JW2uhUOvVzi26g,4272
+volt_llm_client-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+volt_llm_client-0.1.2.dist-info/top_level.txt,sha256=qgiVUAgAD3eTBiW-KquJeMlTJbhUFcp0wtjj5fPinvM,14
+volt_llm_client-0.1.2.dist-info/RECORD,,
