@@ -1,0 +1,19 @@
+# provides random useragent string taken from useragents.me
+
+## methods:
+    get_useragent(env='desktop')
+        returns a useragent string for the specified environment, sampled according to the probability occurring in the wild
+
+    get_useragents(env='all')
+        returns a dict:list:dict of useragents (the keys are the environments)
+        the returned lists contain dicts with keys share (percentage of all agents), os + browser, and useragent. some dicts also have a device key.
+
+        if env='desktiop' (or mobile, linux, android, iphone, tablet) is specified, a list:dict fir the specified environment is returned
+
+## example usage:
+    from randomuseragent import ua
+    agent=ua()
+    agent.get_user_agent()
+    # 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.10 Safari/605.1.1'
+    
+    
