@@ -1,0 +1,13 @@
+Orange3_MLflow_Export-0.1.1-py3.13-nspkg.pth,sha256=UYCZtLWueceGiAlmXKRJUZ0TWQEubpPoQ1pVnAAsME0,502
+orange3_mlflow_export-0.1.1.dist-info/licenses/LICENSE,sha256=4gnQrXMIreDsiRALR1IjMImilSGudu7caIpkkrW0SFs,780
+orangecontrib/mlflowexport/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+orangecontrib/mlflowexport/widgets/__init__.py,sha256=IjDx0dIiLe60qG1J_stTaErNm8BGtyUTzxA6oox5DMI,220
+orangecontrib/mlflowexport/widgets/owmlflowexport.py,sha256=iwjryjqtqQeBXWZjoXznTD7pOCYH7cdgZ_uLxBkC7l0,13056
+orangecontrib/mlflowexport/widgets/icons/category.svg,sha256=uX2N7raetRJx1bYdUOvRWU30rQVGLGt9sTjQfi28p08,506
+orangecontrib/mlflowexport/widgets/icons/mywidget.svg,sha256=uVtB-KtLusp7w_yg4dDqexM6AiyEk46mWZPQLTMSOrY,631
+orange3_mlflow_export-0.1.1.dist-info/METADATA,sha256=HWLWc39q2vTL4rW4AE2lyFok6HQQbTaAyuDg8rvxX4c,5939
+orange3_mlflow_export-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+orange3_mlflow_export-0.1.1.dist-info/entry_points.txt,sha256=8JxHXE1Xcyy-V91XYXD5ylzp9WK8Bs1xRPRCs4jGD_E,122
+orange3_mlflow_export-0.1.1.dist-info/namespace_packages.txt,sha256=Iut-JTfT11SZHHm77_ZeszD7pZDWXcTweCbvrJpqDyQ,14
+orange3_mlflow_export-0.1.1.dist-info/top_level.txt,sha256=Iut-JTfT11SZHHm77_ZeszD7pZDWXcTweCbvrJpqDyQ,14
+orange3_mlflow_export-0.1.1.dist-info/RECORD,,
