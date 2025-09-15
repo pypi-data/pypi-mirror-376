@@ -1,0 +1,10 @@
+fmi_bd2cmake/__init__.py,sha256=4pmo1l8_B-bj85pNlxH88zAPgA8TSvRCaNUFAuWea5Q,70
+fmi_bd2cmake/cli.py,sha256=LEoVlXNkADZR2wRZp67r2Xne_dQbboBTnldbmzEFFaA,1924
+fmi_bd2cmake/generator.py,sha256=LpfTcY1lrO0pf75dGczb5H0K1SMkF8Lmt3ApC59KeFc,13678
+fmi_bd2cmake/parser.py,sha256=RPBXwBDwfA_3gh8ByD8CqXm-MNOJ_RiucnIM1Q14gIY,4990
+fmi_bd2cmake-0.1.0.dist-info/licenses/LICENSE,sha256=J1GEkrP0aXcu48FUsUWmmes0xEI9_4CWYa1YE2bYWFA,1071
+fmi_bd2cmake-0.1.0.dist-info/METADATA,sha256=zf3hofMLeyZ33uMtnig3UXhzFnIf-qvbFP7z9gFsKeQ,5507
+fmi_bd2cmake-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fmi_bd2cmake-0.1.0.dist-info/entry_points.txt,sha256=C5BDcORqO8PK8mjygunG7OiZCICgjmYd4dLxSxCfMTQ,55
+fmi_bd2cmake-0.1.0.dist-info/top_level.txt,sha256=Nc-0csIsuaSg1vMn0_zG9c7nJpDWtUCFBgUuSGFeYds,13
+fmi_bd2cmake-0.1.0.dist-info/RECORD,,
