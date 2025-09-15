@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentic-social-server"
+version = "0.1.0"
+description = "AI-powered social media platform for book lovers with neurochemical-optimized feed algorithm"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Fred Zimmerman", email = "wfzimmerman@gmail.com"},
+]
+keywords = ["ai", "social-media", "books", "streamlit", "llm", "neurochemical"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "streamlit>=1.28.0",
+    "nimble-llm-caller>=0.1.0",
+    "pandas>=1.5.0",
+    "python-dateutil>=2.8.0",
+    "pydantic>=2.0.0",
+    "bcrypt>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/fredzannarbor/agentic_social_server"
+Repository = "https://github.com/fredzannarbor/agentic_social_server.git"
+Issues = "https://github.com/fredzannarbor/agentic_social_server/issues"
+
+[project.scripts]
+agentic-social-server = "social_server.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/social_server"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"resources" = "social_server/resources"

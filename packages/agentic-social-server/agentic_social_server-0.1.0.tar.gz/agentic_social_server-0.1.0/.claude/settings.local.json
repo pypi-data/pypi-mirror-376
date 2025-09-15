@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(security find-internet-password:*)",
+      "Bash(git pull:*)",
+      "Read(//Users/fred/my-organizations/nimble/repos/agentic_social_server/**)",
+      "Read(//Users/fred/my-organizations/nimble/**)",
+      "Bash(git push:*)",
+      "Bash(pip install:*)",
+      "Bash(uv build:*)",
+      "Bash(unzip:*)",
+      "Bash(uv add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
