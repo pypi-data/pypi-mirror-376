@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartdebug"
+version = "0.2.0"
+description = "A Python debugging toolkit for developers with smart trace, watch, time travel, and more."
+readme = "README.md"
+authors = [
+    { name = "Mohammad Shohag", email = "shohagcsediu@gmail.com" }
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "colorama>=0.4.6"
+]

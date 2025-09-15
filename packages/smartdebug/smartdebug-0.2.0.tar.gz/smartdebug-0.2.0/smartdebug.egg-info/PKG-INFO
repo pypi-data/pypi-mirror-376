@@ -1,0 +1,179 @@
+Metadata-Version: 2.4
+Name: smartdebug
+Version: 0.2.0
+Summary: A Python debugging toolkit for developers with smart trace, watch, time travel, and more.
+Author-email: Mohammad Shohag <shohagcsediu@gmail.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: colorama>=0.4.6
+
+# SmartDebug 🐍
+
+[![PyPI version](https://img.shields.io/pypi/v/smartdebug)](https://pypi.org/project/smartdebug/)
+[![Python versions](https://img.shields.io/pypi/pyversions/smartdebug)](https://pypi.org/project/smartdebug/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+**SmartDebug** is a Python debugging toolkit designed to make debugging easier, faster, and more informative. It provides **enhanced tracebacks, variable watching, time travel debugging, and more**, giving you complete insight into your code execution.
+
+---
+
+## 🚀 Features
+
+SmartDebug includes the following powerful features:
+
+1. **Smart Tracebacks (`smart_trace`)**  
+   - Enhanced traceback with:
+     - Exception type and message
+     - Error line with surrounding code context
+     - Variable values and diffs
+   - Optional parameter: `use_color=True` for colorized output
+
+2. **Watch Variables (`watch`)**  
+   - Monitor one or more variables in real-time
+   - Prints their values whenever they are updated
+
+3. **Why None Analysis (`why_none`)**  
+   - Detect why a variable is `None`
+   - Shows the origin of `None` assignments for easier debugging
+
+4. **Variable Value Differences**  
+   - Highlights changes in variable values before an exception
+   - Works inside `smart_trace` to track unexpected mutations
+
+5. **Source Context Display**  
+   - Shows several lines of code around the error line
+   - Helps understand the context of the error
+
+6. **Colorized Output**  
+   - Optional (`use_color=True`) for `smart_trace`
+   - Highlights error lines, variable values, and context for easier reading
+
+7. **Time Travel Debugging (`time_travel`)**  
+   - Step back through execution to inspect previous variable states
+   - Useful for understanding how data evolved over time
+
+8. **Decorators**  
+   - `@trace`: Automatically applies `smart_trace` to a function
+   - `@watch_vars`: Automatically watches all local variables in a function
+   - `@time_travel_func`: Captures variables for time travel inspection
+
+---
+
+## 📦 Installation
+
+Install via PyPI:
+
+```bash
+pip install smartdebug
+```
+
+## Quick Start
+1. Smart Tracebacks
+```bash
+from smartdebug import smart_trace
+
+try:
+    def buggy():
+        nums = [1, 2, 3]
+        return nums[5]  # Out of range
+    buggy()
+except Exception as e:
+    smart_trace(e, use_color=True)
+
+```
+Output: Shows the line, variable values, and context around the error.
+
+2. Watch Variables
+```bash
+from smartdebug import watch
+
+x = 10
+y = 20
+watch(x, y)
+x += 5
+y *= 2
+
+```
+Output: Displays changes in x and y automatically.
+
+3. Why None Analysis
+```bash
+from smartdebug import why_none
+
+a = None
+b = 5
+a = b if b > 10 else None
+
+why_none(a)
+
+```
+Output: Shows why a ended up being None.
+
+4. Time Travel Debugging
+
+```bash
+from smartdebug import time_travel_func, time_travel
+
+@time_travel_func
+def calculate():
+    a = 10
+    a += 5
+    a *= 2
+    return a
+
+result = calculate()
+time_travel('a')  # Inspect past states of `a`
+
+```
+5. Decorators
+```bash
+from smartdebug import trace, watch_vars, time_travel_func
+
+@trace(use_color=True)
+def buggy_function():
+    nums = [1, 2, 3]
+    return nums[5]
+
+@watch_vars
+def update_numbers():
+    x, y = 5, 10
+    x += 3
+    y *= 2
+
+@time_travel_func
+def calculate():
+    a = 10
+    a += 5
+    a *= 2
+    return a
+
+```
+
+## Example combine demo
+```bash
+from smartdebug import smart_trace, watch, why_none, time_travel_func, time_travel
+
+@time_travel_func
+def demo():
+    x = 5
+    y = 10
+    watch(x, y)
+    x += 2
+    y *= 3
+    z = None
+    why_none(z)
+    nums = [1, 2, 3]
+    return nums[5]  # triggers smart_trace
+
+try:
+    demo()
+except Exception as e:
+    smart_trace(e, use_color=True)
+
+# Inspect variable history
+time_travel('x')
+time_travel('y')
+
+```
