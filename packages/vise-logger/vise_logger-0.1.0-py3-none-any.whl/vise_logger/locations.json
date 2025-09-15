@@ -1,0 +1,59 @@
+{
+  "locations": [
+    {
+      "dir": "~/.claude/projects/",
+      "tool": "claude",
+      "verified": false
+    },
+    {
+      "dir": "~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/tasks/",
+      "tool": "cline",
+      "verified": true
+    },
+    {
+      "dir": "~/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/tasks/",
+      "tool": "roo",
+      "verified": false
+    },
+    {
+      "dir": "~/.continue/logs/",
+      "tool": "continue",
+      "verified": false
+    },
+    {
+      "dir": "%APPDATA%/Cursor/User/workspaceStorage/",
+      "tool": "cursor",
+      "verified": false
+    },
+    {
+      "dir": "~/.config/Cursor/User",
+      "tool": "cursor",
+      "verified": true
+    },
+    {
+      "dir": "%APPDATA%/Code/logs/",
+      "tool": "copilot",
+      "verified": false
+    },
+    {
+      "dir": "%APPDATA%/Roaming/Code/logs/",
+      "tool": "copilot",
+      "verified": false
+    },
+    {
+      "dir": "~/.config/Code/User/workspaceStorage",
+      "tool": "copilot",
+      "verified": false
+    },
+    {
+      "dir": "~/.config/Code/logs",
+      "tool": "copilot",
+      "verified": false
+    },
+    {
+      "dir": "/home/emergency/.config/Cursor/User",
+      "tool": "unknown",
+      "verified": true
+    }
+  ]
+}
