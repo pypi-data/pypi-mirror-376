@@ -1,0 +1,7 @@
+conecta-0.0.5.dist-info/METADATA,sha256=ktp24bt9BgozjgfQrUzVSBmroFmQXeiXDvPTCFTunno,4732
+conecta-0.0.5.dist-info/WHEEL,sha256=-VBVXxxhuW7vs-AzuH1J4ij07cmaOVykeZTmSK682KE,105
+conecta.libs/libgcc_s-27e5a392.so.1,sha256=x5sO63liVwXxrjGGP371wB0RyQe1KEnIynYm82T0G0M,449745
+conecta/__init__.py,sha256=uoeqSiwuUl1nv_PFnGwd2jAwHDLk0-D55_CcTHYl2_0,9620
+conecta/conecta.cpython-312-i386-linux-musl.so,sha256=uY2AG6YJjyJcly2DdszPISUmh5Q0XO7BNBFK3Z2J8Gk,20040961
+conecta/tests/test_bind.py,sha256=uvIP7V_WpJSSvGbwPBoG2yaiFcAQ3Sz81QX91hKW4sw,813
+conecta-0.0.5.dist-info/RECORD,,
