@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: mr-creosote
+Version: 0.6.0
+Summary: It's only wafer-thin...
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: techdragon
+Dynamic: requires-dist
+Dynamic: requires-python
+
+# mr-creosote
+
+A small package with a big appetite for dependencies...
+
+After all, it's only wafer thin.
