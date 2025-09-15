@@ -1,0 +1,3 @@
+[console_scripts]
+ia-agent = src.cli.main:main
+ia-agent-config = src.cli.config_cli:main
