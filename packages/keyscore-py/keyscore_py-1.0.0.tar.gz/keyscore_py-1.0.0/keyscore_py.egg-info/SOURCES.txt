@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+keyscore/__init__.py
+keyscore/client.py
+keyscore/models.py
+keyscore_py.egg-info/PKG-INFO
+keyscore_py.egg-info/SOURCES.txt
+keyscore_py.egg-info/dependency_links.txt
+keyscore_py.egg-info/requires.txt
+keyscore_py.egg-info/top_level.txt

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keyscore-py"
+version = "1.0.0"
+description = "Python client for keysco.re API - Search and lookup data across multiple sources"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{ name = "esson", email = "esson@riseup.net" }]
+maintainers = [{ name = "esson", email = "esson@riseup.net" }]
+keywords = ["keysco.re", "api", "client", "osint", "lookup", "search", "intelligence"]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+]
+dependencies = [
+  "requests>=2.31.0"
+]
+
+[project.urls]
+homepage = "https://keysco.re/"
+repository = "https://github.com/keysco-re/keyscore-py"
+documentation = "https://docs.keysco.re/"
+bug-tracker = "https://github.com/keysco-re/keyscore-py/issues"
+
+[tool.setuptools.packages.find]
+include = ["keyscore*"]

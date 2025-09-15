@@ -1,0 +1,18 @@
+# Include the README and license files
+include README.md
+include LICENSE
+
+# Include the package configuration
+include pyproject.toml
+
+# Include package data
+recursive-include keyscore *.py
+
+# Exclude unnecessary files
+exclude .gitignore
+exclude *.pyc
+exclude __pycache__
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store
+recursive-exclude * .git*
