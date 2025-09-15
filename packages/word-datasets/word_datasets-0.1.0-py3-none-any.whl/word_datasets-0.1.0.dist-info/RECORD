@@ -1,0 +1,15 @@
+word_datasets/__init__.py,sha256=D3gmZDX0TovV7UuRAe6nxX810pEcR65dx1B5aMvnp2g,1399
+word_datasets/data/.gitkeep,sha256=daEdpEyAJIa8b2VkCqSKcw8PaExcB6Qro80XNes_sHA,2
+word_datasets/data/dansk.txt,sha256=xcD_2j52s1S7cPKm6IwnVx-9eRIX65THkIDpm4kyM3M,231239
+word_datasets/data/deutsch.txt,sha256=KJszFlJTsp6_sSYjdu45Bg2xBUuuGOatrDsdQtE5Qwc,2043446
+word_datasets/data/espanol.txt,sha256=nAncnsjHQhhqNNv9iq88YXzZ9fbdfp4X4ClCvmoC5fk,1896554
+word_datasets/data/francais.txt,sha256=60M4IhU5RBNWvEE3zcevol2SSY20Dlp42qF2iKU9v48,2255708
+word_datasets/data/italiano.txt,sha256=1akvmZKs_bZt3h0niltNSn8cNdT686GF-9m7NKojQO8,855682
+word_datasets/data/nederlands.txt,sha256=sP64aQYDSi0N-hgxpDFEiG224GB3HjN6VAFRCOeUrac,543863
+word_datasets/data/norsk.txt,sha256=NcH12Wyg776y1zolU3cz0HnrK9YC3hSivd6pHuwrjXs,583078
+word_datasets/data/words.txt,sha256=OaTq2HnMgoPeh_LsWOe0s0DWyqck2xtSqR3M8vJzxec,4862985
+word_datasets-0.1.0.dist-info/licenses/LICENSE,sha256=FoC9nopoo2MGjxqcGkBNR68hEB9rjoIdZPD--0-Cs0c,1058
+word_datasets-0.1.0.dist-info/METADATA,sha256=-kDBqoZRi_amDiPD1bGRV5tfbnAOSKev9Y1iAgSLYV4,1029
+word_datasets-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+word_datasets-0.1.0.dist-info/top_level.txt,sha256=A0L7PAAIWLcrpp3SuhsbHMQAi2CIUhq6UBeSsPQnJC4,14
+word_datasets-0.1.0.dist-info/RECORD,,
