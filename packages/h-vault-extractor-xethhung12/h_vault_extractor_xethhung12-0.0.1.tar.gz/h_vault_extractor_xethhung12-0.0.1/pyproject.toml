@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "h_vault_extractor_xethhung12"
+version = "0.0.1"
+authors = [
+  { name="Xeth Hung", email="admin@xethh.me" },
+]
+description = "A small package targeting to help on python project load hashicorp vault secret"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-only"
+license-files = ["LICEN[CS]E*"]
+dependencies = [
+    "j-vault-http-client-xethhung12 >= 0.1.1",
+    "hvac"
+]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/h_vault_extractor_xethhung12"]
+
+[project.scripts]
+h-vault-extractor-xethhung12="h_vault_extractor_xethhung12._cmd.run:main"
+
