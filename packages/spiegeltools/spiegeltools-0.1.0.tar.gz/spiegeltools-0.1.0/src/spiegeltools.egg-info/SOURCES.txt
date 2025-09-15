@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/cleaning/__init__.py
+src/cleaning/ukdata_cleaning.py
+src/graphs/__init__.py
+src/htmlgen/__init__.py
+src/maps/__init__.py
+src/spiegeltools.egg-info/PKG-INFO
+src/spiegeltools.egg-info/SOURCES.txt
+src/spiegeltools.egg-info/dependency_links.txt
+src/spiegeltools.egg-info/requires.txt
+src/spiegeltools.egg-info/top_level.txt
