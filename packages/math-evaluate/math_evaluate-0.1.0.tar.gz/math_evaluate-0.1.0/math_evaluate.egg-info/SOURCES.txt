@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+math_evaluate/evaluator.py
+math_evaluate/main.py
+math_evaluate.egg-info/PKG-INFO
+math_evaluate.egg-info/SOURCES.txt
+math_evaluate.egg-info/dependency_links.txt
+math_evaluate.egg-info/entry_points.txt
+math_evaluate.egg-info/top_level.txt
