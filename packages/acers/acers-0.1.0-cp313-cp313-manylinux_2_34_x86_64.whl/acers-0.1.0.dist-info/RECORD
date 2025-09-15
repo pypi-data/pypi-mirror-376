@@ -1,0 +1,7 @@
+acers-0.1.0.dist-info/METADATA,sha256=2I6dfoodF0BpsWLhouSfMgdQN9j-5-aKz-GqTRiX8Ig,800
+acers-0.1.0.dist-info/WHEEL,sha256=w2L430TSbpjW0ZfWbSj_yZ7hVJ5jp2U6PXDPTytRr9I,108
+acers/__init__.py,sha256=aj7DfVOU9NDXstwYr1tAz8nU8tcbwK3P0gcbc5Sy42Y,103
+acers/__init__.pyi,sha256=EVSd8zKJj_3X0NC4Wg37OosBCikW4WZWAFcvqpaZIB8,210
+acers/acers.cpython-313-x86_64-linux-gnu.so,sha256=uH3pIBEqnHvbAgJkM-MCAQE_m8Hq3Ms4GAn2V-djnT4,880256
+acers/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+acers-0.1.0.dist-info/RECORD,,
