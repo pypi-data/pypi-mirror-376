@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: nlpta
+Version: 0.1.0
+Summary: NLP Toolkit for Amharic
+Home-page: https://github.com/fuadsadik21/nlpta
+Author: Fuad Sadik
+Author-email: Fuad Sadik <fuadsadik21@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/fuadsadik21/nlpta
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: gensim
+Requires-Dist: pytest
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+<<<<<<< HEAD
+# NLPTA — NLP Toolkit for Amharic
+
+> A Python package for Amharic Natural Language Processing.
+
+## Installation (Coming Soon)
+```bash
+pip install nlpta
+=======
+# nlpta – NLP Toolkit for Amharic (dev branch)
+>>>>>>> 11aeda79f00bdf417da3b2c3e2c068c6e9b0ff09
