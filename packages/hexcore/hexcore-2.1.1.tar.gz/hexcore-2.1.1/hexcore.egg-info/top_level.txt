@@ -1,0 +1,4 @@
+dist
+euphoria_kernel
+hexcore
+tests
