@@ -1,0 +1,45 @@
+<p align="center">
+  <img src="images/logo.png" alt="Nome do Projeto" width="200"/>
+</p>
+
+<h1 align="center">AnovaChat</h1>
+
+<p align="center">
+  A python wrapper for <a href="https://anova.chat/">anova</a> project api
+</p>
+
+---
+
+## Installation
+
+```bash
+pip install anovachat-py
+```
+
+## Examples
+
+```py
+from time import sleep
+from anovachat import AnovaChat
+
+client = AnovaChat("you key")
+prompt = "Hi"
+
+limit = client.limits()["data"]
+
+print(limit["tokens_left"])
+
+tokens_count = client.tokenize(prompt)["data"]
+
+print(tokens_count["tokens"])
+
+data = client.send(prompt)["data"]
+uuid = data["uuid"]
+
+while True:
+    status = client.status(uuid)["data"]
+    if status["status"] == "SUCCESS":
+        print(status["answer"])
+        break
+    sleep(30)
+```

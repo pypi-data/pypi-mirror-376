@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["anovachat"]
+
+[project]
+name = "anovachat-py"
+description = "A python wrapper for anova.chat"
+authors = [
+  { name="r3tr0boy", email="r3tr0boy1234@proton.me" }
+]
+version = "1.0.0"
+dependencies = [
+  "httpx"
+]
+readme = "README.md"
+license = "MIT"

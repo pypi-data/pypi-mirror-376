@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+anovachat/__init__.py
+anovachat/client.py
+anovachat/exceptions.py
+anovachat_py.egg-info/PKG-INFO
+anovachat_py.egg-info/SOURCES.txt
+anovachat_py.egg-info/dependency_links.txt
+anovachat_py.egg-info/requires.txt
+anovachat_py.egg-info/top_level.txt
