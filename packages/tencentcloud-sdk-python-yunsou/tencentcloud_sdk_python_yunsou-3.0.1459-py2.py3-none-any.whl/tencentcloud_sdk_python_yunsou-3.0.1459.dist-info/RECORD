@@ -1,0 +1,14 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/yunsou/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/yunsou/v20180504/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/yunsou/v20180504/errorcodes.py,sha256=KvHs6W2GONKBsXXCjJUx8q8sqMTR7e5vr5Gx01t5b24,625
+tencentcloud/yunsou/v20180504/models.py,sha256=hpb5Hd2BC3Rc9_9J23pfnezJf-FSlnKRxSD5wuYodLA,15271
+tencentcloud/yunsou/v20180504/yunsou_client.py,sha256=3VLdE7GCKx0RS7p_h9y7T3nmHmQpjyqXdHle4cfpRKY,2710
+tencentcloud/yunsou/v20191115/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/yunsou/v20191115/errorcodes.py,sha256=YV391ulIJZVFPtkkzGWg4n2fbxEDxJh5ji0uglbVnA0,1274
+tencentcloud/yunsou/v20191115/models.py,sha256=TQ-E6fkxGPYItLhPVApTt2PoY81gMZ4GE0yCF7pxZz8,27714
+tencentcloud/yunsou/v20191115/yunsou_client.py,sha256=7ut92qGz4H9bKC4ondQTiKsstVD1ZRYAQ40DNLaQXJE,2716
+tencentcloud_sdk_python_yunsou-3.0.1459.dist-info/METADATA,sha256=ywoVJ4_6HkJMyYCRGYh2l7gwHP27feODCLikx6sZgcM,1518
+tencentcloud_sdk_python_yunsou-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_yunsou-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_yunsou-3.0.1459.dist-info/RECORD,,
