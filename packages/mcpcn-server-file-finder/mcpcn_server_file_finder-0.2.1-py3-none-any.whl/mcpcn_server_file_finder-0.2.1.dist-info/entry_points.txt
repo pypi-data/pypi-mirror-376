@@ -1,0 +1,2 @@
+[console_scripts]
+mcpcn-server-file-finder = mcpcn_server_file_finder:main
