@@ -1,0 +1,192 @@
+Metadata-Version: 2.4
+Name: tf-tagguard
+Version: 1.0.0
+Summary: CLI tool to validate and enforce AWS tags for resources deployed using Terraform. Targeted for CI/CD pipelines and CLI environments.
+Author-email: Mxyzptlk <noreply@noreply.com>
+License: MIT
+Project-URL: homepage, https://github.com/name/tf-tagguard
+Project-URL: repository, https://github.com/name/tf-tagguard/issues
+Keywords: terraform,aws,tags,validation,ci/cd
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tabulate<1.0,>=0.9
+Requires-Dist: typer<1.0,>=0.9
+Dynamic: license-file
+
+# tf-tagguard
+
+[![PyPI version](https://img.shields.io/pypi/v/tf-tagguard)](https://pypi.org/project/tf-tagguard/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8+-blue)](https://python.org)
+[![Tests](https://img.shields.io/badge/tests-passing-green)](tests/)
+
+`tf-tagguard` is a production-ready CLI tool to validate and enforce AWS tags on resources deployed via Terraform. It features intelligent resource detection, comprehensive validation, and seamless CI/CD integration for **enterprise-grade** tagging compliance.
+
+---
+
+## Features
+
+- **Smart Resource Detection**: Auto-detects taggable AWS resources using Terraform provider schema
+- **Action Filtering**: Option to validate only resources being created/updated/replaced
+- **Tag Validation**: Presence, exact values, lists, and regex patterns
+- **Terraform Integration**: Shows Terraform and AWS provider versions
+- **Non-taggable Skipping**: Automatically skips resources that don't support tags
+- **Comprehensive Reporting**: Detailed validation results with resource counts
+- **CI/CD Ready**: Proper exit codes and structured output
+
+---
+
+## Installation
+
+```
+pip install tf-tagguard
+```
+## CLI Usage
+
+```
+validatetags-tf PLAN_FILE [OPTIONS]
+```
+
+| Option | Description | Example |
+|--------|-------------|---------|
+| `-r, --required-tags` | Comma-separated list of required tags (presence only). | `--required-tags Name,Environment` |
+| `-v, --value-tags` | List of tags with expected values. Supports: <br> - **Exact value** → `key=value` <br> - **List of allowed values** → `key=[v1,v2,v3]` <br> - **Regex pattern** → `key=^regex$` | `Environment=dev` <br> `Team=[dev,ops,qa]` <br> `Owner=^user.*$` |
+| `-d, --delta` | Only validate resources being created/updated/replaced | `--delta` |
+| `--no-terraform-detection` | Disable automatic taggable resource detection | `--no-terraform-detection` |
+
+## Examples
+
+### Basic Usage
+```bash
+# Validate required tags with smart resource detection
+validatetags-tf plan.json -r Name,Environment,Owner
+
+# Validate only resources being modified (delta mode)
+validatetags-tf plan.json -r Name,Environment --delta
+
+# Validate tag values with multiple types
+validatetags-tf plan.json -v "Environment=[dev,prod]" -v "Owner=^user.*$"
+```
+
+### Advanced Usage
+```bash
+# Disable Terraform detection (validate all resources)
+validatetags-tf plan.json -r Name --no-terraform-detection
+
+# Combined validation with delta mode
+validatetags-tf plan.json -r Name -v "Environment=[dev,prod]" --delta
+
+# Complex validation
+validatetags-tf plan.json \
+  -r Name,Environment,Owner \
+  -v "Team=[ops,dev,qa]" \
+  -v "Owner=^user[0-9]+$" \
+  -v "CostCenter=[1000,2000,3000]" \
+  --delta
+```
+
+**NOTE:**
+
+⚠️ Tags declared in both `-r` and `-v` will trigger a warning, as a fallback mechanisim `-v` values take precedence.
+
+### Terraform Plan JSON
+
+tf-tagguard expects a Terraform plan in JSON format. Generate it with:
+
+```bash
+terraform plan -out=tfplan.binary
+terraform show -json tfplan.binary > plan.json
+```
+
+## Exit Codes
+
+| Code | Description |
+|------|-------------|
+| `0` | ✅ All validations passed |
+| `1` | ❌ Validation failed or error occurred |
+
+## Advanced Usage
+
+### Smart Resource Detection
+tf-tagguard automatically detects which AWS resources support tagging:
+
+```bash
+# Shows Terraform version, provider version, and detected resource types
+validatetags-tf plan.json -r Name,Environment
+
+# Output:
+# Using Terraform Version: 1.7.2
+# AWS Provider Version: 5.31.0
+# Detected 200+ taggable resource types
+# Validated 15 resources (all resources)
+# Skipped 3 non-taggable resources:
+#   - data.aws_caller_identity.current
+#   - random_id.bucket_suffix
+#   - aws_iam_policy_document.assume_role
+#
+# All 15 validated resources passed tag validation.
+```
+
+### Delta Mode (Only Modified Resources)
+```bash
+# Only validate resources being created, updated, or replaced
+validatetags-tf plan.json -r Name,Environment --delta
+
+# Perfect for CI/CD pipelines - faster execution
+```
+
+### Multiple Value Tags
+Use separate `-v` flags for multiple validations:
+
+```bash
+validatetags-tf plan.json \
+  -v "Environment=[dev,staging,prod]" \
+  -v "Team=[ops,dev,qa]" \
+  -v "Owner=^user.*$" \
+  --delta
+```
+
+<!-- ### CI/CD Integration
+
+**GitHub Actions:**
+```yaml
+- name: Validate Terraform Tags
+  run: |
+    terraform plan -out=tfplan.binary
+    terraform show -json tfplan.binary > plan.json
+    validatetags-tf plan.json -r Name,Environment,Owner --delta
+```
+
+**GitLab CI:**
+```yaml
+validate_tags:
+  script:
+    - terraform plan -out=tfplan.binary
+    - terraform show -json tfplan.binary > plan.json
+    - validatetags-tf plan.json -r Name,Environment,Owner --delta
+```
+
+**Azure DevOps:**
+```yaml
+- script: |
+    terraform plan -out=tfplan.binary
+    terraform show -json tfplan.binary > plan.json
+    validatetags-tf plan.json -r Name,Environment,Owner --delta
+  displayName: 'Validate Terraform Tags'
+``` -->
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history and changes.
