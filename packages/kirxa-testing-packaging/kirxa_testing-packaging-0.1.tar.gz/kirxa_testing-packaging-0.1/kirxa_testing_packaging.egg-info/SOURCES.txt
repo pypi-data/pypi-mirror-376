@@ -1,0 +1,9 @@
+README.md
+setup.py
+kirxa_testing_packaging/__init__.py
+kirxa_testing_packaging/main.py
+kirxa_testing_packaging.egg-info/PKG-INFO
+kirxa_testing_packaging.egg-info/SOURCES.txt
+kirxa_testing_packaging.egg-info/dependency_links.txt
+kirxa_testing_packaging.egg-info/requires.txt
+kirxa_testing_packaging.egg-info/top_level.txt
