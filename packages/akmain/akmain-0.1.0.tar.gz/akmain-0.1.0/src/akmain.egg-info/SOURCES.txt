@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/akmain/__init__.py
+src/akmain.egg-info/PKG-INFO
+src/akmain.egg-info/SOURCES.txt
+src/akmain.egg-info/dependency_links.txt
+src/akmain.egg-info/top_level.txt

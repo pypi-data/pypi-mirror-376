@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: akmain
+Version: 0.1.0
+Summary: A Python package by Aarush Kukreja for main processing tasks
+Author-email: Aarush Kukreja <aarush@example.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# AKMain
+
+A Python package by Aarush Kukreja for main processing tasks.
+
+## Installation
+```bash
+pip install akmain
+```
+
+## Usage
+```python
+from akmain import process_data, get_info
+print(process_data("hello"))
+print(get_info())
+```
