@@ -1,0 +1,2 @@
+[console_scripts]
+pdf-stamper = pdf_stamper.cli:main
