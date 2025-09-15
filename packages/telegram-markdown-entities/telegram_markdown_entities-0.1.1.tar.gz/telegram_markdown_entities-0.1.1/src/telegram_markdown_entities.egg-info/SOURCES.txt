@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/telegram_markdown/__init__.py
+src/telegram_markdown/parser.py
+src/telegram_markdown_entities.egg-info/PKG-INFO
+src/telegram_markdown_entities.egg-info/SOURCES.txt
+src/telegram_markdown_entities.egg-info/dependency_links.txt
+src/telegram_markdown_entities.egg-info/top_level.txt
