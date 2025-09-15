@@ -1,0 +1,3 @@
+[console_scripts]
+slb = slbrowser.cli:main
+slbrowser = slbrowser.tui:main_sync

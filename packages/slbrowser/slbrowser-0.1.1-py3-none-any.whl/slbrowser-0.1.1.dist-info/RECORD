@@ -1,0 +1,15 @@
+slbrowser/__init__.py,sha256=jZqRT2gcKtZdAdMnjhRdY-xx0j3O5qXVmnH0IyXC-2A,1299
+slbrowser/__main__.py,sha256=wJJtKZKFWhbpMSq-ohXFAY1Wldxxv1AOX4jMS_YsreQ,1543
+slbrowser/ai.py,sha256=lzGGTu7ART3fPMcuEJ-le-TIqUUYsX2DbnXSfDrixqA,15540
+slbrowser/cli.py,sha256=J_S5sG1dg9UF8644TzBMtjIVaBPgBKcQEILW6lm-TBM,6580
+slbrowser/config.py,sha256=XbfjMNLTQNWfqs79eea4suGWuFd0ROjgp3lLo-umuQA,7917
+slbrowser/models.py,sha256=o4jmCDI9J6eYzjEYu8BS2wMzParoKo4IUXYlsWmrwIU,9921
+slbrowser/search.py,sha256=RcTiW7N4ZpzD10-_Ay8WG6hXaAbFQwoAMyIl34zdDaY,12583
+slbrowser/tui.py,sha256=bD10VQ66XdM5xj2BGTL782sP6GcT72V341BDczaNU80,35422
+slbrowser/web.py,sha256=fr_3R7PUFAS6WExi-D4Q1rwh3S1229mJIhS-9dfWaqE,14289
+slbrowser-0.1.1.dist-info/licenses/LICENSE,sha256=UqAuyhvKt04kG9jB6NI0gey7KX3prEXFD0I-vxo3czE,1067
+slbrowser-0.1.1.dist-info/METADATA,sha256=QJEL7t6c3xN5bqvDfpPRe39CsD2esTf_QKZdZt591Ac,9562
+slbrowser-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+slbrowser-0.1.1.dist-info/entry_points.txt,sha256=KWtXSM3qeYsUQhpNEfbNIb92HDjB8yIoyogvXbZN470,79
+slbrowser-0.1.1.dist-info/top_level.txt,sha256=iNKaSumOu-s7pNaqDxjSlvowcdbNpVJD294S0pGcAYg,10
+slbrowser-0.1.1.dist-info/RECORD,,
