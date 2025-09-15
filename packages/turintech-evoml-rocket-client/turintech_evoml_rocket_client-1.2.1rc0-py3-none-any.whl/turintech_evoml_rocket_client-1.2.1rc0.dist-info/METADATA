@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: turintech-evoml-rocket-client
+Version: 1.2.1rc0
+Summary: Library with rocket client
+Home-page: https://turintech.ai
+Author: Turing Intelligence Technology
+Author-email: support@turintech.ai
+License: TURING INTELLIGENCE TECHNOLOGY LIMITED END-USER LICENCE
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9, <=3.11
+License-File: LICENSE
+Requires-Dist: pydantic[dotenv]<2.0.0,>=1.10.12
+Requires-Dist: loguru<0.8.0,>=0.7.2
+Requires-Dist: requests<2.40.0,>=2.31.0
+Requires-Dist: turintech-evoml-api-models<4.0.0,>=3.0.1
+Requires-Dist: turintech-configuration<2.0.0,>=1.0.0
+Requires-Dist: turintech-data-types<2.0.0,>=1.0.0
+Requires-Dist: turintech-dtos<2.0.0,>=1.0.0
+Requires-Dist: turintech-exceptions<2.0.0,>=1.0.0
+Requires-Dist: turintech-logging<2.0.0,>=1.0.0
+Requires-Dist: turintech-pagination<2.0.0,>=1.0.0
+Requires-Dist: turintech-rest-clients<2.0.0,>=1.0.0
+Requires-Dist: turintech-utils<2.0.0,>=1.0.0
+Requires-Dist: turintech-platform<2.0.0,>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
