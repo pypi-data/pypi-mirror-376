@@ -1,0 +1,28 @@
+fix: Update the "Switch principal" error message (#1961)
+
+# Description
+
+Updated the "Switch principal" error message to better reflect what you
+need to do.
+
+## Changelog
+
+- [x] Patch
+- [ ] Skip
+
+## cdf
+
+### Improved
+
+- Updated the "Switch principal" error message to better reflect what
+you need to do when running `cdf auth init/verify`.
+
+## templates
+
+No changes.
+
+---------
+
+Co-authored-by: Anders Albert <60234212+doctrino@users.noreply.github.com>
+Co-authored-by: anders-albert <anders0albert@gmail.com>
+Co-authored-by: Aashutosh-cognite <aashutosh.chaubey@cognite.com>
