@@ -1,0 +1,7 @@
+numpy
+
+[all]
+mapdemo[extra]
+
+[extra]
+pandas
