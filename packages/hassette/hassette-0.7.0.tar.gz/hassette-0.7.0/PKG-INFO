@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: hassette
+Version: 0.7.0
+Summary: Hassette is a modern, asynchronous, fully typed Python framework for running Home Assistant scripts and automations.
+Keywords: home-assistant,automation,async,typed,framework,smart-home,iot
+Author: Jessica
+Author-email: Jessica <12jessicasmith34@gmail.com>
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Home Automation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Framework :: AsyncIO
+Classifier: Typing :: Typed
+Requires-Dist: aiohttp>=3.11.18
+Requires-Dist: anyio>=4.10.0
+Requires-Dist: coloredlogs>=15.0.1
+Requires-Dist: croniter>=6.0.0
+Requires-Dist: orjson>=3.10.18
+Requires-Dist: packaging>=25.0
+Requires-Dist: platformdirs>=4.3.8
+Requires-Dist: pydantic-settings>=2.9.1
+Requires-Dist: python-dotenv>=1.1.0
+Requires-Dist: tenacity>=9.1.2
+Requires-Dist: whenever>=0.8.4
+Requires-Python: >=3.11, <3.14
+Project-URL: Bug Reports, https://github.com/nodejsmith/hassette/issues
+Project-URL: Changelog, https://github.com/nodejsmith/hassette/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://github.com/nodejsmith/hassette#readme
+Project-URL: Homepage, https://github.com/nodejsmith/hassette
+Project-URL: Repository, https://github.com/nodejsmith/hassette
+Description-Content-Type: text/markdown
+
+# Hassette
+
+[![PyPI version](https://badge.fury.io/py/hassette.svg)](https://badge.fury.io/py/hassette)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Documentation Status](https://readthedocs.org/projects/hassette/badge/?version=stable)](https://hassette.readthedocs.io/en/latest/?badge=stable)
+
+A modern, async-first Python framework for building Home Assistant automations with type safety and great developer experience.
+
+Documentation: https://hassette.readthedocs.io
+
+Why Hassette?
+-------------
+- 🌟 Async-first core built on asyncio
+- 🔧 Typed events, states, and API interactions
+- 📝 Typed app configuration, typed events, typed states, typed API, typed everything
+- 🚌 Powerful event bus with predicates, debounce, and throttle
+- ⏰ Flexible scheduling (cron and intervals)
+- ⚙️ Simple, TOML-based configuration with Pydantic validation
+
+License
+-------
+[MIT](LICENSE)
