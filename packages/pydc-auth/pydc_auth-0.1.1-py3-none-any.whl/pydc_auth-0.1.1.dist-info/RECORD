@@ -1,0 +1,11 @@
+pydc_auth/__init__.py,sha256=t52Ro-rZXw3bQBCJ6cnfIAi7Mk5OnRCqbkkcRVNMGIg,302
+pydc_auth/datacloud/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pydc_auth/datacloud/dc_token_exchange.py,sha256=UvXc6e_QEjYxhEORPP_8lp9AItbJmHKpDSyvzTlm6D4,2999
+pydc_auth/sfauth/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pydc_auth/sfauth/jwt_token_creator.py,sha256=kd9Uin8JvYr8GIAWZTiS_8a_yYX7n07Ycq-53hO3frk,3535
+pydc_auth/sfauth/sf_token_exchange.py,sha256=_b4dLxMSMJ-Ub3X8qs2vR3MANWLiGPWHP0J75BrlqJI,3909
+pydc_auth-0.1.1.dist-info/licenses/LICENSE,sha256=nH-_QfDCKdzubEud75QUbN3Lc0xSustP3AE5HGEJjDw,1073
+pydc_auth-0.1.1.dist-info/METADATA,sha256=Vh_SQZ0g1b02_SNbtZiww2x6rxWyj7wgSf7IoYJdtRk,2462
+pydc_auth-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pydc_auth-0.1.1.dist-info/top_level.txt,sha256=2QF3_6X2_6uHvxeV8A4A1GUMUFzHK31Kj1UWFz1eZu0,10
+pydc_auth-0.1.1.dist-info/RECORD,,
