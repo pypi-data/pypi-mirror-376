@@ -1,0 +1,68 @@
+[tool.poetry]
+name = "latex-image-generator"
+version = "0.1.0a3"
+description = "Tool to generate images using LaTeX."
+authors = ["Kenta Kabashima <kenta_program37@hotmail.co.jp>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://gitlab.com/MusicScience37Projects/tools/latex-image-generator"
+repository = "https://gitlab.com/MusicScience37Projects/tools/latex-image-generator.git"
+keywords = ["tex", "math"]
+packages = [{ include = "latex_image_generator" }]
+# Classifiers: https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Framework :: AsyncIO",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+click = "^8.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.3.0"
+Sphinx = "^8.2.3"
+black = "^25.1.0"
+pylint = "^3.3.8"
+sphinx-autobuild = "^2025.8.25"
+sphinx-orange-book-theme = "^0.16.0"
+mypy = "^1.18.1"
+flake8 = "^7.3.0"
+pytest = "^8.4.2"
+pytest-cov = "^7.0.0"
+pytest-asyncio = "^1.2.0"
+doc8 = "^2.0.0"
+isort = "^6.0.1"
+pydocstyle = "^6.3.0"
+aiofiles = "^24.1.0"
+types-aiofiles = "^24.1.0.20250822"
+pillow = "^11.3.0"
+types-Pillow = "^10.2.0.20240822"
+imagehash = "^4.3.2"
+toml = "^0.10.2"
+types-toml = "^0.10.8.20240310"
+myst-parser = "^4.0.1"
+
+[tool.isort]
+profile = "black"
+
+[tool.pydocstyle]
+convention = "google"
+
+[tool.pylint.main]
+disable = "too-many-instance-attributes,line-too-long"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+generate-latex-image = "latex_image_generator.main:main"
