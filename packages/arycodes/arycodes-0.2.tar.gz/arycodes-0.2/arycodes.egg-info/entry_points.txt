@@ -1,0 +1,2 @@
+[console_scripts]
+arycodes = arycodes.arycodes_cli:main

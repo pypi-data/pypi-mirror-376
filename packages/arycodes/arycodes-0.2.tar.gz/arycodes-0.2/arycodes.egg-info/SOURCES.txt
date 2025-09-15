@@ -1,0 +1,11 @@
+LICENSE
+setup.cfg
+setup.py
+arycodes/__init__.py
+arycodes/arycodes_cli.py
+arycodes.egg-info/PKG-INFO
+arycodes.egg-info/SOURCES.txt
+arycodes.egg-info/dependency_links.txt
+arycodes.egg-info/entry_points.txt
+arycodes.egg-info/requires.txt
+arycodes.egg-info/top_level.txt
