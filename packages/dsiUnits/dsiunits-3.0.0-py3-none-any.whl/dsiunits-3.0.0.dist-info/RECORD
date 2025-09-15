@@ -1,0 +1,12 @@
+dsi_unit/__init__.py,sha256=NqOoluvt4IhRMLT9Zuu7oHPsyXJrgTp67CJxaGrrj9g,1073
+dsi_unit/dsi_parser.py,sha256=ZYgR1vaR1sblZ6g5ERBpYz8a8WPRoX2VgFv3LVNHWmA,13652
+dsi_unit/dsi_unit_node.py,sha256=KE7H-QEPoHsKbdfYzjnov2QfyTnGgp672djJWuPOtI4,8206
+dsi_unit/dsi_units.py,sha256=WQ0Rp5c9-CL1I4sLDM8LNpVOdOzV4vbBUOzxuX_efFY,27223
+dsi_unit/regex_generator.py,sha256=WfgwMibJBC_u1JkK658Q90JnuVxMycWHa_cErO14Pto,3954
+dsi_unit/unit_mapping.py,sha256=NneTLU7KiOldHwUx0es8n9byFINDd2QrbpOHoxe8n04,12669
+dsi_unit/warnings.py,sha256=VtkSm1Zw_cdy6hHBHsOELf1g4U6-uGoWkoM3-NwSTn4,163
+dsiunits-3.0.0.dist-info/licenses/LICENSE,sha256=ListzFM7LvlJ1cYCe2QW70teXZrN6P6k-aDimwPO2Ko,26516
+dsiunits-3.0.0.dist-info/METADATA,sha256=KgtQS0lW0GMUtvXKtqVIY2teut2P0U7Ksjc06EQ22t8,33691
+dsiunits-3.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dsiunits-3.0.0.dist-info/top_level.txt,sha256=Qqs1ET9KXzCaBe7P-h73WWEVOdGJfqmW8wnrbGZhZ7E,9
+dsiunits-3.0.0.dist-info/RECORD,,
