@@ -1,0 +1,2 @@
+[console_scripts]
+easy_podcast = easy_podcast.cli:main
