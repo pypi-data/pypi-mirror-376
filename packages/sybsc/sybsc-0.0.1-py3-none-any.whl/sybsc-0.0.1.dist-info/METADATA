@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: sybsc
+Version: 0.0.1
+Summary: TYBSc OS practical codes (starting with CPU Scheduling)
+Author: Your Name
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
