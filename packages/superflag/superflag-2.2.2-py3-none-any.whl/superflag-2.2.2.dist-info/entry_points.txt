@@ -1,0 +1,4 @@
+[console_scripts]
+context-engine = superflag.install:main
+context-engine-mcp = superflag.__main__:main
+superflag = superflag.install:main
