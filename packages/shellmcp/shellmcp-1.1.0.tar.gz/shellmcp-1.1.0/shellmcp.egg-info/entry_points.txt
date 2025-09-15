@@ -1,0 +1,2 @@
+[console_scripts]
+shellmcp = shellmcp.cli:main
