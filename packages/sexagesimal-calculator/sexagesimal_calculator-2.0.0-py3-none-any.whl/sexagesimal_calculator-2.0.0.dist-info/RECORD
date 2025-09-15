@@ -1,0 +1,13 @@
+sexagesimal_calculator/__init__.py,sha256=pyfJX2BocKtiOwzjZrph4LR0qvriActPIMr_JtoD5e4,422
+sexagesimal_calculator/arithmetic.py,sha256=cJUCB0cWCXXkGHx9zD_Vtq30-UV9VS6lK4ux7oQUjaQ,16831
+sexagesimal_calculator/conversion.py,sha256=NY0YEcXLzp3BTmzOXIKHU67BSgQEfsLCh9cRdlgStsA,8626
+sexagesimal_calculator/core.py,sha256=UbYZGxQwKLOdnKjyEXLzyyUBrwyBdLDW2lQrhJTU9RE,514
+sexagesimal_calculator/exceptions.py,sha256=raREKEsR5lPRWS6EZ5YoC4_If--T5TUbt6ko4JMzYKU,289
+sexagesimal_calculator/explain.py,sha256=GlLdw4tEKoyX7oXEem2Yt3vsdX6AxRaDC385-UCWPuU,17749
+sexagesimal_calculator/sexagesimal.py,sha256=7QPCpRT6ymd-jaVQFN8KmQpD5QhlAmVZKfZPs_XgtxU,20656
+sexagesimal_calculator/utils.py,sha256=G32_eZ5f3WhE2SeOAY0kXaB1IqA_0yCfEhhXaEsHoGc,830
+sexagesimal_calculator-2.0.0.dist-info/licenses/LICENSE,sha256=drkQyl1nRnmhwmdM2bghOKo2qseHfQeiTIm0KeeuBUg,1073
+sexagesimal_calculator-2.0.0.dist-info/WHEEL,sha256=Jb20R3Ili4n9P1fcwuLup21eQ5r9WXhs4_qy7VTrgPI,79
+sexagesimal_calculator-2.0.0.dist-info/entry_points.txt,sha256=6bimr025YFO7DZu7YnaSxAlVtU_kTFRhgZMx2WanvtU,72
+sexagesimal_calculator-2.0.0.dist-info/METADATA,sha256=CrhAIW5NpSH_mrmqzzgmxUDh3khXNhNkh1MMLqp3OUM,5399
+sexagesimal_calculator-2.0.0.dist-info/RECORD,,
