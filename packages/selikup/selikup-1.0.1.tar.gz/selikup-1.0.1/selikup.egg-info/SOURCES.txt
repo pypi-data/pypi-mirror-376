@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+selikup.py
+setup.py
+selikup.egg-info/PKG-INFO
+selikup.egg-info/SOURCES.txt
+selikup.egg-info/dependency_links.txt
+selikup.egg-info/requires.txt
+selikup.egg-info/top_level.txt
