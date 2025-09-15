@@ -1,0 +1,11 @@
+wfctl/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wfctl/help.py,sha256=cUkV3NRL3ZAiS-j3SxuX5rQ33N1QNei-XaPU7U3tPjo,4802
+wfctl/ipc.py,sha256=YRFJ95ncj_n6xEkA7g6gx0RJwEbri1oJ5d3EzczY-xw,12152
+wfctl/main.py,sha256=ULz7Cbr13_ME2UpnkPF2aCfipP_7gkPxBJdXTwRHW5g,693
+wfctl/utils.py,sha256=CwL5wVXydYUlExb76WsjMwbB0iITSoiSao30r2iXyz4,3379
+wfctl-0.8.8.dist-info/licenses/LICENSE,sha256=45xRVvBK6qCx7OLx1uhhRh_l2c0E56Fx1AWjY-jWkpE,1064
+wfctl-0.8.8.dist-info/METADATA,sha256=D6kjfsGctzA5r39NHEuUltEJys24Ez33WHM91WpoJhM,2622
+wfctl-0.8.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+wfctl-0.8.8.dist-info/entry_points.txt,sha256=7HX1JhAAn5_Pm-uWQbUCIwem-BhVWxN36UE0HZZKs6g,42
+wfctl-0.8.8.dist-info/top_level.txt,sha256=et9z9-Imu24ulDPNiCcpqH9mhKvEFscsheyc0rkKlUw,6
+wfctl-0.8.8.dist-info/RECORD,,
