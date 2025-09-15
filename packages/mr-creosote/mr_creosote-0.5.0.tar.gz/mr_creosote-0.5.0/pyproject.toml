@@ -1,0 +1,16 @@
+[project]
+name = "mr-creosote"
+version = "0.5.0"
+description = "It's only wafer-thin..."
+readme = "README.md"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+scripts = { mr-creosote = "mr_creosote:main" }
+
+[build-system]
+requires = ["setuptools>=69", "psutil"]
+build-backend = "setuptools.build_meta:__legacy__"
+
+[tool.setuptools]
+# This package must be installed from source to get the dynamic behavior
+zip-safe = false
