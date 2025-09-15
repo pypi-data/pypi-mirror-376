@@ -1,0 +1,7 @@
+metapg/migrations/__init__.py,sha256=bss-u1IrxssGeZr-QYFCXByOS5dNX5tzDo4HQRep6zg,397
+metapg/migrations/models.py,sha256=auNUuMOYXY9VhlaI84FxJmI4eGN8PWMBy-box5L0b1Q,3586
+metapg/migrations/runner.py,sha256=qNm6Ow5sawBxgA_ZnJLopkVnbqohoccgsKUmI_vJBxo,6987
+metapg/migrations/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+metapg_migrations-0.0.1.dist-info/METADATA,sha256=Yzb-JHtrxrag1ttf6xSGE6ORewru9qo9ZgFLXT-H9fM,7571
+metapg_migrations-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+metapg_migrations-0.0.1.dist-info/RECORD,,
