@@ -1,0 +1,13 @@
+codex/__init__.py,sha256=oqRJrS7etY5bJ6sS3AiPdX9bLguUzEtbow8hRo6keuY,618
+codex/api.py,sha256=FhRSIAu5dpwTB4sO2qjuVjH_akFoDAG-2wyAyRSGCvw,2892
+codex/config.py,sha256=O__Q9OlWoClLoYwswK2r5fsBTogr03hQehcR_gNyH9k,7540
+codex/event.py,sha256=HPS6ySBa7Pwn4gRjQKj2yUE5_kiad4WFqwmA7aEdoiI,387
+codex/native.py,sha256=GpC5DKEZvA7ZUeuCtK9tIIbnSpeiezLPS3a3Y393GVs,1201
+codex/protocol/types.py,sha256=7SxZgDwfTsXiqhQb5Yj4n2rT6-fEs7JxERbPQPtJmh0,34759
+codex/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+codex_native/__init__.py,sha256=F6wnaifw2lA804o89FM946g2tbrunIvG3xy1PWR_9DE,131
+codex_native/codex_native.abi3.so,sha256=1EOqAt9A3bvrODnOTAFARJ2q7o8GeyUKCRrM0CNyy4Q,21788224
+codex_python-0.2.11.dist-info/METADATA,sha256=-jRxeMc-N6OZ1VfoWGmCOTjv741M8zNkaUSFegUVLzU,4432
+codex_python-0.2.11.dist-info/WHEEL,sha256=QMAj6zL6KHlyKRRFomt7GTG2wigRAzG--3S9I4R_7Vs,128
+codex_python-0.2.11.dist-info/licenses/LICENSE,sha256=ZhGahTKhsCbPWNmZ7ugZ14LVewMo4Gh1OeIOlQabyrI,1066
+codex_python-0.2.11.dist-info/RECORD,,
