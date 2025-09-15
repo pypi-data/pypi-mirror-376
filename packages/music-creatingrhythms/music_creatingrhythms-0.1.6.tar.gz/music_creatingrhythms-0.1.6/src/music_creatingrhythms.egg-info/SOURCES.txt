@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/music_creatingrhythms/__init__.py
+src/music_creatingrhythms/music_creatingrhythms.py
+src/music_creatingrhythms.egg-info/PKG-INFO
+src/music_creatingrhythms.egg-info/SOURCES.txt
+src/music_creatingrhythms.egg-info/dependency_links.txt
+src/music_creatingrhythms.egg-info/top_level.txt
