@@ -1,0 +1,122 @@
+# stringx
+
+**stringx** is an extended string utility library for Python.  
+It re-exports everything from the built-in [`string`](https://docs.python.org/3/library/string.html) module and adds a wide range of practical helpers for:
+
+- Case conversion (`snake_case`, `camelCase`, `PascalCase`, `kebab-case`, `Title Case`)  
+- Slugification and safe filenames  
+- Character filters (`only_digits`, `only_letters`, `only_alnum`, etc.)  
+- Random string and secure token generation  
+- Validators (`is_uuid`, `is_hex`)  
+- Text cleanup (`normalize_space`, `strip_accents`)  
+- CLI for quick usage from the terminal  
+
+---
+
+## Installation
+
+```bash
+pip install stringx
+```
+
+---
+
+## Quick Examples
+
+```python
+from stringx import random_string, slugify, to_snake, to_camel, is_uuid, safe_filename
+
+# Generate secure random strings
+print(random_string(16, "letters+digits", secure=True))
+
+# Slugify text
+print(slugify("Hello, World!"))  
+# "hello-world"
+
+# Convert cases
+print(to_snake("HTTPResponseCode"))    # "http_response_code"
+print(to_camel("http_response_code"))  # "httpResponseCode"
+
+# Validate UUID
+print(is_uuid("123e4567-e89b-12d3-a456-426614174000"))  
+# True
+
+# Make filenames safe
+print(safe_filename("Quarterly Report: Q1/2025.pdf", allow_dot=True))  
+# "Quarterly_Report_Q1_2025.pdf"
+```
+
+---
+
+## CLI Usage
+
+`stringx` also comes with a command-line tool:
+
+```bash
+# Generate a secure random string
+stringx gen --length 20 --charset letters+digits --secure
+
+# Slugify text
+stringx slugify "Hello, World!"  
+# hello-world
+
+# Convert to snake_case
+stringx case "MyExampleString" --to snake
+
+# Keep only digits
+stringx filter "a1b2c3" --only digits
+
+# Validate UUID
+stringx validate "123e4567-e89b-12d3-a456-426614174000" --uuid
+
+# Normalize spaces
+stringx normalize-space "foo    bar   baz"  
+# "foo bar baz"
+```
+
+---
+
+## Advanced Examples
+
+### Slugify with Unicode
+```python
+from stringx import slugify
+print(slugify("Café déjà vu", allow_unicode=True))
+# "café-déjà-vu"
+```
+
+### Character n-grams
+```python
+from stringx import ngrams
+print(ngrams("banana", 2))
+# ['ba', 'an', 'na', 'an', 'na']
+```
+
+### Character frequency
+```python
+from stringx import char_freq
+print(char_freq("banana"))
+# {'b': 1, 'a': 3, 'n': 2}
+```
+
+---
+
+## API Reference
+
+- `random_string(length=12, charset="letters+digits", secure=False)`
+- `secure_token(nbytes=16, urlsafe=True)`
+- `slugify(text, allow_unicode=False, sep="-")`
+- `to_snake`, `to_kebab`, `to_camel`, `to_pascal`, `to_title`
+- `strip_accents`, `normalize_space`
+- `only_letters`, `only_digits`, `only_alnum`, `only_printable`
+- `is_uuid`, `is_hex`
+- `ngrams`, `chunks`, `char_freq`
+- `safe_filename`, `ensure_prefix`, `ensure_suffix`
+- `repeat`, `truncate`, `pad_left`, `pad_right`
+- `fill_template`
+
+---
+
+## License
+
+MIT © Ahamed

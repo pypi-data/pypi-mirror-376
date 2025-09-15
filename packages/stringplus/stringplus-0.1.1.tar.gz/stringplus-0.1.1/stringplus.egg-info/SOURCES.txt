@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+stringplus.egg-info/PKG-INFO
+stringplus.egg-info/SOURCES.txt
+stringplus.egg-info/dependency_links.txt
+stringplus.egg-info/entry_points.txt
+stringplus.egg-info/top_level.txt
+stringx/__init__.py
+stringx/cli.py
+stringx/core.py
