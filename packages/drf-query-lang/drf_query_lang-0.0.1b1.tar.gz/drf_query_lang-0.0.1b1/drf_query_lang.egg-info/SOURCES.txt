@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+pyproject.toml
+drf_query_lang/__init__.py
+drf_query_lang/apps.py
+drf_query_lang/exceptions.py
+drf_query_lang/permission.py
+drf_query_lang/query_lang.py
+drf_query_lang/settings.py
+drf_query_lang/urls.py
+drf_query_lang/views.py
+drf_query_lang.egg-info/PKG-INFO
+drf_query_lang.egg-info/SOURCES.txt
+drf_query_lang.egg-info/dependency_links.txt
+drf_query_lang.egg-info/requires.txt
+drf_query_lang.egg-info/top_level.txt

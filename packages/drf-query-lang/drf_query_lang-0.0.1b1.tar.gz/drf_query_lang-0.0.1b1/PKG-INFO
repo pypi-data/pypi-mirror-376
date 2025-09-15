@@ -1,0 +1,191 @@
+Metadata-Version: 2.4
+Name: drf-query-lang
+Version: 0.0.1b1
+Summary: Lightweight GraphQL alternative for django-restframework
+Author-email: EL OUAZIZI Walid <contact@walidlab.dev>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/WalidDevIO/drf-query-lang
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: django
+Requires-Dist: djangorestframework
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+
+# DRF Query Lang
+
+## 📖 Overview
+
+DRF Query Lang is a lightweight query language for **Django REST Framework**.
+It allows API clients to dynamically define:
+
+* Which **fields** to fetch
+* Which **relations** to expand
+* Apply simple **functions** (`count`, `min`, `max`)
+
+It automatically generates:
+
+* Optimized **querysets** (`select_related`, `prefetch_related`)
+* Dynamic **DRF serializers**
+
+---
+
+## ✨ Features
+
+* Strict DSL (`Model{...}` syntax)
+* Dynamic `ModelSerializer` generation
+* Automatic queryset optimizations
+* Configurable authorization & security rules
+* Ready-to-use DRF view (`QueryLangView`)
+
+---
+
+## 🚀 Installation
+
+```bash
+pip install drf-query-lang
+```
+
+Or with Poetry / pyproject.toml:
+
+```toml
+dependencies = [
+    "drf-query-lang>=0.1.0"
+]
+```
+
+---
+
+## ⚙️ Configuration
+
+In your Django `settings.py`:
+
+```python
+DRF_QUERY_LANG = {
+    "UNAUTHORIZED_MODELS": ["User"],  # forbidden models
+    "UNAUTHORIZED_KEYS": ["password", "is_staff", "is_superuser"],  # forbidden fields
+    "AUTHORIZATION_METHOD": "drf_query_lang.permission.base_permission",  # request -> bool
+}
+```
+
+---
+
+## 📡 Usage
+
+### 1. Add endpoint
+
+```python
+# urls.py
+from django.urls import path, include
+
+urlpatterns = [
+    path("query-lang/", include("drf_query_lang.urls")),
+]
+```
+
+### 2. Example queries
+
+#### Simple fields
+
+```
+GET /query-lang/?query=Account{"nom","prenom"}
+```
+
+Response:
+
+```json
+[
+  {"nom": "Durand", "prenom": "Alice"},
+  {"nom": "Martin", "prenom": "Bob"}
+]
+```
+
+#### Relations
+
+```
+GET /query-lang/?query=User{"email", Profile:profile{"bio"}}
+```
+
+Response:
+
+```json
+[
+  {"email": "a@test.com", "profile": {"bio": "Hello"}},
+  {"email": "b@test.com", "profile": {"bio": "World"}}
+]
+```
+
+#### Functions
+
+```
+GET /query-lang/?query=User{"username", Post:posts:count()[{}]}
+```
+
+Response:
+
+```json
+[
+  {"username": "jdoe", "posts": 42},
+  {"username": "jdupont", "posts": 7}
+]
+```
+
+#### Existence check
+
+```
+GET /query-lang/?query=Group{"name"}&exist=true
+```
+
+Response:
+
+```json
+{"exist": true}
+```
+
+---
+
+## 🔒 Security
+
+* Blocked models: defined in `UNAUTHORIZED_MODELS`
+* Blocked fields: defined in `UNAUTHORIZED_KEYS`
+* Authorization: checked with `AUTHORIZATION_METHOD(request)`
+
+---
+
+## 🧪 Tests
+
+Run the test suite:
+
+```bash
+pytest tests/
+```
+
+Example parser test:
+
+```python
+def test_parse_simple_fields():
+    query = 'Agent{"nom","prenom"}'
+    parser = QueryLangParser(query)
+    parsed = parser.parsed_data
+    assert parsed["model"] == "Agent"
+    assert "nom" in parsed["fields"]
+    assert "prenom" in parsed["fields"]
+```
+
+---
+
+## 📌 Limitations (v0.1 beta)
+
+* Only `min`, `max`, `count` functions supported
+* No pagination in the view yet
+* No automatic cycle detection (self-relations may cause infinite recursion)
+* Strict syntax: no spaces allowed in the top-level query `Model {}` will raise an error
+
+---
+
+## 📜 License
+
+MIT © 2025
