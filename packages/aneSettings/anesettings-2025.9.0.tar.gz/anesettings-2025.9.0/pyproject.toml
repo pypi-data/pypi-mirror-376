@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "pyyaml", "cryptography", "loguru", "pydantic"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["aneSettings", "aneSettings.templates"]  # Packages to include
+exclude = []  # Exclude specific files or dirs
+
+[project]
+name = "aneSettings"
+dynamic = ["version"]
+description = "High-performance secure core framework for scalable, reliable applications"
+readme = "ReadMe.md"
+requires-python = ">=3.10"
+license = {file = "License.md"}
+authors = [
+    { name = "Cybernetic Innovations", email = "github@cyberneticinnovations.com" }
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "PyYAML~=6.0.2",
+    "cryptography~=45.0.3",
+    "loguru~=0.7.3",
+    "pydantic~=2.11.5",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "aneSettings.__version__"}
