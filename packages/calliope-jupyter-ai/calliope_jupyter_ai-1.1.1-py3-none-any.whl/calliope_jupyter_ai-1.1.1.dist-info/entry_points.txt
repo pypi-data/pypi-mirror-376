@@ -1,0 +1,2 @@
+[calliope_jupyter_ai.personas]
+jupyternaut = jupyter_ai.personas.jupyternaut:JupyternautPersona
