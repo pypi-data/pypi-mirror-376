@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.4.0
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: uwe.schmitt@id.ethz.ch
+author_name: jupyterlab_theme_python_courses
+has_binder: false
+has_settings: false
+kind: frontend
+labextension_name: jupyterlab_theme_python_courses
+project_short_description: A JupyterLab extension.
+python_name: jupyterlab_theme_python_courses
+repository: https://gitlab.com/uweschmitt/jupyterlab_theme_python_courses
+test: false
+
