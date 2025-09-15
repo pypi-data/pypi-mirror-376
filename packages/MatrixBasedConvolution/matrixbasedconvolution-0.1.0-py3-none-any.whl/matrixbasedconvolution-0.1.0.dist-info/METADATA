@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: MatrixBasedConvolution
+Version: 0.1.0
+Summary: Vectorization of convolution for optimization purposes
+Home-page: https://github.com/DALPHA-sys-24/MatrixBasedConvolution-mbc.git
+Author: jarod ketcha
+Author-email: jarod.ketchakouakep@unamur.be
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# MatrixBasedConvolution-mbc
+Vectorization of convolution for optimization purposes.
