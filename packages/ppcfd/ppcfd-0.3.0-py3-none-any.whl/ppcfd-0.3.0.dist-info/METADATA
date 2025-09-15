@@ -1,0 +1,141 @@
+Metadata-Version: 2.4
+Name: ppcfd
+Version: 0.3.0
+Summary: PaddleCFD is a deep learning toolkit for surrogate modeling, equation discovery, shape optimization and flow-control strategy discovery in the field of fluid mechanics.
+Home-page: https://github.com/PaddlePaddle/PaddleCFD
+Author: AI4S@PaddlePaddle
+Author-email: "AI4S@PaddlePaddle" <paddlescience@baidu.com>
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/PaddlePaddle/PaddleCFD
+Project-URL: Issues, https://github.com/PaddlePaddle/PaddleCFD/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: colorlog
+Requires-Dist: configmypy
+Requires-Dist: einops
+Requires-Dist: fastapi~=0.115.12
+Requires-Dist: gmsh
+Requires-Dist: h5py~=3.11.0
+Requires-Dist: hydra-core
+Requires-Dist: imageio
+Requires-Dist: matplotlib
+Requires-Dist: meshio==5.3.4
+Requires-Dist: numpy<2.0.0,>=1.20.0
+Requires-Dist: opt-einsum
+Requires-Dist: pandas~=2.2.1
+Requires-Dist: pydantic>=2.5.0
+Requires-Dist: pyevtk
+Requires-Dist: pymeshlab
+Requires-Dist: pynvml
+Requires-Dist: pyvista
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: ruamel.yaml
+Requires-Dist: scienceplots
+Requires-Dist: scikit-learn<1.5.0
+Requires-Dist: scikit-optimize
+Requires-Dist: scipy~=1.14.1
+Requires-Dist: seaborn
+Requires-Dist: numpy-stl
+Requires-Dist: sympy
+Requires-Dist: tabulate
+Requires-Dist: tqdm
+Requires-Dist: typing-extensions
+Requires-Dist: uvicorn~=0.34.2
+Requires-Dist: wget
+Requires-Dist: xarray
+Requires-Dist: xskillscore
+Requires-Dist: zarr
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# PaddleCFD
+
+## About PaddleCFD
+
+PaddleCFD is a deep learning toolkit for surrogate modeling, equation discovery, shape optimization and flow-control strategy discovery in the field of fluid mechanics. Currently, it mainly supports surrogate modeling, including models based on Fourier Neural Operator (FNO), Transformer, Diffusion Model (DM),  Kolmogorov-Arnold Networks (KAN) and DeepONet.
+
+<img src="./doc/paddlecfd_architecture.jpg" alt="This is an image" title="PaddleCFD architecture">
+
+
+## Code structure
+
+- `doc`: documentation
+- `examples`: example scripts
+- `ppcfd/data`: data-process source code
+- `ppcfd/model`: model source code
+- `ppcfd/utils`: utils code
+- `source`: source code of paddlepaddle custom operators
+
+## How to run
+
+### Installation
+
+##### Image pulling & container running
+
+```bash 
+# Pull docker image
+docker pull ccr-2vdh3abv-pub.cnc.bj.baidubce.com/paddlepaddle/paddle:3.0.0-gpu-cuda11.8-cudnn8.9-trt8.6
+
+# Run docker container
+nvidia-docker run --name ppcfd-container -v /home/:/home --network=host -it  --shm-size 64g ccr-2vdh3abv-pub.cnc.bj.baidubce.com/paddlepaddle/paddle:3.0.0-gpu-cuda11.8-cudnn8.9-trt8.6 /bin/bash
+```
+
+##### Conda environment installation
+
+```bash
+# Clone PaddleCFD
+git clone https://github.com/PaddlePaddle/PaddleCFD.git
+cd PaddleCFD
+
+# Create conda environment
+conda create --name ppcfd python=3.10
+conda activate ppcfd
+
+python -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+python -m pip install paddlepaddle-gpu==3.0.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu118/
+
+# Download and install paddle-backended Open3D
+wget https://paddle-org.bj.bcebos.com/paddlecfd/envs/open3d-0.18.0+da239b25-cp310-cp310-manylinux_2_31_x86_64.whl
+python -m pip install open3d-0.18.0+da239b25-cp310-cp310-manylinux_2_31_x86_64.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# Compile customed operator to conda environment
+wget -nc https://paddle-org.bj.bcebos.com/paddlescience/cmake-3.23.0-linux-x86_64.tar.gz
+tar -zxvf cmake-3.23.0-linux-x86_64.tar.gz
+rm -f cmake-3.23.0-linux-x86_64.tar.gz
+PATH=$PWD/cmake-3.23.0-linux-x86_64/bin:$PATH
+cd source/ppfno_op
+python -m pip install --no-build-isolation -v .
+```
+
+##### PaddleCFD package installation (Choose one of the following)
+```bash
+# Install PaddleCFD from sourcecode at PaddleCFD root directory
+python -m pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# Install PaddleCFD from pypi
+python -m pip install ppcfd -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+### Quick start
+```bash
+# Run examples
+cd PaddleCFD/examples/xxx/xxx
+run the example according to the example README.md
+```
+
+## APIs
+
+[ppcfd/data](./doc/data.md)
+
+## Community
+Join PaddleCFD WeChat group to discuss with us!
+
+<img src="./doc/飞桨AI4S%20&%20PaddleCFD技术交流群.jpg" alt="This is an image" title="PaddleCFD Weichat" style="width: 30%;">
+
+## License
+
+PaddleCFD is provided under the [Apache-2.0 license](./LICENSE)
