@@ -1,0 +1,170 @@
+[project]
+name = "otelmark"
+version = "0.1.0a0"
+description = "Benchmark with telemetry data."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Çağlar Kutlu", email = "caglar.kutlu@gmail.com" }]
+requires-python = ">=3.10"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "attrs>=25.3.0",
+  "freezegun>=1.5.5",
+  "numpy>=2.2.6",
+  "opentelemetry-api>=1.36.0",
+  "opentelemetry-sdk>=1.36.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
+
+
+[dependency-groups]
+# Libraries that are needed during development, e.g. for tests, notebooks, ...
+dev = [
+  "pytest>=8.3.5",
+  "ipykernel>=6.29.5",
+  "pytest-xdist>=3.6.1",
+  "pytest-benchmark>=5.1.0",
+]
+# Packages providing executables needed for daily work.
+tools = [
+  "pyright[nodejs]>=1.1.400",
+  "pre-commit-uv>=4.1.4",
+  "ruff>=0.11.7",
+  "rust-just>=1.40.0",
+  "towncrier>=24.8.0",
+]
+
+# Packages that are mainly needed for upkeep tasks.
+maintenance = [
+  "mkdocs-autorefs>=1.4.3",
+  "mkdocs-material>=9.6.19",
+  "mkdocstrings-python>=1.18.2",
+]
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
+[tool.uv]
+default-groups = ["dev", "tools"]
+
+[tool.uv.workspace]
+members = ["packages/pytest-otelmark"]
+
+[tool.ruff.lint]
+select = [
+  "E",    # pycodestyle
+  "F",    # pyflakes
+  "W",    # pycodestyle
+  "B",    # bugbear
+  "I",    # isort
+  "RUF",  # ruff
+  "BLE",  # flake8-blind-except
+  "PLC",  # pylint
+  "PLE",  # pylint
+  "PLR",  # pylint
+  "ARG",  # argcheck
+  "SIM",  # simplify
+  "PT",   # pytest-style
+  "DTZ",  # datetimez
+  "UP",   # pyupgrade
+  "C4",   # comprehensions
+  "PERF", # perflint
+]
+
+ignore = [
+  "PLR2004", # Numbers are sometimes fine.
+  "RUF022",  # We want to sort __all__ intentionally for documentation.
+  "SIM110",  # Explicit for loops are sometimes faster: https://github.com/astral-sh/ruff/issues/16904
+]
+
+pylint.max-args = 10
+
+mccabe.max-complexity = 10
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+allowed-confusables = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.per-file-ignores]
+"**/test_*" = []
+
+[tool.ruff.format]
+# Use double quotes for strings.
+quote-style = "double"
+
+# Indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+docstring-code-format = true
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"             # Needed to make sure pre-commit uses this
+include = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-markers", "--strict-config", "--import-mode=importlib"]
+markers = []
+filterwarnings = ["error::UserWarning", "error::FutureWarning"]
+
+
+[tool.towncrier]
+directory = "changelog.d"
+filename = "CHANGELOG.md"
+title_format = "## [{version}] - {project_date}"
+issue_format = "[#{issue}](https://github.com/ckutlu/otelmark/issues/{issue})"
+start_string = "<!-- towncrier release notes start -->\n"
+underlines = ["", "", ""]
+template = "./.towncrier_template.md.jinja"
+
+[[tool.towncrier.type]]
+directory = "removal"
+name = "Removals"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "deprecation"
+name = "Deprecations"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "change"
+name = "Changes"
+showcontent = true
