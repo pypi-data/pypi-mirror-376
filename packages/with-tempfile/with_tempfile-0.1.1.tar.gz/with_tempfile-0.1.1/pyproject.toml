@@ -1,0 +1,218 @@
+# SPDX-FileCopyrightText: Peter Pentchev <roam@ringlet.net>
+# SPDX-License-Identifier: BSD-2-Clause
+
+[build-system]
+requires = [
+  "hatchling >= 1.26, < 2",
+
+  # Transitive; needed for `uv sync --resolution lowest`
+  "trove-classifiers >= 2024.5.17",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "with-tempfile"
+description = "Create a temporary file, take care of removing it if needed"
+readme = "README.md"
+license = "BSD-2-Clause"
+license-files = ["LICENSES/BSD-2-Clause.txt"]
+requires-python = ">= 3.11"
+dynamic = ["version"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: System :: Filesystems",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[[project.authors]]
+name = "Peter Pentchev"
+email = "roam@ringlet.net"
+
+[project.urls]
+Homepage = "https://devel.ringlet.net/sysutils/with-tempfile/"
+Changes = "https://devel.ringlet.net/sysutils/with-tempfile/changes/"
+"Issue Tracker" = "https://gitlab.com/ppentchev/with-tempfile/-/issues"
+"Source Code" = "https://gitlab.com/ppentchev/with-tempfile"
+
+[dependency-groups]
+# Test environments
+testenv-mypy = [
+  {include-group = "testenv-unit-tests"},
+  "mypy >= 1.7, < 2",
+]
+testenv-pyupgrade = [
+  "pyupgrade >= 3, < 4",
+]
+testenv-ruff = [
+  "ruff == 0.12.12",
+]
+testenv-unit-tests = [
+  "pygments >= 2.7, < 3",
+  "pytest >= 8, < 9",
+]
+testenv-uvoxen = [
+  "uvoxen >= 0.2.1, < 0.3; python_version >= '3.11'",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/with_tempfile"]
+
+[tool.hatch.version]
+path = "src/with_tempfile/defs.py"
+pattern = '(?x) ^ VERSION \s* (?: : \s* Final \s* )? = \s* " (?P<version> [^\s"]+ ) " \s* $'
+
+[tool.mypy]
+strict = true
+
+[tool.ruff]
+extend = "ruff-base.toml"
+output-format = "concise"
+preview = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+[tool.test-stages]
+stages = [
+  "@check and @quick and not @manual",
+  "@check and not @manual",
+  "@tests and not @manual",
+]
+
+[tool.uvoxen]
+mediaType = "vnd.ringlet.devel.uvoxen.config/uvoxen.v0.3+toml"
+envlist = [
+  "ruff",
+  "format",
+  "mypy",
+  "uvoxen-sync-check",
+  "unit-tests",
+]
+
+[tool.uvoxen.defs]
+pyfiles = [
+  "src/with_tempfile",
+  "tests/unit",
+]
+
+[tool.uvoxen.req]
+header = """
+# SPDX-FileCopyrightText: Peter Pentchev <roam@ringlet.net>
+# SPDX-License-Identifier: BSD-2-Clause
+
+"""
+
+[tool.uvoxen.tox]
+env-order = [
+  "ruff",
+  "format",
+  "reformat",
+]
+
+header = """
+# SPDX-FileCopyrightText: Peter Pentchev <roam@ringlet.net>
+# SPDX-License-Identifier: BSD-2-Clause
+
+"""
+
+[tool.uvoxen.env.format]
+tags = [
+  "check",
+  "quick",
+]
+dependency-groups = [
+  "testenv-ruff",
+]
+commands = [
+  "ruff check --config ruff-base.toml --select=D,I --diff -- {[defs]pyfiles}",
+  "ruff format --check --config ruff-base.toml --diff -- {[defs]pyfiles}",
+]
+
+[tool.uvoxen.env.reformat]
+tags = [
+  "format",
+  "manual",
+]
+dependency-groups = [
+  "testenv-ruff",
+]
+commands = [
+  "ruff check --config ruff-base.toml --select=D,I --fix -- {[defs]pyfiles}",
+  "ruff format --config ruff-base.toml -- {[defs]pyfiles}",
+]
+
+[tool.uvoxen.env.ruff]
+tags = [
+  "check",
+  "ruff",
+  "quick",
+]
+dependency-groups = [
+  "testenv-ruff",
+]
+commands = [
+  "ruff check -- {[defs]pyfiles}",
+]
+
+[tool.uvoxen.env.mypy]
+tags = [
+  "check",
+]
+dependency-groups = [
+  "testenv-mypy",
+]
+install-dependencies = true
+commands = [
+  "mypy {[defs]pyfiles}",
+]
+
+[tool.uvoxen.env.unit-tests]
+tags = [
+  "tests",
+]
+dependency-groups = [
+  "testenv-unit-tests",
+]
+install-project = true
+commands = [
+  "pytest {posargs} tests/unit",
+]
+
+[tool.uvoxen.env.pyupgrade]
+tags = [
+  "check",
+  "manual",
+]
+dependency-groups = [
+  "testenv-pyupgrade",
+]
+allowlist-externals = [
+  "sh",
+]
+commands = [
+  "sh -c 'pyupgrade --py310-plus src/parse_stages/*.py tests/unit/*.py'",
+]
+
+[tool.uvoxen.env.uvoxen-sync-check]
+tags = [
+  "check",
+  "quick",
+]
+dependency-groups = [
+  "testenv-uvoxen",
+]
+commands = [
+  "uvoxen tox generate --check --diff",
+]
