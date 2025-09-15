@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: pnutpy
+Version: 0.5.4
+Summary: pnut.io API library for python
+Author-email: "33MHz, pnut.io" <support@pnut.io>, Morgan McMillian <morgan@mcmillian.dev>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/pnut-api/PNUTpy
+Keywords: pnut.io,api,library
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: python-dateutil>=2.9
+Requires-Dist: requests>=2.32.5
+Dynamic: license-file
+
+PNUTpy: pnut.io API for Python
+==============================
+
+
+PNUTpy aims to be an easy-to-use Python library for interacting with the `pnut.io API <https://docs.pnut.io/api>`_.
+
+Installation
+------------
+
+To install, simply:
+
+.. code-block:: bash
+
+    $ pip install pnutpy
+
+Quick Start
+-----------
+
+In order to use PNUTpy, You'll need an access token. If you don't already have one, first `create an app`_, and then generate an access token for your app.
+
+.. code-block:: python
+
+    import pnutpy
+    pnutpy.api.add_authorization_token(<Access Token Here>)
+
+    # Create a post
+    post, meta = pnutpy.api.create_post(data={'text':'Hello pnut.io from pnutpy!'})
+
+.. _create an app: https://pnut.io/
