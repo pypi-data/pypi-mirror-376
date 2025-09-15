@@ -1,0 +1,379 @@
+# trgenpy
+
+A Python library for IIT's Trgen Device device 🐍🧠 by [AgliotiLab](https://agliotilab.org/)
+
+[![PyPI version](https://img.shields.io/pypi/v/trgenpy.svg)](https://pypi.org/project/trgenpy/)
+[![Python Version](https://img.shields.io/pypi/pyversions/trgenpy.svg)](https://pypi.org/project/trgenpy/)
+[![License](https://img.shields.io/pypi/l/trgenpy.svg)](https://pypi.org/project/trgenpy/)
+[![pipeline status](https://gitlab.com/<namespace>/<repo>/badges/main/pipeline.svg)](https://gitlab.com/<namespace>/<repo>/pipelines)
+[![coverage report](https://gitlab.com/<namespace>/<repo>/badges/main/coverage.svg)](https://gitlab.com/<namespace>/<repo>/commits/main)
+
+The full documentation is available [here](https://b00leant.gitlab.io/trgenpy/).
+
+---
+
+## Index
+
+- [Getting started 📚](#getting-started)
+  - [Client](#client)
+  - [Single Trigger Send](#single-trigger-send)
+  - [Custom Trigger Send](#custom-trigger-send)
+  - [Sending Markers](#sending-markers)
+  - [Trgen](#trigger)
+  - [Trgen ID List](#trigger-id-list)
+  - [Instruction Helpers ](#instruction-helpers)
+  - [Native Commands ](#native-commands)
+- [E-Prime integration 🧠](#e-prime-integration)
+- [How To build 🚀](#how-to-build)
+
+---
+
+## Getting started
+
+To install this package use is required `Python >= 3.9`
+
+```shell
+pip install trgenpy
+```
+
+### the import ways
+
+```python
+# you can us it like this:
+import trgenpy as tp
+client = tp.TrgenClient()
+
+# or like this:
+from from trgenpy import TrgenClient,TrgenPin,active_for_us,unactive_for_us,end,wait_ne,wait_pe
+client = TrgenClient()
+```
+
+### Client
+
+The `TrgenClient` is the object that stores all the information about the socket connection between you and the Trgen Device.  
+You can instantiate the `TrgenClient` object like this:
+
+```python
+client = TrgenClient() 
+```
+
+Once the client object is created you can connect to Trgen Device...
+
+```python
+client.connect()
+```
+
+...or check device availability
+
+```python
+isAavailable = client.is_available() # true / false
+```
+
+### Single Trgen Send
+
+To send a defaul trigger signal (positive square with a logic state of 20µs) you can use the `sendTrigger()` function:
+
+```python
+client.sendTrigger()
+```
+
+### Custom Trigger Send
+
+If you want to send trigger to a custom list inside the pinout you can use the `sendCustomTrigger()` function:
+
+```python
+client.sendCustomTrigger([TrgenPin.NS0,TrgenPin.GPIO0])
+```
+
+### Sending Markers
+
+In order to send a marker value to all (Neuroscan,Synamps and GPIO) ports you can use the `sendMarker()` function:
+
+```python
+client.sendMarker(13)
+```
+
+if you want invert the bit order, just flag the `LSB` argument (`True`by default)
+
+```python
+client.sendMarker(13,LSB=False)
+```
+
+if you want to send different markers simultaiously on different ports you can use the arguments:
+
+- `markerNS`
+- `markerSA`
+- `markerGPIO`
+
+like this:
+
+```python
+client.sendMarker(markerNS=8,markerSA=2,markerGPIO=15)
+```
+
+### Trgen
+
+The `Trgen` object defines a single trigger behaviours through its id.
+This is the list of supported `trigger_id` values for the Trgen Device:
+
+#### Trgen ID List
+
+- Neuroscan IDs
+    The Neuroscan pinout (only for used pins) goes from 0 to 7  
+    - `[NS0,NS1,NS2,NS3,NS4,NS5,NS6,NS7]`
+- Synamps IDs
+     The Neuroscan pinout (only for used pins) goes from 0 to 7  
+    - `[SA0,SA1,SA2,SA3,SA4,SA5,SA6,SA7]`
+- TMSI/O IDs
+    - `TMSO`
+    - `TMSI`
+- GPIO IDs
+    The GPIO pinout goes from 0 to 7  
+    - `[GPIO0,GPIO01,GPIO02,GPIO03,GPIO04,GPIO05,GPIO06,GPIO07]`
+
+You can instantiate the `Trgen` object with:
+
+```python
+neuroScan = TrgenClient.create_trgen(TrgenPin.NS3)
+```
+
+passing ad only argument the constant from `TrgenPin`
+
+Now you're ready to define the instruction set for `Trgen` with the `set_instruction()` function.
+Each trigger has a `memory` property, a list that can contain 32 instructions, so this function is defined:
+
+```
+def set_instruction(self, index, instruction):
+# index: 0-32 value
+# instruction: instruction_code
+```
+
+Each instruction code can be encoded using the [Instruction Helpers](#instruction-helpers)
+
+```python
+# call the function directly on the same Trgen object
+neuroScan.set_instruction(0, active_for_us(5))
+neuroScan.set_instruction(1, unactive_for_us(3))
+# ...
+```
+
+### Instruction Helpers
+
+The supported instruction set for Trgen is:
+
+| Instruction | 1° Param | 2° Param | Description |
+| ----------- | ----------- | ------------ | ----------- |
+| `unactive_for_us(us)` | µ seconds duration | | Set the unactivation time for µ seconds |
+| `active_for_us(us)` | µ seconds duration | | Set the activation time for µ seconds |
+| `wait_pe(tr)` | Trgen ID | | Wait the positive edge for a specific [Trgen ID](#trigger-id-list) |
+| `wait_ne(tr)` | Trgen ID | | Wait the negative edge for a specific [Trgen ID](#trigger-id-list) |
+| `repeat(addr,time)` | Instruction address | Time of repeat | Set the activation time for µ seconds |
+| `end()` | | | End the behaviour |
+| `not_admissible()` | | | Empty instruction, it has to be placed after the `end()`|
+
+#### NOTE
+Each Trgen can support a list of N instructions, where N = 2^MTML (Max Trgen Memory Length)
+
+You can access to the `mtml` value by
+
+```python
+# Add this in try block to manage errors
+try:
+    impl = client.get_implementation()
+    mtml = impml.mtml
+except InvalidAckError as e:
+    print(f"⚠️ ACK sbagliato: {e}")
+except AckFormatError as e:
+    print(f"⚠️ ACK malformato: {e}")
+except TimeoutError as e:
+    print(f"⏱️ Timeout: {e}")
+```
+
+---
+
+### Native Commands 
+
+IIT's Trgen Device can receive some commands, the full instruction set includes:
+
+- Program Trigger
+- Start Trigger
+- Set GPIO I/O Direction
+- Request Implementation parameters
+- Request Trgen Status
+- Set the Trigger level
+- Get GPIO I/O Direction
+- Get the Trigger Level
+- Stop the Triggers
+
+### Program Trigger
+
+You can program a trigger memory in two ways:
+
+1. **Default trigger** using `program_default_trigger()`  
+   This sets a predefined impulse of duration (default 20µs).
+
+```python
+tr = client.create_trgen(TrgenPin.GPIO0)
+client.program_default_trigger(tr, us=50)  # impulse of 50µs
+```
+
+2. **Advanced programming** by manually setting instructions with `set_instruction()`
+
+```python
+tr = client.create_trgen(TrgenPin.NS1)
+tr.set_instruction(0, active_for_us(10))
+tr.set_instruction(1, unactive_for_us(5))
+tr.set_instruction(2, repeat(0, 3))
+tr.set_instruction(3, end())
+client.send_trigger_memory(tr)
+```
+
+### Start Trigger
+
+After programming triggers, you can start them with:
+
+```python
+client.start()
+```
+
+This command makes the Trgen Device execute all programmed triggers.  
+Remember: you must have previously sent at least one trigger memory.
+
+### Set GPIO I/O Direction
+
+#### the "byte" way
+
+```python
+# Set GPIO directions (example: GPIO0-3 as outputs)
+client.set_gpio_direction(0b00001111)
+```
+
+#### helper way
+
+
+You can use this helper to build the complete or partial pinout map to set.
+
+```python
+# we choose to set just GPIO0 -> High and the GPIO1 -> Low
+mask = DirectionConfig().out(TrgenPin.GPIO0).in(TrgenPin.GPIO1).build()
+# once you have it, you can use it as argument in the set_level function
+client.set_gpio_direction(mask)
+```
+
+
+### Request Implementation
+
+You can get information about the hardware configuration (number of channels, memory length, etc.) with:
+
+```python
+impl = client.get_implementation()
+print(impl.memory_length)  # max number of instructions per trigger
+```
+
+### Request Trgen Status
+
+To check current status of triggers (active/inactive state):
+
+```python
+status = client.get_status()
+print(status)
+```
+
+This returns an integer bitmask where each bit represents the state of a trigger pin.
+
+### Set the Trigger level
+
+#### the "byte" way
+You can change polarity (active-high or active-low) of all triggers:
+
+```python
+# Set all triggers active-high
+client.set_level(0xFF)
+
+# Set only GPIO0 active-high, rest active-low
+client.set_level(0b00000001)
+```
+
+#### helper way
+
+You can use this helper to build the complete or partial pinout map to set.
+
+```python
+# we choose to set just GPIO0 -> High and the GPIO1 -> Low
+mask = LevelConfig().high(TrgenPin.GPIO0, TrgenPin.TMSO).low(TrgenPin.GPIO1).build()
+# once you have it, you can use it as argument in the set_level function
+client.set_level(mask)
+```
+
+### Get the GPIO I/O Direction
+
+To retrieve the current GPIO configuration:
+
+```python
+gpio_state = client.get_gpio_direction()
+print(bin(gpio_state))
+```
+
+### Get the Trigger Level
+
+To check trigger polarity:
+
+```python
+level = client.get_level()
+print(bin(level))
+```
+
+---
+
+## E-Prime integration
+
+trgenpy offers a wrapper version in order to integrate its behaviour inside the [E-Prime](https://pstnet.com/products/e-prime/) software via Python COM-visible.
+
+Install pywin32
+
+```bash
+pip install pywin32
+```
+
+Register the COM wrapper
+
+```
+python trgen_com.py --register
+```
+
+So that you can use in E-Prime like this
+
+```vb
+Dim tb
+Set tb = CreateObject("Trgen Device.COM")
+
+If tb.IsAvailable() Then
+    tb.Connect
+    tb.SendTrigger
+    tb.SendMarker 13
+Else
+    MsgBox "Trgen Device not available!"
+End If
+```
+
+### E-Prime example
+
+See [here](./exmples/eprime_example.py) for the complete example
+---
+
+## How to build
+
+trgenpy uses [setuptools](https://pypi.org/project/setuptools/) to have a much clear and minimal build process.
+
+### Step 1 - install twine
+`pip install --upgrade build twine`
+
+### Step 2 - build
+`python -m build`
+
+### Step 3 - use it anywhere!
+In the same directory (pwd) of this project, run:
+`pip install .`
+
+### Deploy
+`twine upload --repository testpypi dist/*`
