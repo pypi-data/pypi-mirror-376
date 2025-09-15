@@ -1,0 +1,11 @@
+migs/__init__.py,sha256=IG_pDa2NA6fNcXIYwhVicEUDgFGRPL1S1Sp81JYLtFk,94
+migs/cli.py,sha256=VtoP3l-C5GBk0gXMkVHj4qCnt5_ND-3awUGz2LlHIc4,32284
+migs/gcloud.py,sha256=B9cDZMu3vmS3idhdqOHhgf5XrFzn3byQ3gj4vhE1MA4,19632
+migs/ssh_config.py,sha256=wEa17BvFrhHDzOF0h0XXBGgFbv3g36Vnrc1f41LwdVw,4186
+migs/storage.py,sha256=2WJ8ZyT9xpT2GKnHjMmAYBs3Eafx7GigSK0qoKAeXJw,4133
+migs-0.1.8.dist-info/licenses/LICENSE,sha256=pu3KOJiTNUmZ6qlnPu8DXcK0M8xszRf984AgRSFRTmk,1062
+migs-0.1.8.dist-info/METADATA,sha256=M_Jh5-uPFQQBf2QYk4hVxJKPVBF1wePVyEjwlexJU4I,6015
+migs-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+migs-0.1.8.dist-info/entry_points.txt,sha256=Bx84IESHf-qLwyPwJu9l8Oz229lAqCTqjpp2TbiHuhY,38
+migs-0.1.8.dist-info/top_level.txt,sha256=DdIoUqUYB6DJdKyxTaESGExF5AVsuVOMQiVOJgMzupU,5
+migs-0.1.8.dist-info/RECORD,,
