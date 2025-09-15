@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tf-tagguard"
+version = "0.1.0"
+description = "CLI tool to validate and enforce AWS tags for resources deployed using Terraform. Targeted for CI/CD pipelines and CLI environments."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{ name = "Mxyzptlk", email = "noreply@noreply.com" }]
+dependencies = [
+    "tabulate>=0.9,<1.0",
+    "typer>=0.9,<1.0"
+]
+keywords = ["terraform", "aws", "tags", "validation", "ci/cd"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+homepage = "https://github.com/name/tf-tagguard"
+repository = "https://github.com/name/tf-tagguard/issues"
+
+[project.scripts]
+validatetags-tf = "tf_tagguard.cli:app"

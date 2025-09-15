@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+src/tf_tagguard/__init__.py
+src/tf_tagguard/cli.py
+src/tf_tagguard/exceptions.py
+src/tf_tagguard/utils.py
+src/tf_tagguard/validator.py
+src/tf_tagguard.egg-info/PKG-INFO
+src/tf_tagguard.egg-info/SOURCES.txt
+src/tf_tagguard.egg-info/dependency_links.txt
+src/tf_tagguard.egg-info/entry_points.txt
+src/tf_tagguard.egg-info/requires.txt
+src/tf_tagguard.egg-info/top_level.txt
+tests/test_cli.py
+tests/test_validator.py
