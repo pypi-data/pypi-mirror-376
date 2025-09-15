@@ -1,0 +1,3 @@
+[console_scripts]
+gwop=gwop.gwop:gwop
+
