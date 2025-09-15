@@ -1,0 +1,8 @@
+captcha_recognizer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+captcha_recognizer/slider.py,sha256=VxVg3OmCYGe0uarLvUuqLsU6qKFOzLgwbGe5l1OymKA,29463
+captcha_recognizer/models/slider.onnx,sha256=d7g72x-UGJTWcJPDpwzQ-eQDAfdgE_NaDO_OPfvZ5yM,89633417
+captcha_recognizer-1.0.0b0.dist-info/licenses/LICENSE,sha256=PHuQmWrZ1shrIdwsvfaVSw7tu_8M4cQWdLe-gC2AwGc,1071
+captcha_recognizer-1.0.0b0.dist-info/METADATA,sha256=-5GkBIThD6ZiB12qT6VUj9H5YAAYKZtN_ttV23-_NYc,11411
+captcha_recognizer-1.0.0b0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+captcha_recognizer-1.0.0b0.dist-info/top_level.txt,sha256=HG5Pe0s6zR3ncOagRuInag7ceBv8PirUTEU4Udt1ncE,19
+captcha_recognizer-1.0.0b0.dist-info/RECORD,,
