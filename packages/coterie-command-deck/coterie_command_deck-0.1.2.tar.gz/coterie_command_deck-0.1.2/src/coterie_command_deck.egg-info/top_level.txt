@@ -1,0 +1,4 @@
+agents
+command_deck
+coterie_agents
+tests
