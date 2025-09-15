@@ -1,0 +1,103 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentarea-agents-sdk"
+version = "0.0.1"
+description = "Agent SDK for AgentArea - agentic AI components"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "AgentArea", email = "opensource@agentarea.ai" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "litellm>=1.74.15",
+    "pydantic>=2.4.2",
+    "httpx>=0.25.0"
+]
+keywords = ["agents", "llm", "ai", "agentic", "sdk"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.0",
+    "pytest-asyncio>=1.0.0",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.11.4",
+    "mypy>=1.10.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "-v",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+asyncio_mode = "auto"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentarea"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "N", "UP"]
+ignore = ["E501"]  # Line too long
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+exclude = ["**/tools/example_decorator_tool.py"]
+
+[tool.hatch.build]
+include = [
+    "src/agentarea/agent_kit/config/builtin_tools.yaml",
+    "src/agentarea/agent_kit/py.typed",
+]
+exclude = ["src/agentarea/agent_kit/tools/example_decorator_tool.py"]
+
+[tool.coverage.run]
+source = ["src/agentarea/agent_kit"]
+omit = [
+    # Examples and experimental tools not exercised in unit tests
+    "src/agentarea/agent_kit/tools/example_*.py",
+    "src/agentarea/agent_kit/tools/test_tool.py",
+    # Heavy interactive/integration-oriented tools
+    "src/agentarea/agent_kit/tools/mcp_tool.py",
+    "src/agentarea/agent_kit/tools/file_toolset.py",
+    "src/agentarea/agent_kit/tools/handoff_tool.py",
+    # Optional math toolset not required by current tests
+    "src/agentarea/agent_kit/tools/math_toolset.py",
+]
+
+[tool.coverage.report]
+fail_under = 50
+precision = 2
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == \"__main__\":",
+]
