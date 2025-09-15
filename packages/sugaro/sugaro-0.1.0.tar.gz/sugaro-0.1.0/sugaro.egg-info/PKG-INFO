@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: sugaro
+Version: 0.1.0
+Summary: A lightweight multi-purpose Python toolkit with zero dependencies.
+Author: Your Name
+Author-email: you@example.com
+License: MIT
+Keywords: utils,toolkit,sugar,short,no-dependency
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# sugaro 🍬
+
+A lightweight multi-purpose Python toolkit with **zero dependencies**.  
+Inspired by lodash (JS) and syntax sugar utilities.
+
+## Features
+- 📂 Easy file I/O → `read()`, `write()`
+- 📑 JSON helpers → `jload()`, `jdump()`
+- 🌐 HTTP in one line → `get()`, `wget()`
+- ➕ Quick math vectors → `vec(1,2,3) + vec(4,5,6)`
+- 🛠️ Daily utils → `uid()`, `now()`, `mkdir()`
+
+## Install
+```bash
+pip install sugaro

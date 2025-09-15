@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+sugaro/__init__.py
+sugaro/files.py
+sugaro/mathx.py
+sugaro/net.py
+sugaro/utils.py
+sugaro.egg-info/PKG-INFO
+sugaro.egg-info/SOURCES.txt
+sugaro.egg-info/dependency_links.txt
+sugaro.egg-info/top_level.txt
+tests/test_basic.py
