@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/car/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/car/v20220110/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/car/v20220110/car_client.py,sha256=OrdGxLI8g9-L25kVfusDYluHvBDAZhqUGDKLOXUQ9oA,6787
+tencentcloud/car/v20220110/errorcodes.py,sha256=ZTksD60iX0qb83RpbDh7mBAg-9r04_rXF2JVhqsvPcM,1938
+tencentcloud/car/v20220110/models.py,sha256=tI28nV_Dh8VMI9FHXUvUxcgfZSq5qyx6F1tY9kfdiwc,22499
+tencentcloud_sdk_python_car-3.0.1459.dist-info/METADATA,sha256=AP3s0vlNcNwEyj16uie14ViURcgjP44j1etaBDaUkxw,1503
+tencentcloud_sdk_python_car-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_car-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_car-3.0.1459.dist-info/RECORD,,
