@@ -1,0 +1,2 @@
+[console_scripts]
+h-vault-extractor-xethhung12 = h_vault_extractor_xethhung12._cmd.run:main
