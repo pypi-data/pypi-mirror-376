@@ -1,0 +1,20 @@
+[project]
+name = "sireleot-frf"
+version = "0.1.0"
+description = "Rest full framework for fastapi"
+requires-python = ">=3.13"
+readme = "README.md"
+
+dependencies = [
+    "alembic>=1.16.5",
+    "asyncpg>=0.30.0",
+    "fastapi>=0.116.1",
+    "loguru>=0.7.3",
+    "pydantic>=2.11.9",
+    "pydantic-settings>=2.10.1",
+    "sqlalchemy>=2.0.43",
+    "testcontainers>=4.13.0",
+]
+
+[tool.uv.build]
+package-dir = "src"

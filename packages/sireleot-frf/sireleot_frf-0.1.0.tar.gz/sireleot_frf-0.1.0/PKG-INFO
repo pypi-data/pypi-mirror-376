@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: sireleot-frf
+Version: 0.1.0
+Summary: Rest full framework for fastapi
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: alembic>=1.16.5
+Requires-Dist: asyncpg>=0.30.0
+Requires-Dist: fastapi>=0.116.1
+Requires-Dist: loguru>=0.7.3
+Requires-Dist: pydantic>=2.11.9
+Requires-Dist: pydantic-settings>=2.10.1
+Requires-Dist: sqlalchemy>=2.0.43
+Requires-Dist: testcontainers>=4.13.0
