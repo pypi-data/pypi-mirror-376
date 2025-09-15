@@ -1,0 +1,11 @@
+numpy
+xarray
+osmnx
+rasterio
+geopandas
+leafmap
+localtileserver
+geemap
+earthengine-api
+whitebox-workflows
+ipywidgets
