@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: langchain-undatasio
+Version: 1.0.1
+Summary: LangChain Document Loader for UnDatasIO
+Project-URL: Homepage, https://github.com/lq1909017169/langchain-undatasio
+License-File: LICENSE
+Requires-Python: >=3.9
+Requires-Dist: langchain-core>=0.1
+Requires-Dist: pandas>=1.5
+Requires-Dist: undatasio>=0.2.0.2
+Provides-Extra: dev
+Requires-Dist: pytest>=7; extra == 'dev'
+Requires-Dist: ruff; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# langchain-undatasio
