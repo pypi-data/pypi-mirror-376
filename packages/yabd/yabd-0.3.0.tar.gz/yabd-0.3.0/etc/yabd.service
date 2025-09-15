@@ -1,0 +1,11 @@
+[Unit]
+Description=Yet another Brightness Daemon
+PartOf=graphical-session.target
+
+[Service]
+Type=dbus
+BusName=re.bruge.yabd
+ExecStart=/usr/bin/yabd run
+
+[Install]
+WantedBy=graphical-session.target
