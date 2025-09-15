@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+MatrixBasedConvolution/__init__.py
+MatrixBasedConvolution/mbc.py
+MatrixBasedConvolution/utils.py
+MatrixBasedConvolution.egg-info/PKG-INFO
+MatrixBasedConvolution.egg-info/SOURCES.txt
+MatrixBasedConvolution.egg-info/dependency_links.txt
+MatrixBasedConvolution.egg-info/requires.txt
+MatrixBasedConvolution.egg-info/top_level.txt
