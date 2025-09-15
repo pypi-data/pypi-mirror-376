@@ -1,0 +1,2 @@
+[console_scripts]
+semisim = semiconductor_sim.cli:main
