@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/pdf_stamper/__init__.py
+src/pdf_stamper/cli.py
+src/pdf_stamper/stamper.py
+src/pdf_stamper.egg-info/PKG-INFO
+src/pdf_stamper.egg-info/SOURCES.txt
+src/pdf_stamper.egg-info/dependency_links.txt
+src/pdf_stamper.egg-info/entry_points.txt
+src/pdf_stamper.egg-info/requires.txt
+src/pdf_stamper.egg-info/top_level.txt

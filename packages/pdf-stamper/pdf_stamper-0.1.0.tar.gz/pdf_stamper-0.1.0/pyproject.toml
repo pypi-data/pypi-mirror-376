@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-stamper"
+version = "0.1.0"
+description = "A Python library for stamping PDF files with sequential numbers or custom text"
+readme = "README.md"
+authors = [
+    {name = "Mateus Molina"}
+]
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["pdf", "stamp", "overlay", "batch", "numbering"]
+requires-python = ">=3.8"
+dependencies = [
+    "reportlab>=4.0.0",
+    "pypdf>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/MateusMolina/pdf-stamper"
+Repository = "https://github.com/MateusMolina/pdf-stamper.git"
+Issues = "https://github.com/MateusMolina/pdf-stamper/issues"
+
+[project.scripts]
+pdf-stamper = "pdf_stamper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
