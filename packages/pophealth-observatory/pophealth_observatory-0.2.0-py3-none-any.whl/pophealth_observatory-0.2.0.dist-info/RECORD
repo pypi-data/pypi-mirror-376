@@ -1,0 +1,13 @@
+pophealth_observatory/__init__.py,sha256=Y6wDDCUYO3zkDMd_lk0TETZmLqlhcPtOFfxvEcTfCYk,303
+pophealth_observatory/observatory.py,sha256=iCrAN9a_sFO2e7Ij_TWpIT6tZqC7yZzirvaih3o1id0,30020
+pophealth_observatory/pesticide_context.py,sha256=5YmmdG6s9ix1hp0p3Y2UhTtBW8ljuknfoQj_c4PflBQ,6190
+pophealth_observatory/rag/__init__.py,sha256=ksiNwCDLVm5yxdbmfw1FyVzvqDBwhMBqD-u1MkniDWw,456
+pophealth_observatory/rag/config.py,sha256=6z6gnL4j3bbdHMF6srLUwWXHbvEvmV3JIySND7fqj1A,802
+pophealth_observatory/rag/embeddings.py,sha256=FMOzZqLFdZftsACsPCV261fJ62M3iu3O9Cg7cPdJJug,2079
+pophealth_observatory/rag/index.py,sha256=dyeY2wyA08uUszbRBrfEm8YmW9gVVdGoAevfSGaAL9c,1565
+pophealth_observatory/rag/pipeline.py,sha256=_jDpqIVQOyg7NSLr2morakObEcjMoXVIHOtGkwUbmgg,3294
+pophealth_observatory-0.2.0.dist-info/licenses/LICENSE,sha256=parvTurQ2gK5L2YTg7eSWBgGKT1zPLWeFVMH6fP0SBU,1105
+pophealth_observatory-0.2.0.dist-info/METADATA,sha256=sZC3OdWv4ZBYiYeZbHauoitkNZNBJqOlHPcfQY87gy0,14206
+pophealth_observatory-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pophealth_observatory-0.2.0.dist-info/top_level.txt,sha256=p5htg2-qkrvGFqWkov0SqjiYz0kG9gXOG50XeXZSteo,22
+pophealth_observatory-0.2.0.dist-info/RECORD,,
