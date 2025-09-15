@@ -1,0 +1,7 @@
+asyncio_redis_rate_limit/__init__.py,sha256=-eBI9cO_6nogSSGrgHmOO-LlaS4I-E4harbPTb_qINA,4768
+asyncio_redis_rate_limit/compat.py,sha256=OeFY3pLDcMqO0m3s_gWMwxvdy8znYs-2mzr-tm9HOqM,1869
+asyncio_redis_rate_limit/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+asyncio_redis_rate_limit-1.1.0.dist-info/METADATA,sha256=hiFb2acCdgC41HO9Pyx1PUCfDqv7bJvGKNmwURHkpIY,4806
+asyncio_redis_rate_limit-1.1.0.dist-info/WHEEL,sha256=M5asmiAlL6HEcOq52Yi5mmk9KmTVjY2RDPtO4p9DMrc,88
+asyncio_redis_rate_limit-1.1.0.dist-info/licenses/LICENSE,sha256=ta-Mdp6fBYdhV2Eb8OGwqG-kMYFQk5IZ5Qxj2RdRqLI,1099
+asyncio_redis_rate_limit-1.1.0.dist-info/RECORD,,
