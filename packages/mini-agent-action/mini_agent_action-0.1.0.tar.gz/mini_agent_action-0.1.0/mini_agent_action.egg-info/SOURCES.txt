@@ -1,0 +1,8 @@
+README.md
+main.py
+pyproject.toml
+mini_agent_action.egg-info/PKG-INFO
+mini_agent_action.egg-info/SOURCES.txt
+mini_agent_action.egg-info/dependency_links.txt
+mini_agent_action.egg-info/requires.txt
+mini_agent_action.egg-info/top_level.txt
