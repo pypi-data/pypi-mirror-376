@@ -1,0 +1,51 @@
+[project]
+name = "music_sampler"
+version = "1.7.0"
+description = "A music player which associates each key on the keyboard to a set of actions to run"
+authors = [
+    {name = "Ismaël Bouya",email = "ismael.bouya@normalesup.org"},
+    {name = "Denise Maurice",email = "denise.maurice@normalesup.org"}
+]
+classifiers = [
+  'Development Status :: 5 - Production/Stable',
+  'Intended Audience :: End Users/Desktop',
+  'Topic :: Multimedia :: Sound/Audio :: Players'
+]
+keywords = ["music", "sampler", "keyboard"]
+license = {text = "MIT"}
+readme = "README"
+requires-python = ">=3.13,<3.15"
+dependencies = [
+    "pydub (>=0.25.1,<0.26.0)",
+    "sounddevice (>=0.5.2,<0.6.0)",
+    "transitions (>=0.9.3,<0.10.0)",
+    "pyyaml (>=6.0.2,<7.0.0)",
+    "kivy (>=2.3.1,<3.0.0)",
+    "audioop-lts (>=0.2.2,<0.3.0)"
+]
+
+[project.urls]
+Homepage = "https://git.immae.eu/cgit/perso/Immae/Projets/Python/MusicSampler.git/about/"
+Repository = "https://git.immae.eu/perso/Immae/Projets/Python/MusicSampler.git"
+"Bug Tracker" = "https://git.immae.eu/mantisbt/set_project.php?project_id=1"
+
+[project.gui-scripts]
+music_sampler = "music_sampler.app:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+include = [
+    { path = "music_sampler/locales/fr/LC_MESSAGES/*.mo", format = ["sdist", "wheel"] },
+    #{ path = "run.py", format = ["sdist", "wheel"] }
+]
+
+[tool.poetry.group.dev.dependencies]
+markdown = "^3.9"
+pygments = "^2.19.2"
+shiv = "^1.0.8"
+pyinstaller = "^6.16.0"
+setuptools-scm = "^9.2.0"
+

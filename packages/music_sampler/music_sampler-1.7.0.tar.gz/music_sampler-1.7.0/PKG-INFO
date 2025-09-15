@@ -1,0 +1,38 @@
+Metadata-Version: 2.3
+Name: music_sampler
+Version: 1.7.0
+Summary: A music player which associates each key on the keyboard to a set of actions to run
+License: MIT
+Keywords: music,sampler,keyboard
+Author: Ismaël Bouya
+Author-email: ismael.bouya@normalesup.org
+Requires-Python: >=3.13,<3.15
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Multimedia :: Sound/Audio :: Players
+Requires-Dist: audioop-lts (>=0.2.2,<0.3.0)
+Requires-Dist: kivy (>=2.3.1,<3.0.0)
+Requires-Dist: pydub (>=0.25.1,<0.26.0)
+Requires-Dist: pyyaml (>=6.0.2,<7.0.0)
+Requires-Dist: sounddevice (>=0.5.2,<0.6.0)
+Requires-Dist: transitions (>=0.9.3,<0.10.0)
+Project-URL: Bug Tracker, https://git.immae.eu/mantisbt/set_project.php?project_id=1
+Project-URL: Homepage, https://git.immae.eu/cgit/perso/Immae/Projets/Python/MusicSampler.git/about/
+Project-URL: Repository, https://git.immae.eu/perso/Immae/Projets/Python/MusicSampler.git
+Description-Content-Type: text/plain
+
+Music Sampler is a music player which associates each key on the keyboard to a
+set of actions to run.
+
+See full documentation in documentation_fr.md or documentation_en.md
+
+Git repository:
+https://git.immae.eu/cgit/perso/Immae/Projets/Python/MusicSampler.git/about/
+
+Bug Tracker:
+https://git.immae.eu/mantisbt/view_all_bug_page.php?project_id=1
+
+Contributors:
+Ismaël Bouya
+Denise Maurice
+
