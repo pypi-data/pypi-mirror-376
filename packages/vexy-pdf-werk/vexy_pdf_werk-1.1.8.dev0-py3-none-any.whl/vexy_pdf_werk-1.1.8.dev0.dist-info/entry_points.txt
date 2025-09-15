@@ -1,0 +1,2 @@
+[console_scripts]
+vpw = vexy_pdf_werk.cli:main
