@@ -1,0 +1,47 @@
+[project]
+name = "pydc-auth"
+version = "0.1.1"
+description = "JWT Bearer Auth client for generating Salesforce Data Cloud Bearer Access Token"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.12"
+authors = [{ name = "Makarand Bhonsle" }]
+dependencies = [
+    "httpx>=0.28.1",
+    "python-dotenv>=1.0.0",
+    "PyJWT>=2.8.0",
+    "cryptography>=41.0.0",
+    "tenacity>=9.0.0",
+    "pydantic>=1.10"
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/mbhonsle/pydc-auth"
+Issues = "https://github.com/mbhonsle/pydc-auth/issues"
