@@ -1,0 +1,13 @@
+inventree_order_history-0.7.1.dist-info/licenses/LICENSE,sha256=2lQxDSrExUkl19nAdBFNKpkP89Ss_p4s1xJtrBoyH-g,1066
+order_history/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+order_history/core.py,sha256=BsNmdrseDc6st05HOqCRQAtaIAoxZIZIuQAgnONYtLc,5684
+order_history/helpers.py,sha256=5ZDLJIqTM1yfqb0hjv3UuAHptaEtRMcSItvqMTCkVPc,1907
+order_history/serializers.py,sha256=liQGtj19W1frNI1w1p1Xm3S8uYrw0xUE-s0CHSeR_MQ,2881
+order_history/version.py,sha256=D46Ig18j2hsH6ivzIp984VBTZm8zua_vda6LgLicYrY,82
+order_history/views.py,sha256=sdF5A1TaPKSis1y4b7IPgYKA4mDE7IxquolrE6bxdvU,13197
+order_history/static/OrderHistoryPanel.js,sha256=AGz9nuJimgjOebsc7Kfcj4rFtChtDag9U2qWg3iw1MI,506665
+inventree_order_history-0.7.1.dist-info/METADATA,sha256=4H6oowjgOqN8VdWLuXrTQeNeeOXKc0k7SF61EzvcPRw,3289
+inventree_order_history-0.7.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+inventree_order_history-0.7.1.dist-info/entry_points.txt,sha256=LIYj5X_o_pvgfXDpUl7jVlzsJLYtmjT71NJjtoeyz9o,79
+inventree_order_history-0.7.1.dist-info/top_level.txt,sha256=xpZOirJSiKX1TtbBbuUU7kZbcRavbCDytRByC2A0fy8,14
+inventree_order_history-0.7.1.dist-info/RECORD,,
