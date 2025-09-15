@@ -1,0 +1,12 @@
+astropy
+click
+numpy
+pkgconfig
+pyyaml
+scipy
+tqdm
+uproot
+
+[tests]
+pytest
+pytest-cov
