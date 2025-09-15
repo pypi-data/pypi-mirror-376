@@ -1,0 +1,11 @@
+legends/__init__.py,sha256=ps_hhhZSOO_6Tqa2pWzFDJFklyEked6Q6Q-QUYAyllc,2236
+legends/__main__.py,sha256=HyEyzVKANWsGciwGgOyv16xQqc0DMHk400whITh1m3g,681
+legends/contracts.py,sha256=WPaLFOEqpb6ZN5G8MyZbkogH_Zz5yY951dGM0tGK6QU,7943
+legends/engines.py,sha256=SOD_9KwQaNxYzoAkB4qRXRTZxa9oQnwylo2XsEwVtCM,20692
+legends/pantheon.py,sha256=GpqrVaxFCv1w9gTR12pw9-FpdB11sbizvJYZdgXlVks,11505
+legends/scaffold.py,sha256=sIPdogb6Rb4i3-AIblX484Lwp1KOfjnrtzwEEZtg_Ic,11159
+pantheon_legends-0.3.0.dist-info/licenses/LICENSE,sha256=ZU5ZyxRrLMcbv3JjfdhwZaPXfecubWroSy7kbglIylQ,1092
+pantheon_legends-0.3.0.dist-info/METADATA,sha256=2d2FgPAw6a4QlMhIHM1W4lydKMHbe2TlFkc6DRtMr_g,10535
+pantheon_legends-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pantheon_legends-0.3.0.dist-info/top_level.txt,sha256=hd3NmRpuZ6XEgbPyQLjiXqmpMtNQdgsWC3LLGAGPckg,8
+pantheon_legends-0.3.0.dist-info/RECORD,,
