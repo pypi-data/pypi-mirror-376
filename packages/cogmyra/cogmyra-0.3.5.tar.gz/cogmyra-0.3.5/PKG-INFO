@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: cogmyra
+Version: 0.3.5
+Summary: AI-powered personalized learning platform
+License: MIT
+Author: CogMyra Team
+Author-email: dev@cogmyra.example
+Requires-Python: >=3.11
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Typing :: Typed
+Requires-Dist: typer (>=0.12)
+Description-Content-Type: text/markdown
+
+# CogMyra
+
+## Install
+
+```bash
+python -m pip install cogmyra
+# or a specific version:
+python -m pip install cogmyra==0.3.4
+```
+
+## Quick start
+
+```bash
+cogmyra greet World
+# Hello, World!
+```
+
