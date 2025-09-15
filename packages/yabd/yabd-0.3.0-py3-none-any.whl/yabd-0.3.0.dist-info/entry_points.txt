@@ -1,0 +1,2 @@
+[console_scripts]
+yabd = yabd:main
