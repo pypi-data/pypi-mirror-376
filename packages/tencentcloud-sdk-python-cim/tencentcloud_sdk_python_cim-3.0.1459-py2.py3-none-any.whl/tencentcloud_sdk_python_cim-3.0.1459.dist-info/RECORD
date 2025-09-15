@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/cim/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/cim/v20190318/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/cim/v20190318/cim_client.py,sha256=q7mioYIj4NpL2acIwrR1iaixnjuveJf3jPyKn0ba1rI,1868
+tencentcloud/cim/v20190318/errorcodes.py,sha256=IIzRSWC6WhNQsTE2b3WxQMT-vTEtSFlHwMNi5fMv9x4,800
+tencentcloud/cim/v20190318/models.py,sha256=PAB2gFvn0WVRZrNUhcg96Uj3TayaXVmgoM_k0eqrssQ,1993
+tencentcloud_sdk_python_cim-3.0.1459.dist-info/METADATA,sha256=oLljNsWcgA0K2Hm7pbw3DVrJla0f86_HtVwZJLgGZrY,1503
+tencentcloud_sdk_python_cim-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_cim-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_cim-3.0.1459.dist-info/RECORD,,
