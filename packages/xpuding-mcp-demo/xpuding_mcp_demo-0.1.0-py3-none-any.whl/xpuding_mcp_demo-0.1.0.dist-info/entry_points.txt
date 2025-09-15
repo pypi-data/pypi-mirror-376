@@ -1,0 +1,2 @@
+[console_scripts]
+xpuding-mcp-demo = xpuding_mcp_demo:main
