@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.20.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "naingood-sederhana"
+version = "0.1.1"
+description = "Library Python sederhana dengan utilitas contoh"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+  { name = "naingood", email = "nain.good@gmail.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["sederhana", "utils", "contoh"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://example.com/"
+Repository = "https://example.com/repo"
+Issues = "https://example.com/repo/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sederhana"]
+
+[tool.hatch.build]
+include = [
+  "src/sederhana/py.typed",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/sederhana/py.typed",
+  "README.md",
+  "LICENSE",
+]
