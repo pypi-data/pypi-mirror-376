@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+cronico/__init__.py
+cronico.egg-info/PKG-INFO
+cronico.egg-info/SOURCES.txt
+cronico.egg-info/dependency_links.txt
+cronico.egg-info/top_level.txt
