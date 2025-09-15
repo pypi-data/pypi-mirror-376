@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: shadowprover
+Version: 1.2.49
+Home-page: https://github.com/naveensundarg/py_laser
+Author: Naveen Sundar Govindarajulu
+Author-email: naveensundarg@gmail.com
+Keywords: shadowprover
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+Requires-Dist: Click>=7.0
+Requires-Dist: edn_format
+Requires-Dist: pydantic
+Requires-Dist: pyparsing
+Requires-Dist: fuzzywuzzy
+Requires-Dist: loguru
+Requires-Dist: colorama
+
+
+## ShadowProver
+ShadowProver is a theorem prover (multi-modal logic with quantifiers). 
+
+There is a Python API for the prover. (Requires docker to run the prover in a clean container.)
+
+
