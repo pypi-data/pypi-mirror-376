@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+sulat/__init__.py
+sulat/transcribe.py
+sulat.egg-info/PKG-INFO
+sulat.egg-info/SOURCES.txt
+sulat.egg-info/dependency_links.txt
+sulat.egg-info/requires.txt
+sulat.egg-info/top_level.txt
