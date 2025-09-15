@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/captcha/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/captcha/v20190722/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/captcha/v20190722/captcha_client.py,sha256=0Np0cpDpUbz5T93Y2RaF76drUKJD4Eej3zcGjfkJzE0,18798
+tencentcloud/captcha/v20190722/errorcodes.py,sha256=MtQUrRBSMgxpIcyT4VQP7pclu1cIgTCvO4_yZMc55Hw,1010
+tencentcloud/captcha/v20190722/models.py,sha256=xCkBY5lFOUrOSQZkl3J5Xira9x_bMAsc_FBPCEpO8K8,161366
+tencentcloud_sdk_python_captcha-3.0.1459.dist-info/METADATA,sha256=S1cT1ol4zTT4-Qv-sr1NssPpBfZ_Lwa1VdSMnLInHw8,1523
+tencentcloud_sdk_python_captcha-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_captcha-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_captcha-3.0.1459.dist-info/RECORD,,
