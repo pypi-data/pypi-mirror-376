@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: kx_python_flutter_bridge
+Version: 0.1.2
+Summary: Python-Flutter Bridge for seamless integration
+Author-email: KhaderX Team <contact@khaderx.com>
+Maintainer-email: KhaderX Team <contact@khaderx.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/Khader-X/kx_python_flutter_bridge
+Project-URL: Repository, https://github.com/Khader-X/kx_python_flutter_bridge
+Project-URL: Bug Tracker, https://github.com/Khader-X/kx_python_flutter_bridge/issues
+Project-URL: Website, https://KhaderX.com/
+Project-URL: Organization, https://github.com/Khader-X
+Project-URL: Author, https://github.com/KhaderX-com
+Project-URL: PyPI, https://pypi.org/user/KhaderX/
+Project-URL: Blog, https://khaderabueltayef.blogspot.com/
+Project-URL: Gravatar, https://gravatar.com/voiddevotedlyf473f5471f
+Keywords: keyword1,keyword2,keyword3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rich
+Provides-Extra: dev
+Requires-Dist: setuptools-scm; extra == "dev"
+Dynamic: license-file
