@@ -1,0 +1,2 @@
+[console_scripts]
+debugger-backend = debugger_backend.server:main
