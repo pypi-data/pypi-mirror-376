@@ -1,0 +1,255 @@
+
+
+# Fylex: Your Intelligent File & Directory Orchestrator
+
+[![Python 3.x](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/fylex?period=total\&units=INTERNATIONAL_SYSTEM\&left_color=black\&right_color=green\&left_text=downloads)](https://pepy.tech/projects/fylex)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+**Fylex** is a fast, reliable, and intelligent file management tool written in Python.
+It goes beyond `cp`, `mv`, or `rsync` by offering **smart conflict resolution, data integrity verification, undo support, and detailed logging** — all in one package.
+
+---
+
+### 📊 Comparison with Other Tools
+
+| Feature / Tool        | `cp` / `mv` (Unix) | `rsync` (Unix) | Robocopy (Windows) | **Fylex** |
+|------------------------|--------------------|----------------|--------------------|-----------|
+| Conflict resolution    | ❌ Overwrites only | ⚠️ Basic (`--ignore-existing`, `--update`) | ⚠️ Some options | ✅ Multiple modes (`rename`, `skip`, `replace`, `newer`, `larger`, etc.) |
+| Atomic operations      | ❌                 | ❌             | ❌                 | ✅ Safe temp + replace |
+| Undo support           | ❌                 | ❌             | ❌                 | ✅ Rollback via process ID |
+| Duplicate detection    | ❌                 | ❌             | ❌                 | ✅ By size/extension + hash |
+| Hash verification      | ❌                 | ✅ (with `--checksum`) | ❌ | ✅ (xxhash, blake3, sha256, etc.) |
+| Metadata preservation  | ✅ (basic: mtime)  | ✅ (mtime, perms, owner, xattrs) | ✅ (NTFS ACLs) | ✅ (mtime, ownership, xattrs, ACLs) |
+| Logging                | ❌                 | ✅ (basic logs) | ✅ (detailed logs) | ✅ Detailed JSON/JSONL + summaries |
+| Dry run mode           | ❌                 | ✅             | ✅                 | ✅ |
+| Performance            | ✅ Very fast       | ✅ Optimized for sync | ✅ Multi-threaded | ✅ Optimized with adaptive buffer + fast hash |
+
+
+---
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Key Features](#key-features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+
+   * [Core Functions](#core-functions)
+   * [Common Parameters](#common-parameters)
+   * [Conflict Resolution Modes](#conflict-resolution-modes)
+   * [Examples](#examples)
+5. [Comparison with Other Tools](#comparison-with-other-tools)
+6. [Error Handling & Robustness](#error-handling--robustness)
+7. [Logging](#logging)
+8. [Development & Contributing](#development--contributing)
+9. [License](#license)
+10. [Author](#author)
+
+---
+
+## Introduction
+
+Managing files is often more complex than it looks. Simple copy/move commands can quickly become dangerous when conflicts, duplicates, or errors occur.
+
+Fylex provides a **safe, intelligent alternative** with:
+
+* atomic operations,
+* duplicate detection,
+* metadata preservation,
+* flexible conflict handling, and
+* undo functionality for peace of mind.
+
+It’s designed for developers, sysadmins, and power users who demand **speed, safety, and reliability**.
+
+---
+
+## Key Features
+
+* **⚡ Atomic File Operations**
+  Files are written to a temporary path and only moved into place after a successful transfer.
+
+* **🧠 Smart Conflict Resolution**
+  Choose from strategies like `rename`, `skip`, `replace`, `larger`, `newer`, etc.
+
+* **🧬 Duplicate Detection**
+  Detect duplicates by size/extension, then confirm with fast hashing (`xxhash`, `blake3`, `md5`, `sha256`, `sha512`).
+
+* **🔒 Data Integrity Verification**
+  Optional `--verify` mode ensures source and destination files are **bit-for-bit identical**.
+
+* **📂 Metadata Preservation**
+  Preserves timestamps, ownership, extended attributes, and ACLs when supported.
+
+* **↩️ Undo Support**
+  Every operation is logged to JSON. You can roll back with a simple `undo(process_id)`.
+
+* **📊 Rich Logging**
+  JSONL and human-readable logs capture every operation for audit and rollback.
+
+---
+
+## Installation
+
+### Requirements
+
+* Python 3.8+
+* Optional hash libraries:
+
+  ```bash
+  pip install blake3 xxhash
+  ```
+* Linux users: `attr` and `acl` packages for xattr/ACL preservation.
+
+### Install via pip
+
+```bash
+pip install fylex
+```
+
+---
+
+## Usage
+
+You can use Fylex as a **Python library** or via its **CLI** (`fylex copy`, `fylex move`, `fylex undo`).
+
+---
+
+### Core Functions
+
+#### `filecopy`
+
+```python
+fylex.filecopy(src, dest, resolve="rename", verify=False, dry_run=False, ...)
+```
+
+Copies files/directories with intelligent conflict handling.
+
+* `src`: Source file or directory
+* `dest`: Destination directory
+* `resolve`: Conflict mode (see below)
+* `verify`: Verify integrity via hash comparison
+* `dry_run`: Simulate without making changes
+
+---
+
+#### `filemove`
+
+```python
+fylex.filemove(src, dest, resolve="rename", verify=False, dry_run=False, ...)
+```
+
+Moves files safely with rollback protection.
+
+---
+
+#### `undo`
+
+```python
+fylex.undo(p_id, force=False)
+```
+
+Reverts a previous operation using its process ID.
+
+---
+
+### Common Parameters
+
+* `resolve`: How to handle conflicts (`rename`, `skip`, `replace`, etc.)
+* `algo`: Hashing algorithm (`xxhash`, `blake3`, `md5`, `sha256`, `sha512`)
+* `recurse`: Traverse subdirectories
+* `summary`: Write a copy of `fylex.log` to a summary file
+* `verbose`: Stream logs to console
+
+---
+
+### Conflict Resolution Modes
+
+* `larger`: Keep the larger file
+* `smaller`: Keep the smaller file
+* `newer`: Keep the newer file
+* `older`: Keep the older file
+* `rename`: Rename with suffix (`file (1).txt`)
+* `skip`: Skip operation
+* `replace`: Replace destination file
+* `prompt`: Ask user
+
+---
+
+### Examples
+
+```python
+from pathlib import Path
+import fylex
+
+src = Path("docs")
+dest = Path("backup")
+
+# Copy files with renaming and verification
+fylex.filecopy(src, dest, resolve="rename", verify=True, recurse=True, verbose=True)
+
+# Move only text files, keep newer versions
+fylex.filemove(src, dest, match_names="notes.txt", resolve="newer", verify=True)
+
+# Undo an operation
+fylex.undo("1001")
+```
+
+---
+
+## Comparison with Other Tools
+
+* **`cp` / `mv`**: Fast but no safety, conflict handling, or undo.
+* **`rsync`**: Great for remote sync, but Fylex is better for **local integrity + undo**.
+* **Robocopy**: Windows-only, no cross-platform undo.
+
+**Fylex advantage**: atomic safety, undo, hash verification, cross-platform support.
+
+---
+
+## Error Handling & Robustness
+
+* Automatic retries (up to 5) on hash mismatches
+* Logging of every failure, warning, or skipped file
+* Safeguards prevent source/destination mix-ups
+
+---
+
+## Logging
+
+* Logs to `fylex.log` + per-process JSONL/JSON
+* Includes operations, hashes, timestamps, dry-run info
+* `verbose=True`: streams logs to console
+* `summary="logfile.log"`: export a clean copy of log
+
+---
+
+## Development & Contributing
+
+1. Fork the repo
+2. Create a branch (`feature/my-feature`)
+3. Commit with clear messages
+4. Submit PR
+
+Contributions welcome — from bug fixes to feature requests!
+
+---
+
+## License
+
+Released under [MIT License](LICENSE).
+xxHash is under BSD License.
+
+---
+
+## Author
+
+**Sivaprasad Murali**
+📧 [sivaprasad.off@gmail.com](mailto:sivaprasad.off@gmail.com)
+
+---
+
+✨ With Fylex, file management becomes **safe, reversible, and intelligent**.
+
+---
+
