@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/anicloud/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/anicloud/v20220923/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/anicloud/v20220923/anicloud_client.py,sha256=GfSDOAEn1br10rOp9DELAqoCRXriPrpmtPnFlxS6UvU,3599
+tencentcloud/anicloud/v20220923/errorcodes.py,sha256=Is2vrfbFuPtJ9W1P5Z8v0IKLbQxfAl74JLLG3Fabd-E,682
+tencentcloud/anicloud/v20220923/models.py,sha256=3a9fHAg_HDanlv9QFlH0uEJV8hKlVJMRyzuqBa6dOlw,24494
+tencentcloud_sdk_python_anicloud-3.0.1459.dist-info/METADATA,sha256=TKq0yKEqe56yKKs-O8SWxwRaXT14ENEZBRIXE3l1GOQ,1528
+tencentcloud_sdk_python_anicloud-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_anicloud-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_anicloud-3.0.1459.dist-info/RECORD,,
