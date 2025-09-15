@@ -1,0 +1,5 @@
+[console_scripts]
+preview = paraphernalia.glsl:preview
+render = paraphernalia.glsl:render
+review = paraphernalia.review:review
+sign = paraphernalia.signature:sign
