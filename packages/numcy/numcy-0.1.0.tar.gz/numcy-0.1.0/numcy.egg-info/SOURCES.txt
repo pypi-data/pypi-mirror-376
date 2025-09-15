@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+numcy/__init__.py
+numcy/fastarray.c
+numcy/fastarray.pxd
+numcy/fastarray.pyx
+numcy/utils.pyx
+numcy.egg-info/PKG-INFO
+numcy.egg-info/SOURCES.txt
+numcy.egg-info/dependency_links.txt
+numcy.egg-info/not-zip-safe
+numcy.egg-info/top_level.txt
+tests/test_fastarray.py
