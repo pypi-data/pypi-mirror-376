@@ -1,0 +1,6 @@
+io_scene_3ds/__init__.py,sha256=midl8I1AJRSyFW9jJ-SxFNcQL4yE-qRVLuzZ_Yzqdgo,12888
+io_scene_3ds/export_3ds.py,sha256=qFTgSa2IIkq0xtNEcl2CeH1SGn0FDHMFpcR1E44gSKQ,96756
+io_scene_3ds/import_3ds.py,sha256=MAl6jYPcpwh_IsQabqM2NC3UUPIplX_dWAfirYIUjOM,94603
+io_scene_3ds-2.8.4.dist-info/METADATA,sha256=37MGadBUMOST-l45C8T230BZUOWRUeLPf4kDP1T2r0U,4996
+io_scene_3ds-2.8.4.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+io_scene_3ds-2.8.4.dist-info/RECORD,,
