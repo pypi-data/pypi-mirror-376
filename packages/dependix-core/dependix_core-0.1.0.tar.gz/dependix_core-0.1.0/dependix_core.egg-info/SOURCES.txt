@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+dependix_core/__init__.py
+dependix_core/bean_definition.py
+dependix_core/config.py
+dependix_core/container.py
+dependix_core/decorators.py
+dependix_core/exceptions.py
+dependix_core.egg-info/PKG-INFO
+dependix_core.egg-info/SOURCES.txt
+dependix_core.egg-info/dependency_links.txt
+dependix_core.egg-info/requires.txt
+dependix_core.egg-info/top_level.txt
+dependix_core/tests/__init__.py
+dependix_core/tests/test_container.py
