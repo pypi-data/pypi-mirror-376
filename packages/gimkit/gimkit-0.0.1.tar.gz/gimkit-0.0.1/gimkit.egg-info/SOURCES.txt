@@ -1,0 +1,7 @@
+README.md
+hello.py
+pyproject.toml
+gimkit.egg-info/PKG-INFO
+gimkit.egg-info/SOURCES.txt
+gimkit.egg-info/dependency_links.txt
+gimkit.egg-info/top_level.txt
