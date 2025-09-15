@@ -1,0 +1,8 @@
+README.md
+domainsetup.py
+setup.py
+domainsetup.egg-info/PKG-INFO
+domainsetup.egg-info/SOURCES.txt
+domainsetup.egg-info/dependency_links.txt
+domainsetup.egg-info/entry_points.txt
+domainsetup.egg-info/top_level.txt
