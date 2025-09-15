@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: openpyxl-table
+Version: 1.2.6
+Summary: Table wrapper for openpyxl
+Project-URL: Homepage, https://github.com/KalleDK/py-openpyxl-table
+Project-URL: Documentation, https://github.com/KalleDK/py-openpyxl-table
+Project-URL: Repository, https://github.com/KalleDK/py-openpyxl-table.git
+Author-email: "Kalle M. Aagaard" <git@k-moeller.dk>
+Maintainer-email: "Kalle M. Aagaard" <git@k-moeller.dk>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.12
+Requires-Dist: openpyxl>=3.1.5
+Description-Content-Type: text/markdown
+
+# OpenPyxl Table
