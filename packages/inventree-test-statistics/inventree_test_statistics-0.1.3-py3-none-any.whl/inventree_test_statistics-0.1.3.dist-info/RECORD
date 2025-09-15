@@ -1,0 +1,12 @@
+inventree_test_statistics-0.1.3.dist-info/licenses/LICENSE,sha256=2lQxDSrExUkl19nAdBFNKpkP89Ss_p4s1xJtrBoyH-g,1066
+test_statistics/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test_statistics/core.py,sha256=794ZWvnFq9MpcOBrRh51GY3uvfW-qr12K_Hn0vFsNw8,2630
+test_statistics/serializers.py,sha256=ZMuNb73Ihrk1D8t8g-z4EY-MLujrjSCOpK9RvD_1594,2394
+test_statistics/version.py,sha256=Dl1Qkami5YiIuK3RR-oo4cYsE_PWyGbMzPVnGpi_zhg,94
+test_statistics/views.py,sha256=4in2nc5lR0IeIJyxEi3LDm7Kr0W1nFSPOPZ84jDvjus,4767
+test_statistics/static/TestStatisticsPanel.js,sha256=kDG7YP_2-iarn24L-CwqnsB76BYqMKR4SGaC337_vxk,365433
+inventree_test_statistics-0.1.3.dist-info/METADATA,sha256=P5Vu2kLpx0ww7uVtiqQGxpI6P33HJFflO1RlWmpP048,2648
+inventree_test_statistics-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+inventree_test_statistics-0.1.3.dist-info/entry_points.txt,sha256=zp2gPYmF6TRlKGrRW5r15CrY8NfaTXpnrefNpYHQMDg,79
+inventree_test_statistics-0.1.3.dist-info/top_level.txt,sha256=dDlSDiHaOYptOipNyzYnpuJMBYyZDDbFr0KPaCiMl-4,16
+inventree_test_statistics-0.1.3.dist-info/RECORD,,
