@@ -1,0 +1,10 @@
+tencentcloud/__init__.py,sha256=r84PYsG-hFbeEH3ch-Sw2bJmqWlws-vogRx7ePuiG9c,631
+tencentcloud/ai3d/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/ai3d/v20250513/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tencentcloud/ai3d/v20250513/ai3d_client.py,sha256=2n3i0g4q71XPAi3YdFvtBvzwz6a3PDjjcLTKo4SsoIY,3212
+tencentcloud/ai3d/v20250513/errorcodes.py,sha256=KvHs6W2GONKBsXXCjJUx8q8sqMTR7e5vr5Gx01t5b24,625
+tencentcloud/ai3d/v20250513/models.py,sha256=YbzGxG_FMpzr9jkicmQ9Mv4WjErSjEmSO5sntZkxnp4,14328
+tencentcloud_sdk_python_ai3d-3.0.1459.dist-info/METADATA,sha256=vDvPHNH9zK-50HdXouV6d0AG6cQ7Jo4-xuTo2y6RGQg,1508
+tencentcloud_sdk_python_ai3d-3.0.1459.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+tencentcloud_sdk_python_ai3d-3.0.1459.dist-info/top_level.txt,sha256=g-8OyzoqI6O6LiS85zkeNzhB-osEnRIPZMdyRd_0eL0,13
+tencentcloud_sdk_python_ai3d-3.0.1459.dist-info/RECORD,,
