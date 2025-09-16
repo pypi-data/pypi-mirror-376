@@ -1,0 +1,7 @@
+cmeel.prefix/lib/liblibreachy_mini_kinematics.dylib,sha256=a4mSe7kOEVxD24VARSL7aRcJON_5yIjqy2IUcJZaeFQ,109840
+cmeel.prefix/lib/python3.10/site-packages/reachy_mini_kinematics.pyi,sha256=vdEwRou-XhxxoaK9MFA6UZkjbOZh77fYNsIAcq21m0Y,3888
+cmeel.prefix/lib/python3.10/site-packages/reachy_mini_kinematics.so,sha256=Dg2GPatGzqxW8AfX0vRS5MuUzm9WDVuj1cpXxV-o9X0,155920
+reachy_mini_cpp_kinematics-0.0.8.dist-info/METADATA,sha256=m_I3n9irWF5eVWnhn_NzDPHprPIBYXwmw9F2CbznMU8,713
+reachy_mini_cpp_kinematics-0.0.8.dist-info/WHEEL,sha256=APmVEh1L_55UCtY5TQhEj2dpYCuDyHQ2_u87TOsUIRk,112
+reachy_mini_cpp_kinematics-0.0.8.dist-info/top_level.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+reachy_mini_cpp_kinematics-0.0.8.dist-info/RECORD,,
