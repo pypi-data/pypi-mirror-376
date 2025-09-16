@@ -1,0 +1,164 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags like v0.1.0, v1.0.0, etc.
+
+permissions:
+  contents: write  # Required to create releases and upload assets
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for release notes
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+
+    - name: Install dependencies
+      run: |
+        uv venv
+        uv pip install -e ".[test,lint]"
+
+    - name: Run tests
+      run: |
+        uv run pytest tests/ -v --cov=graph_api --cov-report=xml
+
+    - name: Run linting checks
+      run: |
+        uv run ruff check .
+        uv run black --check .
+        uv run isort --check-only .
+
+    - name: Run security scan
+      run: |
+        uv run bandit -r graph_api/ -f json -o bandit-report.json || true
+        uv run bandit -r graph_api/
+
+    - name: Build package
+      run: |
+        uv build
+
+    - name: Extract tag name
+      id: tag
+      run: |
+        echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+    - name: Generate release notes
+      id: release_notes
+      run: |
+        cat > release_notes.md << 'EOF'
+        ## 🎉 Graph API Python ${{ steps.tag.outputs.tag }}
+
+        A fluent graph query library for Python with comprehensive ElementStore and graph operations.
+
+        ## ✨ Features
+        - **Clean API**: Simple `addNode()`, `createNode()`, `addEdge()` methods
+        - **Fluent Queries**: Intuitive query syntax with method chaining
+        - **Props Class**: Modern property management
+        - **ElementStore**: Comprehensive graph data management
+        - **Type Safety**: Full Python 3.12+ support with modern features
+        - **Production Ready**: Comprehensive testing and security scanning
+
+        ## 📦 Installation
+        ```bash
+        pip install graph-api-python
+        ```
+
+        ## 🚀 Quick Start
+        ```python
+        from graph_api import ElementStore, Props
+
+        # Create store and add nodes
+        store = ElementStore()
+        store.addNode(name='Alice', role='developer', age=30)
+        store.addNode(name='Bob', role='designer', age=28)
+
+        # Fluent querying
+        developers = store.query().where('role', '==', 'developer').get()
+        seniors = store.query().where('age', '>', 25).orderBy('age').get()
+        ```
+
+        ## 📊 Quality Metrics
+        - **Tests**: 297+ comprehensive tests
+        - **Coverage**: 67% code coverage
+        - **Security**: 0 vulnerabilities (bandit scan)
+        - **Linting**: 100% compliant (ruff, black, isort)
+        - **Python**: 3.12+ support
+
+        ## 🔧 Development Status
+        This is a beta release suitable for development and testing.
+
+        ---
+
+        **Full Changelog**: https://github.com/damylen/graph-api-python/commits/${{ steps.tag.outputs.tag }}
+        EOF
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.tag.outputs.tag }}
+        release_name: Graph API Python ${{ steps.tag.outputs.tag }}
+        body_path: release_notes.md
+        draft: false
+        prerelease: ${{ contains(steps.tag.outputs.tag, 'alpha') || contains(steps.tag.outputs.tag, 'beta') || contains(steps.tag.outputs.tag, 'rc') }}
+
+    - name: Upload wheel to release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/graph_api_python-${{ steps.tag.outputs.version }}-py3-none-any.whl
+        asset_name: graph_api_python-${{ steps.tag.outputs.version }}-py3-none-any.whl
+        asset_content_type: application/octet-stream
+
+    - name: Upload source distribution to release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/graph_api_python-${{ steps.tag.outputs.version }}.tar.gz
+        asset_name: graph_api_python-${{ steps.tag.outputs.version }}.tar.gz
+        asset_content_type: application/gzip
+
+  # Optional: Also publish to PyPI if you want
+  publish-pypi:
+    runs-on: ubuntu-latest
+    needs: release
+    if: startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, 'alpha') && !contains(github.ref, 'beta')
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+
+    - name: Build package
+      run: uv build
+
+    # Publish to PyPI (requires PYPI_API_TOKEN secret in repository settings)
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
+        skip-existing: true
