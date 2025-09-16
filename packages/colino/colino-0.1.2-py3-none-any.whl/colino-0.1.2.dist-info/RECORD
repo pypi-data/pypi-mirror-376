@@ -1,0 +1,17 @@
+colino/__init__.py,sha256=EPpXbsygSL3t2AhNxpMwg3UVIb-ysA2ye5n2fSO7kRA,24
+colino/config.py,sha256=aXONpQcAoZLwt58UdGUW44AgYnNTcXLHxymJWwL56nA,10124
+colino/db.py,sha256=-yj4jx8cuzPSTOyXYZe6hn4Mo5mFpkbF7AeB9odwIRA,10469
+colino/digest_manager.py,sha256=d_kp95u_7Pg-Lg4DrDlQRnZ4t-ToFwyfQ8xfNYPVC2E,13393
+colino/ingest_manager.py,sha256=OFIk-DZKI12gcrCybIhp6hP6_3nS7d4JScTA1AL7Q9A,4148
+colino/main.py,sha256=Yrat0VD5OvTEbcoPHTH5pnmBQPm6Yr5zQVGkTxa-RTs,9312
+colino/oauth_proxy.py,sha256=zUnGCIpkNfztxNgDQROsYhClm596c9aMUTdKOpV8-4U,11250
+colino/scraper.py,sha256=2NBi-6Hh69u-mzW8Xz-Y-At7CH08U7jKvbmlGN4F6Dk,3557
+colino/sources/__init__.py,sha256=fqbwzBXP1xaeANjLbXX1p0GtVMu-E9WyCyaAIDabxEI,245
+colino/sources/base.py,sha256=nyilf6L3lj-XDSbAa1EfzB9ghoFjx4eREUDXpaUDRrI,881
+colino/sources/rss.py,sha256=ufIE0qLVSDqxIlIgPfs33gl_sd92TroHmXV4EfPXsbg,11276
+colino/sources/youtube.py,sha256=H-yjstruAPOCTcSyYSJGNNV90em1OwWyxnnEJNnw0Mk,16924
+colino/summarize.py,sha256=fqE-2lzJUZaKrc5P6OwrZrnX06okKl0dQY9oU_prVfM,10452
+colino-0.1.2.dist-info/METADATA,sha256=xMlN0XpKunT5Q_ADWMKFmX1Z-JRxjMU7EWMR9dURvnQ,1355
+colino-0.1.2.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+colino-0.1.2.dist-info/entry_points.txt,sha256=-omCMIsJmrA_LyxdnT_uTKm_XgnipzXenh2HZGWUxU4,43
+colino-0.1.2.dist-info/RECORD,,

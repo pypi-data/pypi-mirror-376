@@ -1,0 +1,3 @@
+[console_scripts]
+colino=colino.main:main
+

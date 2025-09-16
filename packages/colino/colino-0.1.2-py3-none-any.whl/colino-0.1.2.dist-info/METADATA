@@ -1,0 +1,38 @@
+Metadata-Version: 2.3
+Name: colino
+Version: 0.1.2
+Summary: Your personal news digest (macOS only)
+Author: Umberto D'Ovidio
+Author-email: umbertod@fastmail.com
+Requires-Python: >=3.11,<3.14
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Utilities
+Requires-Dist: feedparser (>=6.0.11,<7.0.0)
+Requires-Dist: google-api-python-client (>=2.179.0,<3.0.0)
+Requires-Dist: google-auth (>=2.40.3,<3.0.0)
+Requires-Dist: google-auth-httplib2 (>=0.2.0,<0.3.0)
+Requires-Dist: google-auth-oauthlib (>=1.2.2,<2.0.0)
+Requires-Dist: jinja2 (>=3.1.6,<4.0.0)
+Requires-Dist: openai (>=1.102.0,<2.0.0)
+Requires-Dist: pyyaml (>=6.0.2,<7.0.0)
+Requires-Dist: requests (>=2.32.5,<3.0.0)
+Requires-Dist: trafilatura (>=2.0.0,<3.0.0)
+Requires-Dist: youtube-transcript-api (>=1.2.2,<2.0.0)
+Description-Content-Type: text/markdown
+
+
+# Colino 📰
+
+Your personal, hackable news digest generator.
+
+**Colino currently only runs on macOS.**
+
+For installation, usage, and documentation, visit: [https://colino.pages.dev](https://colino.pages.dev)
+
