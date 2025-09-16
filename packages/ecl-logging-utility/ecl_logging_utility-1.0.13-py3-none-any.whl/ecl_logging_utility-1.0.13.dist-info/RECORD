@@ -1,0 +1,7 @@
+ecl_logging_utility/__init__.py,sha256=H7rcgpMvsyGSjnOlcfy4U7wZpJzt1yLkyO00TiV6Aw4,232
+ecl_logging_utility/logging_utility.py,sha256=nLECRvRa0p-9CvfwlNCVAybP2b02__LTOt8YdEVw9bQ,14003
+ecl_logging_utility/slack_session_manager.py,sha256=nqSy9UqZPvghQWOrswZH8-VfzxsbmaLpyBi1eUyRRF4,576
+ecl_logging_utility-1.0.13.dist-info/METADATA,sha256=uellX-qAjPO1DHU1ZBf-MA67AywlzoYKcbUiLA8Hfng,3081
+ecl_logging_utility-1.0.13.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ecl_logging_utility-1.0.13.dist-info/top_level.txt,sha256=UREkEqY0o1NTCuWgS2kXHXv34M_7rKqA9h_oH_gVchU,20
+ecl_logging_utility-1.0.13.dist-info/RECORD,,
