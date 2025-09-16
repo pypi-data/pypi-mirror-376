@@ -1,0 +1,9 @@
+dialogue_guardian-1.2.0.dist-info/licenses/LICENSE,sha256=hEDB6h1u70LxofhYfdw-hmqyruze-Mk4pKvzG_syuY0,10294
+guardian/__init__.py,sha256=0xOklJWwWApGVfJ6dxobgUXGZNT9x6tMjWFRpPNBh4E,406
+guardian/cli.py,sha256=ZvAcrPnoQOf3yQdpr3yR8TuiKYtR8FgoVvZtKIZJoqU,5601
+guardian/core.py,sha256=qJ_pT1wAPwqrsPzeJ_z6miJ6yk0vdXAaz94O_NF503I,17771
+dialogue_guardian-1.2.0.dist-info/METADATA,sha256=a4WmwMTVnVZouN7k260TYUpgTcFKihl2KjgpAjmEXeM,5974
+dialogue_guardian-1.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dialogue_guardian-1.2.0.dist-info/entry_points.txt,sha256=3oZ27s_MoesSdVoG6PXRiec4yh5thWoi0-yjyagGMMI,85
+dialogue_guardian-1.2.0.dist-info/top_level.txt,sha256=F4LU_xsR5-v9VLhHaHZGoz04kZoTYPfLoQJojYkEipk,9
+dialogue_guardian-1.2.0.dist-info/RECORD,,
