@@ -1,0 +1,7 @@
+msal_bearer/__init__.py,sha256=Y4hgtZf9Y7QI5qkwFqCY4GMEqytGy9tswWlxUE6gvGc,365
+msal_bearer/authenticator.py,sha256=SeOBpLElzpntalLn66IroNkpS7CwxrW4GMSIN6HlEGA,7097
+msal_bearer/bearerauth.py,sha256=qt-VE0WBtFphMeipjNsOsXxrfBk37c6OYfXJhtC_C_0,7993
+msal_bearer-1.4.1.dist-info/LICENSE.md,sha256=Era0uXMbadYdizgaStGZQhNSxiIddx3JbtSltdIbzjI,1067
+msal_bearer-1.4.1.dist-info/METADATA,sha256=0Fyrot6ShV7SiiPuzNNYhbxiNj4ahtYdukjzqkYeGRY,3008
+msal_bearer-1.4.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+msal_bearer-1.4.1.dist-info/RECORD,,
