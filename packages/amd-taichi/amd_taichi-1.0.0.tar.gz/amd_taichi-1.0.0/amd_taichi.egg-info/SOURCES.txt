@@ -1,0 +1,7 @@
+README.md
+setup.py
+amd_taichi/main.py
+amd_taichi.egg-info/PKG-INFO
+amd_taichi.egg-info/SOURCES.txt
+amd_taichi.egg-info/dependency_links.txt
+amd_taichi.egg-info/top_level.txt
