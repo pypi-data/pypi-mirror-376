@@ -1,0 +1,8 @@
+pymupdf==1.25.4
+pymupdf4llm==0.0.18
+numpy>=2.0.0
+pandas>=2.0.0
+tqdm>=4.65.0
+validators>=0.20.0
+setuptools>=65.0.0
+scikit-learn>=1.3.0
