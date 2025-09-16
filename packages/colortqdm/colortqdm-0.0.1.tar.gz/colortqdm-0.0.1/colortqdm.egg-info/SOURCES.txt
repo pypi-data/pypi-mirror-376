@@ -1,0 +1,10 @@
+LICENSE
+README.rst
+setup.py
+colortqdm/__init__.py
+colortqdm/main.py
+colortqdm.egg-info/PKG-INFO
+colortqdm.egg-info/SOURCES.txt
+colortqdm.egg-info/dependency_links.txt
+colortqdm.egg-info/requires.txt
+colortqdm.egg-info/top_level.txt
