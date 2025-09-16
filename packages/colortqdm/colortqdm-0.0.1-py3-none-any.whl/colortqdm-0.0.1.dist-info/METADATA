@@ -1,0 +1,150 @@
+Metadata-Version: 2.4
+Name: colortqdm
+Version: 0.0.1
+Summary: Augment the tqdm class with the ability to track progress of different categories.
+Home-page: https://github.com/aielte-research/colortqdm.git
+Author: Bálint Csanády
+Author-email: csbalint@protonmail.ch
+License: MIT
+Keywords: tqdm,progressbar,color
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tqdm==4.67.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+![Python 3x](https://img.shields.io/badge/python-3.x-blue.svg)
+[![pypi](https://img.shields.io/pypi/v/colortqdm.svg)](https://pypi.org/project/colortqdm/)
+
+## Overview
+This module extends [tqdm](https://pypi.org/project/tqdm/)'s `tqdm` class with basic colored sub-progressbars.
+
+Tested in VS Code on a Linux server. No guarantees for other use cases.
+
+Great for ML/DL, to track training loops and evaluation progress.
+E.g. ballanced training with undersampling and confusion-matrix:
+
+![basic](https://github.com/aielte-research/colortqdm/blob/main/img/demo.gif?raw=true "basic")
+
+## Installation
+```
+pip install colortqdm
+```
+
+## Usage
+### Basic usage
+#### Backwards compatible:
+```python
+from colortqdm import colortqdm as ctqdm
+import time
+
+for _ in ctqdm(range(5000)):
+    time.sleep(0.001)
+```
+![basic](https://github.com/aielte-research/colortqdm/blob/main/img/basic.gif?raw=true "basic")
+
+#### Known total:
+```python
+from colortqdm import colortqdm as ctqdm
+import time
+import numpy as np
+
+total = 5000
+with ctqdm(total=total, desc="Known total") as pbar:
+    for i, p in enumerate(np.random.uniform(0,1,total)):
+        if p > i / total:
+            pbar.update(1, color="green")
+        else:
+            pbar.update(1, color="red")
+        time.sleep(0.001)
+```
+![known_total](https://github.com/aielte-research/colortqdm/blob/main/img/known_total.gif?raw=true "known_total")
+
+#### Unknown total:
+```python
+from colortqdm import colortqdm as ctqdm
+import time
+import numpy as np
+
+total = 5000
+with ctqdm(total=None, desc="Unknown total") as pbar:
+    for i, p in enumerate(np.random.uniform(0,1,total)):
+        if p > i / total:
+            pbar.update(1, color="green")
+        else:
+            pbar.update(1, color="red")
+        time.sleep(0.001)
+```
+![unknown_total](https://github.com/aielte-research/colortqdm/blob/main/img/unknown_total.gif?raw=true "unknown_total")
+
+### Available named colors
+```python
+from colortqdm import colortqdm as ctqdm
+import time
+import numpy as np
+
+total = 500
+with ctqdm(total=total) as pbar:
+    x = np.random.randint(0,10,total)
+    for i in x:
+        if i == 0:
+            pbar.update(1, color="blue",    name="blue")
+        elif i == 1:
+            pbar.update(1, color="orange",  name="orange")
+        elif i == 2:
+            pbar.update(1, color="green",   name="green")
+        elif i == 3:
+            pbar.update(1, color="red",     name="red")
+        elif i == 4:
+            pbar.update(1, color="purple",  name="purple")
+        elif i == 5:
+            pbar.update(1, color="brown",   name="brown")
+        elif i == 6:
+            pbar.update(1, color="magenta", name="magenta")
+        elif i == 7:
+            pbar.update(1, color="grey",    name="grey")
+        elif i == 8:
+            pbar.update(1, color="yellow",  name="yellow")
+        else:
+            pbar.update(1)  #default (white)
+        time.sleep(0.002)
+```
+![colors](https://github.com/aielte-research/colortqdm/blob/main/img/colors.gif?raw=true "colors")
+
+### Custom colors
+```python
+from colortqdm import colortqdm as ctqdm
+import time
+import numpy as np
+
+total = 500
+with ctqdm(total=total, desc="Custom RGB") as pbar:
+    x = np.random.randint(0,4,total)
+    for i in x:
+        if i == 0:
+            pbar.update(1, color=(208,244,244))
+        elif i == 1:
+            pbar.update(1, color=(238,213,255))
+        elif i == 2:
+            pbar.update(1, color=(255,192,215))
+        else:
+            pbar.update(1, color=(255,249,193))
+        time.sleep(0.001)
+```
+
+![custom_colors](https://github.com/aielte-research/colortqdm/blob/main/img/custom_colors.gif?raw=true "custom_colors")
+## License
+This project is licensed under the MIT License (c) 2025 Bálint Csanády, aielte-research. See the LICENSE file for details.
