@@ -1,0 +1,4 @@
+[console_scripts]
+job-monitor = job_queue_processor.cli.monitor:main
+job-process = job_queue_processor.cli.process:main
+job-submit = job_queue_processor.cli.submit:main
