@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: django-otel
+Version: 0.1.0
+Summary: Seamless OpenTelemetry integration for Django
+Author-email: Sivakamy Lakshminarayanan <letscodewithshiva@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/sivakamyl/django-otel
+Project-URL: Documentation, https://github.com/sivakamyl/django-otel#readme
+Project-URL: Repository, https://github.com/sivakamyl/django-otel
+Project-URL: Issues, https://github.com/sivakamyl/django-otel/issues
+Keywords: django,opentelemetry,tracing,monitoring
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: Django>=3.2
+Requires-Dist: opentelemetry-api>=1.20
+Requires-Dist: opentelemetry-sdk>=1.22
+Requires-Dist: opentelemetry-exporter-otlp>=1.20
+Requires-Dist: azure-monitor-opentelemetry>=1.0.0
+
+# django-otel
+
+Seamless OpenTelemetry integration for Django applications.
+
+## Installation
+
+```bash
+pip install django-otel
+
