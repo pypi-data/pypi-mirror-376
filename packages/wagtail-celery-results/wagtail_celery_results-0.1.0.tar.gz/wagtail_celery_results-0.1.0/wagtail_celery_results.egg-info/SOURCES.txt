@@ -1,0 +1,16 @@
+LICENCE
+MANIFEST.in
+README.md
+pyproject.toml
+tests/test_base.py
+wagtail_celery_results/__init__.py
+wagtail_celery_results/apps.py
+wagtail_celery_results/wagtail_hooks.py
+wagtail_celery_results.egg-info/PKG-INFO
+wagtail_celery_results.egg-info/SOURCES.txt
+wagtail_celery_results.egg-info/dependency_links.txt
+wagtail_celery_results.egg-info/requires.txt
+wagtail_celery_results.egg-info/top_level.txt
+wagtail_celery_results/locale/django.pot
+wagtail_celery_results/locale/en/LC_MESSAGES/django.po
+wagtail_celery_results/locale/fr/LC_MESSAGES/django.po

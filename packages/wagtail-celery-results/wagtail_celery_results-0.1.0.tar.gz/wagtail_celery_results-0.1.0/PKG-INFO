@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: wagtail-celery-results
+Version: 0.1.0
+Summary: Display celery results task in admin
+Author-email: WebU dev team <contact@webu.coop>
+Project-URL: Homepage, https://github.com/webu/wagtail-celery-results
+Project-URL: Issues, https://github.com/webu/wagtail-celery-results/issues
+Keywords: django,wagtail,celery
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: wagtail
+Requires-Dist: django-celery-results
+Dynamic: license-file
+
+# wagtail-celery-results
+
+Simple admin display of [django_celery_results](https://pypi.org/project/django-celery-results/) tasks in wagtail admin.
+
+## Install
+
+```
+pip install wagtail-celery-results
+```
+
+Add `wagtail_celery_results` to your `INSTALLED_APP`:
+
+```py
+INSTALLED_APP = [
+    ...
+    "wagtail_celery_results",
+    ...
+]
+```
