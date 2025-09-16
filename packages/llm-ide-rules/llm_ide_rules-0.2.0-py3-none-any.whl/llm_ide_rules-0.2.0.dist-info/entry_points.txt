@@ -1,0 +1,3 @@
+[console_scripts]
+llm_ide_rules = llm_ide_rules:main
+
