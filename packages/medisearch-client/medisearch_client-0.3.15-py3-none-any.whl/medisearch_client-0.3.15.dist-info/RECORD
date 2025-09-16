@@ -1,0 +1,7 @@
+medisearch_client/__init__.py,sha256=b7mWPUXmZ1VAr8tSJcYAXQ96LmdCT37YNNUySJJCPWk,165
+medisearch_client/client.py,sha256=2Mr9NkFpFKTbCMjliisiOsANk1k1eUVO9yxyZirhs78,24384
+medisearch_client/test_client.py,sha256=VB_B2_-ERVq-tXhhOEe9OCDXTe3BdJaPIAD0eKUDURE,44247
+medisearch_client-0.3.15.dist-info/METADATA,sha256=hRsThZnf9HhyJxppchx2hWGYVjJ5IB8aB1YIhyxpDC0,22735
+medisearch_client-0.3.15.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+medisearch_client-0.3.15.dist-info/top_level.txt,sha256=p5E5oppNPvpAAxX5haD6YZctkUYlrpNMcLP4Wel78rA,18
+medisearch_client-0.3.15.dist-info/RECORD,,
