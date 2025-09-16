@@ -1,0 +1,10 @@
+ncbi_asm_summary/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ncbi_asm_summary/downloader.py,sha256=Fhbvui4zO77mF17erWSRl7UcA6XX6LCr8fLotrkVz6M,4212
+ncbi_asm_summary/parser.py,sha256=X0MXLWgqkh8SHu0xVxfIWPKfE86K_C7y5bc0oD0mVL0,1588
+ncbi_asm_summary/reader.py,sha256=2OH2gwLp9zEZm_Ml907HBlezpJguxPt939F475LRsrQ,4479
+ncbi_asm_summary-0.2.4.dist-info/licenses/LICENSE.md,sha256=om-dT2GLYzLBv5_qG_4jXHzDLvT6-00HcAc9AKHuoAw,1075
+ncbi_asm_summary-0.2.4.dist-info/METADATA,sha256=LSFUtH-kVDdgvZNQt0A97oDyNUN9wBfqh_ZVkvCXdGg,6465
+ncbi_asm_summary-0.2.4.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+ncbi_asm_summary-0.2.4.dist-info/entry_points.txt,sha256=3slC9uao9rjh7SXg1kBGB3pYeUj4So8YjUUp7Jsulrs,59
+ncbi_asm_summary-0.2.4.dist-info/top_level.txt,sha256=8DMXrCDKlZq0UOGBI-aWGI6NEti8WP3PgV4knu9QAgM,17
+ncbi_asm_summary-0.2.4.dist-info/RECORD,,
