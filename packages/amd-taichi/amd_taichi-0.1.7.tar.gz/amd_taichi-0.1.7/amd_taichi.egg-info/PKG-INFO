@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: amd-taichi
+Version: 0.1.7
+Summary: Experimental bindings for distributed collective communication workflows.
+Author: David
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+ This package provides experimental bindings for distributed collective communication workflows in Python.
+    It aims to simplify the development of applications that require efficient communication between multiple processes or devices.
+    
