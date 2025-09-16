@@ -1,0 +1,3 @@
+[console_scripts]
+doy = tempoo.doy:main
+timeline = tempoo.timeline:main
