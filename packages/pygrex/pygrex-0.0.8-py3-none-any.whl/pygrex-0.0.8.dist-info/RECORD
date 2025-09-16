@@ -1,0 +1,9 @@
+pygrex/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pygrex/__main__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pygrex/config.py,sha256=3TtmG67OFv-etZHnOlKa0KZR9xOitUW_ToTurWH7xcY,227
+pygrex/run.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pygrex-0.0.8.dist-info/licenses/LICENSE.md,sha256=FJjTeVd5nKYyZ6ZH_MzY6gcWG7OoEOmIe6GB7vEQTbQ,1094
+pygrex-0.0.8.dist-info/METADATA,sha256=NxUxAqJg1zXtozk_H34rQz_6oD3t8boBjVebpK6WH58,3899
+pygrex-0.0.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pygrex-0.0.8.dist-info/top_level.txt,sha256=LS3Du7WLPwpjXhKySSYA-LwoS5ATjfwxBAkfRs87ZWg,7
+pygrex-0.0.8.dist-info/RECORD,,

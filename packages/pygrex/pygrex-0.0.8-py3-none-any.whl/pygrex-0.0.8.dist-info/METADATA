@@ -1,0 +1,122 @@
+Metadata-Version: 2.4
+Name: pygrex
+Version: 0.0.8
+Summary: Explainable Recommenders
+License: MIT License
+        
+        Copyright (c) 2021 Ludovik Coba and Roberto Confalonieri
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Requires-Python: >=3.11
+License-File: LICENSE.md
+Requires-Dist: ansi2html
+Requires-Dist: appnope
+Requires-Dist: argon2-cffi
+Requires-Dist: async-generator
+Requires-Dist: attrs
+Requires-Dist: backcall
+Requires-Dist: bleach
+Requires-Dist: Brotli
+Requires-Dist: cffi
+Requires-Dist: chardet
+Requires-Dist: click
+Requires-Dist: cycler
+Requires-Dist: dash
+Requires-Dist: dash-core-components
+Requires-Dist: dash-html-components
+Requires-Dist: dash-renderer
+Requires-Dist: dash-table
+Requires-Dist: decorator
+Requires-Dist: defusedxml
+Requires-Dist: entrypoints
+Requires-Dist: Flask
+Requires-Dist: Flask-Compress
+Requires-Dist: future
+Requires-Dist: implicit
+Requires-Dist: importlib-metadata
+Requires-Dist: ipykernel
+Requires-Dist: ipython
+Requires-Dist: ipython-genutils
+Requires-Dist: ipywidgets
+Requires-Dist: itsdangerous
+Requires-Dist: jedi
+Requires-Dist: joblib
+Requires-Dist: jsonschema
+Requires-Dist: jupyter
+Requires-Dist: jupyter-client
+Requires-Dist: jupyter-console
+Requires-Dist: jupyter-core
+Requires-Dist: jupyter-dash
+Requires-Dist: jupyterlab-pygments
+Requires-Dist: jupyterlab-widgets
+Requires-Dist: kiwisolver
+Requires-Dist: llvmlite
+Requires-Dist: matplotlib
+Requires-Dist: mistune
+Requires-Dist: mlxtend
+Requires-Dist: nbclient
+Requires-Dist: nbconvert
+Requires-Dist: nbformat
+Requires-Dist: nest-asyncio
+Requires-Dist: notebook
+Requires-Dist: numba
+Requires-Dist: pandas
+Requires-Dist: pandocfilters
+Requires-Dist: parso
+Requires-Dist: pexpect
+Requires-Dist: pickleshare
+Requires-Dist: Pillow
+Requires-Dist: plotly
+Requires-Dist: prometheus-client
+Requires-Dist: prompt-toolkit
+Requires-Dist: ptyprocess
+Requires-Dist: pycparser
+Requires-Dist: pynndescent
+Requires-Dist: pyparsing
+Requires-Dist: pyrsistent
+Requires-Dist: python-box
+Requires-Dist: python-dateutil
+Requires-Dist: pytz
+Requires-Dist: pyzmq
+Requires-Dist: qtconsole
+Requires-Dist: QtPy
+Requires-Dist: retrying
+Requires-Dist: scikit-learn
+Requires-Dist: seaborn
+Requires-Dist: Send2Trash
+Requires-Dist: terminado
+Requires-Dist: testpath
+Requires-Dist: tornado
+Requires-Dist: torch
+Requires-Dist: tqdm
+Requires-Dist: traitlets
+Requires-Dist: umap-learn
+Requires-Dist: wcwidth
+Requires-Dist: webencodings
+Requires-Dist: widgetsnbextension
+Requires-Dist: zipp
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: flake8>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: threadpoolctl; extra == "dev"
+Dynamic: license-file
