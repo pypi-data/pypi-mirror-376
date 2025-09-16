@@ -1,0 +1,3 @@
+[pytest11]
+pytest_boardfarm=pytest_boardfarm3.pytest_plugin
+
