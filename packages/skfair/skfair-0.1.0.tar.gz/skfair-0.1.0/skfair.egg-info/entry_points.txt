@@ -1,0 +1,2 @@
+[console_scripts]
+skfair = skfair.cli:main

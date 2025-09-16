@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: skfair
+Version: 0.1.0
+Summary: A package to capture FAIR-compliant provenance for scikit-learn workflows.
+Home-page: https://github.com/jjlange/skfair
+Author: Justin Lange
+Author-email: langejustin@icloud.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scikit-learn
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: joblib
+Requires-Dist: pyld
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# skfair
+
+`skfair` is a Python package that provides a wrapper for scikit-learn estimators to automatically capture FAIR compliant provenance metadata for ML workflows. It packages each training run as a standardised [RO-Crate](https://www.researchobject.org/ro-crate/) research object, making experiments more transparent, reproducible, and interoperable.
+
+<sub>¹ This package is based on a research project conducted at The University of Manchester, 2025.<br/>
+Research report: [TODO: add link after submission]</sub>
