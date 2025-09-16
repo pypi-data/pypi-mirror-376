@@ -1,0 +1,305 @@
+:root {
+          --jp-content-font-family: 'Ubuntu';
+            --jp-code-font-family: 'Source Code Pro';
+            --jp-content-font-size1: 16px;
+            --jp-code-font-size: 14px;
+}
+
+
+
+.jp-Cell {
+      text-align: justify;
+        word-wrap: break-word;
+        white-space: initial;
+        text-justify: inter-word;
+}
+
+.jp-Cell.jp-MarkdownCell {
+      --jp-content-font-size1: 16px;
+        font-size: 100%;
+        text-align: justify;
+        word-wrap: break-word;
+        white-space: initial;
+        max-width: 105ch;
+}
+
+.jp-Cell.jp-CodeCell {
+      --jp-code-font-size: 14px;
+        text-align: justify;
+        word-wrap: break-word;
+        white-space: initial;
+        max-width: 105ch;
+
+}
+.jp-CodeMirrorEditor {
+      text-align: left;
+}
+
+.jp-RenderedHTMLCommon p {
+      text-align: justify;
+}
+
+.jp-RenderedHTMLCommon table {
+      font-size: var(--jp-content-font-size1);
+}
+
+.jp-RenderedHTMLCommon li {
+      /* line-height: 200%; */
+      margin-bottom: 0.4em;
+}
+
+
+.jp-InputArea {
+      overflow: unset;
+}
+
+.jp-toolbar-overlap .jp-Toolbar {
+      display: unset;
+}
+
+.jp-Toolbar {
+      margin-right: -15em;
+}
+
+.jp-OutputArea-child .jp-OutputArea-output {
+      flex-shrink: 0;
+}
+
+a.jp-InternalAnchorLink {
+      color: rgba(0, 0, 0, 0) !important;
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+
+}
+
+.cm-scroller {
+      max-width: 92ch;
+}
+
+
+.jp-RenderedHTMLCommon :not(pre) > code {
+      background-color: #f0f0ff;
+}
+
+strong {
+      color: #722;
+}
+
+
+.jp-RenderedHTMLCommon :not(pre) > strong code {
+      background-color: #fff0f0;
+}
+
+.jp-RenderedText pre {
+      max-width: 90ch;
+}
+strong code {
+      background: red;
+}
+
+h1, h2, h3, h4 {
+      font-family: Kameron, arial;
+        text-align: left;
+}
+
+
+a.jp-InternalAnchorLink {
+          border-bottom: 0px dashed gray;
+}
+
+a, a:hover {
+      border-bottom: 1px dashed gray;
+        text-decoration: none !important;
+}
+
+em {
+      color: #555;
+}
+
+
+
+
+/* green lightbulb  */
+.insight:before {
+      font-family: "ForkAwesome"; content: "\f0eb\00a0\00a0";
+        font-style: normal;
+        color: #393;
+        vertical-align: middle;
+        font-size: 200% !important;
+        margin-right: 0.3em;
+}
+
+.insight {
+      vertical-align: unset;
+}
+
+/* green (?) */
+    .question:before {
+      font-family: "ForkAwesome"; content: "\f29c\00a0\00a0\00a0\00a0";
+        font-style: normal;
+        color: #393;
+        vertical-align: middle;
+        font-size: 130% !important;
+        margin-right: 0.3em;
+}
+
+h3.question:before {
+      font-size: 130% !important;
+}
+
+
+
+
+.question {
+      vertical-align: unset;
+}
+
+/* green (!)  */
+.attention:before {
+      font-family: "ForkAwesome"; content: "\f06a\00a0\00a0\00a0\00a0";
+        font-style: normal;
+        color: #393;
+        font-size: 130% !important;
+        vertical-align: sub;
+}
+
+
+/* fix changed default style sheet on noto.epfl.ch jupyter server */
+kbd {
+      background: var(--jp-layout-color2) !important;
+        color: var(--jp-content-font-color1) !important;
+}
+
+
+.attention code,
+.question code
+{
+      background: #dbeac6 !important;
+}
+
+.attention strong,
+.question strong
+{
+      color: #070;
+}
+
+
+div.attention,
+div.question
+{
+      border-left: 4px #78ca78 solid;
+        padding: .5em 1.5em .5em 1em;
+        background:#eaf5e5;
+        border-radius:5px;
+        box-shadow: 3px 3px 3px -1px #ddd;
+        margin-bottom: 1em;
+}
+
+/* red (!) */
+.surprise:before {
+      font-family: "ForkAwesome"; content: "\f06a\00a0\00a0";
+        font-style: normal;
+        color: #933;
+        font-size: 130% !important;
+        vertical-align: sub;
+}
+
+
+
+div.surprise {
+      border-left: 4px #ca7878 solid;
+        padding: .5em 1.5em .5em 1em;
+        background:#f7e7e7;
+        border-radius:5px;
+        box-shadow: 3px 3px 3px -1px #ddd;
+        margin-bottom: 1em;
+}
+
+
+.jp-RenderedHTMLCommon div.attention li,
+.jp-RenderedHTMLCommon div.surprise li,
+.jp-RenderedHTMLCommon div.question li
+{
+      line-height: revert;
+}
+
+.jp-RenderedHTMLCommon div.attention li:not(:last-child),
+.jp-RenderedHTMLCommon div.surprise li:not(:last-child),
+.jp-RenderedHTMLCommon div.question li:not(:last-child)
+{
+      margin-bottom: .5em;
+}
+
+
+
+
+
+div.surprise strong {
+      color: #700;
+}
+
+.exercise:before {
+      content: "" !important;
+}
+
+
+
+.exercise {
+      color: #227;
+        font-size: 100%;
+
+
+}
+
+
+.exercise:after {
+      font-family: "ForkAwesome";
+        content: "\f044";
+        font-size: 80%;
+        margin-left: -0.8em;
+}
+.solutions {
+      color: #151;
+        font-size: 100%;
+}
+.solutions:after {
+      font-family: "ForkAwesome";
+        content: "\f0eb";
+        font-size: 80%;
+        margin-left: -0.8em;
+}
+
+
+.optional {
+      color: #0d5b93cc; /* #756302; */
+}
+
+.optional:after {
+       font-family: "ForkAwesome";
+        content: "\f135";
+        color: #0d5b93cc;
+        font-size: 80%;
+        margin-left: -0.8em;
+}
+
+p + ol, p + ul {
+      margin-top: -0.5em;
+}
+
+
+
+.info {
+      background: #e7f0e7;
+        padding: 1em;
+        border-radius: 5px;
+}
+
+.info:before {
+      font-family: "ForkAwesome";
+        content: "\f06a";
+        font-size:150%;
+        margin-right: 0.3em;
+        vertical-align: middle;
+}
+
