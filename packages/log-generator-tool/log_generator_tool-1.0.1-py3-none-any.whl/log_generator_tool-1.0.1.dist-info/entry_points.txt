@@ -1,0 +1,2 @@
+[console_scripts]
+log-generator = log_generator.cli:main
