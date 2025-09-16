@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: jymkit
+Version: 0.0.19
+Summary: Jaxnasium
+Author: Koen Ponse
+Author-email: Koen Ponse <k.ponse@liacs.leidenuniv.nl>
+Requires-Dist: jaxnasium
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# Jymkit
+
+This library has been renamed to Jaxnasium. Jaxnasium is included as a dependency of this package, so should be available in your environment.
+
+In the future, this package name may be removed. If you would like to claim this name, just reach out. 
