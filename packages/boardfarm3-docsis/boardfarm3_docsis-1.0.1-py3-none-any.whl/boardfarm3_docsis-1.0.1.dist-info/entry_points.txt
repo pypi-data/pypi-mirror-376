@@ -1,0 +1,3 @@
+[boardfarm]
+docsis=boardfarm3_docsis.plugins.docsis
+
