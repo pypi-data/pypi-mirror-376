@@ -1,0 +1,20 @@
+name: stilts-agent
+channels:
+  - default  
+  - conda-forge
+dependencies:
+  - python=3.12
+  - gcc
+  - gxx
+  - pip
+  - pip:
+      - numpy
+      - torch
+      - transformers
+      - accelerate
+      - llama_cpp_python
+      - prompt_toolkit
+      - bitsandbytes
+      - pytest
+      - pytest-mock
+      - setproctitle
