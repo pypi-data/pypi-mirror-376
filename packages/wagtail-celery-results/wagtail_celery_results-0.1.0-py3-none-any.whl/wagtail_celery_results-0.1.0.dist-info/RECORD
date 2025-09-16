@@ -1,0 +1,11 @@
+wagtail_celery_results/__init__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+wagtail_celery_results/apps.py,sha256=mTc9EdEVYcZmpv9n09nSRknrZoo_914eitKsS0WwkHs,211
+wagtail_celery_results/wagtail_hooks.py,sha256=rcgwWSHj424HA_XyhprvwG4EeQpecC7uCEPwNoUYKdg,1022
+wagtail_celery_results/locale/django.pot,sha256=p6n2rLnPdNrwkstFlmWNU6MWct1qNNhEpISHBs4NBAk,813
+wagtail_celery_results/locale/en/LC_MESSAGES/django.po,sha256=su6rEC9pnaqURcw4QLaHSjyykObn-odFEnPQ9RBwj4s,859
+wagtail_celery_results/locale/fr/LC_MESSAGES/django.po,sha256=lU8PMQH53xYe83KlwDNOmy0iymBFk-UtpFp0rf0ifMw,891
+wagtail_celery_results-0.1.0.dist-info/licenses/LICENCE,sha256=56UTBx31jVhpbYapLi5W1BK7rIv74T6X872xXTsLKUc,1061
+wagtail_celery_results-0.1.0.dist-info/METADATA,sha256=a1ve6bL4d3bRVADHjypIu2AgXJZRqvOz5Ww-bEyyz3Q,1018
+wagtail_celery_results-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+wagtail_celery_results-0.1.0.dist-info/top_level.txt,sha256=IdpM_Xysz0AFya2l3G6fHrhHqsE4LijXQG5hTAws58U,23
+wagtail_celery_results-0.1.0.dist-info/RECORD,,
