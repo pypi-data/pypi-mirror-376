@@ -1,0 +1,9 @@
+include README.md
+include requirements.txt
+include voxa_ai/offline_qa.json
+include voxa-ai.bat
+include voxa-ai.sh
+
+recursive-exclude tools *
+recursive-exclude * __pycache__
+recursive-exclude * *.pyc

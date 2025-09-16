@@ -1,0 +1,6 @@
+openai
+rapidfuzz
+pandas
+matplotlib
+seaborn
+rich
