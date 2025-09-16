@@ -1,0 +1,47 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Notes on Qubit Routing}
+\author{William Schober}
+
+\begin{document}
+\maketitle
+
+\section{Trivializing routing via graph structure}
+
+Here's a table of the graphs we've talked about, along with some potential properties of interest. Diameter is desired to be low because a small diameter implies that the path any qubit must traverse to talk to any other qubit is also low, minimizing routing overhead (presumably routing becomes NP-hard on graphs whose diameter is larger than log $n$...?). Max degree is preferred to be low because a high max degree suggests either that the graph is so well-connected that routing becomes NP-hard (see previous), or that its edges are concentrated on a small subset of high-degree qubits, likely creating routing bottlenecks; additionally, max degree is required to be $O(1)$ on any \textit{scalable} superconducting hardware since edges correspond to physical wires which cannot be packed arbitrarily tightly around each qubit. Vertex connectivity is a poor stand-in metric for capturing the notion that graphs that are connected `too efficiently' are more vulnerable to qubit dropout errors (e.g. if the central qubit in the Star graph fails, the entire graph becomes disconnected). This is preferred to be high. I call it a poor stand-in metric because the low value for the grids is somewhat misleading; the square grid is 2-connected only because the corner nodes have degree 2, but having the corner qubits fail isn't really much of an issue. The grids in general are fairly resistant to dropout errors since most pairs of qubits have many paths connecting them -- of course, this is also exactly what makes routing hard!
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r|r|r|r}
+Graph & Diameter & Max degree & Vertex connectivity & Implementation \\\hline
+Complete            & 1 & $n-1$ & $n-1$ & -- \\
+Star                & 2 & $n-1$ & 1 & -- \\
+Complete k-partite  & 2 & $k-1$ & $n(1-\frac{1}{k})$ & Neutral atom \cite{bluvstein_logical_2024,wang_atomique_2024} \\
+BBT                 & log $n$ & 3 & 1 & -- \\
+Hypercube           & log $n$ & log $n$ & log $n$ & -- \\
+Hexagonal grid & $O(\sqrt{n})$ & 3 & 3 & IBM \cite{noauthor_ibm_nodate} \\
+Heavy hex grid & $O(\sqrt{n})$ & 3 & 2 & IBM \cite{noauthor_ibm_nodate} \\
+Square grid & $O(\sqrt{n})$ & 4 & 2 & Google \cite{arute_quantum_2019} \\
+Path                & $n-1$ & 2 & 1 & -- \\
+\end{tabular}
+\caption{\label{tab:graphprops}Properties of interest for different connectivity graphs. The vertex connectivity of the complete $k$-partite graph assumes for simplicity that all $k$ partitions contain an equal integer number of vertices $n/k$. The $O(\sqrt{n})$ diameter for all three grids assumes a square tiling, meaning that the grid is an $(x \times x)$ tiling of hex/heavy hex/square-shaped tiles. More specifically, the diameters $d_\text{shape}$ and number of qubits $n$ are related to $x$ in each case by $d_\text{hex} = 2\lfloor \frac{3x}{2} \rfloor \approx 3x$ where $n=2x^2+4x$, $d_\text{hhex} = 4\lfloor \frac{3x}{2} \rfloor \approx 6x$ where $n=5x^2+8x-1$, and $d_\text{sq} = 2x$ where $n=x^2$. For grids with $x\neq y$ the diameters $d$ and number of qubits $n$ are related to $x$ and $y$ by $d_\text{hex} = 2(x+\lfloor \frac{y}{2} \rfloor)$ where $n=2(xy+x+y)$, $d_\text{hhex} = 4(x+\lfloor \frac{y}{2} \rfloor)$ where $n = 5xy+4x+4y-1$, and $d_\text{sq} = 2\sqrt{xy}$ where $n = xy$.}
+\end{table}
+
+
+\bibliographystyle{unsrt}
+\bibliography{mybib}
+
+\end{document}

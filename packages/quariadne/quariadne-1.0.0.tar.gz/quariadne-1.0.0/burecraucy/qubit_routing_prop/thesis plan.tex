@@ -1,0 +1,58 @@
+\chapter{Thesis Plan}
+
+
+In short, this master's thesis should present the problem of qubit routing. First, we expect to explain the problem by listing the connectivity requirements of the modern hardware, and then showing the existing solutions to the problem. Then we expect to outline the most prominent ways of the algorithmic analysis of the problem, the main ways of problem trivialisation (i.e. reduction to a known subproblem) and the known heuristic solutions to the problems, especially those with the components of the serious theoretical treatment. As a main body of work, we aim to present the terminological overview of the subfield, present a complete mathematical model of the problem,  and then a solution to this mathematical construction. A final step would include an evaluation of the presented solution, and the benchmarking and comparative analysis in the contemporary state of the field. 
+
+\section{Introduction}
+
+In this part we would like to discover all the available solutions and analyses in the field, as well as the state of the hardware connectivity.
+
+\subsection{A Review of Quantum hardware}
+In this section, we would like to present the known hardware implementations of the quantum computers; namely, the topology of the connectivity properties is of interest. We would like also to present some insights about possible modifications of the quantum qubit routing problem --- see the neutral atom \cite{wangAtomiqueQuantumCompiler2024}, or race track \cite{mosesRaceTrackTrappedIon2023} trapped ion architecture, which are an unorthodox approach to the problem if we'd compare it with other contenders (the whole notion of the transformation of the qubit connectivity space is problematic for our suggested analysis). Thus, we'd like to convey as much information as possible on the hardware implementation topics. Well-known quantum architecture topologies include the IBM hexagonal \cite{IBMQuantumHeavy} and Google bowtie grid \cite{aruteQuantumSupremacyUsing2019}. The additional complexity of this part arises from the fact that the implementation is often a part of a trade secret, and only singular examples of such unveil exist. As an output of this section, we would like to present the extensive review of the most prominent quantum hardware implementations. 
+
+
+\subsection{Qubit routing approaches}
+
+The problem of qubit routing is natural to the way modern NISQ devices are implemented. Thus, a lot of possible solutions to the problem were created in the last decade. The first of the modern outlooks and attempts of formalisation of the problem is the \cite{cowtanQubitRoutingProblem2019}, presented in detail in the related work section. It presents both a way to analyse the problem (both token swapping and graph isomorphism ways of thinking), a way to solve the problem, and a set of benchmarks. In this section, we would like to present all the aforementioned elements of the successful work, collecting the information about the methods of analysis, ways of solving the problem and benchmarking. We would like to deeply explore the SABRE family of algorithms \cite{liTacklingQubitMapping2019}--- which are considered state-of-the-art, and used in the IBM Qiskit compiler set. A central paper in the algorithmic sense is the \cite{itoAlgorithmicTheoryQubit2023}, which provides a rich example of how to model the qubit routing problem, with a huge set of reasonable conjecture results. Finally, there are some algorithms designed specifically for an architectural paradigm, like \cite{willeMQTQMAPEfficient2023}. It would be good to outline their ideas and present a compatibility study of them. A good result of this section would be to create a thorough understanding of the modern qubit routing solving approaches.
+
+
+\section{Related work}
+
+This section is devoted to more particular analysis of solutions to the problem.
+
+\subsection{Qubit routing reductions}
+One of the most prominent ways of solving the problem efficiently is reducing it to a well-studied type of problem, and then use an existing problem solver, or enhance the analysis by this inclusion. Some attempts of doing so for the qubit routing problem were made by \cite{brierleyEfficientImplementationQuantum2016}; some other papers include reduction to MaxSat or token swapping. Some alternative well-known graph structures were suggested: cyclic butterfly, hypercube and others. This section aims to provide an overview of trivialisations, their pros and cons, effects, and possible modifications or reductions to be made.  
+
+\subsection{Qubit routing analysis}
+
+
+In this section, the most looked upon part in the whole qubit routing task will be overviewed. The algorithmic analysis of the problem suggests analysing various problem formulations, problem solutions and the characteristics of these solutions. An excellent example of such analysis is presented in \cite{itoAlgorithmicTheoryQubit2023}. We aim to collect and entwine the analyses (often incomplete) and present a set of possible problem formulations, useful conjectures and lemmas. 
+
+\subsection{Qubit routing solutions}
+
+This section will outline the most important heuristic and algorithmic approaches to solving the routing problem. As even the problem formulation is different in many sources, this will require splitting the existing solutions into hierarchical components (responsible for different parts of the problem) and matching those together. A good overview of the contemporary is available at (\cite{barnesSurveyQubitRouting2023}). There are many sources of confusion in the literature, for example, some are differentiating so-called qubit mapping and qubit routing (that wouldn’t be a problem, but this sometimes acts as a complexity well — analysing only one part, but moving a lot of steps in the other). Most of the approaches follow the timestep slicing as a main technique, and dynamic analysis of each timestep, like \cite{cowtanQubitRoutingProblem2019}. However, there are also machine learning solutions (\cite{pozziUsingReinforcementLearning2020}), reductionist solutions (\cite{molaviQubitMappingRouting2022}) and many other groups. An ideal outcome of this section would be a solutions taxonomy, their shared characteristics and different approaches.
+
+\section{Method}
+
+This part will be related to our approach to solving the qubit routing problem.
+
+\subsection{Terminological clarity}
+
+This section would provide an overview of the employed terminology, marking the start of creative contributions to the field. The terminological situation in the qubit routing (as you’ve probably noted in the previous section) is often a source of confusion. What is \cite{willeMQTQMAPEfficient2023} names allocation, is routing in \cite{cowtanQubitRoutingProblem2019}, swap insertion in \cite{itoAlgorithmicTheoryQubit2023}  etc. The problem statements (e.g. some include connectivity graphs in statement, some just a general overview), operations definitions (do we include the one-qubit gates, how do we define a timestep ) — are only a small fraction of terminological problems. The ideal result of this section would be a simple guideline for qubit routing problems, terminology and interface between different schools and research groups. 
+
+\subsection{Problem modelling}
+
+This chapter would outline our understanding of the qubit routing problem, providing a robust mathematical description of the problem. We plan to take the best of both worlds --- theoretical and practical --- and formulate the problem most clearly and concisely. Finding the theoretical representation of the problem is the demand of the analytical part of our work, and finding an effective practical translation of it is the demand of the practical part. Therefore, this part is also amplified since it lays the foundation of future chapters: solving the problem, evaluating the result and others. As a small insight into the planned approach, we had an idea of using Cayley diagram \cite{akersGrouptheoreticModelSymmetric1989} representation of the problem as the theoretical basis of the analysis. However powerful, it is also exponential in the qubit count; thus, for actually solving the problem, it can be rendered highly impractical. Maybe some composite solution would be possible, however, the other problem would be --- if we hurt the analytical stiffness of the problem statement, we might lose all the expressive power of our framework. The ideal output of this chapter would be a robust mathematical statement of the problem and its practical application.  
+
+\subsection{Problem analysis}
+
+This section aims to present an all-sided analysis of the qubit routing problem. First part of it — algorithmic analysis, similar to the approach suggested by \cite{itoAlgorithmicTheoryQubit2023}. We’d like to analyse the approach in the lenses of our problem statement, optimally obtaining the bounds for the algorithmic complexity, and analysis of the problem hardness for different classes of hardware and circuit layouts. The possible reductions of the problem will also be considered (as in MaxSat \cite{molaviQubitMappingRouting2022}), as a path to use a bigger class of universal algorithmic solvers. An ideal result of this chapter would be complete results about the algorithmic properties of our problem model and possible reductions of the problem to other problems.
+
+\subsection{Solving the problem}
+
+This is the most important part of the whole thesis. Here we would like to outline the algorithm for solving the problem stated and analysed in the previous chapters. As it was outlined in the previous sections, the approach to problem solving, although dependent on the analysis, could also be heuristic, reductionist or based on a problem extension. It would be good to present multiple approaches, as all of the aforementioned ways of solving have their differences, e.g. heuristic methods are usually robust and easy to implement, see \cite{zouLightSABRELightweightEnhanced2024}. If we obtain a new reduction model, we’ll use an existing solver and explain why we used it. If it will be an extension of a problem, e.g. machine learning approach, then we’ll show the intuition behind the model, and the cost of this extension. Nevertheless, an ideal result of this chapter would be at least one approach to solving the presented problem, with an analysis (if possible) and its motivation.
+
+\section{Evaluation and discussion}
+
+The last planned part is an evaluation part. We want to analyse our problem solution from multiple sides. First, a comparison of analytical results with state-of-the-art solutions would be needed, including time complexity, scaling analysis, etc. Second, a practical benchmarking should be applied, a set of useful benchmarks could be found, for example in \cite{cowtanQubitRoutingProblem2019}. The ablation study of the solution of the problem is also desired, to see which parts affect the performance of the algorithm; also, verification of theoretical results is required. An analysis of the comparative performance could be a good addition to this section, together with a scalability study. An ideal output of this section would be plots of scalability, and a table of benchmark performance. 
+

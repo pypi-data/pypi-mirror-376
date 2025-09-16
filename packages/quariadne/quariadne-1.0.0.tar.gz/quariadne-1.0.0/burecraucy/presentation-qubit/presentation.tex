@@ -1,0 +1,241 @@
+% arguelles v2.4.2
+% author: Michele Piazzai
+% https://github.com/piazzai
+% license: MIT
+
+\documentclass[lualatex,compress,12pt]{beamer}
+\usepackage{fontspec}
+\usepackage{braket}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{qubit.bib}
+\usepackage{svg}
+
+
+\setmainfont{EB Garamond}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+
+\usetheme{Antibes}
+\usefonttheme{serif}
+\usecolortheme{spruce}
+
+
+\title{On Qubit Routing}
+\subtitle{in Quantum Computer Architectures}
+
+\date{\today}
+\author{ M. Sobolev
+	\\ {\small Supervised by: L. Laneve \and W. Schober  \and Prof. S. Wolf}}
+\institute{USI}
+
+
+\begin{document}
+	
+	\frame[plain]{\titlepage}
+
+	
+
+
+	
+
+\section{Problem statement}
+\begin{frame}
+	\frametitle{Universal Quantum Computer}
+	
+	\begin{figure}
+		\includegraphics[height=3cm]{pic/DavidDeutsch_2009G-stageshot.jpg}
+		\caption{David Deutsch}
+	\end{figure}
+	
+	\begin{definition}
+		 The tape (\(t\)) of Deutsch’s Turing machine \(\mathfrak{U}\) consists of an infinite sequence of qubits and its finite control consists of a finite sequence of qubits (\(m\)). <...> \parencite{gruskaQuantumComputing2000} 
+	\end{definition}
+	
+
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Circuit Model}
+	
+		\begin{figure}
+		\includegraphics[height=3cm]{pic/deutsch algorithm.png}
+		\caption{Circuit for Deutsch-Josza algorithm \parencite{nielsenQuantumComputationQuantum2010}}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Two-Qubit Gates}
+	
+		\begin{figure}
+		\includegraphics[height=4cm]{pic/cnot.png}
+		\caption{A CNOT gate \parencite{nielsenQuantumComputationQuantum2010}}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Quantum hardware connectivity}
+	
+	\begin{figure}
+		\includesvg[scale=0.3,inkscapelatex=false,pretex=\tiny]{pic/topology}
+		\caption{IBM  Brisbane connectivity \parencite{IBMQuantumHeavy}}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{SWAP Gate}
+	
+	A swap gate SWAPs two qubit states, "moving" the state along the physical entities.
+	\[
+	\text{SWAP} (|\phi_{1}\rangle \otimes |\phi_{2}\rangle) = |\phi_{2}\rangle \otimes |\phi_{1}\rangle.
+	\]
+	\begin{figure}
+		\includegraphics[height=4cm]{pic/swap-gate-symbol.png}
+		\caption{A SWAP gate symbol \parencite{bergholmPennyLaneAutomaticDifferentiation2022}}
+	\end{figure}
+	
+\end{frame}
+
+
+
+\section{Solving considerations}
+
+\begin{frame}
+	\frametitle{Qubit routing}
+	
+
+	We'd like to execute the circuit on a given hardware topology
+	\begin{columns}[b]
+		% create the column with the first image, that occupies
+		% half of the slide
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=4cm]{pic/cowtan topology.png}
+				\caption{Hardware topology}
+			\end{figure}      
+		\end{column}
+		% create the column with the second image, that also
+		% occupies half of the slide
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=3cm]{pic/cowtan routing.png}
+				\caption{Routed circuit \parencite{cowtanQubitRoutingProblem2019}}
+			\end{figure}
+		\end{column}
+	\end{columns}
+	
+
+
+	
+	
+	
+\end{frame}	
+
+
+\begin{frame}
+	\frametitle{NP hardness}
+	
+	
+	Subgraph isomorphism (initial mapping) and token swapping (qubit routing)
+	\begin{columns}[b]
+		% create the column with the first image, that occupies
+		% half of the slide
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=3cm]{pic/F83A0F35-7911-4617-8D12-97A57410B5EB-low.png}
+				\tiny
+				\caption{ Graph isomorphism}
+			\end{figure}      
+		\end{column}
+		% create the column with the second image, that also
+		% occupies half of the slide
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=3cm]{pic/Screenshot\_20250522\_081719.png}
+				\tiny
+				\caption{ Token swapping \parencite{yamanakaSwappingLabeledTokens2015}}
+			\end{figure}
+		\end{column}
+	\end{columns}
+	
+\end{frame}	
+
+\begin{frame}
+	\frametitle{Example solution \parencite{zulehnerEfficientMethodologyMapping2018}}
+	
+	
+	\begin{enumerate}
+	
+	\item Slicing the circuit into \textbf{incompatible} timesteps
+	
+	\item For every timestep:
+\begin{enumerate}
+		\item Getting all the hardware compliant permutations
+		\item Use \(A^*\) algorithm for finding the way to the compliant permutation from the starting point
+	\end{enumerate}
+
+	
+	\end{enumerate}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[height=3cm]{pic/a star.png}
+		\tiny
+		\caption{ \(A*\) search algorithm }
+	\end{figure}
+	
+\end{frame}	
+
+\section{Conclusion}
+
+
+\begin{frame}
+	\frametitle{Possible outcomes}
+	
+	
+	\begin{itemize}
+		
+		\item Reduce the qubit routing problem to a known NP hard problem 
+		\item Derive an approximation algorithm with a known ratio
+		\item Analyse the influence of the hardware graph characteristics to the hardness of the solution
+		\item And many more 
+	\end{itemize}
+	
+\end{frame}	
+
+\begin{frame}
+	\frametitle{Wrap up}
+	
+	
+	\begin{itemize}
+		
+		\item Qubit routing is a hardware problem, haunting the execution of the quantum circuits on the NISQ devices
+		\item The problem is believed to be NP hard
+		\item Biggest trend is to solve it heuristically, however the approximation algorithms are also possible
+	\end{itemize}
+	
+\end{frame}	
+
+\begin{frame}
+  \centering \Large
+	\emph{Thank you}
+
+\end{frame}	
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliography}
+	
+	\printbibliography
+
+\end{frame}
+
+
+\end{document}

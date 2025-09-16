@@ -1,0 +1,48 @@
+\chapter{Related works}
+
+As a good introduction to the problem, we present you a detailed review of an important paper by Cowtan \cite{cowtanQubitRoutingProblem2019}. Cowtan formalised the qubit routing problem, and suggested an heuristic solution to it. 
+
+\section{Cowtan's solution}
+
+Cowtan and the team have presented a way to abstract mathematically the qubits routing, and then use a basic heuristic to solve it. They start by stating that the current quantum architectures are quite distant from the traditional von Neumann architecture, since qubits usually need to be neighbouring to perform operations on them. This is done by inserting swap operations to transfer qubits to different places of the circuit. This problem is known to be infeasible, and there are some go-to solutions available, the authors state. In the tket (Cambridge quantum compiler), both the translation and the routing to the given set of hardware qubits are implemented. 
+
+\subsection{Problem statement}
+
+The authors then represent a quantum computer as a graph, where the nodes are qubits and edges are possible interactions of the qubits. The quantum circuit model by default is a fully connected graph; thus, they needed to produce a quantum circuit respecting the hardware constraints. As an example of a ring hardware connectivity graph, it is shown that it is beneficial to slice the circuit by the timesteps first. Then the authors suggest mapping the nodes to qubits in a smart way. Finally, for every timestep, you check if there is a two-qubit gate on non-connected qubits. In such a case, you insert a swap gate chain to get to the required neighbouring pair. 
+
+The authors state that the task is bounded by  $n^2$ swap operations, going from one combination to any other. A recent study has shown that it can be decreased to $\log n$ \cite{herbertDepthOverheadIncurred2020}. 
+But it is obvious that it is needed to map the circuit globally and this one was per one timestep. 
+
+Another mentioned problem type is the fact that swap gate, being more or less an elementary operation, can be problematic on some hardware architectures. In example, the superconducting ones only have one elementary building block, so an ansatz is required. Also, for IBM architectures sometimes  only one directional CNOT gates are available.
+
+\subsection{Algorithm overview}
+
+After that, the routing process is described by the authors. They start with an incomplete initial mapping of hardware qubits, and then go through all the timesteps. In a given timestep, if they approach yet not mapped qubit — they add it to a nearest neighbour of its two-qubit gate vis-\`{a}-vis. If after this operation all the constraints are satisfied, they proceed to the next slice, otherwise, they need to start building the chain of SWAP gates.
+
+
+They then present an overview of the algorithm, namely: 1) the timestep decoposition, 2) an initial placement determination, 3)the routing itself, and 4) a cleanup phase. 
+
+\subsection{Circuit slicing}
+
+The cutting of the circuit into timesteps is a greedy algorithm, which slices the circuit by the two-qubit gates. If a two-qubit gate requires the qubit to be present, which is already participating in the current timestep, then a new timestep is formed. Authors also present a density metric, which represents the fraction --- how many two-qubit gates out of the maximum possible one happen in the timestep. They then remark that they are okay with sparsity, but there is a possibility of constraining the sparsity by this density metric.
+
+\subsection{Initial mapping}
+
+The next phase is initial mapping: it is suggested to be constructed by a heuristic analysis, iterating through timesteps, an edge between two qubits only if they interact in this timestep, and for both of them, it is less than the third interaction in the whole circuit. As a result of this operation, authors claim that there can be either a ring or a line shape of the initial-mapping graph. The ring is broken then by removing a random connection. That way of initial mapping guarantees that most of the first two interaction gates (except that one which was chosen to break the ring) are happening without any swaps. After this, you select a subgraph of the hardware connectivity graph with the highest average degree and lowest diameter, and then map your mapping as a one long line, starting from the highest degree hardware qubit, and moving to the next highest degree qubit from there. If the initial mapping is impossible on the given architecture, you can split the mapping line into several line segments.
+
+\subsection{Routing algorithm}
+
+The routing algorithm also runs step by step. It is suggested to provide the initial mapping and the sliced circuit as an input to the algorithm. If there are two-qubit gate qubits in the timestep, which are yet to be mapped, they are just mapped to a nearest mapped gate neighbour. All the one-qubit gates and the executable two-qubit gates are immediately removed from the sliced circuit. Then the swap-distance vectors are constructed. Authors suggest starting from the set of all available swaps in the circuit; then, you take all swaps that maximally reduce the distance to the circuit being executable. They repeat the construction until the path is unique, or just select a random one in a cutoff fashion. Authors argue that the diameter of the graph should strictly decrease under this construction.
+
+Sometimes the algorithm gets stuck due to high symmetricity of the hardware connectivity graph:  then it is suggested to try to have two-swaps in the construction phase; or even a brute force full longest two-qubit path once can be applied.
+
+In practice, they do the slicing dynamically, so no pre-slicing of the circuit is needed. Also, at the end of the routing, a small clean-up pass happens either to get a hardware mapping or to remove excessive gates.  
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "thesis"
+%%% End:
