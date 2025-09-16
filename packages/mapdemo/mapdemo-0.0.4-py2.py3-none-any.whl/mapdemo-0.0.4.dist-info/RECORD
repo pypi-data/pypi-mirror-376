@@ -1,0 +1,10 @@
+mapdemo/__init__.py,sha256=h1LL18RnlGp_x-JGmrjvDPDLZCNwfL-_jJsEapGLRKM,150
+mapdemo/common.py,sha256=0_JT-GPkKcI1eRQqrkuBM7EaAewOitdP3hqoHWhzRUQ,378
+mapdemo/mapdemo.py,sha256=EWtNCGzm1W2kL1N-0LVlUENyC-AX5VygrG-N-QWaWgc,3810
+mapdemo/utils.py,sha256=qGrRxAezmGuHs-E9c3OlzeauX0tCj7JsYMoHE-jAixA,350
+mapdemo-0.0.4.dist-info/licenses/LICENSE,sha256=TExT87rRBRcGdy6BkPcCMMfNuhNmcpwcszL0H3wF20I,1072
+mapdemo-0.0.4.dist-info/METADATA,sha256=HrDHiCf7ER_aOcN8Y2iphrqnL9dqctzEOmaY_qfTh_c,1391
+mapdemo-0.0.4.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+mapdemo-0.0.4.dist-info/entry_points.txt,sha256=Wxf1NhMVKKNZHiLUgzOJ1F5ATA5ZuyHbJnnwR5Ng0bE,45
+mapdemo-0.0.4.dist-info/top_level.txt,sha256=e9R_LbpvzjIQA6yqzvbAeXzVehoOAwXfQKgchz7NR1s,8
+mapdemo-0.0.4.dist-info/RECORD,,
