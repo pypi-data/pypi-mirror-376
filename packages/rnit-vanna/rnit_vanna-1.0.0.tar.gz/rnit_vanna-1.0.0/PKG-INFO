@@ -1,0 +1,255 @@
+Metadata-Version: 2.4
+Name: rnit-vanna
+Version: 1.0.0
+Summary: Enhanced wrapper for Vanna SQL generation library with custom utilities
+Home-page: https://github.com/yourusername/rnit-vanna
+Author: RNIT
+Author-email: RNIT <your-email@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/rnit-vanna
+Project-URL: Documentation, https://github.com/yourusername/rnit-vanna/wiki
+Project-URL: Repository, https://github.com/yourusername/rnit-vanna
+Project-URL: Bug Tracker, https://github.com/yourusername/rnit-vanna/issues
+Keywords: sql,nlp,gpt,openai,database,query,natural-language,vanna,ai
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Database
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: vanna[chromadb,openai]>=0.5.0
+Requires-Dist: python-dotenv>=0.19.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=4.0.0; extra == "dev"
+Provides-Extra: postgres
+Requires-Dist: psycopg2-binary>=2.9.0; extra == "postgres"
+Provides-Extra: mysql
+Requires-Dist: pymysql>=1.0.0; extra == "mysql"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# RNIT Vanna - Enhanced SQL Generation
+
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+RNIT Vanna is an enhanced wrapper around the official [Vanna](https://vanna.ai) library that provides additional utilities while always using the latest Vanna version.
+
+## Key Features
+
+✨ **Always Up-to-Date**: Automatically uses the latest official Vanna release
+🔧 **Enhanced Utilities**: Additional tools for database inspection and training generation
+🚀 **Quick Start**: Pre-configured classes with sensible defaults
+📦 **100% Compatible**: Works exactly like Vanna, but with extras
+🎯 **Smart Defaults**: Optimized settings for SQL generation
+
+## Installation
+
+```bash
+pip install rnit-vanna
+```
+
+This automatically installs the latest Vanna with all required dependencies.
+
+## Quick Start
+
+### Option 1: Drop-in Replacement (Works exactly like Vanna)
+
+```python
+from rnit_vanna import OpenAI_Chat, ChromaDB_VectorStore
+
+class MyVanna(ChromaDB_VectorStore, OpenAI_Chat):
+    def __init__(self, config=None):
+        ChromaDB_VectorStore.__init__(self, config=config)
+        OpenAI_Chat.__init__(self, config=config)
+
+vn = MyVanna(config={'api_key': 'your-openai-key'})
+vn.connect_to_sqlite('my_database.sqlite')
+vn.train(ddl="CREATE TABLE users (id INT, name TEXT)")
+sql = vn.generate_sql("Show all users")
+```
+
+### Option 2: Use RNIT Enhanced Features
+
+```python
+from rnit_vanna import RNITVanna, VannaQuickStart
+
+# Quick setup with auto-training
+vn = VannaQuickStart.for_sqlite('my_database.sqlite', auto_train=True)
+
+# Or use RNITVanna with auto API key detection
+vn = RNITVanna()  # Reads OPENAI_API_KEY from environment
+vn.connect_to_sqlite('my_database.sqlite')
+
+# Batch training
+vn.batch_train({
+    'ddl': ["CREATE TABLE users ...", "CREATE TABLE orders ..."],
+    'queries': [
+        {"question": "Show all users", "sql": "SELECT * FROM users"},
+        {"question": "Count orders", "sql": "SELECT COUNT(*) FROM orders"}
+    ]
+})
+```
+
+### Option 3: Database Inspection and Auto-Training
+
+```python
+from rnit_vanna import DatabaseInspector, TrainingGenerator, RNITVanna
+
+# Inspect your database
+inspector = DatabaseInspector()
+db_info = inspector.inspect_sqlite('my_database.sqlite')
+print(inspector.generate_summary(db_info))
+
+# Generate training queries automatically
+generator = TrainingGenerator()
+for table_name, info in db_info['tables'].items():
+    queries = generator.generate_basic_queries(table_name, info['columns'])
+    # Now you have training queries for each table!
+
+# Train Vanna with generated queries
+vn = RNITVanna()
+vn.connect_to_sqlite('my_database.sqlite')
+for query in queries:
+    vn.train(question=query['question'], sql=query['sql'])
+```
+
+## Enhanced Features
+
+### 🎯 RNITVanna Class
+- Auto-detects OpenAI API key from environment
+- Optimized defaults (gpt-4o-mini, low temperature for consistent SQL)
+- Training history tracking
+- Batch training support
+- Test accuracy methods
+
+### 🚀 VannaQuickStart
+- `for_sqlite()` - Auto-setup and train from SQLite
+- `for_postgres()` - Quick PostgreSQL setup
+- `for_mysql()` - Quick MySQL setup
+- `create_sample_project()` - Generate complete project structure
+
+### 🔍 DatabaseInspector
+- Inspect database structure
+- Extract relationships and foreign keys
+- Generate human-readable summaries
+- Count rows and analyze tables
+
+### 🎓 TrainingGenerator
+- Auto-generate training queries from schema
+- Create JOIN queries from relationships
+- Generate aggregation queries for numeric columns
+- Save training sets to JSON
+
+### ⚡ QueryOptimizer
+- Validate SQL against database
+- Get execution plans
+- Suggest indexes for performance
+- Format SQL for readability
+
+## Complete Example
+
+```python
+from rnit_vanna import VannaQuickStart
+
+# Create a complete sample project
+VannaQuickStart.create_sample_project('my_sql_assistant', db_type='sqlite')
+
+# This creates:
+# my_sql_assistant/
+#   ├── .env.example       # Environment variables template
+#   ├── main.py           # Starter code
+#   ├── requirements.txt  # Dependencies
+#   └── README.md        # Documentation
+```
+
+## Why Use RNIT Vanna?
+
+| Feature | Official Vanna | RNIT Vanna |
+|---------|---------------|------------|
+| Latest Vanna version | ✅ | ✅ Automatic |
+| Basic SQL generation | ✅ | ✅ |
+| Auto API key detection | ❌ | ✅ |
+| Database inspection | ❌ | ✅ |
+| Training generation | ❌ | ✅ |
+| Batch training | ❌ | ✅ |
+| Quick start utilities | ❌ | ✅ |
+| Project scaffolding | ❌ | ✅ |
+
+## Environment Variables
+
+```bash
+# .env file
+OPENAI_API_KEY=your_openai_api_key_here
+RNIT_VANNA_VERBOSE=true  # Optional: Enable verbose logging
+```
+
+## Advanced Usage
+
+### Custom Configuration
+
+```python
+vn = RNITVanna(config={
+    'model': 'gpt-4',        # Use GPT-4 instead of default
+    'temperature': 0.5,      # Higher creativity
+    'max_tokens': 1000,      # Longer responses
+})
+```
+
+### Training from Files
+
+```python
+# Train from JSON file
+vn.train_from_queries_file('training_queries.json')
+
+# Train from folder of DDL files
+vn.train_from_ddl_folder('schema/')
+```
+
+### Testing Accuracy
+
+```python
+test_queries = [
+    {"question": "Show all users", "expected_sql": "SELECT * FROM users"},
+    {"question": "Count orders", "expected_sql": "SELECT COUNT(*) FROM orders"}
+]
+
+results = vn.test_accuracy(test_queries)
+print(f"Accuracy: {results['accuracy']:.2%}")
+```
+
+## Compatibility
+
+- Python 3.7+
+- Works with all databases supported by Vanna (SQLite, PostgreSQL, MySQL, Snowflake, etc.)
+- Compatible with all Vanna versions >= 0.5.0
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Support
+
+For issues, questions, or suggestions, please open an issue on GitHub.
+
+## Acknowledgments
+
+This project wraps the excellent [Vanna.AI](https://vanna.ai) library. All core SQL generation capabilities come from Vanna.
