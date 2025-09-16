@@ -1,0 +1,5 @@
+brainstate>=0.1.0
+brainunit
+
+[testing]
+pytest
