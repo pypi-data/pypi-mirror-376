@@ -1,0 +1,13 @@
+evaluatr/__init__.py,sha256=S7u1lbuWmM3A3ajykBialmPoJUK6Jg-WmNqM-9OZFdk,22
+evaluatr/_modidx.py,sha256=7Y9j2YaIpARmrnCCMB_roId9RMPFOa_Ux_xhOqUEyX0,8294
+evaluatr/chunkr.py,sha256=Vbek6W2sYLeNM_v_nNl3y-nhLxGh3mOHhu_ntD-hUCM,557
+evaluatr/downloaders.py,sha256=bF9uYFROeX6yH8hfHQHBI8_ryznRJnBNW9c113eUupM,3200
+evaluatr/enrichr.py,sha256=rdcwBWE44pTKeVuxeyuLAbUPpjectey9uxHgpgBQ1Cs,14127
+evaluatr/ocr.py,sha256=iFjMAOAVC9-t-Z2B6vYDC38l0nMlaLaUQs82YUkG2ik,9656
+evaluatr/readers.py,sha256=ptxRYuJ4CGO-LfJxxBxNykfCWkza44ieyM11eRXAjB0,5015
+evaluatr-0.1.0.dist-info/licenses/LICENSE,sha256=xV8xoN4VOL0uw9X8RSs2IMuD_Ss_a9yAbtGNeBWZwnw,11337
+evaluatr-0.1.0.dist-info/METADATA,sha256=sS9w8374wBXyTETHqgkKwG6Pi19BhZOchYNb2Cnw8dM,14442
+evaluatr-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+evaluatr-0.1.0.dist-info/entry_points.txt,sha256=Ijk4gIFLARwtXlyEZIhBZ5Crkv581NAF9CWQm0YzdsI,38
+evaluatr-0.1.0.dist-info/top_level.txt,sha256=zX_mlvZBB75GmXoZUNKz5yzPANuGkeqvaLlbYuTBTK4,9
+evaluatr-0.1.0.dist-info/RECORD,,
