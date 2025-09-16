@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "random-neural-net-models"
+version = "0.3.2"
+description = "Implementation of a random selection of artificial neural net based models."
+requires-python = ">=3.10"
+authors = [
+    {name = "eschmidt42", email="11818904+eschmidt42@users.noreply.github.com"}
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13"
+]
+keywords = ["neural-networks", "machine-learning", "deep-learning"]
+dependencies = [
+    "pandas",
+    "tabulate",
+    "pydantic",
+    "torch",
+    "torchvision",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
+    "rich",
+    "tqdm",
+    "einops",
+    "transformers",
+    "wandb",
+    "tensordict",
+    "diffusers[torch]",
+    "tifffile",
+    "regex"
+]
+
+[project.urls]
+Homepage = "https://github.com/eschmidt42/random-neural-net-models"
+# Documentation = "https://eschmidt42.github.io/bundestag/"
+Repository = "https://github.com/eschmidt42/random-neural-net-models"
+Issues = "https://github.com/eschmidt42/random-neural-net-models/issues"
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "jupyterlab",
+    "jupyter-contrib-nbextensions",
+    "ipywidgets",
+    "torchinfo",
+    "line_profiler"
+]
+tests = [
+    "pytest","pytest-cov", "coverage", "pip-audit"
+]
