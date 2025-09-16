@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+voxa-ai.bat
+voxa-ai.sh
+voxa_ai/__init__.py
+voxa_ai/agent.py
+voxa_ai/demo_voxa.py
+voxa_ai/offline_qa.json
+voxa_ai.egg-info/PKG-INFO
+voxa_ai.egg-info/SOURCES.txt
+voxa_ai.egg-info/dependency_links.txt
+voxa_ai.egg-info/entry_points.txt
+voxa_ai.egg-info/requires.txt
+voxa_ai.egg-info/top_level.txt
