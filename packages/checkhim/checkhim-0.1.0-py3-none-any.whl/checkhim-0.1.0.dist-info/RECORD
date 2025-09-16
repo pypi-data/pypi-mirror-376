@@ -1,0 +1,10 @@
+checkhim/__init__.py,sha256=o7zJ5WtTxeMfLbjPZSZW85nUqjUywVwm9mVpNYljr_o,81
+checkhim/__version__.py,sha256=QTYqXqSTHFRkM9TEgpDFcHvwLbvqHDqvqfQ9EiXkcAM,23
+checkhim/client.py,sha256=UbZtUEFU3AES8L0khbg8RDUqfuYNkwH3xVPrvvG10lI,2512
+checkhim/example.py,sha256=fQWYo6jRIzIJQO152f_vc9Mo62d5Yrfcwjd5mWfmp2E,366
+checkhim/exceptions.py,sha256=ou0tmVB5K9UTZwSj5LbzE-seN9fVZxICeo6KujTlaFc,590
+checkhim-0.1.0.dist-info/licenses/LICENSE,sha256=bhyFhEONXSzziqdD9vUM4aQ2j7VxVQMWkX0TL58PeuI,1065
+checkhim-0.1.0.dist-info/METADATA,sha256=RSRT7xRVIgmoy0bQN3Lbs887qY9a1RmduQJhf045csg,2698
+checkhim-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+checkhim-0.1.0.dist-info/top_level.txt,sha256=XL_Jeg1Mv6OkrEBTIAKzER5z7q__4XbLqQx4kkRr_AM,9
+checkhim-0.1.0.dist-info/RECORD,,
