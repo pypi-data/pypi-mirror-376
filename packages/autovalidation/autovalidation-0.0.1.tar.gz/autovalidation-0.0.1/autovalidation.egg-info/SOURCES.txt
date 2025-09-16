@@ -1,0 +1,5 @@
+pyproject.toml
+autovalidation.egg-info/PKG-INFO
+autovalidation.egg-info/SOURCES.txt
+autovalidation.egg-info/dependency_links.txt
+autovalidation.egg-info/top_level.txt
