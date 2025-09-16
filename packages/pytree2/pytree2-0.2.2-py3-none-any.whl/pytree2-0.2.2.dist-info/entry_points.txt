@@ -1,0 +1,3 @@
+[console_scripts]
+pytree = pytree.main:main
+pytree-loc = pytree.main:main_loc
