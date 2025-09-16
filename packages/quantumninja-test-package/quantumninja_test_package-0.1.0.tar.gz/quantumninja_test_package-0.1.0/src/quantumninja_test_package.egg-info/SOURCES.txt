@@ -1,0 +1,9 @@
+README.md
+setup.py
+src/quantumninja/__init__.py
+src/quantumninja/core.py
+src/quantumninja/utils.py
+src/quantumninja_test_package.egg-info/PKG-INFO
+src/quantumninja_test_package.egg-info/SOURCES.txt
+src/quantumninja_test_package.egg-info/dependency_links.txt
+src/quantumninja_test_package.egg-info/top_level.txt

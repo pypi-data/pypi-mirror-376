@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: quantumninja-test-package
+Version: 0.1.0
+Summary: A simple test package for PyPI upload
+Author: Test User
+Author-email: test@example.com
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+A minimal test package to practice PyPI uploads with twine.
