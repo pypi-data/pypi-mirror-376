@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: fl-manager-components-datasets-torch
+Version: 0.1.0
+Summary: fl-manager datasets torch integration
+Project-URL: Homepage, https://github.com/public-itg/py-fl-manager
+Author-email: Xin Lin <xlin@itg.es>
+License: Apache-2.0
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Requires-Dist: fl-manager-core==0.*
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: torch>=2.5.1
+Description-Content-Type: text/markdown
+
+# FL Manager Datasets Torch Integration

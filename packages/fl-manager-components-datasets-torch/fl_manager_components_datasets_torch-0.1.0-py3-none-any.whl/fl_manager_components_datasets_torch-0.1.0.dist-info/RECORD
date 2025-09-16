@@ -1,0 +1,10 @@
+fl_manager/components/datasets/torch/__init__.py,sha256=Yl7cjxpqrnBIy58NMW_FZ-jo27NEfOSmVgAbmu7UxcA,127
+fl_manager/components/datasets/torch/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fl_manager/components/datasets/torch/torch_dataframe_transforms_dataset.py,sha256=C6C8hxGEWua3MROsDz1kVXqBGEisqa-h948l0RJHdUE,1418
+fl_manager/components/datasets/torch/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fl_manager/components/datasets/torch/data/torch_transform_dataset.py,sha256=Cw_Z2z9vqK_G1Tpjfx1511gdNsTJJOY4rahB5R2sfHw,1663
+fl_manager/components/datasets/torch/data/torch_transforms_dataset.py,sha256=Cw_Z2z9vqK_G1Tpjfx1511gdNsTJJOY4rahB5R2sfHw,1663
+fl_manager_components_datasets_torch-0.1.0.dist-info/METADATA,sha256=UjXBUTX7HguXoi8DNgXsin6_gwF0EWHO23sVqeiALLY,1239
+fl_manager_components_datasets_torch-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fl_manager_components_datasets_torch-0.1.0.dist-info/licenses/LICENSE,sha256=zJgR2Nm1F9aFKat_-YEcMLgRKuZxSdpPQctQILmIKUs,11333
+fl_manager_components_datasets_torch-0.1.0.dist-info/RECORD,,
