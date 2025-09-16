@@ -1,0 +1,2 @@
+[console_scripts]
+valiqor-guardrails = valiqor_guardrails.cli:main
