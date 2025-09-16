@@ -1,0 +1,6 @@
+pyproject.toml
+minions_ai/__init__.py
+minions_ai.egg-info/PKG-INFO
+minions_ai.egg-info/SOURCES.txt
+minions_ai.egg-info/dependency_links.txt
+minions_ai.egg-info/top_level.txt
