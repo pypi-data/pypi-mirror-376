@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+excel/__init__.py
+excel/remove_excel_ruby.py
+office_ruby_remover.egg-info/PKG-INFO
+office_ruby_remover.egg-info/SOURCES.txt
+office_ruby_remover.egg-info/dependency_links.txt
+office_ruby_remover.egg-info/entry_points.txt
+office_ruby_remover.egg-info/requires.txt
+office_ruby_remover.egg-info/top_level.txt
+test/test_excel_processor.py
+test/test_word_processor.py
+word/__init__.py
+word/remove_word_ruby.py
