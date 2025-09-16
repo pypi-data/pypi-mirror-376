@@ -1,0 +1,53 @@
+name: Publish xodex-cli (npm + GitHub Packages)
+
+on:
+  release:
+    types: [published]
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: js-wrapper
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Descobrir versão da tag
+        id: getver
+        run: |
+          if [ -n "${{ github.event.release.tag_name }}" ]; then
+            TAG="${{ github.event.release.tag_name }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+          echo "raw_tag=$TAG" >> $GITHUB_OUTPUT
+          echo "version=${TAG#v}" >> $GITHUB_OUTPUT
+
+      - name: Setar versão do package.json a partir da tag
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          TARGET_VERSION="${{ steps.getver.outputs.version }}"
+          if [ "$CURRENT_VERSION" != "$TARGET_VERSION" ]; then
+            npm version $TARGET_VERSION --no-git-tag-version
+          else
+            echo "Version $TARGET_VERSION already set in package.json"
+          fi
+
+      - name: Node para npmjs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publicar no npmjs.org
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public
+
+      # GitHub Packages removido - publicando apenas no npmjs.org
+      # Para habilitar GitHub Packages, configure um token com permissões de packages
