@@ -1,0 +1,96 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "wheel",
+    "Cython>=3.0",
+    "numpy>=1.20",
+    "cysignals",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blaster-python"
+version = "0.1.1"
+description = "BLASter: A proof of concept of an LLL-like lattice reduction algorithm with parallelization and segmentation"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Leo Ducas, Ludo Pulles, Marc Stevens"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Cython",
+    "Programming Language :: C++",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Security :: Cryptography",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.20",
+    "cysignals",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "twine",
+    "pytest",
+]
+
+[project.scripts]
+blaster = "blaster.app:main"
+
+[project.urls]
+Homepage = "https://github.com/ludopulles/BLASter"
+Repository = "https://github.com/ludopulles/BLASter"
+Issues = "https://github.com/ludopulles/BLASter/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.pyx", "*.pxd", "*.cpp", "*.hpp"]
+
+# Note: cibuildwheel configuration moved to .github/workflows/release.yml
+# Eigen3 is now automatically downloaded by setup.py - no system packages needed
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["blaster"]
+known_third_party = ["numpy", "matplotlib", "blaster_core"]
+combine_as_imports = true
+force_sort_within_sections = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "UP",   # pyupgrade
+]
+ignore = [
+    "E203", # whitespace before ':'
+    "E501", # line too long (handled by formatter)
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
