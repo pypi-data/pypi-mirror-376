@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: tsapix
+Version: 0.0.1
+Summary: Simple Quant
+Author-email: TS <tmy0712@qq.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/mengyuan007/tsapix
+Project-URL: Issues, https://github.com/mengyuan007/tsapix/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# tsapix
