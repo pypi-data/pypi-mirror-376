@@ -1,0 +1,13 @@
+unravel_client/__init__.py,sha256=FfxJJfZ3Kk1ZCAjfADZDwwiYUM0b8XfbgaIRjkfzySw,544
+unravel_client/constants.py,sha256=gaEEG8jYZje2jtRC6h40WQ-beoOGcpBzxuj7KKu8fCM,66
+unravel_client/factor/normalized_series.py,sha256=HoRtr4j1KlR45G852qXBKH6PyPE5JVaetQr-T3YLIQ0,1686
+unravel_client/portfolio/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unravel_client/portfolio/factors.py,sha256=GZkW-EHN2FKhJ47waQJpYjyhO-3EAdN10__HmxhdYyg,1187
+unravel_client/portfolio/historical_weights.py,sha256=xupp5xD0-ncQIvjXnRvXH3TbAqWb2Yq9lXf_byDiOJw,1396
+unravel_client/portfolio/live_weights.py,sha256=_6vXn-b7y9oC-ArLbrZ4yJ21JQqcXHbL8iC0EbhHCts,1040
+unravel_client/portfolio/returns.py,sha256=bbREnIiKGqvzIia-REjNS5ni4Sjcvat-rK6Ekb6K6gU,1629
+unravel_client/portfolio/tickers.py,sha256=R6M4lVuh1M-vPCHL3KpJWPlAT-J6inhIW22nMYogoTo,1068
+unravel_client-1.0.3.dist-info/METADATA,sha256=wowa9LFvlAl-VjdAbLdJK3lo2_j4UVq4HP5gleiq2X0,6857
+unravel_client-1.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+unravel_client-1.0.3.dist-info/licenses/LICENSE,sha256=4dsS552M76qgrO3Goe5Z_GPldSPwurR77OnTiHbAIXA,1064
+unravel_client-1.0.3.dist-info/RECORD,,
