@@ -1,0 +1,2 @@
+[console_scripts]
+ss2p = sl_suite2p.cli:ss2p
