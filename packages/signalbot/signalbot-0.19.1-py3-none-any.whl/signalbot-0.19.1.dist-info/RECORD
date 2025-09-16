@@ -1,0 +1,14 @@
+signalbot/__init__.py,sha256=XY0j5bF2JDyospRP51qOSfbt2Wy_nQh-Ps2wmVkvf8I,566
+signalbot/api.py,sha256=bgXNAaGeF6sa1V3HsND5lcpvuJTSdG5xsipNYSjXZmM,12984
+signalbot/bot.py,sha256=YZWMGRSUXYUhyxJMYv6ndGq4LZ8iitrE6SAQsVyDFm0,21196
+signalbot/command.py,sha256=7wN93lPdZHzdlqazWEee1CqlSI-v5Yhbaj_si_OUr54,2208
+signalbot/context.py,sha256=7ayORQtKE6Ax3wqoVIgL8a6ULGOkLTdGi6JGKCVAjUM,3550
+signalbot/link_previews.py,sha256=HtOvgJlmqzHBkK8vQkSPI6FW5TGi7KcpX66cQamBcH8,263
+signalbot/message.py,sha256=TWaDISY2vGGFcTLVY0X6J5zm1fRJznm3z6I_HYRLkPM,8021
+signalbot/storage.py,sha256=_Cn0S7Rx3Ux2Sn0kw0dd5TTYPM_798OqRDIcRl5bvlI,3420
+signalbot/utils/__init__.py,sha256=saV9SHVBTIXJg1VmZud2okmsiZTj3kD1KjgzAOlg_M8,302
+signalbot/utils/chat_testing.py,sha256=yL7Q1V1To5hlQo7OF8ymquCCFa8HCjwspejsyzFWe7w,4483
+signalbot-0.19.1.dist-info/LICENSE,sha256=xg47x1ax9116WPsTuygdr1xBVNvjotLot6LUQDNVRc0,1051
+signalbot-0.19.1.dist-info/METADATA,sha256=el80cVYBZHKczSLyYcrBh7nCxGwWZuVxHz9gqcvKOXU,10257
+signalbot-0.19.1.dist-info/WHEEL,sha256=Nq82e9rUAnEjt98J6MlVmMCZb-t9cYE2Ir1kpBmnWfs,88
+signalbot-0.19.1.dist-info/RECORD,,
