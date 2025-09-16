@@ -1,0 +1,10 @@
+joblib
+numpy
+scikit-learn
+xgboost
+
+[plot]
+matplotlib
+
+[skglm]
+skglm
