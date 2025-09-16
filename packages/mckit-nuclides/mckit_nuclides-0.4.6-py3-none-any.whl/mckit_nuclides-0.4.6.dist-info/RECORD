@@ -1,0 +1,11 @@
+mckit_nuclides/__init__.py,sha256=Zcc1UR91wU8CK8YP03j5QzBX3KRezFocQkhal0Ngr7Y,2005
+mckit_nuclides/abundance.py,sha256=jesZ49K_hvVGMp0BvEt5guLl57yX3jTAkVaQNjDKetg,4222
+mckit_nuclides/constants.py,sha256=R2ReWQ0DvxiE2qe8frYCDW_hZst0eMD_xd5Id_1XoaM,654
+mckit_nuclides/data/elements.parquet,sha256=e0F9Ul7GzyVTIGQp6o8vOuuH1ZmvLKqk30SjfiTFYrk,11939
+mckit_nuclides/data/nuclides.parquet,sha256=VQv9JJoeBSJ-eGoRG_ktL8YMj_G3eXZTZWaG2o904Js,33466
+mckit_nuclides/elements.py,sha256=KRKNraC2JIy8AaFlPgLhoKJDDzRWJGuwmYvjxqTSod4,6560
+mckit_nuclides/nuclides.py,sha256=Rv08Gls8F42C_2Of8musx7XD-BJUYLalt1KN4B5MB_o,1754
+mckit_nuclides/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mckit_nuclides-0.4.6.dist-info/WHEEL,sha256=Pi5uDq5Fdo_Rr-HD5h9BiPn9Et29Y9Sh8NhcJNnFU1c,79
+mckit_nuclides-0.4.6.dist-info/METADATA,sha256=s2HCZN5KQ7lPMSLEo2QgzD-oVN349MaDm1U6-3N2KLg,5512
+mckit_nuclides-0.4.6.dist-info/RECORD,,
