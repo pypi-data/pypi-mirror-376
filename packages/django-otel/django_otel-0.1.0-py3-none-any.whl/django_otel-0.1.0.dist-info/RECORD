@@ -1,0 +1,9 @@
+django_otel/__init__.py,sha256=qvG6EuePlMb3Ye9zh6XQtKRdT-PrmJ2VLQcVdtBhV0U,195
+django_otel/apps.py,sha256=aWr8pqNBejDDzlzjPkjhrIyq-UdNe_8oRE1DMrpIVAk,394
+django_otel/config.py,sha256=-fDNfIF9VjqPL9f9gBIKEsovC821pzI2vch4ffxfd0Q,1483
+django_otel/logger.py,sha256=PQDZWGemTpbA9tsNABbjyvsUL_nH_t6xJw11FsaXCfY,4590
+django_otel/otel.py,sha256=MNg_y6dKKdX0Bh9xUWrwPyB84bIxtkMRskamjVL9lo0,5395
+django_otel-0.1.0.dist-info/METADATA,sha256=Hupw3uJAPrWN92qPo4_POjxQIM5GRkA338dxicURCNI,1489
+django_otel-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_otel-0.1.0.dist-info/top_level.txt,sha256=WBCGQwNoJL-8DdwgEVgQ8Nz99IjQZby8ZOxLOG2zRXU,12
+django_otel-0.1.0.dist-info/RECORD,,
