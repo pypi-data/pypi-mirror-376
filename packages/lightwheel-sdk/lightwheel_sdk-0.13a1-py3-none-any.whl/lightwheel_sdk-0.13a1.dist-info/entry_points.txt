@@ -1,0 +1,2 @@
+[console_scripts]
+lightwheel = lightwheel_sdk.cli:main
