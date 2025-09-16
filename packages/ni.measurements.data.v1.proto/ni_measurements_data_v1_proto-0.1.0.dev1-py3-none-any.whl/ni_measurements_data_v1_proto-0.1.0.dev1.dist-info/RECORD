@@ -1,0 +1,12 @@
+ni/measurements/data/v1/data_store_pb2/__init__.py,sha256=Zu9Gkms0JDG_SIaovEUKefcj3Q3-bSaKB4SY2q-tn5I,6150
+ni/measurements/data/v1/data_store_pb2/__init__.pyi,sha256=T6mxU5Naem24xHYOnhQIucbNz5lbduB6cBrAkeOflkg,22585
+ni/measurements/data/v1/data_store_pb2/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ni/measurements/data/v1/data_store_service_pb2/__init__.py,sha256=xaVI9KsWW-ouMBuxTNylHwiAWxseVZNMBrxw5hFg1kw,10318
+ni/measurements/data/v1/data_store_service_pb2/__init__.pyi,sha256=HGEK86pAiTypMnz4Zvtrf3i_i0t906IF86b7P2zh9M0,29569
+ni/measurements/data/v1/data_store_service_pb2/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ni/measurements/data/v1/data_store_service_pb2_grpc/__init__.py,sha256=fOwlmUpvgi1r_TmbLuMkZrwD-uREqRsizYxH3ud8FLM,24267
+ni/measurements/data/v1/data_store_service_pb2_grpc/__init__.pyi,sha256=WLHMDrSuSdba9mVUsiDe-TB9UrORBSFA6z-KdZrF82Q,16371
+ni/measurements/data/v1/data_store_service_pb2_grpc/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ni_measurements_data_v1_proto-0.1.0.dev1.dist-info/METADATA,sha256=Kh2Gwwrg7CsW8jWj_Ui90ZiXPVZFD6zvyyQhTFZKCYY,2177
+ni_measurements_data_v1_proto-0.1.0.dev1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+ni_measurements_data_v1_proto-0.1.0.dev1.dist-info/RECORD,,
