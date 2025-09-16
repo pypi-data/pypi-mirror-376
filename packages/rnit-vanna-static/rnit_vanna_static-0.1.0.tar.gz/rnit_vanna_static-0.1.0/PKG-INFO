@@ -1,0 +1,97 @@
+Metadata-Version: 2.4
+Name: rnit-vanna-static
+Version: 0.1.0
+Summary: Static snapshot of Vanna SQL generation library (for testing/offline use)
+Home-page: https://github.com/rnit/rnit-vanna-static
+Author: RNIT
+Author-email: aryanrathore040@gmail.com
+Keywords: sql nlp gpt openai database query natural-language
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Database
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: chromadb>=0.4.0
+Requires-Dist: flask>=2.0.0
+Requires-Dist: flask-cors>=3.0.0
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: sqlalchemy>=1.4.0
+Requires-Dist: plotly>=5.0.0
+Requires-Dist: kaleido>=0.2.0
+Requires-Dist: python-dotenv>=0.19.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# RNIT Vanna Static
+
+A static snapshot of the Vanna SQL generation library. This package contains a frozen copy of Vanna code for specific use cases.
+
+## ⚠️ Important Note
+
+**For most users, we recommend using the main `rnit-vanna` package instead:**
+```bash
+pip install rnit-vanna  # Recommended - always uses latest Vanna
+```
+
+This static version is only for:
+- Testing with a specific Vanna version
+- Offline environments with dependency conflicts
+- Educational purposes to understand Vanna internals
+
+## Installation
+
+```bash
+pip install rnit-vanna-static
+```
+
+## Why Two Packages?
+
+- **`rnit-vanna`** (Recommended): A wrapper that always uses the latest official Vanna
+- **`rnit-vanna-static`** (This package): A frozen snapshot of Vanna code
+
+## Usage
+
+This package works exactly like the original Vanna:
+
+```python
+from rnit_vanna.openai import OpenAI_Chat
+from rnit_vanna.chromadb import ChromaDB_VectorStore
+
+class MyVanna(ChromaDB_VectorStore, OpenAI_Chat):
+    def __init__(self, config=None):
+        ChromaDB_VectorStore.__init__(self, config=config)
+        OpenAI_Chat.__init__(self, config=config)
+
+vn = MyVanna(config={'api_key': 'your-openai-key', 'model': 'gpt-4o-mini'})
+```
+
+## Limitations
+
+- **No automatic updates** - Frozen at a specific Vanna version
+- **May become outdated** - Missing new features and bug fixes
+- **Larger package size** - Contains copied code
+
+## License
+
+MIT - Based on the original Vanna library
