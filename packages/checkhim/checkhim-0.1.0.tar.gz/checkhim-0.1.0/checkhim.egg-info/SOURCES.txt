@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+checkhim/__init__.py
+checkhim/__version__.py
+checkhim/client.py
+checkhim/example.py
+checkhim/exceptions.py
+checkhim.egg-info/PKG-INFO
+checkhim.egg-info/SOURCES.txt
+checkhim.egg-info/dependency_links.txt
+checkhim.egg-info/requires.txt
+checkhim.egg-info/top_level.txt
+tests/test_client.py
