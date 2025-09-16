@@ -1,0 +1,11 @@
+
+[ ] Automate release process with tag & pypi
+https://packaging.python.org/en/latest/tutorials/packaging-projects/
+    => changelog commit
+    => tag
+    => do the pypi process
+    => go
+[ ] CITATION.cff?
+[ ] paper.md & .bib
+[ ] Zenodo archive
+[ ] JOSS submission website check instructions
