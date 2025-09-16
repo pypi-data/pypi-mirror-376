@@ -1,0 +1,2 @@
+[compas_pb.plugins]
+serializers = compas_timber_pb.data
