@@ -1,0 +1,7 @@
+fl_manager/components/readers/huggingface/__init__.py,sha256=p7IwjMA1KjU9-4Ka-ArylISOr6g7grg_1dNskaBwYhI,155
+fl_manager/components/readers/huggingface/huggingface_dataset_reader.py,sha256=T6aLgeRF4pfGbIg3uTsbG8BBoLEQ1XA2l3DnN9R8cdE,3330
+fl_manager/components/readers/huggingface/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fl_manager_components_readers_huggingface-0.1.0.dist-info/METADATA,sha256=03wvYbGzHer4DQz9x-tDd_n6d_2ryL1ZSK-WIC9NpDM,1258
+fl_manager_components_readers_huggingface-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fl_manager_components_readers_huggingface-0.1.0.dist-info/licenses/LICENSE,sha256=zJgR2Nm1F9aFKat_-YEcMLgRKuZxSdpPQctQILmIKUs,11333
+fl_manager_components_readers_huggingface-0.1.0.dist-info/RECORD,,
