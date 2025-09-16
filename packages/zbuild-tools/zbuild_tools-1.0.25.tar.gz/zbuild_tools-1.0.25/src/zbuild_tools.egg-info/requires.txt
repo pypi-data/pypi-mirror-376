@@ -1,0 +1,16 @@
+conan-zbuild<2.0.0,>=1.66.3
+dockerpty==0.4.1
+docker==7.1.0
+intervaltree==3.1.0
+pyelftools==0.32
+ruamel.yaml==0.18.15
+psutil==7.0.0
+pyserial==3.5
+fbtftp==0.5
+dohq-artifactory==1.0.1
+aiohttp==3.10.10
+easy_enum==0.3.0
+paramiko==3.5.0
+pytest==8.4.2
+tblib==3.1.0
+shenaniganfs==0.2
