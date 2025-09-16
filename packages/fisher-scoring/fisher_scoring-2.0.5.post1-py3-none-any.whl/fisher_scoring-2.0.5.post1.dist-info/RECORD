@@ -1,0 +1,12 @@
+fisher_scoring/__init__.py,sha256=UEJPuwDlypmCyTQerGlp48C1IPfNDgm21e7G3RQRpAg,1687
+fisher_scoring/fisher_scoring_focal.py,sha256=CW5tggTqqq0TkwUjitDOzqyNjd16vfJNMWIb2CIpjT8,14197
+fisher_scoring/fisher_scoring_logistic.py,sha256=n0FiOE7EZuLuy_rbMrPW7YuRc488B19pvDvEPBS9IVo,13900
+fisher_scoring/fisher_scoring_multinomial.py,sha256=uEBgGVWDD-GTteft-kQ28kFi1qic86pOdswYsbkIE70,14980
+fisher_scoring/fisher_scoring_poisson.py,sha256=c1X9eh5xLCEXy9tmiX3fDP_CnpYuXy8rb1rIMu-yN_0,21311
+fisher_scoring/fisher_scoring_robust.py,sha256=qmg4PtcTAS5LC0QdHExpRsQ3becdniVL895C5LND1jg,17372
+fisher_scoring/utils.py,sha256=iTQhCSpSikI6qmaQgjxcNO9YUWNNoW5Lm7wU2rykaq8,4134
+fisher_scoring-2.0.5.post1.dist-info/licenses/LICENSE.md,sha256=nKeVZQj8zU-Vpul-SXQ8lDX8rUm8WZwsrRNy78104ac,1073
+fisher_scoring-2.0.5.post1.dist-info/METADATA,sha256=NJE5lQ2hywT4l-PEb9AkLasduYLR9gq9lPlyMgP7sCs,15623
+fisher_scoring-2.0.5.post1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fisher_scoring-2.0.5.post1.dist-info/top_level.txt,sha256=iCRSR8JleuegFsg9Gj2WqIWlQAJT-kq1z5_ipoS1V0w,15
+fisher_scoring-2.0.5.post1.dist-info/RECORD,,
