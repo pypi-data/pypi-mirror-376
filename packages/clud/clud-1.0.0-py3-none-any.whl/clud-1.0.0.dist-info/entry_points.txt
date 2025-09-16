@@ -1,0 +1,2 @@
+[console_scripts]
+clud = clud.cli:main
