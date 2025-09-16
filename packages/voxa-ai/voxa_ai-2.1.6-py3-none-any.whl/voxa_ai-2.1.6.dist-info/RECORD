@@ -1,0 +1,11 @@
+voxa_ai/__init__.py,sha256=jG1pic-bPnav-mMWHGZQHhokjF7j4gI_og7O062fcVE,48
+voxa_ai/agent.py,sha256=KAK2SHCjX_1KOT59X7ggTwWwS-2pi3OmXGH40NbVlBI,6178
+voxa_ai/demo_voxa.py,sha256=bmpp8Zz-ITskoPC-0WdMxLqcUJZNqzqIcD36Ofu4lDs,2434
+voxa_ai/offline_qa.json,sha256=LpuXx92ahnOcY4yTNMQ0LJiPmVd7TzLQOnchdsLGAsI,339232
+voxa_ai-2.1.6.data/scripts/voxa-ai.bat,sha256=sjWc8knE4Yx70wFZXDWhUiTdI60sMXWcOFQwBrxRK58,41
+voxa_ai-2.1.6.data/scripts/voxa-ai.sh,sha256=ndmSG7PEI8uNJ00mBUCI0f9B6QnGxXUxsBwQDGvOr6w,44
+voxa_ai-2.1.6.dist-info/METADATA,sha256=12KGdkzADCEnkfi_EkWh1MyOk4omrPUqHsyCB4Lu0mo,1072
+voxa_ai-2.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+voxa_ai-2.1.6.dist-info/entry_points.txt,sha256=H2zbVy1b77v8mCM3rQW80B6oAjfOBu0eQV2k4sA1CDw,51
+voxa_ai-2.1.6.dist-info/top_level.txt,sha256=UYlhP2uM8LGp8BQkRsndKjkulubgbcG3Q-h17VtSeO4,8
+voxa_ai-2.1.6.dist-info/RECORD,,

@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: voxa-ai
+Version: 2.1.6
+Summary: Voxa AI - Hybrid Business Assistant
+Home-page: https://github.com/Meharzain2010/Voxa-ai-Agent
+Author: Zia Ur Rehman
+Author-email: ziaulrehman6349@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: openai
+Requires-Dist: rapidfuzz
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: rich
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Voxa AI 🤖✨
+
+Voxa AI is a hybrid **business assistant** that works in two modes:
+- **GPT Mode** → Provide your OpenAI API key for full power.
+- **Offline Mode** → Uses a local Q&A database when no key is provided.
+
+## 🚀 Installation
+```bash
+pip install voxa-ai

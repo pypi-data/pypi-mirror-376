@@ -1,0 +1,2 @@
+[console_scripts]
+voxa-ai = voxa_ai.demo_voxa:main
