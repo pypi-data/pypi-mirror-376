@@ -1,0 +1,11 @@
+GridSearchReductor/GridSearchReductor.py,sha256=VUnrAUUZ9Wmr7-DksrG6Kl63jSYWly0wnv1cUT6XvHU,11410
+GridSearchReductor/__init__.py,sha256=Q17DBJQc-sUzZlrIm1vMwvSfwY0uY_BhK63Bd3cvsek,150
+gridsearchreductor-1.0.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=MnpFJH34BCP1qM05yoM1CqnkK9E36lOfs-Xqgcb6ENE,1374
+tests/test_grid_search_reductor.py,sha256=r5l4Qsoe-CzoQXOoleRyfj-MKkmmW3wAuMXwIxkVEp8,11336
+tests/test_integration.py,sha256=qpf4KiPJ31DvdFkRyN6YGTdQGEHF42QyNlpeQFduiG4,8499
+gridsearchreductor-1.0.0.dist-info/METADATA,sha256=9vvawEmhuCge_dHNt1tNMH58eLcimCRjY_ajqeW453s,7399
+gridsearchreductor-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gridsearchreductor-1.0.0.dist-info/top_level.txt,sha256=_v9UfqG03N3oTS9irsAAuQkoGoIXGT1Si17IHL3ugHo,25
+gridsearchreductor-1.0.0.dist-info/RECORD,,
