@@ -1,0 +1,4 @@
+sourmash<5,>=4.9.4
+numpy
+termplotlib
+seaborn
