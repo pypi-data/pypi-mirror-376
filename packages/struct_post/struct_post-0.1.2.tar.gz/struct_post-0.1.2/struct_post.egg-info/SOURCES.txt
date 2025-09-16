@@ -1,0 +1,9 @@
+LICENSE
+README.md
+postanalysis.py
+pyproject.toml
+struct_post.egg-info/PKG-INFO
+struct_post.egg-info/SOURCES.txt
+struct_post.egg-info/dependency_links.txt
+struct_post.egg-info/requires.txt
+struct_post.egg-info/top_level.txt
