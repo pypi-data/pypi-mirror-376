@@ -1,0 +1,12 @@
+pydolce/__init__.py,sha256=BgTdjnoo9sLLI1YiZfkLUw2IEJPKxolZDmlXyywssto,226
+pydolce/check.py,sha256=Q6rKD5-jBTCSEuEzg9zzroQGOlGU-nshsm44B3f5tMI,3801
+pydolce/client.py,sha256=anhXlltBQMIxkYHYfotIdiuFjl3EuprdJ-CntdnVXlE,8658
+pydolce/config.py,sha256=rf0W8ygpv4ZVAoxIbtIhCuG9mLhjbCujuNoG9Ymad-E,1918
+pydolce/main.py,sha256=8hyr31xpBaeLPvMiQhTsV_a5JAJwwqaAhmwc_vbcpJ0,1208
+pydolce/parser.py,sha256=P7NBf57HlENRJG8kdz4GJBKpMTTn6UsQnDhnkrIktt4,1753
+pydolce-0.1.0.dist-info/licenses/LICENSE,sha256=V97oBBJkLE2ekQinzVgzUYVeQW5e2nfIqIR4m3DSOnY,1074
+pydolce-0.1.0.dist-info/METADATA,sha256=brqAT1K8Quh-ZnftICuJjVRGu3Nq6o96CUg4FTlSslM,3318
+pydolce-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pydolce-0.1.0.dist-info/entry_points.txt,sha256=AvDSd9PIkpfubQ_aE6MKa40ZLSXEphkbXf_UPtHVqNU,44
+pydolce-0.1.0.dist-info/top_level.txt,sha256=xl7Pvth1yZ5JRf9wpt2jW-xC3zWC9qwSEJIYdNcTTXY,8
+pydolce-0.1.0.dist-info/RECORD,,
