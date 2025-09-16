@@ -1,0 +1,3 @@
+[console_scripts]
+cudalith = monolithium.__init__:_cudalith
+rustlith = monolithium.__init__:_rustlith
