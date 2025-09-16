@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+fileconsole/__init__.py
+fileconsole/console.py
+fileconsole.egg-info/PKG-INFO
+fileconsole.egg-info/SOURCES.txt
+fileconsole.egg-info/dependency_links.txt
+fileconsole.egg-info/top_level.txt
