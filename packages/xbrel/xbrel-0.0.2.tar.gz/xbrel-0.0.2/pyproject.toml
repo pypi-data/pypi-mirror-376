@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xbrel"  # must be unique on PyPI
+version = "0.0.2"
+description = "xbrl for SEC reader with code fixes"
+authors = [
+    { name="Zappos", email="devzappos@gmail.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com"
