@@ -1,0 +1,7 @@
+fl_manager/components/formatters/pillow/__init__.py,sha256=4ZR3BQO_f7YQP5PRrXcEHATvabWEmnQhZkovigT2aCc,110
+fl_manager/components/formatters/pillow/image_path_to_bytes_formatter.py,sha256=MJL96LUymJ-2gdV927xaGcknb-rB6aSQLjTxtB2sGx0,872
+fl_manager/components/formatters/pillow/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fl_manager_components_formatters_pillow-0.1.0.dist-info/METADATA,sha256=MGeVwthZdq9zc1G9hTa41GT88R3P8HNjiAca8FDPQwk,1250
+fl_manager_components_formatters_pillow-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fl_manager_components_formatters_pillow-0.1.0.dist-info/licenses/LICENSE,sha256=zJgR2Nm1F9aFKat_-YEcMLgRKuZxSdpPQctQILmIKUs,11333
+fl_manager_components_formatters_pillow-0.1.0.dist-info/RECORD,,
