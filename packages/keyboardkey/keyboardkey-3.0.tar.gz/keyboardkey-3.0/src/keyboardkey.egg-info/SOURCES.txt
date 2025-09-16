@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/keyboardkey/__init__.py
+src/keyboardkey/keys.py
+src/keyboardkey.egg-info/PKG-INFO
+src/keyboardkey.egg-info/SOURCES.txt
+src/keyboardkey.egg-info/dependency_links.txt
+src/keyboardkey.egg-info/top_level.txt
