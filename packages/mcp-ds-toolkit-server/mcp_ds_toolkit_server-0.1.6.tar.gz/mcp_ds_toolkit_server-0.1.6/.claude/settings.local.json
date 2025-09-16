@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__serena__replace_regex",
+      "Read(//Users/yasserelhaddar/miniconda3/**)",
+      "Bash(sed:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
