@@ -1,0 +1,182 @@
+# RNIT Vanna - Enhanced SQL Generation (v2.0)
+
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+RNIT Vanna is an enhanced wrapper around the official [Vanna](https://vanna.ai) library with custom utilities and **smart dependency management**.
+
+## 🚀 New in v2.0: Choose Your Dependencies!
+
+### Minimal Installation (50 packages only!)
+```bash
+pip install rnit-vanna
+```
+✅ Core Vanna functionality
+✅ Basic SQL generation
+✅ All RNIT utilities
+❌ No heavy ML dependencies unless you need them
+
+### Install What You Need
+
+| Use Case | Installation | Packages Added |
+|----------|--------------|----------------|
+| **OpenAI GPT** | `pip install rnit-vanna[openai]` | +60 packages |
+| **Anthropic Claude** | `pip install rnit-vanna[anthropic]` | +40 packages |
+| **Local LLMs** | `pip install rnit-vanna[local]` | +30 packages |
+| **Just ChromaDB** | `pip install rnit-vanna[chromadb]` | +50 packages |
+| **PostgreSQL** | `pip install rnit-vanna[postgres]` | +5 packages |
+| **MySQL** | `pip install rnit-vanna[mysql]` | +3 packages |
+| **Everything** | `pip install rnit-vanna[all]` | +110 packages |
+
+## 💡 Why This Matters
+
+**Before (v1.0):** Everyone downloads 110+ packages even if they only need basic features
+**Now (v2.0):** Download only what you need!
+
+## 📦 Quick Start
+
+### For OpenAI Users
+```bash
+pip install rnit-vanna[openai]
+```
+
+```python
+from rnit_vanna import RNITVanna
+
+vn = RNITVanna()  # Auto-detects OPENAI_API_KEY from environment
+vn.connect_to_sqlite('my_database.sqlite')
+sql = vn.generate_sql("Show all users")
+```
+
+### For Anthropic Users
+```bash
+pip install rnit-vanna[anthropic]
+```
+
+```python
+from rnit_vanna import RNITVanna
+
+vn = RNITVanna(config={'api_key': 'your-anthropic-key'})
+```
+
+### For Local LLM Users (No API Key!)
+```bash
+pip install rnit-vanna[local]
+```
+
+```python
+from rnit_vanna import RNITVanna
+
+vn = RNITVanna(config={'model': 'llama2'})
+```
+
+## 🎯 Enhanced Features
+
+### RNITVanna Class
+- Auto-detects API keys from environment
+- Optimized defaults for SQL generation
+- Batch training support
+- Training history tracking
+
+### VannaQuickStart
+```python
+from rnit_vanna import VannaQuickStart
+
+# Auto-setup and train from SQLite
+vn = VannaQuickStart.for_sqlite('database.sqlite', auto_train=True)
+
+# Create a sample project
+VannaQuickStart.create_sample_project('my_sql_assistant')
+```
+
+### DatabaseInspector
+```python
+from rnit_vanna import DatabaseInspector
+
+inspector = DatabaseInspector()
+db_info = inspector.inspect_sqlite('database.sqlite')
+print(inspector.generate_summary(db_info))
+```
+
+### TrainingGenerator
+```python
+from rnit_vanna import TrainingGenerator
+
+generator = TrainingGenerator()
+queries = generator.generate_basic_queries(table_name, columns)
+```
+
+## 🔄 Upgrading from v1.0
+
+If you're upgrading from v1.0:
+
+```bash
+# Uninstall old version
+pip uninstall rnit-vanna
+
+# Install new version with the features you need
+pip install rnit-vanna[openai]  # or [anthropic], [local], etc.
+```
+
+## 📊 Dependency Comparison
+
+| Installation | v1.0 | v2.0 (minimal) | v2.0 [openai] | v2.0 [all] |
+|-------------|------|----------------|---------------|------------|
+| Packages | 110+ | 50 | 110 | 110+ |
+| Size | ~200MB | ~50MB | ~150MB | ~200MB |
+| ChromaDB | ✅ Always | ❌ Optional | ✅ Included | ✅ Included |
+| OpenAI | ✅ Always | ❌ Optional | ✅ Included | ✅ Included |
+| Anthropic | ❌ Never | ❌ Optional | ❌ Not included | ✅ Included |
+
+## 🛠️ Development
+
+```bash
+# Clone the repo
+git clone https://github.com/rnit/rnit-vanna
+cd rnit-vanna
+
+# Install in development mode with dev tools
+pip install -e .[dev]
+
+# Run tests
+pytest
+```
+
+## 📝 Examples
+
+### Basic Usage (Works with minimal install!)
+```python
+from rnit_vanna import DatabaseInspector, TrainingGenerator
+
+# These utilities work even without OpenAI/ChromaDB!
+inspector = DatabaseInspector()
+db_info = inspector.inspect_sqlite('my_db.sqlite')
+
+generator = TrainingGenerator()
+queries = generator.generate_basic_queries('users', db_info['tables']['users']['columns'])
+```
+
+### Full Featured (Requires [openai] or [all])
+```python
+from rnit_vanna import RNITVanna, VannaQuickStart
+
+vn = VannaQuickStart.for_sqlite('database.sqlite', auto_train=True)
+sql = vn.generate_sql("Complex question about your data")
+df = vn.run_sql(sql)
+```
+
+## 🤝 Contributing
+
+Contributions welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+MIT License - see LICENSE file
+
+## 🙏 Acknowledgments
+
+Built on top of the excellent [Vanna.AI](https://vanna.ai) library.
+
+---
+
+**Note:** This is a wrapper that enhances Vanna. For core Vanna documentation, visit [vanna.ai](https://vanna.ai)
