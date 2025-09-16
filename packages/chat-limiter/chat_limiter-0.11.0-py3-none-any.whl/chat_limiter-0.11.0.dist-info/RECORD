@@ -1,0 +1,12 @@
+chat_limiter/__init__.py,sha256=TU_Yg0OThBs2D2Y3Fpw1IT8CKsDTnLho900epqRE0w8,1119
+chat_limiter/adapters.py,sha256=hhmx2KPPpTw1GsG-rHq7S7aukAbRV7ru3xjzBqTrc5A,14518
+chat_limiter/batch.py,sha256=9hkpu97krqBgESWkJSSFYA1PZHi5y6q1nBMRIBgWcxM,27720
+chat_limiter/limiter.py,sha256=BgNsVNW0F9TQjsj1L7fPUSq1-hYKckQ5UbMr0LkZIXM,41893
+chat_limiter/models.py,sha256=QtSMWxPV9-wlS91BXUzYwb2u3L12MZKPQtcwV5cJLo0,11962
+chat_limiter/providers.py,sha256=o4eCdhOzs-gx8-1QhtOzn5STC0GLi2EisoOkjH9qE24,5526
+chat_limiter/types.py,sha256=_4SrN5iWIt1yXPNP4V70HKm7aZN4EeZqMBSTZApMNhQ,4739
+chat_limiter/utils.py,sha256=Ca2xFYvez3OAgNPvgUYLR2CgS5XLmmO5MWP-FejDCLw,1617
+chat_limiter-0.11.0.dist-info/METADATA,sha256=5dS0rAZLe_KbqqgsRFe1uTtE0KLTq2SzKibva332m5Q,13809
+chat_limiter-0.11.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+chat_limiter-0.11.0.dist-info/licenses/LICENSE,sha256=pAZXnNE2dxxwXFIduGyn1gpvPefJtUYOYZOi3yeGG94,1068
+chat_limiter-0.11.0.dist-info/RECORD,,
