@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: osmxmpp
+Version: 1.0.0
+Summary: Python XMPP library
+Author: osmiumnet
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: osmxml==1.0.1
+Requires-Dist: osmomemo==1.1.2
+Dynamic: author
+Dynamic: requires-python
+
+# OSMXMPP
+Python XMPP library  
