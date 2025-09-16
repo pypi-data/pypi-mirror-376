@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rnit-vanna"
+version = "1.0.1"
+description = "Enhanced wrapper for Vanna SQL generation library with custom utilities"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "RNIT", email = "aryanrathore040@gmail.com"},
+]
+keywords = ["sql", "nlp", "gpt", "openai", "database", "query", "natural-language", "vanna", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Database",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "vanna[chromadb,openai]>=0.5.0",
+    "python-dotenv>=0.19.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+]
+postgres = [
+    "psycopg2-binary>=2.9.0",
+]
+mysql = [
+    "pymysql>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/rnit/rnit-vanna"
+Documentation = "https://github.com/rnit/rnit-vanna/wiki"
+Repository = "https://github.com/rnit/rnit-vanna"
+"Bug Tracker" = "https://github.com/rnit/rnit-vanna/issues"
