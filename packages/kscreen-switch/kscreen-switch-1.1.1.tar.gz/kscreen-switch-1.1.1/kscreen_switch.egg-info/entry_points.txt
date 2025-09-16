@@ -1,0 +1,2 @@
+[console_scripts]
+kscreen-switch = kscreen_switch.main:main

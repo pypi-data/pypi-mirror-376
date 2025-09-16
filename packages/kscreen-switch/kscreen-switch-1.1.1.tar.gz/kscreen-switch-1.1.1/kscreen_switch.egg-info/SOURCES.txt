@@ -1,0 +1,10 @@
+LICENSE.txt
+pyproject.toml
+kscreen_switch/__init__.py
+kscreen_switch/main.py
+kscreen_switch.egg-info/PKG-INFO
+kscreen_switch.egg-info/SOURCES.txt
+kscreen_switch.egg-info/dependency_links.txt
+kscreen_switch.egg-info/entry_points.txt
+kscreen_switch.egg-info/requires.txt
+kscreen_switch.egg-info/top_level.txt
