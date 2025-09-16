@@ -1,0 +1,81 @@
+[project]
+name = "goobook"
+version = "3.5.4"
+description = "Search your google contacts from the command-line or mutt."
+authors = [
+    { name = "Christer Sjöholm", email = "goobook2@gmail.com" },
+]
+maintainers = [
+    { name = "Reuben Thomas", email = "rrt@sc3d.org" },
+]
+license = "GPL-3.0-only"
+readme = "README.rst"
+repository = "http://gitlab.com/goobook/goobook"
+keywords = [
+    "abook",
+    "mutt",
+    "e-mail",
+    "gmail",
+    "google",
+    "address-book",
+]
+requires-python = ">= 3.9, < 4.0"
+dependencies = [
+    "google-api-python-client ~= 2.0",
+    "simplejson ~= 3.16",
+    "setuptools >= 62.6.0",
+    "pyxdg >= 0.28",
+    "google-auth ~= 2.21",
+    "google-auth-oauthlib ~= 1.0",
+    "google-auth-httplib2 ~= 0.1",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Communications :: Email :: Address Book",
+]
+
+[project.scripts]
+goobook = "goobook.application:main"
+
+[dependency-groups]
+test = [
+    "prospector ~= 1.0",
+    "pylint ~= 3.0",
+    "pyroma ~= 4.0",
+    "vulture ~= 2.4",
+]
+doc = [
+    "docutils ~= 0.18",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm.build]
+includes = [
+    "goobook/",
+    "README.rst",
+    "CHANGES.rst",
+    "CONTRIBUTORS.rst",
+    "TODO.rst",
+]
+source-includes = [
+    "share",
+    "HACKING.rst",
+    "goobook.1.rst",
+]
+
+[tool.pdm.build.wheel-data]
+data = [
+    { path = "share/man/man1/*", relative-to = "." },
+]
+
+[tool.pdm.scripts]
+pre_build = "./generate-man"
+test = "prospector"

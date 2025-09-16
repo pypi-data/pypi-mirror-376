@@ -1,0 +1,129 @@
+.\" Man page generated from reStructuredText
+.\" by the Docutils 0.22 manpage writer.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "goobook" "1" "2020-09-02" "" "User Manuals"
+.SH Name
+goobook \- access your Google contacts from mutt or the command line
+.\" :Copyright: public domain
+.
+.\" :Version: 0.1
+.
+.SH SYNOPSIS
+.sp
+\fBgoobook\fP  [ options ] COMMAND
+.SH DESCRIPTION
+.sp
+\fBgoobook\fP can be used to access your Google contacts from the command line. It can also
+be easily integrated into MUAs such as mutt. It can be used from mutt the same
+way as abook.
+.SH OPTIONS
+.INDENT 0.0
+.TP
+.B  \-h\fP,\fB  \-\-help
+show the help message and exit
+.TP
+.BI \-c \ FILE\fR,\fB \ \-\-config \ FILE
+specify alternative configuration file
+.TP
+.B  \-v\fP,\fB  \-\-verbose
+be verbose about what is going on (stderr)
+.TP
+.B  \-V\fP,\fB  \-\-version
+print version and exit
+.TP
+.B  \-d\fP,\fB  \-\-debug
+output debug information to stderr
+.UNINDENT
+.SH COMMAND
+.INDENT 0.0
+.TP
+.B authenticate
+Allow goobook to access your Google contacts using OAuth2.
+.TP
+.B add [NAME] [EMAIL] [PHONE]
+Add a new Google contact. If NAME and EMAIL is not specified, read an email address from stdin and add the From: address to your Google contacts.
+.TP
+.B config\-template
+Display a config template of that can be written to \fB~/.config/goobookrc\fP\&.
+.TP
+.B dump_contacts
+dump all your contacts to XML (stdout).
+.TP
+.B dump_groups
+dump your contact groups to XML (stdout).
+.TP
+.B dquery QUERY_STRING
+Search contacts for QUERY_STRING, nice vcard like output.
+QUERY_STRING is a Python flavoured regexp where all \(aq \(aq is replaced with .*.
+.TP
+.B query [\-s|\-\-simple] QUERY_STRING
+Search contacts for QUERY_STRING, mutt compatible plain text output.
+\-\-simple output format was requested for use with notmuchmail.
+QUERY_STRING is a Python flavoured regexp where all \(aq \(aq is replaced with .*.
+.TP
+.B reload
+Reload contacts from Google and update cache.
+.UNINDENT
+.SH CONFIGURATION
+.nf
+For most users it will be enough to run:
+
+.in +2
+\fBgoobook\fP authenticate \-\-help
+
+.in -2
+and follow the instructions
+.fi
+.sp
+.nf
+To have access to more advanced options, you can generate a config file by doing:
+
+.in +2
+\fBgoobook\fP config\-template > ~/.config/goobookrc
+.in -2
+.fi
+.sp
+.sp
+An example config can look like this:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+[DEFAULT]
+cache_expiry_hours: 24
+.EE
+.UNINDENT
+.UNINDENT
+.SH SEE ALSO
+.sp
+Website: \%<https://\:pypi\:.python\:.org/\:pypi/\:goobook/>
+.SH Author
+This manual page has been written by Dariusz Dwornikowski and Christer Sjöholm
+.\" End of generated man page.
