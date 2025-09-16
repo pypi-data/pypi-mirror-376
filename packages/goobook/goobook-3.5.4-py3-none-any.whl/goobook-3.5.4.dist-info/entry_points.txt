@@ -1,0 +1,5 @@
+[console_scripts]
+goobook = goobook.application:main
+
+[gui_scripts]
+

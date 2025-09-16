@@ -1,0 +1,15 @@
+CHANGES.rst,sha256=YC3aGQTpl0QqBbX5CP7a7IQOJfrTa2OGqSMX38SsdaQ,7510
+CONTRIBUTORS.rst,sha256=jmMheKryfqma9UhUeP7sJHrShHe0n9gWIXdbA2M7yaE,372
+README.rst,sha256=d64cdGptsmJDez3eolSNi3WJOLivncIBzq98KuIXeMo,6240
+TODO.rst,sha256=RvcE8UOoOyD1G_VKU7S07pwmCbvZngBbL5uHyoNo2cU,1006
+goobook-3.5.4.data/data/share/man/man1/goobook.1,sha256=-75hWMe_NNyztIjRBK4if3gn5GkuHcBHUL8bFtSzxiA,3181
+goobook-3.5.4.dist-info/METADATA,sha256=W_tCV08VvaNY4WbeywrP6Ao46N4dt_VjPHWAgJMVy1I,7131
+goobook-3.5.4.dist-info/WHEEL,sha256=9P2ygRxDrTJz3gsagc0Z96ukrxjr-LFBGOgv3AuKlCA,90
+goobook-3.5.4.dist-info/entry_points.txt,sha256=uECDuRgtgGU-GVcEuTTrBzeXujejvHyLAXJldvTVU3I,69
+goobook-3.5.4.dist-info/licenses/LICENSE.txt,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+goobook/__init__.py,sha256=guGtoW5xtiBr7oQpOl0nAaWXmQ0cwhmfZyzY7qDxRLo,154
+goobook/application.py,sha256=vYNpQ9B-zWUKT21VjK5WEB4PY619mvvKMxMDRzv6Oig,7985
+goobook/config.py,sha256=-sNR_Bo-nMJyJFwfABbE-cy1MJDVbmmx39lg8kf5MRs,6470
+goobook/goobook.py,sha256=dNi6OIpN6Q6JeYvTIsvgSteDdv-GqT45U0EmQ3tjrrE,17387
+goobook/storage.py,sha256=wNEHEoqpb4xnDbaD367qz9aNDC0f0DjDelmy40oeNhY,7194
+goobook-3.5.4.dist-info/RECORD,,
