@@ -1,0 +1,49 @@
+name: Lint & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        version: "latest"
+
+    - name: Set up Python
+      run: uv python install
+
+    - name: Install dependencies
+      run: |
+        uv sync --all-groups
+        uv add poethepoet
+
+    - name: Check code formatting with black
+      run: |
+        uv run poe format --check
+
+    - name: Generate test data
+      run: |
+        uv run poe testgen
+
+    - name: Run tests
+      run: |
+        sudo rm -rf tmp/*
+        uv run poe test_all
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} # Set this in your repository secrets
+        files: coverage.xml
+        name: code-coverage-report
+        fail_ci_if_error: true

@@ -1,0 +1,101 @@
+Metadata-Version: 2.4
+Name: radstract
+Version: 1.0.0
+Author-email: Sharpz7 <adam.mcarthur62@gmail.com>
+License: Apache-2.0
+License-File: LICENSE
+Requires-Python: <4.0,>=3.10
+Requires-Dist: black>=25.1.0
+Requires-Dist: importlib-metadata>=7.1.0
+Requires-Dist: licensecheck>=2023.5.2
+Requires-Dist: matplotlib>=3.8.2
+Requires-Dist: nibabel==5.2.1
+Requires-Dist: numpy==1.26.4
+Requires-Dist: opencv-python>=4.9.0.80
+Requires-Dist: pdoc>=14.4.0
+Requires-Dist: pillow>=11.0.0
+Requires-Dist: pydicom>=3.0.1
+Requires-Dist: pylibjpeg-openjpeg>=2.2.1
+Requires-Dist: pylibjpeg>=2.0.1
+Requires-Dist: pytest-cov>=5.0.0
+Requires-Dist: pytest-mock>=3.14.0
+Requires-Dist: pytest-xdist>=3.6.1
+Requires-Dist: pytest>=8.1.1
+Requires-Dist: scikit-image>=0.24.0
+Requires-Dist: simpleitk>=2.4.0
+Requires-Dist: sympy>=1.12
+Requires-Dist: trimesh>=4.0.5
+Requires-Dist: vulture>=2.11
+Requires-Dist: weasyprint>=65.1
+Description-Content-Type: text/markdown
+
+[![Lint & Test](https://github.com/radoss-org/radstract/actions/workflows/lint-and-test.yml/badge.svg)](https://github.com/radoss-org/radstract/actions/workflows/lint-and-test.yml)
+[![codecov](https://codecov.io/gh/radoss-org/radstract/graph/badge.svg?token=AAC82LNAKU)](https://codecov.io/gh/radoss-org/radstract)
+
+## Radstract
+
+Radstract is python library containing shared code for RadOSS projects.
+
+It has a range of subpackages for different tasks:
+- Data: For data/image manipulation and conversion functions
+- Analysis: For different methods of analyzing the data, from nifti and dicom files
+- Math: For different mathematical functions and operations
+- Datasets: for converting and working with different datasets (Huggingface etc)
+
+Feel free to use this code in your own projects, and if you have any questions or suggestions, please feel free to open an issue.
+
+## Installation
+
+```bash
+pip install git+https://github.com/radoss-org/radstract.git
+```
+
+See examples here for a quickstart: https://github.com/radoss-org/Radstract/tree/main/examples
+
+## Docs
+
+Docs can be viewed at https://radoss-org.github.io/radstract/radstract.html
+
+## Examples
+
+See examples here: https://github.com/radoss-org/Radstract/tree/main/examples
+
+
+## Developer Guide
+
+You can clone the repository and install the dependencies with the following command:
+
+```bash
+git clone https://github.com/radoss-org/radstract.git
+```
+
+You can then install retuve with poetry, and then run the tests:
+
+```bash
+# Needed for the scripts
+pip install poethepoet
+
+cd retuve
+poetry install
+
+# Generate the test data
+poe testgen
+
+# Run all tests, including examples.
+poe test_all
+
+# Get info on all other dev scripts
+poe help
+```
+
+## Acknowledgments
+
+Data for the examples and tests is from https://github.com/radoss-org/radoss-creative-commons.
+
+Please see this repo for attribution and licensing information.
+
+- **Shape Distribution Models** From https://graphics.stanford.edu/courses/cs468-08-fall/pdf/osada.pdf
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
