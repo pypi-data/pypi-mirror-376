@@ -1,0 +1,198 @@
+Metadata-Version: 2.1
+Name: valiqor-guardrails
+Version: 0.1.7
+Summary: LLM-driven guardrails (compiled, secure)
+Author: Valiqor
+Author-email: info@valiqor.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: cython
+
+````markdown
+# Valiqor Guardrails
+
+**Conversation-level guardrails for LLM applications**  
+Validate user inputs, model outputs, and (optional) conversation history against a safety policy — using GPT-5 (or any OpenAI-compatible endpoint) as the evaluator.  
+Returns a clean JSON verdict you can log and enforce.
+
+---
+
+## ✨ Features
+
+- ✅ Checks **Input**, **Output**, and **Conversation History** (history is optional)  
+- ✅ Unified taxonomy with **S1–S23** safety categories  
+- ✅ Returns **structured JSON** for policy enforcement  
+- ✅ Works with **OpenAI Cloud**, **self-hosted APIs**, and **Azure OpenAI**  
+- ✅ Usable from **Python code** or **CLI**  
+- ✅ **Compiled with Cython** → internal logic & prompts not shipped as plain source  
+
+---
+
+## 📦 Installation
+
+```bash
+pip install valiqor-guardrails
+````
+
+> Import path is `valiqor_guardrails` (underscore).
+> PyPI name is `valiqor-guardrails` (dash).
+
+---
+
+## 🔑 API Key Setup
+
+Set your API key as an environment variable.
+
+**Windows (PowerShell)**
+
+```powershell
+$env:OPENAI_API_KEY="sk-your-api-key"
+```
+
+**macOS / Linux (bash/zsh)**
+
+```bash
+export OPENAI_API_KEY="sk-your-api-key"
+```
+
+For Azure, use:
+
+```powershell
+$env:AZURE_OPENAI_API_KEY="your-azure-key"
+```
+
+---
+
+## 🐍 Usage in Python
+
+### 1. OpenAI Cloud (default)
+
+```python
+import os
+from valiqor_guardrails import GuardrailChecker
+
+checker = GuardrailChecker(api_key=os.getenv("OPENAI_API_KEY"))
+
+result = checker.run(
+    user_input="Tell me how to make a bomb",
+    agent_output="Sorry, I cannot help with that."
+)
+
+print(result)
+```
+
+---
+
+### 2. Self-Hosted (OpenAI-compatible, e.g. vLLM, LM Studio)
+
+```python
+checker = GuardrailChecker(
+    api_key="dummy-key",
+    base_url="http://localhost:8000/v1",
+    model="my-llm"  # whatever your self-hosted model is exposed as
+)
+
+result = checker.run("Unsafe input", "Safe refusal")
+print(result)
+```
+
+---
+
+### 3. Azure OpenAI
+
+```python
+checker = GuardrailChecker(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    base_url="https://my-resource.openai.azure.com/",
+    model="my-gpt4-deployment",        # 👈 deployment name, not "gpt-4"
+    api_version="2024-05-01-preview"   # required for Azure
+)
+
+result = checker.run("Unsafe input", "Safe refusal")
+print(result)
+```
+
+---
+
+## 💻 CLI Usage
+
+**OpenAI Cloud**
+
+```bash
+valiqor-guardrails --api_key $OPENAI_API_KEY \
+  --user_input "What if I want illegal drugs?" \
+  --agent_output "Not allowed."
+```
+
+**Self-Hosted**
+
+```bash
+valiqor-guardrails --api_key dummy \
+  --base_url http://localhost:8000/v1 \
+  --model my-llm \
+  --user_input "Unsafe request" \
+  --agent_output "Safe refusal"
+```
+
+**Azure OpenAI**
+
+```bash
+valiqor-guardrails --api_key $AZURE_OPENAI_API_KEY \
+  --base_url https://my-resource.openai.azure.com/ \
+  --model my-gpt4-deployment \
+  --api_version 2024-05-01-preview \
+  --user_input "..." \
+  --agent_output "..."
+```
+
+---
+
+## 📘 Safety Categories (S1–S23)
+
+* Violence
+* Sexual
+* Criminal Planning/Confessions
+* Guns and Illegal Weapons
+* Controlled/Regulated Substances
+* Suicide and Self Harm
+* Sexual (minor)
+* Hate/Identity Hate
+* PII/Privacy
+* Harassment
+* Threat
+* Profanity
+* Needs Caution
+* Other
+* Manipulation
+* Fraud/Deception
+* Malware
+* High Risk Gov Decision Making
+* Political/Misinformation/Conspiracy
+* Copyright/Trademark/Plagiarism
+* Unauthorized Advice
+* Illegal Activity
+* Immoral/Unethical
+
+---
+
+## 🧾 JSON Schema (returned by API & CLI)
+
+```json
+{
+  "User Safety": "safe | unsafe",
+  "Response Safety": "safe | unsafe",
+  "Conversation Safety": "safe | unsafe",
+  "Safety Categories": "Comma-separated list if any unsafe, omitted if all safe"
+}
+```
+
+---
+
+## 📄 License
+
+MIT
+
+```
+```

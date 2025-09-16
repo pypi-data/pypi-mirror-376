@@ -1,0 +1,10 @@
+valiqor_guardrails/__init__.py,sha256=CFcBBAxctaJxmwpb5NUk88dJqrr43xIhHYOPFi0cS0E,39
+valiqor_guardrails/checker.cp311-win_amd64.pyd,sha256=uLD7zaNwT5-zozgkBrMGCvT4dSQyMnT1zPCUcVFRths,57344
+valiqor_guardrails/cli.py,sha256=6WedYAjIWcaAVb4qYJFVge-HO8KyYGzyuIib3FMBrIw,837
+valiqor_guardrails/prompts.py,sha256=-tLydyTMiopvhL9FFARyJiUkd4-q0OOV5aURxKuOl-M,1451
+valiqor_guardrails-0.1.7.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+valiqor_guardrails-0.1.7.dist-info/METADATA,sha256=zPfpmakIeaKIdlfa5EZWUVBwKA4AWqD2OIQRdSu9IRU,4192
+valiqor_guardrails-0.1.7.dist-info/WHEEL,sha256=y4n9_669c4ZQLyT56MHjc_JUbnwtaZfMVMycweN557o,102
+valiqor_guardrails-0.1.7.dist-info/entry_points.txt,sha256=x4a62I6eITeEp4RIiuaHo0fQGQfv8Lz6FbbyFYWPztI,67
+valiqor_guardrails-0.1.7.dist-info/top_level.txt,sha256=xy5IniosxBPXqlcSrnfwHXbJvtv2JsuJHCn5Y50PC0g,19
+valiqor_guardrails-0.1.7.dist-info/RECORD,,
