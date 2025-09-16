@@ -1,0 +1,166 @@
+Metadata-Version: 2.4
+Name: Orange3-MLflow-Export
+Version: 0.1.2
+Summary: Export Orange3 models with preprocessing pipelines to MLflow format for production deployment.
+Home-page: https://github.com/NIRLab-com/mlflow-model-widget
+Author: NIRLAB AG
+Author-email: dev@nirlab.com
+License: GPL-3.0-only
+Project-URL: Bug Reports, https://github.com/NIRLab-com/mlflow-model-widget/issues
+Project-URL: Source, https://github.com/NIRLab-com/mlflow-model-widget
+Project-URL: Documentation, https://github.com/NIRLab-com/mlflow-model-widget/blob/main/README_MLFLOW_WIDGET.md
+Keywords: orange3 add-on,mlflow,machine learning,model export,data science,deployment,preprocessing
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: Environment :: Plugins
+Classifier: Programming Language :: Python
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Orange3
+Requires-Dist: mlflow
+Requires-Dist: cloudpickle
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Orange3 MLflow Export
+====================
+
+An Orange3 add-on that provides seamless export of complete machine learning workflows to MLflow format, including preprocessing pipelines and dependency management for reproducible deployment.
+
+## Overview
+
+Export your Orange3 models with all preprocessing steps intact! This add-on bridges the gap between Orange3's visual machine learning environment and MLflow's production deployment capabilities.
+
+## Key Features
+
+### Complete Pipeline Export
+- **Preprocessing Included**: Unlike basic model saving, captures entire preprocessing pipelines (normalization, imputation, feature selection, etc.)
+- **Domain Transformations**: Preserves Orange's automatic domain handling for seamless prediction
+- **Zero Information Loss**: Everything needed for prediction is included
+
+### Production-Ready Deployment
+- **MLflow Standard Format**: Exports to industry-standard MLflow model format
+- **Dependency Management**: Automatically includes Orange3, scikit-learn, pandas, numpy, and all dependencies
+- **Cross-Platform**: Deploy on any platform supporting MLflow (local, cloud, containers)
+- **Serving Ready**: Use `mlflow models serve` immediately after export
+
+### Smart Input Handling
+- **Flexible DataFrames**: Accepts pandas DataFrames with automatic type conversion
+- **Column Name Mapping**: Intelligently handles feature name mismatches through positional mapping
+- **Signature Inference**: Automatically generates input/output schemas from sample data
+
+### Universal Compatibility
+- **All Orange Models**: Works with any Orange learner (classification, regression, clustering)
+- **Any Preprocessing**: Supports all Orange preprocessing widgets and operations
+- **Version Independent**: Models work across different Orange and Python versions
+
+## Quick Start
+
+### Installation
+```bash
+pip install orange3-mlflow-export
+# or from source
+pip install .
+```
+
+### Basic Usage
+
+**In Orange GUI:**
+1. Build your workflow (File → Preprocess → Model)
+2. Add MLflow Export widget (Example section)
+3. Connect your trained model
+4. Set export path and save
+
+**Programmatically:**
+```python
+from orangecontrib.example.widgets.owmlflowexport import OWMLFlowExport
+import Orange
+
+# Train model with preprocessing
+data = Orange.data.Table("iris")
+preprocessor = Orange.preprocess.preprocess.PreprocessorList([
+    Orange.preprocess.Normalize(),
+    Orange.preprocess.Impute()
+])
+processed_data = preprocessor(data)
+model = Orange.classification.LogisticRegressionLearner()(processed_data)
+
+# Export to MLflow
+widget = OWMLFlowExport()
+widget.set_model(model)
+widget.filename = "model.mlflow"
+widget.do_save()
+```
+
+**Deploy and Serve:**
+```bash
+mlflow models serve -m ./model.mlflow -p 8080
+```
+
+## Why Choose This Over Standard Orange Model Saving?
+
+| Feature | Orange Save Model | MLflow Export |
+|---------|-------------------|---------------|
+| Preprocessing | ❌ Lost | ✅ Preserved |
+| Dependencies | ❌ Manual | ✅ Automatic |
+| Deployment | ❌ Complex | ✅ One Command |
+| Portability | ❌ Limited | ✅ Universal |
+| Production Use | ❌ Difficult | ✅ Seamless |
+
+## Use Cases
+
+- **Model Deployment**: Export Orange models for production serving
+- **Reproducible Research**: Share complete workflows with dependencies
+- **Cross-Platform Models**: Train in Orange, deploy anywhere
+- **MLOps Integration**: Integrate Orange models into MLflow tracking and serving
+- **Educational**: Demonstrate complete ML pipeline deployment
+
+## Supported Orange Components
+
+**Models:** All Orange learners (Tree, SVM, Neural Network, Linear, etc.)  
+**Preprocessing:** Normalize, Impute, Continuize, Feature Selection, PCA, etc.  
+**Data Types:** Tabular, spectroscopic, time series, text (with appropriate preprocessing)
+
+## Testing
+
+Verify your exported models with included test scripts:
+```bash
+python test_spectra_model.py ./your_model.mlflow
+python load_predictor.py
+```
+
+## Requirements
+
+- Python 3.8+
+- Orange3
+- MLflow
+- pandas, numpy, scikit-learn
+- cloudpickle
+
+## Documentation
+
+See the [complete documentation](README_MLFLOW_WIDGET.md) for detailed usage, architecture, and troubleshooting.
+
+## License
+
+GPL-3.0 (same as Orange3)
