@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: wexample-wex-addon-dev-css
+Version: 0.0.7
+Requires-Python: >=3.10
+Requires-Dist: attrs>=23.1.0
+Requires-Dist: cattrs>=23.1.0
+Requires-Dist: wexample-wex-core==6.0.48
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+
