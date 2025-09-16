@@ -1,0 +1,10 @@
+numpy
+ipyleaflet
+shapely
+pandas
+
+[all]
+mapdemo[extra]
+
+[extra]
+pandas
