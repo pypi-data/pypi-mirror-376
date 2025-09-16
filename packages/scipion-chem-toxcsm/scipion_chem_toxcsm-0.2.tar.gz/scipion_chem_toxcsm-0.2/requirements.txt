@@ -1,0 +1,6 @@
+beautifulsoup4
+scipion-pyworkflow
+scipion-em
+scipion-chem
+
+
